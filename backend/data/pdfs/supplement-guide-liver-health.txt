@@ -1,0 +1,1317 @@
+Liver Health Supplement Guide
+
+Written By: Michael Hull, & Wyatt Brown
+
+Edited By: Pierre-Alexandre Sicart
+
+Reviewed By: Kamal Patel
+
+Table of Contents
+
+Introduction
+
+Combos
+
+Primary Supplements
+
+Secondary Supplements
+
+Promising Supplements
+
+Unproven Supplements
+
+Inadvisable Supplements
+
+FAQ
+
+2
+
+Introduction
+
+The liver participates in so many vital processes that its nickname should be the Swiss Army organ. It
+
+doesn’t receive as much attention as other organs, because cardiovascular disease, cancer, and various
+
+other diseases are more likely causes of death than liver disease, but if the liver isn’t functioning well, the
+
+effects can be felt throughout the body.
+
+Perhaps a more specific analogy for the liver would be a factory: it is responsible for the production,
+
+breakdown, transport, and storage of a wide variety of chemicals, acting as the central hub for many of the
+
+components of metabolism.
+
+Liver function basics
+
+So what specifically does the liver do?
+
+First, it continuously takes a large amount of blood glucose (i.e., blood sugar) from the bloodstream, stores
+
+it as glycogen, and then converts it back to glucose, releasing it as needed. If the body needs more glucose
+
+and the liver is low on glycogen, it turns individual amino acids into glucose in a process called
+
+gluconeogenesis. Additionally, because glucose is the body’s main monosaccharide, other ones — namely,
+
+fructose and galactose — are converted to glucose, and this happens primarily in the liver.[1]
+
+3
+
+Depiction of glycogen
+
+When food intake provides an excess of energy, the liver converts more carbohydrates into fatty acids,
+
+takes fatty acids from the bloodstream, and either uses them, stores them, or packages them to be
+
+circulated once again. Under conditions of starvation or very low intake of carbohydrates, it’s the liver that
+
+creates ketone bodies from fatty acids.
+
+Besides its role in the metabolism of the body’s main energy sources, the number of important molecules
+
+that the liver synthesizes is too long to list, but it includes albumin, cholesterol, uric acid, bile acids, growth
+
+factors, and proteins involved in the inflammatory response, among many others.[2]
+
+The liver is also pivotal for the detoxification of xenobiotics (substances foreign to the body) and
+
+transforming them into more benign and excretable forms.[3] These include pharmaceutical drugs,
+
+environmental toxins, alcohol, bacterial by-products, and more — things you definitely don’t want building
+
+up in your system.
+
+There is widespread misunderstanding about detoxification in the body. Products, protocols, and diets
+
+claim to remove toxins from the body with no real evidence or understanding of how detoxification works.
+
+On the other hand, some of the backlash to detoxing makes it sound like all you need are a functioning liver
+
+and kidneys to deal with toxins optimally. However, nutrients are needed to support optimal functioning of
+
+4
+
+the liver and its detoxification enzymes. This makes some “detox” supplements plausible, but they usually
+
+lack rigorous research.[4]
+
+Anyone who looks into the nutritional information of liver will immediately notice something: it stores huge
+
+amounts of vitamin A, copper, and vitamin B12.[5][6][7] These, along with many other nutrients and compounds,
+
+are stored in the liver and released as needed. So with the liver storing, transporting, detoxifying, and
+
+synthesizing so many things, it’s clear that it’s intimately linked to the rest of the body, and a healthy liver is
+
+essential to overall health.
+
+When liver function goes wrong
+
+There are numerous diseases that can affect the liver, but many of them are beyond the scope of this
+
+guide; here, we’re focused mainly on those that are influenced by diet and lifestyle and are particularly
+
+common: nonalcoholic fatty liver disease (NAFLD) and more advanced manifestations, such as nonalcoholic
+
+steatohepatitis (NASH) and cirrhosis. NAFLD is estimated to affect roughly 25% of adults in the US and
+
+Europe, making it especially worth our attention.[8]
+
+Fatty liver disease
+
+Fatty liver disease is generally defined by steatosis, an accumulation of excess fat in the liver; lesions, such
+
+as fibrosis, where connective tissue replaces normal tissue; ballooning; excessive accumulation of various
+
+compounds; and inflammation, causing permanent scarring and cirrhosis when damage has progressed
+
+enough that the liver loses function.[9]
+
+5
+
+Progression of non-alcoholic fatty liver disease (NAFLD)
+
+When a major cause of this is excessive alcohol consumption, it’s called alcoholic fatty liver disease (AFLD),
+
+and when alcohol abuse isn’t present, it’s nonalcoholic fatty liver disease (NAFLD). While they share some
+
+similarities, they are not the same condition. AFLD tends to be more severe and have more diverse
+
+pathological features.[10]
+
+NAFLD often goes hand in hand with metabolic syndrome and type 2 diabetes. Likely causes include
+
+overeating and subsequent obesity; lack of physical activity; smoking; and the metabolic impairments and
+
+inflammation that follow. What’s worse, because the liver is so important to the metabolic health of the
+
+body, its impairment is likely to start a vicious cycle where worse liver function leads to worse metabolic
+
+function and vice versa.[11]
+
+6
+
+Fatty liver and diabetes
+
+Many molecular mechanisms are involved in the vicious circle linking fatty liver to diabetes and diabetes to
+
+progressive liver injury.
+
+On the left portion of the below image is the first part of the journey, leading from initial insulin resistance
+
+to fatty liver and eventually to the development of type 2 diabetes (T2D) in those predisposed individuals
+
+in whom pancreatic lipotoxicity occurs.
+
+On the right is the mechanism which – triggered by long-lasting/decompensated T2D – may be conducive
+
+to progressive liver disease including primary liver cancer in predisposed individuals.
+
+The vicious circle of fatty liver and diabetes
+
+Adapted from Loria et al. Hepatol Res. 2013.[11] 
+
+HCC, hepatocellular carcinoma; IL, interleukin; NASH, non-alcoholic steatohepatitis; PTEN, phosphatase and tensin homolog; T2D,
+
+type 2 diabetes.
+
+Assessing liver health
+
+The most common way to assess liver injury is through liver enzyme tests, mainly alanine aminotransferase
+
+(ALT), aspartate aminotransferase (AST), alkaline phosphatase (ALP), γ-glutamyl transferase (GGT), and a
+
+handful of others. These enzymes participate in the metabolism of amino acids, among other functions, and
+
+tend to be elevated in the bloodstream when liver cells are injured.[12] However, they can be present in the
+
+muscles and other organs, be elevated in other diseases, and sometimes rise due to factors other than liver
+
+7
+
+damage.
+
+ALT is more prevalent in the liver than AST, and adding in GGT and other markers can help paint a clearer
+
+picture. There are newer biomarkers based on mitochondrial damage, cell death, DNA damage,
+
+inflammation, and more, but the vast majority of liver damage in short-term trials continues to be evaluated
+
+mainly by the aminotransferase tests. When it comes to fatty liver disease and its progression, ultrasound
+
+and biopsies that measure the amount of steatosis, fibrosis, and other markers are commonly used, and
+
+researchers have come up with grading schemes based on them.[13][14]
+
+Other ways to measure liver health include approximating its function by using markers that would be
+
+altered if the liver weren’t performing its functions properly. Common tests that do this are bilirubin,
+
+albumin, ceruloplasmin, and the ability to produce blood-clotting factors. Various other tests are being
+
+added all the time.[15][16]
+
+Liver health: where supplements fit in
+
+In this guide, we have assembled a list of several promising supplements for the general defense of the
+
+liver. Their mechanisms differ, but a common theme is increasing the levels of endogenous antioxidants the
+
+body produces and regulating inflammation to protect the liver when it’s under stress from toxins,
+
+pollutants, infection, and metabolic dysfunction.
+
+Beyond what we have included in this guide, the lifestyle modifications generally associated with metabolic
+
+and cardiovascular health apply to the liver as well: weight loss, a highly nutritious diet, and exercise can be
+
+considered the basis of liver health, with supplements potentially adding an extra boost.[17]
+
+Wyatt Brown, Researcher
+
+8
+
+Combos
+
+Core Combo
+
+Take 400 mg of SAMe thrice a day (i.e., 1,200 mg/day), with or without food.
+
+If you have an MTHFR gene mutation, replace the SAMe by 7.5–15 mg of L-methylfolate once a day and
+
+1,500–2,000 mg of TMG twice or thrice a day (i.e., 3–6 g/day). TMG can be consumed as a powder or
+
+simply through foods, notably wheat bran (1,339 mg of TMG per 100 g), spinach (600–645 mg of TMG per
+
+100 g), and beetroot (114–297 mg of TMG per 100 g).
+
+Getting enough trimethylglycine through foods
+
+9
+
+ Tip: Try one combo alone for a few weeks
+
+Taking too many supplements at once may prevent you from determining which ones are truly
+
+working. Start with just one of the combos suggested here for a couple of weeks before you
+
+consider making any modification, such as adding another supplement, altering a supplements
+
+dosage, or incorporating the supplements from an additional combo.
+
+When adding another supplement to your regimen, be methodical. For example, you may wish to
+
+take all the supplements from two combos. Select the combo that you wish to try first and take this
+
+for a couple of weeks. Then, add one supplement from the second combo and wait another week to
+
+see how it affects you. Continue this process until you’ve added all the supplements you wish to.
+
+If a supplement appears in two combos you wish to combine, don’t stack the doses; instead,
+
+combine the ranges. For instance, if the range is 2–4 mg in one combo and 3–6 mg in the other, your
+
+new range becomes 2–6 mg. Always start with the lower end of the range — especially in this case,
+
+since the reason why one of the ranges has a lower ceiling in one combo may be due to a synergy
+
+with another supplement in the same combo. Reading through the full supplement entry may help
+
+you decide which dose to aim for, but if you’re not sure, lower is usually safer.
+
+Specialized Combos
+
+For people with a fatty liver
+
+Take 4.5–8 g of spirulina per day, with or without food. Additionally, drink 1–4 cups (1 cup = 177–237 mL /
+
+6–8 oz) per day of regular, half-caffeinated, or decaffeinated coffee.
+
+For people with hepatitis C
+
+Take 1.5–8 g of spirulina per day, with or without food. Additionally, drink 1–4 cups (1 cup = 177–237 mL /
+
+6–8 oz) per day of regular, half-caffeinated, or decaffeinated coffee. Before bed, take TUDCA (500–1,750
+
+mg) without food.
+
+For people with cholesterol-rich non-calcified
+gallstones in their liver
+
+Take 500–1,750 mg of TUDCA before bed, without food.
+
+For people who regularly drink or take
+acetaminophen
+
+10
+
+The following protocols can help your liver process reasonable amounts of alcohol or acetaminophen, but
+
+they won’t save you in case of abuse of either substance.
+
+Twice a day, take 140 mg of silymarin (i.e., 280 mg/day) and 400 mg of NAC (i.e., 800 mg/day).
+
+Silymarin may reduce the efficacy of oral contraceptives. If you take or might take an oral contraceptive,
+
+replace the above protocol by this one:
+
+Thrice a day, take 4 mg of picroliv per kilogram of body weight (i.e., 12 mg/kg/day) and 400 mg of NAC
+
+(i.e., 1,200 mg/day).
+
+If you are prone to nausea, take your NAC with food.
+
+11
+
+Primary Supplements
+
+S-Adenosyl-Methionine (SAMe)
+
+What makes SAMe a primary supplement
+
+S-adenosylmethionine (SAMe) works with enzymes in a process called methylation: when a molecule in
+
+your body needs a methyl group in order to undergo a chemical reaction, SAMe provides that group.
+
+Since SAMe synthesis decreases with chronic liver disease, oral SAMe can benefit the person afflicted, but
+
+it doesn’t follow that SAMe affects the disease itself. Current evidence suggests, however, that oral SAMe
+
+can support normal liver functions and may help fight cholestasis, alcoholic liver disease, and possibly even
+
+nonalcoholic fatty liver disease (NAFLD).
+
+Methylenetetrahydrofolate reductase (MTHFR) is an enzyme that helps process amino acids. If you have an
+
+MTHFR gene mutation, SAMe can still benefit your liver, but it may also cause a “backlog” of a potentially
+
+harmful metabolite known as homocysteine — a biomarker of cardiovascular disease. In this scenario, it
+
+would be safer to replace SAMe by L-methylfolate (aka levomefolic acid, 5-methyltetrahydrofolate, and 5-
+
+MTHF), a form of vitamin B9 (folic acid).
+
+Preliminary evidence suggests that ingesting choline or its derivative trimethylglycine (TMG, aka betaine)
+
+can raise SAMe levels, though to a lesser extent than ingesting SAMe. Unlike choline, TMG also has
+
+preliminary evidence for benefiting the liver. Both choline and TMG lower homocysteine levels in normal
+
+people, which makes them less likely than SAMe to raise homocysteine levels in people with an MTHFR
+
+gene mutation.
+
+How to take SAMe
+
+First choice is SAMe; second, TMG; third, choline. If you have an MTHFR gene mutation, however, do not
+
+take SAMe; instead, take L-methylfolate, with or without TMG or choline.
+
+Take 400 mg of SAMe thrice a day (i.e., 1,200 mg/day), with or without food.
+
+Take 1.5–2 g of trimethylglycine (TMG) twice or thrice a day (i.e., 3–6 g/day). TMG can be consumed as a
+
+powder or simply through foods, notably wheat bran (1,339 mg of TMG per 100 g), spinach (600–645 mg
+
+of TMG per 100 g), and beetroot (114–297 mg of TMG per 100 g).
+
+Most people get enough choline through their diet. Track what you eat for a week; if, on average, you are
+
+getting less than 80% of your Adequate Intake (AI), try eating more foods rich in choline before you
+
+consider taking 250–500 mg of choline bitartrate once a day with food.
+
+Take 7.5–15 mg of L-methylfolate once a day.
+
+Adequate Intake (AI) for choline (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+12
+
+ 
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+>18 years
+
+125
+
+150
+
+200
+
+250
+
+375
+
+550
+
+550
+
+125
+
+150
+
+200
+
+250
+
+375
+
+400
+
+425
+
+—
+
+—
+
+—
+
+—
+
+—
+
+450
+
+450
+
+—
+
+—
+
+—
+
+—
+
+—
+
+550
+
+550
+
+Reference: Institute of Medicine. Choline (chapter 12 in Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6,
+
+Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline. The National Academies Press. 1998.)[18]
+
+ Tip: Why don’t you recommend brands or specific products?
+
+For two reasons:
+
+We don’t test physical products. What our researchers do — all day, every day — is analyze
+
+peer-reviewed studies on supplements and nutrition.
+
+We go to great lengths to protect our integrity. As you’ve probably noticed, we don’t sell
+
+supplements, or even show ads from supplement companies, even though either option
+
+would generate a lot more money than our Supplement Guides ever will — and for a lot less
+
+work, too.
+
+If we recommended any brands or specific products, our integrity would be called into question, so
+
+… we can’t do it. That being said, in the interest of keeping you safe, we drew a short list of steps
+
+you should take if a product has caught your interest.
+
+13
+
+Secondary Supplements
+
+Milk Thistle
+
+What makes milk thistle a secondary option
+
+Milk thistle (Silybum marianum) has been used to protect the liver as far back as ancient Greece.
+
+Nowadays, limited evidence suggests that silymarin, its bioactive compound, can increase the synthesis
+
+rates of protein and DNA in the liver. In the presence of liver toxins, it can also act as an anti-inflammatory
+
+agent. People who are not using compounds that may harm the liver (e.g., alcohol or some medications) are
+
+not likely to benefit from milk thistle.
+
+High doses of silymarin (420–600 mg) have shown efficacy against death cap mushroom poisoning
+
+(Amanita phalloides); for obvious reasons, however, there have been no controlled trials to confirm the
+
+conclusions from the case studies. If you ever get death cap poisoning, by all means take some silymarin …
+
+after you’ve called emergency services, or on your way to the hospital!
+
+Silymarin may lower the effectiveness of oral contraceptives.
+
+14
+
+ 
+Milk thistle vs. the death cap
+
+How to take milk thistle
+
+Take 140 mg of silymarin twice a day (i.e., 280 mg/day), with or without food. This translates to 187.5 mg
+
+twice a day (i.e., 375 mg/day) of a milk thistle extract standardized to 80% silymarin.
+
+N-Acetylcysteine (NAC)
+
+What makes NAC a secondary option
+
+N-acetylcysteine (NAC) can increase the body’s production of the antioxidant glutathione. Low levels of
+
+15
+
+ 
+glutathione are associated with various inflammatory and oxidative diseases, such as nonalcoholic fatty
+
+liver disease (NAFLD).
+
+High NAC doses are used acutely in cases of toxin-induced liver damage, particularly when caused by an
+
+overdose of acetaminophen (aka paracetamol). The most common oral protocol in US hospitals is based on
+
+the weight of the patient in kilograms: one 140 mg/kg dose followed by sixteen 70 mg/kg doses 4 hours
+
+apart. Such high doses have been known to cause nausea and vomiting, but much lower doses can be
+
+taken daily to support glutathione levels and thus, indirectly, the liver.
+
+How to take NAC
+
+Take 400 mg of NAC once to thrice a day (i.e., 400–1,200 mg/day total). If you are prone to nausea, take
+
+your NAC with food.
+
+Tauroursodeoxycholic Acid (TUDCA)
+
+What makes TUDCA a secondary option
+
+Tauroursodeoxycholic acid (TUDCA) is a water-soluble, taurine-conjugated bile acid. It exists in trace
+
+amounts in the human body, where it helps regulate apoptosis (i.e., programmed cell death).
+
+In hospitals, TUDCA is used to treat cholestasis, an impairment of the flow of bile (a digestive fluid secreted
+
+by the liver). It has also been shown to benefit people suffering from hepatitis C or from primary biliary
+
+cirrhosis, two diseases that damage bile ducts, but studies on other liver diseases, such as alcoholic fatty
+
+liver disease (AFLD) or nonalcoholic fatty liver disease (NAFLD), are still lacking.
+
+TUDCA supplementation can help prevent endoplasmic reticulum stress in your cells and the resulting
+
+inflammation and oxidative stress, but more evidence is needed to determine if this property translates to a
+
+protective effect on the liver.
+
+On the other hand, there is already significant evidence that TUDCA supplementation can induce
+
+cholesterol efflux and thus regulate cholesterol levels in cells. Combined with a low-cholesterol diet,
+
+TUDCA can reduce the risk of gallstone formation and even dissolve cholesterol-rich non-calcified
+
+gallstones. It cannot, however, dissolve gallstones rich in bilirubin or in calcium and other minerals.
+
+One study in people with obesity reported that TUDCA supplementation increased insulin sensitivity in
+
+muscle and liver cells, but these results have not been replicated.
+
+How to take TUDCA
+
+Take 500–1,750 mg of TUDCA before bed, without food.
+
+16
+
+ 
+Promising Supplements
+
+Coffee
+
+What makes coffee a promising option
+
+Coffee is a wildly popular drink worldwide that may also have some health benefits for the liver. This
+
+caffeinated beverage contains a mix of anti-inflammatory and bioactive antioxidant compounds that are
+
+thought to be responsible for these benefits.[19][20][21]
+
+Numerous prospective observational studies, a handful of case–control studies, and one RCT have seen
+
+people who consume coffee regularly to have decreased odds for nonalcoholic fatty liver disease (NAFLD),
+
+liver fibrosis, liver cirrhosis, complications from chronic hepatitis C, and liver cancer compared to those
+
+who drink coffee infrequently or not at all.[22][23][24][25][26][27][28][29][30][31][32][33] Additional associations have been seen
+
+between coffee consumption and improvement in liver enzyme profiles (ALT, AST, and GGT).[34]
+
+You can experience caffeine dependence when you become tolerant to some of its effects. When tolerance
+
+occurs, and you stop consuming caffeine, you can experience symptoms of withdrawal, such as fatigue,
+
+irritability, headaches, and — ironically — sleeplessness.
+
+Caffeine also interacts dangerously with several pharmaceuticals, notably tizanidine and a type of
+
+antidepressant called monoamine oxidase inhibitors (MAOIs). It can also interfere with glucose metabolism,
+
+raise blood pressure, raise heart rate, and increase urination (though the effect is usually mild), but those
+
+four effects fade away as your tolerance to caffeine develops.
+
+Caffeine can also decrease blood lithium levels. Suddenly eliminating all caffeine from your diet may cause
+
+your lithium levels to rise. If you are on lithium medication, keep your day-to-day caffeine intake roughly
+
+the same.[35] If you wish to stop taking caffeine, talk with your physician about slowly weaning yourself from
+
+it.
+
+You might already be consuming more caffeine than you think. When you calculate your daily intake,
+
+consider all your beverages, foods, and supplements (pre-workouts and energy boosters, particularly). Bear
+
+in mind that caffeine can be “hidden” in a product — for instance, if you read “guarana seeds” on a label,
+
+remember that those are richer in caffeine than coffee seeds.
+
+17
+
+ 
+Caffeine content of popular drinks
+
+References: McCusker et al. J Anal Toxicol. 2006.[36] ● Desbrow et al. Nutr Health. 2019.[37] ● Ludwig et al. Food Funct. 2014.[38]
+
+● Fox et al. J Agric Food Chem. 2013.[39] ● McCusker et al. J Anal Toxicol. 2003.[40] ● Angeloni et al. Food Res Int. 2019.[41]
+
+How to take coffee
+
+Drink 1–4 cups a day of regular, half-caffeinated (half-caf), or decaffeinated coffee (decaf).The definition of
+
+what a “cup” of coffee constitutes varies from study to study. Generally speaking, one cup is 177–237 mL
+
+(6–8 oz) so your total daily intake should be between 177–946 mL (6–32 oz).
+
+The liver benefits of coffee appear to be additive, with 1–2 cups providing better outcomes than <1, and 3–
+
+18
+
+4 cups outperforming 1–2. More than 4 cups a day may also provide additional benefits but, should you
+
+choose to consume >4 cups/day, be mindful of your overall caffeine intake.[33] After your 4th cup of
+
+caffeinated coffee, switching to decaf is advisable to keep your daily caffeine intake at safe levels.
+
+Removing caffeine from coffee changes its composition little.[42] Yet, caffeine itself may play a role in
+
+coffee’s beneficial liver effects.[43][20][44] It is plausible that decaffeinated coffee might have less potent
+
+effects on liver health, but this hypothesis does not have much research looking into it.[31]
+
+If you consume caffeinated coffee, monitor your overall caffeine intake to ensure you’re not consuming
+
+unsafe levels.
+
+For healthy adults, caffeine intakes up to 400 mg/day don’t raise any general health concerns.[45][46][47]
+
+While you can consume more, 400 mg is how much caffeine most healthy people can regularly
+
+consume in a day without suffering lasting harm.
+
+If you are pregnant or breastfeeding, the scientific evidence differs on what constitutes a safe
+
+upper intake: either 200 or 300 mg of caffeine per day.[45][47][48][49][50] The clinical evidence being
+
+scarce, it is advisable to keep consumption on the lower side of these recommendations.
+
+If you have cardiovascular health concerns, the long-term implications of regular caffeine intake are
+
+less clear — low to moderate intakes could be safe, but consult your physician first.[48][51]
+
+Caffeine can disrupt sleep when consumed in the evening, or even in the afternoon; even if it does not
+
+prevent you from falling asleep, caffeine will impair the quality of your sleep. In healthy adults, the average
+
+half-life of caffeine falls between 5 and 6 hours, but this number can vary greatly between individuals, from
+
+1.5 to 9.5 hours, because of genetics and other factors — heavy smoking can double the rate of caffeine
+
+metabolism, pregnancy can halve it,[52] etc.[53]
+
+19
+
+ 
+ Digging Deeper: What is “half-life”
+
+In its simplest definition, half-life is the time it takes for a compound to reach half of its initial
+
+concentration in the blood. For example, say you consume one cup of coffee that contains 200
+
+milligrams of caffeine. In 5–6 hours, the caffeine concentration in your blood should drop to 100
+
+milligrams, on average.
+
+Below is an example of a half-life elimination curve. For the hypothetical compound being measured,
+
+it has a half-life elimination rate of 1 hour. This means that for every hour that goes by its
+
+concentration in the bloodstream is reduced by 50%.
+
+Half-life elimination curve
+
+Adapted from: Hallare et al. StatPearls. 2020.[54]
+
+Picrorhiza Kurroa
+
+What makes Picrorhiza kurroa a promising
+option
+
+20
+
+ 
+In Ayurvedic medicine, _Picrorhiza kurroa _is a liver tonic. Picroliv, its bioactive compound, is composed of
+
+picroside I and picroside II.
+
+Picrorhiza kurroa has antioxidant properties, can improve the flow of bile (a digestive fluid secreted by the
+
+liver), and might reduce fat accumulation in the liver. In animal studies, it was more effective than milk
+
+thistle at protecting the liver against all kinds of toxins, including death cap mushroom (Amanita
+
+phalloides). Milk thistle, however, is backed by more human studies.
+
+Picrorhiza kurroa is an endangered plant. Should you decide to take it, seek out a company that focuses on
+
+plant sustainability.
+
+How to take Picrorhiza kurroa
+
+Choose a Picrorhiza kurroa extract standardized for its picroliv content. Take 12 mg of picroliv per
+
+kilogram of bodyweight per day (5.4 mg/lb/day) in three divided doses, with or without food.
+
+Daily Picrorhiza kurroa intake by bodyweight
+
+POUNDS
+
+KILOGRAMS
+
+PER DOSE (mg)
+
+TOTAL INTAKE (mg)
+
+100
+
+125
+
+150
+
+175
+
+200
+
+225
+
+250
+
+275
+
+45
+
+57
+
+68
+
+79
+
+91
+
+102
+
+113
+
+125
+
+Spirulina
+
+180
+
+230
+
+270
+
+315
+
+365
+
+400
+
+450
+
+500
+
+540
+
+685
+
+815
+
+950
+
+1,090
+
+1,225
+
+1,355
+
+1,500
+
+What makes spirulina a promising option
+
+Spirulina, a protein-rich blue-green algae, has been shown to reduce inflammation and oxidative stress.
+
+Moreover, one of its bioactive compounds, c-phycocyanin, is a bile acid mimetic, which is why spirulina
+
+supplementation is thought to mimic Gilbert’s Syndrome, a medical condition characterized by high levels
+
+of bile acids in the body. Elevated bile acid levels are associated with a reduced risk of obesity, diabetes,
+
+and cardiovascular complications. People with Gilbert's Syndrome tend to have longer lifespans.
+
+Preliminary evidence suggests that spirulina might help treat hepatitis C and nonalcoholic fatty liver disease
+
+(NAFLD).
+
+21
+
+ 
+Spirulina vs. _non-alcoholic fatty liver disease_ (NAFLD)
+
+Reference: Ferreira-Hermosillo et al. J Med Case Rep. 2010.[55]
+
+How to take spirulina
+
+Take 1.5–8 g of spirulina per day, with or without food. Spirulina is available as bulk powder, as powder in
+
+capsules, and in tablet form.
+
+22
+
+Unproven Supplements
+
+Of the supplements we have reviewed, none currently fit the above description.
+
+23
+
+Inadvisable Supplements
+
+Alcohol
+
+The amount of alcohol to consume for optimal liver health is likely close to none (or in more translatable
+
+terms, drinking very infrequently). Yet, many people enjoy having a drink, so it's important to understand
+
+how to do so in a way that minimizes potentially harmful effects.
+
+There are two important factors to consider when it comes to alcohol intake: amount and time.
+
+1.  A moderate drinking amount is considered up to 1 drink per day for females and up to 2 drinks per
+
+day for males. For reference, 1 drink is typically 355 mL (12 oz) of 5% alcohol beer, 150 mL (5 oz)
+
+of 12.5% wine, or 45 mL (1.5 oz) of drinks with a higher (≥30%) alcohol content.
+
+2.  Spreading your alcohol intake over a longer period of time will be less taxing to your liver.
+
+Consuming 2 drinks in under 30 minutes will be more harmful compared to consuming the same
+
+amount over an hour or two.
+
+As a general rule of thumb, if you wake up with a hangover you’ve almost certainly drank too much alcohol.
+
+24
+
+FAQ
+
+Q. What about the supplements not covered in
+this guide?
+
+Our guides are regularly updated, often with new supplements. We prioritize assessing (and reassessing)
+
+the most popular of them and those most likely to work. However, if there is a specific supplement you’d
+
+like to see covered in a future update, please let us know by filling out this survey.
+
+Q. Can I add a supplement not covered in this
+guide to my combo?
+
+Supplement with your current combo for a few weeks before attempting any change. Talk to your physician
+
+and research each potential addition. Check for known negative interactions with other supplements and
+
+pharmaceuticals in your current combo, but also for synergies. If two supplements are synergistic or
+
+additive in their effects, you might want to use lower doses of each.
+
+Q. Can I modify the recommended doses?
+
+If a supplement has a recommended dose range, stay within that range. If a supplement has a precise
+
+recommended dose, stay within 10% of that dose. Taking more than recommended could be
+
+counterproductive or even dangerous. Taking less could render the supplement ineffective, yet starting with
+
+half the regular dose could be prudent — especially if you know you tend to react strongly to supplements
+
+or pharmaceuticals.
+
+Q. At what time should I take my supplements?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Starting with half the regular dose can help
+
+minimize the harm a supplement may cause when taken during the day (e.g., fatigue) or in the evening (e.g.,
+
+insomnia).
+
+Q. Should I take my supplements with or
+without food?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Besides, a supplement’s digestion, absorption,
+
+and metabolism can be affected differently by different foods. Fat-soluble vitamins (A, D, E, K), for
+
+instance, are better absorbed with a small meal containing fat than with a large meal containing little to no
+
+fat.
+
+25
+
+ 
+Q. What are DRI, RDA, AI, and UL?
+
+The Dietary Reference Intakes (DRIs) is a system of nutrition recommendations designed by the Institute of
+
+Medicine (a US institution now known as the Health and Medicine Division). RDA, AI, and UL are part of this
+
+system.
+
+Contrary to what the name suggests, a Recommended Dietary Allowance (RDA) doesn’t represent
+
+an ideal amount; it represents the minimum you need in order to avoid deficiency-related health
+
+issues. More precisely, it represents an amount just large enough to meet the minimum requirements
+
+of 97.5% of healthy males and females over all ages — which implies that the RDA is too low for
+
+2.5% of healthy people.
+
+The Adequate Intake (AI) is like the RDA, except that the number is more uncertain.
+
+The Tolerable Upper Intake Level (UL) is the maximum safe amount. More precisely, it is the
+
+maximum daily amount deemed to be safe for 97.5% of healthy males and females over all ages —
+
+which implies that the UL is too high for 2.5% of healthy people.
+
+As a general rule, a healthy diet should include at least the RDA of each nutrient — but less than this
+
+nutrient’s UL. This rule has many exceptions, though. For instance, people who sweat more need more salt
+
+(i.e., sodium), whereas people who take metformin (a diabetes medicine) need more vitamin B12.
+
+Moreover, the DRIs are based on the median weight of adults and children in the United States. Everything
+
+else being equal (notably age, sex, and percentage of body fat), you likely need a lesser amount of
+
+nutrients if you weigh less, and vice versa if you weigh more. The numbers, however, are not proportional
+
+— if only because the brains of two people of very different weights have very similar needs. So you can’t
+
+just double your RDIs for each nutrient if you weigh twice as much as the median adult of your age and sex
+
+(even if we overlook that people weighing the same can differ in many respects, notably body fat).
+
+Q. Why take NAC to make glutathione? Why not
+take glutathione directly?
+
+Oral glutathione gets digested into its constituent amino acids: cysteine, glycine, and glutamic acid. Of
+
+those three, cysteine is the rate-limiting factor in endogenous glutathione production. Oral N-Acetylcysteine
+
+(NAC) is simply a more efficient (and cheaper) way of providing your body with cysteine. Multiple studies
+
+have reported greater increases in circulating glutathione from oral NAC than from (an equal dose of) oral
+
+glutathione.
+
+Q. I don’t have any liver problems, can I still
+supplement for general liver health?
+
+A supplement will not make a liver that is neither damaged nor diseased “even healthier”. If you are into
+
+preventive supplementation, just take this guide’s core supplement (SAMe).
+
+Q. A lot of spirulina is farm-grown and
+
+26
+
+harvested. How do I know it is safe?
+
+Spirulina is considered a food grade product and is generally rigorously tested. For example, it undergoes
+
+microbiological and chemical composition tests as well as tests for contaminants like heavy metals,
+
+pesticides, and extraneous materials.
+
+That being said, here’s a list of steps you can take to find a high quality spirulina supplement.
+
+Q. What are some of the dietary
+recommendations for people with NAFLD?
+
+Since there are no approved medicines to treat nonalcoholic fatty liver disease (NAFLD), lifestyle and
+
+dietary recommendations are the staple.[56] Recommendations include:[57]
+
+Reducing bodyweight by 7–10%
+
+Reducing saturated fat to less than 7% of total calories
+
+Minimizing trans fat intake
+
+Minimizing sugar intake
+
+Maintaining cholesterol intake below 200 milligrams per day
+
+Keeping fat intake to 25–35% of caloric intake
+
+A simpler guideline is to follow a Mediterranean-type diet with emphasis on legumes, fruits, vegetables, fish,
+
+nuts, whole grains, with or without caloric restriction.[58]
+
+Q. What about detox diets and cleanses?
+
+Despite their popularity, “detox diets” are not backed by the evidence, nor are they even based on
+
+scientifically sound principles.
+
+While your body can accumulate toxicants, detox diets aren’t supported by toxicological mechanisms or
+
+trial evidence, and they can occasionally be dangerous. Your liver, lungs, kidneys, and other organs work
+
+nonstop to “detoxify” you; a diet rich in protein, vegetables, and fruits will provide them with the nutrients
+
+they need to properly function.
+
+27
+
+References
+
+1.   Liangyou Rui Energy metabolism in the liver. Compr Physiol. (2014 Jan)
+
+2.   Elijah Trefts, Maureen Gannon, David H Wasserman The liver. Curr Biol. (2017 Nov 6)
+
+3.   Grant DM Detoxification pathways in the liver. J Inherit Metab Dis. (1991)
+
+4.   Hodges RE, Minich DM Modulation of Metabolic Detoxification Pathways Using Foods and Food-Derived Components: A
+
+Scientific Review with Clinical Application. J Nutr Metab. (2015)
+
+5.   William S Blaner, Yang Li, Pierre-Jacques Brun, Jason J Yuen, Seung-Ah Lee, Robin D Clugston Vitamin A Absorption, Storage
+
+and Mobilization. Subcell Biochem. (2016)
+
+6.   Eve A Roberts, Bibudhendra Sarkar Liver as a key organ in the supply, storage, and excretion of copper. Am J Clin Nutr. (2008
+
+Sep)
+
+7.   Kodicek E. Storage of Vitamins in Liver. Proc Nutr Soc. (1954 SEP)
+
+8.   Stefano Bellentani The epidemiology of non-alcoholic fatty liver disease. Liver Int. (2017 Jan)
+
+9.   Matthew M Yeh, Elizabeth M Brunt Pathological features of fatty liver disease. Gastroenterology. (2014 Oct)
+
+10.   Mark Benedict, Xuchen Zhang Non-alcoholic fatty liver disease: An expanded review. World J Hepatol. (2017 Jun 8)
+
+11.   Paola Loria, Amedeo Lonardo, Frank Anania Liver and diabetes. A vicious circle. Hepatol Res. (2013 Jan)
+
+12.   Mitchell R McGill The past and present of serum aminotransferases and the future of liver injury biomarkers. EXCLI J. (2016 Dec
+
+15)
+
+13.   Pierre Bedossa, Christine Poitou, Nicolas Veyrie, Jean-Luc Bouillot, Arnaud Basdevant, Valerie Paradis, Joan Tordjman, Karine
+Clement Histopathological algorithm and scoring system for evaluation of liver lesions in morbidly obese patients. Hepatology.
+(2012 Nov)
+
+14.   Alastair D Burt, Carolin Lackner, Dina G Tiniakos Diagnosis and Assessment of NAFLD: Definitions and Histopathological
+
+Classification. Semin Liver Dis. (2015 Aug)
+
+15.   J K Limdi, G M Hyde Evaluation of abnormal liver function tests. Postgrad Med J. (2003 Jun)
+
+16.   Shivaraj Gowda, Prakash B Desai, Vinayak V Hull, Avinash A K Math, Sonal N Vernekar, Shruthi S Kulkarni A review on
+
+laboratory liver function tests. Pan Afr Med J. (2009 Nov 22)
+
+17.   Christiana Lucas, Georgia Lucas, Nicholas Lucas, Joanna Krzowska-Firych, Krzysztof Tomasiewicz A systematic review of the
+
+present and future of non-alcoholic fatty liver disease. Clin Exp Hepatol. (2018 Sep)
+
+18.   Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes and its Panel on Folate,
+
+Other B Vitamins, and Choline Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B 6, Folate, Vitamin B 12,
+Pantothenic Acid, Biotin, and Choline.
+
+19.   Federico Salomone, Fabio Galvano, Giovanni Li Volti Molecular Bases Underlying the Hepatoprotective Effects of Coffee.
+
+Nutrients. (2017 Jan 23)
+
+20.   Sung Gon Shim, Dae Won Jun, Eun Kyung Kim, Waqar Khalid Saeed, Kang Nyeong Lee, Hang Lak Lee, Oh Young Lee, Ho Soon
+Choi, Byung Chul Yoon Caffeine attenuates liver fibrosis via defective adhesion of hepatic stellate cells in cirrhotic model. J
+Gastroenterol Hepatol. (2013 Dec)
+
+21.   Erikka Loftfield, Meredith S Shiels, Barry I Graubard, Hormuzd A Katki, Anil K Chaturvedi, Britton Trabert, Ligia A Pinto, Troy J
+
+Kemp, Fatma M Shebl, Susan T Mayne, Nicolas Wentzensen, Mark P Purdue, Allan Hildesheim, Rashmi Sinha, Neal D Freedman
+Associations of Coffee Drinking with Systemic Immune and Inflammatory Markers. Cancer Epidemiol Biomarkers Prev. (2015
+Jul)
+
+22.   Fen Liu, Xiwei Wang, Gang Wu, Ling Chen, Peng Hu, Hong Ren, Huaidong Hu Coffee Consumption Decreases Risks for Hepatic
+
+Fibrosis and Cirrhosis: A Meta-Analysis. PLoS One. (2015 Nov 10)
+
+23.   Stefano Marventano, Federico Salomone, Justyna Godos, Francesca Pluchinotta, Daniele Del Rio, Antonio Mistretta, Giuseppe
+Grosso Coffee and tea consumption in relation with non-alcoholic fatty liver and metabolic syndrome: A systematic review and
+meta-analysis of observational studies. Clin Nutr. (2016 Dec)
+
+24.   Karn Wijarnpreecha, Charat Thongprayoon, Patompong Ungprasert Coffee consumption and risk of nonalcoholic fatty liver
+
+disease: a systematic review and meta-analysis. Eur J Gastroenterol Hepatol. (2017 Feb)
+
+25.   O J Kennedy, P Roderick, R Buchanan, J A Fallowfield, P C Hayes, J Parkes Systematic review with meta-analysis: coffee
+
+consumption and the risk of cirrhosis. Aliment Pharmacol Ther. (2016 Mar)
+
+26.   Veeravich Jaruvongvanich, Anawin Sanguankeo, Nattawat Klomjit, Sikarin Upala Effects of caffeine consumption in patients
+
+with chronic hepatitis C: A systematic review and meta-analysis. Clin Res Hepatol Gastroenterol. (2017 Feb)
+
+27.   Karn Wijarnpreecha, Charat Thongprayoon, Patompong Ungprasert Impact of caffeine in hepatitis C virus infection: a
+
+systematic review and meta-analysis. Eur J Gastroenterol Hepatol. (2017 Jan)
+
+28.   Yong-Ping Chen, Feng-Bin Lu, Yi-Bing Hu, Lan-Man Xu, Ming-Hua Zheng, En-De Hu A systematic review and a dose-response
+
+meta-analysis of coffee dose and nonalcoholic fatty liver disease. Clin Nutr. (2019 Dec)
+
+28
+
+29.   Abhishek Bhurwal, Puru Ratta, Sho Yoshitake, Lauren Pioppo, Debashish Reja, Peter Dellatore, Vinod Rustgi Inverse Association
+
+of Coffee with Liver Cancer Development: An Updated Systematic Review and Meta-analysis. J Gastrointestin Liver Dis. (2020
+Aug 19)
+
+30.   Takashi Tamura, Asahi Hishida, Kenji Wakai Coffee consumption and liver cancer risk in Japan: a meta-analysis of six
+
+prospective cohort studies. Nagoya J Med Sci. (2019 Feb)
+
+31.   Oliver John Kennedy, Paul Roderick, Ryan Buchanan, Jonathan Andrew Fallowfield, Peter Clive Hayes, Julie Parkes Coffee,
+including caffeinated and decaffeinated coffee, and the risk of hepatocellular carcinoma: a systematic review and dose-
+response meta-analysis. BMJ Open. (2017 May 9)
+
+32.   Francesca Bravi, Alessandra Tavani, Cristina Bosetti, Paolo Boffetta, Carlo La Vecchia Coffee and the risk of hepatocellular
+
+carcinoma and chronic liver disease: a systematic review and meta-analysis of prospective studies. Eur J Cancer Prev. (2017
+Sep)
+
+33.   Chengbo Yu, Qing Cao, Ping Chen, Shigui Yang, Min Deng, Yugang Wang, Lanjuan Li An updated dose-response meta-
+
+analysis of coffee consumption and liver cancer risk. Sci Rep. (2016 Dec 2)
+
+34.   Manav Wadhawan, Anil C Anand Coffee and Liver Disease. J Clin Exp Hepatol. (2016 Mar)
+
+35.   Mester R, Toren P, Mizrachi I, Wolmer L, Karni N, Weizman A Caffeine withdrawal increases lithium blood levels. Biol Psychiatry.
+
+(1995 Mar 1)
+
+36.   McCusker RR, Goldberger BA, Cone EJ Caffeine content of energy drinks, carbonated sodas, and other beverages. J Anal
+
+Toxicol. (2006 Mar)
+
+37.   Desbrow B, Hall S, Irwin C Caffeine content of Nespresso® pod coffee. Nutr Health. (2019 Mar)
+
+38.   Ludwig IA, Mena P, Calani L, Cid C, Del Rio D, Lean ME, Crozier A Variations in caffeine and chlorogenic acid contents of
+
+coffees: what are we drinking?. Food Funct. (2014 Aug)
+
+39.   Fox GP, Wu A, Yiran L, Force L Variation in caffeine concentration in single coffee beans. J Agric Food Chem. (2013 Nov 13)
+
+40.   McCusker RR, Goldberger BA, Cone EJ Caffeine content of specialty coffees. J Anal Toxicol. (2003 Oct)
+
+41.   Angeloni G, Guerrini L, Masella P, Bellumori M, Daluiso S, Parenti A, Innocenti M What kind of coffee do you drink? An
+
+investigation on effects of eight different extraction methods. Food Res Int. (2019 Feb)
+
+42.   K Ramalakshmi, B Raghavan Caffeine in coffee: its removal. Why and how?. Crit Rev Food Sci Nutr. (1999 Sep)
+
+43.   C Cavin, D Holzhaeuser, G Scharf, A Constable, W W Huber, B Schilter Cafestol and kahweol, two coffee specific diterpenes
+
+with anticarcinogenic activity. Food Chem Toxicol. (2002 Aug)
+
+44.   Apurva A Modi, Jordan J Feld, Yoon Park, David E Kleiner, James E Everhart, T Jake Liang, Jay H Hoofnagle Increased
+
+caffeine consumption is associated with reduced hepatic fibrosis. Hepatology. (2010 Jan)
+
+45.   EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA) Safety of caffeine. EFSA Journal. (2015 MAY)
+
+46.   Food and Nutrition Board Caffeine in Food and Dietary Supplements: Examining Safety: Workshop Summary.. The National
+
+Academies Press. (2014 APR)
+
+47.   Nawrot P, Jordan S, Eastwood J, Rotstein J, Hugenholtz A, Feeley M Effects of caffeine on human health. Food Addit Contam.
+
+(2003 Jan)
+
+48.   Wikoff D, Welsh BT, Henderson R, Brorby GP, Britt J, Myers E, Goldberger J, Lieberman HR, O'Brien C, Peck J, Tenenbein M,
+
+Weaver C, Harvey S, Urban J, Doepker C Systematic review of the potential adverse effects of caffeine consumption in healthy
+adults, pregnant women, adolescents, and children. Food Chem Toxicol. (2017 Nov)
+
+49.   Giannelli M, Doyle P, Roman E, Pelerin M, Hermon C The effect of caffeine consumption and nausea on the risk of miscarriage.
+
+Paediatr Perinat Epidemiol. (2003 Oct)
+
+50.   Morgan S, Koren G, Bozzo P Is caffeine consumption safe during pregnancy?. Can Fam Physician. (2013 Apr)
+
+51.   Voskoboinik A, Kalman JM, Kistler PM Caffeine and Arrhythmias: Time to Grind the Data. JACC Clin Electrophysiol. (2018 Apr)
+
+52.   Knutti R, Rothweiler H, Schlatter C The effect of pregnancy on the pharmacokinetics of caffeine. Arch Toxicol Suppl. (1982)
+
+53.   Committee on Military Nutrition Research, Food and Nutrition Board Caffeine for the Sustainment of Mental Task Performance:
+
+Formulations for Military Operations.
+
+54.   Jericho Hallare, Valerie Gerriets Half Life.
+
+55.   Ferreira-Hermosillo A, Torres-Duran PV, Juarez-Oropeza MA Hepatoprotective effects of Spirulina maxima in patients with non-
+
+alcoholic fatty liver disease: a case series. J Med Case Rep. (2010 Apr 7)
+
+56.   Kwak MS, Kim D Non-alcoholic fatty liver disease and lifestyle modifications, focusing on physical activity. Korean J Intern
+
+Med. (2018 Jan)
+
+57.   Grundy SM, Cleeman JI, Daniels SR, Donato KA, Eckel RH, Franklin BA, Gordon DJ, Krauss RM, Savage PJ, Smith SC Jr,
+
+Spertus JA, Costa F, American Heart Association, National Heart, Lung, and Blood Institute Diagnosis and management of the
+metabolic syndrome: an American Heart Association/National Heart, Lung, and Blood Institute Scientific Statement. Circulation.
+(2005 Oct 25)
+
+58.   Pérez-Martínez P, Mikhailidis DP, Athyros VG, Bullo M, Couture P, Covas MI, de Koning L, Delgado-Lista J, Díaz-López A,
+
+Drevon CA, Estruch R, Esposito K, Fitó M, Garaulet M, Giugliano D, García-Ríos A, Katsiki N, Kolovou G, Lamarche B, Maiorino MI,
+
+29
+
+Mena-Sánchez G, Muñoz-Garach A, Nikolic D, Ordovás JM, Pérez-Jiménez F, Rizzo M, Salas-Salvadó J, Schröder H, Tinahones
+FJ, de la Torre R, van Ommen B, Wopereis S, Ros E, López-Miranda J Lifestyle recommendations for the prevention and
+management of metabolic syndrome: an international panel recommendation. Nutr Rev. (2017 May 1)
+
+30
+
+

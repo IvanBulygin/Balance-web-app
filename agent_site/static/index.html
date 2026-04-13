@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Balance.ai Project Agent</title>
+<style>
+  :root {
+    --bg: #0a0b10;
+    --panel: #12141c;
+    --border: #232735;
+    --text: #e7e9ee;
+    --muted: #8a93a6;
+    --accent: #7cc4ff;
+    --accent-dim: #2a4763;
+    --user: #1b2330;
+    --bot: #141925;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex; flex-direction: column;
+  }
+  header {
+    padding: 14px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  header .brand { display: flex; align-items: center; gap: 10px; }
+  header .logo {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), #b680ff);
+  }
+  header h1 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+  header .tag { color: var(--muted); font-size: 12px; }
+  .reset {
+    background: transparent; color: var(--muted); border: 1px solid var(--border);
+    padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;
+  }
+  .reset:hover { color: var(--text); border-color: var(--accent-dim); }
+
+  #chat {
+    flex: 1; overflow-y: auto; padding: 24px;
+    max-width: 820px; width: 100%; margin: 0 auto;
+  }
+  .msg { margin: 0 0 16px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); }
+  .msg.user { background: var(--user); }
+  .msg.bot { background: var(--bot); }
+  .msg .role { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+  .msg .content { white-space: pre-wrap; word-wrap: break-word; }
+  .msg .content code { background: #000; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+  .suggestions {
+    display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 12px;
+    max-width: 820px; width: 100%; margin: 0 auto;
+  }
+  .suggestion {
+    background: var(--panel); border: 1px solid var(--border);
+    color: var(--muted); font-size: 13px; padding: 8px 12px;
+    border-radius: 20px; cursor: pointer;
+  }
+  .suggestion:hover { color: var(--text); border-color: var(--accent-dim); }
+
+  form {
+    border-top: 1px solid var(--border); padding: 14px 24px;
+    max-width: 820px; width: 100%; margin: 0 auto; display: flex; gap: 8px;
+  }
+  input[type=text] {
+    flex: 1; padding: 12px 14px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--panel); color: var(--text);
+    font-size: 15px; outline: none;
+  }
+  input[type=text]:focus { border-color: var(--accent); }
+  button.send {
+    padding: 12px 18px; border-radius: 8px; border: 0;
+    background: var(--accent); color: #0b0d12; font-weight: 600; cursor: pointer;
+  }
+  button.send:disabled { opacity: .5; cursor: not-allowed; }
+  .welcome {
+    padding: 32px 24px; max-width: 820px; margin: 0 auto; color: var(--muted);
+  }
+  .welcome h2 { color: var(--text); margin: 0 0 8px; font-size: 20px; }
+  .welcome p { margin: 0 0 12px; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <h1>Balance.ai Project Agent</h1>
+        <span class="tag">grounded in project docs · GPT-4o</span>
+      </div>
+    </div>
+    <button class="reset" id="reset">New conversation</button>
+  </header>
+
+  <div id="chat">
+    <div class="welcome" id="welcome">
+      <h2>Ask me anything about the Balance.ai product.</h2>
+      <p>I'm the single source of truth for the project — architecture, phases, database schema, XP economy, roadmap, competitive positioning. I only answer from the documentation and I'll tell you when something isn't covered.</p>
+    </div>
+  </div>
+
+  <div class="suggestions" id="suggestions">
+    <button class="suggestion">What's in Phase 1A?</button>
+    <button class="suggestion">Show me the user_gamification table schema</button>
+    <button class="suggestion">How much XP for a 7-day streak?</button>
+    <button class="suggestion">How does the InFlow order lifecycle work?</button>
+    <button class="suggestion">What's the cost estimate at 10K users?</button>
+  </div>
+
+  <form id="f">
+    <input id="q" type="text" placeholder="Ask a question..." autocomplete="off" />
+    <button class="send" id="send" type="submit">Send</button>
+  </form>
+
+<script>
+const chat = document.getElementById('chat');
+const form = document.getElementById('f');
+const input = document.getElementById('q');
+const sendBtn = document.getElementById('send');
+const resetBtn = document.getElementById('reset');
+const welcome = document.getElementById('welcome');
+const suggestions = document.getElementById('suggestions');
+
+let history = []; // {role, content}
+
+function add(role, content) {
+  welcome && welcome.remove();
+  const el = document.createElement('div');
+  el.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
+  const r = document.createElement('div');
+  r.className = 'role';
+  r.textContent = role === 'user' ? 'You' : 'Balance.ai Agent';
+  const c = document.createElement('div');
+  c.className = 'content';
+  c.textContent = content;
+  el.appendChild(r);
+  el.appendChild(c);
+  chat.appendChild(el);
+  chat.scrollTop = chat.scrollHeight;
+  return c;
+}
+
+async function sendMessage(text) {
+  if (!text) return;
+  add('user', text);
+  history.push({ role: 'user', content: text });
+  sendBtn.disabled = true;
+  const pending = add('assistant', 'Thinking...');
+  try {
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history }),
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    pending.textContent = data.reply;
+    history.push({ role: 'assistant', content: data.reply });
+  } catch (err) {
+    pending.textContent = 'Error: ' + err.message;
+  } finally {
+    sendBtn.disabled = false;
+    input.focus();
+  }
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const q = input.value.trim();
+  input.value = '';
+  sendMessage(q);
+});
+
+suggestions.addEventListener('click', (e) => {
+  const btn = e.target.closest('.suggestion');
+  if (!btn) return;
+  sendMessage(btn.textContent);
+});
+
+resetBtn.addEventListener('click', () => {
+  history = [];
+  chat.innerHTML = '';
+  chat.appendChild(welcome ? welcome : document.createElement('div'));
+  location.reload();
+});
+
+input.focus();
+</script>
+</body>
+</html>

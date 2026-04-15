@@ -49,18 +49,20 @@ state: dict[str, Any] = {}
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    if not INDEX_PATH.exists():
-        raise RuntimeError(
-            f"Missing {INDEX_PATH}. Run `python build_index.py` before starting."
-        )
-    with INDEX_PATH.open("rb") as f:
-        data = pickle.load(f)
-    state["chunks"] = data["chunks"]
-    state["matrix"] = data["matrix"]  # (N, 1536) pre-normalized float32
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY not set")
     state["client"] = OpenAI(api_key=api_key)
+
+    if not INDEX_PATH.exists():
+        print(f"No index found at {INDEX_PATH}. Building on first boot...")
+        import build_index  # local module, same directory
+        build_index.main()
+
+    with INDEX_PATH.open("rb") as f:
+        data = pickle.load(f)
+    state["chunks"] = data["chunks"]
+    state["matrix"] = data["matrix"]  # (N, 1536) pre-normalized float32
     print(f"Loaded index: {state['matrix'].shape[0]} chunks")
     yield
 

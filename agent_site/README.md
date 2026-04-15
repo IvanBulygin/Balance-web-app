@@ -5,6 +5,9 @@ ask product questions (phases, database schema, XP economy, roadmap, cost
 estimates) and get answers grounded in the project documentation — with the
 same Core Rule behavior as the agent in Claude.ai.
 
+Powered by **Anthropic Claude** (`claude-sonnet-4-6`). Requires an
+Anthropic API key (get one at <https://console.anthropic.com>).
+
 ## What's in here
 
 | File | Purpose |
@@ -31,7 +34,7 @@ They're independent services. Deploy either, both, or neither.
 1. <https://dashboard.render.com> → sign up with GitHub.
 2. **New → Blueprint**.
 3. Select this repo. Render detects `agent_site/render.yaml`.
-4. Paste **OPENAI_API_KEY** when prompted.
+4. Paste **ANTHROPIC_API_KEY** when prompted.
 5. **Apply**. Build + start in ~2 min.
 6. Live at `https://balance-ai-project-agent.onrender.com` (or similar).
 
@@ -41,7 +44,7 @@ Free tier sleeps after 15 min idle. Starter ($7/mo) is always-on.
 
 1. <https://railway.app> → New Project → from GitHub repo.
 2. Set **Root Directory** to `agent_site`.
-3. Add env var `OPENAI_API_KEY`.
+3. Add env var `ANTHROPIC_API_KEY`.
 4. Generate a public domain in service settings.
 
 ## Run locally
@@ -50,7 +53,7 @@ Free tier sleeps after 15 min idle. Starter ($7/mo) is always-on.
 cd agent_site
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # edit, paste your OPENAI_API_KEY
+cp .env.example .env   # edit, paste your ANTHROPIC_API_KEY
 uvicorn app:app --reload
 ```
 
@@ -64,7 +67,8 @@ reads the prompt from memory at startup.
 ## Cost & limits
 
 - Each message: ≈ 3–6k input tokens (the full system prompt) + ≤1k output.
-  At GPT-4o pricing that's ≈ $0.02–0.03 per reply.
+  At Claude Sonnet 4.6 pricing that's ≈ $0.01–0.03 per reply. Enable
+  prompt caching later to cut the system-prompt cost by ~90%.
 - No streaming — replies return all at once.
 - No persistence — history lives in the browser tab only.
 - Conversation capped at last 30 turns sent to the model.

@@ -1,7 +1,7 @@
 envVarGroups:
   - name: balance-ai-secrets
     envVars:
-      - key: OPENAI_API_KEY
+      - key: ANTHROPIC_API_KEY
         sync: false
 
 services:
@@ -18,15 +18,9 @@ services:
       - key: PYTHON_VERSION
         value: "3.11"
 
-  - type: web
-    name: balance-ai-rag-demo
-    runtime: python
-    rootDir: rag_demo
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
-    autoDeploy: true
-    envVars:
-      - fromGroup: balance-ai-secrets
-      - key: PYTHON_VERSION
-        value: "3.11"
+# rag_demo/ is intentionally NOT in this Blueprint.
+# It needs an embeddings provider, and Anthropic does not offer one.
+# To deploy rag_demo separately, either:
+#   1. Add OPENAI_API_KEY + re-add the service here, or
+#   2. Migrate rag_demo to use Voyage AI (Anthropic's recommended embeddings
+#      partner) + add VOYAGE_API_KEY.

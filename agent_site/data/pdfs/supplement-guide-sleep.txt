@@ -1,0 +1,1952 @@
+Sleep Supplement Guide
+
+Written By: Wyatt Brown, Antonis Damianou, & Michael Hull
+
+Edited By: Molly Gregas
+
+Reviewed By: Wyatt Brown, & Molly Gregas
+
+Table of Contents
+
+Introduction
+
+Combos
+
+Primary Supplements
+
+Secondary Supplements
+
+Promising Supplements
+
+Unproven Supplements
+
+Inadvisable Supplements
+
+FAQ
+
+2
+
+Introduction
+
+Nearly twenty years ago, as a young pup researching weightlifting out of my dorm room, I suddenly
+
+reached my limit. I thought I knew everything about weights and nutrition (ha!) and it was time to move on
+
+to the next topic: sleep science. So I bought an accelerometer-equipped sleep watch on this cool new site
+
+called “eBay”.
+
+Oh my. I was a mild data nerd before then, but the watch turned me into a level 10 nerd. When I got even a
+
+bit less sleep, it was highly correlated with lower test scores, more stress, and…gym plateaus! Sleep
+
+seemed to be more influential than how much protein I got, what my lifting routine was, and pretty much
+
+anything else.
+
+ Digging Deeper: Sleep tracking? There’s an app for that
+
+In the late 1990s, accelerometer-equipped watches became available for sleep tracking. They weren’t
+
+used for clinical sleep assessment — for which dedicated home devices,[1] clunkier but more
+
+accurate, had recently become available to physicians — but they did provide the curious average
+
+person with some sleep data.
+
+Fast forward a couple decades, and now anyone with a smartphone can use its accelerometer to
+
+track sleep, using cheap or free apps. But are these apps accurate? Can they really tell you how
+
+much time you spend in the different stages of sleep[2] or how efficient your sleep was? Well,
+
+according to a recent study…no, not really.[3]
+
+Still, those apps might bring potential problems to your attention (e.g., if you learn that you get up at
+
+the same time every night, you can try to understand why). They may also, very simply, keep you
+
+invested in maintaining healthy sleep patterns.
+
+There is anecdotal evidence that a smartphone will track your sleep more accurately if you strap it to
+
+your arm or leg rather than lay it on your bed (especially if your bed is of the memory-foam variety).
+
+But if you want better data, you can purchase a fitness device. Not all such devices will be equally
+
+accurate, however, and any study on a given device is likely to have been funded by the device’s
+
+manufacturer.[4] (Industry funding does notdisqualify a study, but an industry-funded study is less
+
+likely to get published if it doesn’t produce favorable results.)
+
+The problem
+
+Lack of sleep can negatively affect every aspect of your life, including your general fitness. Lack of sleep
+
+impairs athletic performance, in both the short term[5][6] and the long term, and it does so in several ways,
+
+with some more obvious than others:
+
+Impaired skill acquisition. Your ability to build specific brain-muscle connections (for example, to play the violin or
+throw a ball accurately) decreases with sleep deprivation, possibly due to a decrease in myelin production.[7]
+Moreover, to build the right brain-muscle connections, you need to repeat the right moves, a task that becomes
+harder if your focus is impaired.
+
+3
+
+Impaired focus.[8] Problems in concentration affect not only mental tasks, such as taking an exam or planning a
+project, but also physical ones. You simply can’t give your all if you’re not really “there” when you train or compete.
+
+Increased inflammation.[9][10] Not only does this lead to an increased risk of injury, but even low-level pain[11] will
+worsen your mood, foster mental and physical fatigue (you’ll tire out even sooner, at work and at play), and further
+impair your focus.
+
+Impaired insulin signaling. This leads to impaired glucose metabolism.[6][12][13][14][15] Glucose, also known as blood
+sugar, is a main source of energy; if you cannot burn this fuel efficiently, you’ll tire sooner (and risk developing
+diabetes,[16][17][18] to boot).
+
+Impaired cardiovascular health. If you don’t get enough sleep, you’re at a higher risk for cardiovascular disease.[19]
+Impaired glucose metabolism is one of the probable causes.
+
+Impaired muscle gain. You’ve probably heard that “you grow when you sleep”. In truth, we’re still not quite sure that
+more muscle is built during sleep than during waking hours, but we do know that lack of sleep impairs muscle gain.[6]
+The reasons are complex; they include a decrease in testosterone production[20][21][22][23][24] and, as we mentioned, an
+increase in fatigue (if you can’t exercise as hard, or as long, you limit your potential for muscle growth).
+
+How lack of sleep affects you
+
+4
+
+Wow. Is that all? Not quite. In addition to a decrease in athletic performance per se, lack of sleep also
+
+causes an increase in fat gain. And isn’t that unfair? If you spend more time awake, shouldn’t you burn more
+
+calories? And isn’t burning more calories what fat burning is all about? So why does study after study show
+
+that you gain fat as you lose sleep?[25]
+
+The main reason is simple: as you sleep less, you eat more. Even partial sleep deprivation can cause a 20%
+
+increase in voluntary energy intake.[15] It also causes your body to burn less fat and more muscle (which is
+
+yet another reason why lack of sleep impairs muscle growth).[25]
+
+Now I hope that all this bad news won’t keep you awake at night, or I’ve just become part of the problem!
+
+There are two big reasons why people don’t get enough sleep, and stress is one of them. The other reason
+
+is that many people simply don’t schedule enough time for sleep on a daily basis, instead hoping to “catch
+
+up” during the weekend (a strategy with very limited efficacy). Other reasons, which are less widespread
+
+but harder to address, include pain,[26][27] sleep apnea, and the forms of insomnia not related to stress.
+
+Vicious cycle of staying up late and feeling crappy
+
+The solutions
+
+So what can you do about it? Let’s be blunt: all a supplement can do is help you fall asleep, help you stay
+
+asleep, and help you sleep better. No supplement is going to knock you out, and of course, no supplement
+
+will pack 8 hours of sleep into 5 hours.
+
+If you want your sleep to improve, you’ll have to work with your supplements, not against them. You won’t
+
+like it, but here it is:
+
+5
+
+First, you need to schedule enough time for sleep each day.
+
+Second, you should try going to bed at the same time every day, even during the weekend, because this
+
+habit both improves sleep quality and reduces sleep onset latency (i.e., the time it takes you to fall asleep).
+
+Third, for at least 1 hour before bed, you need to relax and avoid sources of blue light.
+
+Blue light (which is produced by most screens as well as by the sun) can keep you awake even after you
+
+turn it off; and even after you fall asleep, it can still reduce your body’s production of melatonin, thus
+
+decreasing the quality of your sleep.
+
+Effect of light on melatonin production
+
+Reference: Kayumov et al. J Clin Endocrinol Metab. 2005.[28]
+
+Because playing intense games and answering emails tend to stimulate your brain, those activities are less
+
+than ideal near bedtime. Still, if you really need to use your phone, tablet, or computer at night, consider
+
+using a program that reddens your screen light after sunset. Or, if you cannot easily adjust the color
+
+balance of your screen, start wearing blue-light-blocking glasses a couple of hours before bedtime.
+
+6
+
+ Tip: What should you avoid doing before bed?
+
+If you ask people what they’d like to do before bed, you might hear answers such as meditate, read a
+
+book, or share some special time with their partner. But in reality, texting, playing games, or working
+
+is becoming more prevalent by the year, to the probable detriment of sleep quality.[29]
+
+Aside from fiendishly typing and checking social media, are there any other activities you should
+
+avoid to get a sound night’s sleep?
+
+Eating right before bed is often targeted as a sleep killer. But the evidence is more nuanced; in some
+
+people, consuming small amounts of food (such as a glass of milk or a small snack) can benefit
+
+sleep.[30] Nighttime exercise is another frowned-upon activity, yet recent trial[31] and survey[32]
+
+evidence has shown a potential influence on sleep.
+
+As it stands, more than what your pre-bed activities are, what’s likely to hurt your sleep at that time
+
+is excess light exposure. The bright lights of a gym will have this effect, but so will using a tablet — a
+
+light-emitting device — rather than reading a printed book.[33][34]
+
+All set? Ok, after the eyes, let’s focus on the ears. Noise can both reduce sleep quality and make it harder to
+
+fall asleep,[35][36][37] so minimize the noise in your bedroom. If that doesn’t suffice, get earplugs, but keep in
+
+mind that earplugs attenuate high frequencies more than they do low frequencies — they may protect you
+
+against cars honking, but not much against traffic rumble.
+
+Noise is bad enough, but heat can be worse.[38] A bedroom warm enough to raise your core temperature can
+
+impair sleep quality and even cause insomnia.[39] Conversely, a bedroom cool enough to lower your core
+
+temperature (but not so chilly as to be uncomfortable) will help you fall asleep faster and enter the deeper
+
+stages of sleep sooner.[40] An instinctive desire to reduce one’s core temperature also explains why some
+
+people like to keep a foot outside the blanket (the hands and feet are especially good at dissipating body
+
+heat).
+
+There you have it. If anything, supplementation should be considered a solution of last resort, reserved for
+
+people who cannot sufficiently improve their sleep through lifestyle changes. And even if supplements help
+
+you, do not feel that you have to take them daily: if their efficacy seems to wane as weeks go by, try taking
+
+them only 3 to 5 nights per week.
+
+It may take you a couple of months to determine your optimal combination of supplements and a couple
+
+more months to ascertain your best supplementation schedule. Every few months afterward, consider
+
+pausing supplementation to determine whether your nonsupplemented sleep quality has improved.
+
+7
+
+10 Tips for better sleep
+
+Kamal Patel, Co-founder and Director
+
+MBA, MPH, PhD(c) in Nutrition
+
+8
+
+Combos
+
+Disclaimer about supplement quality
+
+We expect that readers will do their due diligence when choosing products. Depending on the
+
+manufacturer, supplements may have inaccurate labels (i.e., they contain too much or too little of the
+
+ingredients they claim, or in some cases, significant amounts of other ingredients not listed). They may also
+
+contain significant amounts of contaminants such as heavy metals or pesticides. It is also possible for
+
+supplements to contain ingredients that people are commonly allergic to, and it’s important to be aware of
+
+the nonmedicinal ingredients as well. As a brief introduction to vetting manufacturers, we drew up a short
+
+list of steps you should take if a product has caught your interest.
+
+ Tip: Why don’t you recommend brands or specific products?
+
+For two reasons:
+
+We don’t test physical products. What our researchers do — all day, every day — is analyze
+
+peer-reviewed studies on supplements and nutrition.
+
+We go to great lengths to protect our integrity. As you’ve probably noticed, we don’t sell
+
+supplements or even show ads from supplement companies, even though either option would
+
+generate a lot more money than our Supplement Guides ever will — and for a lot less work,
+
+too.
+
+If we recommended any brands or specific products, our integrity would be called into question, so…
+
+we can’t do it.
+
+Core Combo
+
+Start with 0.5 mg (500 μg) of melatonin half an hour before bed. You can increase by 0.5 mg each week
+
+until you find the lowest effective dose that works, but do not exceed 5 mg (5,000 μg). Melatonin can also
+
+help in case of jet lag.
+
+9
+
+ Tip: Try one combo alone for a few weeks
+
+Taking too many supplements all at once may prevent you from determining which ones are truly
+
+working. Start with just one of the combos suggested here for a couple of weeks before you
+
+consider making any modification, such as adding another supplement, altering a supplement
+
+dosage, or incorporating the supplements from an additional combo.
+
+When adding another supplement to your regimen, be methodical. For example, you may want to
+
+take all the supplements from two combos. Select the combo that you wish to try first and take this
+
+for a couple of weeks. Then, add one supplement from the second combo and wait another week to
+
+see how it affects you. Continue this process until you’ve added all the supplements on your list.
+
+If a supplement appears in two combos you wish to combine, don’t stack the doses; instead,
+
+combine the ranges. For instance, if the range is 2–4 mg in one combo and 3–6 mg in the other, your
+
+new range becomes 2–6 mg. Always start with the lower end of the range — especially in this case,
+
+because the reason why one of the ranges has a lower ceiling in one combo may be due to a synergy
+
+with another supplement in the same combo. Reading through the full supplement entry may help
+
+you decide which dose to aim for, but if you’re not sure, lower is usually safer.
+
+Specialized Combos
+
+For people with anxiety and intrusive thoughts
+
+A healthy diet that provides sufficient nutrients and the aforementioned lifestyle changes are essential
+
+before taking more and more herbal supplements. If you have anxiety, it is highly recommended to seek
+
+treatment by a healthcare professional.
+
+Once that is addressed, in addition to melatonin:
+
+Take 80 mg of Silexan™ (a lavender oil preparation standardized for the active component linalool at 25%–
+
+46% of total weight) 30–45 minutes before bed. After 2 weeks, if no benefit has been observed, the dose
+
+can be increased to 160 mg (this is the maximum dose). Lavender can also be used as aromatherapy but is
+
+less reliable than the oral preparation.
+
+If lavender oil proves insufficient on its own:
+
+Add ashwagandha at a dose of 250 mg/day, split between two doses in the morning and evening (i.e., two
+
+doses of 125 mg each), and then increase to 600 mg/day if sleep doesn’t improve noticeably after 2 weeks.
+
+If the combination of lavender oil and ashwagandha proves to be insufficient on its own:
+
+Take 600 mg of Melissa officinalis, powder on the first day, and slowly increase to 1,200 mg by the end of
+
+the first week. If that amount proves to be insufficient, higher doses may be helpful, but at this point, it is
+
+important to note that herbs can interact negatively with each other and with medications, and the more
+
+you take of the aforementioned herbs, the greater the theoretical risk becomes.
+
+10
+
+What has changed since the last time?
+
+Changed position
+
+It should be noted that we changed the names of our ranking categories. “Core” (the highest) is now
+
+“primary”; “primary” is now “secondary”; and “secondary” is now “promising”. These changes have already
+
+been implemented for some guides, but this is the first update to the Sleep Guide that uses this new
+
+terminology. For example, if it was a core supplement in the previous issue and now it’s a secondary
+
+supplement in this issue, we’ll say that it was a primary supplement in the previous issue and is now a
+
+secondary supplement.
+
+Added:
+
+L-theanine
+
+Ashwagandha
+
+L-tryptophan
+
+Changed ranking:
+
+Melatonin
+
+Downgraded from primary to secondary. Although it is highly likely that melatonin can have a positive
+
+effect on sleep, the actual effects are generally small, and it may not help in some contexts.
+
+Magnesium
+
+Downgraded from secondary to unproven. Although the mechanistic plausibility is very high, and evidence
+
+is supportive, magnesium still has insufficient research according to our new standards.
+
+Glycine
+
+Downgraded from promising to unproven. Similar story to magnesium.
+
+Valerian
+
+Downgraded from promising to unproven. Although it is mechanistically plausible, the evidence is heavily
+
+mixed, and the best evidence generally suggests that if there is an effect, it is a small and unreliable one.
+
+Participants in studies do report better subjective sleep quality after taking it, but objective sleep measures
+
+don’t appear to be convincingly improved.
+
+Outcomes/methods glossary
+
+Sleep (onset) latency: the amount of time it takes to fall asleep after laying down with the intention to sleep
+
+imminently.
+
+Sleep efficiency: the percentage of time spent sleeping while in bed.
+
+Sleep duration: the amount of time spent sleeping
+
+Sleep quality: can refer to a number of different measures of sleep, especially how restful sleep is.
+
+Actigraphy: a method of objectively measuring activity during sleep using a device worn on the wrist.
+
+11
+
+Primary Supplements
+
+There aren’t any supplements that we know of that have a considerable benefit, a high degree of evidence,
+
+and are broadly applicable. The secondary and promising supplements in this guide either lack robust
+
+evidence or are more likely to have modest effects on average.
+
+12
+
+Secondary Supplements
+
+Lavender
+
+What makes lavender a secondary supplement
+
+Lavender (Lavandula) is used in aromatherapy for its relaxing scent. Because of the difficulty of blinding in
+
+aromatherapy studies, a lot of the evidence for lavender’s effects stems from lower-quality studies, but
+
+newer studies have examined oral supplementation to treat anxiety.
+
+Intrusive thoughts can increase the time it takes to fall asleep; lavender can reduce anxiety,[41] promote
+
+relaxation, and have a calming effect on the mind.[42][43][44] Lavender may also improve sleep quality,[45][46][47][48]
+
+and alleviate insomnia,[45][46] though more research is needed to determine the mechanism behind this effect.
+
+Similarly, more research is needed to confirm whether lavender and lemon balm are synergistic.
+
+Studies on oral supplementation are more recent, and most of them used a proprietary lavender extract. In
+
+people with anxiety, Silexan™ was shown to alleviate anxiety[49][50][51][52] and improve sleep quality and
+
+duration.[52]
+
+Common methods of lavender administration
+
+Warnings about lavender
+
+Trials on lavender for anxiety have found a possible link to infections, headaches, palpitations, and
+
+gastrointestinal adverse events.[41] However, none of these events were serious and the frequency wasn’t
+
+very high, making it difficult to pin them on lavender. More research from longer and larger trials is needed
+
+to establish lavender’s safety.
+
+Lavender may have hormonal effects. The Endocrine Society and the National Institutes of Health warn that
+
+there is some evidence that lavender oil has estrogenic properties and can cause gynecomastia (enlarged
+
+breasts in men and boys).
+
+Three case studies of prepubertal gynecomastia have previously been attributed to topical administration
+
+of a cologne with lavender as an ingredient.[53][54] More recently, a case-series reported three prepubertal
+
+girls and one boy with clinical evidence of estrogenic action associated with a history of using lavender-
+
+13
+
+ 
+based fragrance.[55] Although the precise development of these conditions can be multifactorial, the
+
+gynecomastia resolved once the use of the products was discontinued. Additionally, there is in vivo
+
+evidence of the estrogenic and antiandrogenic properties of both lavender and tea tree essential oils.[54]
+
+If you are using lavender and your breasts become tender, cease use immediately.
+
+Lavender can cause drowsiness. For this reason, it is important to understand how lavender affects you
+
+before driving, operating dangerous equipment, or doing anything else where a lack of focus could be
+
+hazardous. This effect may be compounded and especially dangerous if lavender is combined with
+
+medications such as benzodiazepines that also can have such side effects.
+
+How to take lavender
+
+Take 80 mg of Silexan™ (a lavender oil preparation standardized for the active component linalool at 25%–
+
+46% of total weight) 30–45 minutes before bed. After two weeks, if no benefit has been observed, the dose
+
+can be increased to 160 mg (this is the maximum dose).
+
+Lavender oil is also used in aromatherapy — burned as a candle, heated, placed in a vaporizer, or added to
+
+a hot bath. The number of variables (product concentration, proximity of the user to the source, size of the
+
+room, etc.) makes recommending dosages exceedingly difficult, but studies have used at least 30 minutes
+
+of exposure in a well-ventilated room either at night or in the afternoon.
+
+Melatonin
+
+What makes melatonin a secondary supplement
+
+Melatonin is a hormone involved in the circadian rhythm (which dictates sleeping and waking cycles). As
+
+you wake up in the morning, melatonin levels go down, while at night, or if you dim the lights, melatonin
+
+production increases.
+
+14
+
+ 
+Variation in melatonin and cortisol throughout the day
+
+Your circadian rhythm doesn’t exist in a vacuum — it’s influenced by external cues, which are referred to as
+
+zeitgebers (German for “time givers”). Light is one of these zeitgebers. It impacts our circadian rhythm
+
+through its interaction with blue light receptors in the retina and the neural pathways that they influence.
+
+Melatonin is one of the primary controllers of our body’s circadian rhythm and is produced in the brain,
+
+specifically in the pineal gland in the absence of blue-wavelength light (shown below).[56] Therefore, the
+
+production of melatonin can be disrupted by exposure to artificial light after sunset, leading to disruptions
+
+in circadian rhythms and sleep problems.[57]
+
+15
+
+The effect of light on melatonin production
+
+Reference: Hardeland et al. Int J Biochem Cell Biol. 2006.[56]
+
+When administered as a supplement, melatonin can induce phase shifts in the circadian timing system and
+
+advance sleep onset.[58] It can also reduce core body temperature, which encourages sleep. Consequently,
+
+oral melatonin most notably improves sleep onset latency in people with primary (i.e., a sleep disorder not
+
+caused by medical or psychiatric conditions or substance abuse) and secondary sleep disorders.[59][60][61]
+
+However, although a statistically significant effect of melatonin is consistently observed across different
+
+populations, it’s unclear whether this reduction in sleep onset latency is clinically meaningful because most
+
+reviews on the topic report an improvement in the range of about 3–15 minutes.[62] For other sleep
+
+outcomes, melatonin supplementation has been found to improve overall sleep quality as measured by the
+
+Pittsburgh Sleep Quality Index (−1.24 points on average) in adults with various diseases.[63] Further analysis
+
+revealed that although the effect was significant in people with respiratory or metabolic diseases or sleep
+
+disorders, it was nonsignificant in people with neurodegenerative diseases and other conditions.
+
+Evidence also suggests that melatonin may increase total sleep time, but this effect is inconsistent. In
+
+studies that have reported an increase in total sleep time, the results have varied from around 7 to 50
+
+minutes, depending on the population studied and how the outcome was measured (i.e., subjective
+
+measures like questionnaire vs. objective measures like polysomnography).[62] Improvements appear to be
+
+more likely and of a larger magnitude in the context of secondary insomnia compared to primary
+
+insomnia.[64][61]
+
+Warnings about melatonin
+
+Although it is generally safe, melatonin may cause dizziness, headaches, nausea, and sleepiness/drowsiness
+
+in some people.[65]
+
+The sleepiness/drowsiness may be particularly relevant for anyone who may be awoken from their sleep to
+
+perform difficult or dangerous tasks (e.g., firefighters).
+
+16
+
+In one study, 1 out of 23 participants taking melatonin to adapt to night-shift work reported
+
+nightmares/vivid dreams shortly after beginning melatonin supplementation.[66] This effect may be an
+
+overlooked adverse event due to the lack of specific inquiry into it, or the tendency to forget dreams
+
+shortly upon awakening, and it is plausible due to melatonin’s effects on REM sleep. However, more specific
+
+evidence is needed to determine whether this effect is frequent.
+
+Rumor has it that melatonin can decrease testosterone levels in men. However, this suspicion is still based
+
+on in vitro and/or rodent data.[67][68] Researchers emphasize that the effects can be time dependent and,
+
+most importantly, species dependent.[69] In fact, when evidence from human studies is considered, the
+
+notion that melatonin supplements could lead to significant reductions of testosterone levels in males
+
+appears unwarranted — even when higher doses of melatonin (e.g. 6 mg/day taken at 5 p.m.) are
+
+consumed daily for 4 weeks, the testosterone secretion of healthy adult men is not affected.[70] [71][72]
+
+How to take melatonin
+
+As little as 0.3 mg of oral melatonin has been found to produce supraphysiological levels of melatonin in
+
+the body,[73] which suggests that this may be considered as a minimally effective dose. Start with 0.3 mg
+
+(300 μg) taken 1 hour before bed and increase by 0.5 mg each week until a maximally effective dose is
+
+reached. Many studies have administered doses as high as 10 mg/day, but it’s unlikely that this high of a
+
+dose is needed or is superior to lower doses. In a review of studies featuring adults with various diseases,
+
+>3 mg/day of melatonin was found to be superior to <3 mg/day, and immediate release was better than
+
+prolonged release.[63]
+
+17
+
+Promising Supplements
+
+Ashwagandha
+
+What makes ashwagandha a promising
+supplement
+
+Ashwagandha Is an herb found across India and South Asia and has a rich history of use in Ayurveda as an
+
+adaptogen (i.e., herbs that improve the response to stress) and for treatment of a variety of ailments.
+
+Today, it is most widely known for its antianxiety effects, and emerging evidence suggests that it could be
+
+useful for improving sleep as well.
+
+Although the exact mechanism by which ashwagandha improves sleep is currently unknown, one study in
+
+mice suggested that it may induce sleep by acting on the GABA receptor,[74] and another reported that
+
+triethylene glycol could be the active sleep-inducing component of ashwagandha.[75]
+
+Several trials have assessed the efficacy of ashwagandha to improve outcomes related to sleep quality,
+
+featuring different populations and measurements, but the results have been relatively consistent across the
+
+board. Ashwagandha improved subjective sleep quality measured on a 7-point Likert scale in adults with
+
+“good sleep” at baseline,[76] adults with “poor sleep” and elevated stress levels at baseline,[77] and older
+
+adults (ages 65–80) with “poor” sleep at baseline.[78]
+
+The effects of ashwagandha on sleep quality have also been investigated using more objective measures
+
+(i.e., actigraphy). In people with diagnosed insomnia and mild to moderate anxiety, ashwagandha has been
+
+shown to improve various measures of sleep quality, including greater increases in sleep efficiency as well
+
+as decreases in sleep onset latency and wake after sleep onset compared to placebo.[76][79] Additionally,
+
+ashwagandha was found to prolong total sleep time, boost sleep efficiency, and reduce sleep onset latency
+
+and wake after sleep onset in people with nonrestorative sleep.[80]
+
+Collectively, the available evidence suggests that ashwagandha has a medium positive effect on overall
+
+sleep, sleep onset latency, and sleep efficiency and a small positive effect on total sleep time and wake
+
+after sleep onset, with larger effects in people with diagnosed insomnia.[81]
+
+As a result of a small sample size, heterogeneity in the baseline sleep quality of participants, and the use of
+
+objective measures of sleep quality in only 3 trials, ashwagandha is a promising supplement for improving
+
+sleep quality, but more research is needed to draw strong conclusions about its magnitude of effect in
+
+specific populations.
+
+Warnings about ashwagandha
+
+Ashwagandha continues to show promising evidence for its efficacy and safety. Mild side effects of
+
+drowsiness, upper GI discomfort, dizziness, and loose stools have been reported with the use of
+
+ashwagandha.[82] Because ashwagandha may increase testosterone levels,[83] it is possible that it could be an
+
+issue in individuals with hormone-sensitive prostate cancer. However, the reported increase in testosterone
+
+is well within the normal daily fluctuation of 30% to 35% in healthy men, so the risk may not be particularly
+
+significant.[84] In fact, one of ashwagandha’s main active ingredients, Withaferin A, has anticancer effects in
+
+18
+
+various cancer cell lines, including prostate cells, where it interferes directly with the initiation and
+
+progression of cancerous growth.[85] Therefore, it’s not immediately clear whether it would be detrimental
+
+even in the context of hormone-sensitive prostate cancer. Ashwagandha’s hormonal effects could raise
+
+concern about its use during pregnancy, but the evidence on its safety is mostly old, sparse, and unclear.[[86]
+
+Given the lack of evidence around this specific use, it’s safest to avoid ashwagandha while pregnant or
+
+breastfeeding. There have also been case reports illustrating the potential of ashwagandha to cause liver
+
+injury.[87] Benzodiazepines, anticonvulsants, and barbiturates may be dangerous to take with ashwagandha
+
+because these drugs have sedative characteristics, and taking ashwagandha along with them can increase
+
+these effects.[82]
+
+How to take ashwagandha
+
+The most common dosing protocol is to take 300 mg twice per day (600 mg total). One study found that
+
+as little as 250 mg/day (split between two doses of 125 mg) was sufficient to improve subjective sleep
+
+quality, but it was inferior to 600 mg/day.[77] Based on these findings, it may be best to start with 250
+
+mg/day and then increase to 600 mg/day if sleep doesn’t improve noticeably.
+
+Melissa officinalis
+
+What makes Melissa officinalis a promising
+supplement
+
+Melissa officinalis (lemon balm) appears to have a meaningful effect on anxiety, with the current evidence
+
+suggesting a notable reduction.[88] Anxiety is a major contributor to sleep difficulties, prolonging the amount
+
+of time it takes to fall asleep and causing excessive waking.
+
+The number of trials evaluating its effects on sleep is still small, but the 4 available trials show consistent
+
+benefits to overall sleep quality, and 1 trial demonstrated the ability to reduce the time it takes to fall asleep
+
+(sleep onset latency).[89][90][91][92] Only one of the trials was in participants with clear sleep disturbances not
+
+related to a parent condition, so there’s very little evidence to support it for general insomnia, but the
+
+research that we have looks promising, especially for people with anxiety-influenced sleep issues.
+
+Warnings about Melissa officinalis
+
+Unlike benzodiazepines (diazepam/Valium, alprazolam/Xanax, clonazepam/Klonopin), lemon balm is not
+
+potent enough to have addictive or habit-forming properties. Nevertheless, any supplement with a sedative
+
+effect can disrupt working memory and reduce attention span. Do not drive or operate heavy machinery
+
+after taking lemon balm or any other supplement with a sedative effect. Do not take lemon balm during the
+
+day. Combining lemon balm with medications that cause sedation or drowsiness may be especially
+
+dangerous.
+
+One case study reported withdrawal symptoms after discontinuing lemon balm in a 30-year-old who had
+
+been suffering from anxiety. It is unclear whether this supplement was truly the cause, though it may be
+
+19
+
+ 
+wise to be cautious during discontinuation.[93]
+
+How to take Melissa officinalis
+
+Take 1,200–3,000 mg of lemon balm powder 30–60 minutes before bed. Start with 600 mg; ramp up to
+
+1200 mg over the course of a week if no lower dose proves effective. Only take a dose larger than 1,200
+
+mg if it provides noticeably greater benefits.
+
+Lemon balm is also used in aromatherapy, but studies tend to examine oral supplementation because it is a
+
+more reliable delivery method.
+
+20
+
+Unproven Supplements
+
+Glycine
+
+What makes glycine an unproven supplement
+
+Glycine is an amino acid that’s most prominent in collagen, but it is used in many other proteins and
+
+biological functions. With relevance to sleep, it acts as a neurotransmitter to NMDA receptors, which can
+
+lead to vasodilation and a reduction in body temperature, thus facilitating better sleep.[94]
+
+In one randomized, single-blind crossover trial, 11 healthy participants took 3 grams of glycine at 1 hour
+
+before bedtime or a placebo for two nights and underwent sleep testing. [95] The participants generally
+
+reported greater subjective sleep satisfaction, with less difficulty getting to sleep, less time awake and
+
+more time sleeping, though the subjective questionnaire appeared to be limited by selective reporting. The
+
+researchers did find an improvement in sleep onset latency, though not in time until REM sleep or sleep
+
+architecture overall. There was a reduction in daytime sleepiness, but it was not statistically significant for
+
+most time points, and there may have been some small cognitive improvements. Overall, this study should
+
+be considered very preliminary.
+
+In a randomized, double-blind crossover trial, 19 participants also took 3 grams of glycine or placebo
+
+before bedtime for 4 days and experienced improvements in fatigue and subjective sleep satisfaction when
+
+taking glycine, but this trial was quite preliminary as well.[96]
+
+Finally, in a randomized, single-blind crossover trial, 10 participants underwent partial sleep restriction (25%
+
+lower than their usual sleeping time).[97] When taking glycine, the participants reported less fatigue and
+
+sleepiness (the latter was not statistically significant, however). There were some possible improvements in
+
+cognitive function, but the only statistically significant finding was improvement in reaction time on the
+
+psychomotor vigilance test on both testing days. The researchers also performed a rat study and found
+
+higher nighttime plasma melatonin levels in rats that took glycine.
+
+In summary, glycine looks promising, but the amount and quality of the research we currently have is
+
+insufficient, and it remains unproven.
+
+Magnesium
+
+What makes magnesium an unproven
+supplement
+
+Magnesium is an essential dietary mineral, and is the second most prevalent electrolyte in the human body.
+
+It is a cofactor for over 300 enzymatic reactions and plays an important role in the brain by controlling
+
+neuron excitability. Evidence pertaining to the efficacy of magnesium supplementation for improving sleep
+
+21
+
+ 
+ 
+quality is scarce, but mechanistically, low magnesium levels can lead to abnormal neuronal excitation (i.e.,
+
+cells are activated during periods when they are not intentionally activated) and subsequently impair sleep.
+
+It’s speculated that magnesium’s role in regulating sleep is related to its ability to act as an antagonist and
+
+agonist of the NMDA and GABA systems.[98][99]
+
+Most people do not consume enough magnesium, and this is especially true in Western countries where
+
+diets are rich in refined foods that are poor in magnesium. In older adults, the risk of magnesium deficiency
+
+is enhanced, not only due to alterations in food choices that lead to a reduced intake[100] but also as a
+
+product of reduced intestinal uptake and increased urinary excretion of magnesium.[101] Additionally, a
+
+variety of medications (e.g., diuretics, proton pump inhibitors) can exacerbate magnesium losses, and it is
+
+common for older adults to take multiple medications to manage their health. As a consequence, older
+
+adults have been the population of interest for use of supplemental magnesium to improve sleep quality.
+
+Collectively, very limited evidence suggests that magnesium supplementation may have a small positive
+
+effect on sleep onset latency (−17 minutes) in older adults.[102] Also, one study reported that magnesium
+
+supplementation improved slow-wave sleep.[98] However, it’s critical to highlight that the studies conducted
+
+so far have been low quality and at moderate to high risk of bias.
+
+As it stands, there is insufficient evidence to support magnesium as a sleep supplement. Nevertheless,
+
+magnesium is very cheap and widely available, and it is lacking in the average diet. For these reasons, if
+
+magnesium intake through foods is insufficient, supplementation may be recommended. Subjective
+
+improvements in sleep quality as a result may be a bonus. But for people with sufficient magnesium levels
+
+who consume a magnesium-rich diet, supplementing with magnesium is unlikely to improve sleep quality.
+
+ Digging Deeper: Who is more likely to have low magnesium levels?
+
+Older people, because they tend to have relatively low magnesium intakes[100] and may absorb less during
+digestion.[103]
+
+People who sweat a lot, because magnesium is lost through sweat. Athletes participating in sports requiring
+weight control may be especially vulnerable.
+
+People with type 2 diabetes, because according to estimatest for all adult ages in developed countries,
+hypomagnesemia affects less than 15% of healthy people but up to 50% of people with type 2 diabetes.[104]
+
+L-Theanine
+
+What makes L-theanine an unproven
+supplement
+
+22
+
+Theanine, an amino acid found in green tea, regulates neurotransmission, and the results are often a
+
+reduction in stress and increase in relaxation.[105] Because stress is a common cause of impaired sleep,
+
+theanine may be of use for sleep disorders.
+
+However, the evidence is simply too preliminary to declare theanine an effective method of improving sleep
+
+quality. Three randomized trials have been conducted, and overall, they suggest a modest benefit to overall
+
+sleep.[106][107][108] However, the trials weren’t specifically designed to properly test theanine for improving
+
+sleep, and the overall evidence remains weak. There are 2 supportive open-label studies, but they don’t add
+
+very much to the evidence due to their nonrigorous designs.[105][109]
+
+Tryptophan
+
+What makes tryptophan an unproven
+supplement
+
+L-Tryptophan is an essential amino acid found in meat, dairy, some seeds and nuts, fish, green leafy
+
+vegetables, and eggs. Given its important role in the production of serotonin and melatonin — compounds
+
+that are essential for the body’s sleep-wake cycle — tryptophan has been studied as a potential therapeutic
+
+for improving sleep quality. However, the evidence from the available randomized controlled trials
+
+examining these potential effects have produced mixed results.
+
+More specifically, according to the results of a 2021 meta-analysis of 4 randomized controlled trials
+
+involving 135 adults, supplementation with L-tryptophan improved wake time after sleep onset by around 1
+
+minute, but failed to improve total sleep time, sleep latency (the time it takes a person to fall asleep), or
+
+sleep efficiency (the percentage of time spent asleep while in bed).[110]
+
+It’s worth noting that, in the aforementioned meta-analysis, L-tryptophan supplementation improved sleep
+
+latency (by around 50 seconds) and sleep efficiency (by around 1.6%) in sensitivity analyses that removed
+
+one trial conducted in participants without insomnia. These results suggest that supplementation with L-
+
+tryptophan is more likely to improve sleep quality in individuals with insomnia.
+
+With the above said, the size of the potential effect seems to be very small. It’s also worth keeping in mind
+
+that these results were based on only a few small trials (3–4 in the main analyses and 2 in the sensitivity
+
+analyses). For these reasons, tryptophan is considered an unproven supplement.
+
+Valerian
+
+What makes valerian an unproven supplement
+
+The root of valerian (Valeriana officinalis) has a long history of use as a treatment for insomnia and was one
+
+of the first sleep aids on the market. However, the available randomized controlled trials examining the
+
+effectiveness of valerian for improving sleep have produced mostly mixed results.
+
+More specifically, a 2015 meta-analysis of 7 randomized controlled trials reported no effects of valerian on
+
+23
+
+ 
+sleep latency (the time it takes a person to fall asleep), duration, efficiency, or quality.[111] Most of the trials
+
+included in the meta-analysis used 400–600 mg of valerian root extract taken 1 hour before sleep. Similarly,
+
+a 2010 meta-analysis found no effects of valerian on sleep latency or sleep quality measured using a visual
+
+analogue scale.[112] However, when the researchers examined dichotomous sleep quality (where participants
+
+were asked whether valerian improved their sleep quality or not), they found that participants taking
+
+valerian were 37% more likely to report improved sleep quality compared to participants taking a placebo.
+
+It’s worth noting, though, that when this analysis was restricted to high-quality trials, the results became
+
+statistically nonsignificant.
+
+In all, it may be the case that differences in the formulation of the supplement may affect its efficacy. This
+
+idea is supported by the results of a 2020 meta-analysis, which found that valerian whole root, but not
+
+valerian root extract, improved subjective sleep quality.[113] However, it should be kept in mind that only 4
+
+trials were included in this analysis.
+
+24
+
+Inadvisable Supplements
+
+Caffeine
+
+What makes caffeine an inadvisable supplement
+
+Caffeine’s primary mechanism of action, shown in the figure below, is interference with the effects of a
+
+molecule called adenosine.[114] Adenosine promotes sleepiness by binding to certain receptors in the brain
+
+and interferes with the release of neurotransmitters that are associated with wakefulness, such as
+
+dopamine. Caffeine disrupts this process by preventing the binding of adenosine to its receptors, thus
+
+allowing the normal release of neurotransmitters associated with wakefulness.
+
+25
+
+ 
+The mechanism of caffeine
+
+Reference: Ferré. J Neurochem. 2008.[114]
+
+People with a caffeine tolerance may still be able to fall asleep after ingesting caffeine, but this stimulant
+
+will still negatively affect sleep onset latency and sleep quality.[115] Caffeine should not be consumed before
+
+sleep even by the most veteran coffee drinkers. Although some studies suggest that caffeine paired with
+
+15–30-minute “power naps” can benefit alertness more than caffeine or naps alone, this benefit does not
+
+extend to longer sleep durations because caffeine will cause cortisol levels to rise after about 30 minutes.
+
+26
+
+Effects of caffeine on cortisol levels
+
+Reference: Lovallo et al. Pharmacol Biochem Behav. 1996.[116]
+
+You might already be consuming more caffeine than you think. When calculating daily caffeine intake,
+
+consider all beverages, foods, and supplements consumed. Bear in mind that caffeine can be “hidden” in a
+
+product — for instance, if “guarana seeds” is listed on a label, remember that those are richer in caffeine
+
+than coffee seeds.
+
+Avoid caffeine at least 6 hours before bed.
+
+27
+
+Caffeine content of popular drinks
+
+References: McCusker et al. J Anal Toxicol. 2006.[117] ● Desbrow et al. Nutr Health. 2019.[118] ● Ludwig et al. Food Funct. 2014.[119]
+
+● Fox et al. J Agric Food Chem. 2013.[120] ● McCusker et al. J Anal Toxicol. 2003.[121] ● Angeloni et al. Food Res Int. 2019.[122]
+
+Stimulants
+
+What makes stimulants an inadvisable
+
+28
+
+ 
+supplement
+
+People with sleep issues or those trying to improve sleep quality should be aware of the stimulants they
+
+may be taking (supplement or drugs) and when they take them.
+
+If taking a stimulant, respect the recommended dosage. Be aware that most fat burners, preworkout
+
+supplements, energy drinks, or other products marketed at “energy-boosting” are likely to contain
+
+stimulants, such as caffeine or synephrine. Be especially careful when taking several such products because
+
+they may have cumulative or even synergistic effects (and side effects).
+
+As a general rule of thumb, avoid taking any stimulants at least 6 hours before bed.
+
+29
+
+FAQ
+
+Q. What about the supplements not covered in
+this guide?
+
+Our guides are regularly updated, often with new supplements. We prioritize assessing (and reassessing)
+
+the most popular of them and those most likely to work. However, if there is a specific supplement you’d
+
+like to see covered in a future update, please let us know by filling out this survey.
+
+Q. Can I add a supplement not covered in this
+guide to my combo?
+
+Supplement with your current combo for a few weeks before attempting any change. Talk to your physician
+
+and research each potential addition. Check for known negative interactions with other supplements and
+
+pharmaceuticals in your current combo, but also for synergies. If two supplements are synergistic or
+
+additive in their effects, you might want to use lower doses of each.
+
+Q. Can I modify the recommended doses?
+
+If a supplement has a recommended dose range, stay within that range. If a supplement has a precise
+
+recommended dose, stay within 10% of that dose. Taking more than recommended could be
+
+counterproductive or even dangerous. Taking less could render the supplement ineffective, yet starting with
+
+half the regular dose could be prudent — especially if you know you tend to react strongly to supplements
+
+or pharmaceuticals.
+
+Q. At what time should I take my supplements?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Starting with half the regular dose can help
+
+minimize the harm a supplement may cause when taken during the day (e.g., fatigue) or in the evening (e.g.,
+
+insomnia).
+
+Q. Should I take my supplements with or
+without food?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Besides, a supplement’s digestion, absorption,
+
+and metabolism can be affected differently by different foods. Fat-soluble vitamins (A, D, E, K), for
+
+instance, are better absorbed with a small meal containing fat than with a large meal containing little to no
+
+fat.
+
+30
+
+ 
+Q. What are DRI, RDA, AI, and UL?
+
+The Dietary Reference Intakes (DRIs) is a system of nutrition recommendations designed by the Institute of
+
+Medicine (a US institution now known as the Health and Medicine Division). RDA, AI, and UL are part of this
+
+system.
+
+Contrary to what the name suggests, a Recommended Dietary Allowance (RDA) doesn’t represent
+
+an ideal amount; it represents the minimum you need in order to avoid deficiency-related health
+
+issues. More precisely, it represents an amount just large enough to meet the minimum requirements
+
+of 97.5% of healthy males and females over all ages — which implies that the RDA is too low for
+
+2.5% of healthy people.
+
+The Adequate Intake (AI) is like the RDA, except that the number is more uncertain.
+
+The Tolerable Upper Intake Level (UL) is the maximum safe amount. More precisely, it is the
+
+maximum daily amount deemed to be safe for 97.5% of healthy males and females over all ages —
+
+which implies that the UL is too high for 2.5% of healthy people.
+
+As a general rule, a healthy diet should include at least the RDA of each nutrient — but less than this
+
+nutrient’s UL. This rule has many exceptions, though. For instance, people who sweat more need more salt
+
+(i.e., sodium), whereas people who take metformin (a diabetes medicine) need more vitamin B12.
+
+Moreover, the DRIs are based on the median weight of adults and children in the United States. Everything
+
+else being equal (notably age, sex, and percentage of body fat), you likely need a lesser amount of
+
+nutrients if you weigh less, and vice versa if you weigh more. The numbers, however, are not proportional
+
+— if only because the brains of two people of very different weights have very similar needs. So you can’t
+
+just double your RDIs for each nutrient if you weigh twice as much as the median adult of your age and sex
+
+(even if we overlook that people weighing the same can differ in many respects, notably body fat).
+
+Q. I took 350 mg of supplemental magnesium
+and experienced diarrhea. Why is that?
+
+If magnesium is indeed the culprit, then your diarrhea was probably caused by too large a dose reaching
+
+the colon. Alternatively, it could mean that your body’s levels of magnesium are in fact sufficient, making
+
+supplementation unnecessary.
+
+In the future, split your daily dose into multiple doses. If the problem persists, reduce your daily dose to
+
+200 mg. If you are using magnesium oxide, switch to a different form of magnesium such as citrate,
+
+gluconate, or glycinate
+
+Q. What’s the difference between elemental
+magnesium and other kinds of magnesium?
+
+“Elemental” refers to the weight of the mineral by itself, separately from the compound bound to it. For
+
+instance, ingesting 500 mg of magnesium gluconate means ingesting 27 mg of elemental magnesium.
+
+Product labels display the elemental dosage. On a label, “27 mg of magnesium (as magnesium gluconate)”
+
+means 27 mg of elemental magnesium (and 473 mg of gluconic acid).
+
+31
+
+Q. How does alcohol affect my sleep?
+
+At first, alcohol can help you fall asleep, but this effect fades off after a few days if you keep drinking close
+
+to bedtime.[123] And right from the start, it will impair the quality of your sleep.[124][125] Ironically, alcohol-use
+
+disorders have even been linked to insomnia, though their being cause or consequence is uncertain.[123]
+
+In short, don’t use alcohol as a sleep aid — it might help you relax, but it will impair the quality of your
+
+sleep. You may find it beneficial to avoid alcohol after dinner.
+
+Q. Is melatonin supplementation safe?
+
+In a review of 195 reviews of melatonin (i.e., an umbrella review), only 5.6% reported adverse effects and
+
+most of these effects were mild symptoms, such as dizziness, nausea, headaches, and fatigue.[126] In some
+
+studies, pharmacological doses as high as 75 milligrams have been used without any serious adverse
+
+effects being reported.[127] It is worth noting, however, that there aren’t many long-term studies that have
+
+been conducted on melatonin.
+
+There are, however, two things that should be kept in mind: First, a recent study found that many melatonin
+
+supplements do not meet the label claims.[128] Second, some of the supplements that were tested in this
+
+study were contaminated with serotonin, a neurotransmitter, that may affect the study results.
+
+Q. Will supplementing melatonin affect my own
+production of melatonin?
+
+It seems unlikely with low doses. Studies that have administered melatonin at doses of 0.5 milligrams,[129] 2.0
+
+milligrams,[130] 5.0 milligrams,[131] and 50 milligrams[129] have found no significant effect on the body's ability
+
+to produce a basal level of melatonin.
+
+Q. Are there specific species of lavender that
+have more active constituents?
+
+Lavender is a plant from the Lamiaceae family that includes various different species. Most lavender
+
+species share similar major chemical constituents, consisting of terpenes, alcohols, ketones, and
+
+polyphenols.[132] While constituents and properties are similar among species, lavender essential oil extracts
+
+can range from 26–57% linalool and 4–35% linalyl acetate,[133] with linalool considered the primary active
+
+constituent.[134]
+
+Q. How much sleep should I get?
+
+How much sleep you need may take some trial-and-error testing to see what works best. But if you’re
+
+looking for some general guidelines, check out the recommendations from the National Sleep Foundation
+
+below.[135]
+
+32
+
+Recommended hours of sleep
+
+AGE
+
+RECOMMENDED
+
+MAY BE APPROPRIATE
+
+NOT RECOMMENDED
+
+0–3 months
+
+4–11 months
+
+1–2 years
+
+3–5 years
+
+6–13 years
+
+14–17 years
+
+18–25 years
+
+26–64 years
+
+≥65 years
+
+14–17
+
+12–15
+
+11–14
+
+10–13
+
+9–11
+
+8–10
+
+7–9
+
+7–9
+
+7–8
+
+11–19
+
+10–18
+
+9–16
+
+8–14
+
+7–12
+
+7–11
+
+6–11
+
+6–10
+
+5–9
+
+<11 or >19
+
+<10 or >18
+
+<9 or >16
+
+<8 or >14
+
+<7 or >12
+
+<7 or >11
+
+<6 or >11
+
+<6 or >10
+
+<5 or >9
+
+Adapted from Hirshkowitz et al. Sleep Health. 2015.[135]
+
+Q. How exactly might caffeine screw up my
+circadian rhythm?
+
+The circadian clock in humans is controlled primarily by the suprachiasmatic nucleus (SCN) within the brain.
+
+The SCN is a group of cells that sit by the optic nerve and respond to light and other stimuli that come in
+
+from the eye. Hypothetically, caffeine could affect the SCN (and other tissues throughout the body) in
+
+various ways, depicted below.
+
+Possible ways caffeine could affect circadian rhythm
+
+33
+
+One way is through increasing a cell’s levels of cyclic AMP (cAMP), which is often created inside a cell in
+
+response to a signal. This occurs for two reasons. First, caffeine blocks adenosine receptors that normally
+
+reduce cAMP levels. Second, caffeine binds phosphodiesterase enzymes that act to degrade cAMP.[136]
+
+When these enzymes are blocked, cAMP levels are raised.
+
+It's also been shown that circadian rhythms within the SCN are regulated in part by the release of calcium
+
+ions during the stimulation of ryanodine receptors,[137] which caffeine also binds.[138]
+
+34
+
+References
+
+1.   Su S, Baroody FM, Kohrman M, Suskind D A comparison of polysomnography and a portable home sleep study in the diagnosis
+
+of obstructive sleep apnea syndrome. Otolaryngol Head Neck Surg. (2004 Dec)
+
+2.   Shrivastava D, Jung S, Saadat M, Sirohi R, Crewson K How to interpret the results of a sleep study. J Community Hosp Intern
+
+Med Perspect. (2014 Nov 25)
+
+3.   Bhat S, Ferraris A, Gupta D, Mozafarian M, DeBari VA, Gushway-Henry N, Gowda SP, Polos PG, Rubinstein M, Seidu H,
+
+Chokroverty S Is There a Clinical Role For Smartphone Sleep Apps? Comparison of Sleep Cycle Detection by a Smartphone
+Application to Polysomnography. J Clin Sleep Med. (2015 Jul 15)
+
+4.   de Zambotti M, Goldstone A, Claudatos S, Colrain IM, Baker FC A validation study of Fitbit Charge 2™ compared with
+
+polysomnography in adults. Chronobiol Int. (2018 Apr)
+
+5.   Mah CD, Mah KE, Kezirian EJ, Dement WC The effects of sleep extension on the athletic performance of collegiate basketball
+
+players. Sleep. (2011 Jul 1)
+
+6.   VanHelder T, Radomski MW Sleep deprivation and the effect on exercise performance. Sports Med. (1989 Apr)
+
+7.   Bellesi M, Pfister-Genskow M, Maret S, Keles S, Tononi G, Cirelli C Effects of sleep and wake on oligodendrocytes and their
+
+precursors. J Neurosci. (2013 Sep 4)
+
+8.   Alhola P, Polo-Kantola P Sleep deprivation: Impact on cognitive performance. Neuropsychiatr Dis Treat. (2007)
+
+9.   Mullington JM, Simpson NS, Meier-Ewert HK, Haack M Sleep loss and inflammation. Best Pract Res Clin Endocrinol Metab.
+
+(2010 Oct)
+
+10.   Simpson N, Dinges DF Sleep and inflammation. Nutr Rev. (2007 Dec)
+
+11.   Haack M, Sanchez E, Mullington JM Elevated inflammatory markers in response to prolonged sleep restriction are associated
+
+with increased pain experience in healthy volunteers. Sleep. (2007 Sep)
+
+12.   Broussard JL, Ehrmann DA, Van Cauter E, Tasali E, Brady MJ Impaired insulin signaling in human adipocytes after experimental
+
+sleep restriction: a randomized, crossover study. Ann Intern Med. (2012 Oct 16)
+
+13.   Buxton OM, Pavlova M, Reid EW, Wang W, Simonson DC, Adler GK Sleep restriction for 1 week reduces insulin sensitivity in
+
+healthy men. Diabetes. (2010 Sep)
+
+14.   Donga E, van Dijk M, van Dijk JG, Biermasz NR, Lammers GJ, van Kralingen KW, Corssmit EP, Romijn JA A single night of partial
+
+sleep deprivation induces insulin resistance in multiple metabolic pathways in healthy subjects. J Clin Endocrinol Metab. (2010
+Jun)
+
+15.   Bosy-Westphal A, Hinrichs S, Jauch-Chara K, Hitze B, Later W, Wilms B, Settler U, Peters A, Kiosz D, Muller MJ Influence of
+
+partial sleep deprivation on energy balance and insulin sensitivity in healthy women. Obes Facts. (2008)
+
+16.   Cappuccio FP, D'Elia L, Strazzullo P, Miller MA Quantity and quality of sleep and incidence of type 2 diabetes: a systematic
+
+review and meta-analysis. Diabetes Care. (2010 Feb)
+
+17.   Beihl DA, Liese AD, Haffner SM Sleep duration as a risk factor for incident type 2 diabetes in a multiethnic cohort. Ann
+
+Epidemiol. (2009 May)
+
+18.   Chaput JP, Després JP, Bouchard C, Astrup A, Tremblay A Sleep duration as a risk factor for the development of type 2
+
+diabetes or impaired glucose tolerance: analyses of the Quebec Family Study. Sleep Med. (2009 Sep)
+
+19.   Nagai M, Hoshide S, Kario K Sleep duration as a risk factor for cardiovascular disease- a review of the recent literature. Curr
+
+Cardiol Rev. (2010 Feb)
+
+20.   Cote KA, McCormick CM, Geniole SN, Renn RP, MacAulay SD Sleep deprivation lowers reactive aggression and testosterone in
+
+men. Biol Psychol. (2013 Feb)
+
+21.   Leproult R, Van Cauter E Effect of 1 week of sleep restriction on testosterone levels in young healthy men. JAMA. (2011 Jun 1)
+
+22.   Penev PD Association between sleep and morning testosterone levels in older men. Sleep. (2007 Apr)
+
+23.   González-Santos MR, Gajá-Rodríguez OV, Alonso-Uriarte R, Sojo-Aranda I, Cortés-Gallegos V Sleep deprivation and adaptive
+
+hormonal responses of healthy men. Arch Androl. (1989)
+
+24.   Cortés-Gallegos V, Castañeda G, Alonso R, Sojo I, Carranco A, Cervantes C, Parra A Sleep deprivation reduces circulating
+
+androgens in healthy men. Arch Androl. (1983 Mar)
+
+25.   Nedeltcheva AV, Kilkus JM, Imperial J, Schoeller DA, Penev PD Insufficient sleep undermines dietary efforts to reduce
+
+adiposity. Ann Intern Med. (2010 Oct 5)
+
+26.   Sasaki E, Tsuda E, Yamamoto Y, Maeda S, Inoue R, Chiba D, Okubo N, Takahashi I, Nakaji S, Ishibashi Y Nocturnal knee pain
+increases with the severity of knee osteoarthritis, disturbing patient sleep quality. Arthritis Care Res (Hoboken). (2014 Jul)
+
+27.   Blay SL, Andreoli SB, Gastal FL Chronic painful physical conditions, disturbed sleep and psychiatric morbidity: results from an
+
+elderly survey. Ann Clin Psychiatry. (2007 Jul-Sep)
+
+28.   Kayumov L, Casper RF, Hawa RJ, Perelman B, Chung SA, Sokalsky S, Shapiro CM Blocking low-wavelength light prevents
+
+nocturnal melatonin suppression with no adverse effect on performance during simulated shift work. J Clin Endocrinol Metab.
+
+35
+
+(2005 May)
+
+29.   Whipps J, Byra M, Gerow KG, Hill Guseman E Evaluation of Nighttime Media Use and Sleep Patterns in First-semester College
+
+Students. Am J Health Behav. (2018 May 1)
+
+30.   Kinsey AW, Ormsbee MJ The health impact of nighttime eating: old and new perspectives. Nutrients. (2015 Apr 9)
+
+31.   Flausino NH, Da Silva Prado JM, de Queiroz SS, Tufik S, de Mello MT Physical exercise performed before bedtime improves
+
+the sleep pattern of healthy young good sleepers. Psychophysiology. (2012 Feb)
+
+32.   Buman MP, Phillips BA, Youngstedt SD, Kline CE, Hirshkowitz M Does nighttime exercise really disturb sleep? Results from the
+
+2013 National Sleep Foundation Sleep in America Poll. Sleep Med. (2014 Jul)
+
+33.   Grønli J, Byrkjedal IK, Bjorvatn B, Nødtvedt Ø, Hamre B, Pallesen S Reading from an iPad or from a book in bed: the impact on
+
+human sleep. A randomized controlled crossover trial. Sleep Med. (2016 May)
+
+34.   Chang AM, Aeschbach D, Duffy JF, Czeisler CA Evening use of light-emitting eReaders negatively affects sleep, circadian
+
+timing, and next-morning alertness. Proc Natl Acad Sci U S A. (2015 Jan 27)
+
+35.   Basner M, Brink M, Bristow A, de Kluizenaar Y, Finegold L, Hong J, Janssen SA, Klaeboe R, Leroux T, Liebl A, Matsui T, Schwela
+D, Sliwinska-Kowalska M, Sörqvist P ICBEN review of research on the biological effects of noise 2011-2014. Noise Health. (2015
+Mar-Apr)
+
+36.   Halperin D Environmental noise and sleep disturbances: A threat to health?. Sleep Sci. (2014 Dec)
+
+37.   Hume KI, Brink M, Basner M Effects of environmental noise on sleep. Noise Health. (2012 Nov-Dec)
+
+38.   Libert JP, Bach V, Johnson LC, Ehrhart J, Wittersheim G, Keller D Relative and combined effects of heat and noise exposure on
+
+sleep in humans. Sleep. (1991 Feb)
+
+39.   Lack LC, Gradisar M, Van Someren EJ, Wright HR, Lushington K The relationship between insomnia and body temperatures.
+
+Sleep Med Rev. (2008 Aug)
+
+40.   Murphy PJ, Campbell SS Nighttime drop in body temperature: a physiological trigger for sleep onset?. Sleep. (1997 Jul)
+
+41.   Donelli D, Antonelli M, Bellinazzi C, Gensini GF, Firenzuoli F Effects of lavender on anxiety: A systematic review and meta-
+
+analysis. Phytomedicine. (2019 Dec)
+
+42.   Sayorwan W, Siripornpanich V, Piriyapunyaporn T, Hongratanaworakit T, Kotchabhakdi N, Ruangrungsi N The effects of
+
+lavender oil inhalation on emotional states, autonomic nervous system, and brain electrical activity. J Med Assoc Thai. (2012
+Apr)
+
+43.   Tiffany Field, Tory Field, Christy Cullen, Shay Largie, Miguel Diego, Saul Schanberg, Cynthia Kuhn Lavender bath oil reduces
+
+stress and crying and enhances sleep in very young infants. Early Hum Dev. (2008 Jun)
+
+44.   J Lehrner, G Marwinski, S Lehr, P Johren, L Deecke Ambient odors of orange and lavender reduce anxiety and improve mood
+
+in a dental office. Physiol Behav. (2005 Sep 15)
+
+45.   Inn-Sook Lee, Gyung-Joo Lee Effects of lavender aromatherapy on insomnia and depression in women college students.
+
+Taehan Kanho Hakhoe Chi. (2006 Feb)
+
+46.   George T Lewith, Anthony Dean Godfrey, Philip Prescott A single-blinded, randomized pilot study evaluating the aroma of
+
+Lavandula augustifolia as a treatment for mild insomnia. J Altern Complement Med. (2005 Aug)
+
+47.   Chien LW, Cheng SL, Liu CF The effect of lavender aromatherapy on autonomic nervous system in midlife women with
+
+insomnia. Evid Based Complement Alternat Med. (2012)
+
+48.   Namni Goel, Hyungsoo Kim, Raymund P Lao An olfactory stimulus modifies nighttime sleep in young men and women.
+
+Chronobiol Int. (2005)
+
+49.   Kasper S, Müller WE, Volz HP, Möller HJ, Koch E, Dienel A Silexan in anxiety disorders: Clinical data and pharmacological
+
+background. World J Biol Psychiatry. (2018 Sep)
+
+50.   Kasper S, Anghelescu I, Dienel A Efficacy of orally administered Silexan in patients with anxiety-related restlessness and
+
+disturbed sleep--A randomized, placebo-controlled trial. Eur Neuropsychopharmacol. (2015 Nov)
+
+51.   Kasper S, Gastpar M, Müller WE, Volz HP, Möller HJ, Schläfke S, Dienel A Lavender oil preparation Silexan is effective in
+
+generalized anxiety disorder--a randomized, double-blind comparison to placebo and paroxetine. Int J
+Neuropsychopharmacol. (2014 Jun)
+
+52.   Kasper S, Gastpar M, Müller WE, Volz HP, Möller HJ, Dienel A, Schläfke S Silexan, an orally administered Lavandula oil
+
+preparation, is effective in the treatment of 'subsyndromal' anxiety disorder: a randomized, double-blind, placebo controlled
+trial. Int Clin Psychopharmacol. (2010 Sep)
+
+53.   Diaz A, Luque L, Badar Z, Kornic S, Danon M Prepubertal gynecomastia and chronic lavender exposure: report of three cases.
+
+J Pediatr Endocrinol Metab. (2016 Jan)
+
+54.   Henley DV, Lipson N, Korach KS, Bloch CA Prepubertal gynecomastia linked to lavender and tea tree oils. N Engl J Med. (2007
+
+Feb 1)
+
+55.   Ramsey JT, Li Y, Arao Y, Naidu A, Coons LA, Diaz A, Korach KS Lavender Products Associated With Premature Thelarche and
+Prepubertal Gynecomastia: Case Reports and Endocrine-Disrupting Chemical Activities. J Clin Endocrinol Metab. (2019 Nov 1)
+
+56.   Hardeland R, Pandi-Perumal SR, Cardinali DP Melatonin. Int J Biochem Cell Biol. (2006 Mar)
+
+36
+
+57.   Gooley JJ, Chamberlain K, Smith KA, Khalsa SB, Rajaratnam SM, Van Reen E, Zeitzer JM, Czeisler CA, Lockley SW Exposure to
+room light before bedtime suppresses melatonin onset and shortens melatonin duration in humans. J Clin Endocrinol Metab.
+(2011 Mar)
+
+58.   Arendt J, Skene DJ Melatonin as a chronobiotic.. Sleep Med Rev. (2005-Feb)
+
+59.   Fiona Auld, Emily L Maschauer, Ian Morrison, Debra J Skene, Renata L Riha Evidence for the efficacy of melatonin in the
+
+treatment of primary adult sleep disorders. Sleep Med Rev. (2017 Aug)
+
+60.   Sha Wei, Marcel G Smits, Xiangdong Tang, Li Kuang, Huaqing Meng, Shifen Ni, Mingzhao Xiao, Xinyu Zhou Efficacy and Safety
+of Melatonin for Sleep Onset Insomnia in Children and Adolescents: A Meta-Analysis of Randomized Controlled Trials. Sleep
+Med. (2020 Apr)
+
+61.   Tian Li, Shuai Jiang, Mengzhen Han, Zhi Yang, Jianjun Lv, Chao Deng, Russel J Reiter, Yang Yang Exogenous melatonin as a
+
+treatment for secondary sleep disorders: A systematic review and meta-analysis. Front Neuroendocrinol. (2019 Jan)
+
+62.   Low TL, Choo FN, Tan SM The efficacy of melatonin and melatonin agonists in insomnia - An umbrella review.. J Psychiatr Res.
+
+(2020-Feb)
+
+63.   Gholami Fatemeh, Moradi Sajjad, Rasaei Niloufar, Soveid Neda, Setayesh Leila, Mirzaei Khadijeh Effect of melatonin
+
+supplementation on sleep quality: a systematic review and meta-analysis of randomized controlled trials. J Neurol. (2021 Jan 8)
+
+64.   Braam W, Smits MG, Didden R, Korzilius H, Van Geijlswijk IM, Curfs LM Exogenous melatonin for sleep problems in individuals
+
+with intellectual disability: a meta-analysis.. Dev Med Child Neurol. (2009-May)
+
+65.   Andersen LP, Gögenur I, Rosenberg J, Reiter RJ The Safety of Melatonin in Humans.. Clin Drug Investig. (2016-Mar)
+
+66.   Cavallo A, Ris MD, Succop P, Jaskiewicz J Melatonin treatment of pediatric residents for adaptation to night shift work.. Ambul
+
+Pediatr. (2005)
+
+67.   Valenti S, Giusti M Melatonin participates in the control of testosterone secretion from rat testis: an overview of our experience..
+
+Ann N Y Acad Sci. (2002-Jun)
+
+68.   Qin F, Zhang J, Zan L, Guo W, Wang J, Chen L, Cao Y, Shen O, Tong J Inhibitory effect of melatonin on testosterone synthesis
+
+is mediated via GATA-4/SF-1 transcription factors.. Reprod Biomed Online. (2015-Nov)
+
+69.   Yu K, Deng SL, Sun TC, Li YY, Liu YX Melatonin Regulates the Synthesis of Steroid Hormones on Male Reproduction: A Review..
+
+Molecules. (2018-Feb-17)
+
+70.   Luboshitzky R, Levi M, Shen-Orr Z, Blumenfeld Z, Herer P, Lavie P Long-term melatonin administration does not alter pituitary-
+
+gonadal hormone secretion in normal men.. Hum Reprod. (2000-Jan)
+
+71.   F Waldhauser, H R Lieberman, H J Lynch, M Waldhauser, K Herkner, H Frisch, H Vierhapper, W Waldhäusl, M Schemper, R J
+Wurtman A pharmacological dose of melatonin increases PRL levels in males without altering those of GH, LH, FSH, TSH,
+testosterone or cortisol. Neuroendocrinology. (1987 Aug)
+
+72.   Besag FMC, Vasey MJ, Lao KSJ, Wong ICK Adverse Events Associated with Melatonin for the Treatment of Primary or
+
+Secondary Sleep Disorders: A Systematic Review.. CNS Drugs. (2019-Dec)
+
+73.   Vural EM, van Munster BC, de Rooij SE Optimal dosages for melatonin supplementation therapy in older adults: a systematic
+
+review of current literature.. Drugs Aging. (2014-Jun)
+
+74.   Bhattarai JP, Ah Park S, Han SK The methanolic extract of Withania somnifera ACTS on GABAA receptors in gonadotropin
+
+releasing hormone (GnRH) neurons in mice.. Phytother Res. (2010-Aug)
+
+75.   Kaushik MK, Kaul SC, Wadhwa R, Yanagisawa M, Urade Y Triethylene glycol, an active component of Ashwagandha (Withania
+
+somnifera) leaves, is responsible for sleep induction.. PLoS One. (2017)
+
+76.   Deepak Langade, Vaishali Thakare, Subodh Kanchi, Sunil Kelgane Clinical evaluation of the pharmacological impact of
+
+ashwagandha root extract on sleep in healthy volunteers and insomnia patients: A double-blind, randomized, parallel-group,
+placebo-controlled study. J Ethnopharmacol. (2020 Aug 17)
+
+77.   Salve J, Pate S, Debnath K, Langade D Adaptogenic and Anxiolytic Effects of Ashwagandha Root Extract in Healthy Adults: A
+
+Double-blind, Randomized, Placebo-controlled Clinical Study. Cureus. (2019 Dec 25)
+
+78.   Sunil B Kelgane, Jaysing Salve, Prasanthi Sampara, Khokan Debnath Efficacy and Tolerability of Ashwagandha Root Extract in
+the Elderly for Improvement of General Well-being and Sleep: A Prospective, Randomized, Double-blind, Placebo-controlled
+Study. Cureus. (2020 Feb 23)
+
+79.   Langade D, Kanchi S, Salve J, Debnath K, Ambegaokar D Efficacy and Safety of Ashwagandha (Withania somnifera) Root
+
+Extract in Insomnia and Anxiety: A Double-blind, Randomized, Placebo-controlled Study. Cureus. (2019 Sep 28)
+
+80.   Abhijit Deshpande, Nushafreen Irani, Ratna Balkrishnan, Irin Rosanna Benny A randomized, double blind, placebo controlled
+
+study to evaluate the effects of ashwagandha (Withania somnifera) extract on sleep quality in healthy adults. Sleep Med. (2020
+Mar 21)
+
+81.   Kae Ling Cheah, Mohd Noor Norhayati, Lili Husniati Yaacob, Razlina Abdul Rahman Effect of Ashwagandha (Withania
+
+somnifera) extract on sleep: A systematic review and meta-analysis. PLoS One. (2021 Sep 24)
+
+82.   Tandon N, Yadav SS Safety and clinical effectiveness of Withania Somnifera (Linn.) Dunal root in human ailments.. J
+
+Ethnopharmacol. (2020-Jun-12)
+
+83.   Adrian L Lopresti, Peter D Drummond, Stephen J Smith A Randomized, Double-Blind, Placebo-Controlled, Crossover Study
+Examining the Hormonal and Vitality Effects of Ashwagandha ( Withania somnifera) in Aging, Overweight Males. Am J Mens
+
+37
+
+Health. (Mar-Apr 2019)
+
+84.   Brambilla DJ, Matsumoto AM, Araujo AB, McKinlay JB The effect of diurnal variation on clinical measurement of serum
+
+testosterone and other sex hormone levels in men.. J Clin Endocrinol Metab. (2009-Mar)
+
+85.   Dutta R, Khalil R, Green R, Mohapatra SS, Mohapatra S (Ashwagandha) and Withaferin A: Potential in Integrative Oncology.. Int
+
+J Mol Sci. (2019-Oct-25)
+
+86.   Gardner Z, McGuffin M, Upton R, et al. American Herbal Products Association&#039;s Botanical Safety Handbook, 2nd Edition.
+
+87.   Björnsson HK, Björnsson ES, Avula B, Khan IA, Jonasson JG, Ghabril M, Hayashi PH, Navarro V Ashwagandha-induced liver
+
+injury: A case series from Iceland and the US Drug-Induced Liver Injury Network.. Liver Int. (2020-Apr)
+
+88.   Javid Ghazizadeh, Saeed Sadigh-Eteghad, Wolfgang Marx, Ali Fakhari, Sanaz Hamedeyazdan, Mohammadali Torbati,
+
+Somaiyeh Taheri-Tarighi, Mostafa Araj-Khodaei, Mojgan Mirghafourvand The effects of lemon balm (Melissa officinalis L.) on
+depression and anxiety in clinical trials: A systematic review and meta-analysis. Phytother Res. (2021 Aug 27)
+
+89.   Habib Haybar, Ahmad Zare Javid, Mohammad Hosein Haghighizadeh, Einollah Valizadeh, Seyede Marjan Mohaghegh, Assieh
+Mohammadzadeh The effects of Melissa officinalis supplementation on depression, anxiety, stress, and sleep disorder in
+patients with chronic stable angina. Clin Nutr ESPEN. (2018 Aug)
+
+90.   Heydari N, Dehghani M, Emamghoreishi M, Akbarzadeh M Effect of Melissa officinalis capsule on the mental health of female
+
+adolescents with premenstrual syndrome: a clinical trial study. Int J Adolesc Med Health. (2018 Jan 25)
+
+91.   Soltanpour A, Alijaniha F, Naseri M, Kazemnejad, Heidari M Effects of Melissa officinalis on anxiety and sleep quality in patients
+undergoing coronary artery bypass surgery: A double-blind randomized placebo controlled trial. Eur J Integr Med. (2019 June)
+
+92.   Aliakbari F, Rafieian M The Effectiveness of Melissa officinalis on Sleep Problem in Patients with Chronic Heart Failure. J Pharm
+
+Negat. (2018)
+
+93.   Kadir Demirci, Mehmet Akgönül, Arif Demirdaş, Abdullah Akpınar Does melissa officinalis cause withdrawal or dependence?.
+
+Med Arch. (2015 Feb)
+
+94.   Kawai N, Sakai N, Okuro M, Karakawa S, Tsuneyoshi Y, Kawasaki N, Takeda T, Bannai M, Nishino S The sleep-promoting and
+hypothermic effects of glycine are mediated by NMDA receptors in the suprachiasmatic nucleus.. Neuropsychopharmacology.
+(2015-May)
+
+95.   Yamadera W, Inagawa K, Chiba S, Bannai M, Takahashi M, Nakayama Kazuhiko Glycine ingestion improves subjective sleep
+
+quality in human volunteers, correlating with polysomnographic changes. Sleep Biol Rhythms. (2007 March)
+
+96.   Inagawa K, Hiraoka T, Kohda T, Yamadera W, Takahashi M Subjective effects of glycine ingestion before bedtime on sleep
+
+quality. Sleep Biol Rhythms. (2006 Feb)
+
+97.   Bannai M, Kawai N, Ono K, Nakahara K, Murakami N The effects of glycine on subjective daytime performance in partially
+
+sleep-restricted healthy volunteers. Front Neurol. (2012 Apr 18)
+
+98.   Held K, Antonijevic IA, Künzel H, Uhr M, Wetter TC, Golly IC, Steiger A, Murck H Oral Mg(2+) supplementation reverses age-
+
+related neuroendocrine and sleep EEG changes in humans. Pharmacopsychiatry. (2002 Jul)
+
+99.   Murck H, Steiger A Mg2+ reduces ACTH secretion and enhances spindle power without changing delta power during sleep in
+
+men -- possible therapeutic implications.. Psychopharmacology (Berl). (1998-Jun)
+
+100.   Ford ES, Mokdad AH Dietary magnesium intake in a national sample of US adults. J Nutr. (2003 Sep)
+
+101.   Barbagallo M, Belvedere M, Dominguez LJ Magnesium homeostasis and aging.. Magnes Res. (2009-Dec)
+
+102.   Jasmine Mah, Tyler Pitre Oral magnesium supplementation for insomnia in older adults: a Systematic Review & Meta-Analysis.
+
+BMC Complement Med Ther. (2021 Apr 17)
+
+103.   Musso CG Magnesium metabolism in health and disease. Int Urol Nephrol. (2009)
+
+104.   Pham PC, Pham PM, Pham SV, Miller JM, Pham PT Hypomagnesemia in patients with type 2 diabetes. Clin J Am Soc Nephrol.
+
+(2007 Mar)
+
+105.   Shinsuke Hidese, Miho Ota, Chisato Wakabayashi, Takamasa Noda, Hayato Ozawa, Tsutomu Okubo, Hiroshi Kunugi Effects of
+
+chronic l-theanine administration in patients with major depressive disorder: an open-label study. Acta Neuropsychiatr. (2017
+Apr)
+
+106.   Shinsuke Hidese, Shintaro Ogawa, Miho Ota, Ikki Ishida, Zenta Yasukawa, Makoto Ozeki, Hiroshi Kunugi Effects of L-Theanine
+
+Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults: A Randomized Controlled Trial.
+Nutrients. (2019 Oct 3)
+
+107.   Sarris J, Byrne GJ, Cribb L, Oliver G, Murphy J, Macdonald P, Nazareth S, Karamacoska D, Galea S, Short A, Ee C, Birling Y,
+
+Menon R, Ng CH L-theanine in the adjunctive treatment of generalized anxiety disorder: A double-blind, randomised, placebo-
+controlled trial. J Psychiatr Res. (2019 Mar)
+
+108.   Lyon MR, Kapoor MP, Juneja LR The effects of L-theanine (Suntheanine®) on objective sleep quality in boys with attention
+
+deficit hyperactivity disorder (ADHD): a randomized, double-blind, placebo-controlled clinical trial. Altern Med Rev. (2011 Dec)
+
+109.   Ota M, Wakabayashi C, Sato N, Hori H, Hattori K, Teraishi T, Ozawa H, Okubo T, Kunugi H Effect of L-theanine on
+
+glutamatergic function in patients with schizophrenia.. Acta Neuropsychiatr. (2015-Oct)
+
+110.   Clarinda N Sutanto, Wen Wei Loh, Jung Eun Kim The impact of tryptophan supplementation on sleep quality: a systematic
+
+review, meta-analysis, and meta-regression. Nutr Rev. (2021 May 3)
+
+38
+
+111.   Leach MJ, Page AT Herbal medicine for insomnia: A systematic review and meta-analysis.. Sleep Med Rev. (2015-Dec)
+
+112.   Fernández-San-Martín MI, Masa-Font R, Palacios-Soler L, Sancho-Gómez P, Calbó-Caldentey C, Flores-Mateo G Effectiveness
+
+of Valerian on insomnia: a meta-analysis of randomized placebo-controlled trials. Sleep Med. (2010 Jun)
+
+113.   Shinjyo N, Waddell G, Green J Valerian Root in Treating Sleep Problems and Associated Disorders-A Systematic Review and
+
+Meta-Analysis.. J Evid Based Integr Med. (2020)
+
+114.   Ferré S An update on the mechanisms of the psychostimulant effects of caffeine. J Neurochem. (2008 May)
+
+115.   Clark I, Landolt HP Coffee, caffeine, and sleep: A systematic review of epidemiological studies and randomized controlled
+
+trials. Sleep Med Rev. (2017 Feb)
+
+116.   Lovallo WR, Al'Absi M, Blick K, Whitsett TL, Wilson MF Stress-like adrenocorticotropin responses to caffeine in young healthy
+
+men. Pharmacol Biochem Behav. (1996 Nov)
+
+117.   McCusker RR, Goldberger BA, Cone EJ Caffeine content of energy drinks, carbonated sodas, and other beverages. J Anal
+
+Toxicol. (2006 Mar)
+
+118.   Desbrow B, Hall S, Irwin C Caffeine content of Nespresso® pod coffee. Nutr Health. (2019 Mar)
+
+119.   Ludwig IA, Mena P, Calani L, Cid C, Del Rio D, Lean ME, Crozier A Variations in caffeine and chlorogenic acid contents of
+
+coffees: what are we drinking?. Food Funct. (2014 Aug)
+
+120.   Fox GP, Wu A, Yiran L, Force L Variation in caffeine concentration in single coffee beans. J Agric Food Chem. (2013 Nov 13)
+
+121.   McCusker RR, Goldberger BA, Cone EJ Caffeine content of specialty coffees. J Anal Toxicol. (2003 Oct)
+
+122.   Angeloni G, Guerrini L, Masella P, Bellumori M, Daluiso S, Parenti A, Innocenti M What kind of coffee do you drink? An
+
+investigation on effects of eight different extraction methods. Food Res Int. (2019 Feb)
+
+123.   Stein MD, Friedmann PD Disturbed sleep and its relationship to alcohol use. Subst Abus. (2005 Mar)
+
+124.   Park SY, Oh MK, Lee BS, Kim HG, Lee WJ, Lee JH, Lim JT, Kim JY The Effects of Alcohol on Quality of Sleep. Korean J Fam
+
+Med. (2015 Nov)
+
+125.   Stone BM Sleep and low doses of alcohol. Electroencephalogr Clin Neurophysiol. (1980 Jun)
+
+126.   Posadzki PP, Bajpai R, Kyaw BM, Roberts NJ, Brzezinski A, Christopoulos GI, Divakar U, Bajpai S, Soljak M, Dunleavy G,
+
+Jarbrink K, Nang EEK, Soh CK, Car J Melatonin and health: an umbrella review of health outcomes and biological mechanisms of
+action. BMC Med. (2018 Feb 5)
+
+127.   Silman RE Melatonin: a contraceptive for the nineties. Eur J Obstet Gynecol Reprod Biol. (1993 Apr)
+
+128.   Erland LA, Saxena PK Melatonin Natural Health Products and Supplements: Presence of Serotonin and Significant Variability of
+
+Melatonin Content. J Clin Sleep Med. (2017 Feb 15)
+
+129.   Matsumoto M, Sack RL, Blood ML, Lewy AJ The amplitude of endogenous melatonin production is not affected by melatonin
+
+treatment in humans. J Pineal Res. (1997 Jan)
+
+130.   Wright J, Aldhous M, Franey C, English J, Arendt J The effects of exogenous melatonin on endocrine function in man. Clin
+
+Endocrinol (Oxf). (1986 Apr)
+
+131.   Arendt J, Bojkowski C, Folkard S, Franey C, Marks V, Minors D, Waterhouse J, Wever RA, Wildgruber C, Wright J Some effects
+
+of melatonin and the control of its secretion in humans. Ciba Found Symp. (1985)
+
+132.   Cavanagh HM, Wilkinson JM Biological activities of lavender essential oil. Phytother Res. (2002 Jun)
+
+133.   Shellie R, Mondello L, Marriott P, Dugo G Characterisation of lavender essential oils by using gas chromatography-mass
+spectrometry with correlation of linear retention indices and comparison with comprehensive two-dimensional gas
+chromatography. J Chromatogr A. (2002 Sep 13)
+
+134.   Basch E, Foppa I, Liebowitz R, Nelson J, Smith M, Sollars D, Ulbricht C Lavender (Lavandula angustifolia Miller). J Herb
+
+Pharmacother. (2004)
+
+135.   Hirshkowitz M, Whiton K, Albert SM, Alessi C, Bruni O, DonCarlos L, Hazen N, Herman J, Katz ES, Kheirandish-Gozal L,
+
+Neubauer DN, O'Donnell AE, Ohayon M, Peever J, Rawding R, Sachdeva RC, Setters B, Vitiello MV, Ware JC, Adams Hillard PJ
+National Sleep Foundation's sleep time duration recommendations: methodology and results summary. Sleep Health. (2015
+Mar)
+
+136.   Choi OH, Shamim MT, Padgett WL, Daly JW Caffeine and theophylline analogues: correlation of behavioral effects with activity
+
+as adenosine receptor antagonists and as phosphodiesterase inhibitors. Life Sci. (1988)
+
+137.   Ikeda M, Sugiyama T, Wallace CS, Gompf HS, Yoshioka T, Miyawaki A, Allen CN Circadian dynamics of cytosolic and nuclear
+
+Ca2+ in single suprachiasmatic nucleus neurons. Neuron. (2003 Apr 24)
+
+138.   Kong H, Jones PP, Koop A, Zhang L, Duff HJ, Chen SR Caffeine induces Ca2+ release by reducing the threshold for luminal
+
+Ca2+ activation of the ryanodine receptor. Biochem J. (2008 Sep 15)
+
+39
+
+

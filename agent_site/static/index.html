@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Balance.ai Project Agent</title>
+<title>Balance.ai Wellbeing Agent</title>
 <style>
   :root {
     --bg: #0a0b10;
@@ -50,6 +50,15 @@
   .msg .role { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
   .msg .content { white-space: pre-wrap; word-wrap: break-word; }
   .msg .content code { background: #000; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .msg .sources {
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+    font-size: 11px; color: var(--muted);
+  }
+  .msg .sources .label { text-transform: uppercase; letter-spacing: .08em; margin-right: 6px; }
+  .msg .sources .src {
+    display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px;
+    border: 1px solid var(--border); border-radius: 10px; color: var(--muted);
+  }
 
   .suggestions {
     display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 12px;
@@ -89,8 +98,8 @@
     <div class="brand">
       <div class="logo"></div>
       <div>
-        <h1>Balance.ai Project Agent</h1>
-        <span class="tag">grounded in project docs · Claude Sonnet 4.6</span>
+        <h1>Balance.ai Wellbeing Agent</h1>
+        <span class="tag">17 supplement guides · Claude Sonnet 4.6</span>
       </div>
     </div>
     <button class="reset" id="reset">New conversation</button>
@@ -98,17 +107,18 @@
 
   <div id="chat">
     <div class="welcome" id="welcome">
-      <h2>Ask me anything about the Balance.ai product.</h2>
-      <p>I'm the single source of truth for the project — architecture, phases, database schema, XP economy, roadmap, competitive positioning. I only answer from the documentation and I'll tell you when something isn't covered.</p>
+      <h2>Ask me anything about wellbeing and supplements.</h2>
+      <p>I answer only from 17 evidence-based supplement guides covering sleep, stress, mood, muscle gain, fat loss, memory, testosterone, cardiovascular health, joint health, and more. I'll cite the guide I pulled from, and I'll tell you when a question isn't covered.</p>
+      <p><strong>I'm not a doctor.</strong> For any personal medical decision, please talk to a qualified healthcare professional.</p>
     </div>
   </div>
 
   <div class="suggestions" id="suggestions">
-    <button class="suggestion">What's in Phase 1A?</button>
-    <button class="suggestion">Show me the user_gamification table schema</button>
-    <button class="suggestion">How much XP for a 7-day streak?</button>
-    <button class="suggestion">How does the InFlow order lifecycle work?</button>
-    <button class="suggestion">What's the cost estimate at 10K users?</button>
+    <button class="suggestion">What helps me fall asleep faster?</button>
+    <button class="suggestion">Best supplements for muscle gain?</button>
+    <button class="suggestion">Does ashwagandha actually reduce stress?</button>
+    <button class="suggestion">What do I take for focus and memory?</button>
+    <button class="suggestion">Joint pain — what's the evidence?</button>
   </div>
 
   <form id="f">
@@ -141,7 +151,24 @@ function add(role, content) {
   el.appendChild(c);
   chat.appendChild(el);
   chat.scrollTop = chat.scrollHeight;
-  return c;
+  return { content: c, wrapper: el };
+}
+
+function renderSources(wrapper, sources) {
+  if (!sources || !sources.length) return;
+  const s = document.createElement('div');
+  s.className = 'sources';
+  const label = document.createElement('span');
+  label.className = 'label';
+  label.textContent = 'Sources';
+  s.appendChild(label);
+  for (const src of sources) {
+    const chip = document.createElement('span');
+    chip.className = 'src';
+    chip.textContent = src;
+    s.appendChild(chip);
+  }
+  wrapper.appendChild(s);
 }
 
 async function sendMessage(text) {
@@ -158,10 +185,11 @@ async function sendMessage(text) {
     });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
-    pending.textContent = data.reply;
+    pending.content.textContent = data.reply;
+    renderSources(pending.wrapper, data.sources);
     history.push({ role: 'assistant', content: data.reply });
   } catch (err) {
-    pending.textContent = 'Error: ' + err.message;
+    pending.content.textContent = 'Error: ' + err.message;
   } finally {
     sendBtn.disabled = false;
     input.focus();

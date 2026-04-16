@@ -1,0 +1,3164 @@
+Vegetarians & Vegans Supplement
+Guide
+
+Written By: Michael Hull, & Wyatt Brown
+
+Edited By: Pierre-Alexandre Sicart
+
+Reviewed By: Kamal Patel
+
+Table of Contents
+
+Introduction
+
+Combos
+
+Primary Supplements
+
+Secondary Supplements
+
+Promising Supplements
+
+Unproven Supplements
+
+Inadvisable Supplements
+
+FAQ
+
+2
+
+Introduction
+
+India has the longest tradition of vegetarianism on the planet.[1] My family has been vegetarian for at least a
+
+couple of centuries, and we didn’t cook meat in the house when I was a kid. Unsurprisingly, in the ensuing
+
+decades, I’ve thought a lot about vegetarianism, including its health effects and how supplements fit in.
+
+I’ve also pondered the ethical implications. Some vegetarians oppose any killing of animals, but others
+
+oppose only factory farming — because of how animals are treated or just because of the yuck factor. Paul
+
+McCartney famously said, “If slaughterhouses had glass walls, everyone would be a vegetarian.”
+
+My field of expertise is not ethics, however, but nutrition. Of the many reasons people have to be
+
+vegetarians,[2] the one we’ll touch on in this introduction is the notion that a plant-based or even plant-only
+
+diet is healthier.
+
+But wait …
+
+What exactly are we talking about here?
+
+Do not eat animals
+
+Unlike most other dietary patterns, vegetarianism doesn’t require that you track calories or macronutrients
+
+or consult a complex list of yay and nay foods. It has only one rule:
+
+And veganism just goes one step farther:
+
+Do not eat animal products
+
+Still, a few gray-area foods have been debated. Some vegans eat honey,[3] for instance, despite its being an
+
+animal product (removed from beehives and replaced with sucrose or high-fructose corn syrup).[4] And
+
+while vegetarians aren’t pescetarians — i.e., they don’t shun only meat, but also fish — even some vegans
+
+eat bivalves (e.g., clams, oysters, mussels, scallops; which is why they’re sometimes called ostrovegans).
+
+Such variations within a “same” dietary pattern can make studies less reliable, especially observational
+
+studies. In this introduction, we will discuss veganism as much as vegetarianism, though the latter is more
+
+common, because there is less variance between vegan diets than between vegetarian diets, and because
+
+veganism is more likely to induce nutrient deficiencies.[5] Like a healthy vegetarian diet, a healthy vegan diet
+
+will be rich in whole foods, with a good balance of complementary nutrients, yet getting enough of _all
+
+_nutrients may prove difficult without the help of some key supplements.
+
+So are vegetarian/vegan diets
+healthier?
+
+Sometimes
+
+3
+
+Although vegetarianism has a long history and veganism is quickly growing in popularity, randomized trials
+
+on either diet pattern are still few. Vegetarian and vegan diets do show promise for a variety of outcomes,
+
+from weight loss[6] to autoimmunity,[7] but they are seldom compared to other popular diets.
+
+And the data we do have is quite mixed.
+
+The Adventist study,[8] one of the largest studies on plant-based diets, and the Epic Oxford study[9] suggest
+
+that vegetarians live a bit longer. Both are observational studies, however, and those tend to be unreliable
+
+for several reasons:
+
+They rely on the participants’ memory, even though people often misremember and underestimate what they ate
+even shortly after eating.[10][11][12][13]
+
+As aforementioned, not all vegetarian diets are the same.
+
+There are differences in how strictly different people adhere to their diet of choice.[14]
+
+Correlation does not imply causation. People able to stick to a vegetarian diet are more likely to exercise, not smoke,
+and drink only in moderation,[8] and each of those factors can, by itself, promote health and prolong life.
+
+It can be tricky to look at specific health outcomes over time — e.g., cardiovascular mortality is harder to study now
+than in earlier decades because, thankfully, the ratio of _non-fatal _to _fatal _heart attacks is increasing.
+
+There are of course a variety of other important health outcomes, outside death and heart disease — such
+
+as cancer. Some animal products, notably red meat, have been associated with an increased risk of cancer.
+
+People who regularly consume either processed or charred meat seem more likely to get bowel cancer (aka
+
+colorectal cancer).[15] And a type of sugar compound called Neu5gc, present only in animal products, has
+
+been found in human tumors.[16]
+
+The evidence is still sparse and mostly in animals, but one meta-analysis of human studies has linked
+
+vegetarian diets to less death from heart disease, and both vegetarian and vegan diets to less death from
+
+cancer.[17] It is important to note, however, that the same meta-analysis found that a healthy plant-based
+
+diet rich in fruits, veggies, and whole grains was linked to less heart disease than was an unhealthy plant-
+
+based diet rich in sweets and refined grains.
+
+Prioritize whole foods
+
+Like animals — including us humans — plants are composed of cells. As such, eating plants, whether raw or
+
+cooked, means consuming their cells and extracellular material, sometimes called their food matrix.[18]
+
+A plant’s food matrix may undergo processing ranging from simple heating or mixing to complex
+
+extraction, chemical alteration, decoloration, deodorization, and a plethora of other techniques. You may be
+
+vaguely aware that your packaged food hails from a factory, but when people see the extent of processing
+
+undergone by foods rich in flour, sugar, and inexpensive vegetable oils, they are often astounded.
+
+A diet rich in whole foods is healthier than one rich in processed foods — because it is richer in vitamins
+
+and minerals and because it is less likely to lead to obesity. A 2019 metabolic-ward trial showed that
+
+people told to eat as much as they’d like gained significantly more weight when provided with ultra-
+
+processed options than with less-procession options.[19]
+
+One of the main reasons is lesser satiety: an apple is more satiating than applesauce, which is more
+
+satiating than apple juice.[20] Apples contain fiber and water bound up in a food matrix, applesauce breaks
+
+down much of that matrix while retaining much of the fiber, and apple juice breaks down all of the matrix
+
+and loses all the fiber.
+
+And of course, apple pies introduce novel and hyperpalatable additional flavors and textures such as a
+
+4
+
+flaky crust, cool and creamy whipped cream or ice cream, and extra sugar mixed in with the apple. Actually,
+
+apples are very seldom the main ingredient of apple pies — an apple pie is no more a fruit than pizza is a
+
+vegetable.
+
+Try, then try again
+
+There are many hot-button issues around pesticides in plants,[21] hormones in meat,[22] and heavy metals and
+
+other toxicants in fish.[23] But while a lot of people have a strong opinion on what the detriments are,
+
+nobody really knows— we’re only starting to understand these topics through rigorous research.
+
+There are also unknowns regarding the benefits and drawbacks of vegetarian and vegan diets in general. As
+
+we mentioned, studies comparing those to other diets are few. One question in particular needs answering:
+
+if the health benefits of vegetarianism and veganism are real and really due to the diet (and not to a
+
+correlated factor, such as people who are vegetarians also being people who exercise more), what is the
+
+reason? The absence of meat products? Or the abundance of plant products? Or both?
+
+We don’t have the answer. There is no denying, however, that animal products contain nutrients that are
+
+difficult or even impossible to get from whole plant-based foods (nutrients such as EPA and DHA, found in
+
+fish). So it may be that a diet rich in whole plant-based foods with _some _animal products would be
+
+healthiest. Or it may be that a purely vegan diet with some vegan supplements (such as EPA and DHA
+
+extracted from algae) would be best.
+
+We don’t know.
+
+And to complicate things further, while the research tells us what works on average, it also tells us that
+
+different diets work differently for different people (e.g., it shows that low-fat diets and low-carb diets
+
+perform equally well for weight loss on average, but not at the individual level).
+
+This is where personal experimentation plays a role: you can test different diets that interest you, based
+
+notably on the studies, and see how they affect you, physically as well as mentally (since a diet that makes
+
+you miserable is probably not the right diet for you, in the long run). Maybe strict veganism will be your
+
+thing. Or maybe you’ll feel better on a nonvegetarian yet plant-rich diet, such as the Mediterranean diet.
+
+5
+
+Comparing plant-heavy diets
+
+Listen to your body
+
+Vegan and vegetarian diets are linked to a higher incidence of certain digestive issues,[24] probably because
+
+of their usually high content in fiber and FODMAPs.
+
+Fiber in general can provide a host of health benefits, such as greater satiety, but digestively distressing
+
+fibers such as the galactans in lentils can cause a lot of gas to be produced, especially in people who
+
+brutally rather than progressively switch to a vegetarian diet.[25]
+
+FODMAPs are types of carbohydrates that are easily fermented in your gut (they’re fermentable oligo-, di-,
+
+mono-saccharides and polyols). Over the past two decades, research has linked FODMAPs to irritable
+
+bowel syndrome (IBS).[26]
+
+The best-known FODMAP is lactose. People who don’t have adequate amounts of the lactase enzyme (i.e.,
+
+a large portion of the world population) cannot digest lactose, but their intestinal flora still can, causing
+
+gas, bloating, and potentially diarrhea.
+
+6
+
+Food FODMAP content
+
+Reference: Monash University. The Low FODMAP Diet. Accessed February 2, 2020
+
+Vegan diets have also been linked to cognitive deficiencies[27] and depression,[28] but studies are sparse.
+
+Vegans shun all animal products, though, so if those issues are real, they may derive from nutritional
+
+deficiencies, which can be corrected by either incorporating more of certain plant-based foods or taking
+
+specific supplements.
+
+The rule of thumb here is to listen to your body, and maybe keep a food diary that records what you eat
+
+and how you feel (energized, depressed, clear-headed, muzzy …). Also, before you switch to a new diet
+
+entirely, you may want to try removing some foods from your current diet (e.g., foods rich in FODMAPS)
+
+and see how you feel.
+
+Don’t rely on “superfoods”
+
+“Superfood” is a popular buzzword you’ve probably seen on health blogs, in grocery stores, and from well-
+
+meaning friends. And every year, there’s a new trending superfood. Whether the latest fad is a rare fruit
+
+from the Amazon or a seed that cures every disease known to man, most superfoods build on hype, not
+
+evidence of real health benefits.
+
+That isn’t to mean that specific foods cannot have specific health benefits — eating blueberries regularly,
+
+for instance, has been shown to improve cognition — but your general health depends more on your eating
+
+a variety of fruits and vegetables than on your eating any particular one.
+
+Still, there are foods vegetarians and vegans may want to prioritize. Vegan diets are often poor in protein,
+
+so protein-rich legumes such as beans and lentils are a must. And ironically, the real superfoods of a
+
+vegetarian may be animal-based foods: lacto-ovo-vegetarians can eat dairy products and eggs, which
+
+7
+
+provide them with protein and some micronutrients that tend to be scarce in nonsupplemented vegan diets
+
+(e.g., eggs are rich in choline, and milk in calcium).
+
+What should you look out for?
+
+There are plenty of thriving vegans out there, as well as plenty of thriving meat-eaters. Your diet is your
+
+choice; there is no one diet that will cause or solve all your health issues. Still, different diets do affect
+
+different people differently, and trying a different diet is more likely to affect your overall health than trying
+
+yet another supplement.
+
+However, if you decide to go vegan or vegetarian, whether for ethical or health reasons, you need to make
+
+sure that you still get enough of all the nutrients: all the essential amino acids (EAAs), essential fatty acids
+
+(EFAs), vitamins, and minerals. In this guide, we’ll discuss the nutrients that are hard to obtain through plant-
+
+based foods — the nutrients you may want to consider supplementing.
+
+Kamal Patel, Co-founder and Director
+
+MBA, MPH, PhD(c) in Nutrition
+
+8
+
+Combos
+
+Core Combo
+
+With food, take vitamin B12 (25–400 mcg), algal oil softgels (650 mg of combined EPA and DHA), creatine
+
+(3–5 g), and carnitine — either acetyl-L-carnitine (250–500 mg) for neurological benefits or L-carnitine (2
+
+g) for non-neurological benefits.
+
+ Tip: Try one combo alone for a few weeks
+
+Taking too many supplements at once may prevent you from determining which ones are truly
+
+working. Start with just one of the combos suggested here for a couple of weeks before you
+
+consider making any modification, such as adding another supplement, altering a supplements
+
+dosage, or incorporating the supplements from an additional combo.
+
+When adding another supplement to your regimen, be methodical. For example, you may wish to
+
+take all the supplements from two combos. Select the combo that you wish to try first and take this
+
+for a couple of weeks. Then, add one supplement from the second combo and wait another week to
+
+see how it affects you. Continue this process until you’ve added all the supplements you wish to.
+
+If a supplement appears in two combos you wish to combine, don’t stack the doses; instead,
+
+combine the ranges. For instance, if the range is 2–4 mg in one combo and 3–6 mg in the other, your
+
+new range becomes 2–6 mg. Always start with the lower end of the range — especially in this case,
+
+since the reason why one of the ranges has a lower ceiling in one combo may be due to a synergy
+
+with another supplement in the same combo. Reading through the full supplement entry may help
+
+you decide which dose to aim for, but if you’re not sure, lower is usually safer.
+
+Specialized Combos
+
+For vegetarian and vegan athletes
+
+Take beta-alanine (4–6 g) with the core supplements.
+
+Acetyl-L-carnitine might improve focus when taken 30–45 minutes before exercise.
+
+Consume protein throughout the day (1.0–2.2 grams per kilogram of body weight, so 0.45–1.00 g/lb), with
+
+the help of a protein powder if necessary. Consult the protein entry to set the intake level best suited to
+
+your needs.
+
+If your blood levels of vitamin D (25(OH)D) are adequate or you do not know your levels, 400 IU (10 mcg)
+
+of vitamin D3 per day may help maintain levels in the adequate range. If your 25(OH)D levels are low, 800–
+
+2,000 IU (20–50 mcg) of D3 per day is likely to raise them to an adequate level, at which point 400–1,000
+
+IU (20–25 mcg) per day should suffice for maintenance. In case of full-blown deficiency, a medically
+
+9
+
+supervised intervention will be needed.
+
+For vegetarians and vegans who want to add
+more protein to their diet
+
+Consume protein throughout the day (1.0–2.2 grams per kilogram of body weight, so 0.45–1.00 g/lb), with
+
+the help of a protein powder if necessary. Consult the protein entry to set the intake level best suited to
+
+your needs.
+
+Whole foods are best, but if you cannot tweak your diet to cover your daily protein needs, add 20 g of a
+
+vegetarian or vegan protein powder to the core supplements. Progressively increase this dose as needed.
+
+The greater the dose, the greater the benefit from spreading it over several meals.
+
+For vegetarians and vegans avoiding salt
+
+Take iodine (75–150 mcg) with the core supplements.
+
+If you consume sea vegetables or iodized salt (either by itself or as an ingredient of processed foods), you
+
+probably do not need to supplement iodine.
+
+For vegetarians who don’t get enough sun
+
+If your blood levels of vitamin D (25(OH)D) are adequate or you do not know your levels, 400 IU (10 mcg)
+
+of vitamin D3 per day may help maintain levels in the adequate range. If your 25(OH)D levels are low, 800–
+
+2,000 IU (20–50 mcg) of D3 per day is likely to raise them to an adequate level, at which point 400–1,000
+
+IU (20–25 mcg) per day should suffice for maintenance. In case of full-blown deficiency, a medically
+
+supervised intervention will be needed.
+
+10
+
+Primary Supplements
+
+Carnitine
+
+What makes carnitine a primary supplement
+
+Compared with omnivores, vegetarians and vegans tend to live longer with healthier lifestyles, yet their
+
+diets make them more susceptible to low levels of certain beneficial compounds, notably carnitine, creatine,
+
+EPA, and DHA.
+
+Carnitine plays a role in cognition,[29] energy metabolism,[30] and cardiovascular health.[31][32][33] Though your
+
+body can synthesize it out of lysine and methionine, two amino acids, nearly three-fourths of the carnitine
+
+in omnivorous people comes from the meat, fish, eggs, and dairy products they consume.
+
+Selected food sources of carnitine
+
+FOOD
+
+PORTION
+
+MILLIGRAMS (mg)
+
+Beefsteak, cooked
+
+Ground beef, cooked
+
+Whole milk
+
+Codfish, cooked
+
+Chicken breast, cooked
+
+Ice cream
+
+Cheddar cheese
+
+Whole-wheat bread
+
+Asparagus, cooked
+
+4 oz
+
+4 oz
+
+1 cup
+
+4 oz
+
+4 oz
+
+½ cup
+
+2 oz
+
+2 slices
+
+½ cup
+
+56–162
+
+87–99
+
+8
+
+4–7
+
+3–5
+
+3
+
+2
+
+0.2
+
+0.1
+
+Adapted from Carnitine: Fact Sheet for Health Professionals. NIH ODS. Last updated October 10, 2017; accessed October 27, 2019
+
+In vegans and vegetarians, supplementation with L-carnitine can reduce muscular fatigue, whereas
+
+supplementation with acetyl-L-carnitine (ALCAR) can benefit cognition by improving blood flow and
+
+promoting efficient energy use in brain cells.
+
+Adverse effects are generally rare, but some cases of upset stomachs have been reported. Higher doses of
+
+L-carnitine (2 g/day or more) can be converted into the compound trimethylamine, which in _some _people
+
+can give a fishy odor to urine, sweat, or breath.
+
+Carnitine and its derivatives might interact negatively with some pharmaceuticals, including anticoagulants
+
+(such as warfarin/Coumadin and acenocoumarol/Sintrom). People on thyroid medication or with
+
+hypothyroidism may also wish to forgo carnitine, as it might depress thyroid hormone levels.
+
+11
+
+ 
+Summary of L-carnitine’s benefits
+
+How to take carnitine
+
+For neurological benefits, take acetyl-L-carnitine (ALCAR). Start with 250 mg twice a day (i.e., 500
+
+mg/day). Over the course of a week, increase to 500 mg twice a day (i.e., 1 g/day). Taking ALCAR on an
+
+empty stomach will result in more potent cognitive benefits. This type of carnitine has a tart taste, but it
+
+can be dissolved in tea or coffee and still retain its effects.
+
+For general non-neurological benefits, take 2 grams of L-carnitine per day, with carbohydrates if you wish
+
+to increase the rate of absorption by the muscles.
+
+Those 2 g of L-carnitine can be supplemented through 3 g of L-carnitine L-tartrate (LCLT) or glycine
+
+propionyl-L-carnitine (GPLC), but neither option has proven advantages over regular L-carnitine, both are
+
+more expensive, and GPLC also clumps easily in moist environments.
+
+12
+
+ Tip: Why don’t you recommend brands or specific products?
+
+For two reasons:
+
+We don’t test physical products. What our researchers do — all day, every day — is analyze
+
+peer-reviewed studies on supplements and nutrition.
+
+We go to great lengths to protect our integrity. As you’ve probably noticed, we don’t sell
+
+supplements, or even show ads from supplement companies, even though either option
+
+would generate a lot more money than our Supplement Guides ever will — and for a lot less
+
+work, too.
+
+If we recommended any brands or specific products, our integrity would be called into question, so
+
+… we can’t do it. That being said, in the interest of keeping you safe, we drew a short list of steps
+
+you should take if a product has caught your interest.
+
+Creatine
+
+What makes creatine a primary supplement
+
+Supplementing with creatine monohydrate increases the body’s creatine stores, which are located primarily
+
+in the skeletal muscles.[34] Your cells use creatine to regenerate adenosine triphosphate (ATP),[34] life’s
+
+energy currency, before they turn to burning glucose.
+
+Enough creatine is synthesized in the liver, kidney, and pancreas to prevent any deficiency, but additional
+
+creatine can improve muscular strength and control, and thus fitness and mobility.[35] In seniors, these
+
+improvements might help reduce the risk of falls, though many more studies are needed for confirmation.
+
+When paired with resistance training, creatine may also improve bone health.[36][37] When creatine levels are
+
+suboptimal, as is often the case in seniors, vegans, and vegetarians, creatine might also enhance
+
+cognition.[38]
+
+Creatine can be consumed through meat, fish, and eggs, but it can also be supplemented. Decades of
+
+research have demonstrated that creatine is generally well tolerated. The only recorded adverse effects are
+
+nausea, diarrhea, and stomach cramps in people taking more than 10 grams at once, and even at such high
+
+doses, these effects are rare.[39] Still, should you find yourself particularly sensitive to creatine’s digestive
+
+adverse effects, split your daily dose, take it with some food, and drink more fluids. You could also try
+
+_micronized _creatine monohydrate, which dissolves more easily in liquids.
+
+13
+
+ 
+Evidence for cognitive benefits in vegans and vegetarians
+
+Omega-3 Fatty Acids
+
+What makes omega-3 fatty acids a primary
+supplement
+
+Essential fatty acids (EFAs) are polyunsaturated fatty acids your body needs and cannot produce. There
+
+14
+
+ 
+are only two kinds of EFAs: linoleic acid (LA) and alpha-linolenic acid (ALA). Neither is very active, so your
+
+body transforms the former into notably arachidonic acid (AA) and the latter into eicosapentaenoic acid
+
+(EPA) and docosahexaenoic acid (DHA). LA and AA are omega-6 fatty acids, whereas ALA, EPA, and DHA
+
+are omega-3 fatty acids.
+
+LA and ALA compete for the same enzymes for their conversion. Too much LA means that too little ALA
+
+gets converted, and vice versa. The LA:ALA ratio in American diets is even higher for vegetarians (10–16:1)
+
+and vegans (14–20:1) than for omnivores (<10:1). Vegetarians and vegans should aim for a 2–4:1 ratio. A
+
+ratio lower than 1:1 should be avoided, since it could lead to insufficient conversion of LA to AA.
+
+Most people could achieve a better LA:ALA ratio by increasing their intake of foods rich in ALA (including
+
+oils) and decreasing their intake of processed foods rich in LA (notably oils and snacks). A source rich in
+
+ALA can also be rich in LA, so take into account the ratio between both types of EFAs.
+
+Plant sources of EFAs*
+
+OIL
+
+LA%
+
+ALA%
+
+LA:ALA RATIO
+
+Flaxseed
+
+Canola
+
+Hempseed
+
+Walnut
+
+Soybean
+
+Corn
+
+Safflower
+
+Cottonseed
+
+Grapeseed
+
+Sunflower (mid-oleic)
+
+14
+
+19
+
+56
+
+53
+
+51
+
+54
+
+13
+
+52
+
+70
+
+29
+
+53
+
+9
+
+18
+
+10
+
+7
+
+1
+
+0.1
+
+0.2
+
+0.1
+
+0.04
+
+0.3:1
+
+2:1
+
+3:1
+
+5:1
+
+8:1
+
+46:1
+
+133:1
+
+258:1
+
+696:1
+
+782:1
+
+* For details on more foods, consult the USDA FoodData Central Database.
+
+Even in an optimal scenario, though, conversion of ALA into EPA and DHA is very inefficient, so consuming
+
+EPA and DHA directly can have numerous health benefits. Omnivores need only eat fatty fish, but
+
+vegetarians and vegans will need to rely on algal oil softgels (algae being low in fat, eating them directly
+
+will not help much). Vegetarians who eat eggs can also get some DHA this way.
+
+Omega-3 fatty acids have blood-thinning properties and so may potentiate other blood thinners (such as
+
+warfarin/Coumadin and acenocoumarol/Sintrom). They may also lower blood pressure and increase fasting
+
+blood sugar levels.
+
+How to take omega-3 fatty acids
+
+Every day, take 650 mg of combined EPA and DHA in the form of algal oil softgels. If for some reason this
+
+is not an option, take 2–4 g of ALA through foods or oils.
+
+Omega-3 oils should be stored in the dark. Softgels can be kept at room temperature, but opened oil
+
+bottles should be placed in a cool location (such as the refrigerator). Do not heat omega-3 oils.
+
+15
+
+ Digging Deeper: Oxidized fish oil
+
+Fish oil can go rancid and oxidize when exposed to oxygen, heat, or light. These oils are particularly
+
+susceptible to oxidation because of their very-long-chain polyunsaturated fatty acids. The oxidation
+
+level is measured using three values.
+
+1.  Peroxide value (PV)
+
+2.  Anisidine value (AV)
+
+3.  Total oxidation value (TOTOX)
+
+The PV is a measure of primary oxidation products (peroxides) and AV a measure of secondary
+
+oxidation (aldehydes and ketones). The TOTOX value is calculated using the formula AV + 2PV. The
+
+lower the TOTOX value, the better the oil quality will be. The Global Organization for EPA and DHA
+
+Omega-3 recommends a TOTOX value of no more than 26.[40]
+
+Oxidation of fish oils may be more common than you suspect. One 2015 study found that nearly 50%
+
+of commercial fish oils exceeded the maximum recommended TOTOX value.[41] while others have
+
+found good compliance with TOTOX limits.[42][43] Taken together, the divergent results demonstrate
+
+just how widely the quality of commercially available fish oil supplements can be.
+
+Evidence for the health effects of consuming oxidized fish oils is a bit mixed though. For healthy
+
+individuals, it would appear that there is a lack of obvious short-term health damage from consuming
+
+oxidized fish oil. One study showed no difference in circulating levels of oxidized LDL or
+
+inflammatory markers after seven weeks of oxidized fish oil supplementation.[44]
+
+However, in people with high levels of cholesterol and triglycerides, consumption of highly oxidized
+
+fish oils can minimize its efficiency at improving metabolic markers like fasting glucose, total
+
+cholesterol, and triglycerides.[45]
+
+Vitamin B12 (cobalamins)
+
+What makes vitamin B12 a primary supplement
+
+Vitamin B12 (cobalamin) deficiency can cause cognitive impairment, mood disorders, anemia, nerve
+
+damage, and other health problems.[46] B12 can be found in animal products and some fortified foods. The
+
+B12 naturally present in food is bound to protein and gets harder to digest as you get older.[47] Moreover,
+
+vegetarians and vegans are at higher risk of not consuming enough B12.[48][49]
+
+B12 supplementation is recommended for vegans because natural sources of B12 are almost all animal-
+
+based. Vegetarians who regularly consume eggs or dairy products may not need to supplement B12.
+
+Each vitamin has different forms, called vitamers. Four B12 vitamers can be found in food.
+
+16
+
+ 
+Hydroxocobalamin
+
+Aquacobalamin
+
+Methylcobalamin
+
+Adenosylcobalamin
+
+Most supplements and fortified foods use the synthetic cyanocobalamin, which has the advantage of being
+
+particularly stable, as long as it is kept away from bright light — ultraviolet (UV) rays in particular.[50]
+
+People with diabetic nephropathy or kidney diseases related to diabetes should talk to their physician
+
+before supplementing B12.
+
+Vitamin B~12~ Decision Flow Chart
+
+Most vegetarians and vegans will find 25–100 mcg/day to be enough, while people over fifty or taking
+
+metformin could benefit from 100–400 mcg/day. Your body will not absorb more than it needs: dosages as
+
+high as 5,000 mcg/day (5 mg/day) have not been found to be toxic.
+
+How to take vitamin B12
+
+17
+
+All four commonly supplemented B12 vitamers can degrade when exposed to UV rays,[50] but
+
+cyanocobalamin and hydroxocobalamin are more stable (and widely available) than methylcobalamin and
+
+adenosylcobalamin.
+
+Methylcobalamin and adenosylcobalamin can affect your body directly: they are bioactive. The other B12
+
+vitamers are not bioactive, but your body can transform them into methylcobalamin, which can be
+
+transformed into adenosylcobalamin. Adenosylcobalamin cannot be transformed into methylcobalamin,
+
+though, which is why it is seldom taken alone (it is usually paired with methylcobalamin).
+
+Take 25–400 mcg/day (all forms included). Most vegetarians and vegans will find 25–100 mcg/day to be
+
+enough. People on metformin, over fifty, or with absorption issues should aim toward the higher end of the
+
+range (250–400 mcg/day). People with swallowing difficulties or intestinal absorption issues can use
+
+sublingual B12 supplements.
+
+Fortunately, your body will not readily absorb more than it needs: doses as high as 1,000 mcg (1 mg) taken
+
+daily for 5 years have not been found to produce adverse effects.[51] For that reason, even the Institute of
+
+Medicine (now known as the Health and Medicine Division) did not set a Tolerable Upper Intake Level (UL)
+
+for B12.[52]
+
+Recommended Dietary Allowance (RDA) for vitamin B12 (mcg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+>13 years
+
+* Adequate Intake (AI)
+
+0.4*
+
+0.5*
+
+0.9
+
+1.2
+
+1.8
+
+2.4
+
+0.4*
+
+0.5*
+
+0.9
+
+1.2
+
+1.8
+
+2.4
+
+—
+
+—
+
+—
+
+—
+
+—
+
+2.6
+
+—
+
+—
+
+—
+
+—
+
+—
+
+2.8
+
+Reference: Institute of Medicine. Vitamin B12 (chapter 9 in Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6,
+
+Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline. The National Academies Press. 1998. DOI:10.17226/6015)
+
+18
+
+Secondary Supplements
+
+Iodine
+
+What makes iodine a secondary option
+
+Iodine is a dietary mineral important for cognitive development in children and a properly functioning
+
+thyroid in all age groups. Too little or too much iodine can cause a decrease in thyroid hormone production,
+
+or even a goiter — an enlargement of the thyroid glands visible as a swelling of the front of the neck. Iodine
+
+can also counteract the decrease in thyroid hormone production caused by the goitrogens present in
+
+cruciferous vegetables (broccoli, kale …).
+
+ Digging Deeper: Thyroid Hormones 101
+
+The thyroid gland makes two major kinds of thyroid hormones: T3 and T4, which are shown in the
+
+figure below. These hormones are synthesized from the amino acid tyrosine and iodine. T3 had three
+
+iodines stuck onto it, whereas T4 had four.
+
+The thyroid gland makes mostly T4. However, T3 is much more potent, but T4 tends to last for a
+
+longer time in the blood. Tissues throughout the body take up T4 and convert it to the more potent
+
+to T3, which leads to lots of metabolic changes throughout the body, depending on the tissue.
+
+Thyroid hormones regulate a lot of different processes, including metabolic rate, tissue growth and
+
+maintenance.
+
+The thyroid gland and thyroid hormones
+
+19
+
+ 
+Females who plan to have children in the near future should keep an eye on their iodine intake, since iodine
+
+is important for fetal development.
+
+Iodine is stored in body tissues, so a little can be found in animal products, but the main dietary sources are
+
+sea vegetables and iodized salt (in some countries, notably the United States, table salt is iodized by
+
+default). Iodine is a secondary supplement in this guide because many vegetarians) and vegans avoid table
+
+salt and processed foods (some of which contain iodized salt). If this is not the case with you, or if you
+
+frequently eat sea vegetables such as seaweeds, you probably do not need to supplement iodine.
+
+How to take iodine
+
+Take 75–150 mcg of iodine once a day, on an empty stomach or with food. Never take more than 500 mcg,
+
+unless so advised by your physician. In case of ferropenic anemia (iron deficiency anemia), adding  )iron-
+
+vitamin-c|iron] to iodine can help address low thyroid hormone production.
+
+Recommended Dietary Allowance (RDA) for iodine (mcg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+>18 years
+
+* Adequate intake (AI)
+
+110*
+
+130*
+
+90
+
+90
+
+120
+
+150
+
+150
+
+110*
+
+130*
+
+90
+
+90
+
+120
+
+150
+
+150
+
+—
+
+—
+
+—
+
+—
+
+—
+
+220
+
+220
+
+—
+
+—
+
+—
+
+—
+
+—
+
+290
+
+290
+
+Reference: Institute of Medicine. Iodine (chapter 8 in Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron,
+
+Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc. The National Academies Press.
+
+2001. DOI:10.17226/10026)
+
+The iodine content of seaweeds varies greatly, even within a same species, from less than 100 mcg/g to
+
+more than 8,000 mcg/g — a highly unsafe amount. Do not regularly consume high amounts of iodine-rich
+
+sea vegetables, such as paddle weed, oarweed, or kelp/kombu. Likewise, high amounts of iodine-rich sea
+
+vegetables in supplemental form should be avoided.
+
+Regular consumption of seaweed (no more than three grams per week) or iodized salt (at least 1.5 g/day)
+
+should be sufficient to ensure adequate iodine intake.[53] The use of iodized salt will better ensure sufficient
+
+iodine intake.
+
+Iron with Vitamin C
+
+What makes iron with vitamin C a secondary
+
+20
+
+ 
+option
+
+Like iodine, iron is a dietary mineral. It associates with proteins and enzymes to support many biological
+
+functions, such as energy production and DNA synthesis. Iron gets stored mostly in red blood cells, where it
+
+participates in oxygen transport.
+
+Dietary iron exists as heme iron and non-heme iron. Plants, eggs, and dairy products only contain non-heme
+
+iron, as do nearly all iron-fortified foods. Not only is this form less bioavailable, its absorption rate is further
+
+reduced by a variety of compounds in food, particularly carbonates, fibers, oxalates, phytates, phosphates,
+
+and polyphenols. The polyphenols known as tannins (found notably in tea and coffee) are especially potent
+
+in that respect.
+
+Of the few compounds known to _enhance _the absorption of non-heme iron, ascorbic acid (vitamin C)
+
+works best. However, while concomitant supplementation of iron and vitamin C strongly enhances the
+
+absorption of the former, simply adding vitamin C to one’s diet barely improves one’s iron status.
+
+Since, compared to omnivores, vegetarians and vegans get little to no heme iron, they are more likely to
+
+suffer from iron deficiency. Because of monthly blood loss, premenopausal females are especially at risk —
+
+as are frequent blood donors.
+
+It is important to remember, however, that while iron deficiencies are not rare, neither is iron poisoning
+
+(especially in children young enough to confuse iron tablets with candies). Without blood loss, there is
+
+hardly any iron loss, and while most people do not absorb more iron than they need (within certain limits).
+
+Postmenopausal females need less iron (8 mg/day, like males) than premenopausal females (18 mg/day).
+
+Although iron deficiency contributes substantially to the high prevalence of anemia seen in the elderly,[54][55]
+
+taking an iron supplement “just in case” (or because you look pale and feel tired) is ill-advised. If you think
+
+you might suffer from iron deficiency, see a physician and get tested.
+
+ Caution: Iron overload
+
+Too much iron has been linked, via prospective observational studies, to a wide variety of conditions,
+
+such as Alzheimer’s, heart disease, and colorectal cancer.[56][57][58] There are a couple of groups who
+
+don’t have to worry as much about iron overload though: menstruating females and
+
+vegetarians/vegans (although these groups should still take stock of their iron intake from
+
+supplements and diet before adding an iron supplement.).
+
+But for others, especially those who regularly eat red meat, it doesn’t take much to push yourself into
+
+excess iron territory. And for the nearly one million Americans who have hereditary genetic disorder
+
+hemochromatosis, a condition — which typically emerges in adulthood — where you absorb too
+
+much dietary iron, the risk is much more serious. Iron buildup can lead to dysfunction in your heart,
+
+liver, and pancreas. In extreme cases, it can cause arrhythmias, heart failure, and death.
+
+Those at risk for iron overload should also learn more about how to cook with cast iron safety. We
+
+provide full details on how to do so here.
+
+21
+
+Chances of iron overload in different populations
+
+How to take iron with vitamin C
+
+Females can supplement up to 18 mg of iron, except during pregnancy (27 mg) and after menopause (8
+
+mg). Males should not supplement more than 8 mg.
+
+Children and teenagers should not supplement iron without first consulting a physician.
+
+Recommended Dietary Allowance (RDA) for iron (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+22
+
+AGE
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+19–50 years
+
+>50 years
+
+MALE
+
+0.27*
+
+11
+
+7
+
+10
+
+8
+
+11
+
+8
+
+8
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0.27*
+
+11
+
+7
+
+10
+
+8
+
+15
+
+18
+
+7
+
+—
+
+—
+
+—
+
+—
+
+—
+
+27
+
+27
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+10
+
+9
+
+—
+
+* Adequate intake (AI)
+
+Reference: Institute of Medicine. Iron (chapter 9 in Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium,
+
+Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc. The National Academies Press. 2001.
+
+DOI:10.17226/10026)
+
+To facilitate absorption, take your iron dose with 250 mg of vitamin C (preferably on an empty stomach,
+
+except in case of gastrointestinal symptoms such as nausea, diarrhea, or constipation).
+
+The Recommended Dietary Allowance (RDA) for vitamin C for adults ranges from 75–120 mg per day.[59]
+
+While 250 mg/day dose discussed here exceeds that, it is still well under vitamin C’s Tolerable Upper Intake
+
+Level (UL) of 2,000 mg/day.
+
+Tolerable Upper Intake Level (UL) for vitamin C (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+>18 years
+
+*
+
+400
+
+650
+
+1,200
+
+1,800
+
+2,000
+
+*
+
+400
+
+650
+
+1,200
+
+1,800
+
+2,000
+
+—
+
+—
+
+—
+
+—
+
+1,800
+
+2,000
+
+—
+
+—
+
+—
+
+—
+
+1,800
+
+2,000
+
+* Formula and food should be the only sources of vitamin C for infants.
+
+Reference: Institute of Medicine. Vitamin C (chapter 5 in Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and
+
+Carotenoids. The National Academies Press. 2000. DOI:10.17226/9810)
+
+Since calcium, iron, magnesium, and zinc compete for absorption, it is better to take them at least one hour
+
+apart. Iron may also impair the absorption of antibiotics — notably in the tetracycline class (e.g.,
+
+doxycycline) and quinolone class (e.g., ciprofloxacin) — and of drugs used to treat osteoporosis,
+
+hypothyroidism, and symptoms of Parkinson’s disease; so take iron and pharmaceuticals at least 6 hours
+
+apart.
+
+Protein
+
+23
+
+ 
+What makes protein a secondary option
+
+Dietary protein (the protein you ingest) plays important roles in your body, notably as a provider of
+
+essential amino acids (EAAs), the amino acids your body needs but cannot synthesize. Unlike most animal
+
+proteins, most plant proteins are incomplete (they are poor in one or more EAAs). Moreover, compared to
+
+animal proteins, plant proteins tend to be less bioavailable (less protein is absorbed by the body).
+
+Vegetarians and vegans should pay particular attention to their protein intake, with an eye to both quantity
+
+and variety. Compared to omnivores, they are more likely to benefit from a supplement, preferably a
+
+powder.
+
+Whey protein and casein powders are both derived from milk protein (which is 20% whey and 80% casein).
+
+If you are neither lactose intolerant nor vegan, look for a whey protein concentrate that is at least 80%
+
+protein. A little lower is fine if the powder is flavored (any flavoring will use a percentage of the powder),
+
+but any big discrepancy should steer you away. Whey protein is cheap and very anabolic (good for building
+
+muscle). Micellar casein is more expensive but more anti-catabolic (good for preserving muscle). Since
+
+micellar casein digests slowly, it is often seen as the ideal protein to consume before sleep, though some
+
+evidence suggests that bedtime protein may not provide any additional benefit if enough protein is
+
+consumed during the day.[60]
+
+But what if you are lactose intolerant or vegan? Fortunately, you can still supplement protein powders.
+
+Whey protein isolates contain very little lactose. For vegans, two popular options are soy protein, which is a
+
+complete protein, and a 70:30 pea:rice protein blend, which is seen as the vegan alternative to whey protein
+
+due to their similar amino acid profiles.
+
+24
+
+ 
+Vegetarian- and Vegan-Friendly Protein Sources
+
+Hemp protein is not a complete protein. Moreover, hemp protein powders are about half protein, the rest
+
+being mostly fiber and fat (18% ALA). As a protein supplement, hemp ranks below the options listed above.
+
+Two-thirds of spirulina is protein. Like hemp protein, however, spirulina protein is not complete.
+
+Furthermore, in high doses (25+ g), spirulina can be very active in the body, in ways that are still uncertain.
+
+Therefore, it should not serve as a mainstay protein supplement.
+
+Overall, whole foods are the healthier choice, but if your food intake does not cover your daily protein
+
+needs, you could add a supplement (preferably a powder, since the protein-to-calorie ratio of powders
+
+tends to be higher than that of other protein supplements, such as protein bars).
+
+How to take protein
+
+In the United States, the Recommended Dietary Allowance (RDA) of 0.8 grams per kilogram of body weight
+
+(0.36 g/lb) is considered the minimum amount of protein a healthy adult must consume daily to prevent
+
+25
+
+muscle wasting when total caloric intake is sufficient.[61]
+
+The current evidence suggests, however, that this amount has been underestimated. Recent studies point to
+
+1.0–1.2 g/kg as the minimum daily intake before the body starts downregulating important non-essential
+
+processes, from immune function to muscle protein synthesis.[62][63][64] Even a reanalysis of the data used to
+
+establish the above RDA suggests the minimum daily intake should be at least 1.0 g/kg.[65]
+
+So, how much protein do _you _need daily? Here’s a quick rundown of how much protein you may need in
+
+different situations. If you’re vegan or obtain most of your protein from plants, then your protein
+
+requirements may be on the mid to higher end of the below ranges because plant-based proteins are
+
+usually inferior to animal-based proteins with regard to both bioavailability and amino acid profile.
+
+If you want to know more, check out our in-depth article on protein needs.
+
+If you’re sedentary, aim for at least 1.2 g/kg (0.54 g/lb). Keep in mind that your body composition will improve more
+if you add consistent activity, especially resistance training, than if you merely hit a protein target.
+
+If you’re of healthy weight, active, and wish to keep your weight, aim for 1.4–1.6 g/kg (0.64–0.73 g/lb). People who
+are trying to keep the same weight but improve their body composition (more muscle, less fat) may benefit from the
+higher end of the range.
+
+If you’re of healthy weight, active, and wish to build muscle, aim for 1.4–2.4 g/kg (0.64–1.09 g/lb). If you’re an
+experienced lifter in a bulking phase, intakes of up to 3.3 g/kg (1.50 g/lb) may help you minimize fat gain.
+
+If you’re of healthy weight, active, and wish to lose fat, aim for 1.8–2.7 g/kg (0.82–1.23 g/lb), skewing toward the
+higher end of this range as you become leaner or if you increase your caloric deficit (by eating less or exercising
+more).
+
+If you’re overweight or obese, aim for 1.2–1.5 g/kg (0.54–0.68 g/lb). This range, like all the others in this list, is
+based on your total body weight (most studies on people who are overweight or obese report their findings based
+on total body weight, but you’ll find some calculators that determine your optimal protein intake based on your lean
+mass or your ideal body weight).
+
+If you’re pregnant, aim for 1.66–1.77 g/kg (0.75–0.80 g/lb).
+
+If you’re lactating, aim for at least 1.5 g/kg (0.68 g/lb).
+
+Daily protein intake
+
+BODY WEIGHT
+
+BODY WEIGHT
+
+0.36
+
+0.45
+
+0.54
+
+0.68
+
+0.82
+
+0.91
+
+1.00
+
+g/lb
+
+2.0
+
+2.2
+
+g/kg
+
+LBS
+
+100
+
+125
+
+150
+
+175
+
+200
+
+225
+
+250
+
+275
+
+KGS
+
+0.8
+
+1.0
+
+1.2
+
+45
+
+57
+
+68
+
+79
+
+91
+
+102
+
+113
+
+125
+
+36
+
+45
+
+54
+
+64
+
+73
+
+82
+
+91
+
+100
+
+45
+
+57
+
+68
+
+79
+
+91
+
+102
+
+113
+
+125
+
+54
+
+68
+
+82
+
+95
+
+109
+
+122
+
+136
+
+150
+
+1.5
+
+68
+
+85
+
+102
+
+119
+
+136
+
+153
+
+170
+
+187
+
+1.8
+
+81
+
+91
+
+100
+
+103
+
+113
+
+125
+
+122
+
+136
+
+150
+
+142
+
+159
+
+175
+
+164
+
+181
+
+200
+
+184
+
+204
+
+225
+
+203
+
+227
+
+250
+
+225
+
+249
+
+275
+
+g
+
+g
+
+g
+
+g
+
+g
+
+g
+
+g
+
+g
+
+References: Schoenfeld and Aragon. J Int Soc Sports Nutr. 2018.[66] ● Jäger et al. J Int Soc Sports Nutr. 2017.[67] ● Thomas et al.
+
+Med Sci Sports Exerc. 2016.[68] ● Institute of Medicine. Protein and Amino Acids (chapter 10 in Dietary Reference Intakes for
+
+Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids. The National Academies Press. 2005.
+
+DOI:10.17226/10490)
+
+Unless you have a pre-existing condition that affects your liver or kidneys, the intakes in the above table
+
+will not harm these organs.[69]
+
+26
+
+For maximal MPS stimulation, the minimal per-meal dose of quality protein (such as can be found in meat,
+
+eggs, dairy products, and soy) is 0.24–0.40 g/kg for adults in their twenties[70][71] and 0.40–0.60 g/kg for
+
+adults aged sixty and older.[70] Spreading your protein intake over a few meals, making sure this 0.40–0.60
+
+g/kg threshold is met with each meal, will generally result in greater lean mass and strength.
+
+Note that you don’t need to calculate your intake so that it falls within the 0.40–0.60 g/kg range. This range
+
+isn’t an ideal range — it is a range representing individual variations. In other words, some people can reach
+
+maximal MPS with just 0.40 g/kg, while others will need as much as 0.60 g/kg. Moreover, higher doses will
+
+not be wasted and are probably necessary when eating mixed meals that contain a variety of protein
+
+sources. You may have heard that if you eat more than 30 grams of protein in one sitting, the “excess” will
+
+pass undigested, but that’s just a myth.
+
+Desirable minimal protein intake range* per meal (g), by age for adults
+
+BODY WEIGHT (lbs)
+
+BODY WEIGHT (kgs)
+
+20s
+
+30s, 40s, 50s
+
+≥60
+
+100
+
+125
+
+175
+
+200
+
+225
+
+250
+
+275
+
+45
+
+57
+
+79
+
+91
+
+102
+
+113
+
+125
+
+11–18
+
+14–23
+
+19–32
+
+22–36
+
+24–41
+
+27–45
+
+30–50
+
+13–24
+
+17–30
+
+23–43
+
+27–48
+
+30–54
+
+33–60
+
+37–67
+
+18–27
+
+23–34
+
+32–48
+
+36–54
+
+41–61
+
+45–68
+
+50–75
+
+* The ranges in this table represent individual variations. The minimum protein requirements increase as you age, but to what
+
+degree is uncertain because of the age gap left by the studies: most subjects were in their 20s (0.24–0.40 g/kg) or 60s/70s
+
+(0.40–0.60 g/kg). For people in their 30s, 40s, or 50s, the 0.29–0.53 g/kg range reflected in this table is an educated guess.
+
+References: Schoenfeld and Aragon. J Int Soc Sports Nutr. 2018.[66] ● Rafii et al. J Nutr. 2016.[63] ● Morton et al. Front Physiol.
+
+2015.[71] ● Moore et al. J Gerontol A Biol Sci Med Sci. 2015.[70] ● Rafii et al. J Nutr. 2015.[62]
+
+Your mileage may vary. The ranges in the paragraphs and table above cover the known extent of
+
+interindividual variations among healthy adults.
+
+After exercising, when your muscles are more sensitive to the anabolic effect of protein, take a dose in the
+
+range of your “desirable minimal protein intake per meal” (as shown in the table above). If you’ve been
+
+exercising on an empty stomach, you’ll be in negative protein balance, so take this dose as soon as
+
+possible. Otherwise, try to take it within a couple of hours — the exact size of your “window of
+
+opportunity” depends on how much protein you’re still digesting.[72]
+
+27
+
+ Tip: Use our Protein Intake Calculator
+
+Your protein needs hinge on many factors — notably your weight, health goals, and level of physical
+
+activity. Based on our research and the data you input, we can calculate your optimal daily protein
+
+intake. Click on the image below to get started!
+
+Vitamin D
+
+What makes vitamin D a secondary option
+
+Suboptimal levels of vitamin D are common, especially in people whose skin exposure to sunlight (meaning
+
+without protection from clothes or sunscreen) is limited. Moreover, the darker your skin, the longer you
+
+need to expose yourself to sunlight to synthesize enough vitamin D, which is why people with darker skin
+
+are at an increased risk of suboptimal vitamin D levels.[73]
+
+The situation doesn’t improve as you age. The older you get, the less efficient your body becomes at
+
+synthesizing vitamin D, the less time you’re likely to spend outside, the less vitamin D you’re likely to get
+
+through food, and the more likely you become to carry extra fat (belly fat has been linked to vitamin D
+
+deficiency).[74][75]
+
+Average yearly sunlight exposure in the US
+
+28
+
+Adapted from Tatalovich et al. CaGIS. 2006. DOI:10.1559/152304006779077318
+
+Vitamin D is commonly available in two forms: ergocalciferol (D2) and cholecalciferol (D3).
+
+D2 is available in a handful of plants and fungi, whose D2 content can be increased dramatically when
+
+exposed to ultraviolet B (UVB) radiation.[76][77] This is how some commercially available mushrooms contain
+
+D2. Soy milk is often fortified with D2, as well as with calcium. And of course, D2 is available in supplement
+
+form.
+
+Alas, D2 is not as bioavailable as D3, which means your body cannot use it as readily. Moreover, D2 is not
+
+as stable as D3; it is more likely to degrade with time and variations in temperature and humidity.
+
+D~33s the kind of vitamin D your body synthesizes from the cholesterol in your skin under the action of the
+
+sun’s ultraviolet B rays (UVB).[78][79][80] As a supplement, it is usually derived from lanolin[81], a waxy substance
+
+secreted by the skin glands of woolly animals. Sheep are sheared, then the lanolin coating is squeezed off
+
+the wool. Since the sheep are not killed in the process, this source of D3 will be acceptable to some
+
+vegetarians. For vegans, D3 taken from a lichen extract is a vegan-friendly option.
+
+Before turning to supplementation, you should try incorporating some foods rich in vitamin D into your diet.
+
+Very few foods, alas, contain appreciable amounts of naturally occurring vitamin D, with fatty fish being a
+
+notable exception (cod liver oil, in particular). For that reason, milk is commonly fortified with either D2 or,
+
+more recently, D3. Why milk? Because milk is rich in calcium, which vitamin D helps your intestines absorb.
+
+For the same reason, yogurt, cheese, soy milk, and breakfast cereal are also commonly fortified with D2 or
+
+D3. Other commonly fortified foods include margarine, bread, and fruit juice (orange juice, in particular). As
+
+usual, which foods get fortified, if any, vary by country, based on local laws and policies.
+
+How to take vitamin D
+
+First, you should determine if you really need to supplement vitamin D by checking your current vitamin D
+
+levels — your blood levels of 25-hydroxyvitamin D (25(OH)D).
+
+Serum 25(OH)D concentrations
+
+Reference: Institute of Medicine. Overview of Vitamin D (chapter 3 in Dietary Reference Intakes for Calcium and Vitamin D. The
+
+National Academies Press. 2011. DOI:10.17226/13050)
+
+In case of deficiency, a medically supervised intervention will be needed. Do not begin any intervention
+
+without discussing it with your physician. Common medical interventions include taking 50,000 IU (1,250
+
+mcg) of D2 or D3 at least three times a week for six to eight weeks, though people with a borderline
+
+29
+
+deficiency may not need as high a dose. At the end of this intervention, if vitamin D levels are above 30
+
+nmol/L (12 ng/mL), a daily dose of 400–1,000 IU (20–25 mcg) is commonly used for maintenance.
+
+In case of inadequacy, 800–2,000 IU (20–50 mcg) of D3 per day is likely to raise vitamin D levels to an
+
+adequate level, at which point 400–1,000 IU (20–25 mcg) per day should suffice for maintenance.
+
+In case of adequate vitamin D levels, a vitamin D supplement may not be necessary, especially if you spend
+
+a lot of time outside and live near the equator. However, taking 400–600 IU (10–15 mcg) of D3 per day may
+
+help maintain vitamin D levels in the adequate range, particularly during the colder, darker months, when
+
+you are least likely to synthesize enough vitamin D from sun exposure.
+
+In case of high vitamin D levels (which can cause adverse effects), seek the help of a medical professional.
+
+Of course, stop taking any supplement containing vitamin D, unless otherwise instructed by a medical
+
+professional.
+
+If you do not know your vitamin D levels and cannot get them tested but are still intent on taking a vitamin
+
+D supplement, it would be prudent to limit yourself to a maintenance dose of 400 IU (10 mcg) of D3 per
+
+day. Alternatively, you could track your food intake for a week to determine your average vitamin D intake,
+
+then select a complementary dose to reach your RDA.
+
+Recommended Dietary Allowance (RDAs) for vitamin D (IU*)
+
+AGE
+
+0–12 months
+
+1–13 years
+
+14–18 years
+
+19–50 years
+
+51–70 years
+
+>70 years
+
+MALE
+
+400*
+
+600
+
+600
+
+600
+
+600
+
+800
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+400*
+
+600
+
+600
+
+600
+
+600
+
+800
+
+—
+
+—
+
+600
+
+600
+
+—
+
+—
+
+—
+
+—
+
+600
+
+600
+
+—
+
+—
+
+* 40 IU = 1 mcg | ** Adequate intake (AI)
+
+Reference: Institute of Medicine. Dietary Reference Intakes for Adequacy: Calcium and Vitamin D (chapter 5 in Dietary Reference
+
+Intakes for Calcium and Vitamin D. The National Academies Press. 2011. DOI:10.17226/13050)
+
+If the maintenance doses in the paragraphs above prove insufficient, as could be the case notably if your
+
+BMI is over 30[82] or if you suffer from poor vitamin D absorption or processing (due to a problem with your
+
+kidneys, liver, or gastrointestinal tract), you could switch to 1,000–2,000 IU (25–50 mcg) of D3 per day.
+
+Vitamin D being fat-soluble, it is better absorbed when taken with a fat-containing food or supplement
+
+(e.g., fish oil).
+
+30
+
+Promising Supplements
+
+Beta-Alanine
+
+What makes beta-alanine a promising option
+
+When ingested, the nonessential amino acid beta-alanine (aka β-alanine) binds with the essential amino acid
+
+histidine to create carnosine. Carnosine has antioxidant properties; it also buffers lactic acid during
+
+exercise, which delays muscle fatigue.
+
+The body cannot synthesize enough carnosine without enough beta-alanine, and it cannot synthesize
+
+enough beta-alanine to compensate for a dietary deficiency. Since beta-alanine and carnosine can only be
+
+found in meat products, vegetarians and vegans have lower than optimal carnosine levels (as do elderly
+
+people) and may benefit from beta-alanine supplementation.
+
+How to take beta-alanine
+
+Take 4–6 g/day.[83] While beta-alanine can be taken at any time of the day, it may be better absorbed with
+
+food.
+
+A common side-effect of beta-alanine is paresthesia (a tingling sensation, as when your leg “falls asleep”).
+
+Taking smaller doses throughout the day or using time-release formulations can help reduce the prickling
+
+sensation on the face and skin. Paresthesia is harmless, if potentially unpleasant.
+
+31
+
+ 
+Unproven Supplements
+
+Omega 3-6-9
+
+What makes omega 3-6-9 an unproven option
+
+Your body can make omega-9 fatty acids when it needs them, and you probably get more than enough
+
+omega-6 fatty acids through your diet. The only kind of polyunsaturated fatty acids you might lack are
+
+omega-3 fatty acids, so you should not purchase “omega 3-6-9” supplements.
+
+32
+
+ 
+Inadvisable Supplements
+
+Of the supplements we have reviewed, none currently fit the above description.
+
+33
+
+FAQ
+
+Q. What about the supplements not covered in
+this guide?
+
+Our guides are regularly updated, often with new supplements. We prioritize assessing (and reassessing)
+
+the most popular of them and those most likely to work. However, if there is a specific supplement you’d
+
+like to see covered in a future update, please let us know by filling out this survey.
+
+Q. Can I add a supplement not covered in this
+guide to my combo?
+
+Supplement with your current combo for a few weeks before attempting any change. Talk to your physician
+
+and research each potential addition. Check for known negative interactions with other supplements and
+
+pharmaceuticals in your current combo, but also for synergies. If two supplements are synergistic or
+
+additive in their effects, you might want to use lower doses of each.
+
+Q. Can I modify the recommended doses?
+
+If a supplement has a recommended dose range, stay within that range. If a supplement has a precise
+
+recommended dose, stay within 10% of that dose. Taking more than recommended could be
+
+counterproductive or even dangerous. Taking less could render the supplement ineffective, yet starting with
+
+half the regular dose could be prudent — especially if you know you tend to react strongly to supplements
+
+or pharmaceuticals.
+
+Q. At what time should I take my supplements?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Starting with half the regular dose can help
+
+minimize the harm a supplement may cause when taken during the day (e.g., fatigue) or in the evening (e.g.,
+
+insomnia).
+
+Q. Should I take my supplements with or
+without food?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Besides, a supplement’s digestion, absorption,
+
+and metabolism can be affected differently by different foods. Fat-soluble vitamins (A, D, E, K), for
+
+instance, are better absorbed with a small meal containing fat than with a large meal containing little to no
+
+fat.
+
+34
+
+ 
+Q. What are DRI, RDA, AI, and UL?
+
+The Dietary Reference Intakes (DRIs) is a system of nutrition recommendations designed by the Institute of
+
+Medicine (a US institution now known as the Health and Medicine Division). RDA, AI, and UL are part of this
+
+system.
+
+Contrary to what the name suggests, a Recommended Dietary Allowance (RDA) doesn’t represent
+
+an ideal amount; it represents the minimum you need in order to avoid deficiency-related health
+
+issues. More precisely, it represents an amount just large enough to meet the minimum requirements
+
+of 97.5% of healthy males and females over all ages — which implies that the RDA is too low for
+
+2.5% of healthy people.
+
+The Adequate Intake (AI) is like the RDA, except that the number is more uncertain.
+
+The Tolerable Upper Intake Level (UL) is the maximum safe amount. More precisely, it is the
+
+maximum daily amount deemed to be safe for 97.5% of healthy males and females over all ages —
+
+which implies that the UL is too high for 2.5% of healthy people.
+
+As a general rule, a healthy diet should include at least the RDA of each nutrient — but less than this
+
+nutrient’s UL. This rule has many exceptions, though. For instance, people who sweat more need more salt
+
+(i.e., sodium), whereas people who take metformin (a diabetes medicine) need more vitamin B12.
+
+Moreover, the DRIs are based on the median weight of adults and children in the United States. Everything
+
+else being equal (notably age, sex, and percentage of body fat), you likely need a lesser amount of
+
+nutrients if you weigh less, and vice versa if you weigh more. The numbers, however, are not proportional
+
+— if only because the brains of two people of very different weights have very similar needs. So you can’t
+
+just double your RDIs for each nutrient if you weigh twice as much as the median adult of your age and sex
+
+(even if we overlook that people weighing the same can differ in many respects, notably body fat).
+
+Q. What’s the difference between elemental
+iodine/iron and other kinds of iodine/iron?
+
+“Elemental” refers to the weight of the mineral by itself, separately from the compound bound to it. For
+
+instance, consuming 13 mg of potassium iodide means consuming 10 mg of elemental iodine, whereas
+
+consuming 100 mg of ferrous fumarate means consuming 33 mg of elemental iron.
+
+Product labels display the elemental dosage. On a label, “100 mcg of iodine (as potassium iodide)” means
+
+100 mcg of elemental iodine (and 30 mcg of potassium), whereas “8 mg of iron (as ferrous fumarate)”
+
+means 8 mg of elemental iron (and 16 mg of fumaric acid).
+
+Q. Isn’t soy protein _bad _for males?
+
+Phytoestrogens are plant compounds structurally similar to estradiol, the main estrogen in males and
+
+premenopausal females. Because soy contains isoflavones, a type of phytoestrogen, concern has been
+
+raised about soy affecting male health.
+
+To this day, two case reports have documented adverse effects (gynecomastia, hypogonadism, reduced
+
+libido, and erectile dysfunction) from an estimated 360 mg of soy isoflavones per day for 6–12 months.
+
+However, a meta-analysis of 15 randomized controlled trials (RCTs, a much higher level of evidence than
+
+35
+
+case reports) found that males’ levels of total and free testosterone were not notably affected by either
+
+60–240 mg of isoflavones or 10–70 grams of soy protein per day.
+
+Accordingly, a couple of scoops of soy protein powder are unlikely to have estrogenic effects in males. If
+
+you’d like to take more, however, look for a soy protein concentrate or isolate produced through the
+
+alcohol-wash method, which dramatically lowers the isoflavone content.[84]
+
+Keep in mind that the isoflavone content of different soy products can vary depending on several factors,
+
+such as the variety of soybeans used, differences in growing and storage conditions, and differential food
+
+processing techniques employed.[85] You can see how it varies below.
+
+Isoflavone content of common soy foods
+
+Reference: USDA FoodData Central Databases. Accessed Jan 18, 2019. https://fdc.nal.usda.gov/
+
+36
+
+Q. Don’t dietary proteins _reduce _bone
+density?
+
+More protein in the diet has been linked to more calcium in the urine. Two reasons have been suggested to
+
+explain this phenomenon:
+
+Your body draws from its calcium stores (in bones) to buffer the acid load caused by dietary protein. This has led
+researchers to suggest that higher protein intake could increase bone loss.[86]
+
+Most studies that looked at protein intake and calcium excretion list dairy products as a protein source,[87] so higher
+urinary calcium could simply be the result of higher calcium intake (i.e., more calcium in, more calcium out).
+
+Therefore, looking only at calcium _excretion _wasn’t enough. Subsequent studies showed that dietary
+
+protein promotes dietary-calcium absorption[88] and that high protein intake “promotes bone growth and
+
+retards bone loss whereas low-protein diet is associated with higher risk of hip fractures.”[89] High-protein
+
+diets have also been shown to modestly suppress the decrease in bone mineral density caused by weight
+
+loss.[90]
+
+What happens is that when you ingest more protein, you absorb more of the calcium in your food, so less
+
+calcium ends up in your feces. Later, your body gets rid of the calcium it doesn’t need, so more calcium
+
+ends up in your urine, but not as much as would have otherwise ended in your feces.[91] Therefore, an
+
+increase in protein intake leads to an overall decrease in calcium excretion, which points to an increase in
+
+calcium retention. High-protein diets also raise your insulin-like growth factor-1 (IGF-1),[92] which promotes
+
+notably bone growth.[93]
+
+All in all, current evidence suggests that protein’s effect on bones is either neutral or beneficial.[91][94]
+
+Q. Since the body makes carnosine out of beta-
+alanine and histidine, should I also supplement
+histidine?
+
+It isn’t necessary. If you consume enough protein, your muscles already have all the histidine they need to
+
+produce more carnosine.
+
+Q. Still, why beta-alanine? Wouldn’t it be
+simpler to supplement carnosine directly?
+
+Since carnosine simply gets digested into beta-alanine and histidine, and since your muscles already have
+
+enough histidine, carnosine supplementation has no advantage over beta-alanine supplementation —
+
+especially since beta-alanine is cheaper.
+
+Q. Why is there no mention in this guide of
+greens supplements?
+
+Barley, chlorella, spirulina … Many are the plant-based supplements aimed at vegetarians and vegans. Some
+
+37
+
+may be useful — for instance, preliminary evidence suggests that spirulina can fight inflammatory diseases.
+
+However, none of those “greens” products benefit vegetarians or vegans more than omnivores, so none
+
+were included in this guide.
+
+Q. I’ve heard that I should “load” creatine. What
+does that mean?
+
+Loading creatine means taking a high daily dose for a few days before moving down to a smaller
+
+maintenance dose, which can be taken indefinitely. This is not necessary for effective supplementation,
+
+however; benefits may be felt sooner through loading, but they normalize after a few weeks.
+
+If you wish to load creatine, take 20–25 g/day for 7 days (splitting your daily intake into smaller doses,
+
+taking them with some food, and drinking more fluids may help prevent intestinal discomfort). Take 5 g/day
+
+thereafter.
+
+Q. Creatine doesn’t seem to work for me. What
+should I do?
+
+Some people are creatine nonresponders: the creatine they ingest largely fails to reach their muscles.
+
+Alternate forms of creatine, such as creatine ethyl-ester, have been marketed to nonresponders, but they
+
+lack scientific support. Currently, the best way to lessen creatine nonresponse is to take 5 grams twice a
+
+day, each time with protein and carbs, preferably close to a time of muscle contraction (i.e., before or after
+
+your workout).
+
+Note that even if supplemental creatine fails to enter your muscles it can still benefit you in other ways,
+
+such as by improving your body’s methylation status (methylation being a way for your cells to help
+
+manage gene expression).
+
+Q. What can I do to help prevent my fish oils
+from oxidizing?
+
+Since fish oil is primarily polyunsaturated fat, it is prone to becoming rancid and oxidizing. Oxidation largely
+
+depends on exposure to heat, light, and oxygen. The addition of antioxidants to the final product can
+
+reduce the rate of oxidation during storage. Vitamin E is typically used, but there’s a lot of research on
+
+other antioxidants like carnosic acid suggesting they might be superior.[95]
+
+Part of the responsibility for ensuring fish oil remains unoxidized is on the buyer. Exposure of fish oil to
+
+light, heat, and oxygen accelerates the oxidation of the oil, with the magnitude of damage depending on
+
+the length and degree of exposure. Once you buy the supplement, it is prudent to store it in a cool place
+
+away from light, such as the fridge.
+
+If you buy oil in a bottle, the bottle should be tinted to prevent light from getting through and small enough
+
+that you can work through it in a month or two. After all, oxygen gets in the bottle every time you open it.
+
+Some fish oil bottles come with a pump, which can help reduce oxygen exposure. Buying capsules instead
+
+of bottles can also help prevent oxidation.
+
+38
+
+Q. Will creatine cause hair loss?
+
+The idea that creatine might increase hair loss stems from a single randomized controlled trial (RCT) whose
+
+participants (20 healthy, young, male rugby players) saw a small but statistically significant increase in
+
+dihydrotestosterone (DHT) after supplementing with creatine for 21 days.[96] When DHT, a potent metabolite
+
+of testosterone, binds to DHT receptors on the hair follicles of the scalp, those follicles may shrink and stop
+
+producing hair.[97][98]
+
+To date, this RCT is the only one to have tested creatine’s effects on DHT. However, a number of RCTs
+
+have examined creatine’s effects on testosterone. Out of 12 additional RCTs, two saw a significant increase
+
+in testosterone,[99][100] but 10 saw no effect.[96][101][102][103][104][105][106][107][108][109] Of those 12 RCTs, five also tested
+
+creatine’s effects on free testosterone, the form that gets converted into DHT, and all saw no significant
+
+increases.[102][101][104][106][108]
+
+A proposed mechanism behind creatine’s effect on testosterone
+
+Creatine could nonsignificantly increase free testosterone yet significantly increase DHT (i.e., a small
+
+increase in free testosterone, which can convert into DHT, could lead to a much greater increase in total
+
+DHT). So while it’s technically possible that creatine might have some effect on hair loss, current evidence
+
+and mechanistic data indicate it’s quite unlikely.
+
+A summary of creatine-testosterone studies
+
+BETWEEN-
+GROUP EFFECT
+
+STUDY
+
+SAMPLE
+SIZE
+
+POPULATION
+
+AVG
+AGE
+
+DURATION
+
+DOSE
+
+EFFECT ON
+TESTOSTERONE
+
+Significant
+
+Arazi 2015
+
+Vatani 2011
+
+Mixed Results
+
+van der
+Merwe 2009
+
+No effect
+
+Cook 2011
+
+20
+
+20
+
+20
+
+Trained
+males
+
+Male rugby
+players
+
+Male rugby
+players
+
+Active males
+
+20
+
+1 week
+
+20 g/day
+
+20
+
+6 days
+
+20 g/day
+
+↑
+
+↑
+
+18
+
+3 weeks
+
+25 g/day loading 
+
+↑ DHT 
+
+5 g/day
+maintenance
+
+ Test
+
+20
+
+10 weeks
+
+4.5 g and 9 g
+
+Cooke 2014
+
+20
+
+Active males
+
+61
+
+12 weeks
+
+20 g/day loading 
+
+Then 0.1 g/kg
+3x/week (avg. 8.8
+g/day)
+
+39
+
+BETWEEN-
+GROUP EFFECT
+
+STUDY
+
+SAMPLE
+SIZE
+
+POPULATION
+
+AVG
+AGE
+
+DURATION
+
+DOSE
+
+EFFECT ON
+TESTOSTERONE
+
+Crowe 2003
+
+28
+
+Eijnde 2001
+
+11
+
+Faraji 2010
+
+20
+
+Male rugby
+players
+
+untrained
+males
+
+Male
+Sprinters
+
+25
+
+6 weeks
+
+3 g/day HMB* + 3
+g/day creatine
+
+20
+
+8 days
+
+20 g/day
+
+21
+
+1 week
+
+20 g/day
+
+Hoffman
+2006
+
+33
+
+Male football
+players
+
+College
+
+10 weeks
+
+10.5 g/day
+
+Rhimi 2010
+
+27
+
+Tyka
+2015**
+
+Volek 1997
+
+19
+
+13
+
+Trained
+males
+
+21
+
+1 week
+
+20 g/day
+
+Male runners
+
+19–
+30***
+
+6 weeks
+
+0.07 g/kg of lean
+body mass
+
+Active males
+
+23
+
+1 week
+
+25 g/day
+
+Volek 2004
+
+17
+
+Trained
+males
+
+21
+
+6 weeks
+
+20 g/day loading 
+
+4 g/day
+maintenance
+
+* While there was no creatine-only group, studies have not shown HMB to independently affect testosterone.[110][111][112][113] 
+
+** This study used creatine malate instead of creatine monohydrate. 
+
+*** This study reported an age range but not an average age. 
+
+40
+
+References
+
+1.   Leitzmann C Vegetarian nutrition: past, present, future. Am J Clin Nutr. (2014 Jul)
+
+2.   Pribis P, Pencak RC, Grajales T Beliefs and attitudes toward vegetarian lifestyle across generations. Nutrients. (2010 May)
+
+3.   Pawlak R Vegetarian Diets in the Prevention and Management of Diabetes and Its Complications. Diabetes Spectr. (2017 May)
+
+4.   Sammataro D, Weiss M Comparison of productivity of colonies of honey bees, Apis mellifera, supplemented with sucrose or
+
+high fructose corn syrup. J Insect Sci. (2013)
+
+5.   Clarys P, Deliens T, Huybrechts I, Deriemaeker P, Vanaelst B, De Keyzer W, Hebbelinck M, Mullie P Comparison of nutritional
+
+quality of the vegan, vegetarian, semi-vegetarian, pesco-vegetarian and omnivorous diet. Nutrients. (2014 Mar 24)
+
+6.   Ru-Yi Huang, Chuan-Chin Huang, Frank B Hu, Jorge E Chavarro Vegetarian Diets and Weight Reduction: a Meta-Analysis of
+
+Randomized Controlled Trials. J Gen Intern Med. (2016 Jan)
+
+7.   Alwarith J, Kahleova H, Rembert E, Yonas W, Dort S, Calcagno M, Burgess N, Crosby L, Barnard ND Nutrition Interventions in
+
+Rheumatoid Arthritis: The Potential Use of Plant-Based Diets. A Review. Front Nutr. (2019 Sep 10)
+
+8.   Orlich MJ, Singh PN, Sabaté J, Jaceldo-Siegl K, Fan J, Knutsen S, Beeson WL, Fraser GE Vegetarian dietary patterns and
+
+mortality in Adventist Health Study 2. JAMA Intern Med. (2013 Jul 8)
+
+9.   Key TJ, Appleby PN, Spencer EA, Travis RC, Roddam AW, Allen NE Mortality in British vegetarians: results from the European
+
+Prospective Investigation into Cancer and Nutrition (EPIC-Oxford). Am J Clin Nutr. (2009 May)
+
+10.   Archer E, Lavie CJ, Hill JO The Failure to Measure Dietary Intake Engendered a Fictional Discourse on Diet-Disease Relations.
+
+Front Nutr. (2018 Nov 13)
+
+11.   Archer E, Pavela G, Lavie CJ The Inadmissibility of What We Eat in America and NHANES Dietary Data in Nutrition and Obesity
+
+Research and the Scientific Formulation of National Dietary Guidelines. Mayo Clin Proc. (2015 Jul)
+
+12.   Miller TM, Abdel-Maksoud MF, Crane LA, Marcus AC, Byers TE Effects of social approval bias on self-reported fruit and
+
+vegetable consumption: a randomized controlled trial. Nutr J. (2008 Jun 27)
+
+13.   Dwyer JT, Krall EA, Coleman KA The problem of memory in nutritional epidemiology research. J Am Diet Assoc. (1987 Nov)
+
+14.   Moore WJ, McGrievy ME, Turner-McGrievy GM Dietary adherence and acceptability of five different diets, including vegan and
+
+vegetarian diets, for weight loss: The New DIETs study. Eat Behav. (2015 Dec)
+
+15.   Chan DS, Lau R, Aune D, Vieira R, Greenwood DC, Kampman E, Norat T Red and processed meat and colorectal cancer
+
+incidence: meta-analysis of prospective studies. PLoS One. (2011)
+
+16.   Samraj AN, Pearce OM, Läubli H, Crittenden AN, Bergfeld AK, Banda K, Gregg CJ, Bingman AE, Secrest P, Diaz SL, Varki NM,
+Varki A A red meat-derived glycan promotes inflammation and cancer progression. Proc Natl Acad Sci U S A. (2015 Jan 13)
+
+17.   Dinu M, Abbate R, Gensini GF, Casini A, Sofi F Vegetarian, vegan diets and multiple health outcomes: A systematic review with
+
+meta-analysis of observational studies. Crit Rev Food Sci Nutr. (2017 Nov 22)
+
+18.   Aguilera JM The food matrix: implications in processing, nutrition and health. Crit Rev Food Sci Nutr. (2019)
+
+19.   Hall KD, Ayuketah A, Brychta R, Cai H, Cassimatis T, Chen KY, Chung ST, Costa E, Courville A, Darcey V, Fletcher LA, Forde CG,
+Gharib AM, Guo J, Howard R, Joseph PV, McGehee S, Ouwerkerk R, Raisinger K, Rozga I, Stagliano M, Walter M, Walter PJ,
+Yang S, Zhou M Ultra-Processed Diets Cause Excess Calorie Intake and Weight Gain: An Inpatient Randomized Controlled Trial
+of Ad Libitum Food Intake. Cell Metab. (2019 Jul 2)
+
+20.   Flood-Obbagy JE, Rolls BJ The effect of fruit in different forms on energy intake and satiety at a meal. Appetite. (2009 Apr)
+
+21.   Blair A, Ritz B, Wesseling C, Freeman LB Pesticides and human health. Occup Environ Med. (2015 Feb)
+
+22.   Jeong SH, Kang D, Lim MW, Kang CS, Sung HJ Risk assessment of growth hormones and antimicrobial residues in meat.
+
+Toxicol Res. (2010 Dec)
+
+23.   Jaishankar M, Tseten T, Anbalagan N, Mathew BB, Beeregowda KN Toxicity, mechanism and health effects of some heavy
+
+metals. Interdiscip Toxicol. (2014 Jun)
+
+24.   Buscail C, Sabate JM, Bouchoucha M, Torres MJ, Allès B, Hercberg S, Benamouzig R, Julia C Association between self-
+reported vegetarian diet and the irritable bowel syndrome in the French NutriNet cohort. PLoS One. (2017 Aug 25)
+
+25.   Cummings JH, Macfarlane GT Gastrointestinal effects of prebiotics. Br J Nutr. (2002 May)
+
+26.   Dionne J, Ford AC, Yuan Y, Chey WD, Lacy BE, Saito YA, Quigley EMM, Moayyedi P A Systematic Review and Meta-Analysis
+
+Evaluating the Efficacy of a Gluten-Free Diet and a Low FODMAPs Diet in Treating Symptoms of Irritable Bowel Syndrome. Am J
+Gastroenterol. (2018 Sep)
+
+27.   Medawar E, Huhn S, Villringer A, Veronica Witte A The effects of plant-based diets on the body and the brain: a systematic
+
+review. Transl Psychiatry. (2019 Sep 12)
+
+28.   Matta J, Czernichow S, Kesse-Guyot E, Hoertel N, Limosin F, Goldberg M, Zins M, Lemogne C Depressive Symptoms and
+
+Vegetarian Diets: Results from the Constances Cohort. Nutrients. (2018 Nov 6)
+
+29.   Montgomery SA, Thal LJ, Amrein R Meta-analysis of double blind randomized controlled clinical trials of acetyl-L-carnitine
+
+41
+
+versus placebo in the treatment of mild cognitive impairment and mild Alzheimer's disease. Int Clin Psychopharmacol. (2003
+Mar)
+
+30.   Smeland OB, Meisingset TW, Borges K, Sonnewald U Chronic acetyl-L-carnitine alters brain energy metabolism and increases
+
+noradrenaline and serotonin content in healthy mice. Neurochem Int. (2012 Jul)
+
+31.   Asadi M, Rahimlou M, Shishehbor F, Mansoori A The effect of l-carnitine supplementation on lipid profile and glycaemic control
+in adults with cardiovascular risk factors: A systematic review and meta-analysis of randomized controlled clinical trials. Clin
+Nutr. (2019 Feb 22)
+
+32.   Serban MC, Sahebkar A, Mikhailidis DP, Toth PP, Jones SR, Muntner P, Blaha MJ, Andrica F, Martin SS, Borza C, Lip GY, Ray
+
+KK, Rysz J, Hazen SL, Banach M Impact of L-carnitine on plasma lipoprotein(a) concentrations: A systematic review and meta-
+analysis of randomized controlled trials. Sci Rep. (2016 Jan 12)
+
+33.   Shang R, Sun Z, Li H Effective dosing of L-carnitine in the secondary prevention of cardiovascular disease: a systematic review
+
+and meta-analysis. BMC Cardiovasc Disord. (2014 Jul 21)
+
+34.   Farshidfar F, Pinder MA, Myrie SB Creatine Supplementation and Skeletal Muscle Metabolism for Building Muscle Mass- Review
+
+of the Potential Mechanisms of Action. Curr Protein Pept Sci. (2017)
+
+35.   Chami J, Candow DG Effect of Creatine Supplementation Dosing Strategies on Aging Muscle Performance. J Nutr Health
+
+Aging. (2019)
+
+36.   Candow DG, Forbes SC, Chilibeck PD, Cornish SM, Antonio J, Kreider RB Effectiveness of Creatine Supplementation on Aging
+
+Muscle and Bone: Focus on Falls Prevention and Inflammation. J Clin Med. (2019 Apr 11)
+
+37.   Gualano B, Rawson ES, Candow DG, Chilibeck PD Creatine supplementation in the aging population: effects on skeletal muscle,
+
+bone and brain. Amino Acids. (2016 Aug)
+
+38.   Avgerinos KI, Spyrou N, Bougioukas KI, Kapogiannis D Effects of creatine supplementation on cognitive function of healthy
+
+individuals: A systematic review of randomized controlled trials. Exp Gerontol. (2018 Jul 15)
+
+39.   Kreider RB, Kalman DS, Antonio J, Ziegenfuss TN, Wildman R, Collins R, Candow DG, Kleiner SM, Almada AL, Lopez HL
+
+International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and
+medicine. J Int Soc Sports Nutr. (2017 Jun 13)
+
+40.   GOED Voluntary Monograph.
+
+41.   Albert BB, Derraik JG, Cameron-Smith D, Hofman PL, Tumanov S, Villas-Boas SG, Garg ML, Cutfield WS Fish oil supplements in
+
+New Zealand are highly oxidised and do not meet label content of n-3 PUFA. Sci Rep. (2015 Jan 21)
+
+42.   Bannenberg G, Mallon C, Edwards H, Yeadon D, Yan K, Johnson H, Ismail A Omega-3 Long-Chain Polyunsaturated Fatty Acid
+
+Content and Oxidation State of Fish Oil Supplements in New Zealand. Sci Rep. (2017 May 3)
+
+43.   Bengtson Nash SM, Schlabach M, Nichols PD A nutritional-toxicological assessment of Antarctic krill oil versus fish oil dietary
+
+supplements. Nutrients. (2014 Aug 28)
+
+44.   Ottestad I, Retterstøl K, Myhrstad MC, Andersen LF, Vogt G, Nilsson A, Borge GI, Nordvi B, Brønner KW, Ulven SM, Holven KB
+Intake of oxidised fish oil does not affect circulating levels of oxidised LDL or inflammatory markers in healthy subjects. Nutr
+Metab Cardiovasc Dis. (2013 Jan)
+
+45.   García-Hernández VM, Gallar M, Sánchez-Soriano J, Micol V, Roche E, García-García E Effect of omega-3 dietary supplements
+with different oxidation levels in the lipidic profile of women: a randomized controlled trial. Int J Food Sci Nutr. (2013 Dec)
+
+46.   Clarke R, Refsum H, Birks J, Evans JG, Johnston C, Sherliker P, Ueland PM, Schneede J, McPartlin J, Nexo E, Scott JM
+
+Screening for vitamin B-12 and folate deficiency in older persons. Am J Clin Nutr. (2003 May)
+
+47.   Stover PJ Vitamin B12 and older adults. Curr Opin Clin Nutr Metab Care. (2010 Jan)
+
+48.   Rizzo G, Laganà AS, Rapisarda AM, La Ferrera GM, Buscema M, Rossetti P, Nigro A, Muscia V, Valenti G, Sapia F, Sarpietro G,
+Zigarelli M, Vitale SG Vitamin B12 among Vegetarians: Status, Assessment and Supplementation. Nutrients. (2016 Nov 29)
+
+49.   Pawlak R, Lester SE, Babatunde T The prevalence of cobalamin deficiency among vegetarians assessed by serum vitamin B12:
+
+a review of literature. Eur J Clin Nutr. (2014 May)
+
+50.   Juzeniene A, Nizauskaite Z Photodegradation of cobalamins in aqueous solutions and in human blood. J Photochem Photobiol
+
+B. (2013 May 5)
+
+51.   Lonn E, Yusuf S, Arnold MJ, Sheridan P, Pogue J, Micks M, McQueen MJ, Probstfield J, Fodor G, Held C, Genest J Jr, Heart
+Outcomes Prevention Evaluation (HOPE) 2 Investigators Homocysteine lowering with folic acid and B vitamins in vascular
+disease. N Engl J Med. (2006 Apr 13)
+
+52.   chapter 9 in _Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B~6~, Folate, Vitamin B~12~, Pantothenic Acid,
+
+Biotin, and Choline._. The National Academies Press.. (1998)
+
+53.   Institute of Medicine Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron,
+
+Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc. The National Academies Press. (2001)
+
+54.   Busti F, Campostrini N, Martinelli N, Girelli D Iron deficiency in the elderly population, revisited in the hepcidin era. Front
+
+Pharmacol. (2014 Apr 23)
+
+55.   Smith DL Anemia in the elderly. Am Fam Physician. (2000 Oct 1)
+
+56.   Kell DB Towards a unifying, systems biology understanding of large-scale cellular death and destruction caused by poorly
+
+42
+
+liganded iron: Parkinson's, Huntington's, Alzheimer's, prions, bactericides, chemical toxicology and others as examples. Arch
+Toxicol. (2010 Nov)
+
+57.   Fang X, An P, Wang H, Wang X, Shen X, Li X, Min J, Liu S, Wang F Dietary intake of heme iron and risk of cardiovascular
+
+disease: a dose-response meta-analysis of prospective cohort studies. Nutr Metab Cardiovasc Dis. (2015 Jan)
+
+58.   Qiao L, Feng Y Intakes of heme iron and zinc and colorectal cancer incidence: a meta-analysis of prospective studies. Cancer
+
+Causes Control. (2013 Jun)
+
+59.   Institute of Medicine Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and Carotenoids. The National Academies
+
+Press. (2000)
+
+60.   Joy JM, Vogel RM, Shane Broughton K, Kudla U, Kerr NY, Davison JM, Wildman REC, DiMarco NM Daytime and nighttime
+casein supplements similarly increase muscle size and strength in response to resistance training earlier in the day: a
+preliminary investigation. J Int Soc Sports Nutr. (2018 May 15)
+
+61.   Institute of Medicine Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and
+
+Amino Acids. The National Academies Press. (2005)
+
+62.   Rafii M, Chapman K, Owens J, Elango R, Campbell WW, Ball RO, Pencharz PB, Courtney-Martin G Dietary protein requirement
+
+of female adults >65 years determined by the indicator amino acid oxidation technique is higher than current
+recommendations. J Nutr. (2015 Jan)
+
+63.   Rafii M, Chapman K, Elango R, Campbell WW, Ball RO, Pencharz PB, Courtney-Martin G Dietary Protein Requirement of Men
+
+>65 Years Old Determined by the Indicator Amino Acid Oxidation Technique Is Higher than the Current Estimated Average
+Requirement. J Nutr. (2016 Mar 9)
+
+64.   Tang M, McCabe GP, Elango R, Pencharz PB, Ball RO, Campbell WW Assessment of protein requirement in octogenarian
+
+women with use of the indicator amino acid oxidation technique. Am J Clin Nutr. (2014 Apr)
+
+65.   Elango R, Humayun MA, Ball RO, Pencharz PB Evidence that protein requirements have been significantly underestimated. Curr
+
+Opin Clin Nutr Metab Care. (2010 Jan)
+
+66.   Schoenfeld BJ, Aragon AA How much protein can the body use in a single meal for muscle-building? Implications for daily
+
+protein distribution. J Int Soc Sports Nutr. (2018 Feb 27)
+
+67.   Jäger R, Kerksick CM, Campbell BI, Cribb PJ, Wells SD, Skwiat TM, Purpura M, Ziegenfuss TN, Ferrando AA, Arent SM, Smith-
+Ryan AE, Stout JR, Arciero PJ, Ormsbee MJ, Taylor LW, Wilborn CD, Kalman DS, Kreider RB, Willoughby DS, Hoffman JR,
+Krzykowski JL, Antonio J International Society of Sports Nutrition Position Stand: protein and exercise. J Int Soc Sports Nutr.
+(2017 Jun 20)
+
+68.   Thomas DT, Erdman KA, Burke LM American College of Sports Medicine Joint Position Statement. Nutrition and Athletic
+
+Performance. Med Sci Sports Exerc. (2016 Mar)
+
+69.   Devries MC, Sithamparapillai A, Brimble KS, Banfield L, Morton RW, Phillips SM Changes in Kidney Function Do Not Differ
+
+between Healthy Adults Consuming Higher- Compared with Lower- or Normal-Protein Diets: A Systematic Review and Meta-
+Analysis. J Nutr. (2018 Nov 1)
+
+70.   Moore DR, Churchward-Venne TA, Witard O, Breen L, Burd NA, Tipton KD, Phillips SM Protein ingestion to stimulate myofibrillar
+protein synthesis requires greater relative protein intakes in healthy older versus younger men. J Gerontol A Biol Sci Med Sci.
+(2015 Jan)
+
+71.   Morton RW, McGlory C, Phillips SM Nutritional interventions to augment resistance training-induced skeletal muscle
+
+hypertrophy. Front Physiol. (2015 Sep 3)
+
+72.   Aragon AA, Schoenfeld BJ Nutrient timing revisited: is there a post-exercise anabolic window?. J Int Soc Sports Nutr. (2013
+
+Jan 29)
+
+73.   Xiang F, Lucas R, de Gruijl F, Norval M A systematic review of the influence of skin pigmentation on changes in the
+
+concentrations of vitamin D and 25-hydroxyvitamin D in plasma/serum following experimental UV irradiation. Photochem
+Photobiol Sci. (2015 Dec)
+
+74.   Meehan M, Penckofer S The Role of Vitamin D in the Aging Adult. J Aging Gerontol. (2014 Dec)
+
+75.   Wacker M, Holick MF Sunlight and Vitamin D: A global perspective for health. Dermatoendocrinol. (2013 Jan 1)
+
+76.   Ko JA, Lee BH, Lee JS, Park HJ Effect of UV-B exposure on the concentration of vitamin D2 in sliced shiitake mushroom
+
+(Lentinus edodes) and white button mushroom (Agaricus bisporus). J Agric Food Chem. (2008 May 28)
+
+77.   Jasinghe VJ, Perera CO, Barlow PJ Bioavailability of vitamin D2 from irradiated mushrooms: an in vivo study. Br J Nutr. (2005
+
+Jun)
+
+78.   Lehmann B, Genehr T, Knuschke P, Pietzsch J, Meurer M UVB-induced conversion of 7-dehydrocholesterol to 1alpha,25-
+
+dihydroxyvitamin D3 in an in vitro human skin equivalent model. J Invest Dermatol. (2001 Nov)
+
+79.   Holick MF, MacLaughlin JA, Clark MB, Holick SA, Potts JT Jr, Anderson RR, Blank IH, Parrish JA, Elias P Photosynthesis of
+
+previtamin D3 in human skin and the physiologic consequences. Science. (1980 Oct 10)
+
+80.   Bikle DD Vitamin D metabolism and function in the skin. Mol Cell Endocrinol. (2011 Dec 5)
+
+81.   Lanolin. Drugs and Lactation Database (LactMed®). (2006-05)
+
+82.   Zittermann A, Ernst JB, Gummert JF, Börgermann J Vitamin D supplementation, body weight and human serum 25-
+
+hydroxyvitamin D response: a systematic review. Eur J Nutr. (2014)
+
+43
+
+83.   Trexler ET, Smith-Ryan AE, Stout JR, Hoffman JR, Wilborn CD, Sale C, Kreider RB, Jäger R, Earnest CP, Bannock L, Campbell B,
+
+Kalman D, Ziegenfuss TN, Antonio J International society of sports nutrition position stand: Beta-Alanine. J Int Soc Sports Nutr.
+(2015 Jul 15)
+
+84.   Anderson RL, Wolf WJ Compositional changes in trypsin inhibitors, phytic acid, saponins and isoflavones related to soybean
+
+processing. J Nutr. (1995 Mar)
+
+85.   Erdman JW Jr, Badger TM, Lampe JW, Setchell KD, Messina M Not all soy products are created equal: caution needed in
+
+interpretation of research results. J Nutr. (2004 May)
+
+86.   Barzel US, Massey LK Excess dietary protein can adversely affect bone. J Nutr. (1998 Jun)
+
+87.   Schwingshackl L, Hoffmann G Comparison of high vs. normal/low protein diets on renal function in subjects without chronic
+
+kidney disease: a systematic review and meta-analysis. PLoS One. (2014 May 22)
+
+88.   Hunt JR, Johnson LK, Fariba Roughead ZK Dietary protein and calcium interact to influence calcium retention: a controlled
+
+feeding study. Am J Clin Nutr. (2009 May)
+
+89.   Shams-White MM, Chung M, Du M, Fu Z, Insogna KL, Karlsen MC, LeBoff MS, Shapses SA, Sackey J, Wallace TC, Weaver CM
+Dietary protein and bone health: a systematic review and meta-analysis from the National Osteoporosis Foundation. Am J Clin
+Nutr. (2017 Jun)
+
+90.   Wright CS, Li J, Campbell WW Effects of Dietary Protein Quantity on Bone Quantity following Weight Loss: A Systematic
+
+Review and Meta-analysis. Adv Nutr. (2019 Nov 1)
+
+91.   Calvez J, Poupin N, Chesneau C, Lassale C, Tomé D Protein intake, calcium balance and health consequences. Eur J Clin Nutr.
+
+(2012 Mar)
+
+92.   Livingstone C Insulin-like growth factor-I (IGF-I) and clinical nutrition. Clin Sci (Lond). (2013 Sep)
+
+93.   Yakar S, Rosen CJ, Beamer WG, Ackert-Bicknell CL, Wu Y, Liu JL, Ooi GT, Setser J, Frystyk J, Boisclair YR, LeRoith D
+
+Circulating levels of IGF-1 directly regulate bone growth and density. J Clin Invest. (2002 Sep)
+
+94.   Fenton TR, Lyon AW, Eliasziw M, Tough SC, Hanley DA Meta-analysis of the effect of the acid-ash hypothesis of osteoporosis
+
+on calcium balance. J Bone Miner Res. (2009 Nov)
+
+95.   Wang H, Liu F, Yang L, Zu Y, Wang H, Qu S, Zhang Y Oxidative stability of fish oil supplemented with carnosic acid compared
+
+with synthetic antioxidants during long-term storage. Food Chem. (2011 Sep 1)
+
+96.   van der Merwe J, Brooks NE, Myburgh KH Three weeks of creatine monohydrate supplementation affects dihydrotestosterone
+
+to testosterone ratio in college-aged rugby players. Clin J Sport Med. (2009 Sep)
+
+97.   Hamada K, Randall VA Inhibitory autocrine factors produced by the mesenchyme-derived hair follicle dermal papilla may be a
+
+key to male pattern baldness. Br J Dermatol. (2006 Apr)
+
+98.   Trüeb RM Molecular mechanisms of androgenetic alopecia. Exp Gerontol. (2002 Aug-Sep)
+
+99.   Vatani DS, Faraji J, Soori R, Mogharnasi M The effects of creatine supplementation on performance and hormonal response in
+
+amateur swimmers. SCI SPORT. (2011 NOV)
+
+100.   Arazi J, Rajmaninia F, Hosseini K, Asadi A Effects of short term creatine supplementation and resistance exercises on resting
+
+hormonal and cardiovascular responses. SCI SPORT. (2015 APR)
+
+101.   Cooke MB, Brabham B, Buford TW, Shelmadine BD, McPheeters M, Hudson GM, Stathis C, Greenwood M, Kreider R, Willoughby
+DS Creatine supplementation post-exercise does not enhance training-induced adaptations in middle to older aged males. Eur
+J Appl Physiol. (2014 Jun)
+
+102.   Cook CJ, Crewther BT, Kilduff LP, Drawer S, Gaviglio CM Skill execution and sleep deprivation: effects of acute caffeine or
+
+creatine supplementation - a randomized placebo-controlled trial. J Int Soc Sports Nutr. (2011 Feb 16)
+
+103.   Crowe MJ, O'Connor DM, Lukins JE The effects of beta-hydroxy-beta-methylbutyrate (HMB) and HMB/creatine
+
+supplementation on indices of health in highly trained athletes. Int J Sport Nutr Exerc Metab. (2003 Jun)
+
+104.   Hoffman J, Ratamess N, Kang J, Mangine G, Faigenbaum A, Stout J Effect of creatine and beta-alanine supplementation on
+
+performance and endocrine responses in strength/power athletes. Int J Sport Nutr Exerc Metab. (2006 Aug)
+
+105.   Eijnde BO, Hespel P Short-term creatine supplementation does not alter the hormonal response to resistance training. Med Sci
+
+Sports Exerc. (2001 Mar)
+
+106.   Volek JS, Ratamess NA, Rubin MR, Gómez AL, French DN, McGuigan MM, Scheett TP, Sharman MJ, Häkkinen K, Kraemer WJ
+
+The effects of creatine supplementation on muscular performance and body composition responses to short-term resistance
+training overreaching. Eur J Appl Physiol. (2004 May)
+
+107.   Faraji J, Arazi J, Vatani D, Hakimi M The effects of creatine supplementation on sprint running performance and selected
+
+hormonal responses. S AFR J RES SPORT PH. (2010)
+
+108.   Rahimi R, Faraji H, Vatani DS, Qaderi M Creatine supplementation alters the body&#039;s hormonal response to exercise.
+
+Kinesiology. (2010 JAN)
+
+109.   Volek JS, Boetes M, Bush JA, Putukian M, Sebastianelli WJ, Jraemer WJ Response of Testosterone and Cortisol Concentrations
+
+to High-Intensity Resistance Exercise Following Creatine Supplementation. J STRENGTH COND RES. (1997)
+
+110.   Wilson JM, Lowery RP, Joy JM, Walters JA, Baier SM, Fuller JC, Stout JR, Norton LE, Sikorski EM, Wilson SM, Duncan NM,
+
+Zanchi NE, Rathmacher J β-Hydroxy-β-methylbutyrate free acid reduces markers of exercise-induced muscle damage and
+
+44
+
+improves recovery in resistance-trained men. Br J Nutr. (2013 Jan 3)
+
+111.   Hoffman JR, Cooper J, Wendell M, Im J, Kang J Effects of beta-hydroxy beta-methylbutyrate on power performance and
+
+indices of muscle damage and stress during high-intensity training. J Strength Cond Res. (2004 Nov)
+
+112.   Portal S, Zadik Z, Rabinowitz J, Pilz-Burstein R, Adler-Portal D, Meckel Y, Cooper DM, Eliakim A, Nemet D The effect of HMB
+supplementation on body composition, fitness, hormonal and inflammatory mediators in elite adolescent volleyball players: a
+prospective randomized, double-blind, placebo-controlled study. Eur J Appl Physiol. (2011 Sep)
+
+113.   Slater GJ, Logan PA, Boston T, Gore CJ, Stenhouse A, Hahn AG Beta-hydroxy beta-methylbutyrate (HMB) supplementation
+
+does not influence the urinary testosterone: epitestosterone ratio in healthy males. J Sci Med Sport. (2000 Mar)
+
+45
+
+

@@ -1,0 +1,2941 @@
+Joint Health Supplement Guide
+
+Written By: Wyatt Brown, Antonis Damianou, & Adel Moussa
+
+Edited By: Molly Gregas
+
+Reviewed By: Wyatt Brown, & Molly Gregas
+
+Table of Contents
+
+Introduction
+
+Combos
+
+Primary Supplements
+
+Secondary Supplements
+
+Promising Supplements
+
+Unproven Supplements
+
+Inadvisable Supplements
+
+FAQ
+
+2
+
+Introduction
+
+Many people with persistent and painful joint issues search for solutions, and intermittent or chronic joint
+
+pains are common in people of many ages.
+
+Common doesn’t mean simple, however. Joint health is a highly complex topic — it’s not like fat loss, which,
+
+although it can be complicated in practice, nonetheless has a basic formula that underlies any successful
+
+strategy: take in less energy than you expend.
+
+To address joint pain, there’s no formula, and the “strategy” tends to look like more this: just keep trying.
+
+Don’t fall for “snake oil” or useless remedies — or at least not too often.
+
+Joint pain can affect quality of life, but it’s possible to reduce joint pain, even if someone has “tried
+
+everything”, but it definitely helps to understand a bit about joint pain physiology and why the best
+
+treatment plans aren’t simple.
+
+The reason that joint issues are so complex is quite interesting. There are many ways that joints can
+
+become damaged: by forcing past their range of motion (e.g., an ACL tear in the knee), by routinely
+
+perturbing their surroundings (e.g., by letting repetitive stress, positioning, or load compress one of the
+
+shoulder joints), or through more insidious processes (e.g., degradation due to aging, disease, or genetics).
+
+The multiplicity of possible causes, which often intersect and overlap, makes addressing joint pain difficult,
+
+as does the complexity of the joint tissue itself. The following highlights just a few components of articular
+
+cartilage:
+
+What is cartilage
+
+When joints are working smoothly, people don’t tend to notice or think about them at all. It’s only when they
+
+stop working well ​
+
+​— and continue to “not work” — that they become a persistent issue and a subject of
+
+persistent worry. And that’s where much of the problem lies.
+
+3
+
+ 
+ Digging Deeper: Weird joint pain 101
+
+Why do some cases of joint pain resolve quickly, whereas others worsen or stay the same?
+
+Unfortunately, this topic isn’t well understood,[1] and individual cases are seldom solved within a 15-
+
+minute medical appointment.
+
+Physical therapy and anti-inflammatories (e.g., NSAIDs) may provide some relief; if neither helps,
+
+surgery may be an option. Such is the traditional approach to joint pain; it is simplistic and fraught
+
+with problems, of which we’ll mention only a couple:
+
+Lasting joint pain can often be blamed on inflammatory tendonitis, and physicians may not look any further.
+It could also be caused by noninflammatory tendinosis[2] (if, for example, the tendon tissue has degenerated
+past the point of having an inflammatory response to injury).
+
+Several types of joint surgeries have recently been found to be much less effective than assumed,
+prompting guidelines that advise against surgery as a primary option.[3]
+
+It’s worth the trouble to ask a lot of questions. Weird joint pain is worth digging into, possibly via
+
+second opinions along with self-education. Joint pain may stem from a condition as common (yet
+
+complex and difficult to treat) as fibromyalgia,[4] or as rare as Fabry disease.[5] It could also be the
+
+result of an old injury that hasn’t healed due to diet or lifestyle factors. The only way to find out is to
+
+keep exploring.
+
+Humans, with our relatively defenseless bodies, have a fairly robust alarm system that warns our big brains
+
+that the body is indirectly in danger (for our distant ancestors, a damaged joint could easily lead to danger
+
+or death). Pain is a helpful signal when it works correctly because it helps us live out our long human
+
+lifespans. Therefore, to ensure survival, the body can become “better and better” at experiencing pain; in
+
+other words, the nervous system lowers the threshold at which signals are interpreted as painful (through
+
+varied mechanisms, notably central sensitization[6]).
+
+Humans respond to pain much differently from most other mammals, which is why painkillers that work in
+
+animal studies often fail in human studies.[7] In humans, there is a pretty clear dichotomy: acute pain (e.g.,
+
+from overexertion at the gym) responds well to medication and other interventions but chronic pain (sadly)
+
+does not.[8]
+
+If that were the only sticking point, treatment for joint pain would be merely difficult — but joint-pain
+
+complexities don’t stop there. Why did Tiger Woods rack up so many injuries after his first one? Why do
+
+individuals often develop multiple chronic conditions, with triads such as arthritic joints plus fibromyalgia
+
+plus depression? Here are three common reasons:
+
+Fear of reinjury. If you get hurt, and your performance suffers (your lifts go down or race times get
+
+worse, etc.), a bunch of things can change at once.[9] You start to compensate for the injured joint,
+
+you start to resent rehab and physical therapy, and if the pain doesn’t go away, you slowly start to
+
+shy away from physical activity. In other words, you begin a cycle in which other joints get injured
+
+and you become overall less fit.
+
+4
+
+Sleep issues. For people who haven’t been sleeping well for months or even years, “sleep issues” is
+
+a grating euphemism. Pain can be a sleep bulldozer, with studies showing that over half of people
+
+with joint pain also suffer from disturbed sleep.[10] Sleep problems tend to worsen with the severity
+
+of joint pain, so a nagging knee injury could be merely annoying, but severe knee arthritis could
+
+stop sleep in its tracks.[11]
+
+The perfect storm. Let’s say you’re heading for the Olympics and aim to set up the optimal
+
+conditions to net you a gold medal. Everything you want to ensure (good sleep, support from
+
+family and friends, mental and physical well-being) is the opposite of what you’ll get with chronic
+
+joint pain. Disturbed sleep is often the catalyst of this perfect storm.[12] For example, you wake up
+
+tired, your pain sensitivity is higher, your family and friends can’t relate to you and sometimes get
+
+secretly annoyed, and your body feels less than ready to perform. If this cycle repeats for a few
+
+days, it’s hard to climb out of the pain hole.
+
+We’ve established that having chronic joint pain means turning into Sisyphus: you keep trying to roll that
+
+pain boulder up the hill, but it’s too heavy. Disturbed sleep, failed treatments, fat gain and muscle loss —
+
+these factors are hard to overcome.
+
+Luckily, thousands of studies have been conducted on joint pain. Before distilling them into tips, however,
+
+let’s review three very important points.
+
+First, remember that no single study will be the silver bullet that eliminates pain. There are so many different
+
+causes for joint pain, and only “snake oil” therapies claim to address them all. In fact, the term snake oil was
+
+originally used to describe a literal snake oil therapy for joint pain used in Traditional Chinese Medicine
+
+(TCM).
+
+5
+
+ Digging Deeper: A unified theory of pain?
+
+A few academics have proposed unified theories of pain, centered around areas such as
+
+inflammation or the nervous system.[13] Similarly, a plethora of researchers, academic and
+
+nonacademic, will say that there’s a simple, single cause behind most of your health issues — some
+
+claim that when it comes to osteoarthritis, nightshade vegetables are the main culprit, others say that
+
+gluten is to blame for many of today’s pains and ailments, and yet others state that those pains and
+
+ailments derive from a lack of direct contact with the bare earth.[14]
+
+Common nightshade vegetables and herbs
+
+Ashwagandha
+
+Cayenne pepper
+
+Goji berry
+
+Paprika
+
+Potatoes
+(excluding sweet potatoes)
+
+Tobacco
+
+Eggplants
+
+Peppers/Chili peppers
+
+Tomatoes/Tomatillos
+
+Reference: USDA Plants Database. Accessed September 12, 2020.
+
+It’s certainly tempting to believe that a person’s health issues all share a single cause because that
+
+would mean that addressing that one cause will make it all better, in one stroke. But, as implied by
+
+the very number of conflicting opinions on the nature of that cause, reality is much messier.
+
+Admittedly, on the theoretical side, it’s interesting to tie together various pain mechanisms, but the
+
+factors involved (dietary, environmental, psychological, among others) are simply too diverse to be
+
+distilled into one neat system. And yes, on the practical side, single triggers such as gluten might be
+
+at the root of multiple health issues — in some individuals. However, even if a person belongs to the
+
+minority of people who gluten adversely affects, embarking on a gluten-free diet isn’t likely to make
+
+all of the ills magically disappear.
+
+This is unwelcome knowledge. If chronic pain could be traced down to one cause, it would be quite
+
+easier to treat!
+
+Second, remember that any given individual will not see immediate benefits from most therapies. Joint pain
+
+takes a while to resolve, and “a while” could range from a couple of weeks to many months. Also, different
+
+people respond differently to the same treatment because human bodies are highly variable and highly
+
+complex.
+
+Third, remember that the benefits that any individual experiences might be difficult to assess. Pain
+
+management isn’t like muscle gain or fat loss, where one can track pounds or see those biceps veins
+
+become more prominent; there is no easy way to quantify pain, and some days will be worse than others
+
+due to mysterious factors.
+
+And now onto the “tips” (a term which greatly undersells what they are — they should instead be called
+
+Very Important Pointers That Will Help If You Follow Them).
+
+6
+
+Follow the sun. No huge randomized trial has been conducted on the effect of sun exposure on pain — or on any
+other condition, for that matter. There’s simply no financial incentive because the sun can’t be patented. That said,
+circadian rhythm may be the most important factor in treating pain. Sunlight may decrease pain after joint
+surgery,[15] and UV tanning beds have been shown to decrease pain from fibromyalgia.[16] These clues are just two
+out of many that point to a simple message: get as much natural light as possible during the day and as little
+artificial bright light as you can at night.
+
+Maintain a healthy weight. This one especially matters for knee pain. During walking, each 0.5 kg (1 lb) of excess
+weight has the effect of about 1.8 kg (4 lb) of extra load on the knees. If a person is just 4.5 kg (10 lb) overweight,
+that’s 18 kg (40 lb) of extra load per step — and 21,772 kg (48,000 lb) of cumulative load per 1.6 km (1 mile,
+assuming 1,200 steps).[17]
+
+Train the brain. It may seem that the pain is in the knee, but it’s not. It’s also in the brain and nervous system. Signals
+going up to the brain and back down to the joint modify what a person feels, so that a damaged joint that is painful
+to one person may hardly be felt by another.[18] Although it’s not possible to “think away” joint pain, mindfulness
+meditation appears to reduce pain.[19] It may sound hokey, but something as minor as reframing might train the brain
+to perceive pain differently.
+
+Help your gut bacteria help you. No probiotic has ever been shown to universally relieve pain, probably because
+different people have such different microbiomes and because there’s only so much one single strain can do when
+living among the hundreds of others in the gut. Still, certain bacterial strains have shown benefit for specific painful
+conditions such as rheumatoid arthritis.[20] Supplementing with probiotics matters less than general care of the gut
+though, like avoiding too much processed junk food.[21][22] By decreasing the chance of activating the immune
+system inappropriately, a happy gut microbiome leads to less pain over time.
+
+Pain science undergoes major new developments seemingly every few months. Nevertheless, chronic pain
+
+not only persists, but more and more people have joint pain each year. Don’t fall for the common trap of
+
+trying quick fix after quick fix and wasting a lot of money along the way.
+
+A wise strategy for dealing with recalcitrant joint pain is to act slowly and mindfully: figure out which
+
+treatments are most likely to net some benefit, pick a couple, and stick with them for at least a few weeks.
+
+It’s easy to try some hyped-up treatment and then be disappointed when it doesn’t work. It’s harder to try,
+
+over weeks and months, to soothe the brain and gut, get more sunshine, and take just a supplement or two
+
+from those presented in this guide. But joint pain is a unique enemy, and to combat it, a uniquely wise
+
+strategy is needed. Best of luck.
+
+Kamal Patel, Co-founder and Director
+
+MBA, MPH, PhD(c) in Nutrition
+
+7
+
+Combos
+
+Disclaimer about supplement quality
+
+We expect that readers will do their due diligence when choosing products. Depending on the
+
+manufacturer, supplements may have inaccurate labels (i.e., they contain too much or too little of the
+
+ingredients they claim, or in some cases, significant amounts of other ingredients not listed). They may also
+
+contain significant amounts of contaminants such as heavy metals or pesticides. It is also possible for
+
+supplements to contain ingredients that people are commonly allergic to, and it’s important to be aware of
+
+the nonmedicinal ingredients as well. As a brief introduction to vetting manufacturers, we drew up a short
+
+list of steps you should take if a product has caught your interest.
+
+ Tip: Why don’t you recommend brands or specific products?
+
+For two reasons:
+
+We don’t test physical products. What our researchers do — all day, every day — is analyze
+
+peer-reviewed studies on supplements and nutrition.
+
+We go to great lengths to protect our integrity. As you’ve probably noticed, we don’t sell
+
+supplements or even show ads from supplement companies, even though either option would
+
+generate a lot more money than our Supplement Guides ever will — and for a lot less work,
+
+too.
+
+If we recommended any brands or specific products, our integrity would be called into question, so…
+
+we can’t do it.
+
+Core Combo
+
+Joint pain is caused by a variety of factors. Because no supplement can address all of them, there is no
+
+core supplement in this guide.
+
+Specialized Combos
+
+8
+
+ Tip: Try one combo alone for a few weeks
+
+Taking too many supplements at once may prevent you from determining which ones are truly
+
+working. Start with just one of the combos suggested here for a couple of weeks before you
+
+consider making any modification, such as adding another supplement, altering the dosage of a
+
+supplement, or incorporating the supplements from an additional combo.
+
+When adding another supplement to your regimen, be methodical. For example, you may want to
+
+take all the supplements from two combos. Select the combo that you wish to try first and take this
+
+for a couple of weeks. Next, add one supplement from the second combo and wait another week to
+
+see how it affects you. Continue this process until you’ve added all the supplements you want to try.
+
+If a supplement appears in two combos that you wish to combine, don’t stack the doses; instead,
+
+combine the ranges. For instance, if the range of a supplement is 2–4 mg in one combo and 3–6 mg
+
+in the other, your new range becomes 2–6 mg. Always start with the lower end of the range —
+
+especially in this case, because the reason for why one of the ranges has a lower ceiling in one
+
+combo may be due to a synergy with another supplement in the same combo. Reading through the
+
+full supplement entry may help you decide which dose to aim for, but if you’re not sure, lower is
+
+usually safer.
+
+For people with osteoarthritis
+
+Take 400–1000 mg of Curcumin (depending on type, explained below) per day, with food, and some
+
+collagen in the form of undenatured type-II collagen (40 mg), hydrolyzed collagen (10 grams), or gelatin
+
+(10–15 grams).
+
+After one month, if the results aren’t satisfactory, add Boswellia serrata to the regimen. If that still proves
+
+insufficient, methylsulfonylmethane (MSM) at a total dose of approximately 3,375 mg (split into three doses
+
+of 1,125 mg each day) may improve the combo and have additional effects.
+
+Studies on Boswellia serrata tend to use one of two patented extracts: 5-Loxin and Aflapin. To supplement
+
+with either, take 100–250 mg once per day. Alternatively, try taking 1,800 mg of the plant’s gum oleoresin
+
+three times a day (i.e., 5,400 mg/day).
+
+Curcumin is a component of turmeric (aka Curcuma longa). Its bioavailability can be greatly increased by
+
+taking it with piperine (a black pepper extract) or by combining it with lipids (e.g., BCM-95, Meriva). To
+
+supplement curcumin with piperine, take 500 mg of the former with 20 mg of the latter, three times per day
+
+(i.e., 1.5 grams of curcumin and 60 mg of piperine per day). To supplement with BCM-95 or Meriva, take
+
+500 mg twice per day (i.e., 1 g/day).
+
+It is unclear where glucosamine and chondroitin might fit into a combo, as the main reason to take them is
+
+to reduce the rate of joint deterioration, but this is speculative. Chondroitin is generally taken in a dose of
+
+1,200 mg of chondroitin sulfate.
+
+9
+
+ 
+ 
+For people with rheumatoid arthritis
+
+Take 3 grams of combined EPA and DHA per day by eating fatty fish (e.g., 200 grams of salmon) or by
+
+taking fish oil softgels (with food, to reduce the chance of fishy burps). Vegans and vegetarians have the
+
+option of taking algal oil softgels. Be sure to read the warnings section, as there is potentially a trade off
+
+with atrial fibrillation risk.
+
+In addition, take 40 mg of undenatured type-II collagen once per day.
+
+If there have been no improvements after a month, consider taking curcumin in the doses listed for
+
+osteoarthritis, but know that its utility for rheumatoid arthritis is still speculative, though the preliminary
+
+evidence is encouraging.
+
+For people at risk of complex regional pain
+syndrome (CRPS)
+
+Take 500 mg of vitamin C once per day, ideally in the morning.
+
+For people with joint pain related to athletics
+
+Try the “rheumatoid arthritis” combo above. An option is to replace the undenatured type-II collagen (40
+
+mg) by some hydrolyzed collagen (10 grams) or some gelatin (10–15 grams).
+
+Remember that supplementation should not serve as primary treatment for injuries. It can be used as
+
+ancillary treatment and to alleviate the pain while tending to an injury.
+
+For people with joint pain unrelated to a disease
+or to athletics
+
+Try the “rheumatoid arthritis” combo above. An option is to replace the undenatured type-II collagen (40
+
+mg) by some hydrolyzed collagen (10 grams) or some gelatin (10–15 grams).
+
+If pain persists, add the “osteoarthritis” combo above. Although collagen is a supplement in both
+
+specialized combos, taking both specialized combos doesn’t mean doubling the collagen dose.
+
+What has changed since the last time?
+
+It should be noted that we changed the names of our ranking categories. “Core” (the highest) is now
+
+“primary”, “primary” is now “secondary”, and “secondary” is now “promising”. This nomenclature has already
+
+been implemented for some guides, but this is the first update to the Joint Health Guide that uses this new
+
+terminology. For example, if it was a core supplement in the previous issue and now it’s a secondary
+
+supplement in this issue, we’ll say that it was a primary supplement in the previous issue and is now a
+
+secondary supplement.
+
+Added:
+
+10
+
+Saffron (unproven)
+
+Changed ranking:
+
+Chondroitin and glucosamine
+
+Downgraded from secondary to promising. It seems less and less likely that these supplements have
+
+clinically significant long-term effects on osteoarthritis pain and function, and there are better options for
+
+osteoarthritis. However, they may reduce long-term joint damage, though more research is needed.
+
+Pharmaceutical-grade supplements may work better, but more research is needed on that topic too.
+
+Cissus quadrangularis
+
+Downgraded from promising to unproven. This change is simply due to our change in evidence standards.
+
+Although it makes mechanistic sense that Cissus quadrangularis would help with osteoarthritis, the small
+
+number of trials that have been conducted preclude any conclusions at this time.
+
+Clarified:
+
+Vitamin C
+
+Vitamin C is promising for the prevention of complex regional pain syndrome, but solid evidence supporting
+
+its use for any other source of joint pain is lacking.
+
+11
+
+Primary Supplements
+
+Why are there no primary supplements in this
+guide?
+
+Joint pain is caused by a variety of factors. Because no supplement can address all of these factors, there
+
+is no recommended primary supplement. Additionally, some supplements have a lot of supporting evidence
+
+but the effects are modest at best, or the effects look more potent but the evidence doesn’t warrant a high
+
+degree of confidence.
+
+12
+
+Secondary Supplements
+
+Boswellia Serrata
+
+What makes Boswellia serrata a secondary
+supplement
+
+Boswellia serrata is a plant used in Ayurvedic medicine primarily to alleviate joint pain. The effects of
+
+Boswellia serrata may largely be attributed to one of its main bioactive compounds, acetyl-11-keto-β-
+
+boswellic acid (AKBA), which is a potent inhibitor of 5-lipoxygenase, an enzyme responsible for
+
+inflammation.[23][24]
+
+According to a 2020 meta-analysis of 7 randomized controlled trials, men and women with osteoarthritis
+
+who supplemented with Boswellia serrata or its extracts experienced small to moderate improvements in
+
+joint pain, stiffness, and function after 4 weeks of treatment.[25] Importantly, these improvements were 2–3
+
+times greater in trials with treatment periods lasting 12 weeks. However, it’s worth keeping in mind that (i)
+
+in 4 of the 7 trials, Boswellia serrata extract was taken together with curcumin, silverberry, or
+
+methylsulfonylmethane (MSM), components that may have beneficial effects on osteoarthritis symptoms of
+
+their own, and (ii) most of the trials included in the meta-analysis had an unclear or high risk of bias.
+
+With the above said, other trials that examined the effects of Boswellia serrata extract on its own in
+
+participants with knee osteoarthritis have also reported large beneficial effects on osteoarthritis
+
+symptoms.[26][27][28] One of these trials examined the effects of Boswellia serrata extract, compared to
+
+nonsteroidal anti-inflammatory drugs (NSAIDs), in adults with osteoarthritis. After 6 months, the
+
+participants who took Boswellia serrata reported improvements in knee pain, stiffness, and function that
+
+were similar to those of the participants who took NSAIDs. Notably, one month after the cessation of the
+
+treatments, the beneficial effects were maintained only in the Boswellia serrata group.
+
+More evidence is needed before Boswellia serrata can be said to help people with rheumatoid arthritis.
+
+What is osteoarthritis?
+
+13
+
+ 
+In Ayurvedic medicine, Boswellia serrata is often used alongside Curcuma longa (turmeric), a plant that
+
+contains curcumin. Further research is needed to determine whether these two supplements actually have
+
+synergistic properties.
+
+How to take Boswellia serrata
+
+Most studies reporting benefits of Boswellia serrata have used one of three patented extracts, namely,
+
+Aflapin, Loxin, and WokVel. Aflapin and Loxin (standardized to contain at least 20% and 30% of AKBA,
+
+respectively) have been used in daily doses of 100–250 milligrams, whereas WokVel (which contains around
+
+6%–9% of AKBA) has been used in daily doses of up to 999 milligrams. Of these extracts, Aflapin seems to
+
+have better overall anti-inflammatory effects due to its increased bioavailability, which results in more
+
+AKBA reaching systemic circulation.[29] To supplement with Boswellia serrata, take 100–250 mg of Aflapin
+
+(preferably) or Loxin once per day with food. Another alternative is to take 1,800 mg of the plant’s gum
+
+oleoresin three times a day (i.e., 5,400 mg/day).
+
+Like curcumin, Boswellia serrata has been combined with lipids to increase its bioavailability (the same
+
+company that makes Meriva for curcumin makes Casperome for Boswellia serrata), but further research is
+
+needed to determine a dosage for joint health.
+
+People who take Boswellia serrata may see a reduction in pain (e.g., −11.19 to −5.46 mm on a visual analog
+
+scale of 100 mm or −22.36 to −6.09 out of 100 on the WOMAC questionnaire pain subscale, as measured in
+
+studies). Pain may continue to improve for at least 12 weeks after beginning daily supplementation.
+
+Warnings about Boswellia serrata
+
+Boswellia serrata is generally well tolerated, with some reports of gastrointestinal effects including
+
+abdominal pain, diarrhea, nausea and acid reflux.[30] There are also rare reports of itchy skin and contact
+
+dermatitis.[31] However, studies generally haven’t shown an increase in adverse events relative to
+
+control.[25][26][32][33][34]
+
+There’s a case study of a Boswellia extract in a skin cream causing an allergic reaction, though it’s unclear
+
+how common this is.[35]
+
+Boswellia serrata may inhibit platelet aggregation and might cause excessive bleeding, particularly in
+
+combination with blood-thinning medication.[36] However, this effect has not been evaluated clinically and is
+
+highly speculative.
+
+Boswellia serrata may not be safe to use in pregnancy. Although studies on this topic are inconclusive,
+
+individuals who are pregnant or planning to become pregnant should consider safer options.
+
+Collagen
+
+What makes collagen a secondary supplement
+
+Osteoarthritis involves damage to joint cartilage, and collagen is a major component of cartilage, so it’s
+
+14
+
+ 
+possible that taking collagen can help repair cartilage; this hypothesis has been demonstrated to be
+
+plausible in several preclinical studies.[37] Whole collagen won’t be digested and become incorporated into
+
+cartilage directly, but it will be digested into smaller components, which can then be used to synthesize
+
+collagen.[38][39]
+
+How cartilage degrades in osteoarthritis vs. rheumatoid arthritis
+
+Adapted from Smolen and Aletaha. Nat Rev Rheumatol. 2015.[40]
+
+The real question is always: how effective is it? Based on 13 randomized trials that evaluated collagen for
+
+osteoarthritis or other forms of joint pain, the evidence is largely in favor of modest improvements in the
+
+overall symptoms of osteoarthritis.[41][42][43][44][43][45][46][47][48][49][50][51][52] The main reason to be skeptical of these
+
+findings, or at least of the potency of collagen, is that the available research is mainly funded by industry
+
+(or it was unclear whether it was), and although these studies used basic measures to protect against bias,
+
+there aren’t enough truly high-quality trials without industry funding to have a high level of confidence in
+
+collagen.
+
+The most effective dose of collagen isn’t yet clear, but positive studies have tended to use 10 grams of
+
+hydrolyzed collagen or 40 mg of undenatured type II collagen (UCP-II).
+
+Athletes who take collagen to prevent activity-related joint pain may see a modest benefit from 5–10
+
+grams, but more research is needed to be precise about the optimal dose or to have confidence in its utility
+
+in this case.[53][54][55]
+
+How to take collagen
+
+To supplement with undenatured type-II collagen (UC-II), take 40 mg/day of a UC-II cartilage supplement,
+
+which will yield 10 mg/day of native type-II collagen.
+
+To supplement with hydrolyzed collagen (also known as collagen hydrolysate), take 10 g/day.
+
+15
+
+To supplement with gelatin, take 10–15 g/day. Keep in mind that although true gelatin is composed of pure
+
+collagen (i.e., pure protein), the dessert called gelatin often has very little collagen in it.
+
+With respect to the Western Ontario and McMaster Universities Osteoarthritis Index (WOMAC) and
+
+expressed in terms of a 5-point scale, people taking collagen can expect a change of −0.74 to −0.08 for
+
+stiffness, but not a reliable change in pain. On a visual analog scale of 0–100 mm, however, they may see a
+
+change of −26.24 to −2.87 mm.
+
+Warnings about collagen
+
+Collagen appears to be safe at a dosage of up to 10 grams daily for 6 months.[46] One study found
+
+gastrointestinal side effects, including diarrhea and indigestion, but they were relatively rare, and no
+
+placebo group was used.[56] In general, studies have failed to find convincing evidence of an increase in
+
+adverse events relative to placebo. This makes sense because collagen is a protein that the body can
+
+readily digest and which is synthesized endogenously in large amounts. However, as the dose of collagen
+
+increases, the risk for gastrointestinal side effects may increase, and it’s unclear what effects might occur
+
+at dosages that exceed 10 g/day. For this reason, it may be prudent to slowly increase the dose of
+
+collagen.
+
+Curcumin
+
+What makes curcumin a secondary supplement
+
+Curcumin is a component of Curcuma longa or turmeric. It can inhibit cyclooxygenase (COX) enzymes and
+
+thus reduce inflammation in the body, so its action is similar to that of nonsteroidal anti-inflammatory drugs
+
+(NSAIDs).[57]
+
+Several clinical trials have investigated the effects of turmeric extracts or curcuminoids on osteoarthritis
+
+symptoms — most commonly knee pain and physical function.[58][59][60][61][62][63][64][65][66][67][68][69][70] The results of
+
+these trials have been summarized in a number of meta-analyses.[71][72][73][74][75] Overall, the findings suggest
+
+that supplementation with turmeric extracts/curcuminoids improves osteoarthritis symptoms to a
+
+moderate–large degree, as compared to placebo, and that these effects are comparable to those of
+
+NSAIDs. One important caveat is that many of the trials were assessed as having an unclear or high risk of
+
+bias, with several trials funded by the supplement industry. Although these trials may be at a higher risk of
+
+reporting positive findings, trials of a high methodological quality and a low risk of bias have largely
+
+reported positive findings as well.
+
+16
+
+ 
+Curcumin’s effects on patients with osteoarthritis
+
+Reference: Belcaro et al. Altern Med Rev. 2010.[59]
+
+In Ayurvedic medicine, Curcuma longa is often used alongside Boswellia serrata. Further research is needed
+
+to determine whether these two supplements actually have synergistic properties.
+
+A few trials have also examined the effects of curcumin supplementation on symptoms of rheumatoid
+
+arthritis — mainly disease activity and joint pain.[76][77][78][79]. Most of these trials have reported moderate–
+
+large improvements in disease activity and joint pain with curcumin supplementation, as compared to
+
+placebo. However, it should be noted that most of the aforementioned trials were industry funded.
+
+How to take curcumin
+
+By itself, curcumin is poorly absorbed. Among the methods devised to address the issue, the two most
+
+common (and most often tested) have paired curcumin with piperine (a black pepper extract) or combined
+
+it with lipids (e.g., BCM-95® and Meriva®, among others).
+
+17
+
+To supplement with curcumin + piperine, take 500 mg of curcumin with 20 mg of piperine three times per
+
+day (i.e., 1,500 mg of curcumin and 60 mg of piperine per day).
+
+To supplement with *BCM-95®, a patented combination of curcumin and essential oils, take 500 mg twice
+
+per day (i.e., 1,000 mg/day).
+
+To supplement with Meriva®, a patented combination of curcumin and soy lecithin, take 200–500 mg twice
+
+per day (i.e., 400–1,000 mg/day).
+
+Curcumin is usually taken together with food.
+
+People who take curcumin for osteoarthritis may see a change on the Western Ontario and McMaster
+
+Universities Arthritis Index (WOMAC) of −1.31, which is a change of −0.24 standard deviations overall. For
+
+stiffness in particular, these changes may reach −1.29 (a change of 0.06 standard deviations), and for
+
+function, these changes may reach −2.59 (−0.27 standard deviations). On a visual analogue scale, people
+
+who supplement with curcumin may see a change in pain of −2.93 (−0.69 standard deviations).
+
+Warnings about curcumin
+
+Curcumin seems to be well tolerated. Some studies have reported a small amount of GI-related side
+
+effects.[80][65] Rare, individual reports of hepatitis associated with taking turmeric have also occurred.[81][82] The
+
+reason for this effect is unclear, but it is possible that it involves contamination (e.g., formulations with a
+
+high heavy metal content). It is unclear whether the same concerns apply to curcumin extract, but
+
+regardless, it is important to only buy from companies whose products have been tested independently.
+
+Piperine is a potent inhibitor of a variety of cytochrome P450 enzymes, which is one part of what makes it
+
+a curcumin enhancer and of potential use for augmenting the effects of other drugs; in other words, it can
+
+reduce the rate of drug metabolism.[83][84][85] However, this property may make some medications more
+
+potent and lead to excessive effects. As such, it may be prudent to talk to a doctor or pharmacist before
+
+combining piperine and medications.
+
+The same goes for curcumin itself, which has the ability to inhibit a variety of cytochrome P450 enzymes,
+
+albeit to a lesser extent.[83][86]
+
+Curcumin may increase the risk of bleeding by interacting with anticoagulants such as warfarin and
+
+antiplatelets such as aspirin.[87][88] Taking curcumin with diabetes medication such as glyburide may increase
+
+the risk of low blood sugar.[89]
+
+Some athletes use curcumin to fight muscle inflammation. In theory, curcumin should have effects similar in
+
+nature and potency to those of aspirin, and rodent studies on this aspect are promising, but human studies
+
+are needed for confirmation.
+
+Fish Oil
+
+What makes fish oil a secondary supplement
+
+Fish oil is believed to be one of the most potent anti-inflammatory agents in our diet. Arthritis of the joints
+
+18
+
+ 
+is an inflammatory disease, and accordingly, it seems obvious that the multifactorial anti-inflammatory
+
+effects of 20:5 (n−3) eicosapentaenoic acid (EPA) and 22:6 (n−3) docosahexaenoic acid (DHA) from fish
+
+and other marine products like krill or algae have attracted the attention of both researchers and people
+
+with joint pain.
+
+Good evidence of the beneficial effects of fish oil exists for rheumatoid arthritis (RA), a condition in which a
+
+person’s own immune system attacks and compromises the structural integrity of the joints.[90] Significantly
+
+less evidence exists for nonrheumatic osteoarthritis (OA). Although their etiologies (i.e., the specific causes
+
+and courses of the diseases) may be different, both OA and RA go hand in hand with increased levels of
+
+common markers of inflammation such as tumor necrosis factor alpha (TNF-α), interleukin (IL)-1, IL-6, IL-17,
+
+and others. Many of these cytokines are reduced in response to EPA and DHA supplements in various
+
+nonarthritic inflammatory diseases, most prominently metabolic disease.[91] Therefore, it is only mildly
+
+surprising that the results of observational and experimental studies investigating the putative beneficial
+
+effects of long-chain omega-3 supplementation in people with rheumatoid arthritis have reported positive
+
+results.
+
+In line with previous systematic reviews,[92][93][94] the results of a more recent meta-analysis of the putative
+
+benefits of fish oil supplement in people with RA[95] clearly suggest small but practically relevant reductions
+
+in disease symptoms. A systematic review by the same authors assessed 20 experimental trials (all
+
+published before the end of July 2016) that reported the use of “fish oil” from various sources. The fish oils
+
+contained between the standard 0.3 g/day of EPA+DHA found in common commercial fish oil supplements
+
+and up to 9.6 g/day of combined EPA+DHA from multiple doses of medical-grade fish oil. However, there
+
+was no evidence of existing dose-effect relationships. The study durations were between 12 and 72 weeks,
+
+and methodological differences made it difficult to weigh and compare the input data, which the
+
+researchers deemed mostly at a low-to-medium risk of bias. After pooling and analyzing the data, the
+
+authors reported a predominantly positive and small effect on the participants’ subjective disease
+
+assessments (see Table 1 for an overview of selected markers), which is a positive result, albeit with effect
+
+sizes that do not warrant categorizing fish oil as a primary option.
+
+Notwithstanding the significant reductions in symptoms and although all studies were conducted in
+
+participants with RA (in whom autoimmune-induced inflammation is thought to fuel the progressive
+
+structural erosion of the joints), neither the meta-analysis nor the other currently available studies have
+
+reported consistent effects on objectively measurable blood markers of inflammation.
+
+This lack of effect on the levels of arthritis-specific blood markers and general inflammatory cytokines in
+
+the blood is a recurring theme in the literature on fish oil interventions in both people with RA and OA for
+
+whom the inflammation can be viewed as correlated with (but not the origin of) joint damage and pain. For
+
+example, one of these studies[96] recruited older and generally healthy participants with overweight and
+
+obesity. The results confirmed positive effects on arthritic pain (medium effect size) and general disease
+
+burden (small effect size), but the study authors did not observe clinically relevant improvements in
+
+markers of inflammation. Research into the influence of EPA's and DHA's direct and indirect effects on
+
+cyclooxygenase (COX) and lipoxygenase (LOX) enzymes and their competition with arachidonic acid[97]
+
+seems necessary to determine the exact mechanism behind the observable benefits for people with
+
+arthritis.
+
+Moreover, it is important to keep in mind that pain in the knees, elbows, fingers, toes, and other joints is not
+
+an age-specific or disease-specific phenomenon. Overweight and obesity are common correlates of joint
+
+pain in younger people, and transient and even chronic joint pain can also be observed in otherwise healthy,
+
+recreationally active or even athletic parts of the population with normal weights. The underlying cause of
+
+pain is often not clear, and it often predates observable osteoarthritic damage and/or rheumatoid
+
+inflammation of the sore joints. Conventional wisdom often ascribes this form of joint pain to a lack of
+
+19
+
+“lubrication of the joints”, which could hypothetically be restored by fish oil in the same way that WD40
+
+lubricates mechanical junctions in cars, bikes, and other machines. Anecdotal evidence from the health and
+
+fitness community seems to confirm that hypothesis. However, scientific evidence that supports the use
+
+and usefulness of fish oil supplements in individuals without arthritic joint pain is scarce. We have found
+
+only 4 studies[98][99][100][101] that examined the effects of fish oil in participants without established arthritis and
+
+only one study in participants complaining of "mild knee pain" in the absence of diagnosed changes in joint
+
+integrity or autoimmunity.[100]
+
+That does not necessarily mean that people with mild or even no pain cannot benefit from fish oil
+
+supplements — it just leaves us with insufficient evidence to recommend fish oil as a "joint supplement"
+
+across the board.
+
+Most importantly, future studies should investigate the effects of fish oil in participants without arthritis —
+
+healthy, young, normal-weight and athletic populations, in particular. The only study to date that at least
+
+supports the notion of preventative benefits in people without arthritis comes from the Harvard Medical
+
+School.[99] This study was a reanalysis of data from a year-long intervention study in older adults (average
+
+age of 63), without arthritis but with coronary artery disease (CAD), who received a relatively high dose of
+
+fish oil (1.86 grams of EPA and 1.5 grams of DHA; Lovazza™). In addition to its length and high number of
+
+participants, this study sticks out for two reasons: (a) it focused on a group with (on average) negligible
+
+joint issues at the beginning of the study, and (b) it still found improvements in joint stiffness and physical
+
+function. However, most importantly, these improvements correlated with (i) significant increases in
+
+voluntary physical activity and (ii) a reduced number of joint replacements compared to the no-treatment
+
+control group (1 vs. 11, respectively; p = 0.002). It should be obvious, though, that a mechanistic link
+
+between (b) improvements in joint stiffness and physical function and outcomes (i) and (ii) cannot be
+
+established. Moreover, even if the causative nature of the interaction could be confirmed, a single study in a
+
+very specific group of participants without arthritis would not warrant a general recommendation for fish oil
+
+as a proven and effective "joint supplement" with preventative effects. As a mere preventative means, fish
+
+oil must thus be rated only as a secondary option.
+
+How to take fish oil
+
+Take 1–3 g/day of combined EPA and DHA.
+
+Note: This number is not identical to the total quantity of "fish oil" on the label. Most commercial products
+
+contain only 180 mg of EPA and 120 mg of DHA (400 mg total of long-chain omega-3 fatty acids) per
+
+capsule. Accordingly, a person would have to take at least 3–4 capsules per day.
+
+A clear dose-response relationship has not been established.
+
+A potential superiority of EPA over DHA has been suggested but needs further investigation. The same
+
+goes for putative differences between triglyceride-bound (regular fish oil), phospholipid-bound (krill oil),
+
+and the ethyl-ester varieties doctors may prescribe.
+
+People who take fish oil for rheumatoid arthritis may see a change in pain of −0.42 to 0 standard
+
+deviations.
+
+Warnings about fish oil
+
+Fish oil is known to cause gastrointestinal side effects, including abdominal pain and diarrhea, in some
+
+people.[102][103] Taking fish oil with food may help avoid these unwanted side effects.[104]
+
+20
+
+Although occurrences are rare, some cases suggest that fish oil interacts with anticoagulants like
+
+warfarin/Coumadin and antiplatelet medications like aspirin that can increase the risk of bleeding when
+
+used together.[105][106][107]. Taking fish oil alone does not appear to have this risk.[108][109] Consult with a medical
+
+caregiver or prescriber before taking fish oil with any of these medications.
+
+There is some evidence of that fish oil increases the risk of atrial fibrillation, as detailed by Examine. The
+
+risk seems to be present even at fish oil doses as low as 1 gram. There are still many uncertainties
+
+(including the magnitude of risk) as to whether or not this risk is present in people without cardiovascular
+
+disease or who are not at a high risk of cardiovascular disease.
+
+ Digging Deeper: Oxidized fish oil
+
+Fish oil can become rancid and oxidize when exposed to oxygen, heat, or light. These types of oil are
+
+particularly susceptible to oxidation because of their very-long-chain polyunsaturated fatty acids.
+
+The oxidation level is measured using three values:
+
+1.  Peroxide value (PV)
+
+2.  Anisidine value (AV)
+
+3.  Total oxidation value (TOTOX)
+
+PV is a measure of primary oxidation products (peroxides), and AV is a measure of secondary
+
+oxidation (aldehydes and ketones). The TOTOX value is calculated using the formula AV + 2PV. The
+
+lower the TOTOX value, the better the oil quality will be. The Global Organization for EPA and DHA
+
+Omega-3 recommends a TOTOX value of no more than 26.
+
+Oxidation of fish oils may be more common than many suspect. One 2015 study found that nearly
+
+50% of commercial fish oils exceeded the maximum recommended TOTOX value,[110] whereas others
+
+found good compliance with TOTOX limits.[111][112] Taken together, these divergent results demonstrate
+
+just how widely the quality of commercially available fish oil supplements can vary.
+
+Evidence for the health effects of consuming oxidized fish oils is a bit mixed. For healthy individuals,
+
+there is a lack of obvious short-term health damage from consuming oxidized fish oil. One study
+
+showed no difference in circulating levels of oxidized LDL or inflammatory markers after 7 weeks of
+
+supplementation with oxidized fish oil.[113]
+
+However, in participants with high levels of cholesterol and triglycerides, consumption of highly
+
+oxidized fish oils can minimize its efficiency in improving metabolic markers such as fasting glucose,
+
+total cholesterol, and triglycerides.[114]
+
+21
+
+Promising Supplements
+
+Chondroitin and Glucosamine
+
+Why has there been so much interest in
+chondroitin and glucosamine?
+
+Chondroitin and glucosamine are basic components of cartilage and synovial fluid and are popular
+
+supplements for osteoarthritis due to the possibility that they could help to repair cartilage and balance the
+
+ratio between catabolism and anabolism in osteoarthritic cartilage.[115][116]
+
+In addition to a direct structural role, these components also have anti-inflammatory effects, which could
+
+reduce the progression of osteoarthritis and relieve symptoms.
+
+Chondroitin’s anti-inflammatory effects might occur through inhibition of the protein complex NF-κB, which
+
+regulates inflammatory responses.[117]
+
+Putative inflammatory interplay between the synovium and cartilage
+
+Adapted from Lovu et al. Osteoarthritis Cartilage. 2008.[117]
+
+Glucosamine may reduce COX-2 activity and the subsequent inflammatory response.[118]
+
+22
+
+Glucosamine’s cartilage-preserving effects
+
+What makes chondroitin a promising
+supplement
+
+A meta-analysis of randomized double-blind trials that tested the effects of chondroitin sulfate on
+
+osteoarthritis pain and structural changes found a small but statistically significant reduction in pain.[119] This
+
+reduction wasn’t affected by limiting the analysis to studies without industry involvement (industry
+
+involvement has been a frequent concern with chondroitin research). The effect was smaller but still
+
+statistically significant when only considering studies with high methodological quality. A small but
+
+statistically significant reduction in joint-space narrowing was found overall but was considerably
+
+diminished when factoring in industry involvement and was no longer statistically significant when
+
+considering only high-quality studies. However, these two subgroup analyses involved far fewer studies
+
+than for pain.
+
+Another meta-analysis of 18 randomized controlled trials found a moderate and statistically significant
+
+reduction in pain and a small improvement in physical function.[120] These effects on pain and physical
+
+function were lower in the longest studies. Studies at a low risk of bias also had considerably smaller effect
+
+sizes than studies with a high risk of bias, though the effect was still statistically significant when
+
+considering only low-risk studies.
+
+Another meta-analysis that considered only randomized trials that lasted 6 months or longer didn’t find a
+
+meaningful effect on pain or function overall, although it found a small, statistically significant effect for
+
+pharmaceutical-grade chondroitin.[121] Another meta-analysis of randomized trials lasting 12 months or
+
+longer found a small but statistically significant effect on joint space/cartilage volume but no clear evidence
+
+for a benefit to pain or function.[122]
+
+In summary, chondroitin is unlikely to have a meaningful effect on pain and physical function in the long
+
+term. However, it might reduce the rate of cartilage degradation, though research is still insufficient on that
+
+topic, and more high-quality studies are needed.
+
+23
+
+ 
+Warnings about chondroitin
+
+Oral supplementation with chondroitin is relatively safe, and it hasn’t been known to increase overall
+
+adverse events relative to placebo in trials on osteoarthritis.[123] Some adverse events including
+
+musculoskeletal problems, connective tissue problems, skin problems, headaches, and a variety of
+
+gastrointestinal symptoms have been reported.[124][125][126] However, it isn’t clear that these adverse events are
+
+particularly caused by chondroitin.
+
+Chondroitin and glucosamine may have anticoagulant properties, which could be a problem for people
+
+taking blood thinners, such as antiplatelet agents (e.g., aspirin) or anticoagulants (e.g., warfarin/Coumadin
+
+and acenocoumarol/Sintrom).[127][128]
+
+It is possible that people with shellfish allergies could experience reactions from chondroitin, though this
+
+may be due to combinations that include glucosamine, which is often produced from the shells of
+
+shellfish.[129]
+
+How to take chondroitin
+
+Take 600–1,200 mg of chondroitin sulfate per day, with food. Within this range, higher doses may be more
+
+effective.
+
+Talk to a physician to find out whether pharmaceutical-grade chondroitin is a viable treatment option for a
+
+particular circumstance because this type of chondroitin may be more effective.
+
+In the short-term (less than 3 months), people taking chondroitin may see a change in pain of −0.59 to
+
+−0.22 standard deviations. It is unclear whether chondroitin can offer consistent long-term reductions in
+
+pain.
+
+There may be a reduction in joint space narrowing of −0.61 to 0.00 standard deviations over the course of
+
+12 months.
+
+What makes glucosamine a promising option
+
+A meta-analysis of 17 randomized double-blind trials on glucosamine sulfate found a small but statistically
+
+significant reduction in pain.[130] When the 6 studies with industry involvement were excluded, the effect was
+
+even smaller — not what would be considered clinically significant on its own, but if genuine, it could be a
+
+potentially good addition to a supplement combination; the same held true for comparison of studies with
+
+low and high methodological quality and in the case of joint space as well.
+
+Another meta-analysis restricted the included studies to those lasting 6 months or longer and found a
+
+general lack of effect on pain and physical function, although it did find a small, statistically significant
+
+effect for prescription crystalline glucosamine, based on a small number of studies.[121] Yet another meta-
+
+analysis included studies that assessed joint space width or cartilage volume over the course of 12 months
+
+or longer and found a small and not statistically significant effect.[122]
+
+The effect of glucosamine on pain is small, and the methodological shortcomings of some of the studies
+
+limit confidence in the small effect. The effect isn’t large enough to warrant confidence that glucosamine
+
+24
+
+ 
+will have a meaningful effect on pain in the long-term, though there is a possibility that it could reduce the
+
+degradation of joints. However, this possibility is also questionable but can’t be ruled out.
+
+Warnings about glucosamine
+
+Oral supplementation with glucosamine is relatively safe, and it hasn’t been known to increase overall
+
+adverse events relative to placebo in trials on osteoarthritis, except for a possible increase in
+
+musculoskeletal adverse events (though this is based on insufficient evidence to be confident in it[123]).
+
+Individual studies have found a somewhat higher rate of respiratory tract adverse events, arthralgia, and
+
+gastrointestinal adverse events.[131][132][133][56] However, these observations haven’t been corroborated by other
+
+studies and could easily be due to chance.
+
+Some studies suggest that glucosamine sulfate supplements may have a negative effect on glucose
+
+metabolism. This effect may confirm observations from in vitro and rodent studies that revealed that
+
+glucosamine inhibits beta-cell glucokinase activity and thus induces a metabolic state similar to non-insulin-
+
+dependent diabetes mellitus (NIDDM).[134] More recently, glucosamine has mostly been cleared of being a
+
+prodiabetic agent in most practical cases, with the putative exception of individuals with untreated
+
+diabetes or glucose intolerance.[135] Systematic reviews, on the other hand, show no general ill effect of
+
+glucosamine supplements on glycemia in healthy individuals and highlight that there is insufficient evidence
+
+of prodiabetic effects in individuals with type 2 diabetes or prediabetes.[136][137]
+
+Glucosamine and chondroitin may have anticoagulant properties, which could be a problem for people
+
+taking blood thinners such as antiplatelet agents (e.g., aspirin) or anticoagulants (e.g., warfarin/Coumadin
+
+and acenocoumarol/Sintrom).[127][128]
+
+It is possible that people with shellfish allergies could experience reactions from glucosamine because it is
+
+commonly produced from the shells of shellfish.[129]
+
+How to take glucosamine
+
+Take 1.5 grams of crystalline glucosamine sulfate (a stabilized form of glucosamine sulfate).
+
+Glucosamine sulfate sodium chloride is the best-studied form of crystalline glucosamine sulfate, but
+
+preliminary evidence suggests that glucosamine sulfate potassium chloride may be equally efficacious.
+
+Studies do not support the use of other types of glucosamine sulfate. Studies do not support the use of
+
+glucosamine hydrochloride.
+
+People who take glucosamine may see a change in pain of −0.54 to −0.16 standard deviations. It is unclear
+
+whether glucosamine can offer consistent long-term reductions in pain.
+
+Glucosamine may lead to a change in joint-space narrowing of −0.23 to +0.04 standard deviations over the
+
+course of 4–5 months.
+
+Glucosamine + Chondroitin
+
+A meta-analysis of randomized controlled trials on the combination of glucosamine and chondroitin found a
+
+lack of effect on pain, physical function, or stiffness when the combination was compared to a placebo,
+
+based on a small number of studies.[123] Another meta-analysis on randomized trials lasting 6 months or
+
+25
+
+longer failed to find a meaningful effect of glucosamine + chondroitin on pain, function, or joint space
+
+narrowing, also based on a small number of studies.[121] The reason for why the combination is said to be
+
+ineffective here — compared to reports of efficacy in the previous sections — is that the individual
+
+supplements have a small short-term effect, likely due to the different characteristics of the different
+
+studies.
+
+Warnings about glucosamine + chondroitin
+
+Individual warnings about glucosamine or chondroitin from the previous sections apply to their
+
+combination. Additionally, when used in trials, the combination of glucosamine and chondroitin appears to
+
+carry a greater risk for gastrointestinal, central nervous system, musculoskeletal, infection-related, and
+
+other adverse events. However, this caution is based on too little research to comfortably rule out random
+
+chance, and we aren’t very confident in the findings. It would make sense that taking both could amplify the
+
+risk of adverse events though, so caution should be taken. Using lower doses for each component than one
+
+would take individually could be prudent.
+
+MSM
+
+What makes MSM a promising option
+
+Methylsulfonylmethane (MSM) is an organosulfur compound that has the potential to control chronic
+
+inflammation, which makes it a plausible candidate for osteoarthritis treatment.[138][139] Furthermore, it seems
+
+to have glutathione-maintaining properties and can reduce lipid and protein oxidation, which may give it
+
+additional protective effects.[140]
+
+Four randomized double-blind studies on osteoarthritis have been conducted, each lasting 12 weeks; the
+
+results showed general improvements in pain, physical function, and overall symptom scores when
+
+measured.[133][141][142][143] Although this evidence is promising, the main reservation with MSM is the lack of
+
+research compared with other supplements. The size and consistency of effects for the average person
+
+with osteoarthritis are still unclear, and it’s also unclear whether MSM has any unique effects that would
+
+warrant inclusion in a supplement stack.
+
+The effects on pain related to exercise are unclear and the small amount of research available so far is
+
+negative.[144][145]
+
+Warnings About MSM
+
+MSM appears to be highly safe, and the studies that evaluated adverse events failed to find a meaningful
+
+safety difference between it and placebo. One study found a slightly higher incidence of bloating and
+
+insomnia compared with placebo; however, this finding is unreliable and could easily be due to chance.[141] In
+
+one study, a basic blood test failed to find differences for various safety biomarkers compared with
+
+placebo.[146]
+
+More studies on the long-term use of MSM are needed to declare it to be truly safe, but there appears to
+
+be little risk in the short-term.
+
+26
+
+ 
+How to take MSM
+
+The study with the greatest effect used 1,125 mg three times a day (i.e., 3,375 mg/day). There is no proven
+
+benefit to taking more than 6 grams per day, and the optimal and sufficient doses are generally unclear.
+
+MSM has been tested with Boswellia serrata, with glucosamine, and with a combination of glucosamine and
+
+chondroitin. In each case, the addition of MSM seems to confer a slight benefit, but further research is
+
+needed for confirmation.
+
+An estimation of MSM’s effect size isn’t possible at this time.
+
+Pycnogenol
+
+What makes Pycnogenol a promising option
+
+Procyanidins are flavonoids that may improve blood flow and reduce inflammation. Pycnogenol is a
+
+patented extract made from the bark of the French maritime pine (Pinus pinaster Aiton) that is standardized
+
+to contain 65%–75% procyanidins. To date, 3 trials investigating the role of Pycnogenol in the management
+
+of osteoarthritis have been published.[147][148][149] All trials were double blinded, randomized, and placebo
+
+controlled and looked at the effects of supplementation with 100 or 150 milligrams of Pycnogenol for three
+
+months on osteoarthritic symptoms (knee pain, knee stiffness, and physical function) in men and women
+
+with mild osteoarthritis (Grade 1 or 2).
+
+Overall, the aforementioned trials reported positive effects of Pycnogenol supplementation on knee pain,
+
+knee stiffness, and physical function, with moderate to large effect size. That said, the available trials are
+
+few and are of unclear or high risk of bias. Moreover, at least 2 of the trials were funded by the
+
+manufacturers and patent owners of Pycnogenol. As such, although promising, the available evidence
+
+should be considered preliminary.
+
+Grape seed extract is rich in procyanidins and lower in cost than pine bark extracts, but its benefits on joint
+
+health have never been directly demonstrated.
+
+Warnings about Pycnogenol
+
+Reported side effects from pycnogenol use are rare but include gastrointestinal discomfort, nausea,
+
+headache, and dizziness.[150] Taking pycnogenol with food could decrease your chances of having adverse
+
+GI effects.[151]
+
+Taking a pine bark extract with other hypotensive agents could cause low blood pressure. Hypotensive
+
+agents can be pharmaceuticals as well as supplements (notably garlic) but also nitrates, cocoa, or grape
+
+seed extracts, to mention only the supplements presented in this guide.
+
+How to take Pycnogenol
+
+27
+
+ 
+To supplement with Pycnogenol, take 50 milligrams 2–3 times per day with meals, for a total daily dose of
+
+100–150 milligrams.
+
+The maximum benefit is usually experienced after 2–3 months of continuous supplementation.
+
+Judging from a study on a grape seed extract, the improvement in blood flow from pine bark extracts
+
+might be negated by the flavonoid quercetin, so concurrent supplementation should therefore be avoided.
+
+An estimation of pycnogenol’s effect size isn’t possible at this time.
+
+Saffron
+
+What makes saffron a promising option
+
+The term "saffron" refers to both the perennial stemless herb Crocus sativus that is primarily cultivated in
+
+Iran, Spain, India, and Greece and to the deeply orange aromatic spice that is derived from the dried
+
+stigmas in the blue-purple flowers of the crocus plant. This fine powder is best known for its unique flavor
+
+and is one of the most expensive culinary spices on the market. Saffron contains more than 150 different
+
+antioxidant compounds, which are also thought to contribute to its supposed medicinal benefits.[152]
+
+Both regular saffron powders and crude aqueous/ethanolic extracts, as well as specific extracts containing
+
+primarily one or a specific mixture of saffron's purportedly pharmacologically active carotenoids (i.e.
+
+crocetin, crocin, or safranal), have been found to reduce oxidative stress and inflammation in vitro and in
+
+vivo. Many of the pertinent studies were conducted in rodent models. The corresponding studies reported
+
+preventative effects on ulcers, general improvements in digestion, and benefits in cancer treatment and
+
+prevention, heart and metabolic health, and glucose metabolism, as well as antidepressant, anxiolytic, and
+
+hypnotic effects.[153] In addition, there is some evidence to suggest that the anti-inflammatory effects of
+
+saffron extracts, and particularly those of crocin, can ameliorate arthritic pain [152]. Currently, there are only
+
+2 human studies to support a pain-reducing effect in arthritis. A 12-week double-blind randomized
+
+controlled trial conducted at the Iran University of Medical Sciences found significant improvements[154]
+
+using the validated arthritis-specific 28-item disease activity score (DAS28).[155][156] The DAS28 ratings range
+
+from ≤ 2.5 (indicating remission) to ≤3.2, ≤ 5.1, and >5.1 for low, medium, and high disease activity,
+
+respectively. The ratings are based on objectively measurable signs of inflammation such as swelling or
+
+redness, as well as markers of self-reported pain intensity. In the first study, significant reductions in DAS28
+
+score (−0.75) from high-medium to low-medium disease activity and significantly lower CRP values were
+
+observed in response to 100 mg of saffron powder per day taken by 61 women (average age of 53) with
+
+rheumatoid arthritis (RA).[157] In the second study, [158] which was also conducted by Iranian researchers, 40
+
+participants (ages 40–70) with medically diagnosed osteoarthritis (67% women, 33% men), the participants
+
+received one capsule per day for 4 months of a commercial Iranian saffron extract (Krocina™; the authors
+
+declared "no conflict of interest") standardized for 15 mg of crocin with generally similar self-reported
+
+outcomes that were quantified on a simple visual analogue scale from 0 to 10 (preintervention: 7.83,
+
+postintervention: 2.27), and improvements were also observed in the placebo group (preintervention: 8,
+
+postintervention: 6.7). Thus the efficacy of the supplement remains questionable.
+
+Warnings about saffron
+
+A meta-analysis of randomized controlled trials on saffron and depression found a potential modest
+
+increase in headaches, anxiety, tremors, heart palpitations, sweating, nausea, vomiting, increased appetite,
+
+28
+
+and other gastrointestinal complaints; however, none of these increases reached statistical significance, and
+
+the average expected incidence remains unclear.[159] Another meta-analysis reported a lack of severe
+
+adverse events.[160] In one study, 26 weeks of supplementation with 60 mg of saffron extract in men was
+
+associated with reductions in red and white blood cell counts and in platelets, along with a drop in systolic
+
+and diastolic blood pressure of 10.8%–11.7% and complaints of sedation, hypomania, and changes in
+
+appetite, which started to occur after 8 weeks of exposure and increased in magnitude as the study
+
+continued.[161] One review paper suggested that the side effects of dosages below 1.5 g/day are rare, though
+
+there are some reports of 1.2 to 2 grams possibly causing vomiting, diarrhea, and bleeding. [152]. In their
+
+review, Schmidt et al. reported potentially abortive effects of >10 grams of saffron powder in pregnant
+
+women, though this report dates back to 1925 and could be the result of the presence of unwanted
+
+pollutants in the formulation. Saffron likely reduces blood sugar, and in combination with diabetes
+
+medication, it could possibly lead to hypoglycemia. Saffron may also reduce blood pressure, and in
+
+combination with hypertension medication, it could possibly lead to low blood pressure. Natural chemicals
+
+in saffron can interfere with the activity of cytochrome P450 enzymes, which could either reduce or
+
+increase the rate of metabolism for various drugs, potentially leading to negative interactions.[162]
+
+How to take saffron
+
+Daily dosages of 100 mg/day of regular saffron and extracts containing 10–20 mg/day of active ingredients
+
+have been found to be efficient (regardless of timing), not only for arthritic pain and inflammation but also
+
+as natural antidepressants, with a potency similar to that of well-established antidepressant drugs [163][164]. An
+
+estimation of saffron’s effect size isn’t possible at this time.
+
+Vitamin C
+
+What makes vitamin C a promising option
+
+Vitamin C is necessary for collagen formation, so having low levels of vitamin C can be detrimental to joint
+
+health. However, in people whose levels are normal, supplemental vitamin C has little effect on joint
+
+disorders, with one exception: it can help prevent complex regional pain syndrome (CRPS), a painful
+
+chronic condition characterized by swollen joints and by changes in skin quality] and hair quality). CRPS
+
+can be caused by orthopedic surgery or a joint injury.
+
+Warnings about vitamin C
+
+Vitamin C can potentially cause diarrhea, nausea, and stomach cramps. Taking vitamin C can cause dental
+
+erosion.[165] Logically, the risk is probably more likely with powders taken in liquid or chewable tablets, and a
+
+fully encapsulated vitamin C supplement would likely not have this effect. Supplemental doses of vitamin C
+
+may reduce some of the cellular adaptations to exercise, namely, mitochondrial biogenesis and endogenous
+
+antioxidant synthesis.[166][167] It is unclear how long this effect persists after dosing, so it may be best to leave
+
+as much time as possible between vitamin C supplementation and exercise. Vitamin C likely reduces blood
+
+sugar, and in combination with diabetes medication, it could possibly lead to hypoglycemia. Very high
+
+doses of vitamin C may sometimes damage the kidneys by being metabolized into oxalate,[168] and this may
+
+29
+
+ 
+lead to renal failure in rare cases.[169][170][171] The lowest dose needed to see a concerning rise in urinary
+
+oxalate is 1 g/day. Vitamin C may also reduce blood pressure, and in combination with hypertension
+
+medication, it could possibly lead to low blood pressure Vitamin C may reduce the effectiveness of some
+
+HIV medications. Moreover, because it can increase the absorption of iron and aluminum, it should not be
+
+taken within several hours of taking aluminum-based antacids (e.g., Amphojel, AlternaGEL, Alu-Cap, Alu-
+
+Tab, Dialume).
+
+How to take vitamin C
+
+People at risk of CRPS can take 500 mg of vitamin C once per day, ideally in the morning.
+
+People with joint pain not associated with CRPS can also take 500 mg of vitamin C once per day, but if the
+
+pain has not lessened after 2 months, supplementation need not be continued.
+
+Further research is needed to determine whether vitamin C is better absorbed with food.
+
+The Recommended Dietary Allowance (RDA) of vitamin C for adults ranges from 75 to 120 mg per day.[172]
+
+Although the 500 mg/day dosage discussed here exceeds the RDA, it is still well under vitamin C’s
+
+Tolerable Upper Intake Level (UL) of 2,000 mg/day.
+
+Tolerable Upper Intake Level (UL) for vitamin C (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+>18 years
+
+*
+
+400
+
+650
+
+1,200
+
+1,800
+
+2,000
+
+*
+
+400
+
+650
+
+1,200
+
+1,800
+
+2,000
+
+—
+
+—
+
+—
+
+—
+
+1,800
+
+2,000
+
+—
+
+—
+
+—
+
+—
+
+1,800
+
+2,000
+
+* Formula and food should be the only sources of vitamin C for infants.
+
+Reference: Institute of Medicine. Vitamin C (chapter 5 in Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and
+
+Carotenoids. The National Academies Press. 2000. DOI:10.17226/9810)
+
+30
+
+Unproven Supplements
+
+CBD (cannabidiol)
+
+What makes CBD an unproven
+
+CBD (cannabidiol) is the second most abundant cannabinoid in cannabis, after THC
+
+(tetrahydrocannabinol).[173] Isolated CBD is typically used medicinally, not recreationally, and the four most
+
+commonly targeted conditions are pain, anxiety, depression, and sleep disorders.[174]
+
+The Arthritis Foundation is an advocacy group based in the United States. One of their aims is to provide
+
+evidence-based resources for people with arthritis. A recent survey that they conducted found that 30% of
+
+the respondents used CBD, and close to 80% were considering using it or have used it previously.
+
+The large and growing interest in CBD prompted The Arthritis Foundation to release a set of expert-
+
+reviewed guidelines for people with arthritis who are interested in using CBD. The key takeaways are
+
+summarized below. Another review by the National Academies of Sciences, Engineering, and Medicine also
+
+found that studies on CBD and arthritis were very limited at the moment.[175]
+
+Cissus quadrangularis
+
+What makes Cissus quadrangularis an
+unproven option
+
+As used in traditional medicine in both Asia and parts of Africa for centuries, the stems and leaves of Cissus
+
+quadrangularis L. (aka Cissus) have more recently attracted scientists' attention as an anti-inflammatory
+
+medicinal compound. Its historically well-documented effects are ascribed to Cissus' relatively high content
+
+of antioxidants like vitamin C and beta-carotene and various ketosteroids, flavonoids, and phytosterols.
+
+There is no good evidence to support the claims about Cissus' effects on joint health. In fact, there is only
+
+one publication that appropriately reported both methods and outcomes of a pilot study that was
+
+specifically designed to test its antiarthritic effects [176]. The study was at best of exploratory nature, had no
+
+placebo control (not even a “no treatment” control), recruited only 29 participants, and had no
+
+preregistration of the experimental protocol, no objectively measurable primary outcomes, no a priori (or
+
+ex post) power calculation, as well as a dubious potential influence of "partial" industry funding. All these
+
+shortcomings undermine confidence in the allegedly “promising” results that were reported, namely, a
+
+significant improvement in the McMaster Universities Osteoarthritis Index (WOMAC) index, [177] a common,
+
+repeatedly validated composite index of symptoms and physical function in people with OA of the knee
+
+and the hip, and the subjective workout-related pain ratings that the researchers collected before and after
+
+an 8-week intervention using 3 grams per day of Cissus quadrangularis given in capsule form. The other
+
+paper that specifically addressed the use of Cissus for joint health was also a non-(placebo-)controlled,
+
+31
+
+ 
+ 
+nonpreregistered study.[178] In the study, the authors recruited 60 Indian participants (31–70 years) with
+
+obesity and a diagnosis of osteoporosis or bone spurs (osteophytic changes). The participants were
+
+assigned to one of three treatments: 5 grams twice daily of Cissus quadrangularis, 5 grams twice daily of
+
+Zingiber officinale (commonly known as "ginger"), or a combination treatment with both. The total study
+
+duration was not properly reported, but with questionnaires handed out at three 15-day intervals, it seems
+
+logical to assume that it took 45 days for the subjective improvements in joint swelling (from “moderate” to
+
+“normal”) and tenderness (from “mild” to “normal”) to manifest. Due to the use of an unvalidated
+
+questionnaire and a rather dubious pain scale ranging from 0 = normal to 3 = severe, the results must be
+
+taken with caution. In the absence of control and/or placebo groups in both of the relevant studies, it is
+
+clear that Cissus quadrangularis must be considered as "unproven" with respect to its putatively beneficial
+
+effects on joint health.
+
+Key takeaways from The Arthritis Foundation’s CBD guidelines
+
+Reference: Arthritis.org
+
+32
+
+Inadvisable Supplements
+
+Thunder God Vine
+
+What makes thunder god vine an inadvisable
+supplement
+
+ Caution: This supplement has the potential to harm your health
+
+Please read the following section carefully. The available evidence indicates that this supplement
+
+may have harmful effects. It should not be added to your supplement regimen.
+
+Thunder god vine (Tripterygium wilfordii) is used in Traditional Chinese Medicine to treat a wide range of
+
+conditions. By decreasing the number of white blood cells, it reduces inflammation (and thus pain) around
+
+the joints, but it also makes the body more susceptible to infection, which can lead to sickness and
+
+potentially death.
+
+Although Tripterygium wilfordii appears to be effective in treating rheumatoid arthritis, it is not safe and
+
+should not be supplemented.
+
+33
+
+ 
+Adverse effects of thunder god vine
+
+Much research has been conducted on Tripterygium wilfordii glycosides for rheumatoid arthritis, and it has
+
+been summarized in a meta-analysis of randomized controlled trials that investigated at the efficacy of
+
+Tripterygium wilfordii for rheumatoid arthritis.[179] Overall, 40 studies involving 3,092 participants were
+
+included, and a considerable reduction in morning stiffness, tender joints, swollen joints, and overall
+
+symptoms was found. A significant reduction in inflammation was identified, thus confirming its anti-
+
+inflammatory effects.
+
+Although it’s quite likely that Tripterygium wilfordii is effective, larger studies tended to find smaller (though
+
+still meaningful) effects. Although the authors didn’t find evidence of publication bias and found that the
+
+average study was of fairly high quality by conventional standards, it’s possible that the research still
+
+suffers from considerable bias, and future papers with more nuanced analyses based on study quality
+
+would be useful.
+
+34
+
+FAQ
+
+Q. What about the supplements not covered in
+this guide?
+
+Our guides are regularly updated, often with new supplements. We prioritize assessing (and reassessing)
+
+the most popular of them and those most likely to work. However, if there is a specific supplement you’d
+
+like to see covered in a future update, please let us know by filling out this survey.
+
+Q. Can I add a supplement not covered in this
+guide to my combo?
+
+Supplement with your current combo for a few weeks before attempting any change. Talk to your physician
+
+and research each potential addition. Check for known negative interactions with other supplements and
+
+pharmaceuticals in your current combo, but also for synergies. If two supplements are synergistic or
+
+additive in their effects, you might want to use lower doses of each.
+
+Q. Can I modify the recommended doses?
+
+If a supplement has a recommended dose range, stay within that range. If a supplement has a precise
+
+recommended dose, stay within 10% of that dose. Taking more than recommended could be
+
+counterproductive or even dangerous. Taking less could render the supplement ineffective, yet starting with
+
+half the regular dose could be prudent — especially if you know you tend to react strongly to supplements
+
+or pharmaceuticals.
+
+Q. At what time should I take my supplements?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Starting with half the regular dose can help
+
+minimize the harm a supplement may cause when taken during the day (e.g., fatigue) or in the evening (e.g.,
+
+insomnia).
+
+Q. Should I take my supplements with or
+without food?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Besides, a supplement’s digestion, absorption,
+
+and metabolism can be affected differently by different foods. Fat-soluble vitamins (A, D, E, K), for
+
+instance, are better absorbed with a small meal containing fat than with a large meal containing little to no
+
+fat.
+
+35
+
+ 
+Q. What are DRI, RDA, AI, and UL?
+
+The Dietary Reference Intakes (DRIs) is a system of nutrition recommendations designed by the Institute of
+
+Medicine (a US institution now known as the Health and Medicine Division). RDA, AI, and UL are part of this
+
+system.
+
+Contrary to what the name suggests, a Recommended Dietary Allowance (RDA) doesn’t represent
+
+an ideal amount; it represents the minimum you need in order to avoid deficiency-related health
+
+issues. More precisely, it represents an amount just large enough to meet the minimum requirements
+
+of 97.5% of healthy males and females over all ages — which implies that the RDA is too low for
+
+2.5% of healthy people.
+
+The Adequate Intake (AI) is like the RDA, except that the number is more uncertain.
+
+The Tolerable Upper Intake Level (UL) is the maximum safe amount. More precisely, it is the
+
+maximum daily amount deemed to be safe for 97.5% of healthy males and females over all ages —
+
+which implies that the UL is too high for 2.5% of healthy people.
+
+As a general rule, a healthy diet should include at least the RDA of each nutrient — but less than this
+
+nutrient’s UL. This rule has many exceptions, though. For instance, people who sweat more need more salt
+
+(i.e., sodium), whereas people who take metformin (a diabetes medicine) need more vitamin B12.
+
+Moreover, the DRIs are based on the median weight of adults and children in the United States. Everything
+
+else being equal (notably age, sex, and percentage of body fat), you likely need a lesser amount of
+
+nutrients if you weigh less, and vice versa if you weigh more. The numbers, however, are not proportional
+
+— if only because the brains of two people of very different weights have very similar needs. So you can’t
+
+just double your RDIs for each nutrient if you weigh twice as much as the median adult of your age and sex
+
+(even if we overlook that people weighing the same can differ in many respects, notably body fat).
+
+Q. What's the difference between osteoarthritis
+and rheumatoid arthritis?
+
+Osteoarthritis is caused by a progressive loss of cartilage that leads to joint inflammation via bone-on-bone
+
+rubbing, whereas rheumatoid arthritis is an autoimmune inflammatory disease that targets and degrades
+
+joint tissue.
+
+Q. What are the risk factors for osteoarthritis?
+
+Distinct risk factors for osteoarthritis, summarized below, include genetic susceptibility, morphological
+
+variations in bones and joints, traumatic joint injury, excessive joint stress, aging, and obesity.[180] Obesity is
+
+a major risk factor for osteoarthritis of the knee,[181] and weight loss can lead to improvements in the
+
+condition,[182] though more long-term studies are warranted.
+
+Exercise can be useful for reducing pain and improving joint function,[183][184] though exercising with sore
+
+joints can be difficult, and not all forms of exercise are suitable for every patient.[185]
+
+Pharmaceutically, treatment mostly revolves around the use of nonsteroidal anti-inflammatories (NSAIDs).
+
+While effective in reducing pain,[186] these drugs aren’t without their adverse effects, which can include an
+
+36
+
+increased risk of stroke and heart attack.[187][188]
+
+Osteoarthritis risk factors
+
+Reference: Allen and Golightly. Curr Opin Rheumatol. 2015.[180]
+
+Q. Will supplementing or consuming turmeric
+yield the same benefits as curcumin
+supplementation?
+
+Curcumin is the active ingredient in turmeric that yields many of the benefits currently seen, but both are
+
+poorly absorbed in the gastrointestinal tract and usually require some enhancement to increase
+
+bioavailability.[189] Typically, a compound found in black pepper, known as piperine, is supplemented
+
+alongside curcumin to increase this bioavailability.[190] Other products increase bioavailability by using
+
+specialized formulations, such as the use of nanotechnology or a blend of essential oils.
+
+It is unlikely, though, that simply consuming turmeric in small amounts through the diet will yield the same
+
+benefits as supplementing large doses of curcumin, due to the small dosage and poor bioavailability. It is
+
+also worth noting that turmeric has been found in some studies to be contaminated with heavy metals like
+
+lead.[191]
+
+Q. What about essential nutrients? I don’t see
+many in this guide.
+
+It’s plausible that some essential nutrients would be relevant to osteoarthritis, but evidence is sparse.
+
+Calcium fructoborate, a form of boron, has shown potent reductions in circulating inflammatory cytokines
+
+associated with osteoarthritis in a handful of small trials,[192] and in osteoarthritis patients.[193] Although its
+
+impact on osteoarthritis-specific endpoints has yet to be studied in humans, at least one study in dogs
+
+37
+
+suggests an improvement in physical function.[194]
+
+Vitamin K is also plausible[195], but not well-studied. It would be beneficial to see studies of common nutrient
+
+deficiencies in osteoarthritis and more trials on plausible supplements in the future, though there isn’t very
+
+much information at present.
+
+Q. Will using CBD alone increase my appetite?
+
+In short, probably not. THC, one of cannabis's main active ingredients, is primarily responsible for the
+
+appetite-stimulating effects of cannabis. THC can interact with receptors in the body that can, in turn,
+
+increase appetite. The method of consumption can affect how THC influences food choice and overall food
+
+intake, as can the amount and nature of the products consumed concurrently.
+
+However, some products labeled “CBD only” or “0 THC” may still have high enough amounts of THC to
+
+cause an effect. Be conscious of who your source is if you chose to use CBD products.
+
+How cannabis increases appetite
+
+References: Cota et al. Int J Obes Relat Metab Disord. 2003.[196] ● Patel and Cone. Nature. 2015.[197]
+
+Q. What can I do to help prevent my fish oils
+from oxidizing?
+
+38
+
+Since fish oil is primarily polyunsaturated fat, it is prone to becoming rancid and oxidizing. Oxidation largely
+
+depends on exposure to heat, light, and oxygen. The addition of antioxidants to the final product can
+
+reduce the rate of oxidation during storage. Vitamin E is typically used, but there’s a lot of research on
+
+other antioxidants like carnosic acid suggesting they might be superior.[198]
+
+Part of the responsibility for ensuring fish oil remains unoxidized is on the buyer. Exposure of fish oil to
+
+light, heat, and oxygen accelerates the oxidation of the oil, with the magnitude of damage depending on
+
+the length and degree of exposure. Once you buy the supplement, it is prudent to store it in a cool place
+
+away from light, such as the fridge.
+
+If you buy oil in a bottle, the bottle should be tinted to prevent light from getting through and small enough
+
+that you can work through it in a month or two. After all, oxygen gets in the bottle every time you open it.
+
+Some fish oil bottles come with a pump, which can help reduce oxygen exposure. Buying capsules instead
+
+of bottles can also help prevent oxidation.
+
+Q. How do NSAIDs provide pain relief?
+
+Nonsteroidal anti-inflammatory drugs (NSAIDs) are commonly used to relieve pain or a fever. Common
+
+forms include aspirin (Advil), ibuprofen (Motrin), and naproxen (Aleve, Naprosyn) but they all work through
+
+a similar mechanism: they block an enzyme called cyclooxygenase (COX).[199] But there’s a twist! This
+
+enzyme comes in two major forms: COX-1 and COX-2.
+
+COX-1 is involved in the production of prostaglandins, which perform many functions in the body, including
+maintaining good kidney function and producing the protective layer of the gastrointestinal (GI) tract.
+
+COX-2 produces molecules responsible for pain and inflammation, so that’s the one to target if you want to reduce
+these effects.
+
+Most NSAIDs nonselectively target both COXs, which explains their infamous GI adverse effects. However,
+
+the NSAID celecoxib (Celebrex) binds more to COX-2 than COX-1, so it can target pain and inflammation
+
+with fewer adverse effects, at least in theory. In reality, the advantages of celecoxib are not so clear-cut. A
+
+recent review found that the relative harm and benefit of celecoxib for people with osteoarthritis are hard
+
+to assess, partially because of the general scarcity and possible bias of evidence due to industry
+
+involvement.[200]
+
+39
+
+ 
+References
+
+1.   Mifflin KA, Kerr BJ The transition from acute to chronic pain: understanding how different biological systems interact. Can J
+
+Anaesth. (2014 Feb)
+
+2.   Kaeding C, Best TM Tendinosis: pathophysiology and nonoperative treatment. Sports Health. (2009 Jul)
+
+3.   Siemieniuk RAC, Harris IA, Agoritsas T, Poolman RW, Brignardello-Petersen R, Van de Velde S, Buchbinder R, Englund M,
+
+Lytvyn L, Quinlan C, Helsingen L, Knutsen G, Olsen NR, Macdonald H, Hailey L, Wilson HM, Lydiatt A, Kristiansen A Arthroscopic
+surgery for degenerative knee arthritis and meniscal tears: a clinical practice guideline. Br J Sports Med. (2018 Mar)
+
+4.   Queiroz LP Worldwide epidemiology of fibromyalgia. Curr Pain Headache Rep. (2013 Aug)
+
+5.   Politei J, Remondino G, Heguilen R, Wallace E, Durand C, Schenone A When arthralgia is not arthritis. Eur J Rheumatol. (2016
+
+Dec)
+
+6.   Woolf CJ Central sensitization: implications for the diagnosis and treatment of pain. Pain. (2011 Mar)
+
+7.   Joshi SK, Honore P Animal models of pain for drug discovery. Expert Opin Drug Discov. (2006 Sep)
+
+8.   Wang CK, Myunghae Hah J, Carroll I Factors contributing to pain chronicity. Curr Pain Headache Rep. (2009 Feb)
+
+9.   Hsu CJ, Meierbachtol A, George SZ, Chmielewski TL Fear of Reinjury in Athletes. Sports Health. (2017 Mar/Apr)
+
+10.   Blay SL, Andreoli SB, Gastal FL Chronic painful physical conditions, disturbed sleep and psychiatric morbidity: results from an
+
+elderly survey. Ann Clin Psychiatry. (2007 Jul-Sep)
+
+11.   Sasaki E, Tsuda E, Yamamoto Y, Maeda S, Inoue R, Chiba D, Okubo N, Takahashi I, Nakaji S, Ishibashi Y Nocturnal knee pain
+increases with the severity of knee osteoarthritis, disturbing patient sleep quality. Arthritis Care Res (Hoboken). (2014 Jul)
+
+12.   Irwin MR, Olmstead R, Carrillo C, Sadeghi N, Fitzgerald JD, Ranganath VK, Nicassio PM Sleep loss exacerbates fatigue,
+
+depression, and pain in rheumatoid arthritis. Sleep. (2012 Apr 1)
+
+13.   Apkarian AV, Baliki MN, Geha PY Towards a theory of chronic pain. Prog Neurobiol. (2009 Feb)
+
+14.   Chevalier G, Sinatra ST, Oschman JL, Sokal K, Sokal P Earthing: health implications of reconnecting the human body to the
+
+Earth's surface electrons. J Environ Public Health. (2012)
+
+15.   Walch JM, Rabin BS, Day R, Williams JN, Choi K, Kang JD The effect of sunlight on postoperative analgesic medication use: a
+
+prospective study of patients undergoing spinal surgery. Psychosom Med. (2005 Jan-Feb)
+
+16.   Taylor SL, Kaur M, LoSicco K, Willard J, Camacho F, O'Rourke KS, Feldman SR Pilot study of the effect of ultraviolet light on
+
+pain and mood in fibromyalgia syndrome. J Altern Complement Med. (2009 Jan)
+
+17.   Messier SP, Gutekunst DJ, Davis C, DeVita P Weight loss reduces knee-joint loads in overweight and obese older adults with
+
+knee osteoarthritis. Arthritis Rheum. (2005 Jul)
+
+18.   Apkarian AV, Bushnell MC, Treede RD, Zubieta JK Human brain mechanisms of pain perception and regulation in health and
+
+disease. Eur J Pain. (2005 Aug)
+
+19.   la Cour P, Petersen M Effects of mindfulness meditation on chronic pain: a randomized controlled trial. Pain Med. (2015 Apr)
+
+20.   Zamani B, Golkar HR, Farshbaf S, Emadi-Baygi M, Tajabadi-Ebrahimi M, Jafari P, Akhavan R, Taghizadeh M, Memarzadeh MR,
+Asemi Z Clinical and metabolic response to probiotic supplementation in patients with rheumatoid arthritis: a randomized,
+double-blind, placebo-controlled trial. Int J Rheum Dis. (2016 Sep)
+
+21.   Brown K, DeCoffe D, Molcan E, Gibson DL Diet-induced dysbiosis of the intestinal microbiota and the effects on immunity and
+
+disease. Nutrients. (2012 Aug)
+
+22.   Spreadbury I Comparison with ancestral diets suggests dense acellular carbohydrates promote an inflammatory microbiota,
+
+and may be the primary dietary cause of leptin resistance and obesity. Diabetes Metab Syndr Obes. (2012)
+
+23.   Sailer ER, Subramanian LR, Rall B, Hoernlein RF, Ammon HP, Safayhi H Acetyl-11-keto-beta-boswellic acid (AKBA): structure
+
+requirements for binding and 5-lipoxygenase inhibitory activity.. Br J Pharmacol. (1996-Feb)
+
+24.   Safayhi H, Mack T, Sabieraj J, Anazodo MI, Subramanian LR, Ammon HP Boswellic acids: novel, specific, nonredox inhibitors of
+
+5-lipoxygenase.. J Pharmacol Exp Ther. (1992-Jun)
+
+25.   Yu G, Xiang W, Zhang T, Zeng L, Yang K, Li J Effectiveness of Boswellia and Boswellia extract for osteoarthritis patients: a
+
+systematic review and meta-analysis.. BMC Complement Med Ther. (2020-Jul-17)
+
+26.   Majeed M, Majeed S, Narayanan NK, Nagabhushanam K A pilot, randomized, double-blind, placebo-controlled trial to assess
+
+the safety and efficacy of a novel Boswellia serrata extract in the management of osteoarthritis of the knee.. Phytother Res.
+(2019-May)
+
+27.   Sontakke S, et al Open, randomized, controlled clinical trial of Boswellia serrata extract as compared to valdecoxib in
+
+osteoarthritis of knee. Indian J Pharmacol. (2007 Oct)
+
+28.   Kimmatkar N, Thawani V, Hingorani L, Khiyani R Efficacy and tolerability of Boswellia serrata extract in treatment of
+
+osteoarthritis of knee--a randomized double blind placebo controlled trial.. Phytomedicine. (2003-Jan)
+
+29.   Sengupta K, Kolla JN, Krishnaraju AV, Yalamanchili N, Rao CV, Golakoti T, Raychaudhuri S, Raychaudhuri SP Cellular and
+
+40
+
+molecular mechanisms of anti-inflammatory effect of Aflapin: a novel Boswellia serrata extract.. Mol Cell Biochem. (2011-Aug)
+
+30.   Ernst E Frankincense: systematic review.. BMJ. (2008-Dec-17)
+
+31.   Sengupta K, Alluri KV, Satish AR, Mishra S, Golakoti T, Sarma KV, Dey D, Raychaudhuri SP A double blind, randomized, placebo
+controlled study of the efficacy and safety of 5-Loxin for treatment of osteoarthritis of the knee. Arthritis Res Ther. (2008)
+
+32.   Madisch A, Miehlke S, Eichele O, Mrwa J, Bethke B, Kuhlisch E, Bästlein E, Wilhelms G, Morgner A, Wigginghaus B, Stolte M
+
+Boswellia serrata extract for the treatment of collagenous colitis. A double-blind, randomized, placebo-controlled, multicenter
+trial.. Int J Colorectal Dis. (2007-Dec)
+
+33.   Alessandra Pedretti, Rossana Capezzera, Cristina Zane, Elena Facchinetti, Piergiacomo Calzavara-Pinton Effects of topical
+
+boswellic acid on photo and age-damaged skin: clinical, biophysical, and echographic evaluations in a double-blind,
+randomized, split-face study. Planta Med. (2010 Apr)
+
+34.   Belcaro G, Gizzi G, Pellegrini L, Corsi M, Dugall M, Cacchio M, Feragalli B, Togni S, Riva A, Eggenhoffner R, Giacomelli L
+
+Supplementation with a lecithin-based delivery form of Boswellia serrata extract (Casperome®) controls symptoms of mild
+irritable bowel syndrome.. Eur Rev Med Pharmacol Sci. (2017-May)
+
+35.   Acebo E, Ratón JA, Sautúa S, Eizaguirre X, Trébol I, Pérez JL Allergic contact dermatitis from Boswellia serrata extract in a
+
+naturopathic cream.. Contact Dermatitis. (2004-Aug)
+
+36.   Kokkiripati PK, Bhakshu LM, Marri S, Padmasree K, Row AT, Raghavendra AS, Tetali SD Gum resin of Boswellia serrata inhibited
+
+human monocytic (THP-1) cell activation and platelet aggregation.. J Ethnopharmacol. (2011-Sep-01)
+
+37.   Alfonso E Bello, Steffen Oesser Collagen hydrolysate for the treatment of osteoarthritis and other joint disorders: a review of the
+
+literature. Curr Med Res Opin. (2006 Nov)
+
+38.   Osawa Y, Mizushige T, Jinno S, Sugihara F, Inoue N, Tanaka H, Kabuyama Y Absorption and metabolism of orally administered
+
+collagen hydrolysates evaluated by the vascularly perfused rat intestine and liver in situ.. Biomed Res. (2018)
+
+39.   Kleinnijenhuis et al Non-targeted and targeted analysis of collagen hydrolysates during the course of digestion and absorption.
+
+Anal Bioanal Chem. (2019)
+
+40.   Smolen JS, Aletaha D Rheumatoid arthritis therapy reappraisal: strategies, opportunities and challenges. Nat Rev Rheumatol.
+
+(2015 May)
+
+41.   Bakilan F, Armagan O, Ozgen M, Tascioglu F, Bolluk O, Alatas O Effects of Native Type II Collagen Treatment on Knee
+
+Osteoarthritis: A Randomized Controlled Trial.. Eurasian J Med. (2016-Jun)
+
+42.   James P Lugo, Zainulabedin M Saiyed, Nancy E Lane Efficacy and tolerability of an undenatured type II collagen supplement
+in modulating knee osteoarthritis symptoms: a multicenter randomized, double-blind, placebo-controlled study. Nutr J. (2016
+Jan 29)
+
+43.   Suresh Kumar, Fumihito Sugihara, Keiji Suzuki, Naoki Inoue, Sriraam Venkateswarathirukumara A double-blind, placebo-
+
+controlled, randomised, clinical study on the effectiveness of collagen peptide on osteoarthritis. J Sci Food Agric. (2015 Mar 15)
+
+44.   Lugo JP, Saiyed ZM, Lau FC, Molina JP, Pakdaman MN, Shamie AN, Udani JK Undenatured type II collagen (UC-II®) for joint
+support: a randomized, double-blind, placebo-controlled study in healthy volunteers. J Int Soc Sports Nutr. (2013 Oct 24)
+
+45.   Crowley DC, Lau FC, Sharma P, Evans M, Guthrie N, Bagchi M, Bagchi D, Dey DK, Raychaudhuri SP Safety and efficacy of
+undenatured type II collagen in the treatment of osteoarthritis of the knee: a clinical trial. Int J Med Sci. (2009 Oct 9)
+
+46.   P Benito-Ruiz, M M Camacho-Zambrano, J N Carrillo-Arcentales, M A Mestanza-Peralta, C A Vallejo-Flores, S V Vargas-López,
+R A Villacís-Tamayo, L A Zurita-Gavilanes A randomized controlled trial on the efficacy and safety of a food ingredient, collagen
+hydrolysate, for improving joint comfort. Int J Food Sci Nutr. (2009)
+
+47.   T E McAlindon, M Nuite, N Krishnan, R Ruthazer, L L Price, D Burstein, J Griffith, K Flechsenhar Change in knee osteoarthritis
+
+cartilage detected by delayed gadolinium enhanced magnetic resonance imaging following treatment with collagen
+hydrolysate: a pilot randomized controlled trial. Osteoarthritis Cartilage. (2011 Apr)
+
+48.   Schauss AG, Stenehjem J, Park J, Endres JR, Clewell A Effect of the novel low molecular weight hydrolyzed chicken sternal
+cartilage extract, BioCell Collagen, on improving osteoarthritis-related symptoms: a randomized, double-blind, placebo-
+controlled trial.. J Agric Food Chem. (2012-Apr-25)
+
+49.   O Bruyère, B Zegels, L Leonori, V Rabenda, A Janssen, C Bourges, J-Y Reginster Effect of collagen hydrolysate in articular
+
+pain: a 6-month randomized, double-blind, placebo controlled study. Complement Ther Med. (2012 Jun)
+
+50.   Coen C W G Bongers, Dominique S M Ten Haaf, Milène Catoire, Bregina Kersten, Jeroen A Wouters, Thijs M H Eijsvogels, Maria
+T E Hopman Effectiveness of collagen supplementation on pain scores in healthy individuals with self-reported knee pain: a
+randomized controlled trial. Appl Physiol Nutr Metab. (2020 Jul)
+
+51.   Jiang et al Collagen peptides improve knee osteoarthritis in elderly women. Agro Food Ind Hi Tech. (2014)
+
+52.   Stančík R, et al Collagen type I in the treatment of painful osteoarthritis of the knee. Reumatologia. (2012)
+
+53.   Zdzieblik D, Oesser S, Gollhofer A, König D Improvement of activity-related knee joint discomfort following supplementation of
+
+specific collagen peptides.. Appl Physiol Nutr Metab. (2017-Jun)
+
+54.   Clark KL, Sebastianelli W, Flechsenhar KR, Aukermann DF, Meza F, Millard RL, Deitch JR, Sherbondy PS, Albert A 24-Week
+
+study on the use of collagen hydrolysate as a dietary supplement in athletes with activity-related joint pain. Curr Med Res Opin.
+(2008 May)
+
+55.   Denise Zdzieblik, Judith Brame, Steffen Oesser, Albert Gollhofer, Daniel König The Influence of Specific Bioactive Collagen
+
+41
+
+Peptides on Knee Joint Discomfort in Young Physically Active Adults: A Randomized Controlled Trial. Nutrients. (2021 Feb 5)
+
+56.   Trč T, Bohmová J Efficacy and tolerance of enzymatic hydrolysed collagen (EHC) vs. glucosamine sulphate (GS) in the
+
+treatment of knee osteoarthritis (KOA).. Int Orthop. (2011-Mar)
+
+57.   Hewlings SJ, Kalman DS Curcumin: A Review of Its' Effects on Human Health. Foods. (2017 Oct 22)
+
+58.   Panahi Y, Rahimnia AR, Sharafi M, Alishiri G, Saburi A, Sahebkar A Curcuminoid treatment for knee osteoarthritis: a randomized
+
+double-blind placebo-controlled trial. Phytother Res. (2014 Nov)
+
+59.   Belcaro G, Cesarone MR, Dugall M, Pellegrini L, Ledda A, Grossi MG, Togni S, Appendino G Efficacy and safety of Meriva®, a
+curcumin-phosphatidylcholine complex, during extended administration in osteoarthritis patients. Altern Med Rev. (2010 Dec)
+
+60.   Belcaro G, Cesarone MR, Dugall M, Pellegrini L, Ledda A, Grossi MG, Togni S, Appendino G Product-evaluation registry of
+
+Meriva®, a curcumin-phosphatidylcholine complex, for the complementary management of osteoarthritis. Panminerva Med.
+(2010 Jun)
+
+61.   Vilai Kuptniratsaikul, Sunee Thanakhumtorn, Pornsiri Chinswangwatanakul, Luksamee Wattanamongkonsil, Visanu Thamlikitkul
+Efficacy and safety of Curcuma domestica extracts in patients with knee osteoarthritis. J Altern Complement Med. (2009 Aug)
+
+62.   Madhu K, Chanda K, Saji MJ Safety and efficacy of Curcuma longa extract in the treatment of painful knee osteoarthritis: a
+
+randomized placebo-controlled trial. Inflammopharmacology. (2013 Apr)
+
+63.   Nakagawa Y, Mukai S, Yamada S, Matsuoka M, Tarumi E, Hashimoto T, Tamura C, Imaizumi A, Nishihira J, Nakamura T Short-
+term effects of highly-bioavailable curcumin for treating knee osteoarthritis: a randomized, double-blind, placebo-controlled
+prospective study. J Orthop Sci. (2014 Nov)
+
+64.   Haroyan A, Mukuchyan V, Mkrtchyan N, Minasyan N, Gasparyan S, Sargsyan A, Narimanyan M, Hovhannisyan A Efficacy and
+
+safety of curcumin and its combination with boswellic acid in osteoarthritis: a comparative, randomized, double-blind, placebo-
+controlled study. BMC Complement Altern Med. (2018 Jan 9)
+
+65.   Kuptniratsaikul V, Dajpratham P, Taechaarpornkul W, Buntragulpoontawee M, Lukkanapichonchut P, Chootip C, Saengsuwan
+J, Tantayakom K, Laongpech S Efficacy and safety of Curcuma domestica extracts compared with ibuprofen in patients with
+knee osteoarthritis: a multicenter study. Clin Interv Aging. (2014 Mar 20)
+
+66.   Panda SK, Nirvanashetty S, Parachur VA, Mohanty N, Swain T A Randomized, Double Blind, Placebo Controlled, Parallel-Group
+Study to Evaluate the Safety and Efficacy of Curene® versus Placebo in Reducing Symptoms of Knee OA. Biomed Res Int.
+(2018 Oct 25)
+
+67.   Pinsornsak P, Niempoog S The efficacy of Curcuma Longa L. extract as an adjuvant therapy in primary knee osteoarthritis: a
+
+randomized control trial. J Med Assoc Thai. (2012 Jan)
+
+68.   Shep D, Khanwelkar C, Gade P, Karad S Safety and efficacy of curcumin versus diclofenac in knee osteoarthritis: a
+
+randomized open-label parallel-arm study. Trials. (2019 Apr 11)
+
+69.   Srivastava S, Saksena AK, Khattri S, Kumar S, Dagur RS Curcuma longa extract reduces inflammatory and oxidative stress
+
+biomarkers in osteoarthritis of knee: a four-month, double-blind, randomized, placebo-controlled trial. Inflammopharmacology.
+(2016 Dec)
+
+70.   Y Henrotin, M Malaise, R Wittoek, K de Vlam, J-P Brasseur, F P Luyten, Q Jiangang, M Van den Berghe, R Uhoda, J Bentin, T
+
+De Vroey, L Erpicum, A F Donneau, Y Dierckxsens Bio-optimized Curcuma longa extract is efficient on knee osteoarthritis pain:
+a double-blind multicenter randomized placebo controlled three-arm study. Arthritis Res Ther. (2019 Jul 27)
+
+71.   Wang Z, Singh A, Jones G, Winzenberg T, Ding C, Chopra A, Das S, Danda D, Laslett L, Antony B Efficacy and Safety of
+
+Turmeric Extracts for the Treatment of Knee Osteoarthritis: a Systematic Review and Meta-analysis of Randomised Controlled
+Trials.. Curr Rheumatol Rep. (2021-Jan-28)
+
+72.   Wu J, Lv M, Zhou Y Efficacy and side effect of curcumin for the treatment of osteoarthritis: A meta-analysis of randomized
+
+controlled trials.. Pak J Pharm Sci. (2019-Jan)
+
+73.   Raveendhara R Bannuru, Mikala C Osani, Fatimah Al-Eid, Chenchen Wang Efficacy of curcumin and Boswellia for knee
+
+osteoarthritis: Systematic review and meta-analysis. Semin Arthritis Rheum. (2018 Dec)
+
+74.   Igho J Onakpoya, Elizabeth A Spencer, Rafael Perera, Carl J Heneghan Effectiveness of curcuminoids in the treatment of knee
+
+osteoarthritis: a systematic review and meta-analysis of randomized clinical trials. Int J Rheum Dis. (2017 Apr)
+
+75.   Mathieu S, Soubrier M, Peirs C, Monfoulet LE, Boirie Y, Tournadre A A Meta-Analysis of the Impact of Nutritional
+
+Supplementation on Osteoarthritis Symptoms.. Nutrients. (2022-Apr-12)
+
+76.   Amalraj A, Varma K, Jacob J, Divya C, Kunnumakkara AB, Stohs SJ, Gopi S A Novel Highly Bioavailable Curcumin Formulation
+
+Improves Symptoms and Diagnostic Indicators in Rheumatoid Arthritis Patients: A Randomized, Double-Blind, Placebo-
+Controlled, Two-Dose, Three-Arm, and Parallel-Group Study. J Med Food. (2017 Oct)
+
+77.   Chandran B, Goel A A randomized, pilot study to assess the efficacy and safety of curcumin in patients with active rheumatoid
+
+arthritis. Phytother Res. (2012 Nov)
+
+78.   Javadi M, Khadem Haghighian H, Goodarzy S, Abbasi M, Nassiri-Asl M Effect of curcumin nanomicelle on the clinical symptoms
+
+of patients with rheumatoid arthritis: A randomized, double-blind, controlled trial.. Int J Rheum Dis. (2019-Oct)
+
+79.   Jacob J, Amalraj A, Raj KKJ, Divya C, Kunnumakkara AB, Gopi S A novel bioavailable hydrogenated curcuminoids formulation
+(CuroWhite™) improves symptoms and diagnostic indicators in rheumatoid arthritis patients - A randomized, double blind and
+placebo controlled study.. J Tradit Complement Med. (2019-Oct)
+
+42
+
+80.   Vollono L, Falconi M, Gaziano R, Iacovelli F, Dika E, Terracciano C, Bianchi L, Campione E Potential of Curcumin in Skin
+
+Disorders.. Nutrients. (2019-Sep-10)
+
+81.   Luber RP, Rentsch C, Lontos S, Pope JD, Aung AK, Schneider HG, Kemp W, Roberts SK, Majeed A Turmeric Induced Liver
+
+Injury: A Report of Two Cases.. Case Reports Hepatol. (2019)
+
+82.   Lukefahr AL, McEvoy S, Alfafara C, Funk JL Drug-induced autoimmune hepatitis associated with turmeric dietary supplement
+
+use.. BMJ Case Rep. (2018-Sep-10)
+
+83.   Shamsi S, Tran H, Tan RS, Tan ZJ, Lim LY Curcumin, Piperine, and Capsaicin: A Comparative Study of Spice-Mediated
+
+Inhibition of Human Cytochrome P450 Isozyme Activities.. Drug Metab Dispos. (2017-Jan)
+
+84.   Bhardwaj RK, Glaeser H, Becquemont L, Klotz U, Gupta SK, Fromm MF Piperine, a major constituent of black pepper, inhibits
+
+human P-glycoprotein and CYP3A4.. J Pharmacol Exp Ther. (2002-Aug)
+
+85.   Aref Zayed, Wahby M Babaresh, Ruba S Darweesh, Tamam El-Elimat, Sahar S Hawamdeh Piperine Alters the Pharmacokinetics
+
+and Anticoagulation of Warfarin in Rats. J Exp Pharmacol. (2020 Jun 19)
+
+86.   Rodríguez Castaño P, Parween S, Pandey AV Bioactivity of Curcumin on the Cytochrome P450 Enzymes of the Steroidogenic
+
+Pathway.. Int J Mol Sci. (2019-Sep-17)
+
+87.   Daveluy A, Géniaux H, Thibaud L, Mallaret M, Miremont-Salamé G, Haramburu F Probable interaction between an oral vitamin K
+
+antagonist and turmeric (Curcuma longa).. Therapie. (2014)
+
+88.   Srivastava KC, Bordia A, Verma SK Curcumin, a major component of food spice turmeric (Curcuma longa) inhibits aggregation
+
+and alters eicosanoid metabolism in human blood platelets.. Prostaglandins Leukot Essent Fatty Acids. (1995-Apr)
+
+89.   Neerati P, Devde R, Gangi AK Evaluation of the effect of curcumin capsules on glyburide therapy in patients with type-2
+
+diabetes mellitus.. Phytother Res. (2014-Dec)
+
+90.   Edyta Brzustewicz, Ewa Bryl The role of cytokines in the pathogenesis of rheumatoid arthritis--Practical and potential
+
+application of cytokines as biomarkers and targets of personalized therapy. Cytokine. (2015 Dec)
+
+91.   Oscar D Rangel-Huerta, Concepcion M Aguilera, Maria D Mesa, Angel Gil Omega-3 long-chain polyunsaturated fatty acids
+
+supplementation on inflammatory biomakers: a systematic review of randomised clinical trials. Br J Nutr. (2012 Jun)
+
+92.   Fortin PR, Lew RA, Liang MH, Wright EA, Beckett LA, Chalmers TC, Sperling RI Validation of a meta-analysis: the effects of fish
+
+oil in rheumatoid arthritis.. J Clin Epidemiol. (1995-Nov)
+
+93.   Robert J Goldberg, Joel Katz A meta-analysis of the analgesic effects of omega-3 polyunsaturated fatty acid supplementation
+
+for inflammatory joint pain. Pain. (2007 May)
+
+94.   Senftleber NK, Nielsen SM, Andersen JR, Bliddal H, Tarp S, Lauritzen L, Furst DE, Suarez-Almazor ME, Lyddiatt A, Christensen
+R Marine Oil Supplements for Arthritis Pain: A Systematic Review and Meta-Analysis of Randomized Trials.. Nutrients. (2017-
+Jan-06)
+
+95.   Aristea Gioxari, Andriana C Kaliora, Foteini Marantidou, Demosthenes P Panagiotakos Intake of ω-3 polyunsaturated fatty acids
+
+in patients with rheumatoid arthritis: A systematic review and meta-analysis. Nutrition. (2018 Jan)
+
+96.   Kuszewski JC, Wong RHX, Howe PRC Fish oil supplementation reduces osteoarthritis-specific pain in older adults with
+
+overweight/obesity.. Rheumatol Adv Pract. (2020)
+
+97.   Cleland LG, James MJ, Proudman SM The role of fish oils in the treatment of rheumatoid arthritis.. Drugs. (2003)
+
+98.   Lindsey A MacFarlane, Nancy R Cook, Eunjung Kim, I-Min Lee, Maura D Iversen, David Gordon, Julie E Buring, Jeffrey N Katz,
+JoAnn E Manson, Karen H Costenbader The Effects of Vitamin D and Marine Omega-3 Fatty Acid Supplementation on Chronic
+Knee Pain in Older U.S. Adults: Results from a Randomized Trial. Arthritis Rheumatol. (2020 Jun 25)
+
+99.   Alfaddagh A, Elajami TK, Saleh M, Elajami M, Bistrian BR, Welty FK The effect of eicosapentaenoic and docosahexaenoic acids
+
+on physical function, exercise, and joint replacement in patients with coronary artery disease: A secondary analysis of a
+randomized clinical trial.. J Clin Lipidol. (2018)
+
+100.   Suzuki Y, Fukushima M, Sakuraba K, Sawaki K, Sekigawa K Krill Oil Improves Mild Knee Joint Pain: A Randomized Control Trial..
+
+PLoS One. (2016)
+
+101.   Alfaddagh A and Welty F K Omega-3 Fatty Acid Supplementation Reduces Inflammation and Improves Physical Function in
+
+Patient With Coronary Artery Disease. Circulation. (2015 Oct)
+
+102.   Stephen J Nicholls, A Michael Lincoff, Michelle Garcia, Dianna Bash, Christie M Ballantyne, Philip J Barter, Michael H Davidson,
+John J P Kastelein, Wolfgang Koenig, Darren K McGuire, Dariush Mozaffarian, Paul M Ridker, Kausik K Ray, Brian G Katona,
+Anders Himmelmann, Larrye E Loss, Martin Rensfeldt, Torbjörn Lundström, Rahul Agrawal, Venu Menon, Kathy Wolski, Steven E
+Nissen Effect of High-Dose Omega-3 Fatty Acids vs Corn Oil on Major Adverse Cardiovascular Events in Patients at High
+Cardiovascular Risk: The STRENGTH Randomized Clinical Trial. JAMA. (2020 Dec 8)
+
+103.   Wang C, Chung M, Lichtenstein A, Balk E, Kupelnick B, DeVine D, Lawrence A, Lau J Effects of omega-3 fatty acids on
+
+cardiovascular disease.. Evid Rep Technol Assess (Summ). (2004-Mar)
+
+104.   Cleland LG, James MJ, Proudman SM Fish oil: what the prescriber needs to know.. Arthritis Res Ther. (2006)
+
+105.   Buckley MS, Goff AD, Knapp WE Fish oil interaction with warfarin.. Ann Pharmacother. (2004-Jan)
+
+106.   Elizabeth M McClaskey, Elizabeth Landrum Michalets Subdural hematoma after a fall in an elderly patient taking high-dose
+omega-3 fatty acids with warfarin and aspirin: case report and review of the literature. Pharmacotherapy. (2007 Jan)
+
+43
+
+107.   Kristof Vanschoonbeek, Marion A H Feijge, Martine Paquay, Jan Rosing, Wim Saris, Cornelis Kluft, Peter L A Giesen, Moniek P M
+
+de Maat, Johan W M Heemskerk Variable hypocoagulant effect of fish oil intake in humans: modulation of fibrinogen level and
+thrombin generation. Arterioscler Thromb Vasc Biol. (2004 Sep)
+
+108.   John Alfred Carr Role of Fish Oil in Post-Cardiotomy Bleeding: A Summary of the Basic Science and Clinical Trials. Ann Thorac
+
+Surg. (2018 May)
+
+109.   Begtrup KM, Krag AE, Hvas AM No impact of fish oil supplements on bleeding risk: a systematic review. Dan Med J. (2017
+
+May)
+
+110.   Albert BB, Derraik JG, Cameron-Smith D, Hofman PL, Tumanov S, Villas-Boas SG, Garg ML, Cutfield WS Fish oil supplements in
+
+New Zealand are highly oxidised and do not meet label content of n-3 PUFA. Sci Rep. (2015 Jan 21)
+
+111.   Bannenberg G, Mallon C, Edwards H, Yeadon D, Yan K, Johnson H, Ismail A Omega-3 Long-Chain Polyunsaturated Fatty Acid
+
+Content and Oxidation State of Fish Oil Supplements in New Zealand. Sci Rep. (2017 May 3)
+
+112.   Bengtson Nash SM, Schlabach M, Nichols PD A nutritional-toxicological assessment of Antarctic krill oil versus fish oil dietary
+
+supplements. Nutrients. (2014 Aug 28)
+
+113.   Ottestad I, Retterstøl K, Myhrstad MC, Andersen LF, Vogt G, Nilsson A, Borge GI, Nordvi B, Brønner KW, Ulven SM, Holven KB
+Intake of oxidised fish oil does not affect circulating levels of oxidised LDL or inflammatory markers in healthy subjects. Nutr
+Metab Cardiovasc Dis. (2013 Jan)
+
+114.   García-Hernández VM, Gallar M, Sánchez-Soriano J, Micol V, Roche E, García-García E Effect of omega-3 dietary supplements
+with different oxidation levels in the lipidic profile of women: a randomized controlled trial. Int J Food Sci Nutr. (2013 Dec)
+
+115.   Vasiliadis HS, Tsikopoulos K Glucosamine and chondroitin for the treatment of osteoarthritis. World J Orthop. (2017 Jan 18)
+
+116.   Jerosch J Effects of Glucosamine and Chondroitin Sulfate on Cartilage Metabolism in OA: Outlook on Other Nutrient Partners
+
+Especially Omega-3 Fatty Acids.. Int J Rheumatol. (2011)
+
+117.   Iovu M, Dumais G, du Souich P Anti-inflammatory activity of chondroitin sulfate. Osteoarthritis Cartilage. (2008)
+
+118.   Jang BC, Sung SH, Park JG, Park JW, Bae JH, Shin DH, Park GY, Han SB, Suh SI Glucosamine hydrochloride specifically
+
+inhibits COX-2 by preventing COX-2 N-glycosylation and by increasing COX-2 protein turnover in a proteasome-dependent
+manner.. J Biol Chem. (2007-Sep-21)
+
+119.   Knapik JJ, Pope R, Hoedebecke SS, Schram B, Orr R Effects of Oral Chondroitin Sulfate on Osteoarthritis-Related Pain and
+
+Joint Structural Changes: Systematic Review and Meta-Analysis.. J Spec Oper Med. (2019)
+
+120.   Honvo G, Bruyère O, Geerinck A, Veronese N, Reginster JY Efficacy of Chondroitin Sulfate in Patients with Knee Osteoarthritis:
+
+A Comprehensive Meta-Analysis Exploring Inconsistencies in Randomized, Placebo-Controlled Trials.. Adv Ther. (2019-May)
+
+121.   Beaudart C, Lengelé L, Leclercq V, Geerinck A, Sanchez-Rodriguez D, Bruyère O, Reginster JY Symptomatic Efficacy of
+
+Pharmacological Treatments for Knee Osteoarthritis: A Systematic Review and a Network Meta-Analysis with a 6-Month Time
+Horizon.. Drugs. (2020-Dec)
+
+122.   Yang W, Sun C, He SQ, Chen JY, Wang Y, Zhuo Q The Efficacy and Safety of Disease-Modifying Osteoarthritis Drugs for Knee
+
+and Hip Osteoarthritis-a Systematic Review and Network Meta-Analysis.. J Gen Intern Med. (2021-Jul)
+
+123.   Zhu X, Sang L, Wu D, Rong J, Jiang L Effectiveness and safety of glucosamine and chondroitin for the treatment of
+
+osteoarthritis: a meta-analysis of randomized controlled trials.. J Orthop Surg Res. (2018-Jul-06)
+
+124.   Clegg DO, Reda DJ, Harris CL, Klein MA, O'Dell JR, Hooper MM, Bradley JD, Bingham CO 3rd, Weisman MH, Jackson CG, Lane
+NE, Cush JJ, Moreland LW, Schumacher HR Jr, Oddis CV, Wolfe F, Molitor JA, Yocum DE, Schnitzer TJ, Furst DE, Sawitzke AD,
+Shi H, Brandt KD, Moskowitz RW, Williams HJ Glucosamine, chondroitin sulfate, and the two in combination for painful knee
+osteoarthritis. N Engl J Med. (2006 Feb 23)
+
+125.   Lukas Martin Wildi, Jean-Pierre Raynauld, Johanne Martel-Pelletier, André Beaulieu, Louis Bessette, Frédéric Morin, François
+
+Abram, Marc Dorais, Jean-Pierre Pelletier Chondroitin sulphate reduces both cartilage volume loss and bone marrow lesions in
+knee osteoarthritis patients starting as early as 6 months after initiation of therapy: a randomised, double-blind, placebo-
+controlled pilot study using MRI. Ann Rheum Dis. (2011 Jun)
+
+126.   Greenlee H, Crew KD, Shao T, Kranwinkel G, Kalinsky K, Maurer M, Brafman L, Insel B, Tsai WY, Hershman DL Phase II study of
+
+glucosamine with chondroitin on aromatase inhibitor-associated joint symptoms in women with breast cancer.. Support Care
+Cancer. (2013-Apr)
+
+127.   Rozenfeld V, Crain JL, Callahan AK Possible augmentation of warfarin effect by glucosamine-chondroitin.. Am J Health Syst
+
+Pharm. (2004-Feb-01)
+
+128.   Knudsen JF, Sokol GH Potential glucosamine-warfarin interaction resulting in increased international normalized ratio: case
+
+report and review of the literature and MedWatch database.. Pharmacotherapy. (2008-Apr)
+
+129.   Claire Hoban, Roger Byard, Ian Musgrave Hypersensitive adverse drug reactions to glucosamine and chondroitin preparations
+
+in Australia between 2000 and 2011. Postgrad Med J. (2020 Apr)
+
+130.   Knapik JJ, Pope R, Hoedebecke SS, Schram B, Orr R, Lieberman HR Effects of Oral Glucosamine Sulfate on Osteoarthritis-
+
+Related Pain and Joint-Space Changes: Systematic Review and Meta-Analysis.. J Spec Oper Med.
+
+131.   Pavelká K, Gatterová J, Olejarová M, Machacek S, Giacovelli G, Rovati LC Glucosamine sulfate use and delay of progression of
+
+knee osteoarthritis: a 3-year, randomized, placebo-controlled, double-blind study. Arch Intern Med. (2002 Oct 14)
+
+132.   McAlindon T, Formica M, LaValley M, Lehmer M, Kabbara K Effectiveness of glucosamine for symptoms of knee osteoarthritis:
+
+44
+
+results from an internet-based randomized double-blind controlled trial. Am J Med. (2004 Nov 1)
+
+133.   Usha PR, Naidu MU Randomised, Double-Blind, Parallel, Placebo-Controlled Study of Oral Glucosamine, Methylsulfonylmethane
+
+and their Combination in Osteoarthritis. Clin Drug Investig. (2004)
+
+134.   B Balkan, B E Dunning Glucosamine inhibits glucokinase in vitro and produces a glucose-specific impairment of in vivo insulin
+
+secretion in rats. Diabetes. (1994 Oct)
+
+135.   B A Biggee, C M Blinn, M Nuite, J E Silbert, T E McAlindon Effects of oral glucosamine sulphate on serum glucose and insulin
+
+during an oral glucose tolerance test of subjects with osteoarthritis. Ann Rheum Dis. (2007 Feb)
+
+136.   Simon RR, Marks V, Leeds AR, Anderson JW A comprehensive review of oral glucosamine use and effects on glucose
+
+metabolism in normal and diabetic individuals.. Diabetes Metab Res Rev. (2011-Jan)
+
+137.   Dostrovsky NR, Towheed TE, Hudson RW, Anastassiades TP The effect of glucosamine on glucose metabolism in humans: a
+
+systematic review of the literature.. Osteoarthritis Cartilage. (2011-Apr)
+
+138.   Ebisuzaki K Aspirin and methylsulfonylmethane (MSM): a search for common mechanisms, with implications for cancer
+
+prevention.. Anticancer Res. (2003)
+
+139.   Beilke MA, Collins-Lech C, Sohnle PG Effects of dimethyl sulfoxide on the oxidative function of human neutrophils.. J Lab Clin
+
+Med. (1987-Jul)
+
+140.   Nakhostin-Roohi B, Barmaki S, Khoshkhahesh F, Bohlooli S Effect of chronic supplementation with methylsulfonylmethane on
+
+oxidative stress following acute exercise in untrained healthy men. J Pharm Pharmacol. (2011 Oct)
+
+141.   Kim LS, Axelrod LJ, Howard P, Buratovich N, Waters RF Efficacy of methylsulfonylmethane (MSM) in osteoarthritis pain of the
+
+knee: a pilot clinical trial.. Osteoarthritis Cartilage. (2006-Mar)
+
+142.   Debbi EM, Agar G, Fichman G, Ziv YB, Kardosh R, Halperin N, Elbaz A, Beer Y, Debi R Efficacy of methylsulfonylmethane
+
+supplementation on osteoarthritis of the knee: a randomized controlled study. BMC Complement Altern Med. (2011 Jun 27)
+
+143.   Lubis AMT, Siagian C, Wonggokusuma E, Marsetyo AF, Setyohadi B Comparison of Glucosamine-Chondroitin Sulfate with and
+
+without Methylsulfonylmethane in Grade I-II Knee Osteoarthritis: A Double Blind Randomized Controlled Trial. Acta Med Indones.
+(2017 Apr)
+
+144.   Withee ED, Tippens KM, Dehen R, Tibbitts D, Hanes D, Zwickey H Effects of Methylsulfonylmethane (MSM) on exercise-
+
+induced oxidative stress, muscle damage, and pain following a half-marathon: a double-blind, randomized, placebo-controlled
+trial.. J Int Soc Sports Nutr. (2017)
+
+145.   Tennent DJ, Hylden CM, Kocher BK, Aden JK, Johnson AE A randomized controlled trial evaluating methylsulfonylmethane
+
+versus placebo to prevent knee pain in military initial entry trainees.. US Army Med Dep J. (2017)
+
+146.   Crawford P, Crawford A, Nielson F, Lystrup R Methylsulfonylmethane for treatment of low back pain: A safety analysis of a
+
+randomized, controlled trial.. Complement Ther Med. (2019-Aug)
+
+147.   Belcaro G, Cesarone MR, Errichi S, Zulli C, Errichi BM, Vinciguerra G, Ledda A, Di Renzo A, Stuard S, Dugall M, Pellegrini L,
+
+Errichi S, Gizzi G, Ippolito E, Ricci A, Cacchio M, Cipollone G, Ruffini I, Fano F, Hosoi M, Rohdewald P Treatment of osteoarthritis
+with Pycnogenol. The SVOS (San Valentino Osteo-arthrosis Study). Evaluation of signs, symptoms, physical performance and
+vascular aspects. Phytother Res. (2008 Apr)
+
+148.   Farid R et al Pycnogenol supplementation reduces pain and stiffness and improves physical function in adults with knee
+
+osteoarthritis. Nutr Res. (2007 Nov)
+
+149.   Cisár P, Jány R, Waczulíková I, Sumegová K, Muchová J, Vojtassák J, Duraćková Z, Lisý M, Rohdewald P Effect of pine bark
+
+extract (Pycnogenol) on symptoms of knee osteoarthritis. Phytother Res. (2008 Aug)
+
+150.   Rohdewald PJ Update on the clinical pharmacology of Pycnogenol(R).
+
+151.   Simpson T, Kure C, Stough C Assessing the Efficacy and Mechanisms of Pycnogenol on Cognitive Aging From Animal and
+
+Human Studies.. Front Pharmacol. (2019)
+
+152.   Melnyk J, Wang S, Marcone M Chemical and biological properties of the world&#039;s most expensive spice: Saffron. Food
+
+Res Int. (2010 Oct)
+
+153.   A A Noorbala, S Akhondzadeh, N Tahmacebi-Pour, A H Jamshidi Hydro-alcoholic extract of Crocus sativus L. versus fluoxetine
+in the treatment of mild to moderate depression: a double-blind, randomized pilot trial. J Ethnopharmacol. (2005 Feb 28)
+
+154.   Hamidi Z, Aryaeian N, Abolghasemi J The effect of saffron supplement on clinical outcomes and metabolic profiles in patients
+
+with active rheumatoid arthritis: A randomized, double-blind, placebo-controlled clinical trial. Phytotherapy Research. (2020
+Feb)
+
+155.   van Riel PL The development of the disease activity score (DAS) and the disease activity score using 28 joint counts (DAS28)..
+
+Clin Exp Rheumatol. (2014)
+
+156.   van Riel P C M V The development of the disease activity score (DAS) and the disease activity score using 28 joint counts
+
+(DAS28). Clin Exp Rheumatol. (2014 Sep/Oct)
+
+157.   Zahra Hamidi, Naheed Aryaeian, Jamileh Abolghasemi, Fatemeh Shirani, Mahsa Hadidi, Soudabeh Fallah, Nariman Moradi The
+
+effect of saffron supplement on clinical outcomes and metabolic profiles in patients with active rheumatoid arthritis: A
+randomized, double-blind, placebo-controlled clinical trial. Phytother Res. (2020 Jul)
+
+158.   Javad Poursamimi, Zhaleh Shariati-Sarabi, Jalil Tavakkol-Afshari, Seyed Ahmad Mohajeri, Mohsen Ghoryani, Mojgan
+
+Mohammadi Immunoregulatory Effects of Krocina™, a Herbal Medicine Made of Crocin, on Osteoarthritis Patients: A Successful
+45
+
+Clinical Trial in Iran. Iran J Allergy Asthma Immunol. (2020 Jun 23)
+
+159.   Barbara Tóth, Péter Hegyi, Tamás Lantos, Zsolt Szakács, Beáta Kerémi, Gábor Varga, Judit Tenk, Erika Pétervári, Márta
+Balaskó, Zoltán Rumbus, Zoltán Rakonczay, Emese Réka Bálint, Tivadar Kiss, Dezső Csupor The Efficacy of Saffron in the
+Treatment of Mild to Moderate Depression: A Meta-analysis. Planta Med. (2019 Jan)
+
+160.   Jamal Rahmani, Nicla Manzari, Jacqueline Thompson, Cain C T Clark, Gemma Villanueva, Hamed Kord Varkaneh, Parvin
+Mirmiran The effect of saffron on weight and lipid profile: A systematic review, meta-analysis, and dose-response of
+randomized clinical trials. Phytother Res. (2019 Sep)
+
+161.   Safarinejad MR, Shafiei N, Safarinejad S A prospective double-blind randomized placebo-controlled study of the effect of
+saffron (Crocus sativus Linn.) on semen parameters and seminal plasma antioxidant capacity in infertile men with idiopathic
+oligoasthenoteratozoospermia. Phytother Res. (2011 Apr)
+
+162.   G Dovrtělová, K Nosková, J Juřica, M Turjap, O Zendulka Can bioactive compounds of Crocus sativus L. influence the
+
+metabolic activity of selected CYP enzymes in the rat?. Physiol Res. (2015)
+
+163.   Akhondzadeh S, Fallah-Pour H, Afkham K Comparison of Crocus sativus L. and imipramine in the treatment of mild to moderate
+
+depression: a pilot double-blind randomized trial. BMC complementary and alternative medicine.
+
+164.   Noorbala AA, Akhondzadeh SH, Tahmacebi-Pour N https://pubmed.ncbi.nlm.nih.gov/15707766/title=Hydro-alcoholic extract
+of Crocus sativus L. versus fluoxetine in the treatment of mild to moderate depression: a double-blind, randomized pilot trial..
+Journal of ethnopharmacology. (2005 Feb)
+
+165.   Li H, Zou Y, Ding G Dietary factors associated with dental erosion: a meta-analysis. PLoS One. (2012)
+
+166.   Danielle R Bruns, Sarah E Ehrlicher, Shadi Khademi, Laurie M Biela, Frederick F Peelor 3rd, Benjamin F Miller, Karyn L Hamilton
+
+Differential effects of vitamin C or protandim on skeletal muscle adaptation to exercise. J Appl Physiol (1985). (2018 Aug 1)
+
+167.   Gomez-Cabrera MC, Domenech E, Romagnoli M, Arduini A, Borras C, Pallardo FV, Sastre J, Viña J Oral administration of vitamin
+C decreases muscle mitochondrial biogenesis and hampers training-induced adaptations in endurance performance. Am J Clin
+Nutr. (2008 Jan)
+
+168.   Hatch M, Mulgrew S, Bourke E, Keogh B, Costello J Effect of megadoses of ascorbic acid on serum and urinary oxalate.. Eur
+
+Urol. (1980)
+
+169.   Steven Gabardi, Kristin Munz, Catherine Ulbricht A review of dietary supplement-induced renal dysfunction. Clin J Am Soc
+
+Nephrol. (2007 Jul)
+
+170.   Baxmann AC, De O G Mendonça C, Heilberg IP Effect of vitamin C supplements on urinary oxalate and pH in calcium stone-
+
+forming patients.. Kidney Int. (2003-Mar)
+
+171.   G J McHugh, M L Graber, R C Freebairn Fatal vitamin C-associated acute renal failure. Anaesth Intensive Care. (2008 Jul)
+
+172.   Institute of Medicine (US) Panel on Dietary Antioxidants and Related Compounds Dietary Reference Intakes for Vitamin C,
+
+Vitamin E, Selenium, and Carotenoids.
+
+173.   Andre CM, Hausman JF, Guerriero G Cannabis sativa: The Plant of the Thousand and One Molecules. Front Plant Sci. (2016 Feb
+
+4)
+
+174.   Corroon J, Phillips JA A Cross-Sectional Study of Cannabidiol Users. Cannabis Cannabinoid Res. (2018 Jul 1)
+
+175.   National Academies of Sciences, Engineering, and Medicine, Health and Medicine Division, Board on Population Health and
+Public Health Practice, Committee on the Health Effects of Marijuana: An Evidence Review and Research Agenda The Health
+Effects of Cannabis and Cannabinoids: The Current State of Evidence and Recommendations for Research.
+
+176.   Richard J Bloomer, Tyler M Farney, Cameron G McCarthy, Sang-Rok Lee Cissus quadrangularis reduces joint pain in exercise-
+
+trained men: a pilot study. Phys Sportsmed. (2013 Sep)
+
+177.   Ewa M Roos, L Stefan Lohmander The Knee injury and Osteoarthritis Outcome Score (KOOS): from joint injury to osteoarthritis.
+
+Health Qual Life Outcomes. (2003 Nov 3)
+
+178.   Viswanath J, Cheekavolu C, Sankaraiah S Effect of Cissus quadrangularis linn and zingiber officinale rosc in osteoarthritis
+
+patients.
+
+179.   Wenhao Zheng, Yifan Mei, Chunhui Chen, Leyi Cai, Hua Chen The effectiveness and safety of Tripterygium wilfordii glycosides
+combined with disease-modifying anti-rheumatic drugs in the treatment of rheumatoid arthritis: A systematic review and meta-
+analysis of 40 randomized controlled trials. Phytother Res. (2020 Dec 23)
+
+180.   Allen KD, Golightly YM State of the evidence. Curr Opin Rheumatol. (2015 May)
+
+181.   Bliddal H, Leeds AR, Christensen R Osteoarthritis, obesity and weight loss: evidence, hypotheses and horizons - a scoping
+
+review. Obes Rev. (2014 Jul)
+
+182.   Christensen R, Bartels EM, Astrup A, Bliddal H Effect of weight reduction in obese patients diagnosed with knee osteoarthritis: a
+
+systematic review and meta-analysis. Ann Rheum Dis. (2007 Apr)
+
+183.   Iwamoto J, Sato Y, Takeda T, Matsumoto H RETRACTED ARTICLE. World J Orthop. (2011 May 18)
+
+184.   Uthman OA, van der Windt DA, Jordan JL, Dziedzic KS, Healey EL, Peat GM, Foster NE Exercise for lower limb osteoarthritis:
+
+systematic review incorporating trial sequential analysis and network meta-analysis. Br J Sports Med. (2014 Nov)
+
+185.   Wang Y, Simpson JA, Wluka AE, Teichtahl AJ, English DR, Giles GG, Graves S, Cicuttini FM Is physical activity a risk factor for
+
+primary knee or hip replacement due to osteoarthritis? A prospective cohort study. J Rheumatol. (2011 Feb)
+
+46
+
+186.   da Costa BR, Reichenbach S, Keller N, Nartey L, Wandel S, Jüni P, Trelle S Effectiveness of non-steroidal anti-inflammatory
+
+drugs for the treatment of pain in knee and hip osteoarthritis: a network meta-analysis. Lancet. (2017 Jul 8)
+
+187.   Machado GC, Maher CG, Ferreira PH, Pinheiro MB, Lin CW, Day RO, McLachlan AJ, Ferreira ML Efficacy and safety of
+
+paracetamol for spinal pain and osteoarthritis: systematic review and meta-analysis of randomised placebo controlled trials.
+BMJ. (2015 Mar 31)
+
+188.   Trelle S, Reichenbach S, Wandel S, Hildebrand P, Tschannen B, Villiger PM, Egger M, Jüni P Cardiovascular safety of non-
+
+steroidal anti-inflammatory drugs: network meta-analysis. BMJ. (2011 Jan 11)
+
+189.   Anand P, Kunnumakkara AB, Newman RA, Aggarwal BB Bioavailability of curcumin: problems and promises. Mol Pharm. (2007
+
+Nov-Dec)
+
+190.   Shoba G, Joy D, Joseph T, Majeed M, Rajendran R, Srinivas PS Influence of piperine on the pharmacokinetics of curcumin in
+
+animals and human volunteers. Planta Med. (1998 May)
+
+191.   Forsyth JE, Nurunnahar S, Islam SS, Baker M, Yeasmin D, Islam MS, Rahman M, Fendorf S, Ardoin NM, Winch PJ, Luby SP
+Turmeric means "yellow" in Bengali: Lead chromate pigments added to turmeric threaten public health across Bangladesh.
+Environ Res. (2019 Dec)
+
+192.   Mogoşanu GD, Biţă A, Bejenaru LE, Bejenaru C, Croitoru O, Rău G, Rogoveanu OC, Florescu DN, Neamţu J, Scorei ID, Scorei RI
+
+Calcium Fructoborate for Bone and Cardiovascular Health. Biol Trace Elem Res. (2016 Aug)
+
+193.   Scorei R, Mitrut P, Petrisor I, Scorei I A double-blind, placebo-controlled pilot study to evaluate the effect of calcium
+
+fructoborate on systemic inflammation and dyslipidemia markers for middle-aged people with primary osteoarthritis. Biol Trace
+Elem Res. (2011 Dec)
+
+194.   Price AK, de Godoy MRC, Harper TA, Knap KE, Joslyn S, Pietrzkowski Z, Cross BK, Detweiler KB, Swanson KS Effects of dietary
+
+calcium fructoborate supplementation on joint comfort and flexibility and serum inflammatory markers in dogs with
+osteoarthritis. J Anim Sci. (2017 Jul)
+
+195.   Rayman M Diet, nutrition and osteoarthritis. BMC Musculoskelet Disord.. (2015)
+
+196.   Cota D, Marsicano G, Lutz B, Vicennati V, Stalla GK, Pasquali R, Pagotto U Endogenous cannabinoid system as a modulator of
+
+food intake. Int J Obes Relat Metab Disord. (2003 Mar)
+
+197.   Patel S, Cone RD Neuroscience: a cellular basis for the munchies. Nature. (2015 Mar 5)
+
+198.   Wang H, Liu F, Yang L, Zu Y, Wang H, Qu S, Zhang Y Oxidative stability of fish oil supplemented with carnosic acid compared
+
+with synthetic antioxidants during long-term storage. Food Chem. (2011 Sep 1)
+
+199.   Vane JR, Botting RM Mechanism of action of nonsteroidal anti-inflammatory drugs. Am J Med. (1998 Mar 30)
+
+200.   Puljak L, Marin A, Vrdoljak D, Markotic F, Utrobicic A, Tugwell P Celecoxib for osteoarthritis. Cochrane Database Syst Rev.
+
+(2017 May 22)
+
+47
+
+

@@ -1,0 +1,4633 @@
+Healthy Aging Supplement Guide
+
+Written By: Michael Hull, & Wyatt Brown
+
+Edited By: Pierre-Alexandre Sicart
+
+Reviewed By: Kamal Patel
+
+Table of Contents
+
+Introduction
+
+Combos
+
+Primary Supplements
+
+Secondary Supplements
+
+Promising Supplements
+
+Unproven Supplements
+
+Inadvisable Supplements
+
+FAQ
+
+2
+
+Introduction
+
+Ever notice how differently people seem to age, appearance-wise? For every 35-year-old who looks 50,
+
+there is a 50-year-old trending toward mid 30s in appearance.
+
+Although we all experience time in the same way, the months, days, and years seem to be more kind to
+
+some than others. The good news is that we can partially control the effects of time on our bodies. And this
+
+is precisely why we wrote this guide. We can’t stop the forward march of time, but we do have a say in the
+
+resilience of our minds and bodies.
+
+A definition for aging
+
+Before we discuss healthy aging, it helps to start with a good understanding of what aging is. According to
+
+a recent review, aging can be “characterized by a progressive loss of physiological integrity, leading to
+
+impaired function and increased vulnerability to death.”[1]
+
+Well, that’s encouraging!
+
+Although this sounds dismal — scientists are not ones to sugarcoat — there are actually some things here
+
+to be encouraged by. We understand the aging process and mechanisms behind it now more than ever.
+
+With this knowledge, we’re better positioned to exert some control over it.
+
+3
+
+The hallmarks of aging
+
+Adapted from López-Otín et al. Cell. 2013.[1]
+
+Lifespan vs. healthspan
+
+The average human lifespan has increased quite a bit in the past 100 years, but the extra time spent on this
+
+earth isn’t always in good health. The longer humans live, the more prevalent late-onset diseases, such as
+
+diabetes, Parkinson’s, and Alzheimer’s, become. Adding 40 years of life isn’t so great if the latter 40 are
+
+spent battling a devastating disease. This brings up an important concept: lifespan vs. healthspan. While
+
+lifespan, as you might expect, is the length of one’s life, healthspan is more concerned with quality of life, or
+
+the time period during life where you are in a healthy and high-functioning state. For example, the current
+
+average lifespan in the U.S. is around 79 years,[2] while the average healthspan is only 67.4.
+
+Science has made good progress in the past 25 years, increasing our understanding of the genetic and
+
+biological factors that control lifespan. But much of this may be hardwired across different organisms and
+
+less accessible with current technology.[3] Healthspan, on the other hand, is very much within our reach and
+
+the focus of this guide.
+
+4
+
+ Tip: Choose your own learning adventure
+
+If you want to learn about the process of aging, check out the biological aspects of aging section. If
+
+you want to learn about practical steps to take to age well, check out the strategies for healthy
+
+aging section.
+
+The biological aspects of aging
+
+Genomic instability and senescence
+
+Taking a “macro” perspective on aging, the effects of large swaths of time on the human body are easy to
+
+recognize. There are effects on appearance (wrinkles, gray hair, loss of muscle mass, poor posture) as well
+
+as physical health (cognitive decline, increased incidence of chronic and degenerative disease). These
+
+noticeable, macroscopic changes on the downward side of healthspan are driven by microscopic changes
+
+at the cellular and molecular level.
+
+Most scientists in the cancer biology field have come to the consensus that if we live long enough, we will
+
+get cancer. The reason for this is that the genome becomes unstable over time, leading to an accumulation
+
+of mutations that eventually transform normal, well-behaved cells into cancerous ones. Packed tightly into
+
+the nucleus of every cell and organized into chromosomes, the blueprint for every protein, enzyme, cell,
+
+and tissue is encoded by a double-stranded miracle molecule known as DNA. Because cells have a limited
+
+lifespan, this information needs to be copied and passed on to daughter cells with a high degree of fidelity.
+
+To illustrate how daunting a task this is, human chromosomes range in size from 50 million to over 300
+
+million nucleotides. No enzyme that copies DNA is perfect; although infrequent, there is a high probability
+
+that at least some mistakes will be made with each cell division. This is why huge amounts of resources are
+
+committed to DNA repair and quality control.[4]
+
+If the error can’t be repaired, there are still options. Some cells will sacrifice themselves, undergoing a form
+
+of programmed cell death called apoptosis. In other cases, the cell will enter a state of “senescence,” or
+
+permanent exit from the cell cycle. By shutting down the cell cycle, senescent cells avoid copying
+
+compromised DNA that could lead to cell transformation and cancer. It is a common feature of aging in a
+
+number of different organisms, from bacteria to humans.[5]
+
+While senescent cells do not have the ability to divide and pass on their potentially dangerous mutated
+
+DNA, there are still downsides to consider. Senescent cells tend to secrete pro-inflammatory cytokines,
+
+contributing to the low-level chronic inflammation that appears with increasing age. This inflammation is so
+
+common that it’s even been given a catchy name: "inflamm-aging”.[6]
+
+Stem cell exhaustion
+
+The amazing thing about the human body is that much of our tissue has the ability to regenerate and stay
+
+5
+
+ 
+functional, through the use of stem cells. Skeletal muscle is a great example of this specialized cell in
+
+action. Let’s say you do a heavy weight-training workout, which causes damage to the muscle in the form
+
+of microtrauma. In addition to rebuilding and repairing damage in the existing muscle cells, satellite cells —
+
+a specialized pool of muscle stem cells — are called on during the growth and adaptation process[7] to fuse
+
+with existing muscle fibers, contributing more nuclei.[8] In the case of more severe muscle damage, from
+
+injury, satellite cells differentiate into myoblasts, which continue to divide and eventually transform into
+
+myocytes (mature muscle cells) that replenish the damaged or destroyed cells.[9]
+
+Once called on, the satellite cells “self-renew,” ensuring that a pool of stem cells remains at the ready for
+
+the next injury or microtrauma. Other pools of stem cells are present all over the body, where they drive
+
+tissue regeneration and have the ability to self-renew. As you might expect, stem cells cannot self-renew
+
+forever. Eventually, with increasing age, they become exhausted,[10] in part due to the accumulation of DNA
+
+damage.
+
+Mitochondrial dysfunction
+
+Mitochondria are the tiny power plants inside cells that generate the main energy currency in the body,
+
+adenosine triphosphate (ATP). They do this through cellular respiration, a process that uses the chemical
+
+energy from glucose or other nutrients to make ATP. During this process, electrons are shuttled through the
+
+electron transport chain, a series of molecules in the outer mitochondrial membrane that fuel the activity of
+
+a membrane-bound enzyme that produces ATP. As we age, the electron transport chains can become
+
+dysfunctional and "leaky," releasing toxic reactive oxygen species (ROS) and producing less ATP.[11] At one
+
+time, scientists believed that increased ROS from mitochondria was the root cause of all aging.[12] We now
+
+know it’s more complicated, since ROS has also been found to function as an important signaling molecule,
+
+and mice engineered to have impaired mitochondrial function without increased ROS still had accelerated
+
+aging.[13] Nonetheless, the accumulation of dysfunctional mitochondria takes center stage in the aging
+
+process.
+
+The problem isn’t so much that mitochondria become dysfunctional; this happens all the time in
+
+normal/healthy cells, but when it does, they are repaired or replaced. During aging, mitochondrial quality
+
+control pathways that gobble up damaged mitochondria and replace them with new, fresh ones are
+
+diminished. The accumulation of damaged, dysfunctional mitochondria compromises energy production and
+
+can trigger inflammation[11] via specialized intracellular complexes called inflammasomes.[14] Once activated,
+
+inflammasomes cause cells to send out danger signals in the form of pro-inflammatory cytokines, such as
+
+IL-1β.[14]
+
+Animal models have shown that aerobic exercise in mice[15] and alternate-day fasting in rats[16] can improve
+
+healthspan by activating mitochondrial quality-control mechanisms. The good news is that all indications
+
+point to the same thing occurring in humans, through common mechanisms.[17] So we may have some say in
+
+whether or how mitochondrial issues arise later in life.
+
+Loss of proteostasis
+
+Proteostasis is like quality control for the proteins in our cells. Most of the countless chemical reactions in
+
+the body at any instant are catalyzed by enzymes made of protein. These enzymes — or any protein, for
+
+that matter — need to be in a specific conformation to do their job. Structure is in part determined by the
+
+order of amino acids, but this is not enough. In addition to having the correct primary sequence, the protein
+
+needs to be folded into the right conformation. If misfolded, it might not be able to do its job, and the
+
+6
+
+problems don’t stop there.
+
+Individual amino acids tend to have different charges; some are quite soluble, while others are not. For this
+
+reason, hydrophobic amino acids (those that repel water) tend to be buried inside the larger structure of
+
+the protein. If the protein is misfolded, not only does it become less soluble or totally insoluble, but it also
+
+tends to become stickier, forming disorganized aggregates that are toxic to the cell. The ability to maintain
+
+proteostasis decreases with age and is behind many of the neurodegenerative diseases associated with
+
+protein aggregation,[18] such as Alzheimer’s, Parkinson’s, Huntington’s, and others. The accumulation of
+
+misfolded, toxic proteins triggers an inflammatory response, also contributing to increased inflammation
+
+during aging.
+
+There are two defense mechanisms against this accumulation, and both have been shown to become
+
+compromised over time during the aging process. Chaperone proteins assist with folding new proteins as
+
+they are synthesized,[19] and their levels are increased by stress, such as the type that occurs during
+
+exercise.[20] On the other hand, proteolytic systems, such as autophagy,[21] are tasked with breaking down
+
+toxic aggregates after they’ve formed.
+
+So far we’ve covered some of the major mechanisms that drive the aging process. The list is far from
+
+exhaustive, but by now you get the picture. A decline occurs at a number of levels, in a number of systems,
+
+which ultimately shortens healthspan and lifespan.
+
+The core supplements we’ve outlined in this guide are a great place to start. They have solid track records,
+
+backed up by robust research, and you can’t go wrong with them. In addition to supplementation, there are
+
+also some “core actions” you can take to encourage a longer healthspan (and perhaps lifespan).
+
+Therapeutic interventions that might extend healthspan
+
+7
+
+Adapted from López-Otín et al. Cell. 2013.[1]
+
+Strategies for healthy aging
+
+Get moving
+
+Present-day humans tend to move too little and eat too much, and this is a potent negative combination.
+
+We simply are not designed to be sedentary, nor were we likely designed for the level of excess in the
+
+typical Western diet. Granted, some of this is out of our control. Many of us have desk jobs during the day
+
+and then family responsibilities at night. That being said, we need to find a way. Park the car in the back of
+
+the parking lot if necessary. Take the stairs instead of the elevator. Get in a quick 30-minute workout
+
+before work. The small investment in time now could pay big dividends down the road and put you on a
+
+trajectory to being fit and high functioning well into your later years.
+
+People who stick to solid fitness programs tend to look younger at any age. The evidence is not just
+
+anecdotal; exercise has been shown to lessen many of the hallmarks of aging.[22] And it does this by
+
+affecting multiple body systems in a positive way. So get moving!
+
+Already on solid footing from a diet and exercise standpoint? Here are some additional things to consider.
+
+Train hard but smart
+
+As you transition from your 30s to your 40s, some things will change. First, certain hormones start to trend
+
+downward, which can increase the time needed for full recovery after an intense training session. Also,
+
+many years of hard training can increase the efficiency with which your nervous system recruits motor units
+
+during heavy lifts. In other words, your ability to do damage to a muscle during a training session could
+
+edge out your ability to recover from that session in a timely fashion. This can also leave you more
+
+susceptible to injury, especially when you’re unaccustomed to an exercise.
+
+I have personal experience with this. When I was 36, I decided that I hadn’t done enough HIIT (high-intensity
+
+interval training) lately — it had been a couple of years, at least — as most of my cardio at the time was
+
+mountain biking. I was in good shape, and also weight-training four times a week, so I figured my physical
+
+condition was fine to jump right into some hill sprints. About midway through my second sprint — with little
+
+warm-up — I felt a slight twinge in my left calf. It was something in between a cramp and a spasm, but not
+
+so bad that I felt I had to stop. This, it turns out, was an unheeded warning sign. On the next sprint, about
+
+halfway up the hill, I heard and felt a loud pop in my left calf muscle, followed by intense pain and loss of
+
+strength. I had a partial tear in my gastrocnemius muscle, which totally caught me by surprise. I thought to
+
+myself, I’m in good shape. How could this happen? It turns out this is common in athletes over 30. We still
+
+feel like we are in our 20s and fail to recognize the need to adjust until an injury seems to fall out of the
+
+sky.
+
+Of course, hindsight is 20/20. It’s still important to learn from mistakes though. Even better, learn from the
+
+mistakes of others. You can learn the following from mine:
+
+Warm up habitually and more than you think you need to. (You heard me, people over 30!)
+
+Introduce new exercises with caution
+
+Listen to your body. If it feels off, it probably is. Don’t be afraid to make adjustments
+
+8
+
+ 
+Mobility
+
+Most people, especially those of us who need to sit for a significant portion of the workday, will suffer from
+
+a progressive loss of mobility with age. Muscles and joints become tighter, and range of motion is lost,
+
+which partly explains the increased incidence of lower back pain with aging.[23]
+
+In the past, the only time mobility and stretching came into the picture for me was after I was forced to
+
+deal with an injury. This, of course, was a mistake, because diligent focus on the mobility issues I was
+
+having at the time may have prevented injury in the first place. I was strong in my 20s and early 30s on
+
+compound exercises, such as deadlifts and squats. I continued to increase my strength during my early 30s
+
+but started to develop more frequent setbacks, due to the increasing fragility of my lower back. I would
+
+have a great training session, and then 4–5 days later, my back would go out after doing some random
+
+low-intensity activity like picking something up off the floor.
+
+Of course, once injured, I would start stretching and doing mobility work to restore function. But I had it
+
+backward. It was the underlying mobility issues that were causing my problems in the first place. The
+
+stronger I got, the more they reared their ugly head.
+
+I fixed the issue with a drastic change in my approach to training. A lack of hip mobility was precipitating
+
+most of the issues with my lower back. For some time, I replaced workouts with stretching and mobility
+
+sessions to address these weak points. I then continued to work on mobility but phased in weight training,
+
+but with a focus on core strength and posterior chain. The end result? My bench press sure didn’t increase,
+
+but my lower back is no longer fragile, nor am I limited in terms of exercise. (Before my mobility reboot, I
+
+had to eliminate squats and deadlifts completely from my training.)
+
+Expect mobility issues to come up with increasing age, and be proactive about addressing them.
+
+To avoid trial, error, injuries, and lost time, seek a qualified fitness or medical professional to address mobility issues
+before they lead to injury or loss of function.
+
+Sleep and recovery
+
+Most of us are not getting as much sleep as we need. This is self-evident, more or less. We all recognize the
+
+brain fog, irritability, and fatigue that come with several days’ worth of inadequate sleep. The more
+
+insidious fallout is that sleep deprivation may even accelerate aging at the cellular level.[24] The solution is to
+
+get as much rest as you need. Not everybody needs 8 hours of sleep; some can get by with less, but some
+
+of us need even more. Of course, this isn’t always an option. When you are pushing hard with your job or
+
+have young children — or both — sleep becomes a precious commodity.
+
+The solution is to get as much sleep as you need as consistently as you can.
+
+Recommended hours of sleep
+
+AGE
+
+RECOMMENDED
+
+MAY BE APPROPRIATE
+
+NOT RECOMMENDED
+
+0–3 months
+
+4–11 months
+
+1–2 years
+
+3–5 years
+
+14–17
+
+12–15
+
+11–14
+
+10–13
+
+11–19
+
+10–18
+
+9–16
+
+8–14
+
+<11 or >19
+
+<10 or >18
+
+<9 or >16
+
+<8 or >14
+
+9
+
+ 
+AGE
+
+RECOMMENDED
+
+MAY BE APPROPRIATE
+
+NOT RECOMMENDED
+
+6–13 years
+
+14–17 years
+
+18–25 years
+
+26–64 years
+
+≥65 years
+
+9–11
+
+8–10
+
+7–9
+
+7–9
+
+7–8
+
+Adapted from Hirshkowitz. Sleep Health. 2015.[25]
+
+7–12
+
+7–11
+
+6–11
+
+6–10
+
+5–9
+
+<7 or >12
+
+<7 or >11
+
+<6 or >11
+
+<6 or >10
+
+<5 or >9
+
+Eat a healthy diet and maintain a healthy
+weight
+
+Poor nutrition, excess calorie intake, and the resulting weight gain — and possibly obesity — are at odds
+
+with a long lifespan and healthspan. Most know this, but recognizing you are overweight is far easier than
+
+sustainably addressing it. Nobody gets out of shape on purpose; it creeps up on us. Even if you could eat
+
+whatever you wanted in your 20s and still look like a superhero, odds are it’ll be harder to pull off in your
+
+30s and unlikely to impossible in your 40s and later.
+
+And this is how most of us trend toward negative changes in body composition over the years.[26] But this
+
+doesn’t have to be the case. Pay attention to changes in your body and how it responds to training, diet,
+
+and supplementation over time, and adjust accordingly.
+
+Bill Willis, senior researcher 
+
+PhD in Biomedical Science
+
+10
+
+Combos
+
+Core Combo
+
+Vitamin B12
+
+Each day, take 100–400 mcg of vitamin B12.
+
+Blueberries
+
+Each day, take blueberries according to one of the following protocols:
+
+Blueberry anthocyanins: 0.5–1 gram (500–1,000 mg)
+
+Blueberry powder: 12 grams
+
+Freeze-dried blueberries: 24 grams
+
+Fresh blueberries: 60–120 grams
+
+Pure blueberry juice: 500 mL (17 oz)
+
+Carnitine
+
+Twice a day, take 250–500 mg of ALCAR (i.e., 500–1,000 mg/day).
+
+Protein
+
+Consume protein throughout the day (1.0–2.2 grams per kilogram of body weight, so 0.45–1.00 g/lb), with
+
+the help of a protein powder if necessary. Consult the protein entry to set the intake level best suited to
+
+your needs.
+
+Vitamin D
+
+If your 25(OHD) levels are adequate or you don’t know your levels, 400 IU (10 mcg) of vitamin D3 per day
+
+may help maintain your levels in the adequate range. If your 25(OH)D levels are low, 800–2,000 IU (20–50
+
+mcg) of D3 per day is likely to raise them to an adequate level, at which point 400–1,000 IU (10–25 mcg)
+
+per day should suffice for maintenance. In case of full-blown deficiency, a medically supervised intervention
+
+will be needed.
+
+11
+
+ 
+ Tip: Try one combo alone for a few weeks
+
+Taking too many supplements at once may prevent you from determining which ones are truly
+
+working. Start with just one of the combos suggested here for a couple of weeks before you
+
+consider making any modification, such as adding another supplement, altering a supplements
+
+dosage, or incorporating the supplements from an additional combo.
+
+When adding another supplement to your regimen, be methodical. For example, you may wish to
+
+take all the supplements from two combos. Select the combo that you wish to try first and take this
+
+for a couple of weeks. Then, add one supplement from the second combo and wait another week to
+
+see how it affects you. Continue this process until you’ve added all the supplements you wish to.
+
+If a supplement appears in two combos you wish to combine, don’t stack the doses; instead,
+
+combine the ranges. For instance, if the range is 2–4 mg in one combo and 3–6 mg in the other, your
+
+new range becomes 2–6 mg. Always start with the lower end of the range — especially in this case,
+
+since the reason why one of the ranges has a lower ceiling in one combo may be due to a synergy
+
+with another supplement in the same combo. Reading through the full supplement entry may help
+
+you decide which dose to aim for, but if you’re not sure, lower is usually safer.
+
+Specialized Combos
+
+Bone health
+
+Each day, take 3–5 grams of creatine monohydrate, 200 mg of magnesium, and some vitamin-k|vitamin K]:
+
+200 mcg (0.2 mg) of MK-7 and/or 45,000 mcg (45 mg) of MK-4.
+
+12
+
+Vitamins that increase bone mineralization
+
+Cardiovascular health
+
+Each day, take 3–5 grams of creatine monohydrate, 200 mg of magnesium, and some vitamin-k|vitamin K]:
+
+200 mcg (0.2 mg) of MK-7 and/or 45,000 mcg (45 mg) of MK-4.
+
+Each day, take L-carnitine. Have you suffered from cardiovascular complications?
+
+Yes: take 2–9 grams.
+
+No: take 0.5–2 grams (500–2,000 mg).
+
+Cognition
+
+Each day, take 3–5 grams of creatine monohydrate.
+
+Twice a day, take 250–1,000 mg of CDP-choline (i.e., 500–2,000 mg/day) and 500 mg of ALCAR (i.e., 1,000
+
+mg/day), preferably without food. This ALCAR dosage replaces the one in the core combo.
+
+Energy and stamina
+
+Each day, take 3–5 grams of creatine monohydrate and 200 mg of magnesium.
+
+If your DHEA-S levels are low, take 20–50 mg (males) or 10–30 mg (females) of DHEA per day. Ideally,
+
+13
+
+supplement at the low end of the range for a month then get tested again.
+
+Immunity
+
+If you are underconsuming vitamin E or have low blood levels, take 200 IU (134 mg of natural α-tocopherol
+
+or 90 mg of synthetic α-tocopherol) per day. Since vitamin E has anticoagulant properties, make sure your
+
+diet contains at least your Adequate Intake (AI) of vitamin K (90 mcg/day for female; 120 mcg/day for
+
+males).
+
+Libido
+
+Take maca (2–3 g) at breakfast.
+
+If your DHEA-S levels are low, take 20–50 mg (males) or 10–30 mg (females) of DHEA per day. Ideally,
+
+supplement at the low end of the range for a month then get tested again.
+
+Symptoms of menopause
+
+Take maca (2–3.5) at breakfast.
+
+14
+
+Primary Supplements
+
+Blueberries
+
+What makes blueberries a primary supplement
+
+The anthocyanins and pterostilbene in blueberries can help protect the brain and reduce cognitive
+
+decline.[27] Episodic memory and executive function are most likely to benefit — the former especially in
+
+adults with mild cognitive impairment. Working memory might benefit too, but the evidence is mixed.
+
+Anthocyanins are also the probable reason why blueberries can increase the activity of neuronal growth
+
+factor (NGF), a protein that acts as a neurotransmitter. NGF helps neurons grow, branch toward each other,
+
+and thus communicate better. In seniors, a diet high in blueberries can improve cognitive ability in as little
+
+as six weeks.[28][29][30][31][32]
+
+On average, 100 grams of fresh blueberries contains 200 mg of anthocyanins[33] and 4 mcg (0.004 mg, or
+
+4,000 ng) of pterostilbene,[34][35][36] but actual contents depend on variety, soil, season, weather, farming
+
+method, shipping time, storage conditions, and storage duration.
+
+Nanograms (ng) of pterostilbene per gram (g) of blueberry (dry mass)
+
+STUDY
+
+SAMPLES
+
+CULTIVARS
+
+RANGE
+
+AVERAGE
+
+2011
+
+2005
+
+2004
+
+6
+
+17
+
+3
+
+1
+
+9
+
+2
+
+—
+
+12–274
+
+9.9–52
+
+11
+
+54
+
+26
+
+References: Rodríguez-Bonilla et al. J Chromatogr B Analyt Technol Biomed Life Sci. 2011.[34] ● Rimando and Barney. Acta Hortic.
+
+2005. DOI:10.17660/ActaHortic.2005.680.20 ● Rimando et al. J Agric Food Chem. 2004. DOI:10.1021/jf040095e
+
+Warnings about blueberries
+
+Blueberries are not known to interact negatively with any supplements or pharmaceuticals. However,
+
+anthocyanins and pterostilbene are both mildly hypoglycemic, so it is theoretically possible (though not
+
+probable) for the blueberry doses listed below to cause low blood sugar (i.e., hypoglycemia) when taken
+
+with other supplements or pharmaceuticals that can lower blood sugar, such as most diabetes medicines.
+
+How to take blueberries
+
+Studies support the following protocols:
+
+Blueberry anthocyanins: 0.5–1 g/day
+
+Blueberry powder: 12 g/day
+
+Freeze-dried blueberries: 24 g/day
+
+15
+
+ 
+Fresh blueberries: 60–120 g/day
+
+Pure blueberry juice: 500 mL/day (17 oz/day). Cheaper “blueberry juices” made with artificial flavoring and added
+sugar more than with actual blueberries will have little to no anthocyanins. Be sure to check the ingredients label.
+
+ Tip: Why don’t you recommend brands or specific products?
+
+For two reasons:
+
+We don’t test physical products. What our researchers do — all day, every day — is analyze
+
+peer-reviewed studies on supplements and nutrition.
+
+We go to great lengths to protect our integrity. As you’ve probably noticed, we don’t sell
+
+supplements, or even show ads from supplement companies, even though either option
+
+would generate a lot more money than our Supplement Guides ever will — and for a lot less
+
+work, too.
+
+If we recommended any brands or specific products, our integrity would be called into question, so
+
+… we can’t do it. That being said, in the interest of keeping you safe, we drew a short list of steps
+
+you should take if a product has caught your interest.
+
+Carnitine
+
+What makes carnitine a primary supplement
+
+Carnitine plays a role in cognition,[37] energy metabolism,[38] and cardiovascular health.[39][40][41] Though your
+
+body can synthesize it out of lysine and methionine, two amino acids, nearly three-fourths of the carnitine
+
+in omnivorous people comes from the meat, fish, eggs, and dairy products they consume.
+
+Selected food sources of carnitine
+
+FOOD
+
+PORTION
+
+MILLIGRAMS (mg)
+
+Beefsteak, cooked
+
+Ground beef, cooked
+
+Whole milk
+
+Codfish, cooked
+
+Chicken breast, cooked
+
+Ice cream
+
+Cheddar cheese
+
+Whole-wheat bread
+
+Asparagus, cooked
+
+4 oz
+
+4 oz
+
+1 cup
+
+4 oz
+
+4 oz
+
+½ cup
+
+2 oz
+
+2 slices
+
+½ cup
+
+56–162
+
+87–99
+
+8
+
+4–7
+
+3–5
+
+3
+
+2
+
+0.2
+
+0.1
+
+16
+
+ 
+Adapted from Carnitine: Fact Sheet for Health Professionals. NIH ODS. Last updated October 10, 2017; accessed October 27, 2019
+
+Your body’s ability to synthesize carnitine decreases as you age. In seniors, carnitine supplementation may
+
+reduce muscular fatigue, and preliminary evidence suggests that it may improve muscular control.
+
+Also, people who have suffered a heart attack can supplement carnitine as an add-on treatment to possibly
+
+lower the risk of both abnormal heartbeats in the lower chambers (i.e., ventricular arrhythmia) and pain in
+
+the chest or limbs caused by poor blood circulation (i.e., angina).[42]
+
+Finally, a form of carnitine known as acetyl-L-carnitine (ALCAR) may benefit cognition by improving blood
+
+flow and promoting efficient energy use in brain cells.
+
+Summary of carnitine’s benefits
+
+Warnings about carnitine
+
+Side effects are generally rare, but some cases of upset stomachs have been reported. Higher doses of L-
+
+carnitine (2 g/day or more) can be converted into the compound trimethylamine, which in some people can
+
+give a fishy odor to urine, sweat, or breath.
+
+Carnitine and its derivatives might interact negatively with some pharmaceuticals, including anticoagulants
+
+(such as warfarin/Coumadin and acenocoumarol/Sintrom). People on thyroid medication or with
+
+hypothyroidism may also wish to forgo carnitine, as it might depress thyroid hormone levels.
+
+How to take carnitine
+
+For neurological benefits, take acetyl-L-carnitine (ALCAR). Start with 250 mg twice a day (i.e., 500
+
+mg/day). Over the course of a week, increase to 500 mg twice a day (i.e., 1 g/day). Taking ALCAR on an
+
+17
+
+empty stomach will result in more potent cognitive benefits. This type of carnitine has a tart taste, but it
+
+can be dissolved in tea or coffee and still retain its effects.
+
+For general non-neurological benefits, take 2 grams of L-carnitine per day, with carbohydrates if you wish
+
+to increase the rate of absorption by the muscles.
+
+In people at risk but who have not yet suffered cardiovascular complications, 500–2,000 mg of L-carnitine
+
+per day might offer some protection when taken in conjunction with prescribed medical therapies. People
+
+who have already suffered a heart attack, however, would need at least 2,000 mg (i.e., 2 g) and preferably
+
+5,000–9,000 mg (i.e., 5–9 g) to see a reduction in arrhythmia, angina, and all-cause mortality.
+
+L-carnitine can also be consumed as L-carnitine L-tartrate (LCLT) or glycine propionyl-L-carnitine (GPLC).
+
+You can supplement 500–2,000 mg of L-carnitine through 750–3,000 mg of LCLT or GPLC. You can
+
+supplement 5,000–9,000 mg of L-carnitine through 7,500–1,350 mg of LCLT or GPLC. However, neither
+
+LCLT nor GPLC has proven advantages over regular L-carnitine, both are more expensive, and GPLC also
+
+clumps easily in moist environments.
+
+Protein
+
+What makes protein a primary supplement
+
+Dietary protein (the protein you ingest) plays important roles in your body, notably as a provider of
+
+essential amino acids (EAAs), the amino acids your body needs but cannot synthesize. In seniors, higher
+
+protein intakes are associated with greater muscle mass, and greater muscle mass with greater longevity
+
+and bone mineral density.[43][44][45]
+
+Age-related muscle loss, also known as sarcopenia, affects about 50% of males and 70% of females past
+
+the age of sixty, but it can start as early as your twenties.[46]
+
+18
+
+ 
+ 
+Prevalence of sarcopenia by age and sex in the US
+
+Reference: Janssen et al. J Am Geriatr Soc. 2002.[46]
+
+Fortunately, sarcopenia is neither inevitable nor irreversible — some seniors have built more muscle in their
+
+old age than they ever had in their youth. The older you get, however, the greater your muscles’ anabolic
+
+resistance (i.e., their resistance to growth),[47] and so the greater the exercise volume and protein intake
+
+you’ll need to stimulate muscle protein synthesis (MPS).[48][49]
+
+In other words, the older you get, the more exercise and protein you need in order to gain muscle. In fact,
+
+as you get older, aerobic exercise (aka “cardio”) may no longer suffice to ward off sarcopenia; you’ll need
+
+to include resistance training to your routine.[48]
+
+19
+
+A basic resistance training program for seniors
+
+Adapted from Mcleod et al. Front Physiol. 2019.[48]
+
+As you get older, you may also need to increase your protein intake, as described below. Overall, whole
+
+foods are the healthier choice, but if your food intake does not cover your daily protein needs, you could
+
+add a supplement (preferably a powder, since the protein-to-calorie ratio of powders tends to be higher
+
+than that of other protein supplements, such as protein bars).
+
+Whey protein and casein powders are both derived from milk protein (which is 20% whey and 80% casein).
+
+Whey protein digests faster and has a higher concentration of EAAs (notably of leucine, the most anabolic
+
+of the amino acids). It quickly increases EAA concentrations in the blood and is thus better able to stimulate
+
+MPS in anabolically resistant seniors.
+
+Whey protein concentrates are the most common type of protein powder; they’re inexpensive and mix
+
+easily, and so are probably your best option if you are not vegan. Look at the food label: your powder
+
+should be close to 80% protein. A little lower is fine if the powder is flavored (any flavoring will use a
+
+percentage of the powder), but any big discrepancy should steer you away.
+
+But what if you are vegan? Fortunately, you can still supplement with protein powders. For vegans, two
+
+popular options are soy protein, which is a complete protein, and a 70:30 pea:rice protein blend, whose
+
+amino acid profile is similar to that of whey protein.
+
+Warnings about protein
+
+Very high doses (at least 3 grams of protein by kilogram of body weight per day, so ≥1.36 g/lb/day), may
+
+cause gastrointestinal issues and increase your levels of blood urea nitrogen (BUN),[50] a measure of kidney
+
+20
+
+function. High-protein diets also increase glomerular filtration rate (GFR), a marker for waste filtration in the
+
+kidneys,[51] and it was once argued that increased GFR was a sign that undue stress was put on the
+
+kidneys,[52] but later research has shown that kidney damage does not occur as a result of diets high in
+
+protein.[53][54]
+
+By raising BUN and GFR, however, high protein intakes may mask underlying issues. Consider having your
+
+BUN and GFR levels tested before you start consuming a diet very high in protein, so as to both get a
+
+baseline measurement and check up on your kidney function. If you are already consuming ≥3 g/kg/day yet
+
+plan to have your BUN or GFR tested, lower your protein intake to ≤1.8 g/kg/day for at least 1 week prior to
+
+testing so as to prevent a false positive.
+
+If you have milk allergies, you should avoid supplements that contain whey protein or casein (the two
+
+proteins in milk). The most notable alternatives are egg protein and the vegan options described in the last
+
+paragraph of the previous section.
+
+If you are lactose intolerant, you have the same options as people with milk allergies, but you may also be
+
+fine with a whey protein concentrate, since most of the lactose has been removed. Whey protein isolates
+
+contain even less lactose, but never zero (in the United States, a powder can be labeled as “lactose-free” if
+
+it contains less than 0.5 grams of lactose per serving). If you wish to try an isolate, look at the food label:
+
+your powder should be close to 90% protein. A little lower is fine if the powder is flavored (any flavoring
+
+will use a percentage of the powder), but any big discrepancy should steer you away.
+
+How to take protein
+
+In the United States, the Recommended Dietary Allowance RDA of 0.8 grams per kilogram of body weight
+
+(0.36 g/lb) is considered the minimum amount of protein a healthy adult must consume daily to prevent
+
+muscle wasting when total caloric intake is sufficient.[55]
+
+The current evidence suggests, however, that this amount has been underestimated. Recent studies point to
+
+1.0–1.2 g/kg as the minimum daily intake before the body starts downregulating important non-essential
+
+processes, from immune function to muscle protein synthesis.[56][57][58] Even a reanalysis of the data used to
+
+establish the above RDA suggests the minimum daily intake should be at least 1.0 g/kg.[59]
+
+So, how much protein do _you _need daily?
+
+Sedentary but healthy seniors: 1.0–1.2 g/kg (0.45–0.54 g/lb)
+
+Sick or injured seniors: 1.2–1.5 g/kg (0.54–0.68 g/lb)
+
+Seniors wishing to lose weight: 1.5–2.2 g/kg (0.68–1.00 g/lb)
+
+Seniors wishing to build muscle: 1.7–2.0 g/kg (0.77–0.91 g/lb)
+
+Daily protein intake
+
+BODY WEIGHT
+
+BODY WEIGHT
+
+0.36
+
+0.45
+
+0.54
+
+0.68
+
+0.82
+
+0.91
+
+1.00
+
+g/lb
+
+LB
+
+100
+
+125
+
+150
+
+KG
+
+45
+
+57
+
+68
+
+0.8
+
+1.0
+
+36
+
+45
+
+54
+
+45
+
+57
+
+68
+
+1.2
+
+54
+
+68
+
+82
+
+1.5
+
+68
+
+85
+
+2.0
+
+2.2
+
+g/kg
+
+1.8
+
+81
+
+91
+
+100
+
+103
+
+113
+
+125
+
+102
+
+122
+
+136
+
+150
+
+g
+
+g
+
+g
+
+21
+
+ 
+BODY WEIGHT
+
+BODY WEIGHT
+
+0.36
+
+0.45
+
+0.54
+
+0.68
+
+0.82
+
+0.91
+
+1.00
+
+g/lb
+
+LB
+
+175
+
+200
+
+225
+
+250
+
+275
+
+KG
+
+79
+
+91
+
+102
+
+113
+
+125
+
+0.8
+
+1.0
+
+64
+
+73
+
+82
+
+91
+
+100
+
+79
+
+91
+
+102
+
+113
+
+125
+
+1.2
+
+95
+
+109
+
+122
+
+136
+
+150
+
+1.5
+
+119
+
+136
+
+153
+
+170
+
+187
+
+1.8
+
+2.0
+
+2.2
+
+g/kg
+
+142
+
+159
+
+175
+
+164
+
+181
+
+200
+
+184
+
+204
+
+225
+
+203
+
+227
+
+250
+
+225
+
+249
+
+275
+
+g
+
+g
+
+g
+
+g
+
+g
+
+References: Schoenfeld and Aragon. J Int Soc Sports Nutr. 2018.[60] ● Jäger et al. J Int Soc Sports Nutr. 2017.[61] ● Thomas et al.
+
+Med Sci Sports Exerc. 2016.[62]
+
+Unless you have a pre-existing condition that affects your liver or kidneys, the intakes in the above table
+
+will not harm these organs.[53] However, if you have a BMI of more than 30, you may want to calculate your
+
+protein requirements based on your goal body weight rather than your current body weight, so as to avoid
+
+overeating.
+
+For maximal MPS stimulation, the minimal per-meal dose of quality protein (such as can be found in meat,
+
+eggs, dairy products, and soy) is 0.24–0.40 g/kg for adults in their twenties[49][63] and 0.40–0.60 g/kg for
+
+adults aged sixty and older.[49] Spreading your protein intake over a few meals, making sure this 0.40–0.60
+
+g/kg threshold is met with each meal, will generally result in greater lean mass and strength.
+
+Note that you don’t need to calculate your intake so that it falls within the 0.40–0.60 g/kg range. This range
+
+isn’t an ideal range — it is a range representing individual variations. In other words, some people can reach
+
+maximal MPS with just 0.40 g/kg, while others will need as much as 0.60 g/kg. Moreover, higher doses will
+
+not be wasted and are probably necessary when eating mixed meals that contain a variety of protein
+
+sources. You may have heard that if you eat more than 30 grams of protein in one sitting, the “excess” will
+
+pass undigested, but that’s just a myth.
+
+Desirable minimal protein intake range* per meal (g), by age for adults
+
+BODY WEIGHT (lb)
+
+BODY WEIGHT (kg)
+
+20s
+
+30s, 40s, 50s
+
+≥60
+
+100
+
+125
+
+175
+
+200
+
+225
+
+250
+
+275
+
+45
+
+57
+
+79
+
+91
+
+102
+
+113
+
+125
+
+11–18
+
+14–23
+
+19–32
+
+22–36
+
+24–41
+
+27–45
+
+30–50
+
+13–24
+
+17–30
+
+23–43
+
+27–48
+
+30–54
+
+33–60
+
+37–67
+
+18–27
+
+23–34
+
+32–48
+
+36–54
+
+41–61
+
+45–68
+
+50–75
+
+* The ranges in this table represent individual variations. The minimum protein requirements increase as you age, but to what
+
+degree is uncertain because of the age gap left by the studies: most subjects were in their 20s (0.24–0.40 g/kg) or 60s/70s
+
+(0.40–0.60 g/kg). For people in their 30s, 40s, or 50s, the 0.29–0.53 g/kg range reflected in this table is an educated guess. 
+
+References: Schoenfeld and Aragon. J Int Soc Sports Nutr. 2018.[60] ● Rafii et al. J Nutr. 2016.[57] ● Morton et al. Front Physiol.
+
+2015.[63] ● Moore et al. J Gerontol A Biol Sci Med Sci. 2015.[49] ● Rafii et al. J Nutr. 2015.[56]
+
+22
+
+ 
+Your mileage may vary. The ranges in the paragraphs and table above cover the known extent of
+
+interindividual variations among healthy adults. However, as shown in the “Prevalence of sarcopenia based
+
+on sex and age” graphic, even people in their twenties can suffer from sarcopenia — in which case they
+
+would benefit from a protein intake closer to the one recommended in this table for adults over sixty.
+
+After exercising, when your muscles are more sensitive to the anabolic effect of protein, take a dose in the
+
+range of your “desirable minimal protein intake per meal” (as shown in the table above). If you’ve been
+
+exercising on an empty stomach, you’ll be in negative protein balance, so take this dose as soon as
+
+possible. Otherwise, try to take it within a couple of hours — the exact size of your “window of
+
+opportunity” depends on how much protein you’re still digesting.[64]
+
+ Tip: Use our Protein Intake Calculator
+
+Your protein needs hinge on many factors — notably your weight, health goals, and level of physical
+
+activity. Based on our research and the data you input, we can calculate your optimal daily protein
+
+intake. Click on the image below to get started!
+
+Vitamin B12 (cobalamin)
+
+What makes vitamin B12 a primary supplement
+
+Suboptimal intake of vitamin B12 (cobalamin) can cause anemia, cognitive impairment, mood disorders,
+
+nerve damage, and other health problems.[65]
+
+B12 is present naturally only in animal products, so suboptimal intake is more common in vegetarians and
+
+vegans.[66][67] Moreover, this protein-bound B12 gets harder to digest as you age, so suboptimal intake is also
+
+more common in seniors.[68] For those reasons, easily digestible B12 is sometimes added to plant foods
+
+(which are said to be fortified with B12).
+
+Each vitamin has different forms, called vitamers. Four B12 vitamers can be found in food.
+
+Hydroxocobalamin
+
+Aquacobalamin
+
+Methylcobalamin
+
+Adenosylcobalamin
+
+23
+
+ 
+Most supplements and fortified foods use the synthetic cyanocobalamin, which has the advantage of being
+
+particularly stable as long as it is kept away from bright light — ultraviolet (UV) rays in particular.[69]
+
+Warnings about vitamin B12
+
+People taking metformin may need to supplement B12 or have their B12 levels monitored, because this
+
+medicine may reduce B12 absorption.[70] However, people with kidney problems related to diabetes (i.e.,
+
+diabetic nephropathy) should talk to their physician before supplementing B12.[71]
+
+How to take vitamin B12
+
+All four commonly supplemented B12 vitamers can degrade when exposed to UV rays,[69] but
+
+cyanocobalamin and hydroxocobalamin are more stable (and widely available) than methylcobalamin and
+
+adenosylcobalamin.
+
+Methylcobalamin and adenosylcobalamin can affect your body directly: they are bioactive. The other B12
+
+vitamers are not bioactive, but your body can transform them into methylcobalamin, which can be
+
+transformed into adenosylcobalamin. Adenosylcobalamin cannot be transformed into methylcobalamin,
+
+though, which is why it is seldom taken alone (it is usually paired with methylcobalamin).
+
+Take 100–400 mcg/day (all forms included). People on metformin or with absorption issues should aim
+
+toward the higher end of the range. People with swallowing difficulties or intestinal absorption issues can
+
+use sublingual B12 supplements.
+
+Fortunately, your body will not readily absorb more than it needs: doses as high as 1,000 mcg (1 mg) taken
+
+daily for 5 years have not been found to produce adverse effects.[72] For that reason, even the Institute of
+
+Medicine (now known as the Health and Medicine Division) did not set a Tolerable Upper Intake Level (UL)
+
+for B12.[73]
+
+Recommended Dietary Allowance (RDA) for vitamin B12 (mcg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+>13 years
+
+* Adequate Intake (AI)
+
+0.4*
+
+0.5*
+
+0.9
+
+1.2
+
+1.8
+
+2.4
+
+0.4*
+
+0.5*
+
+0.9
+
+1.2
+
+1.8
+
+2.4
+
+—
+
+—
+
+—
+
+—
+
+—
+
+2.6
+
+—
+
+—
+
+—
+
+—
+
+—
+
+2.8
+
+Reference: Institute of Medicine. Vitamin B12 (chapter 9 of Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6,
+
+Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline. The National Academies Press. 1998. DOI:10.17226/6015)
+
+24
+
+ 
+Vitamin D
+
+What makes vitamin D a primary supplement
+
+Suboptimal levels of vitamin D are common, especially in people whose skin exposure to sunlight (meaning
+
+without protection from clothes or sunscreen) is limited. Moreover, the darker your skin, the longer you
+
+need to expose yourself to sunlight to synthesize enough vitamin D, which is why people with darker skin
+
+are at an increased risk of suboptimal vitamin D levels.[74]
+
+The situation doesn’t improve as you age. The older you get, the less efficient your body becomes at
+
+synthesizing vitamin D, the less time you’re likely to spend outside, the less vitamin D you’re likely to get
+
+through food, and the more likely you become to carry extra fat (belly fat has been linked to vitamin D
+
+deficiency).[75][76]
+
+Average yearly sunlight exposure in the US
+
+Adapted from Tatalovich et al. CaGIS. 2006. DOI:10.1559/152304006779077318
+
+Vitamin D is commonly available in two forms. Ergocalciferol (D2) is available in a handful of plants and
+
+fungi, whose D2 content can be increased dramatically when exposed to ultraviolet B (UVB) radiation,[77][78]
+
+whereas cholecalciferol (D3) is synthesized from the cholesterol in your skin when exposed to the sun’s
+
+UVB rays.[79][80][81]
+
+Before turning to supplementation, you should try incorporating some foods rich in vitamin D into your diet.
+
+Very few foods, alas, contain appreciable amounts of naturally occurring vitamin D, with fatty fish being a
+
+notable exception (cod liver oil, in particular). For that reason, milk is commonly fortified with either D2 or,
+
+more recently, D3. Why milk? Because milk is rich in calcium, which vitamin D helps your intestines absorb.
+
+For the same reason, yogurt, cheese, and breakfast cereal are also commonly fortified with D2 or D3. Other
+
+commonly fortified foods include bread, margarine, and fruit juice (orange juice, in particular). As usual,
+
+which foods get fortified, if any, vary by country, based on local laws and policies.
+
+25
+
+By helping your intestines absorb calcium, vitamin D can strengthen your bones. Consuming large doses
+
+regularly can also facilitate the calcification of your arteries, unfortunately, but this effect may be
+
+counteracted by vitamin K. Vitamins D and K may increase synergistically the rate at which minerals
+
+(notably calcium and magnesium) accumulate in bones, which is another reason to take them together.
+
+Vitamin D supplementation might reduce the risk of falls and fractures in older people[82] — though high
+
+single monthly doses (≥24,000 IU) taken for a year or more might _increase _the risk of falls.[83] There is
+
+also observational evidence linking low levels of vitamin D with osteoporosis and other age-related
+
+diseases, such as cancer, hypertension, cardiovascular disease, type 2 diabetes, cognitive decline, and
+
+depression.[75]
+
+Vitamin D3 is both more stable and more bioavailable than vitamin D2. As a supplement, it is usually derived
+
+from lanolin[84], a waxy substance secreted by the skin glands of woolly animals, but a vegan-friendly option
+
+(a lichen extract) is also available.
+
+Warnings about vitamin D
+
+Keep in mind that, over months, daily doses of 10,000 IU (250 mcg) or more can become toxic as well as
+
+lead to hypercalcemia, a buildup of calcium in the soft tissues of the body (such as the arteries). The risk of
+
+hypercalcemia also increases when moderate doses of vitamin D (600–1,000 IU, so 15–25 mcg) are taken
+
+by people who also take high doses of supplemental calcium. Likewise, the risk of kidney stones can
+
+increase when even modest doses of vitamin D (400 IU, so 10 mcg) are taken by people who also take high
+
+doses of supplemental calcium.
+
+If you supplement with more than 500 mg of calcium daily and this dose puts you over your RDA, consider
+
+reducing it before adding vitamin D. Of course, if the calcium supplement you are taking was prescribed to
+
+you, consult the prescriber before making any changes.
+
+Recommended Dietary Allowance (RDAs) for calcium
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+19–30 years
+
+31–50 years
+
+51–70 years
+
+>70 years
+
+200*
+
+260*
+
+700
+
+1,000
+
+1,300
+
+1,300
+
+1,000
+
+1,000
+
+1,000
+
+1,200
+
+200*
+
+260*
+
+700
+
+1,000
+
+1,300
+
+1,300
+
+1,000
+
+1,000
+
+1,200
+
+1,200
+
+—
+
+—
+
+—
+
+—
+
+—
+
+1,300
+
+1,000
+
+1,000
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+1,300
+
+1,000
+
+1,000
+
+—
+
+—
+
+* Adequate intake (AI) 
+
+Reference: Institute of Medicine. Dietary Reference Intakes for Calcium and Vitamin D, table 5-1, p. 349. The National Academies
+
+Press. 2011. DOI:10.17226/13050
+
+If you take a multivitamin, check to see if it contains vitamin D. It may already contain sufficient amounts
+
+26
+
+for your personal needs. Check the calcium dose as well, to ensure it is not too high.
+
+A genetic mutation in the CYP24A1 gene can cause idiopathic infantile hypercalcemia.[85] This condition,
+
+usually identified in childhood, causes high levels of calcium in the blood and urine and leads to calcium
+
+deposits in the kidneys. This mutation can lead to vitamin D toxicity with daily intakes as low as 500 IU
+
+(12.5 mcg).
+
+Orlistat (Alli, Xenical) reduces how much fat you absorb from the food you eat. As a result, it also reduces
+
+the absorption of fat-soluble vitamins. If you take this medicine, take your vitamin D supplement at least 2
+
+hours before or after.
+
+How to take vitamin D
+
+First, you should determine if you really need to supplement vitamin D by checking your current vitamin D
+
+levels — your blood levels of 25-hydroxyvitamin D (25(OH)D).
+
+Serum 25(OH)D concentrations
+
+Reference: Institute of Medicine. Overview of Vitamin D (chapter 3 in Dietary Reference Intakes for Calcium and Vitamin D. The
+
+National Academies Press. 2011. DOI:10.17226/13050)
+
+In case of deficiency, a medically supervised intervention will be needed. Do not begin any intervention
+
+without discussing it with your physician. Common medical interventions include taking 50,000 IU (1,250
+
+mcg) of D2 or D3 at least three times a week for six to eight weeks, though people with a borderline
+
+deficiency may not need as high a dose. At the end of this intervention, if vitamin D levels are above 30
+
+nmol/L (12 ng/mL), a daily dose of 400–1,000 IU (20–25 mcg) is commonly used for maintenance.
+
+In case of inadequacy, 800–2,000 IU (20–50 mcg) of D3 per day is likely to raise vitamin D levels to an
+
+adequate level, at which point 400–1,000 IU (20–25 mcg) per day should suffice for maintenance.
+
+In case of adequate vitamin D levels, a vitamin D supplement may not be necessary, especially if you spend
+
+a lot of time outside and live near the equator. However, taking 400–600 IU (10–15 mcg) of D3 per day may
+
+help maintain vitamin D levels in the adequate range, particularly during the colder, darker months, when
+
+you are least likely to synthesize enough vitamin D from sun exposure.
+
+In case of high vitamin D levels (which can cause adverse effects), seek the help of a medical professional.
+
+Of course, stop taking any supplement containing vitamin D, unless otherwise instructed by a medical
+
+professional.
+
+If you do not know your vitamin D levels and cannot get them tested but are still intent on taking a vitamin
+
+D supplement, it would be prudent to limit yourself to a maintenance dose of 400 IU (10 mcg) of D3 per
+
+27
+
+day. Alternatively, you could track your food intake for a week to determine your average vitamin D intake,
+
+then select a complementary dose to reach your RDA.
+
+Recommended Dietary Allowance (RDAs) for vitamin D (IU*)
+
+AGE
+
+0–12 months
+
+1–13 years
+
+14–18 years
+
+19–50 years
+
+51–70 years
+
+>70 years
+
+* 40 IU = 1 mcg
+
+** Adequate intake (AI)
+
+MALE
+
+400*
+
+600
+
+600
+
+600
+
+600
+
+800
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+400*
+
+600
+
+600
+
+600
+
+600
+
+800
+
+—
+
+—
+
+600
+
+600
+
+—
+
+—
+
+—
+
+—
+
+600
+
+600
+
+—
+
+—
+
+Reference: Institute of Medicine. Dietary Reference Intakes for Calcium and Vitamin D, table 5-3, p. 363. The National Academies
+
+Press. 2011. DOI:10.17226/13050
+
+If the maintenance doses in the paragraphs above prove insufficient, as could be the case notably if your
+
+BMI is over 30[86] or if you suffer from poor vitamin D absorption or processing (due to a problem with your
+
+kidneys, liver, or gastrointestinal tract), you could switch to 1,000–2,000 IU (25–50 mcg) of D3 per day.
+
+Vitamin D being fat-soluble, it is better absorbed when taken with a fat-containing food or supplement
+
+(e.g., fish oil).
+
+28
+
+Secondary Supplements
+
+Creatine
+
+What makes creatine a secondary option
+
+Supplementing with creatine monohydrate increases the body’s creatine stores, which are located primarily
+
+in the skeletal muscles.[87] Your cells use creatine to regenerate adenosine triphosphate (ATP),[87] life’s
+
+energy currency, before they turn to burning glucose.
+
+Creatine can improve muscular strength and control, and thus fitness and mobility.[88] In seniors, these
+
+improvements might help reduce the risk of falls, though many more studies are needed for confirmation.
+
+When paired with resistance training, creatine may also improve bone health.[89][90] When creatine levels are
+
+suboptimal, as is often the case in seniors, vegans, and vegetarians, taking creatine might also enhance
+
+cognition.[91]
+
+Seniors and the risk of falls
+
+Reference: Steven et al. Inj Prev. 2006.[92]
+
+Warnings about creatine
+
+Decades of research have demonstrated that creatine is generally well tolerated. The only recorded
+
+adverse effects are nausea, diarrhea, and stomach cramps in people taking more than 10 grams at once,
+
+and even at such high doses, these effects are rare.[93] Still, should you find yourself particularly sensitive to
+
+creatine’s digestive side-effects, split your daily dose, take it with some food, and drink more fluids. You
+
+could also try micronized creatine monohydrate, which dissolves more easily in liquids.
+
+You may have heard that creatine can raise testosterone, the precursor to dihydrotestosterone (DHT), and
+
+can thereby accelerate or cause hair loss. To date, though, the overall body of evidence suggests that
+
+creatine doesn't affect testosterone or hair loss.[94][95][96][97][98][99][100][101][102][103][104][105]
+
+Creatine can cause water retention, which may notably increase body weight. This side effect is largely
+
+harmless and is reversed when creatine supplementation is stopped. Theoretically, this water retention
+
+29
+
+ 
+could harm people whose kidney disorder is being treated with diuretics, which cause water loss.[93] This
+
+possible harm is based on known mechanisms rather than human trial data.
+
+Blood levels of creatine (creatinine, a byproduct of energy production) are used as an indicator of kidney
+
+function, but elevated levels caused by supplemental creatine are not a sign that your kidneys
+
+underperform.[106][107] The current evidence does not support the persistent notion that creatine
+
+supplementation causes kidney damage. In both long- and short-term studies, daily doses up to 10 grams
+
+were found not to impair kidney function in people with healthy kidneys.[93][108][109][110][111][112][113][114] Daily doses
+
+above 10 grams too were found not to impair kidney function in people with healthy kidneys, but there are
+
+fewer long-term trials on such high doses.[93]
+
+Creatine’s ability to raise creatinine levels may, however, mask underlying issues. Consider having your
+
+creatinine levels tested before you start taking creatine, so as to both get a baseline measurement and
+
+check up on your kidney function. If you are already taking creatine yet plan to have your creatinine tested,
+
+cease supplementation 3 weeks prior to testing so as to prevent a false positive.
+
+Limited short-term evidence indicates that people with suboptimal kidney function may safely supplement
+
+with creatine. Long-term studies, however, are scarce.[115][116][117][118] If your kidney function is suboptimal, you
+
+might wish to forgo creatine, or otherwise take only a low daily dose (such as 3 grams[93]) after speaking
+
+with your physician. Out of caution, people taking medicines that increase the risk of harm or damage to
+
+the kidneys (i.e., nephrotoxic drugs) should skip creatine supplementation.
+
+Finally, do not buy liquid creatine products — creatine breaks down into useless byproducts when left in
+
+liquids for too long.
+
+How to take creatine
+
+Take 3–5 grams of creatine monohydrate with food. Other forms of creatine may be more expensive, but
+
+studies have not found them to be more effective. People with more muscle mass may benefit from as
+
+much as 10 g/day, but this claim is not fully supported by the evidence. To supplement with 10 g/day, take
+
+5 grams twice a day.
+
+Loading creatine means taking a high daily dose for a few days (e.g., 25 g/day for 5 days) before moving
+
+down to a smaller maintenance dose, which can be taken indefinitely. This is not necessary for effective
+
+supplementation, however; benefits may be felt sooner through loading, but they normalize after a few
+
+weeks.
+
+If you wish to load creatine, take 20–25 g/day for 7 days (you may help prevent intestinal discomfort by
+
+splitting your daily intake into smaller doses, taking them with some food, and drinking more fluids). Take 5
+
+g/day thereafter.
+
+Some people are creatine nonresponders: the creatine they ingest largely fails to reach their muscles.[119][120]
+
+Note that even if supplemental creatine fails to enter your muscles it can still benefit you in other ways,
+
+such as by improving your body’s methylation status (methylation being a way for your cells to help
+
+manage gene expression).
+
+Alternate forms of creatine, such as creatine ethyl-ester, have been marketed to nonresponders, but they
+
+lack scientific support. Currently, the best way to lessen creatine nonresponse is to take 5 grams twice a
+
+day, each time with protein and carbs, preferably close to a time of muscle contraction (i.e., before or after
+
+your workout).
+
+30
+
+If you are not a creatine nonresponder, you need not worry about supplementation timing, though you
+
+should remember that taking your dose with food lowers the risk of an upset stomach.
+
+Creatine can be added to any liquid, but it must be drunk within the day, because creatine in liquids
+
+degrades into creatinine over time (the higher the temperature and the lower the pH, the faster the
+
+degradation). If you add creatine to a hot liquid, increase your dose a little to compensate for potential
+
+degradation.
+
+DHEA
+
+What makes DHEA a secondary option
+
+The hormone dehydroepiandrosterone (DHEA) circulates throughout your body and can be called on to
+
+make other hormones, notably testosterone and estrogens.[121] DHEA levels decrease with age, sometimes
+
+drastically; maintaining adequate DHEA levels can help support healthy testosterone levels), libido, and
+
+sexual function in seniors.
+
+Warnings about DHEA
+
+If your hormone levels are healthy, supplementing with DHEA is unlikely to benefit you — don’t play with
+
+your hormonal balance on a whim.
+
+DHEA can mildly inhibit the activity of CYP3A4, an enzyme that helps in the metabolism of a wide range of
+
+pharmaceuticals — from antibiotics to blood pressure medicines. If you are currently on any medication,
+
+speak with your physician before taking DHEA.
+
+A handful of trials reported an increase in acne, particularly in females. People with acne, or a history of
+
+acne, may be more prone to this side effect.
+
+Observational and mechanistic evidence suggests that it may be prudent for people with a family history of
+
+prostate, ovarian, or breast cancer to avoid DHEA supplementation, since it affects androgenic
+
+(testosterone, DHT …) and estrogenic (estrogen, progesterone …) hormones.
+
+In some sports leagues, DHEA and its derivatives (such as 7-keto DHEA) are banned substances;their use
+
+may result in suspension or expulsion from the sport. The legality of DHEA also differs by country and
+
+region: some regulate it as a supplement, others as a drug.
+
+How to take DHEA
+
+First, get tested. Your body synthesizes DHEA sulfate (DHEA-S) out of DHEA. Whereas blood levels of
+
+DHEA can change quickly, blood levels of DHEA-S are more stable. You want to know your DHEA-S levels.
+
+Typical normal DHEA-S ranges (µg/dL / µmol/L)
+
+AGE
+
+18–19
+
+MALES
+
+FEMALES
+
+108–441 / 2.92–11.91
+
+145–395 / 3.92–10.66
+
+31
+
+ 
+AGE
+
+MALES
+
+FEMALES
+
+20–29
+
+30–39
+
+40–49
+
+50–59
+
+60–69
+
+>69
+
+280–640 / 7.56–17.28
+
+65–380 / 1.75–10.26
+
+120–520 / 3.24–14.04
+
+95–530 / 2.56–14.31
+
+70–310 / 1.89–8.37
+
+42–290 / 1.13–7.83
+
+28–175 / 0.76–4.72
+
+45–270 / 1.22–7.29
+
+32–240 / 0.86–6.48
+
+26–200 / 0.70–5.40
+
+13–130 / 0.35–3.51
+
+17–90 / 0.46–2.43
+
+Reference: DHEA-sulfate test. Medlineplus.gov. Last updated January 6, 2020; accessed February 6, 2020.
+
+If they are normal, you don’t need to take DHEA.
+
+If they are above normal, do not take DHEA. Speak to your physician.
+
+If they are below normal, discuss taking DHEA with your physician.
+
+If you decide to supplement, you can try taking DHEA once a day in the morning (with food) for a month,
+
+then get tested again.
+
+Males can take 20–50 mg/day.
+
+Females can take 10–30 mg/day.
+
+These doses should suffice to maintain adequate circulating levels of DHEA. In cases of very low DHEA, 50
+
+mg/day may be needed by both sexes.
+
+Maca (for libido)
+
+What makes maca a secondary option
+
+Multiple studies show that maca, a root vegetable, enhances libido in older males and females. Libido may
+
+keep improving for up to 8 weeks before plateauing.[122][123] It should be noted that maca has shown promise
+
+for postmenopausal females,[124] an oft-overlooked population when it comes to libido enhancement.
+
+Maca may serve to treat sexual dysfunction caused by selective serotonin reuptake inhibitors (SSRIs),[125][126]
+
+a kind of antidepressant. It can also mildly benefit males with erectile dysfunction from other causes.[127]
+
+Warnings about maca
+
+Maca is not known to interact with any major hormones (such as DHEA, estrogen, or testosterone) or any
+
+pharmaceuticals. To date, however, research into maca’s potential adverse effects is somewhat limited.
+
+How to take maca
+
+Take 2–3 grams of maca root powder at breakfast. For the purpose of improving libido, there is no
+
+32
+
+ 
+difference between red, black, and yellow maca.[122]
+
+Magnesium
+
+What makes magnesium a secondary option
+
+Like calcium, magnesium is one of the major mineral components of bone.[128] Low levels in the blood are
+
+associated with bone loss; conversely, high levels are associated with greater bone mass in old age.
+
+Hypomagnesemia (suboptimal magnesium levels in the blood) has been linked to neuromuscular and
+
+cardiovascular disorders,[129] inflammatory diseases,[130] and neurological disorders[131][132] such as Alzheimer’s
+
+disease (actually, suboptimal levels in the blood aren’t associated with Alzheimer’s; but suboptimal levels in
+
+the hair and the cerebrospinal fluid are[133]). Hypomagnesemia can also result in abnormal nervous-system
+
+stimulation leading to anxiety and poor sleep. In older people with hypomagnesemia, supplemental
+
+magnesium has been shown to improve sleep quality.[134][135]
+
+In people with low magnesium intakes, magnesium supplementation has been shown to raise slightly both
+
+total testosterone and the percentage of free testosterone (the percentage your body can use most
+
+easily).[136]
+
+Magnesium content of seeds and nuts (mg)
+
+Reference: USDA Food Composition Databases. Accessed September 27, 2019. https://ndb.nal.usda.gov/ndb/
+
+Who is more likely to have low magnesium levels?
+
+Older people, because they tend to have relatively low magnesium intakes[137] and may absorb less during
+digestion.[138]
+
+People who sweat a lot, because magnesium is lost through sweat. Athletes participating in sports requiring weight
+control may be especially vulnerable.
+
+33
+
+ 
+Type 2 diabetics. It has been estimated that, over all adult ages in developed countries, hypomagnesemia affects
+less than 15% of healthy people but up to 50% of people with type 2 diabetes.[139]
+
+In addition, certain diuretics, proton pump inhibitors, and the antifungal medicine amphotericin-b can cause
+
+significant magnesium loss.[140]amiloride]
+
+(https://www.fda.gov/Drugs/DrugSafety/ucm245011https://ods.od.nih.gov/factsheets/Magnesium-
+
+HealthProfessional/ However, potassium-sparing diuretics (e.g.,
+
+[https://medlineplus.gov/druginfo/meds/a615029.html), eplerenone/Inspra, spironolactone/Aldactone,
+
+triamterene/Dyrenium) may not.[140]
+
+Warnings about magnesium
+
+High doses of supplemental magnesium can cause diarrhea and general intestinal discomfort.[141]
+
+Fortunately, magnesium obtained via food has not been seen to cause such problems.[141]
+
+Tolerable Upper Intake Level (UL) for supplemental magnesium (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–12 months
+
+1–3 years
+
+4–8 years
+
+>8 years
+
+—
+
+65
+
+110
+
+350
+
+—
+
+65
+
+110
+
+350
+
+—
+
+—
+
+—
+
+350
+
+—
+
+—
+
+—
+
+350
+
+Reference: Institute of Medicine. Magnesium (chapter 6 in Dietary Reference Intakes for Calcium, Phosphorus, Magnesium,
+
+Vitamin D, and Fluoride. The National Academies Press. 1997. DOI:10.17226/5776)
+
+Magnesium can lower blood sugar and may have additive effects when taken with other supplements or
+
+pharmaceuticals that can lower blood sugar, such as diabetes medicines.
+
+Magnesium may impair the absorption of some pharmaceuticals, notably bisphosphonates and antibiotics
+
+— especially antibiotics in the tetracycline class (e.g., doxycycline) and quinolone class (e.g.,
+
+ciprofloxacin).[142] Take magnesium at least 6 hours before or after taking bisphosphonates or antibiotics.
+
+Since calcium, iron, magnesium, and zinc compete for absorption, it is better to take them at least one hour
+
+apart.
+
+Because magnesium might have a sedative effect, it is often supplemented before bed.
+
+How to take magnesium
+
+There is no single, agreed-upon, satisfactory method for assessing magnesium status[143] (as we saw,
+
+suboptimal levels in the blood aren’t associated with Alzheimer’s, but suboptimal levels in the hair and the
+
+cerebrospinal fluid are[133]).
+
+We said that older people tend to have relatively low magnesium intakes, but to get a better sense of your
+
+typical magnesium intake, you should track what you eat for a week. If, on average, you are getting less
+
+than 80% of your Recommended Dietary Allowance (RDA), supplementation becomes an option, though
+
+first you should try to eat more foods rich in magnesium.
+
+34
+
+Recommended Dietary Allowance (RDA) for magnesium (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+19–30 years
+
+31–50 years
+
+>50 years
+
+30*
+
+75*
+
+80
+
+130
+
+240
+
+410
+
+400
+
+420
+
+420
+
+30*
+
+75*
+
+80
+
+130
+
+240
+
+360
+
+310
+
+320
+
+320
+
+—
+
+—
+
+—
+
+—
+
+—
+
+400
+
+350
+
+360
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+360
+
+310
+
+320
+
+—
+
+* Adequate intake (AI) 
+
+Reference: Institute of Medicine. Magnesium (chapter 6 of Dietary Reference Intakes for Calcium, Phosphorus, Magnesium,
+
+Vitamin D, and Fluoride. The National Academies Press. 1997. DOI:10.17226/5776)
+
+If, for some reason, you cannot get enough magnesium through foods, start supplementing with 200 mg
+
+once a day. Capsules with 400 mg are common, but keep in mind that the Tolerable Upper Intake Level
+
+(UL) for supplemental magnesium is 350 mg. The higher the dose, the higher the risk of gastrointestinal
+
+issues.
+
+Commonly supplemented forms include citrate, gluconate, and glycinate. To increase absorption,
+
+magnesium gluconate should be taken with food; other forms can also be taken on an empty stomach.
+
+Avoid magnesium oxide: it has poor bioavailability (rats absorbed only 15% in one study,[144] humans only 4%
+
+in another[145]) and is especially liable to cause intestinal discomfort and diarrhea.[145][146][147]
+
+Because magnesium might improve sleep quality, it is often supplemented before bed.
+
+Vitamin K
+
+What makes vitamin K a secondary option
+
+Vitamin K is an umbrella term for a variety of molecules with similar but distinct structures.
+
+K1 (phylloquinone) is a molecule found in plants.
+
+K2 (menaquinone) is a group of molecules.
+
+K2 MK-4 is mostly found in animal products.
+
+K2 MK-7 is mostly found in fermented foods.
+
+35
+
+ 
+The K vitamins
+
+The accumulation of calcium in body tissues, notably bone, is called calcification. For bones, calcification is
+
+a good thing, but it can harden soft tissues, such as blood vessels — including coronary arteries, which
+
+supply oxygenated blood to the heart.
+
+In all its forms, vitamin K is fat-soluble and supports blood clotting and calcium regulation; it helps ensure
+
+that more calcium gets deposited in bone and less in soft tissues. Hence, vitamin K can both strengthen the
+
+bones of older people (with more evidence in postmenopausal females) and reduce cardiovascular risk.
+
+However, there are notable differences between the different forms.
+
+After being absorbed by your intestines, K1 is taken up by your liver (where vitamin K is used to make
+
+clotting proteins, which are then released into your blood) at a higher rate than MK-4, whereas MK-4 is
+
+taken up by soft tissues at a higher rate than K1. This should make K1 better at supporting coagulation (i.e.,
+
+blood clotting), and MK-4 better at preventing calcium from being deposited in the arteries.
+
+Some K1 converts indirectly to MK-4, but how much is unknown. Diets naturally rich in K1 do not seem to
+
+reduce cardiovascular risk, but trials supplementing high K1 doses have noted some reduction in coronary
+
+artery calcification. The reason may be that, in many plants, K1 is tightly bound to chloroplasts (organelles
+
+36
+
+that contain chlorophyll and conduct photosynthesis), so you could be absorbing very little of what you
+
+eat.
+
+Unlike MK-4, MK-7 has been used in trials looking at arterial stiffness and atherosclerosis, and we can say it
+
+is likely good at both supporting coagulation and preventing coronary calcification. It is important to note
+
+that cardiovascular research has not compared K1 to K2, or MK-4 to MK-7.
+
+When it comes to bones, a few MK-4 trials looked at fracture risk and reported a decrease. One K1 trial
+
+looked at fracture risk and reported a decrease, but without a concomitant increase in bone mineral
+
+density, so more research is needed to clarify the issue. Some MK-7 trials found an improvement in bone
+
+mineral density, but none have looked at fracture risk.
+
+The vitamins K and D increase separately and synergistically the rate at which minerals (notably calcium
+
+and magnesium) accumulate in bones. MK-4 and MK-7 appear to do so more reliably than K1.
+
+Micrograms of vitamin K per 100 grams of food
+
+K~2~ MK-4
+
+K~2~ MK-7
+
+FOODS
+
+Collards
+
+Spinach
+
+Broccoli
+
+Cabbage
+
+Natto
+
+Chicken
+
+Pork
+
+Beef
+
+Beef liver
+
+Egg
+
+Egg yolk
+
+Butter
+
+K~1~
+
+440
+
+360–380
+
+113–180
+
+98–145
+
+Not measured
+
+0–4.5
+
+0–3.4
+
+0.7–2.4
+
+2.7
+
+0.3–12
+
+Not measured
+
+7
+
+0
+
+0
+
+0
+
+0
+
+0
+
+8.5–60
+
+2.1–6
+
+1.1–15
+
+0.82
+
+7–9
+
+15.5–64
+
+15–21
+
+0
+
+0
+
+0
+
+0
+
+939–998
+
+0
+
+0.5–0.12
+
+0–0.12
+
+18.2
+
+Not measured
+
+0
+
+0
+
+2.5–22
+
+0–2.3
+
+Blue cheese
+
+Not measured
+
+Not measured
+
+Cheddar
+
+2.1
+
+10.2
+
+References: Fu et al. J Agric Food Chem. 2016.[148] ● Manoury et al. J Dairy Sci. 2013.[149] ● Booth. Food Nutr Res. 2012.[150] ●
+
+Kamao et al. J Nutr Sci Vitaminol (Tokyo). 2007.[151] ● Elder et al. J Agric Food Chem. 2006.[152] ● Schurgers and Vermeer.
+
+Haemostasis. 2000: PMID:11356998[153] ● Booth et al. J Am Diet Assoc. 1996.[154] ● Shimogawara and Muto. Arch Biochem Biophys.
+
+1992.[155] ● Hirauchi et al. J Chromatogr. 1989.[156]
+
+Warnings about vitamin K
+
+Vitamin K is usually safe. Supplementation might cause some nausea or stomach upset, but those effects
+
+are uncommon.
+
+K1 is present mostly in leafy green vegetables, many of which are cruciferous. If you plan to increase your
+
+K1 intake through plant foods, be aware that cruciferous vegetables contain goitrogens and thus can reduce
+
+37
+
+thyroid hormone production. If you tend to eat a lot of cruciferous vegetables, such as kale, make sure to
+
+also get enough iodine — through iodine-rich foods (such as cod, shrimp, milk, yogurt, or cottage cheese),
+
+iodine-fortified foods (such as iodized salt), or supplements (75–150 mcg/day).
+
+K1 and K2 are the only natural forms of vitamin K, but there exist several synthetic forms, the best known of
+
+which is K3 (menadione). However, whereas the natural forms of vitamin K are safe, even in high doses,
+
+K33n interfere with glutathione, your body’s main antioxidant. K3 was once used to treat vitamin K
+
+deficiency in infants, but it caused liver toxicity, jaundice, and hemolytic anemia. Nowadays, it is used only
+
+in animal feed, in small doses. In animals, vitamin K3 gets converted into K2 MK-4, which you can consume
+
+safely.[157]
+
+Do not supplement with vitamin K if you have been prescribed blood thinners (i.e., anticoagulants) that
+
+work by hindering vitamin K’s blood-clotting properties, such as warfarin (Coumadin) or acenocoumarol
+
+(Sintrom). If you have been prescribed a diet low in vitamin K, you may need to strictly track your vitamin K
+
+intake to ensure it stays consistent.
+
+Orlistat (Alli, Xenical) reduces how much fat you absorb from the food you eat. As a result, it also reduces
+
+the absorption of fat-soluble vitamins. If you take this medicine, take your vitamin K supplement at least 2
+
+hours before or after.
+
+How to take vitamin K
+
+As we saw, different forms of vitamin K have different metabolisms and distributions within the body, so
+
+taking more than one form may be beneficial.
+
+For bone health, take 200 mcg (0.2 mg) of MK-7 and/or 45,000 mcg (45 mg) of MK-4. MK-4 is the form
+
+best supported by the evidence, but more studies are needed to determine if smaller doses are also
+
+beneficial.
+
+For cardiovascular health, take 200 mcg (0.2 mg) of MK-7 and, optionally, 500–1,000 mcg (0.5–1 mg) of K1.
+
+Vitamin K being fat soluble, it is better absorbed when taken with a fat-containing food or supplement (e.g.,
+
+fish oil).
+
+The doses above reflect the doses used in studies; they are much higher than the minimum amount of
+
+vitamin K you need to avoid deficiency-related issues:
+
+Adequate Intake (AI) for vitamin K (mcg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+2.0
+
+2.5
+
+30
+
+55
+
+60
+
+75
+
+2.0
+
+2.5
+
+30
+
+55
+
+60
+
+75
+
+—
+
+—
+
+—
+
+—
+
+—
+
+75
+
+—
+
+—
+
+—
+
+—
+
+—
+
+75
+
+38
+
+ 
+AGE
+
+>18 years
+
+MALE
+
+120
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+90
+
+90
+
+90
+
+Reference: Institute of Medicine. Vitamin K (chapter 5 in Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron,
+
+Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc. The National Academies Press.
+
+2001. DOI:10.17226/10026)
+
+39
+
+Promising Supplements
+
+Cholinergics
+
+What makes cholinergics a promising option
+
+A supplement is said to be cholinergic when it increases the brain’s levels of acetylcholine, a major
+
+neurotransmitter associated with memory and attention span. Cholinergics may improve cognition in people
+
+experiencing cognitive decline, and very preliminary evidence indicates they might benefit people with
+
+dementia.[158]
+
+CDP-choline (citicoline) can provide the brain with the choline it needs to produce more acetylcholine
+
+(choline bitartrate is much cheaper, but little of it seems to reach the brain[159]). CDP-choline is also a source
+
+of uridine, which has itself been hypothesized to improve cognition (though much more research is needed
+
+before it can be recommended for supplementation on its own). In addition, CDP-choline might improve
+
+vision in people suffering from glaucoma.
+
+Warnings about cholinergics
+
+Some temporary side effects, such as nausea and heartburn, have been documented in people taking CDP-
+
+choline. The interactions between CDP-choline and other supplements and pharmaceuticals are not well
+
+known.
+
+The cholinergic Huperzine-A can inhibit acetylcholinesterase, an enzyme that breaks down the
+
+neurotransmitter acetylcholine; as a result, the brain’s levels of acetylcholine increase. Its half-life exceeds
+
+24 hours (i.e., after 24 hours, more than half of the dose you took will still be in your system), so it
+
+accumulates in the body when taken daily, which is problematic since long-term studies are scarce. There is
+
+a possibility that, over time, the body could adapt by producing more acetylcholinesterase, which would
+
+lead to reduced acetylcholine levels and a withdrawal period after huperzine-A supplementation has
+
+ceased. While the doses used in the studies (0.2–0.99 mg) were deemed safe in the short term, long-term
+
+supplementation cannot be recommended.
+
+How to take cholinergics
+
+To supplement with CDP-choline for cognitive improvements, take 500–2,000 mg/day.
+
+To supplement with CDP-choline against glaucoma, take 1,600 mg/day.[160]
+
+Maca (for symptoms of menopause))
+
+40
+
+ 
+ 
+What makes Maca a promising option
+
+The symptoms of menopause are vast and often troublesome, and there’s probably no single thing that can
+
+help with all or even most of them. In the case of Maca, several studies have been conducted and, overall,
+
+they mostly suggest a small but potentially meaningful improvement in general symptoms.[124][161][162][163][164][165]
+
+Which symptoms they reduce are fairly inconsistent, with some studies suggesting a reduction in
+
+depression, headaches, and hot flashes, while some didn’t suggest effects. Decreases in anxiety and
+
+nervousness and improvements in sleep quality are the most consistent benefits.
+
+Warnings about maca
+
+Maca is not known to interact with any major hormones (such as DHEA, estrogen, or testosterone) or any
+
+pharmaceuticals. To date, however, research into maca’s potential adverse effects is somewhat limited.
+
+How to take maca
+
+Take 2–3.5 g of maca root powder at breakfast.
+
+Vitamin E
+
+What makes vitamin E a promising option
+
+As you age, your immune system weakens against invaders and stressors. Supplementation with vitamin E
+
+can improve markers of immune function, but this does not necessarily translate into a reduced risk of
+
+catching infectious diseases. The evidence in this area is very mixed.[166][167]
+
+Still, although more research is needed to better understand the effects of vitamin E on infection rates and
+
+illness severity, current evidence suggests that seniors can benefit from vitamin E supplementation.
+
+Warnings about vitamin E
+
+Vitamin E has both antiplatelet and anticoagulant properties — the latter because it interferes with the
+
+blood-clotting properties of vitamin K.[168] This could be a problem for people whose diet is poor in vitamin
+
+K or who take blood thinners, be they antiplatelet agents (such as aspirin) or anticoagulants (such as
+
+warfarin/Coumadin and acenocoumarol/Sintrom).
+
+Moreover, because of these antiplatelet and anticoagulant properties, 200 IU of vitamin E (the dose
+
+recommended for daily supplementation) may lower systolic blood pressure.[169] Note that supplements and
+
+pharmaceuticals that lower blood pressure can have cumulative effects.
+
+Orlistat (Alli, Xenical) reduces how much fat you absorb from the food you eat. As a result, it also reduces
+
+the absorption of fat-soluble vitamins. If you take this medicine, take your vitamin E supplement at least 2
+
+hours before or after.
+
+41
+
+ 
+How to take vitamin E
+
+Track what you eat for a week; if, on average, you are getting less than 80% of your Recommended Dietary
+
+Allowance, supplementation becomes an option, though first you should try eating more foods rich in
+
+vitamin E.
+
+Alternatively, you could check your blood levels of vitamin E. Blood levels of alpha-tocopherol (α-
+
+tocopherol) under 0.5 mg/dL (<5 mcg/mL, or <11.5 μmol/L) are considered deficient.
+
+Recommended Dietary Allowance (RDA) for vitamin E (alpha-tocopherol) (mg / IU)
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+AGE
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+MALE
+
+4 / 6*
+
+5 / 7.5*
+
+6 / 9
+
+4 / 6*
+
+5 / 7.5*
+
+6 / 9
+
+7 / 10.4
+
+7 / 10.4
+
+9–13 years
+
+11 / 16.4
+
+11 / 16.4
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+>13 years
+
+15 / 22.4
+
+15 / 22.4
+
+15 / 22.4
+
+19 / 28.4
+
+* Adequate Intake (AI)
+
+Reference: Institute of Medicine. Vitamin E (chapter 6 in _Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and
+
+Carotenoids. _The National Academies Press. 2000.)[170]
+
+Take 200 IU of vitamin E (134 mg of natural α-tocopherol or 90 mg of synthetic α-tocopherol[170]). Do not
+
+take more than 400 IU/day, and since vitamin E has anticoagulant properties, make sure your diet contains
+
+at least your Adequate Intake (AI) of vitamin K (90 mcg/day for females; 120 mcg/day for males).
+
+Vitamin E being fat soluble, it is better absorbed when taken with a fat-containing food or supplement (e.g.,
+
+fish oil)
+
+42
+
+Unproven Supplements
+
+Vinegar
+
+What makes vinegar an unproven supplement
+
+Acetic acid is, after water, the main component of vinegar. It may slow the passage of food from the
+
+stomach to the small intestines, thus slowing the absorption of carbohydrates, thus reducing both insulin
+
+response and damage from hyperglycemia. It may also improve insulin signaling via various molecular
+
+mechanisms.[171]
+
+The overall research suggests a smaller increase in post-meal blood glucose when vinegar is taken before
+
+or with a meal,[172] but this reduction is modest and doesn’t last long (roughly 2 hours). Moreover, the
+
+studies are small and short-term, and their methodologies don’t give us full confidence in their findings.
+
+As for the reductions in HbA1c (a biomarker of glucose metabolism) and fasting blood glucose, they may
+
+not be strong enough to have a meaningful, long-term effect on health, and they’re supported by scant
+
+evidence in the first place.[173][174][175][176][177][178]
+
+Vinegar’s proposed mechanism of action
+
+43
+
+In short, vinegar’s ability to prevent or treat type 2 diabetes is uncertain, as is its long-term benefit for
+
+people with impaired glucose tolerance. You should wait for studies of higher quality, including long-term
+
+studies, before you go out of your way to take vinegar with all your meals.
+
+However, if you want to give vinegar a try anyway, here is the dose best supported by current evidence:
+
+2.8 g/day of acetic acid divided into 1.4 g doses taken right before breakfast and dinner
+
+Alternatively, you can take the following.
+
+2 tablespoons (29.6 mL) of apple cider vinegar right before breakfast and dinner (59.2 mL/day; which is
+approximately 3.6 grams of acetic acid per day)
+
+Vitamin B7 (biotin)
+
+What makes biotin an unproven supplement
+
+ Caution: Biotin can affect laboratory results
+
+Biotin can interfere with many laboratory tests, from hormone tests to cardiovascular diagnostics.
+
+Cease supplement 3 to 7 days before getting any lab work done.
+
+Biotin, also known as vitamin B7, partakes in the production of keratin, the protein at the core of hair and
+
+nails. For that reason, it is highly popular as a supplement to improve the appearance of hair and nails.[179][180]
+
+As it stands, no randomized control trials (RCTs) have tested biotin’s effects on the hair or nails of healthy
+
+people,[181] but supplementation may promote healthy hair and nails in people with the following conditions:
+
+Biotin deficiency (which is rare, though maybe less so in people experiencing hair loss)[181][182]
+
+Genetic disorders affecting biotin metabolism (leading to a deficiency in two enzymes responsible
+
+for processing biotin: biotinidase and holocarboxylase synthetase)[181][183]
+
+Some nail medical conditions (brittle nails, triangular worn-down nails, trachyonychia, and habit-tic
+
+deformity)[184][185][186][187][188][189]
+
+Uncombable hair syndrome[179][190][191]
+
+Medication-induced hair loss (caused by valproic acid, for example)[192][193][194]
+
+The studies on biotin supplementation for the above conditions are mostly case studies that provide
+
+preliminary, if encouraging, data. People who are biotin deficient or have inborn errors of biotin metabolism
+
+are the most likely to benefit from supplementation.
+
+In cases of genetic disorder affecting biotin metabolism, larger biotin doses (10–30 mg/day) have helped.[181]
+
+44
+
+ 
+In cases of biotin deficiency or medical condition (brittle nails, uncombable hair syndrome, etc.), 0.3–3
+
+mg/day may be beneficial.[181]
+
+45
+
+Inadvisable Supplements
+
+Iron
+
+What makes iron an inadvisable supplement
+
+Data gathered between 2004 and 2013 show that, in the United States, three micronutrients are responsible
+
+for almost a third of all supplement-related emergency-room visits of adults aged 65 or older: calcium,
+
+potassium, and iron.[195] The study specifies that “swallowing problems caused most emergency department
+
+visits involving calcium products …, whereas abdominal symptoms (e.g., nausea, vomiting, and abdominal
+
+pain) were frequently associated with iron or potassium products”.[195]
+
+Supplement-related emergency-room visits in people aged 50+
+
+Adapted from Geller et al. N Eng J Med. 2015.[195]
+
+More iron isn’t always better or even harmless. When too much iron builds up in your body
+
+(hemochromatosis), it becomes toxic and can lead to dysfunction in your heart, liver, and pancreas. In
+
+extreme cases, it can cause arrhythmia, heart failure, and death.
+
+46
+
+ 
+Postmenopausal females need _less _iron (8 mg/day, like males) than premenopausal females (18 mg/day).
+
+Although iron deficiency contributes substantially to the high prevalence of anemia seen in the elderly,[196][197]
+
+taking an iron supplement “just in case” (or because you look pale and feel tired) is ill-advised. If you think
+
+you might suffer from iron deficiency, see a physician and get tested.
+
+Potassium
+
+What makes potassium an inadvisable
+supplement
+
+As mentioned above in the iron entry, potassium is one of the three micronutrients responsible for almost a
+
+third of all supplement-related emergency-room visits of adults aged 65 or more,[195] mostly due to
+
+abdominal symptoms (e.g., nausea, vomiting, and abdominal pain).
+
+Worse, too much potassium at once on an empty stomach can lead to hyperkalemia (very high levels of
+
+potassium in the blood) and thus to dangerous changes in heart rhythm (arrhythmia). For that reason, in the
+
+United States, supplemental potassium chloride (the most common form of supplemental potassium) in
+
+“solid oral” form (i.e., in tablets and capsules) is limited to 99 mg of elemental potassium per serving.
+
+This is a very low amount, which makes it probable that the seniors who suffered from abdominal
+
+symptoms from potassium took more than one serving (or used a powder supplement, or took too much
+
+Nu-Salt®). It isn’t a risk you want to take. If you suspect you might have low potassium levels, see a
+
+physician and get tested.
+
+Vitamin B9 (folate / folic acid)
+
+What makes vitamin B9 an inadvisable
+supplement
+
+Vitamin B9 comprises folate and its synthetic form, folic acid. The Recommended Dietary Allowance (RDA)
+
+for vitamin B9 is 400 mcg/day for males and most females; 600 mcg/day for pregnant females; and 500
+
+mcg/day for lactating females. High doses of folic acid have been successfully used by pregnant females to
+
+prevent birth tube defects,[73] which is why some foods, especially bread, are fortified with it.
+
+47
+
+ 
+ 
+Folate vs. folic acid
+
+Unfortunately, preliminary research suggests that high doses of folic acid (>1,000 mcg/day) may increase
+
+the risk of colon cancer in seniors and may exacerbate pre-existing colon cancer. Neither folic acid
+
+supplements nor multivitamins, which most often contain too much folic acid, are recommended for seniors.
+
+48
+
+FAQ
+
+Q. What about the supplements not covered in
+this guide?
+
+Our guides are regularly updated, often with new supplements. We prioritize assessing (and reassessing)
+
+the most popular of them and those most likely to work. However, if there is a specific supplement you’d
+
+like to see covered in a future update, please let us know by filling out this survey.
+
+Q. Can I add a supplement not covered in this
+guide to my combo?
+
+Supplement with your current combo for a few weeks before attempting any change. Talk to your physician
+
+and research each potential addition. Check for known negative interactions with other supplements and
+
+pharmaceuticals in your current combo, but also for synergies. If two supplements are synergistic or
+
+additive in their effects, you might want to use lower doses of each.
+
+Q. Can I modify the recommended doses?
+
+If a supplement has a recommended dose range, stay within that range. If a supplement has a precise
+
+recommended dose, stay within 10% of that dose. Taking more than recommended could be
+
+counterproductive or even dangerous. Taking less could render the supplement ineffective, yet starting with
+
+half the regular dose could be prudent — especially if you know you tend to react strongly to supplements
+
+or pharmaceuticals.
+
+Q. At what time should I take my supplements?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Starting with half the regular dose can help
+
+minimize the harm a supplement may cause when taken during the day (e.g., fatigue) or in the evening (e.g.,
+
+insomnia).
+
+Q. Should I take my supplements with or
+without food?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Besides, a supplement’s digestion, absorption,
+
+and metabolism can be affected differently by different foods. Fat-soluble vitamins (A, D, E, K), for
+
+instance, are better absorbed with a small meal containing fat than with a large meal containing little to no
+
+fat.
+
+49
+
+ 
+Q. What are DRI, RDA, AI, and UL?
+
+The Dietary Reference Intakes (DRIs) is a system of nutrition recommendations designed by the Institute of
+
+Medicine (a US institution now known as the Health and Medicine Division). RDA, AI, and UL are part of this
+
+system.
+
+Contrary to what the name suggests, a Recommended Dietary Allowance (RDA) doesn’t represent
+
+an ideal amount; it represents the minimum you need in order to avoid deficiency-related health
+
+issues. More precisely, it represents an amount just large enough to meet the minimum requirements
+
+of 97.5% of healthy males and females over all ages — which implies that the RDA is too low for
+
+2.5% of healthy people.
+
+The Adequate Intake (AI) is like the RDA, except that the number is more uncertain.
+
+The Tolerable Upper Intake Level (UL) is the maximum safe amount. More precisely, it is the
+
+maximum daily amount deemed to be safe for 97.5% of healthy males and females over all ages —
+
+which implies that the UL is too high for 2.5% of healthy people.
+
+As a general rule, a healthy diet should include at least the RDA of each nutrient — but less than this
+
+nutrient’s UL. This rule has many exceptions, though. For instance, people who sweat more need more salt
+
+(i.e., sodium), whereas people who take metformin (a diabetes medicine) need more vitamin B12.
+
+Moreover, the DRIs are based on the median weight of adults and children in the United States. Everything
+
+else being equal (notably age, sex, and percentage of body fat), you likely need a lesser amount of
+
+nutrients if you weigh less, and vice versa if you weigh more. The numbers, however, are not proportional
+
+— if only because the brains of two people of very different weights have very similar needs. So you can’t
+
+just double your RDIs for each nutrient if you weigh twice as much as the median adult of your age and sex
+
+(even if we overlook that people weighing the same can differ in many respects, notably body fat).
+
+Q. What’s the difference between elemental
+iron/magnesium/potassium and other kinds?
+
+“Elemental” refers to the weight of the mineral by itself, separately from the compound bound to it. For
+
+instance, ingesting 500 mg of magnesium gluconate means ingesting 27 mg of elemental magnesium.
+
+Product labels display the elemental dosage. On a label, “27 mg of magnesium (as magnesium gluconate)”
+
+means 27 mg of elemental magnesium (and 473 mg of gluconic acid).
+
+Q. Wait, where’s calcium?
+
+While calcium supplementation may promote bone health and reduce blood pressure, it may also increase
+
+the risk of hypercalcemia (dangerously high levels of calcium in the blood), potentially leading to heart
+
+disease, the leading cause of death among older adults in the United States. The evidence on bone and
+
+heart health is mixed and still developing; whether or not the potential benefits outweigh the potential harm
+
+is still to be determined.
+
+50
+
+ 
+ 
+Q. What about multivitamins?
+
+You may be inclined to take a multivitamin as a sort of insurance against nutritional deficiencies. A
+
+multivitamin isn’t strictly necessary, but it can help if it is well formulated.
+
+When buying a multivitamin, check on the label the content of each serving, the number of pills per serving,
+
+and the number of servings per day; don’t pay more for dubious bells and whistles; and stick to a company
+
+with a reputation for good manufacturing.
+
+The form of the supplement can matter, too. Magnesium oxide, for instance, has very low bioavailability —
+
+not only will you absorb less elemental magnesium from it but it may also cause intestinal discomfort.
+
+Factors to consider when buying a multivitamin
+
+51
+
+ 
+Q. What’s the difference between anthocyanins
+and anthocyanidins?
+
+Anthocyanins contain anthocyanidins. To be more precise, an anthocyanidin is simply an anthocyanin
+
+without its sugar molecule(s).
+
+Q. Can I replace blueberries with other
+anthocyanin-rich foods?
+
+Most studies are on blueberries, and the total amount of anthocyanins does not tell the whole story,
+
+because different types of anthocyanins can be found in different amounts in different berries. Studies on
+
+cognition have reported benefits from blue-purple anthocyanins, notably cyanidin and delphinidin, whereas
+
+red anthocyanins, such as pelargonidin, lack the same scientific backing.
+
+So dark berries (blueberries, blackberries, elderberries …) might be interchangeable for the purpose of
+
+enhancing cognition, whereas red berries (strawberries, raspberries …), although also rich in anthocyanins,
+
+are likely not suitable alternatives.
+
+Blue-purple anthocyanins can be found in foods other than dark berries, such as purple cauliflower, purple
+
+potatoes, and purple rice, but keep in mind that some blue-purple plants derive their color from betalains,
+
+not anthocyanins — for instance, beetroot.
+
+Phytochemical profiles of select berries 
+
+(mg per 100 grams of edible portion)
+
+FRUIT
+
+TOTAL
+ANTHOCYANIDINS\*
+
+TOTAL
+FLAVAN-3-OLS\*\*
+
+TOTAL
+FLAVONOLS\*\*\*
+
+Chokeberry, raw
+
+Bilberry
+
+Black raspberry
+
+Currant, black, raw
+
+Blueberry
+
+Blackberry
+
+Red raspberry, raw
+
+Strawberry
+
+Cranberry, dried, sweetened
+
+Cranberry juice cocktail
+
+Cranberry sauce, canned, sweetened
+
+Cranberry juice, unsweetened
+
+Mulberry, raw
+
+437.22
+
+430.91
+
+324.02
+
+272.44
+
+163.52
+
+90.46
+
+38.68
+
+33.63
+
+0.72
+
+0.46
+
+0.14
+
+—
+
+—
+
+—
+
+4.13
+
+—
+
+1.17
+
+51.71
+
+42.50
+
+6.63
+
+4.51
+
+—
+
+0.19
+
+—
+
+0.92
+
+—
+
+8.90
+
+—
+
+—
+
+12.69
+
+9.72
+
+2.49
+
+1.32
+
+1.60
+
+6.91
+
+1.79
+
+5.11
+
+20.82
+
+2.47
+
+* Total anthocyanidins (cyanidin, delphinidin, peonidin, petunidin)
+
+** Total flavan-3-ols ((−)-epicatechin, (−)-epicatechin-3-gallate, (−)-epigallocatechin, (−)-epigallocatechin-3-gallate, (+)-catechin,
+
+52
+
+(+)-gallocatechin)
+
+*** Total flavonols (kaempferol, myricetin, quercetin)
+
+Adapted from Basu et al. Nutr Rev. 2010.[198]
+
+Q. Are organic blueberries better?
+
+In terms of anthocyanin content, not really: anthocyanin levels appear to be almost identical (within 5%) in
+
+organic and non-organic blueberries cultivated in the same area.[33] On the other hand, there appear to be
+
+large differences depending on the soil. For example, even within the United States, the anthocyanin
+
+content can range from 144 to 823 mg per 100 grams of blueberries, depending on the region where the
+
+bushes are grown.[33]
+
+Q. Isn’t soy protein bad for males?
+
+Phytoestrogens are plant compounds structurally similar to estradiol, the main estrogen in males and
+
+premenopausal females. Because soy contains isoflavones, a type of phytoestrogen, concern has been
+
+raised about soy affecting male health.
+
+To this day, two case reports have documented adverse effects (gynecomastia, hypogonadism, reduced
+
+libido, and erectile dysfunction) from an estimated 360 mg of soy isoflavones per day for 6–12 months.
+
+However, a meta-analysis of 15 randomized controlled trials (RCTs, a much higher level of evidence than
+
+case reports) found that males’ levels of total and free testosterone were not notably affected by either
+
+60–240 mg of isoflavones or 10–70 grams of soy protein per day.
+
+Accordingly, a couple of scoops of soy protein powder are unlikely to have estrogenic effects in males. If
+
+you’d like to take more, however, look for a soy protein concentrate or isolate produced through the
+
+alcohol-wash method, which dramatically lowers the isoflavone content.[199]
+
+Keep in mind that the isoflavone content of different soy products can vary depending on several factors,
+
+such as the variety of soybeans used, differences in growing and storage conditions, and differential food
+
+processing techniques employed.[200] You can see how it varies below
+
+53
+
+Isoflavone content of common soy foods
+
+Reference: USDA FoodData Central Databases. Accessed Jan 18, 2019. https://fdc.nal.usda.gov/
+
+Q. Which dietary protein is best for bone
+health?
+
+Most studies used dairy protein, yet the protein in our bones is mostly type 1 collagen. It follows that
+
+supplemental type 1 collagen should be optimal for bone health — and indeed, animal models appear to
+
+support this notion.
+
+The few relevant human studies to date, however, had mixed results. Not only that, but they cumulated
+
+54
+
+factors (they gave collagen with calcium, vitamin D, dietary changes …), making it impossible to determine
+
+which factor did what and to what extent. Until better human studies come along, collagen’s superiority
+
+over other proteins (for bone health) will stay hypothetical.
+
+Q. Don’t dietary proteins reduce bone density?
+
+More protein in the diet has been linked to more calcium in the urine. Two reasons have been suggested to
+
+explain this phenomenon:
+
+Your body draws from its calcium stores (in bones) to buffer the acid load caused by dietary protein. This has led
+researchers to suggest that higher protein intake could increase bone loss.[201]
+
+Most studies that looked at protein intake and calcium excretion list dairy products as a protein source,[202] so higher
+urinary calcium could simply be the result of higher calcium intake (i.e., more calcium in, more calcium out).
+
+Therefore, looking only at calcium _excretion _wasn’t enough. Subsequent studies showed that dietary
+
+protein promotes dietary-calcium absorption[203] and that high protein intake “promotes bone growth and
+
+retards bone loss {whereas} low-protein diet is associated with higher risk of hip fractures.”[43] High-protein
+
+diets have also been shown to modestly suppress the decrease in bone mineral density caused by weight
+
+loss.[204]
+
+What happens is that when you ingest more protein, you absorb more of the calcium in your food, so less
+
+calcium ends up in your feces. Later, your body gets rid of the calcium it doesn’t need, so more calcium
+
+ends up in your urine, but not as much as would have otherwise ended in your feces.[44] Therefore, an
+
+increase in protein intake leads to an overall decrease in calcium excretion, which points to an increase in
+
+calcium retention. High-protein diets also raise your insulin-like growth factor-1 (IGF-1),[205] which promotes
+
+notably bone growth.[206]
+
+All in all, current evidence suggests that protein’s effect on bones is either neutral or beneficial.[44][45]
+
+Q. I’ve heard that I should “load” creatine. What
+does that mean?
+
+Loading creatine means taking a high daily dose for a few days before moving down to a smaller
+
+maintenance dose, which can be taken indefinitely. This is not necessary for effective supplementation,
+
+however; benefits may be felt sooner through loading, but they normalize after a few weeks.
+
+If you wish to load creatine, take 20–25 g/day for 7 days (splitting your daily intake into smaller doses,
+
+taking them with some food, and drinking more fluids may help prevent intestinal discomfort). Take 5 g/day
+
+thereafter.
+
+Q. Creatine doesn’t seem to work for me. What
+should I do?
+
+Some people are creatine nonresponders: the creatine they ingest largely fails to reach their muscles.
+
+Alternate forms of creatine, such as creatine ethyl-ester, have been marketed to nonresponders, but they
+
+lack scientific support. Currently, the best way to lessen creatine nonresponse is to take 5 grams twice a
+
+day, each time with protein and carbs, preferably close to a time of muscle contraction (i.e., before or after
+
+55
+
+your workout).
+
+Note that even if supplemental creatine fails to enter your muscles it can still benefit you in other ways,
+
+such as by improving your body’s methylation status (methylation being a way for your cells to help
+
+manage gene expression).
+
+Q. Can testosterone boosters bring my
+testosterone back to normal?
+
+DHEA, vitamin D, magnesium, and zinc have been seen to raise low testosterone levels. Few other
+
+supplements seem to help at all.
+
+A few trials back Coleus forskohlii, but its numerous potential adverse effects make it a risky proposition,
+
+especially for older people.
+
+You might also have heard of D-aspartic acid, but its promising first trials were followed by several others
+
+that found that it didn’t increase testosterone.
+
+Some other supplements, such as ginger and Eurycoma longifolia, might support testosterone levels only in
+
+infertile males (or in males with testicular damage).
+
+Many other herbs, such as horny goat weed, have not even been studied in humans yet.
+
+Finally, keep in mind that a supplement can benefit your libido (as do maca and, according to a small
+
+number of studies, Tribulus terrestris), your mood, or your energy levels, yet not affect your testosterone.
+
+56
+
+References
+
+1.   Carlos López-Otín, Maria A Blasco, Linda Partridge, Manuel Serrano, Guido Kroemer The hallmarks of aging. Cell. (2013 Jun 6)
+
+2.   Laura Dwyer-Lindgren, Amelia Bertozzi-Villa, Rebecca W Stubbs, Chloe Morozoff, Johan P Mackenbach, Frank J van Lenthe,
+Ali H Mokdad, Christopher J L Murray Inequalities in Life Expectancy Among US Counties, 1980 to 2014: Temporal Trends and
+Key Drivers. JAMA Intern Med. (2017 Jul 1)
+
+3.   Benjamin Mayne, Oliver Berry, Campbell Davies, Jessica Farley, Simon Jarman A genomic predictor of lifespan in vertebrates.
+
+Sci Rep. (2019 Dec 12)
+
+4.   Christopher J Lord, Alan Ashworth The DNA damage response and cancer therapy. Nature. (2012 Jan 18)
+
+5.   Alexey A Moskalev, Mikhail V Shaposhnikov, Ekaterina N Plyusnina, Alex Zhavoronkov, Arie Budovsky, Hagai Yanai, Vadim E
+Fraifeld The role of DNA damage and repair in aging through the prism of Koch-like criteria. Ageing Res Rev. (2013 Mar)
+
+6.   Franceschi C, Bonafè M, Valensin S, Olivieri F, De Luca M, Ottaviani E, De Benedictis G Inflamm-aging. An evolutionary
+
+perspective on immunosenescence. Ann N Y Acad Sci. (2000 Jun)
+
+7.   K C Darr, E Schultz Exercise-induced satellite cell activation in growing and mature skeletal muscle. J Appl Physiol (1985).
+
+(1987 Nov)
+
+8.   Behzad Bazgir, Rouhollah Fathi, Mojtaba Rezazadeh Valojerdi, Paul Mozdziak, Alireza Asgari Satellite Cells Contribution to
+
+Exercise Mediated Muscle Hypertrophy and Repair. Cell J. (Winter 2017)
+
+9.   Jennifer E Morgan, Peter S Zammit Direct effects of the pathogenic mutation on satellite cell function in muscular dystrophy.
+
+Exp Cell Res. (2010 Nov 1)
+
+10.   Irina M Conboy, Thomas A Rando Heterochronic parabiosis for the study of the effects of aging on stem cells and their niches.
+
+Cell Cycle. (2012 Jun 15)
+
+11.   Douglas R Green, Lorenzo Galluzzi, Guido Kroemer Mitochondria and the autophagy-inflammation-cell death axis in organismal
+
+aging. Science. (2011 Aug 26)
+
+12.   D HARMAN THE FREE RADICAL THEORY OF AGING: EFFECT OF AGE ON SERUM COPPER LEVELS. J Gerontol. (1965 Apr)
+
+13.   G C Kujoth, A Hiona, T D Pugh, S Someya, K Panzer, S E Wohlgemuth, T Hofer, A Y Seo, R Sullivan, W A Jobling, J D Morrow, H
+
+Van Remmen, J M Sedivy, T Yamasoba, M Tanokura, R Weindruch, C Leeuwenburgh, T A Prolla Mitochondrial DNA mutations,
+oxidative stress, and apoptosis in mammalian aging. Science. (2005 Jul 15)
+
+14.   Caroline L Holley, Kate Schroder The rOX-stars of inflammation: links between the inflammasome and mitochondrial meltdown.
+
+Clin Transl Immunology. (2020 Feb 10)
+
+15.   Adeel Safdar, Jacqueline M Bourgeois, Daniel I Ogborn, Jonathan P Little, Bart P Hettinga, Mahmood Akhtar, James E
+
+Thompson, Simon Melov, Nicholas J Mocellin, Gregory C Kujoth, Tomas A Prolla, Mark A Tarnopolsky Endurance exercise
+rescues progeroid aging and induces systemic mitochondrial rejuvenation in mtDNA mutator mice. Proc Natl Acad Sci U S A.
+(2011 Mar 8)
+
+16.   Laura Castello, Marco Maina, Gabriella Testa, Gabriella Cavallini, Fiorella Biasi, Alessio Donati, Gabriella Leonarduzzi, Ettore
+Bergamini, Giuseppe Poli, Elena Chiarpotto Alternate-day fasting reverses the age-associated hypertrophy phenotype in rat
+heart by influencing the ERK and PI3K signaling pathways. Mech Ageing Dev. (Jun-Jul 2011)
+
+17.   Sarah Pickles, Pierre Vigié, Richard J Youle Mitophagy and Quality Control Mechanisms in Mitochondrial Maintenance. Curr Biol.
+
+(2018 Feb 19)
+
+18.   Christopher A Ross, Michelle A Poirier Protein aggregation and neurodegenerative disease. Nat Med. (2004 Jul)
+
+19.   C Sóti, P Csermely Molecular chaperones and the aging process. Biogerontology. (2000)
+
+20.   Ivan Dimauro, Neri Mercatelli, Daniela Caporossi Exercise-induced ROS in heat shock proteins response. Free Radic Biol Med.
+
+(2016 Sep)
+
+21.   Cong Zhang, Ana Maria Cuervo Restoration of chaperone-mediated autophagy in aging liver improves cellular maintenance
+
+and hepatic function. Nat Med. (2008 Sep)
+
+22.   Nuria Garatachea, Helios Pareja-Galeano, Fabian Sanchis-Gomar, Alejandro Santos-Lozano, Carmen Fiuza-Luces, María Morán,
+Enzo Emanuele, Michael J Joyner, Alejandro Lucia Exercise attenuates the major hallmarks of aging. Rejuvenation Res. (2015
+Feb)
+
+23.   Arnold Yl Wong, Jaro Karppinen, Dino Samartzis Low back pain in older adults: risk factors, management options and future
+
+directions. Scoliosis Spinal Disord. (2017 Apr 18)
+
+24.   Judith E Carroll, Steven W Cole, Teresa E Seeman, Elizabeth C Breen, Tuff Witarama, Jesusa M G Arevalo, Jeffrey Ma, Michael
+
+R Irwin Partial sleep deprivation activates the DNA damage response (DDR) and the senescence-associated secretory
+phenotype (SASP) in aged adult humans. Brain Behav Immun. (2016 Jan)
+
+25.   Hirshkowitz M, Whiton K, Albert SM, Alessi C, Bruni O, DonCarlos L, Hazen N, Herman J, Katz ES, Kheirandish-Gozal L,
+
+Neubauer DN, O'Donnell AE, Ohayon M, Peever J, Rawding R, Sachdeva RC, Setters B, Vitiello MV, Ware JC, Adams Hillard PJ
+National Sleep Foundation's sleep time duration recommendations: methodology and results summary. Sleep Health. (2015
+Mar)
+
+57
+
+26.   Marie-Pierre St-Onge, Dympna Gallagher Body composition changes with aging: the cause or the result of alterations in
+
+metabolic rate and macronutrient oxidation?. Nutrition. (2010 Feb)
+
+27.   Hein S, Whyte AR, Wood E, Rodriguez-Mateos A, Williams CM Systematic Review of the Effects of Blueberry on Cognitive
+
+Performance as We Age. J Gerontol A Biol Sci Med Sci. (2019 Jun 18)
+
+28.   Krikorian R, Shidler MD, Nash TA, Kalt W, Vinqvist-Tymchuk MR, Shukitt-Hale B, Joseph JA Blueberry supplementation
+
+improves memory in older adults. J Agric Food Chem. (2010 Apr 14)
+
+29.   Boespflug EL, Eliassen JC, Dudley JA, Shidler MD, Kalt W, Summer SS, Stein AL, Stover AN, Krikorian R Enhanced neural
+
+activation with blueberry supplementation in mild cognitive impairment. Nutr Neurosci. (2018 May)
+
+30.   Miller MG, Hamilton DA, Joseph JA, Shukitt-Hale B Dietary blueberry improves cognition among older adults in a randomized,
+
+double-blind, placebo-controlled trial. Eur J Nutr. (2018 Apr)
+
+31.   Whyte AR, Cheng N, Fromentin E, Williams CM A Randomized, Double-Blinded, Placebo-Controlled Study to Compare the
+
+Safety and Efficacy of Low Dose Enhanced Wild Blueberry Powder and Wild Blueberry Extract (ThinkBlue™) in Maintenance of
+Episodic and Working Memory in Older Adults. Nutrients. (2018 May 23)
+
+32.   Bowtell JL, Aboo-Bakkar Z, Conway ME, Adlam AR, Fulford J Enhanced task-related brain activation and resting perfusion in
+
+healthy older adults after chronic blueberry supplementation. Appl Physiol Nutr Metab. (2017 Jul)
+
+33.   Stevenson D, Scalzo J Anthocyanin composition and content of blueberries from around the world. J Berry Res. (2012 Sep)
+
+34.   Rodríguez-Bonilla P, López-Nicolás JM, Méndez-Cazorla L, García-Carmona F Development of a reversed phase high
+performance liquid chromatography method based on the use of cyclodextrins as mobile phase additives to determine
+pterostilbene in blueberries. J Chromatogr B Analyt Technol Biomed Life Sci. (2011 May 1)
+
+35.   Rimando AM, Kalt W, Magee JB, Dewey J, Ballington JR Resveratrol, pterostilbene, and piceatannol in vaccinium berries. J
+
+Agric Food Chem. (2004 Jul 28)
+
+36.   Rimando A, Barney D Resveratrol and naturally occurring analogues in _vaccinium_ species. Acta Hortic. (2005)
+
+37.   Montgomery SA, Thal LJ, Amrein R Meta-analysis of double blind randomized controlled clinical trials of acetyl-L-carnitine
+
+versus placebo in the treatment of mild cognitive impairment and mild Alzheimer's disease. Int Clin Psychopharmacol. (2003
+Mar)
+
+38.   Smeland OB, Meisingset TW, Borges K, Sonnewald U Chronic acetyl-L-carnitine alters brain energy metabolism and increases
+
+noradrenaline and serotonin content in healthy mice. Neurochem Int. (2012 Jul)
+
+39.   Asadi M, Rahimlou M, Shishehbor F, Mansoori A The effect of l-carnitine supplementation on lipid profile and glycaemic control
+
+in adults with cardiovascular risk factors: A systematic review and meta-analysis of randomized controlled clinical trials. Clin
+Nutr. (2019 Feb 22)
+
+40.   Serban MC, Sahebkar A, Mikhailidis DP, Toth PP, Jones SR, Muntner P, Blaha MJ, Andrica F, Martin SS, Borza C, Lip GY, Ray
+
+KK, Rysz J, Hazen SL, Banach M Impact of L-carnitine on plasma lipoprotein(a) concentrations: A systematic review and meta-
+analysis of randomized controlled trials. Sci Rep. (2016 Jan 12)
+
+41.   Shang R, Sun Z, Li H Effective dosing of L-carnitine in the secondary prevention of cardiovascular disease: a systematic review
+
+and meta-analysis. BMC Cardiovasc Disord. (2014 Jul 21)
+
+42.   DiNicolantonio JJ, Lavie CJ, Fares H, Menezes AR, O'Keefe JH L-carnitine in the secondary prevention of cardiovascular
+
+disease: systematic review and meta-analysis. Mayo Clin Proc. (2013 Jun)
+
+43.   Shams-White MM, Chung M, Du M, Fu Z, Insogna KL, Karlsen MC, LeBoff MS, Shapses SA, Sackey J, Wallace TC, Weaver CM
+Dietary protein and bone health: a systematic review and meta-analysis from the National Osteoporosis Foundation. Am J Clin
+Nutr. (2017 Jun)
+
+44.   Calvez J, Poupin N, Chesneau C, Lassale C, Tomé D Protein intake, calcium balance and health consequences. Eur J Clin Nutr.
+
+(2012 Mar)
+
+45.   Fenton TR, Lyon AW, Eliasziw M, Tough SC, Hanley DA Meta-analysis of the effect of the acid-ash hypothesis of osteoporosis
+
+on calcium balance. J Bone Miner Res. (2009 Nov)
+
+46.   Janssen I, Heymsfield SB, Ross R Low relative skeletal muscle mass (sarcopenia) in older persons is associated with functional
+
+impairment and physical disability. J Am Geriatr Soc. (2002 May)
+
+47.   Burd NA, Gorissen SH, van Loon LJ Anabolic resistance of muscle protein synthesis with aging. Exerc Sport Sci Rev. (2013 Jul)
+
+48.   Mcleod JC, Stokes T, Phillips SM Resistance Exercise Training as a Primary Countermeasure to Age-Related Chronic Disease.
+
+Front Physiol. (2019 Jun 6)
+
+49.   Moore DR, Churchward-Venne TA, Witard O, Breen L, Burd NA, Tipton KD, Phillips SM Protein ingestion to stimulate myofibrillar
+protein synthesis requires greater relative protein intakes in healthy older versus younger men. J Gerontol A Biol Sci Med Sci.
+(2015 Jan)
+
+50.   Bell SJ Whey protein concentrates with and without immunoglobulins: a review. J Med Food. (2000 Spring)
+
+51.   von Herrath D, Saupe J, Hirschberg R, Rottka H, Schaefer K Glomerular filtration rate in response to an acute protein load.
+
+Blood Purif. (1988)
+
+52.   Brenner BM, Meyer TW, Hostetter TH Dietary protein intake and the progressive nature of kidney disease: the role of
+
+hemodynamically mediated glomerular injury in the pathogenesis of progressive glomerular sclerosis in aging, renal ablation,
+and intrinsic renal disease. N Engl J Med. (1982 Sep 9)
+
+58
+
+53.   Devries MC, Sithamparapillai A, Brimble KS, Banfield L, Morton RW, Phillips SM Changes in Kidney Function Do Not Differ
+
+between Healthy Adults Consuming Higher- Compared with Lower- or Normal-Protein Diets: A Systematic Review and Meta-
+Analysis. J Nutr. (2018 Nov 1)
+
+54.   Poortmans JR, Dellalieux O Do regular high protein diets have potential health risks on kidney function in athletes?. Int J Sport
+
+Nutr Exerc Metab. (2000 Mar)
+
+55.   Trumbo P, Schlicker S, Yates AA, Poos M, Food and Nutrition Board of the Institute of Medicine, The National Academies
+Dietary reference intakes for energy, carbohydrate, fiber, fat, fatty acids, cholesterol, protein and amino acids. J Am Diet
+Assoc. (2002 Nov)
+
+56.   Rafii M, Chapman K, Owens J, Elango R, Campbell WW, Ball RO, Pencharz PB, Courtney-Martin G Dietary protein requirement
+
+of female adults >65 years determined by the indicator amino acid oxidation technique is higher than current
+recommendations. J Nutr. (2015 Jan)
+
+57.   Rafii M, Chapman K, Elango R, Campbell WW, Ball RO, Pencharz PB, Courtney-Martin G Dietary Protein Requirement of Men
+
+>65 Years Old Determined by the Indicator Amino Acid Oxidation Technique Is Higher than the Current Estimated Average
+Requirement. J Nutr. (2016 Mar 9)
+
+58.   Tang M, McCabe GP, Elango R, Pencharz PB, Ball RO, Campbell WW Assessment of protein requirement in octogenarian
+
+women with use of the indicator amino acid oxidation technique. Am J Clin Nutr. (2014 Apr)
+
+59.   Elango R, Humayun MA, Ball RO, Pencharz PB Evidence that protein requirements have been significantly underestimated. Curr
+
+Opin Clin Nutr Metab Care. (2010 Jan)
+
+60.   Schoenfeld BJ, Aragon AA How much protein can the body use in a single meal for muscle-building? Implications for daily
+
+protein distribution. J Int Soc Sports Nutr. (2018 Feb 27)
+
+61.   Jäger R, Kerksick CM, Campbell BI, Cribb PJ, Wells SD, Skwiat TM, Purpura M, Ziegenfuss TN, Ferrando AA, Arent SM, Smith-
+Ryan AE, Stout JR, Arciero PJ, Ormsbee MJ, Taylor LW, Wilborn CD, Kalman DS, Kreider RB, Willoughby DS, Hoffman JR,
+Krzykowski JL, Antonio J International Society of Sports Nutrition Position Stand: protein and exercise. J Int Soc Sports Nutr.
+(2017 Jun 20)
+
+62.   Thomas DT, Erdman KA, Burke LM American College of Sports Medicine Joint Position Statement. Nutrition and Athletic
+
+Performance. Med Sci Sports Exerc. (2016 Mar)
+
+63.   Morton RW, McGlory C, Phillips SM Nutritional interventions to augment resistance training-induced skeletal muscle
+
+hypertrophy. Front Physiol. (2015 Sep 3)
+
+64.   Aragon AA, Schoenfeld BJ Nutrient timing revisited: is there a post-exercise anabolic window?. J Int Soc Sports Nutr. (2013
+
+Jan 29)
+
+65.   Clarke R, Refsum H, Birks J, Evans JG, Johnston C, Sherliker P, Ueland PM, Schneede J, McPartlin J, Nexo E, Scott JM
+
+Screening for vitamin B-12 and folate deficiency in older persons. Am J Clin Nutr. (2003 May)
+
+66.   Rizzo G, Laganà AS, Rapisarda AM, La Ferrera GM, Buscema M, Rossetti P, Nigro A, Muscia V, Valenti G, Sapia F, Sarpietro G,
+Zigarelli M, Vitale SG Vitamin B12 among Vegetarians: Status, Assessment and Supplementation. Nutrients. (2016 Nov 29)
+
+67.   Pawlak R, Lester SE, Babatunde T The prevalence of cobalamin deficiency among vegetarians assessed by serum vitamin B12:
+
+a review of literature. Eur J Clin Nutr. (2014 May)
+
+68.   Stover PJ Vitamin B12 and older adults. Curr Opin Clin Nutr Metab Care. (2010 Jan)
+
+69.   Juzeniene A, Nizauskaite Z Photodegradation of cobalamins in aqueous solutions and in human blood. J Photochem Photobiol
+
+B. (2013 May 5)
+
+70.   Chapman LE, Darling AL, Brown JE Association between metformin and vitamin B12 deficiency in patients with type 2 diabetes:
+
+A systematic review and meta-analysis. Diabetes Metab. (2016 Nov)
+
+71.   de Jager J, Kooy A, Lehert P, Wulffelé MG, van der Kolk J, Bets D, Verburg J, Donker AJ, Stehouwer CD Long term treatment
+with metformin in patients with type 2 diabetes and risk of vitamin B-12 deficiency: randomised placebo controlled trial. BMJ.
+(2010 May 20)
+
+72.   Lonn E, Yusuf S, Arnold MJ, Sheridan P, Pogue J, Micks M, McQueen MJ, Probstfield J, Fodor G, Held C, Genest J Jr, Heart
+Outcomes Prevention Evaluation (HOPE) 2 Investigators Homocysteine lowering with folic acid and B vitamins in vascular
+disease. N Engl J Med. (2006 Apr 13)
+
+73.   Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes and its Panel on Folate,
+
+Other B Vitamins, and Choline Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B 6, Folate, Vitamin B 12,
+Pantothenic Acid, Biotin, and Choline.
+
+74.   Xiang F, Lucas R, de Gruijl F, Norval M A systematic review of the influence of skin pigmentation on changes in the
+
+concentrations of vitamin D and 25-hydroxyvitamin D in plasma/serum following experimental UV irradiation. Photochem
+Photobiol Sci. (2015 Dec)
+
+75.   Meehan M, Penckofer S The Role of Vitamin D in the Aging Adult. J Aging Gerontol. (2014 Dec)
+
+76.   Wacker M, Holick MF Sunlight and Vitamin D: A global perspective for health. Dermatoendocrinol. (2013 Jan 1)
+
+77.   Ko JA, Lee BH, Lee JS, Park HJ Effect of UV-B exposure on the concentration of vitamin D2 in sliced shiitake mushroom
+
+(Lentinus edodes) and white button mushroom (Agaricus bisporus). J Agric Food Chem. (2008 May 28)
+
+78.   Jasinghe VJ, Perera CO, Barlow PJ Bioavailability of vitamin D2 from irradiated mushrooms: an in vivo study. Br J Nutr. (2005
+
+59
+
+Jun)
+
+79.   Lehmann B, Genehr T, Knuschke P, Pietzsch J, Meurer M UVB-induced conversion of 7-dehydrocholesterol to 1alpha,25-
+
+dihydroxyvitamin D3 in an in vitro human skin equivalent model. J Invest Dermatol. (2001 Nov)
+
+80.   Holick MF, MacLaughlin JA, Clark MB, Holick SA, Potts JT Jr, Anderson RR, Blank IH, Parrish JA, Elias P Photosynthesis of
+
+previtamin D3 in human skin and the physiologic consequences. Science. (1980 Oct 10)
+
+81.   Bikle DD Vitamin D metabolism and function in the skin. Mol Cell Endocrinol. (2011 Dec 5)
+
+82.   Chakhtoura M, Chamoun N, Rahme M, Fuleihan GE Impact of vitamin D supplementation on falls and fractures-A critical
+
+appraisal of the quality of the evidence and an overview of the available guidelines. Bone. (2020 Feb)
+
+83.   Bischoff-Ferrari HA, Dawson-Hughes B, Orav EJ, Staehelin HB, Meyer OW, Theiler R, Dick W, Willett WC, Egli A Monthly High-
+Dose Vitamin D Treatment for the Prevention of Functional Decline: A Randomized Clinical Trial. JAMA Intern Med. (2016 Feb)
+
+84.   Lanolin. Drugs and Lactation Database (LactMed®). (2006-05)
+
+85.   Schlingmann KP, Kaufmann M, Weber S, Irwin A, Goos C, John U, Misselwitz J, Klaus G, Kuwertz-Bröking E, Fehrenbach H,
+
+Wingen AM, Güran T, Hoenderop JG, Bindels RJ, Prosser DE, Jones G, Konrad M Mutations in CYP24A1 and idiopathic infantile
+hypercalcemia. N Engl J Med. (2011 Aug 4)
+
+86.   Zittermann A, Ernst JB, Gummert JF, Börgermann J Vitamin D supplementation, body weight and human serum 25-
+
+hydroxyvitamin D response: a systematic review. Eur J Nutr. (2014)
+
+87.   Farshidfar F, Pinder MA, Myrie SB Creatine Supplementation and Skeletal Muscle Metabolism for Building Muscle Mass- Review
+
+of the Potential Mechanisms of Action. Curr Protein Pept Sci. (2017)
+
+88.   Chami J, Candow DG Effect of Creatine Supplementation Dosing Strategies on Aging Muscle Performance. J Nutr Health
+
+Aging. (2019)
+
+89.   Candow DG, Forbes SC, Chilibeck PD, Cornish SM, Antonio J, Kreider RB Effectiveness of Creatine Supplementation on Aging
+
+Muscle and Bone: Focus on Falls Prevention and Inflammation. J Clin Med. (2019 Apr 11)
+
+90.   Gualano B, Rawson ES, Candow DG, Chilibeck PD Creatine supplementation in the aging population: effects on skeletal muscle,
+
+bone and brain. Amino Acids. (2016 Aug)
+
+91.   Avgerinos KI, Spyrou N, Bougioukas KI, Kapogiannis D Effects of creatine supplementation on cognitive function of healthy
+
+individuals: A systematic review of randomized controlled trials. Exp Gerontol. (2018 Jul 15)
+
+92.   Stevens JA, Corso PS, Finkelstein EA, Miller TR The costs of fatal and non-fatal falls among older adults. Inj Prev. (2006 Oct)
+
+93.   Kreider RB, Kalman DS, Antonio J, Ziegenfuss TN, Wildman R, Collins R, Candow DG, Kleiner SM, Almada AL, Lopez HL
+
+International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and
+medicine. J Int Soc Sports Nutr. (2017 Jun 13)
+
+94.   van der Merwe J, Brooks NE, Myburgh KH Three weeks of creatine monohydrate supplementation affects dihydrotestosterone
+
+to testosterone ratio in college-aged rugby players. Clin J Sport Med. (2009 Sep)
+
+95.   Cook CJ, Crewther BT, Kilduff LP, Drawer S, Gaviglio CM Skill execution and sleep deprivation: effects of acute caffeine or
+
+creatine supplementation - a randomized placebo-controlled trial. J Int Soc Sports Nutr. (2011 Feb 16)
+
+96.   Cooke MB, Brabham B, Buford TW, Shelmadine BD, McPheeters M, Hudson GM, Stathis C, Greenwood M, Kreider R, Willoughby
+DS Creatine supplementation post-exercise does not enhance training-induced adaptations in middle to older aged males. Eur
+J Appl Physiol. (2014 Jun)
+
+97.   Crowe MJ, O'Connor DM, Lukins JE The effects of beta-hydroxy-beta-methylbutyrate (HMB) and HMB/creatine
+
+supplementation on indices of health in highly trained athletes. Int J Sport Nutr Exerc Metab. (2003 Jun)
+
+98.   Hoffman J, Ratamess N, Kang J, Mangine G, Faigenbaum A, Stout J Effect of creatine and beta-alanine supplementation on
+
+performance and endocrine responses in strength/power athletes. Int J Sport Nutr Exerc Metab. (2006 Aug)
+
+99.   Eijnde BO, Hespel P Short-term creatine supplementation does not alter the hormonal response to resistance training. Med Sci
+
+Sports Exerc. (2001 Mar)
+
+100.   Volek JS, Ratamess NA, Rubin MR, Gómez AL, French DN, McGuigan MM, Scheett TP, Sharman MJ, Häkkinen K, Kraemer WJ
+
+The effects of creatine supplementation on muscular performance and body composition responses to short-term resistance
+training overreaching. Eur J Appl Physiol. (2004 May)
+
+101.   Tyka AK, Chwastowski M, Cison T, Palka T, Tyka A, Szygula Z, Pilch W, Strzala M, Cepero M Effect of creatine malate
+
+supplementation on physical performance, body composition and selected hormone levels in spinters and long-distance
+runners. Acta Physiol Hung. (2015 Mar)
+
+102.   Sheikholeslami D et al The effects of creatine supplementation on performance and hormonal response in amateur swimmers.
+
+Science & Sport. (2011 Nov)
+
+103.   Arazi H et al. Effects of short term creatine supplementation and resistance exercises on resting hormonal and cardiovascular
+
+responses. Science & Sport. (2015 Apr)
+
+104.   Faraji H et al. The effects of creatine supplementation on sprint running performance and selected hormonal responses. S Afr J
+
+Res Sport Ph. (2010)
+
+105.   Rahimi R et al. Creatine supplementation alters the hormonal response to resistance exercise. Kinesiology. (2011)
+
+106.   Williamson L, New D How the use of creatine supplements can elevate serum creatinine in the absence of underlying kidney
+
+60
+
+pathology. BMJ Case Rep. (2014 Sep 19)
+
+107.   McCall W, Persky AM Pharmacokinetics of creatine. Subcell Biochem. (2007)
+
+108.   Poortmans JR, Francaux M Adverse effects of creatine supplementation: fact or fiction?. Sports Med. (2000 Sep)
+
+109.   Farquhar WB, Zambraski EJ Effects of creatine use on the athlete's kidney. Curr Sports Med Rep. (2002 Apr)
+
+110.   Pline KA, Smith CL The effect of creatine intake on renal function. Ann Pharmacother. (2005 Jun)
+
+111.   Francaux M, Poortmans JR Side effects of creatine supplementation in athletes. Int J Sports Physiol Perform. (2006 Dec)
+
+112.   Persky AM, Rawson ES Safety of creatine supplementation. Subcell Biochem. (2007)
+
+113.   Kim HJ, Kim CK, Carpentier A, Poortmans JR Studies on the safety of creatine supplementation. Amino Acids. (2011 May)
+
+114.   Gualano B, Roschel H, Lancha AH Jr, Brightbill CE, Rawson ES In sickness and in health: the widespread application of creatine
+
+supplementation. Amino Acids. (2012 Aug)
+
+115.   Gualano B, Ferreira DC, Sapienza MT, Seguro AC, Lancha AH Jr Effect of short-term high-dose creatine supplementation on
+
+measured GFR in a young man with a single kidney. Am J Kidney Dis. (2010 Mar)
+
+116.   Gualano B, de Salles Painelli V, Roschel H, Lugaresi R, Dorea E, Artioli GG, Lima FR, da Silva ME, Cunha MR, Seguro AC, Shimizu
+
+MH, Otaduy MC, Sapienza MT, da Costa Leite C, Bonfá E, Lancha Junior AH Creatine supplementation does not impair kidney
+function in type 2 diabetic patients: a randomized, double-blind, placebo-controlled, clinical trial. Eur J Appl Physiol. (2011 May)
+
+117.   Taes YE, Delanghe JR, De Bacquer D, Langlois M, Stevens L, Geerolf I, Lameire NH, De Vriese AS Creatine supplementation
+
+does not decrease total plasma homocysteine in chronic hemodialysis patients. Kidney Int. (2004 Dec)
+
+118.   Shelmadine D et al. The effects of supplementation of creatine on total homocysteine. JRN. (2013 Sep)
+
+119.   Syrotuik DG, Bell GJ Acute creatine monohydrate supplementation: a descriptive physiological profile of responders vs.
+
+nonresponders. J Strength Cond Res. (2004 Aug)
+
+120.   Hadjicharalambous M, Kilduff LP, Pitsiladis YP Brain serotonin and dopamine modulators, perceptual responses and endurance
+
+performance during exercise in the heat following creatine supplementation. J Int Soc Sports Nutr. (2008 Sep 30)
+
+121.   Sato K, Iemitsu M The Role of Dehydroepiandrosterone (DHEA) in Skeletal Muscle. Vitam Horm. (2018)
+
+122.   Gonzales-Arimborgo C, Yupanqui I, Montero E, Alarcón-Yaquetto DE, Zevallos-Concha A, Caballero L, Gasco M, Zhao J, Khan
+IA, Gonzales GF Acceptability, Safety, and Efficacy of Oral Administration of Extracts of Black or Red Maca (Lepidium meyenii)
+in Adult Human Subjects: A Randomized, Double-Blind, Placebo-Controlled Study. Pharmaceuticals (Basel). (2016 Aug 18)
+
+123.   Gonzales GF, Córdova A, Vega K, Chung A, Villena A, Góñez C, Castillo S Effect of Lepidium meyenii (MACA) on sexual desire
+
+and its absent relationship with serum testosterone levels in adult healthy men. Andrologia. (2002 Dec)
+
+124.   Brooks NA, Wilcox G, Walker KZ, Ashton JF, Cox MB, Stojanovska L Beneficial effects of Lepidium meyenii (Maca) on
+
+psychological symptoms and measures of sexual dysfunction in postmenopausal women are not related to estrogen or
+androgen content. Menopause. (2008 Nov-Dec)
+
+125.   Dording CM, Fisher L, Papakostas G, Farabaugh A, Sonawalla S, Fava M, Mischoulon D A double-blind, randomized, pilot dose-
+finding study of maca root (L. meyenii) for the management of SSRI-induced sexual dysfunction. CNS Neurosci Ther. (2008
+Fall)
+
+126.   Dording CM, Schettler PJ, Dalton ED, Parkin SR, Walker RS, Fehling KB, Fava M, Mischoulon D A double-blind placebo-
+
+controlled trial of maca root as treatment for antidepressant-induced sexual dysfunction in women. Evid Based Complement
+Alternat Med. (2015)
+
+127.   Zenico T, Cicero AF, Valmorri L, Mercuriali M, Bercovich E Subjective effects of Lepidium meyenii (Maca) extract on well-being
+and sexual performances in patients with mild erectile dysfunction: a randomised, double-blind clinical trial. Andrologia. (2009
+Apr)
+
+128.   Erem S, Atfi A, Razzaque MS Anabolic effects of vitamin D and magnesium in aging bone. J Steroid Biochem Mol Biol. (2019
+
+Oct)
+
+129.   Severino P, Netti L, Mariani MV, Maraone A, D'Amato A, Scarpati R, Infusino F, Pucci M, Lavalle C, Maestrini V, Mancone M,
+Fedele F Prevention of Cardiovascular Disease: Screening for Magnesium Deficiency. Cardiol Res Pract. (2019 May 2)
+
+130.   Shahi A, Aslani S, Ataollahi M, Mahmoudi M The role of magnesium in different inflammatory diseases. Inflammopharmacology.
+
+(2019 Aug)
+
+131.   Xue W, You J, Su Y, Wang Q The Effect of Magnesium Deficiency on Neurological Disorders: A Narrative Review Article. Iran J
+
+Public Health. (2019 Mar)
+
+132.   Kirkland AE, Sarlo GL, Holton KF The Role of Magnesium in Neurological Disorders. Nutrients. (2018 Jun 6)
+
+133.   Veronese N, Zurlo A, Solmi M, Luchini C, Trevisan C, Bano G, Manzato E, Sergi G, Rylander R Magnesium Status in Alzheimer's
+
+Disease: A Systematic Review. Am J Alzheimers Dis Other Demen. (2016 May)
+
+134.   Held K, Antonijevic IA, Künzel H, Uhr M, Wetter TC, Golly IC, Steiger A, Murck H Oral Mg(2+) supplementation reverses age-
+
+related neuroendocrine and sleep EEG changes in humans. Pharmacopsychiatry. (2002 Jul)
+
+135.   Nielsen FH, Johnson LK, Zeng H Magnesium supplementation improves indicators of low magnesium status and inflammatory
+
+stress in adults older than 51 years with poor quality sleep. Magnes Res. (2010 Dec)
+
+136.   Maggio M, De Vita F, Lauretani F, Nouvenne A, Meschi T, Ticinesi A, Dominguez LJ, Barbagallo M, Dall'aglio E, Ceda GP The
+
+61
+
+Interplay between Magnesium and Testosterone in Modulating Physical Function in Men. Int J Endocrinol. (2014)
+
+137.   Ford ES, Mokdad AH Dietary magnesium intake in a national sample of US adults. J Nutr. (2003 Sep)
+
+138.   Musso CG Magnesium metabolism in health and disease. Int Urol Nephrol. (2009)
+
+139.   Pham PC, Pham PM, Pham SV, Miller JM, Pham PT Hypomagnesemia in patients with type 2 diabetes. Clin J Am Soc Nephrol.
+
+(2007 Mar)
+
+140.   Sarafidis PA, Georgianos PI, Lasaridis AN Diuretics in clinical practice. Part II: electrolyte and acid-base disorders complicating
+
+diuretic therapy. Expert Opin Drug Saf. (2010 Mar)
+
+141.   Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes Dietary Reference
+
+Intakes for Calcium, Phosphorus, Magnesium, Vitamin D, and Fluoride.
+
+142.   Pazianas M, Abrahamsen B, Ferrari S, Russell RG Eliminating the need for fasting with oral administration of bisphosphonates.
+
+Ther Clin Risk Manag. (2013)
+
+143.   Witkowski M, Hubert J, Mazur A Methods of assessment of magnesium status in humans: a systematic review. Magnes Res.
+
+(2011 Dec)
+
+144.   Yoshimura Y, Fujisaki K, Yamamoto T, Shinohara Y Pharmacokinetic Studies of Orally Administered Magnesium Oxide in Rats.
+
+Yakugaku Zasshi. (2017 May 1)
+
+145.   Firoz M, Graber M Bioavailability of US commercial magnesium preparations. Magnes Res. (2001 Dec)
+
+146.   Walker AF, Marakis G, Christie S, Byng M Mg citrate found more bioavailable than other Mg preparations in a randomised,
+
+double-blind study. Magnes Res. (2003 Sep)
+
+147.   Lindberg JS, Zobitz MM, Poindexter JR, Pak CY Magnesium bioavailability from magnesium citrate and magnesium oxide. J
+
+Am Coll Nutr. (1990 Feb)
+
+148.   Fu X, Shen X, Finnan EG, Haytowitz DB, Booth SL Measurement of Multiple Vitamin K Forms in Processed and Fresh-Cut Pork
+
+Products in the U.S. Food Supply. J Agric Food Chem. (2016 Jun 8)
+
+149.   Manoury E, Jourdon K, Boyaval P, Fourcassié P Quantitative measurement of vitamin K2 (menaquinones) in various fermented
+
+dairy products using a reliable high-performance liquid chromatography method. J Dairy Sci. (2013 Mar)
+
+150.   Booth SL Vitamin K: food composition and dietary intakes. Food Nutr Res. (2012)
+
+151.   Kamao M, Suhara Y, Tsugawa N, Uwano M, Yamaguchi N, Uenishi K, Ishida H, Sasaki S, Okano T Vitamin K content of foods
+
+and dietary vitamin K intake in Japanese young women. J Nutr Sci Vitaminol (Tokyo). (2007 Dec)
+
+152.   Elder SJ, Haytowitz DB, Howe J, Peterson JW, Booth SL Vitamin k contents of meat, dairy, and fast food in the u.s. Diet. J
+
+Agric Food Chem. (2006 Jan 25)
+
+153.   Schurgers LJ, Vermeer C Determination of phylloquinone and menaquinones in food. Effect of food matrix on circulating
+
+vitamin K concentrations. Haemostasis. (2000 Nov-Dec)
+
+154.   Booth SL, Pennington JA, Sadowski JA Food sources and dietary intakes of vitamin K-1 (phylloquinone) in the American diet:
+
+data from the FDA Total Diet Study. J Am Diet Assoc. (1996 Feb)
+
+155.   Shimogawara K, Muto S Purification of Chlamydomonas 28-kDa ubiquitinated protein and its identification as ubiquitinated
+
+histone H2B. Arch Biochem Biophys. (1992 Apr)
+
+156.   Hirauchi K, Sakano T, Notsumoto S, Nagaoka T, Morimoto A, Fujimoto K, Masuda S, Suzuki Y Measurement of K vitamins in
+animal tissues by high-performance liquid chromatography with fluorimetric detection. J Chromatogr. (1989 Dec 29)
+
+157.   Institute of Medicine (US) Panel on Micronutrients Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron,
+
+Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc.
+
+158.   De Jesus Moreno Moreno M Cognitive improvement in mild to moderate Alzheimer's dementia after treatment with the
+
+acetylcholine precursor choline alfoscerate: a multicenter, double-blind, randomized, placebo-controlled trial. Clin Ther. (2003
+Jan)
+
+159.   Lippelt DP, van der Kint S, van Herk K, Naber M No Acute Effects of Choline Bitartrate Food Supplements on Memory in
+
+Healthy, Young, Human Adults. PLoS One. (2016 Jun 24)
+
+160.   Parisi V, Coppola G, Centofanti M, Oddone F, Angrisani AM, Ziccardi L, Ricci B, Quaranta L, Manni G Evidence of the
+
+neuroprotective role of citicoline in glaucoma patients. Prog Brain Res. (2008)
+
+161.   Meissner HO, Mscisz A, Reich-Bilinska H, Kapczynski W, Mrozikiewicz P, Bobkiewicz-Kozlowska T, Kedzia B, Lowicka A,
+
+Barchia I Hormone-Balancing Effect of Pre-Gelatinized Organic Maca (Lepidium peruvianum Chacon): (II) Physiological and
+Symptomatic Responses of Early-Postmenopausal Women to Standardized doses of Maca in Double Blind, Randomized,
+Placebo-Controlled, Multi-Centre Clinical Study. Int J Biomed Sci. (2006 Dec)
+
+162.   Meissner HO, Kapczynski W, Mscisz A, Lutomski J Use of gelatinized maca (lepidium peruvianum) in early postmenopausal
+
+women. Int J Biomed Sci. (2005 Jun)
+
+163.   Meissner HO, Mscisz A, Reich-Bilinska H, Mrozikiewicz P, Bobkiewicz-Kozlowska T, Kedzia B, Lowicka A, Barchia I Hormone-
+
+Balancing Effect of Pre-Gelatinized Organic Maca (Lepidium peruvianum Chacon): (III) Clinical responses of early-
+postmenopausal women to Maca in double blind, randomized, Placebo-controlled, crossover configuration, outpatient study.
+Int J Biomed Sci. (2006 Dec)
+
+164.   Stojanovska L, Law C, Lai B, Chung T, Nelson K, Day S, Apostolopoulos V, Haines C Maca reduces blood pressure and
+
+62
+
+depression, in a pilot study in postmenopausal women. Climacteric. (2015 Feb)
+
+165.   Takewaka1 T and Hara K Clinical Effect of Oral Administration of Maca (Lepidium meyenii) Extract on Japanese Peri-
+
+Menopausal Women Subjects: A Randomized, Double-Blind, Placebo-Controlled Study. IJBSE. (2019 Mar)
+
+166.   Pae M, Wu D Nutritional modulation of age-related changes in the immune system and risk of infection. Nutr Res. (2017 May)
+
+167.   Koekkoek WA, van Zanten AR Antioxidant Vitamins and Trace Elements in Critical Illness. Nutr Clin Pract. (2016 Aug)
+
+168.   Traber MG Vitamin E and K interactions--a 50-year-old problem. Nutr Rev. (2008 Nov)
+
+169.   Emami MR, Safabakhsh M, Alizadeh S, Asbaghi O, Khosroshahi MZ Effect of vitamin E supplementation on blood pressure: a
+
+systematic review and meta-analysis. J Hum Hypertens. (2019 Jul)
+
+170.   Institute of Medicine (US) Panel on Dietary Antioxidants and Related Compounds Dietary Reference Intakes for Vitamin C,
+
+Vitamin E, Selenium, and Carotenoids.
+
+171.   Lim J, Henry CJ, Haldar S Vinegar as a functional ingredient to improve postprandial glycemic control-human intervention
+
+findings and molecular mechanisms. Mol Nutr Food Res. (2016 Aug)
+
+172.   Shishehbor F, Mansoori A, Shirani F Vinegar consumption can attenuate postprandial glucose and insulin responses; a
+
+systematic review and meta-analysis of clinical trials. Diabetes Res Clin Pract. (2017 May)
+
+173.   Kondo T, Kishi M, Fushimi T, Ugajin S, Kaga T Vinegar intake reduces body weight, body fat mass, and serum triglyceride
+
+levels in obese Japanese subjects. Biosci Biotechnol Biochem. (2009 Aug)
+
+174.   Derakhshandeh-Rishehri SM, Heidari-Beni M, Feizi A, Askari GR, Entezari MH Effect of honey vinegar syrup on blood sugar and
+
+lipid profile in healthy subjects. Int J Prev Med. (2014 Dec)
+
+175.   Johnston CS, White AM, Kent SM Preliminary evidence that regular vinegar ingestion favorably influences hemoglobin A1c
+
+values in individuals with type 2 diabetes mellitus. Diabetes Res Clin Pract. (2009 May)
+
+176.   Gheflati A, Bashiri R, Ghadiri-Anari A, Reza JZ, Kord MT, Nadjarzadeh A The effect of apple vinegar consumption on glycemic
+
+indices, blood pressure, oxidative stress, and homocysteine in patients with type 2 diabetes and dyslipidemia: A randomized
+controlled clinical trial. Clin Nutr ESPEN. (2019 Oct)
+
+177.   Jasbi P, Baker O, Shi X, Gonzalez LA, Wang S, Anderson S, Xi B, Gu H, Johnston CS Daily red wine vinegar ingestion for eight
+weeks improves glucose homeostasis and affects the metabolome but does not reduce adiposity in adults. Food Funct. (2019
+Nov 1)
+
+178.   Panetta C, Jonk Y, Shapiro A Prospective randomized clinical trial evaluating the impact of vinegar on lipids in non-diabetics.
+
+WJCD. (2013 Apr)
+
+179.   Soleymani T, Lo Sicco K, Shapiro J The Infatuation With Biotin Supplementation: Is There Truth Behind Its Rising Popularity? A
+
+Comparative Analysis of Clinical Efficacy versus Social Popularity. J Drugs Dermatol. (2017 May 1)
+
+180.   John JJ, Cooley V, Lipner SR Assessment of biotin supplementation among patients in an outpatient dermatology clinic. J Am
+
+Acad Dermatol. (2019 Aug)
+
+181.   Patel DP, Swink SM, Castelo-Soccio L A Review of the Use of Biotin for Hair Loss. Skin Appendage Disord. (2017 Aug)
+
+182.   Trüeb RM Serum Biotin Levels in Women Complaining of Hair Loss. Int J Trichology. (2016 Apr-Jun)
+
+183.   Zempleni J, Hassan YI, Wijeratne SS Biotin and biotinidase deficiency. Expert Rev Endocrinol Metab. (2008 Nov 1)
+
+184.   Lipner SR, Scher RK Biotin for the treatment of nail disease: what is the evidence?. J Dermatolog Treat. (2018 Jun)
+
+185.   Colombo VE, Gerber F, Bronhofer M, Floersheim GL Treatment of brittle fingernails and onychoschizia with biotin: scanning
+
+electron microscopy. J Am Acad Dermatol. (1990 Dec)
+
+186.   Hochman LG, Scher RK, Meyerson MS Brittle nails: response to daily biotin supplementation. Cutis. (1993 Apr)
+
+187.   Gloster H Jr, Kindred C Habit-tic-like and median nail-like dystrophies treated with multivitamins. J Am Acad Dermatol. (2005
+
+Sep)
+
+188.   Möhrenschlager M et al. Recalcitrant trachyonychia of childhood – response to daily oral biotin supplementation: report of two
+
+cases. J. Dermatol. Treat.. (2009 Jul)
+
+189.   Piraccini B et al. Triangular worn-down nails: Report of 14 cases. Giornale Italiano di Dermatologia e Venereologia. (2005 Jan)
+
+190.   Boccaletti V, Zendri E, Giordano G, Gnetti L, De Panfilis G Familial Uncombable Hair Syndrome: Ultrastructural Hair Study and
+
+Response to Biotin. Pediatr Dermatol. (2007 May-Jun)
+
+191.   Shelley WB, Shelley ED Uncombable hair syndrome: observations on response to biotin and occurrence in siblings with
+
+ectodermal dysplasia. J Am Acad Dermatol. (1985 Jul)
+
+192.   Mercke Y, Sheng H, Khan T, Lippmann S Hair loss in psychopharmacology. Ann Clin Psychiatry. (2000 Mar)
+
+193.   Schulpis KH, Karikas GA, Tjamouranis J, Regoutas S, Tsakiris S Low serum biotinidase activity in children with valproic acid
+
+monotherapy. Epilepsia. (2001 Oct)
+
+194.   Wang X, Wang H, Xu D, Zhu L, Liu L Risk of valproic acid-related alopecia: A systematic review and meta-analysis. Seizure.
+
+(2019 Jul)
+
+195.   Geller AI, Shehab N, Weidle NJ, Lovegrove MC, Wolpert BJ, Timbo BB, Mozersky RP, Budnitz DS Emergency Department Visits
+
+for Adverse Events Related to Dietary Supplements. N Engl J Med. (2015 Oct 15)
+
+63
+
+196.   Busti F, Campostrini N, Martinelli N, Girelli D Iron deficiency in the elderly population, revisited in the hepcidin era. Front
+
+Pharmacol. (2014 Apr 23)
+
+197.   Smith DL Anemia in the elderly. Am Fam Physician. (2000 Oct 1)
+
+198.   Basu A, Rhone M, Lyons TJ Berries: emerging impact on cardiovascular health. Nutr Rev. (2010 Mar)
+
+199.   Anderson RL, Wolf WJ Compositional changes in trypsin inhibitors, phytic acid, saponins and isoflavones related to soybean
+
+processing. J Nutr. (1995 Mar)
+
+200.   Erdman JW Jr, Badger TM, Lampe JW, Setchell KD, Messina M Not all soy products are created equal: caution needed in
+
+interpretation of research results. J Nutr. (2004 May)
+
+201.   Barzel US, Massey LK Excess dietary protein can adversely affect bone. J Nutr. (1998 Jun)
+
+202.   Schwingshackl L, Hoffmann G Comparison of high vs. normal/low protein diets on renal function in subjects without chronic
+
+kidney disease: a systematic review and meta-analysis. PLoS One. (2014 May 22)
+
+203.   Hunt JR, Johnson LK, Fariba Roughead ZK Dietary protein and calcium interact to influence calcium retention: a controlled
+
+feeding study. Am J Clin Nutr. (2009 May)
+
+204.   Wright CS, Li J, Campbell WW Effects of Dietary Protein Quantity on Bone Quantity following Weight Loss: A Systematic
+
+Review and Meta-analysis. Adv Nutr. (2019 Nov 1)
+
+205.   Livingstone C Insulin-like growth factor-I (IGF-I) and clinical nutrition. Clin Sci (Lond). (2013 Sep)
+
+206.   Yakar S, Rosen CJ, Beamer WG, Ackert-Bicknell CL, Wu Y, Liu JL, Ooi GT, Setser J, Frystyk J, Boisclair YR, LeRoith D
+
+Circulating levels of IGF-1 directly regulate bone growth and density. J Clin Invest. (2002 Sep)
+
+64
+
+

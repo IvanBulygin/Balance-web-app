@@ -1,0 +1,2299 @@
+Bone Health Supplement Guide
+
+Written By: Michael Hull, & Wyatt Brown
+
+Edited By: Pierre-Alexandre Sicart
+
+Reviewed By: Kamal Patel
+
+Table of Contents
+
+Introduction
+
+Combos
+
+Primary Supplements
+
+Secondary Supplements
+
+Promising Supplements
+
+Unproven Supplements
+
+Inadvisable Supplements
+
+FAQ
+
+2
+
+Introduction
+
+Your bones are more complex than is commonly assumed. They are composed of minerals (mainly calcium,
+
+magnesium, and phosphorus) attached to a structural matrix made of proteins (collagen and glycoproteins)
+
+and function as an endocrine organ (i.e., they produce hormones, osteocalcin).[1] Unlike your visible hair and
+
+nails, they are alive; they are continuously being broken down and built back up in a process called
+
+remodeling (or bone turnover), for maintenance and for repair after injury and daily wear. This is how bones
+
+adapt to stressors, which explains why exercise, especially resistance training, can increase bone mineral
+
+density (BMD)[2][3][4][5].
+
+If your BMD is low, you suffer from osteopenia (literally, “poor bone”). If your osteopenia worsens to the
+
+point that your bones become brittle, it becomes an illness, called osteoporosis (literally, “porous bone”).
+
+Osteoporosis is more common in (postmenopausal) females than in males, but the latter are not immune.
+
+The risk of osteoporosis varies by location; in general, in the northern hemisphere, the further north you go,
+
+the higher the risk.[6] The incidence of fractures varies greatly by country, but on average, some 50% of
+
+females aged 50 and older are at risk of fractures.[6] In 2010, it was estimated that 53.2% of females and
+
+20.7% of males aged 50 and older in the UK would sustain a fracture before the end of their lives.[7] In 2010,
+
+an estimated 43.4 million adults aged 50 and older in the US suffered from osteopenia and 10.2 from
+
+osteoporosis (at the femoral neck or lumbar spine).[8]
+
+Rate of osteoporosis of the femoral neck or lumbar spine in the US in 2010 (%)
+
+AGE
+
+FEMALES
+
+MALES
+
+50s
+
+6.8
+
+3.4
+
+60s
+
+12.3
+
+3.3
+
+70s
+
+25.7
+
+5
+
+80s
+
+34.9
+
+10.9
+
+Reference: Wright et al. J Bone Miner Res. 2014.[8]
+
+Osteoblasts and osteoclasts are large cells on the bone surface. Osteoblasts synthesize and mineralize
+
+bone, whereas osteoclasts break down bone, causing minerals to be reabsorbed into the bloodstream.
+
+If osteoclasts are too active or numerous, BMD decreases, leading to osteoporosis. Conversely, if
+
+osteoclasts are not numerous or active enough, BMD increases, leading to the rare, inherited condition
+
+called osteopetrosis (literally, “stone bone”). You might think that osteopetrosis makes bone more resilient,
+
+but no: osteoporosis[6] and osteopetrosis[9] both increase the risk of fractures.[10][11]
+
+Interestingly, osteoclast activity is increased by inflammatory signaling. This may be why smoking, heavy
+
+alcohol consumption, and inflammation-linked diseases (such as diabetes and rheumatoid arthritis) are risk
+
+factors for osteoporosis, especially in older people.[12][13][14][15]
+
+Conversely, estrogen decreases osteoclast activity while increasing the number and activity of osteoblasts.
+
+This explains why, after menopause, when estrogen levels decline significantly, the rate of osteoporosis
+
+becomes so much worse in females than males.[16]
+
+The interrelation of genetics, age, sex, exercise, nutrition, supplementation, and other factors (some of
+
+which are still unknown to us) makes bone health a complex topic. On the bright side, it also makes
+
+supplement synergy possible, as some supplements can serve as building blocks (protein, calcium,
+
+magnesium) and some play supporting roles: vitamin D helps your intestines absorb calcium, whereas
+
+vitamin K helps shuttle calcium from the bloodstream to the bones, thus improving bone health as well as
+
+3
+
+cardiovascular health.
+
+Architecture of normal vs osteoporotic bone
+
+How is bone health measured?
+
+Fractures
+
+The main aspect of healthy bones is that they don’t easily break. To measure bone health, the gold standard
+
+in research is to measure the number and severity of fractures.
+
+This method, however, requires following a lot of people for a fairly long time — until enough fractures
+
+have happened and we have good reason to suspect that the differences between groups aren’t due to
+
+random chance. For that reason, in bone-health research, measuring fractures is nowhere near as common
+
+as measuring BMD, and some studies that measure fractures aren’t very accurate.
+
+In people with osteoporosis, fractures are most common in hip bones (particularly the femoral neck),
+
+followed by the spine, wrists, and pelvis.[17]
+
+Bone mineral density (BMD)
+
+The most common way of measuring bone health is to measure BMD, using dual-energy X-ray
+
+absorptiometry (DXA or DEXA). During a DXA scan, you lie down on a bed while a robotic arm moves up
+
+and down the length of your body, emitting very low-level X-rays and measuring how many get absorbed.
+
+You then get a T-score, which is the number of standard deviations your BMD is from the peak BMD of
+
+healthy young people.[18]
+
+4
+
+ 
+If your T-score is at least −1.0, your BMD is normal.
+
+If your T-score is under −1.0 but above −2.5, you have osteopenia.
+
+If your T-score is under −2.5, you have osteoporosis.
+
+Osteoporosis and osteopenia (based on T-score)
+
+Except in people with osteopetrosis, BMD is inversely associated with fractures.[19] T-scores are oftentimes
+
+combined with known risk factors to predict fracture risk.[20]
+
+Microarchitecture
+
+As we said, bones are more complex than is commonly assumed, and BMD is only part of the “bone health”
+
+picture. A new technology called high-resolution peripheral quantitative computed tomography (HR-pQCT)
+
+can provide information not just about the amount of mineral in a bone but also about the morphology,
+
+architecture, and overall strength of the bone.[21][22]
+
+5
+
+HR-pQCT and bone anatomy
+
+Being much newer than DXA, HR-pQCT isn’t anywhere as common in research, but its use is increasing.
+
+Biomarkers of bone turnover
+
+Since abnormalities in remodeling (aka bone turnover: the breaking down and building up of bone) are the
+
+cause of osteoporosis, it makes sense that measuring this process could provide insights into the risk of
+
+osteoporosis and fractures. And indeed, many biomarkers can be measured and interpreted as good or bad
+
+signs for remodeling and bone health — but this method isn’t yet mature,[23] and mistakes have been made.
+
+For instance, calcium in the urine is a biomarker of bone loss, and because more protein in the diet was
+
+linked to more calcium in the urine, higher protein intakes were hypothesized to increase bone loss. We now
+
+know, however, that this hypothesis was wrong.
+
+Should you get tested?
+
+It may be a good idea to undergo a DXA scan early — for females, at least before menopause — to get a
+
+baseline measurement of your BMD. Usually, doctors prescribe a DXA scan only to older people or people
+
+they otherwise suspect of bone loss, but then the measurement can only show if you have osteopenia or
+
+osteoporosis, by comparison with the peak BMD of an average healthy young person; it cannot show how
+
+much bone you have lost since you were young. Be sure to discuss testing as well strategies for preserving
+
+bone mass with your physician.
+
+6
+
+Wyatt Brown, researcher
+
+7
+
+Combos
+
+Core Combo
+
+With a meal containing fat, take vitamin K (45,000 mcg of MK-4 and/or 200 mcg of MK-7). Make sure you
+
+consume at least 1.4 g of protein per kilogram of body weight per day (0.64 g/lb/day) or at least 90 g/day,
+
+whichever is higher.
+
+Vitamins that increase bone mineralisation
+
+If your vitamin D levels (25(OH)D) are adequate or you do not know your levels, 400 IU (10 mcg) of vitamin
+
+D3 per day may help maintain levels in the adequate range. If your 25(OH)D levels are low, 800–2,000 IU
+
+(20–50 mcg) of D3 per day is likely to raise them to an adequate level, at which point 400–1,000 IU (20–25
+
+mcg) per day should suffice for maintenance. In case of full-blown deficiency, a medically supervised
+
+intervention will be needed.
+
+8
+
+ Tip: Try one combo alone for a few weeks
+
+Taking too many supplements at once may prevent you from determining which ones are truly
+
+working. Start with just one of the combos suggested here for a couple of weeks before you
+
+consider making any modification, such as adding another supplement, altering a supplements
+
+dosage, or incorporating the supplements from an additional combo.
+
+When adding another supplement to your regimen, be methodical. For example, you may wish to
+
+take all the supplements from two combos. Select the combo that you wish to try first and take this
+
+for a couple of weeks. Then, add one supplement from the second combo and wait another week to
+
+see how it affects you. Continue this process until you’ve added all the supplements you wish to.
+
+If a supplement appears in two combos you wish to combine, don’t stack the doses; instead,
+
+combine the ranges. For instance, if the range is 2–4 mg in one combo and 3–6 mg in the other, your
+
+new range becomes 2–6 mg. Always start with the lower end of the range — especially in this case,
+
+since the reason why one of the ranges has a lower ceiling in one combo may be due to a synergy
+
+with another supplement in the same combo. Reading through the full supplement entry may help
+
+you decide which dose to aim for, but if you’re not sure, lower is usually safer.
+
+Specialized Combos
+
+For people suffering from a mineral deficiency
+
+Before you consider adding calcium or magnesium (200–350 mg) to the core supplements, track what you
+
+eat for a week. If, on average, you are getting less than 80% of your Recommended Dietary Allowance
+
+(RDA) for either mineral, supplementation becomes an option, though first you should try eating more
+
+calcium-rich and/or magnesium-rich foods.
+
+9
+
+Primary Supplements
+
+Protein
+
+What makes protein a core supplement
+
+Calcium is the main mineral but not the main component of your bones; by volume, your bones are about
+
+50% protein. Unsurprisingly, the effect of dietary protein on bone health has been the subject of many
+
+randomized controlled trials and prospective cohort studies.
+
+The consensus is that higher protein intakes can help maintain bone mineral density, or at least slow its
+
+decrease, especially in the presence of enough calcium. Luckily, higher protein intakes also enhance calcium
+
+absorption in the intestines (as does vitamin D). At worst, the effect of high protein intakes appears to be
+
+neutral.
+
+Can higher protein intakes increase bone mineral density (BMD)? In that respect, the evidence is less clear.
+
+There are plausible mechanisms through which this might occur, but running trials long enough to gather
+
+robust data will be difficult and expensive.
+
+Any protein found in food or supplements is called dietary protein. Overall, whole foods are the healthier
+
+choice, but if your food intake does not cover your daily protein needs, you could add a supplement
+
+(preferably a powder, since the protein-to-calorie ratio of powders tends to be higher than that of other
+
+protein supplements, such as protein bars).
+
+Whey protein and casein protein powders are both derived from milk protein (which is 20% whey and 80%
+
+casein). If you are neither lactose intolerant nor vegan, look for a whey protein concentrate that is at least
+
+80% protein. Whey protein is cheap and very anabolic (good for building muscle). Micellar casein is more
+
+expensive but more anti-catabolic (good for preserving muscle). Since micellar casein digests slowly, it is
+
+often seen as the ideal protein to consume before sleep, though some evidence suggests that bedtime
+
+protein may not provide any additional benefit if enough protein is consumed during the day.[24]
+
+But what if you are lactose intolerant or vegan? Fortunately, you can still supplement protein powders.
+
+Whey protein isolates contain very little lactose. For vegans, two popular options are soy protein, a
+
+complete protein, and a 70:30 pea:rice protein blend, which is seen as the vegan alternative to whey protein
+
+due to their similar amino acid profiles.
+
+How to take protein
+
+In the United States, the Recommended Dietary Allowance (RDA) of 0.8 grams per kilogram of body weight
+
+(0.36 g/lb) is considered the minimum amount of protein a healthy adult must consume daily to prevent
+
+muscle wasting when total caloric intake is sufficient.[25]
+
+The current evidence suggests, however, that this amount has been underestimated. Recent studies point to
+
+1.0–1.2 g/kg as the minimum daily intake before the body starts downregulating important non-essential
+
+processes, from immune function to muscle protein synthesis.[26][27][28] Even a reanalysis of the data used to
+
+10
+
+ 
+establish the above RDA suggests the minimum daily intake should be at least 1.0 g/kg.[29]
+
+Most studies that observed a positive effect on bone mineral density used 1.4 g/kg/day (0.64 g/lb/day) with
+
+a minimum of 90 g/day. It is unclear if higher doses are more effective, but they are unlikely to cause harm
+
+to your bones.
+
+Daily protein intake for bone health
+
+BODY WEIGHT
+
+BODY WEIGHT
+
+0.36
+
+0.45
+
+0.54
+
+0.64
+
+0.77
+
+0.91
+
+1.00
+
+g/lb
+
+LB
+
+100
+
+125
+
+150
+
+175
+
+200
+
+225
+
+250
+
+275
+
+KG
+
+45
+
+57
+
+68
+
+79
+
+91
+
+102
+
+113
+
+125
+
+0.8
+
+1.0
+
+1.2
+
+1.4
+
+2.0
+
+2.2
+
+g/kg
+
+36
+
+45
+
+54
+
+64
+
+73
+
+82
+
+91
+
+100
+
+45
+
+57
+
+68
+
+79
+
+91
+
+102
+
+113
+
+125
+
+54
+
+68
+
+82
+
+95
+
+109
+
+122
+
+136
+
+150
+
+1.7
+
+77
+
+96
+
+91
+
+113
+
+100
+
+125
+
+116
+
+136
+
+150
+
+135
+
+159
+
+175
+
+154
+
+181
+
+200
+
+63
+
+80
+
+95
+
+111
+
+127
+
+153
+
+173
+
+204
+
+225
+
+158
+
+193
+
+227
+
+250
+
+175
+
+212
+
+249
+
+275
+
+g
+
+g
+
+g
+
+g
+
+g
+
+g
+
+g
+
+g
+
+Green = Meets or exceeds the 90 g/day and 1.4 g/kg/day protein intake threshold.
+
+Yellow = Meets 90 g/day but not 1.4 g/kg/day protein intake threshold.
+
+Red = Does not meet 90 g/day and/or 1.4 g/kg/day protein intake threshold.
+
+Unless you have a pre-existing condition that affects your liver or kidneys, the intakes in the above table
+
+will not harm these organs.[30] However, if you have a BMI of more than 30, you may want to calculate your
+
+protein requirements based on your goal body weight rather than your current body weight, so as to avoid
+
+overeating.
+
+ Tip: Use our Protein Intake Calculator
+
+Your protein needs hinge on many factors — notably your weight, health goals, and level of physical
+
+activity. Based on our research and the data you input, we can calculate your optimal daily protein
+
+intake. Click on the image below to get started!
+
+Spreading your protein intake over a few meals will generally result in greater lean mass and strength.
+
+Moreover, higher doses will not be wasted and are probably necessary when eating mixed meals that
+
+contain a variety of protein sources. You may have heard that if you eat more than 30 grams of protein in
+
+one sitting, the “excess” will pass undigested, but that’s just a myth.
+
+11
+
+ 
+After exercising, when your muscles are more sensitive to the anabolic effect of protein, take a dose in the
+
+range of your “desirable minimal protein intake per meal” (as shown in the table above). If you’ve been
+
+exercising on an empty stomach, you’ll be in negative protein balance, so take this dose as soon as
+
+possible. Otherwise, try to take it within a couple of hours — the exact size of your “window of
+
+opportunity” depends on how much protein you’re still digesting.[31]
+
+ Tip: Why don’t you recommend brands or specific products?
+
+For two reasons:
+
+We don’t test physical products. What our researchers do — all day, every day — is analyze
+
+peer-reviewed studies on supplements and nutrition.
+
+We go to great lengths to protect our integrity. As you’ve probably noticed, we don’t sell
+
+supplements, or even show ads from supplement companies, even though either option
+
+would generate a lot more money than our Supplement Guides ever will — and for a lot less
+
+work, too.
+
+If we recommended any brands or specific products, our integrity would be called into question, so
+
+… we can’t do it. That being said, in the interest of keeping you safe, we drew a short list of steps
+
+you should take if a product has caught your interest.
+
+Vitamin D
+
+What makes vitamin D a core supplement
+
+Suboptimal levels of vitamin D are common, especially in people whose skin exposure to sunlight (meaning
+
+without protection from clothes or sunscreen) is limited. Moreover, the darker your skin, the longer you
+
+need to expose yourself to sunlight to synthesize enough vitamin D, which is why people with darker skin
+
+are at an increased risk of suboptimal vitamin D levels.[32]
+
+12
+
+ 
+Average yearly sunlight exposure in the US
+
+Adapted from Tatalovich et al. CaGIS. 2006. DOI:10.1559/152304006779077318
+
+The situation doesn’t improve as you age. The older you get, the less efficient your body becomes at
+
+synthesizing vitamin D, the less time you’re likely to spend outside, the less vitamin D you’re likely to get
+
+through food, and the more likely you become to carry extra fat (belly fat has been linked to vitamin D
+
+deficiency).[33][34]
+
+By helping your intestines absorb calcium, vitamin D can strengthen your bones; it can also, alas, facilitate
+
+the calcification of your arteries, but this effect can be counteracted by vitamin K. Vitamins D and K can
+
+increase synergistically the rate at which minerals (notably calcium and magnesium) accumulate in bones,
+
+which is another reason to take them together.
+
+13
+
+Role of vitamin D in bone health
+
+Adapted from Laird et al. Nutrients. 2010.[35]
+
+Vitamin D is commonly available in two forms. Ergocalciferol (D2) is available in a handful of plants and
+
+fungi, whose D2 content can be increased dramatically when exposed to ultraviolet B (UVB) radiation,[36][37]
+
+whereas cholecalciferol (D3) is synthesized from the cholesterol in your skin when exposed to the sun’s
+
+UVB rays.[38][39][40]
+
+D3 is both more stable and more bioavailable than vitamin D2. As a supplement, it is usually derived from
+
+lanolin, a waxy substance secreted by the skin glands of woolly animals, but a vegan-friendly option (a
+
+lichen extract) is also available.
+
+14
+
+Before turning to supplementation, you should try incorporating some foods rich in vitamin D into your diet.
+
+Very few foods, alas, contain appreciable amounts of naturally occurring vitamin D, with fatty fish being a
+
+notable exception (cod liver oil, in particular). For that reason, milk is commonly fortified with either D2 or,
+
+more recently, D3. Why milk? Because milk is rich in calcium, which vitamin D helps your intestines absorb.
+
+For the same reason, yogurt, cheese, and breakfast cereal are also commonly fortified with D2 or D3. Other
+
+commonly fortified foods include bread, margarine, and fruit juice (orange juice, in particular). As usual,
+
+which foods get fortified, if any, vary by country, based on local laws and policies.
+
+How to take vitamin D
+
+First, you should determine if you really need to supplement vitamin D by checking your current vitamin D
+
+levels (i.e., your blood levels of 25(OH)D).
+
+Serum 25(OH)D concentrations
+
+Reference: Institute of Medicine. Overview of Vitamin D (chapter 3 in Dietary Reference Intakes for Calcium and Vitamin D. The
+
+National Academies Press. 2011. DOI:10.17226/13050)
+
+In case of deficiency, a medically supervised intervention can be needed. Do not begin any intervention
+
+without discussing it with your physician. Common medical interventions include taking 50,000 IU (1,250
+
+mcg) of D2 or D3 at least three times a week for six to eight weeks, though people with a borderline
+
+deficiency may not need as high a dose. At the end of this intervention, if vitamin D levels are above 30
+
+nmol/L (12 ng/mL), a daily dose of 400–1,000 IU (20–25 mcg) is commonly used for maintenance.
+
+In case of inadequacy, 800–2,000 IU (20–50 mcg) of D3 per day is likely to raise vitamin D levels to an
+
+adequate level, at which point 400–1,000 IU (20–25 mcg) per day should suffice for maintenance.
+
+In case of adequate vitamin D levels, a vitamin D supplement may not be necessary, especially if you spend
+
+a lot of time outside and live near the equator. However, taking 400–600 IU (10–15 mcg) of D3 per day may
+
+help maintain vitamin D levels in the adequate range, particularly during the colder, darker months, when
+
+you are least likely to synthesize enough vitamin D from sun exposure.
+
+In case of high vitamin D levels (which can cause adverse effects), seek the help of a medical professional.
+
+Of course, stop taking any supplement containing vitamin D, unless otherwise instructed by a medical
+
+professional.
+
+If you do not know your vitamin D levels and cannot get them tested but are still intent on taking a vitamin
+
+D supplement, it would be prudent to limit yourself to a maintenance dose of 400 IU (10 mcg) of D3 per
+
+day. Alternatively, you could track your food intake for a week to determine your average vitamin D intake,
+
+then select a complementary dose to reach your RDA.
+
+15
+
+Recommended Dietary Allowance (RDAs) for vitamin D (IU*)
+
+AGE
+
+0–12 months
+
+1–13 years
+
+14–18 years
+
+19–50 years
+
+51–70 years
+
+>70 years
+
+MALE
+
+400**
+
+600
+
+600
+
+600
+
+600
+
+800
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+400**
+
+600
+
+600
+
+600
+
+600
+
+800
+
+—
+
+—
+
+600
+
+600
+
+—
+
+—
+
+—
+
+—
+
+600
+
+600
+
+—
+
+—
+
+* 40 IU = 1 mcg | ** Adequate intake (AI)
+
+Reference: Institute of Medicine. Dietary Reference Intakes for Adequacy: Calcium and Vitamin D (chapter 5 in Dietary Reference
+
+Intakes for Calcium and Vitamin D. The National Academies Press. 2011. DOI:10.17226/13050)
+
+If the maintenance doses in the paragraphs above prove insufficient, as could be the case notably if your
+
+BMI is over 30[41] or if you suffer from poor vitamin D absorption or processing (due to a problem with your
+
+kidneys, liver, or gastrointestinal tract), you could switch to 1,000–2,000 IU (25–50 mcg) of D3 per day.
+
+Vitamin D being fat-soluble, it is better absorbed when taken with a fat-containing food or supplement
+
+(e.g., fish oil).
+
+Vitamin K
+
+What makes vitamin K a core supplement
+
+Vitamin K is an umbrella term for a variety of molecules with similar but distinct structures.
+
+K1 (phylloquinone) is a molecule found in plants.
+
+K2 (menaquinone) is a group of molecules.
+
+K2 MK-4 is mostly found in animal products.
+
+K2 MK-7 is mostly found in fermented foods.
+
+16
+
+ 
+The K vitamins
+
+The accumulation of calcium in body tissues, notably bone, is called calcification. For bones, calcification is
+
+a good thing, but it can harden soft tissues, such as blood vessels — including coronary arteries, which
+
+supply oxygenated blood to the heart.
+
+In all its forms, vitamin K is fat-soluble and supports blood clotting and calcium regulation; it helps ensure
+
+that more calcium gets deposited in bone and less in soft tissues. Hence, vitamin K can both strengthen
+
+bones and reduce cardiovascular disease risk. However, there are notable differences between the different
+
+forms.
+
+After being absorbed by your intestines, K1 is taken up by your liver (where vitamin K is used to make
+
+clotting proteins, which are then released into your blood) at a higher rate than MK-4, whereas MK-4 is
+
+taken up by soft tissues at a higher rate than K1. This should make K1 better at supporting coagulation (i.e.,
+
+blood clotting), and MK-4 better at preventing calcium from being deposited in the arteries. Some K1
+
+converts indirectly to MK-4, but how much is unknown.
+
+When it comes to bones, a few MK-4 trials looked at fracture risk and reported a decrease. One K1 trial
+
+looked at fracture risk and reported a decrease, but without a concomitant increase in bone mineral
+
+17
+
+density, so more research is needed to clarify the issue. Some MK-7 trials found an improvement in bone
+
+mineral density, but none have looked at fracture risk.
+
+Role of vitamin K in bone health
+
+The vitamins K and D increase separately and synergistically the rate at which minerals (notably calcium
+
+and magnesium) accumulate in bones. MK-4 and MK-7 appear to do so more reliably than K1.
+
+Vitamin K is usually safe. Supplementation might cause some nausea or stomach upset, but those effects
+
+are uncommon.
+
+K1 is present mostly in leafy green vegetables, many of which are cruciferous. If you plan to increase your
+
+K1 intake through plant foods, be aware that cruciferous vegetables contain goitrogens and thus can reduce
+
+thyroid hormone production. If you tend to eat a lot of cruciferous vegetables, such as kale, make sure to
+
+also get enough iodine — through iodine-rich foods (such as cod, shrimp, milk, yogurt, or cottage cheese),
+
+iodine-fortified foods (such as iodized salt), or supplements (75–150 mcg/day).
+
+Micrograms of vitamin K per 100 grams of food
+
+FOODS
+
+Collards
+
+Spinach
+
+Broccoli
+
+Cabbage
+
+K~1~
+
+440
+
+360–380
+
+113–180
+
+98–145
+
+K~2~ MK-4
+
+K~2~ MK-7
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+18
+
+K~1~
+
+K~2~ MK-4
+
+K~2~ MK-7
+
+FOODS
+
+Natto
+
+Chicken
+
+Pork
+
+Beef
+
+Beef liver
+
+Egg
+
+Egg yolk
+
+Butter
+
+Not measured
+
+0–4.5
+
+0–3.4
+
+0.7–2.4
+
+2.7
+
+0.3–12
+
+Not measured
+
+7
+
+0
+
+8.5–60
+
+2.1–6
+
+1.1–15
+
+0.82
+
+7–9
+
+15.5–64
+
+15–21
+
+Blue cheese
+
+Not measured
+
+Not measured
+
+Cheddar
+
+2.1
+
+10.2
+
+939–998
+
+0
+
+0.5–0.12
+
+0–0.12
+
+18.2
+
+Not measured
+
+0
+
+0
+
+2.5–22
+
+0–2.3
+
+References: Fu et al. J Agric Food Chem. 2016.[42] ● Manoury et al. J Dairy Sci. 2013.[43] ● Booth. Food Nutr Res. 2012.[44] ●
+
+Kamao et al. J Nutr Sci Vitaminol (Tokyo). 2007.[45] ● Elder et al. J Agric Food Chem. 2006.[46] ● Schurgers and Vermeer.
+
+Haemostasis. 2000.[47] ● Booth et al. J Am Diet Assoc. 1996.[48] ● Shimogawara and Muto. Arch Biochem Biophys. 1992.[49] ●
+
+Hirauchi et al. J Chromatogr. 1989.[50]
+
+How to take vitamin K
+
+The doses below reflect the doses used in studies; they are much higher than the minimum amount of
+
+vitamin K you need to avoid deficiency-related issues:
+
+Adequate Intake (AI) for vitamin K (mcg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+>18 years
+
+2.0
+
+2.5
+
+30
+
+55
+
+60
+
+75
+
+120
+
+2.0
+
+2.5
+
+30
+
+55
+
+60
+
+75
+
+90
+
+—
+
+—
+
+—
+
+—
+
+—
+
+75
+
+90
+
+—
+
+—
+
+—
+
+—
+
+—
+
+75
+
+90
+
+Reference: Institute of Medicine. Vitamin K (chapter 5 in _Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron,
+
+Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc. _The National Academies Press.
+
+2001. DOI:10.17226/10026)
+
+As we saw, different forms of vitamin K have different metabolisms and distributions within the body, so
+
+taking more than one form may be beneficial.
+
+Take 200 mcg (0.2 mg) of MK-7 and/or 45,000 mcg (45 mg) of MK-4. MK-4 is the form best supported by
+
+the evidence, but more studies are needed to determine if smaller doses are also beneficial.
+
+Vitamin K being fat soluble, it is better absorbed when taken with a fat-containing food or supplement (e.g.,
+
+19
+
+fish oil)
+
+Do not supplement with vitamin K if you have been prescribed blood thinners (i.e., anticoagulants) that
+
+work by hindering vitamin K’s blood-clotting properties, such as warfarin (Coumadin) or acenocoumarol
+
+(Sintrom). If you have been prescribed a diet low in vitamin K, you may need to strictly track your vitamin K
+
+intake to ensure it stays consistent.
+
+20
+
+Secondary Supplements
+
+Calcium
+
+What makes calcium a primary supplement
+
+Like magnesium, calcium is one of the major mineral components of bone. A deficiency can lead to
+
+osteopenia and osteoporosis, two diseases characterized by dangerously low bone density.
+
+Getting more than your Recommended Dietary Allowance (RDA) is not necessarily beneficial, however, and
+
+getting more than your Tolerable Upper Intake Level (UL) can be downright dangerous since it can lead to
+
+hypercalcemia (especially in people with cancer, hypothyroidism, or impaired kidney function). This disease,
+
+characterized by overly high calcium levels in the blood, can manifest as all kinds of health issues, from
+
+coronary artery calcification to mood disorders.
+
+Recommended Dietary Allowance (RDAs) for calcium
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+9–13 years
+
+14–18 years
+
+19–30 years
+
+31–50 years
+
+51–70 years
+
+>70 years
+
+200*
+
+260*
+
+700
+
+1,000
+
+1,300
+
+1,300
+
+1,000
+
+1,000
+
+1,000
+
+1,200
+
+200*
+
+260*
+
+700
+
+1,000
+
+1,300
+
+1,300
+
+1,000
+
+1,000
+
+1,200
+
+1,200
+
+—
+
+—
+
+—
+
+—
+
+—
+
+1,300
+
+1,000
+
+1,000
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+1,300
+
+1,000
+
+1,000
+
+—
+
+—
+
+* Adequate intake (AI)
+
+Reference: Institute of Medicine. Dietary Reference Intakes for Adequacy: Calcium and Vitamin D (chapter 5 in Dietary Reference
+
+Intakes for Calcium and Vitamin D. The National Academies Press. 2011. DOI:10.17226/13050)
+
+Hypercalcemia is more often caused by supplements than by a calcium-rich diet. If your diet is poor in
+
+calcium, look into dark leafy greens (also rich in vitamin K1) or dairies. Milk-based protein powders (whey
+
+protein or casein protein) contain calcium, too, though less than milk itself — which often has the added
+
+advantage of being fortified with vitamin D to enhance calcium absorption. There’s about 470 mg of
+
+calcium per 100 g of whey protein concentrate and about 880 mg per 100 g of micellar casein, compared
+
+to about 910 mg per 100 g of whole-milk powder.
+
+Calcium may interact with several pharmaceuticals, notably diuretics (which increase calcium levels). It may
+
+increase the effects of digoxin. It may impair the absorption of bisphosphonates, levothyroxine, and
+
+calcium channel blockers. If you take any medication, talk to your doctor before you consider
+
+21
+
+ 
+supplementing calcium.
+
+Finally, the size of many calcium pills is also a potential issue. With iron and potassium, calcium is one of
+
+three micronutrients responsible for almost a third of supplement-related emergency-room visits of adults
+
+aged 65 or more, and in the case of calcium, swallowing issues (choking or pill-induced globus or
+
+dysphagia) are most often to blame.
+
+How to take calcium
+
+To fight bone loss, the first supplements to consider are the vitamins D and K, which increase separately
+
+and synergistically the rate at which minerals accumulate in bones. Supplementing with calcium should only
+
+be considered after a dietary evaluation. Track what you eat for a week and compare the calcium content
+
+of your diet with the RDA for your gender and age. If, on average, you are getting less than 80% of your
+
+RDA, supplementation becomes a possibility, but you should first consider tweaking your diet.
+
+Avoid taking calcium, iron, magnesium, and zinc at the same time in combinations of 800+ mg, since high
+
+amounts of these minerals will compete for absorption. Calcium may also impair the absorption of
+
+antibiotics, notably those in the tetracycline class (e.g., doxycycline) and quinolone class (e.g.,
+
+ciprofloxacin), so take calcium and antibiotics at least six hours apart.
+
+Excess calcium may cause constipation. Should it happen, lower your dose and/or take it with vitamin K
+
+(which can also reduce the risk of artery calcification) and/or vitamin D.
+
+Symptoms and severity scores of hypercalcemia
+
+Magnesium
+
+What makes magnesium a primary supplement
+
+Like calcium, magnesium is one of the major mineral components of bone. Hypomagnesemia (subnormal
+
+magnesium levels in the blood) are associated with bone loss; conversely, high levels are associated with
+
+greater bone mass in old age.
+
+Who is more likely to have low magnesium levels?
+
+22
+
+ 
+Older people, because they tend to have relatively low magnesium intakes[51] and may absorb less during
+digestion.[52]
+
+People who sweat a lot, because magnesium is lost through sweat. Athletes participating in sports requiring weight
+control may be especially vulnerable.
+
+Type 2 diabetics. It has been estimated that, over all adult ages in developed countries, hypomagnesemia affects
+less than 15% of healthy people but up to 50% of people with type 2 diabetes.[53]
+
+In addition, certain diuretics, proton pump inhibitors, and the antifungal medication amphotericin B can
+
+cause significant magnesium loss.[54][55][56] However, potassium-sparing diuretics (e.g., amiloride,
+
+eplerenone/Inspra, spironolactone/Aldactone, triamterene/Dyrenium) may not.[54]
+
+High doses of supplemental magnesium can cause diarrhea and general intestinal discomfort;[57] fortunately,
+
+magnesium obtained via food has not been seen to cause such problems.[57]
+
+Drug interactions with magnesium
+
+How to take magnesium
+
+There is no single agreed-on, satisfactory method for assessing magnesium status.[58] To get a better sense
+
+of your typical magnesium intake, you should track what you eat for a week. If, on average, you are getting
+
+less than 80% of your RDA, supplementation becomes a possibility, but you should first consider tweaking
+
+your diet.
+
+Recommended Dietary Allowance (RDA) for magnesium (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–6 months
+
+7–12 months
+
+1–3 years
+
+4–8 years
+
+30*
+
+75*
+
+80
+
+130
+
+30*
+
+75*
+
+80
+
+130
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+23
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+9–13 years
+
+14–18 years
+
+19–30 years
+
+31–50 years
+
+>50 years
+
+* Adequate intake (AI)
+
+240
+
+410
+
+400
+
+420
+
+420
+
+240
+
+360
+
+310
+
+320
+
+320
+
+—
+
+400
+
+350
+
+360
+
+—
+
+—
+
+360
+
+310
+
+320
+
+—
+
+Reference: Institute of Medicine. Magnesium (chapter 6 of Dietary Reference Intakes for Calcium, Phosphorus, Magnesium,
+
+Vitamin D, and Fluoride. The National Academies Press. 1997. DOI:10.17226/5776)
+
+A diet comprising magnesium-rich foods (such as those seen in the figure above) renders supplementation
+
+unnecessary, at least for the purpose of preventing anxiety. In case of magnesium deficiency, adding or
+
+increasing dietary sources of magnesium should be the first option, but in the absence of practical ways of
+
+doing so, supplementation can be used.
+
+If you cannot get enough magnesium through foods, start supplementing with 200 mg of magnesium once
+
+a day. Capsules with 400 mg are common, but keep in mind that the Tolerable Upper Intake Level (UL) for
+
+supplemental magnesium for adults is 350 mg. The higher the dose, the higher the risk of gastrointestinal
+
+issues.
+
+If your magnesium intake is very low, take up to 350 mg of magnesium once a day.
+
+Tolerable Upper Intake Level (UL) for supplemental magnesium (mg)
+
+AGE
+
+MALE
+
+FEMALE
+
+PREGNANT
+
+LACTATING
+
+0–12 months
+
+1–3 years
+
+4–8 years
+
+>8 years
+
+—
+
+65
+
+110
+
+350
+
+—
+
+65
+
+110
+
+350
+
+—
+
+—
+
+—
+
+350
+
+—
+
+—
+
+—
+
+350
+
+Reference: Institute of Medicine. Magnesium (chapter 6 in Dietary Reference Intakes for Calcium, Phosphorus, Magnesium,
+
+Vitamin D, and Fluoride. The National Academies Press. 1997. DOI:10.17226/5776)
+
+Commonly supplemented forms include citrate, gluconate, and glycinate. To increase absorption,
+
+magnesium gluconate should be taken with food; other forms can be taken on an empty stomach. Avoid
+
+magnesium oxide. It has poor bioavailability (rats absorbed only 15% in one study;[59] humans, only 4% in
+
+another[60]) and is especially liable to cause intestinal discomfort and diarrhea.[60][61][62]
+
+Oral bioavailability of various magnesium salts in humans
+
+Reference: Ranade et al. Am J Ther. 2001.[63]
+
+24
+
+Since calcium, iron, magnesium, and zinc compete for absorption, it is better to take them at least one hour
+
+apart from each other. Magnesium may impair the absorption of other pharmaceuticals, notably
+
+bisphosphonates and antibiotics, especially those in the tetracycline class (e.g., doxycycline) or quinolone
+
+class (e.g., ciprofloxacin).[64] Take magnesium at least 6 hours apart from bisphosphonates or antibiotics.
+
+Because magnesium might have a sedative effect and improve sleep quality, it is best to take it before bed.
+
+25
+
+Promising Supplements
+
+Of the supplements we have reviewed, none currently fit the above description.
+
+26
+
+Unproven Supplements
+
+Cissus Quadrangularis
+
+What makes Cissus quadrangularis an
+unproven supplement
+
+In Ayurvedic medicine, Cissus quadrangularis is used to relieve joint pain and promote bone healing. It has
+
+modest anti-inflammatory properties and may induce growth factors in connective tissues, including bone,
+
+but this latter effect is supported mostly by animal and in vitro evidence; convincing human evidence is still
+
+lacking.
+
+27
+
+ 
+Inadvisable Supplements
+
+Coral Calcium
+
+What makes coral calcium an inadvisable
+supplement
+
+Aside from calcium carbonate, coral calcium contains magnesium and other trace minerals, but only in very
+
+small amounts. Coral calcium is more expensive than calcium carbonate on its own, yet it has not proven to
+
+be more effective, and contamination by lead and mercury is a concern.
+
+Coral calcium is sourced from fossilized coral, but living corals can also be damaged during the dredging
+
+and mining of coral reefs. For your health as well as the planet’s, you would do well to shun coral calcium
+
+supplements.
+
+28
+
+ 
+FAQ
+
+Q. What about the supplements not covered in
+this guide?
+
+Our guides are regularly updated, often with new supplements. We prioritize assessing (and reassessing)
+
+the most popular of them and those most likely to work. However, should there be a specific supplement
+
+you’d like to see covered in a future update, please let us know by filling out this survey.
+
+Q. Can I add a supplement not covered in this
+guide to my combo?
+
+Supplement with your current combo for a few weeks before attempting any change. Talk to your physician
+
+and research each potential addition. Check for known negative interactions with other supplements and
+
+pharmaceuticals in your current combo, but also for synergies. If two supplements are synergistic or
+
+additive in their effects, you might want to use lower doses of each.
+
+Q. Can I modify the recommended doses?
+
+If a supplement has a recommended dose range, stay within that range. If a supplement has a precise
+
+recommended dose, stay within 10% of that dose. Taking more than recommended could be
+
+counterproductive or even dangerous. Taking less could render the supplement ineffective, yet starting with
+
+half the regular dose could be prudent — especially if you know you tend to react strongly to supplements
+
+or pharmaceuticals.
+
+Q. At what time should I take my supplements?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Starting with half the regular dose can help
+
+minimize the harm a supplement may cause when taken during the day (e.g., fatigue) or in the evening (e.g.,
+
+insomnia).
+
+Q. Should I take my supplements with or
+without food?
+
+The answer is provided in the “How to take” section of a supplement entry whenever the evidence permits.
+
+Too often, however, the evidence is either mixed or absent. Besides, a supplement’s digestion, absorption,
+
+and metabolism can be affected differently by different foods. Fat-soluble vitamins (A, D, E, K), for
+
+instance, are better absorbed with a small meal containing fat than with a large meal containing little to no
+
+fat.
+
+29
+
+ 
+Q. What are DRI, RDA, AI, and UL?
+
+The Dietary Reference Intakes (DRIs) is a system of nutrition recommendations designed by the Institute of
+
+Medicine (a US institution now known as the Health and Medicine Division). RDA, AI, and UL are part of this
+
+system.
+
+Contrary to what the name suggests, a Recommended Dietary Allowance (RDA) doesn’t represent
+
+an ideal amount; it represents the minimum you need in order to avoid deficiency-related health
+
+issues. More precisely, it represents an amount just large enough to meet the minimum requirements
+
+of 97.5% of healthy males and females over all ages — which implies that the RDA is too low for
+
+2.5% of healthy people.
+
+The Adequate Intake (AI) is like the RDA, except that the number is more uncertain.
+
+The Tolerable Upper Intake Level (UL) is the maximum safe amount. More precisely, it is the
+
+maximum daily amount deemed to be safe for 97.5% of healthy males and females over all ages —
+
+which implies that the UL is too high for 2.5% of healthy people.
+
+As a general rule, a healthy diet should include at least the RDA of each nutrient — but less than this
+
+nutrient’s UL. This rule has many exceptions, though. For instance, people who sweat more need more salt
+
+(i.e., sodium), whereas people who take metformin (a diabetes medicine) need more vitamin B12.
+
+Moreover, the DRIs are based on the median weight of adults and children in the United States. Everything
+
+else being equal (notably age, sex, and percentage of body fat), you likely need a lesser amount of
+
+nutrients if you weigh less, and vice versa if you weigh more. The numbers, however, are not proportional
+
+— if only because the brains of two people of very different weights have very similar needs. So you can’t
+
+just double your RDIs for each nutrient if you weigh twice as much as the median adult of your age and sex
+
+(even if we overlook that people weighing the same can differ in many respects, notably body fat).
+
+Q. Why don’t you mention vitamin K3?
+
+K1 and K2 are the only natural forms of are the only natural forms of vitamin K, but there exist several
+
+synthetic forms, the best known of which is K3. However, whereas the natural forms of vitamin K are safe,
+
+even in high doses, K3 can interfere with glutathione, your body’s main antioxidant.
+
+K3 was once used to treat vitamin K deficiency in infants, but it caused liver toxicity, jaundice, and
+
+hemolytic anemia. Nowadays, it is used only in animal feed, in small doses. In the animals, vitamin K3 gets
+
+converted into K2 MK-4, which you can consume safely.
+
+Q. What’s the difference between elemental
+calcium/magnesium and other kinds of
+calcium/magnesium?
+
+“Elemental” refers to the weight of the mineral by itself, separately from the compound bound to it. For
+
+instance, ingesting 100 mg of calcium citrate means ingesting 21 mg of elemental calcium, whereas
+
+ingesting 500 mg of magnesium gluconate means ingesting 27 mg of elemental magnesium.
+
+30
+
+Product labels display the elemental dosage. On a label, “210 mg of calcium (as calcium citrate)” means 210
+
+mg of elemental calcium (and 790 mg of citric acid), whereas “27 mg of magnesium (as magnesium
+
+gluconate)” means 27 mg of elemental magnesium (and 473 mg of gluconic acid).
+
+Q. Isn’t soy protein bad for males?
+
+Phytoestrogens are plant compounds structurally similar to estradiol, the main estrogen in males and
+
+premenopausal females. Because soy contains isoflavones, a type of phytoestrogen, concern has been
+
+raised about soy affecting male health.
+
+To this day, two case reports have documented adverse effects (gynecomastia, hypogonadism, reduced
+
+libido, and erectile dysfunction) from an estimated 360 mg of soy isoflavones per day for 6–12 months.
+
+However, a meta-analysis of 15 randomized controlled trials (RCTs, a much higher level of evidence than
+
+case reports) found that males’ levels of total and free testosterone were not notably affected by either
+
+60–240 mg of isoflavones or 10–70 grams of soy protein per day.
+
+Accordingly, a couple of scoops of soy protein powder are unlikely to have estrogenic effects in males. If
+
+you’d like to take more, however, look for a soy protein concentrate or isolate produced through the
+
+alcohol-wash method, which dramatically lowers the isoflavone content.[65]
+
+Keep in mind that the isoflavone content of different soy products can vary depending on several factors,
+
+such as the variety of soybeans used, differences in growing and storage conditions, and differential food
+
+processing techniques employed.[66] You can see how it varies below.
+
+31
+
+Isoflavone content of common soy foods
+
+Reference: USDA FoodData Central Databases. Accessed Jan 18, 2019.
+
+Q. Which dietary protein is best for bone
+health?
+
+Most studies used dairy protein, yet the protein in our bones is mostly type 1 collagen. It follows that
+
+supplemental type 1 collagen should be optimal for bone health — and indeed, animal models appear to
+
+support this notion.
+
+The few relevant human studies to date, however, had mixed results. Not only that, but they cumulated
+
+32
+
+factors (they gave collagen with calcium, vitamin D, dietary changes …), making it impossible to determine
+
+which factor did what and to what extent. Until better human studies come along, collagen’s superiority
+
+over other proteins (for bone health) will stay hypothetical.
+
+Q. Don’t dietary proteins reduce bone density?
+
+More protein in the diet has been linked to more calcium in the urine. Two reasons have been suggested to
+
+explain this phenomenon:
+
+Your body draws from its calcium stores (in bones) to buffer the acid load caused by dietary
+
+protein. This has led researchers to suggest that higher protein intake could increase bone loss.[67]
+
+Most studies that looked at protein intake and calcium excretion list dairy products as a protein
+
+source,[68] so higher urinary calcium could simply be the result of higher calcium intake (i.e., more
+
+calcium in, more calcium out).
+
+Therefore, looking only at calcium _excretion _wasn’t enough. Subsequent studies showed that dietary
+
+protein promotes dietary-calcium absorption[69] and that high protein intake “promotes bone growth and
+
+retards bone loss whereas low-protein diet is associated with higher risk of hip fractures.”[70] High-protein
+
+diets have also been shown to modestly suppress the decrease in bone mineral density caused by weight
+
+loss.[71]
+
+What happens is that when you ingest more protein, you absorb more of the calcium in your food, so less
+
+calcium ends up in your feces. Later, your body gets rid of the calcium it doesn’t need, so more calcium
+
+ends up in your urine, but not as much as would have otherwise ended in your feces.[72] Therefore, an
+
+increase in protein intake leads to an overall decrease in calcium excretion, which points to an increase in
+
+calcium retention. High-protein diets also raise your insulin-like growth factor-1 (IGF-1),[73] which promotes
+
+notably bone growth.[74]
+
+All in all, current evidence suggests that protein’s effect on bones is either neutral or beneficial.[72][75]
+
+Q. What causes bone loss during weight loss?
+
+Bone mass is, for the most part, regulated by the activity of two specialized cell types. Osteoblasts are
+
+tasked with adding bone mass, while osteoclasts actively digest it and cause bone resorption. In the
+
+context of diseases like osteoporosis, increasing osteoblast number or activity shifts the balance toward
+
+bone resorption, causing a progressive loss of bone density over time.[76] Bone is capable of sensing
+
+mechanical stress, which lessens in response to weight loss. This shifts the balance of bone remodeling
+
+cells.
+
+Calorie restriction also alters a number of hormones that play a role in the regulation of bone mass.
+
+Reductions in body fat have been linked to reduced levels of estrogen and other sex hormones,[77] and
+
+increased sex hormone binding globulin (SHBG), a protein that binds to and sequesters hormones, blocking
+
+their function.
+
+Although shifts in overall hormone levels during calorie restriction and weight loss can be subtle, small
+
+changes in hormone levels (particularly estrogens, and IGF-1)[78][79][80] can work through both direct and
+
+33
+
+ 
+indirect mechanisms to alter the balance of osteoblast vs. osteoclasts activity to promote bone resorption
+
+and decreased bone density.
+
+Q. Is exercise a contributing factor for bone
+mass retention on weight loss diets?
+
+Weight training in particular increases mechanical loading, which is a stimulus for increasing bone mass.[81][82]
+
+While weight training can provide a benefit, the overall effect appears to be small during periods of weight
+
+loss.[71]
+
+Q. How does obesity affect bone mass retention
+during weight loss?
+
+Higher adiposity in obesity is associated with a lower rate of bone formation, so people with obesity that
+
+go on a reduced calorie diet may be more inclined to lose bone mass relative to non-obese counterparts.[83]
+
+Whether this is of clinical significance remains to be determined. Possibly in the context of obesity,
+
+decreased bone mass could be more detrimental, especially for older individuals with compromised bone
+
+quality and increased fracture risk (or trending in that direction). More research is needed to determine
+
+whether this may be the case.
+
+34
+
+References
+
+1.   Anyonya R Guntur, Clifford J Rosen Bone as an endocrine organ. Endocr Pract. (Sep-Oct 2012)
+
+2.   Opeyemi O Babatunde, Amy L Bourton, Karen Hind, Zoe Paskins, Jacky J Forsyth Exercise Interventions for Preventing and
+
+Treating Low Bone Mass in the Forearm: A Systematic Review and Meta-analysis. Arch Phys Med Rehabil. (2020 Mar)
+
+3.   Xiaoyang Tong, Xi Chen, Shihua Zhang, Mei Huang, Xiaoyan Shen, Jiake Xu, Jun Zou The Effect of Exercise on the Prevention
+
+of Osteoporosis and Bone Angiogenesis. Biomed Res Int. (2019 Apr 18)
+
+4.   A Ram Hong, Sang Wan Kim Effects of Resistance Exercise on Bone Health. Endocrinol Metab (Seoul). (2018 Dec)
+
+5.   J E Layne, M E Nelson The effects of progressive resistance training on bone density: a review. Med Sci Sports Exerc. (1999
+
+Jan)
+
+6.   Richard Eastell, Terence W O'Neill, Lorenz C Hofbauer, Bente Langdahl, Ian R Reid, Deborah T Gold, Steven R Cummings
+
+Postmenopausal osteoporosis. Nat Rev Dis Primers. (2016 Sep 29)
+
+7.   T P van Staa, E M Dennison, H G Leufkens, C Cooper Epidemiology of fractures in England and Wales. Bone. (2001 Dec)
+
+8.   Wright NC, Looker AC, Saag KG, Curtis JR, Delzell ES, Randall S, Dawson-Hughes B The recent prevalence of osteoporosis and
+
+low bone mass in the United States based on bone mineral density at the femoral neck or lumbar spine. J Bone Miner Res.
+(2014 Nov)
+
+9.   Celia L Gregson, Sarah A Hardcastle, Cyrus Cooper, Jonathan H Tobias Friend or foe: high bone mineral density on routine
+
+bone density scanning, a review of causes and management. Rheumatology (Oxford). (2013 Jun)
+
+10.   S L Teitelbaum Bone resorption by osteoclasts. Science. (2000 Sep 1)
+
+11.   Niroshani Surangika Soysa, Neil Alles Osteoclast function and bone-resorbing activity: An overview. Biochem Biophys Res
+
+Commun. (2016 Jul 29)
+
+12.   Katrine Hygum, Jakob Starup-Linde, Bente L Langdahl Diabetes and bone. Osteoporos Sarcopenia. (2019 Jun)
+
+13.   Piero Ruscitti, Paola Cipriani, Francesco Carubbi, Vasiliki Liakouli, Francesca Zazzeroni, Paola Di Benedetto, Onorina
+
+Berardicurti, Edoardo Alesse, Roberto Giacomelli The role of IL-1β in the bone loss during rheumatic diseases. Mediators
+Inflamm. (2015)
+
+14.   Ahmad M Al-Bashaireh, Linda G Haddad, Michael Weaver, Xing Chengguo, Debra Lynch Kelly, Saunjoo Yoon The Effect of
+
+Tobacco Smoking on Bone Mass: An Overview of Pathophysiologic Mechanisms. J Osteoporos. (2018 Dec 2)
+
+15.   Zahra Cheraghi, Amin Doosti-Irani, Amir Almasi-Hashiani, Vali Baigi, Nasrin Mansournia, Mahyar Etminan, Mohammad Ali
+
+Mansournia The effect of alcohol on osteoporosis: A systematic review and meta-analysis. Drug Alcohol Depend. (2019 Apr 1)
+
+16.   Sundeep Khosla, Merry Jo Oursler, David G Monroe Estrogen and the skeleton. Trends Endocrinol Metab. (2012 Nov)
+
+17.   Amy H Warriner, Nivedita M Patkar, Jeffrey R Curtis, Elizabeth Delzell, Lisa Gary, Meredith Kilgore, Ken Saag Which fractures
+
+are most attributable to osteoporosis?. J Clin Epidemiol. (2011 Jan)
+
+18.   Tümay Sözen, Lale Özışık, Nursel Çalık Başaran An overview and management of osteoporosis. Eur J Rheumatol. (2017 Mar)
+
+19.   Glen M Blake, Ignac Fogelman Role of dual-energy X-ray absorptiometry in the diagnosis and treatment of osteoporosis. J Clin
+
+Densitom. (Jan-Mar 2007)
+
+20.   Aasis Unnanuntana, Brian P Gladnick, Eve Donnelly, Joseph M Lane The assessment of fracture risk. J Bone Joint Surg Am.
+
+(2010 Mar)
+
+21.   Samelson EJ, Broe KE, Xu H, Yang L, Boyd S, Biver E, Szulc P, Adachi J, Amin S, Atkinson E, Berger C, Burt L, Chapurlat R,
+
+Chevalley T, Ferrari S, Goltzman D, Hanley DA, Hannan MT, Khosla S, Liu CT, Lorentzon M, Mellstrom D, Merle B, Nethander M,
+Rizzoli R, Sornay-Rendu E, Van Rietbergen B, Sundh D, Wong AKO, Ohlsson C, Demissie S, Kiel DP, Bouxsein ML Cortical and
+trabecular bone microarchitecture as an independent predictor of incident fracture risk in older women and men in the Bone
+Microarchitecture International Consortium (BoMIC): a prospective study. Lancet Diabetes Endocrinol. (2019 Jan)
+
+22.   Maria Luisa Brandi Microarchitecture, the key to bone quality. Rheumatology (Oxford). (2009 Oct)
+
+23.   So Young Park, Seong Hee Ahn, Jun-Il Yoo, Youn-Jee Chung, Yun Kyung Jeon, Byung-Ho Yoon, Ha Young Kim, Seung Hun
+
+Lee, Jehoon Lee, Seongbin Hong Position Statement on the Use of Bone Turnover Markers for Osteoporosis Treatment. J Bone
+Metab. (2019 Nov)
+
+24.   Joy JM, Vogel RM, Shane Broughton K, Kudla U, Kerr NY, Davison JM, Wildman REC, DiMarco NM Daytime and nighttime
+casein supplements similarly increase muscle size and strength in response to resistance training earlier in the day: a
+preliminary investigation. J Int Soc Sports Nutr. (2018 May 15)
+
+25.   Trumbo P, Schlicker S, Yates AA, Poos M, Food and Nutrition Board of the Institute of Medicine, The National Academies
+Dietary reference intakes for energy, carbohydrate, fiber, fat, fatty acids, cholesterol, protein and amino acids. J Am Diet
+Assoc. (2002 Nov)
+
+26.   Rafii M, Chapman K, Owens J, Elango R, Campbell WW, Ball RO, Pencharz PB, Courtney-Martin G Dietary protein requirement
+
+of female adults >65 years determined by the indicator amino acid oxidation technique is higher than current
+recommendations. J Nutr. (2015 Jan)
+
+35
+
+27.   Rafii M, Chapman K, Elango R, Campbell WW, Ball RO, Pencharz PB, Courtney-Martin G Dietary Protein Requirement of Men
+
+>65 Years Old Determined by the Indicator Amino Acid Oxidation Technique Is Higher than the Current Estimated Average
+Requirement. J Nutr. (2016 Mar 9)
+
+28.   Tang M, McCabe GP, Elango R, Pencharz PB, Ball RO, Campbell WW Assessment of protein requirement in octogenarian
+
+women with use of the indicator amino acid oxidation technique. Am J Clin Nutr. (2014 Apr)
+
+29.   Elango R, Humayun MA, Ball RO, Pencharz PB Evidence that protein requirements have been significantly underestimated. Curr
+
+Opin Clin Nutr Metab Care. (2010 Jan)
+
+30.   Devries MC, Sithamparapillai A, Brimble KS, Banfield L, Morton RW, Phillips SM Changes in Kidney Function Do Not Differ
+
+between Healthy Adults Consuming Higher- Compared with Lower- or Normal-Protein Diets: A Systematic Review and Meta-
+Analysis. J Nutr. (2018 Nov 1)
+
+31.   Aragon AA, Schoenfeld BJ Nutrient timing revisited: is there a post-exercise anabolic window?. J Int Soc Sports Nutr. (2013
+
+Jan 29)
+
+32.   Xiang F, Lucas R, de Gruijl F, Norval M A systematic review of the influence of skin pigmentation on changes in the
+
+concentrations of vitamin D and 25-hydroxyvitamin D in plasma/serum following experimental UV irradiation. Photochem
+Photobiol Sci. (2015 Dec)
+
+33.   Meehan M, Penckofer S The Role of Vitamin D in the Aging Adult. J Aging Gerontol. (2014 Dec)
+
+34.   Wacker M, Holick MF Sunlight and Vitamin D: A global perspective for health. Dermatoendocrinol. (2013 Jan 1)
+
+35.   Laird E, Ward M, McSorley E, Strain JJ, Wallace J Vitamin D and bone health: potential mechanisms. Nutrients. (2010 Jul)
+
+36.   Ko JA, Lee BH, Lee JS, Park HJ Effect of UV-B exposure on the concentration of vitamin D2 in sliced shiitake mushroom
+
+(Lentinus edodes) and white button mushroom (Agaricus bisporus). J Agric Food Chem. (2008 May 28)
+
+37.   Jasinghe VJ, Perera CO, Barlow PJ Bioavailability of vitamin D2 from irradiated mushrooms: an in vivo study. Br J Nutr. (2005
+
+Jun)
+
+38.   Lehmann B, Genehr T, Knuschke P, Pietzsch J, Meurer M UVB-induced conversion of 7-dehydrocholesterol to 1alpha,25-
+
+dihydroxyvitamin D3 in an in vitro human skin equivalent model. J Invest Dermatol. (2001 Nov)
+
+39.   Holick MF, MacLaughlin JA, Clark MB, Holick SA, Potts JT Jr, Anderson RR, Blank IH, Parrish JA, Elias P Photosynthesis of
+
+previtamin D3 in human skin and the physiologic consequences. Science. (1980 Oct 10)
+
+40.   Bikle DD Vitamin D metabolism and function in the skin. Mol Cell Endocrinol. (2011 Dec 5)
+
+41.   Zittermann A, Ernst JB, Gummert JF, Börgermann J Vitamin D supplementation, body weight and human serum 25-
+
+hydroxyvitamin D response: a systematic review. Eur J Nutr. (2014)
+
+42.   Fu X, Shen X, Finnan EG, Haytowitz DB, Booth SL Measurement of Multiple Vitamin K Forms in Processed and Fresh-Cut Pork
+
+Products in the U.S. Food Supply. J Agric Food Chem. (2016 Jun 8)
+
+43.   Manoury E, Jourdon K, Boyaval P, Fourcassié P Quantitative measurement of vitamin K2 (menaquinones) in various fermented
+
+dairy products using a reliable high-performance liquid chromatography method. J Dairy Sci. (2013 Mar)
+
+44.   Booth SL Vitamin K: food composition and dietary intakes. Food Nutr Res. (2012)
+
+45.   Kamao M, Suhara Y, Tsugawa N, Uwano M, Yamaguchi N, Uenishi K, Ishida H, Sasaki S, Okano T Vitamin K content of foods
+
+and dietary vitamin K intake in Japanese young women. J Nutr Sci Vitaminol (Tokyo). (2007 Dec)
+
+46.   Elder SJ, Haytowitz DB, Howe J, Peterson JW, Booth SL Vitamin k contents of meat, dairy, and fast food in the u.s. Diet. J
+
+Agric Food Chem. (2006 Jan 25)
+
+47.   Schurgers LJ, Vermeer C Determination of phylloquinone and menaquinones in food. Effect of food matrix on circulating
+
+vitamin K concentrations. Haemostasis. (2000 Nov-Dec)
+
+48.   Booth SL, Pennington JA, Sadowski JA Food sources and dietary intakes of vitamin K-1 (phylloquinone) in the American diet:
+
+data from the FDA Total Diet Study. J Am Diet Assoc. (1996 Feb)
+
+49.   Shimogawara K, Muto S Purification of Chlamydomonas 28-kDa ubiquitinated protein and its identification as ubiquitinated
+
+histone H2B. Arch Biochem Biophys. (1992 Apr)
+
+50.   Hirauchi K, Sakano T, Notsumoto S, Nagaoka T, Morimoto A, Fujimoto K, Masuda S, Suzuki Y Measurement of K vitamins in
+
+animal tissues by high-performance liquid chromatography with fluorimetric detection. J Chromatogr. (1989 Dec 29)
+
+51.   Ford ES, Mokdad AH Dietary magnesium intake in a national sample of US adults. J Nutr. (2003 Sep)
+
+52.   Musso CG Magnesium metabolism in health and disease. Int Urol Nephrol. (2009)
+
+53.   Pham PC, Pham PM, Pham SV, Miller JM, Pham PT Hypomagnesemia in patients with type 2 diabetes. Clin J Am Soc Nephrol.
+
+(2007 Mar)
+
+54.   Sarafidis PA, Georgianos PI, Lasaridis AN Diuretics in clinical practice. Part II: electrolyte and acid-base disorders complicating
+
+diuretic therapy. Expert Opin Drug Saf. (2010 Mar)
+
+55.   FDA FDA Drug Safety Communication: Low magnesium levels can be associated with long-term use of Proton Pump Inhibitor
+
+drugs (PPIs).
+
+56.   NIH ODS Magnesium Fact Sheet for Health Professionals.
+
+57.   Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes Dietary Reference
+
+36
+
+Intakes for Calcium, Phosphorus, Magnesium, Vitamin D, and Fluoride.
+
+58.   Witkowski M, Hubert J, Mazur A Methods of assessment of magnesium status in humans: a systematic review. Magnes Res.
+
+(2011 Dec)
+
+59.   Yoshimura Y, Fujisaki K, Yamamoto T, Shinohara Y Pharmacokinetic Studies of Orally Administered Magnesium Oxide in Rats.
+
+Yakugaku Zasshi. (2017 May 1)
+
+60.   Firoz M, Graber M Bioavailability of US commercial magnesium preparations. Magnes Res. (2001 Dec)
+
+61.   Walker AF, Marakis G, Christie S, Byng M Mg citrate found more bioavailable than other Mg preparations in a randomised,
+
+double-blind study. Magnes Res. (2003 Sep)
+
+62.   Lindberg JS, Zobitz MM, Poindexter JR, Pak CY Magnesium bioavailability from magnesium citrate and magnesium oxide. J
+
+Am Coll Nutr. (1990 Feb)
+
+63.   Ranade VV, Somberg JC Bioavailability and pharmacokinetics of magnesium after administration of magnesium salts to
+
+humans. Am J Ther. (2001 Sep-Oct)
+
+64.   Pazianas M, Abrahamsen B, Ferrari S, Russell RG Eliminating the need for fasting with oral administration of bisphosphonates.
+
+Ther Clin Risk Manag. (2013)
+
+65.   Anderson RL, Wolf WJ Compositional changes in trypsin inhibitors, phytic acid, saponins and isoflavones related to soybean
+
+processing. J Nutr. (1995 Mar)
+
+66.   Erdman JW Jr, Badger TM, Lampe JW, Setchell KD, Messina M Not all soy products are created equal: caution needed in
+
+interpretation of research results. J Nutr. (2004 May)
+
+67.   Barzel US, Massey LK Excess dietary protein can adversely affect bone. J Nutr. (1998 Jun)
+
+68.   Schwingshackl L, Hoffmann G Comparison of high vs. normal/low protein diets on renal function in subjects without chronic
+
+kidney disease: a systematic review and meta-analysis. PLoS One. (2014 May 22)
+
+69.   Hunt JR, Johnson LK, Fariba Roughead ZK Dietary protein and calcium interact to influence calcium retention: a controlled
+
+feeding study. Am J Clin Nutr. (2009 May)
+
+70.   Shams-White MM, Chung M, Du M, Fu Z, Insogna KL, Karlsen MC, LeBoff MS, Shapses SA, Sackey J, Wallace TC, Weaver CM
+Dietary protein and bone health: a systematic review and meta-analysis from the National Osteoporosis Foundation. Am J Clin
+Nutr. (2017 Jun)
+
+71.   Wright CS, Li J, Campbell WW Effects of Dietary Protein Quantity on Bone Quantity following Weight Loss: A Systematic
+
+Review and Meta-analysis. Adv Nutr. (2019 Nov 1)
+
+72.   Calvez J, Poupin N, Chesneau C, Lassale C, Tomé D Protein intake, calcium balance and health consequences. Eur J Clin Nutr.
+
+(2012 Mar)
+
+73.   Livingstone C Insulin-like growth factor-I (IGF-I) and clinical nutrition. Clin Sci (Lond). (2013 Sep)
+
+74.   Yakar S, Rosen CJ, Beamer WG, Ackert-Bicknell CL, Wu Y, Liu JL, Ooi GT, Setser J, Frystyk J, Boisclair YR, LeRoith D
+
+Circulating levels of IGF-1 directly regulate bone growth and density. J Clin Invest. (2002 Sep)
+
+75.   Fenton TR, Lyon AW, Eliasziw M, Tough SC, Hanley DA Meta-analysis of the effect of the acid-ash hypothesis of osteoporosis
+
+on calcium balance. J Bone Miner Res. (2009 Nov)
+
+76.   Tu KN, Lie JD, Wan CKV, Cameron M, Austel AG, Nguyen JK, Van K, Hyun D Osteoporosis: A Review of Treatment Options. P T.
+
+(2018 Feb)
+
+77.   O'Dea JP, Wieland RG, Hallberg MC, Llerena LA, Zorn EM, Genuth SM Effect of dietery weight loss on sex steroid binding sex
+
+steroids, and gonadotropins in obese postmenopausal women. J Lab Clin Med. (1979 Jun)
+
+78.   Eriksen EF, Colvard DS, Berg NJ, Graham ML, Mann KG, Spelsberg TC, Riggs BL Evidence of estrogen receptors in normal
+
+human osteoblast-like cells. Science. (1988 Jul 1)
+
+79.   Heino TJ, Hentunen TA, Väänänen HK Osteocytes inhibit osteoclastic bone resorption through transforming growth factor-
+
+beta: enhancement by estrogen. J Cell Biochem. (2002)
+
+80.   Oster MH, Fielder PJ, Levin N, Cronin MJ Adaptation of the growth hormone and insulin-like growth factor-I axis to chronic and
+
+severe calorie or protein malnutrition. J Clin Invest. (1995 May)
+
+81.   Petersen BA, Hastings B, Gottschall JS Low load, high repetition resistance training program increases bone mineral density in
+
+untrained adults. J Sports Med Phys Fitness. (2017 Jan-Feb)
+
+82.   Mathis SL, Caputo JL Resistance Training Is Associated With Higher Lumbar Spine and Hip Bone Mineral Density in Competitive
+
+Male Cyclists. J Strength Cond Res. (2018 Jan)
+
+83.   Papakitsou EF, Margioris AN, Dretakis KE, Trovas G, Zoras U, Lyritis G, Dretakis EK, Stergiopoulos K Body mass index (BMI)
+
+and parameters of bone formation and resorption in postmenopausal women. Maturitas. (2004 Mar 15)
+
+37
+
+

@@ -147,12 +147,41 @@ header .tag .dot{
 .msg .content h1{font-size:20px}
 .msg .content h2{font-size:17px;color:var(--dna)}
 .msg .content h3{font-size:15px}
+.msg .content h3:has(+ ol),.msg .content h3:has(+ ul){
+  margin-top:24px;padding-top:16px;border-top:1px solid var(--border);
+}
 .msg .content p{margin:8px 0}
 .msg .content ul,.msg .content ol{margin:8px 0;padding-left:22px}
 .msg .content li{margin:4px 0}
 .msg .content li::marker{color:var(--dna)}
 .msg .content strong{color:#fff;font-weight:600}
 .msg .content em{color:var(--text-dim)}
+
+/* ── Supplement cards (numbered bold items with sub-bullets) ── */
+.msg .content ol>li>strong:first-child,
+.msg .content p>strong:first-of-type{color:var(--dna)}
+.msg .content ol>li{
+  margin:14px 0;padding:14px 16px;
+  background:linear-gradient(135deg,rgba(77,148,255,.04),rgba(16,185,129,.03));
+  border:1px solid var(--border);border-radius:14px;
+  list-style:none;position:relative;counter-increment:supp;
+}
+.msg .content ol>li::before{
+  content:counter(supp);position:absolute;top:14px;left:-10px;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--dna);color:var(--bg);
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 12px var(--dna-glow);
+}
+.msg .content ol{counter-reset:supp;padding-left:16px}
+.msg .content ol>li>ul{
+  margin:8px 0 0;padding-left:6px;list-style:none;
+}
+.msg .content ol>li>ul>li{
+  margin:3px 0;font-size:13.5px;color:var(--text-dim);
+}
+.msg .content ol>li>ul>li::marker{content:""}
 .msg .content a{color:var(--dna);text-decoration:none;border-bottom:1px dashed rgba(77,148,255,.4)}
 .msg .content a:hover{color:#fff;border-bottom-color:var(--dna)}
 .msg .content code{
@@ -166,10 +195,10 @@ header .tag .dot{
 }
 .msg .content pre code{background:transparent;border:0;padding:0;color:var(--text-dim)}
 .msg .content blockquote{
-  margin:12px 0;padding:10px 16px;
-  border-left:3px solid var(--cell);border-radius:0 10px 10px 0;
-  background:rgba(16,185,129,.06);color:var(--text-dim);
-  font-family:'Playfair Display',serif;font-style:italic;font-size:16px;
+  margin:14px 0;padding:12px 16px;
+  border-left:3px solid rgba(255,193,7,.6);border-radius:0 10px 10px 0;
+  background:rgba(255,193,7,.05);color:var(--text-dim);
+  font-style:normal;font-size:13px;
 }
 .msg .content hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .msg .content table{

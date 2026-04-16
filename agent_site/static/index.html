@@ -172,6 +172,23 @@ header .tag .dot{
   font-family:'Playfair Display',serif;font-style:italic;font-size:16px;
 }
 .msg .content hr{border:0;border-top:1px solid var(--border);margin:16px 0}
+.msg .content table{
+  width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;
+}
+.msg .content thead{
+  background:var(--dna-soft);
+}
+.msg .content th{
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.06em;color:var(--dna);
+  text-align:left;padding:8px 10px;border-bottom:2px solid var(--border-strong);
+}
+.msg .content td{
+  padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text-dim);
+  vertical-align:top;
+}
+.msg .content tr:last-child td{border-bottom:none}
+.msg .content tr:hover td{background:rgba(77,148,255,.04)}
 
 /* ── Thinking dots ──────────────────────────────── */
 .thinking{display:inline-flex;gap:5px;align-items:center;padding:4px 0}

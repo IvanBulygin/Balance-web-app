@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Balance.ai Wellbeing Agent</title>
+<title>Balance AI — Your Supplements Buddy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -513,8 +513,8 @@ button.send:hover:not(:disabled) svg{transform:translate(2px,-2px) rotate(-8deg)
       </svg>
     </div>
     <div>
-      <h1>Balance.ai</h1>
-      <span class="tag"><span class="dot"></span>WELLBEING AGENT · 17 GUIDES</span>
+      <h1>Balance AI</h1>
+      <span class="tag"><span class="dot"></span>YOUR SUPPLEMENTS BUDDY</span>
     </div>
   </div>
   <button class="reset" id="reset">
@@ -526,7 +526,7 @@ button.send:hover:not(:disabled) svg{transform:translate(2px,-2px) rotate(-8deg)
 <div id="chat">
   <div class="welcome" id="welcome">
     <span class="chip">EVIDENCE-BASED · 17 SUPPLEMENT GUIDES</span>
-    <h2>Your AI guide to<br><span class="accent">wellbeing &amp; supplements.</span></h2>
+    <h2>Your supplements buddy.<br><span class="accent">Evidence-based. Always ready.</span></h2>
     <p class="lead">Ask about any health topic. I search 17 evidence-based supplement guides and return a ranked list of what to take — with dose, form, timing, and evidence strength.</p>
     <div class="topics">
       <span class="topic">SLEEP</span>
@@ -616,7 +616,7 @@ function add(role,html,{raw=false}={}){
     ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>'
     :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity=".45"/></svg>';
   const rl=document.createElement('span');rl.className='label';
-  rl.textContent=role==='user'?'You':'Balance.ai';
+  rl.textContent=role==='user'?'You':'Balance AI';
   r.appendChild(av);r.appendChild(rl);
   const c=document.createElement('div');c.className='content';
   if(raw)c.innerHTML=html;else{c.innerHTML=md(html);tagTiers(c);}

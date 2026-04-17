@@ -9,24 +9,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #000000;
-  --surface: #0a0d14;
-  --elevated: #111520;
-  --border: #1c2130;
-  --border-strong: #272d40;
-  --vitality: #ff4d4d;
-  --vitality-glow: rgba(255,77,77,0.25);
-  --dna: #4d94ff;
-  --dna-glow: rgba(77,148,255,0.20);
-  --dna-soft: rgba(77,148,255,0.08);
-  --cell: #10b981;
-  --cell-glow: rgba(16,185,129,0.5);
-  --biolum: #00e5ff;
-  --text: #f5f7fa;
-  --text-dim: #a8b2c5;
-  --muted: #6b7689;
+  --bg: #05060a;
+  --bg-2: #080a12;
+  --surface: #0b0f18;
+  --elevated: #121726;
+  --border: #1d2234;
+  --border-strong: #2a3148;
+  --vitality: #ff5a5a;
+  --vitality-glow: rgba(255,90,90,0.28);
+  --dna: #5ba3ff;
+  --dna-glow: rgba(91,163,255,0.22);
+  --dna-soft: rgba(91,163,255,0.08);
+  --cell: #14c08a;
+  --cell-glow: rgba(20,192,138,0.5);
+  --biolum: #2ae8ff;
+  --text: #f4f6fb;
+  --text-dim: #b2bcd0;
+  --muted: #707a90;
   --organic-radius: 22px;
   --morph-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.25);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
@@ -37,6 +41,17 @@ body{
   -webkit-font-smoothing:antialiased;
   display:flex;flex-direction:column;
   overflow:hidden;
+  position:relative;
+}
+/* Subtle grid texture overlay for depth */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+  background-size:32px 32px;
+  mask-image:radial-gradient(ellipse at center, black 20%, transparent 85%);
+  -webkit-mask-image:radial-gradient(ellipse at center, black 20%, transparent 85%);
 }
 
 /* ── Animated background blobs ──────────────────── */
@@ -60,26 +75,28 @@ body{
 /* ── Header ─────────────────────────────────────── */
 header{
   position:sticky;top:0;z-index:10;
-  padding:14px 24px;
+  padding:16px 28px;
   border-bottom:1px solid var(--border);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);
+  background:linear-gradient(180deg,rgba(5,6,10,0.85),rgba(5,6,10,0.55));
   display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
-header .brand{display:flex;align-items:center;gap:12px}
+header .brand{display:flex;align-items:center;gap:14px}
 .cell-logo{
-  width:34px;height:34px;border-radius:12px;position:relative;
-  background:linear-gradient(135deg,var(--vitality),var(--dna));
-  box-shadow:0 0 20px var(--vitality-glow),inset 0 0 0 1px rgba(255,255,255,.15);
+  width:38px;height:38px;border-radius:12px;position:relative;
+  background:linear-gradient(135deg,var(--vitality),var(--dna) 60%,var(--biolum));
+  box-shadow:0 0 24px var(--vitality-glow),0 0 40px rgba(91,163,255,.15),inset 0 0 0 1px rgba(255,255,255,.18);
   animation:breathe 4s ease-in-out infinite;
+  display:flex;align-items:center;justify-content:center;
 }
+.cell-logo svg{width:20px;height:20px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
 .cell-logo::after{
-  content:"";position:absolute;inset:5px;border-radius:8px;
-  background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.55),transparent 65%);
+  content:"";position:absolute;inset:2px;border-radius:10px;pointer-events:none;
+  background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.4),transparent 60%);
 }
-@keyframes breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.85}}
-header h1{font-size:16px;font-weight:700;letter-spacing:-.02em}
-header .tag{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;margin-top:1px}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.92}}
+header h1{font-size:16px;font-weight:700;letter-spacing:-.02em;color:#fff}
+header .tag{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:11.5px;margin-top:2px;font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
 header .tag .dot{
   width:6px;height:6px;border-radius:50%;
   background:var(--cell);box-shadow:0 0 8px var(--cell-glow);
@@ -87,11 +104,14 @@ header .tag .dot{
 }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .reset{
-  background:transparent;color:var(--text-dim);border:1px solid var(--border);
-  padding:7px 14px;border-radius:999px;font-size:12px;font-weight:500;cursor:pointer;
+  background:rgba(255,255,255,.02);color:var(--text-dim);border:1px solid var(--border);
+  padding:8px 14px;border-radius:999px;font-size:12px;font-weight:500;cursor:pointer;
   font-family:inherit;transition:all .2s var(--morph-ease);
+  display:inline-flex;align-items:center;gap:7px;
 }
-.reset:hover{color:var(--text);border-color:var(--dna);background:var(--dna-soft)}
+.reset svg{width:13px;height:13px}
+.reset:hover{color:var(--text);border-color:var(--dna);background:var(--dna-soft);box-shadow:0 0 20px var(--dna-glow)}
+.reset:active{transform:scale(.97)}
 
 /* ── Chat ───────────────────────────────────────── */
 #chat{
@@ -105,37 +125,53 @@ header .tag .dot{
 #chat::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
 
 .msg{
-  margin:0 0 18px;padding:16px 18px;
+  margin:0 0 20px;padding:18px 20px;
   border:1px solid var(--border);
-  animation:msg-in .35s var(--morph-ease);
+  animation:msg-in .4s var(--morph-ease);
   position:relative;
+  box-shadow:var(--shadow-sm);
 }
-@keyframes msg-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes msg-in{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
 .msg.user{
-  background:linear-gradient(135deg,rgba(255,77,77,.04),rgba(77,148,255,.04));
+  background:linear-gradient(135deg,rgba(255,90,90,.06),rgba(91,163,255,.03));
   border-radius:var(--organic-radius) var(--organic-radius) 6px var(--organic-radius);
   border-left:3px solid var(--vitality);
+  margin-left:40px;
 }
 .msg.bot{
   background:linear-gradient(180deg,var(--elevated),var(--surface));
   border-radius:var(--organic-radius) var(--organic-radius) var(--organic-radius) 6px;
   border-left:3px solid var(--dna);
+  margin-right:40px;
+  box-shadow:var(--shadow-sm),0 0 0 1px rgba(91,163,255,.03);
 }
 .msg .role{
-  display:flex;align-items:center;gap:8px;
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;
-  text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:10px;
+  display:flex;align-items:center;gap:9px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:12px;
 }
 .msg .avatar{
-  width:20px;height:20px;border-radius:6px;
+  width:24px;height:24px;border-radius:8px;
   display:inline-flex;align-items:center;justify-content:center;
-  font-size:9px;font-weight:700;color:var(--bg);
+  color:#fff;flex-shrink:0;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.15);
 }
-.msg.user .avatar{background:var(--vitality)}
+.msg .avatar svg{width:13px;height:13px}
+.msg.user .avatar{
+  background:linear-gradient(135deg,var(--vitality),#ff7a7a);
+  box-shadow:0 4px 12px var(--vitality-glow),inset 0 1px 0 rgba(255,255,255,.2);
+}
 .msg.bot .avatar{
   background:linear-gradient(135deg,var(--dna),var(--biolum));
   animation:breathe 4s ease-in-out infinite;
+  box-shadow:0 4px 14px var(--dna-glow),inset 0 1px 0 rgba(255,255,255,.2);
 }
+.msg.bot .role .label{
+  background:linear-gradient(90deg,var(--dna),var(--biolum));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-weight:700;
+}
+.msg.user .role .label{color:var(--vitality);font-weight:700}
 
 /* ── Markdown content ───────────────────────────── */
 .msg .content{color:var(--text);word-wrap:break-word}
@@ -315,85 +351,139 @@ header .tag .dot{
 .msg .sources .src:hover{border-color:var(--dna);box-shadow:0 0 12px var(--dna-glow)}
 
 /* ── Welcome ────────────────────────────────────── */
-.welcome{padding:48px 0 28px;animation:fade-in .5s ease}
-@keyframes fade-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.welcome{padding:56px 0 24px;animation:fade-in .6s ease;text-align:left}
+@keyframes fade-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .welcome .chip{
-  display:inline-block;padding:5px 14px;border-radius:999px;
-  background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);
+  display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;
+  background:linear-gradient(135deg,rgba(20,192,138,.08),rgba(91,163,255,.08));
+  border:1px solid rgba(20,192,138,.22);
   font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
-  color:var(--cell);letter-spacing:.04em;margin-bottom:20px;
+  color:var(--cell);letter-spacing:.06em;margin-bottom:22px;
+}
+.welcome .chip::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--cell);
+  box-shadow:0 0 8px var(--cell-glow);
 }
 .welcome h2{
-  font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.15;margin:0 0 14px;
-  background:linear-gradient(180deg,#fff 20%,var(--text-dim) 100%);
+  font-size:42px;font-weight:800;letter-spacing:-.035em;line-height:1.08;margin:0 0 16px;
+  background:linear-gradient(180deg,#fff 0%,#fff 40%,var(--text-dim) 110%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.welcome p{color:var(--text-dim);margin:0 0 12px;max-width:58ch}
+.welcome h2 .accent{
+  background:linear-gradient(135deg,var(--vitality) 0%,var(--dna) 55%,var(--biolum) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.welcome .lead{
+  color:var(--text-dim);margin:0 0 24px;max-width:58ch;font-size:16px;line-height:1.6;
+}
+.welcome .topics{
+  display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;
+}
+.welcome .topic{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  padding:4px 10px;border-radius:6px;
+  background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
+  letter-spacing:.04em;
+}
 .welcome .disclaimer{
-  display:flex;gap:12px;margin-top:20px;padding:14px 16px;
-  border-radius:14px;background:rgba(255,193,7,.05);border:1px solid rgba(255,193,7,.15);
+  display:flex;gap:12px;margin-top:24px;padding:14px 16px;
+  border-radius:14px;background:rgba(255,193,7,.04);border:1px solid rgba(255,193,7,.14);
   color:var(--text-dim);font-size:13px;
 }
 .welcome .disclaimer .warn-icon{
-  flex-shrink:0;width:20px;height:20px;border-radius:50%;margin-top:1px;
-  background:rgba(255,193,7,.75);box-shadow:0 0 10px rgba(255,193,7,.2);
+  flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:0;
+  background:rgba(255,193,7,.85);box-shadow:0 0 14px rgba(255,193,7,.25);
   display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:800;color:var(--bg);
+  font-size:12px;font-weight:800;color:var(--bg);
 }
 
 /* ── Suggestions ────────────────────────────────── */
 .suggestions{
-  display:flex;flex-wrap:wrap;gap:8px;padding:0 24px 14px;
-  max-width:820px;width:100%;margin:0 auto;position:relative;z-index:1;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;padding:0 24px 16px;
+  max-width:820px;width:100%;margin:0 auto;position:relative;z-index:2;
 }
 .suggestion{
-  background:var(--surface);border:1px solid var(--border);
-  color:var(--text-dim);font-size:13px;font-weight:500;
-  padding:9px 16px;border-radius:999px;cursor:pointer;
+  background:linear-gradient(180deg,var(--surface),var(--bg-2));
+  border:1px solid var(--border);
+  color:var(--text-dim);font-size:13.5px;font-weight:500;
+  padding:12px 16px;border-radius:14px;cursor:pointer;
   font-family:inherit;transition:all .2s var(--morph-ease);
+  text-align:left;display:flex;align-items:center;gap:10px;
+  box-shadow:var(--shadow-sm);
+}
+.suggestion .icon{
+  flex-shrink:0;width:28px;height:28px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--elevated);border:1px solid var(--border);
+  font-size:14px;
 }
 .suggestion:hover{
   color:var(--text);border-color:var(--dna);
-  background:var(--dna-soft);transform:translateY(-1px);
-  box-shadow:0 4px 16px var(--dna-glow);
+  background:linear-gradient(180deg,var(--dna-soft),var(--surface));
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px var(--dna-glow);
+}
+.suggestion:hover .icon{
+  background:linear-gradient(135deg,var(--dna),var(--biolum));
+  border-color:transparent;
 }
 
 /* ── Composer ───────────────────────────────────── */
 form{
   position:sticky;bottom:0;z-index:5;
   border-top:1px solid var(--border);
-  background:rgba(0,0,0,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  padding:16px 24px;
+  background:linear-gradient(180deg,rgba(5,6,10,0.6),rgba(5,6,10,0.92));
+  backdrop-filter:blur(24px) saturate(130%);-webkit-backdrop-filter:blur(24px) saturate(130%);
+  padding:18px 24px 20px;
 }
-.composer{max-width:820px;margin:0 auto;display:flex;gap:10px;align-items:flex-end}
+.composer{max-width:820px;margin:0 auto;display:flex;gap:10px;align-items:stretch;position:relative}
 .input-wrap{
-  flex:1;background:var(--surface);border:1px solid var(--border);
+  flex:1;position:relative;
+  background:linear-gradient(180deg,var(--surface),var(--bg-2));
+  border:1px solid var(--border);
   border-radius:16px;transition:all .25s var(--morph-ease);
+  box-shadow:var(--shadow-sm),inset 0 1px 0 rgba(255,255,255,.02);
+  display:flex;align-items:center;
+}
+.input-wrap::before{
+  content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  width:6px;height:6px;border-radius:50%;background:var(--cell);
+  box-shadow:0 0 10px var(--cell-glow);animation:breathe 3s var(--morph-ease) infinite;
+  pointer-events:none;
 }
 .input-wrap:focus-within{
   border-color:var(--dna);
-  box-shadow:0 0 0 4px var(--dna-glow),0 0 30px rgba(77,148,255,.08);
+  box-shadow:0 0 0 4px var(--dna-glow),0 0 40px rgba(91,163,255,.12),var(--shadow-md);
 }
+.input-wrap:focus-within::before{background:var(--dna);box-shadow:0 0 12px var(--dna-glow)}
 input[type=text]{
-  width:100%;padding:14px 18px;border:0;outline:none;
-  background:transparent;color:var(--text);font:inherit;font-size:15px;
+  width:100%;padding:15px 18px 15px 34px;border:0;outline:none;
+  background:transparent;color:var(--text);font:inherit;font-size:15px;letter-spacing:-.005em;
 }
 input[type=text]::placeholder{color:var(--muted)}
 button.send{
-  padding:14px 20px;border-radius:14px;border:0;
+  padding:0 22px;border-radius:14px;border:0;min-width:92px;
   background:linear-gradient(135deg,var(--vitality),#ff7070);
   color:#fff;font-weight:700;font-size:14px;font-family:inherit;cursor:pointer;
-  box-shadow:0 6px 20px var(--vitality-glow);
-  transition:all .15s ease;display:inline-flex;align-items:center;gap:7px;
+  letter-spacing:-.005em;
+  box-shadow:0 6px 20px var(--vitality-glow),inset 0 1px 0 rgba(255,255,255,.15);
+  transition:all .18s var(--morph-ease);display:inline-flex;align-items:center;justify-content:center;gap:7px;
 }
-button.send:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 28px var(--vitality-glow)}
-button.send:active:not(:disabled){transform:translateY(0)}
-button.send:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
-button.send svg{width:14px;height:14px}
+button.send:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 32px var(--vitality-glow),inset 0 1px 0 rgba(255,255,255,.2)}
+button.send:active:not(:disabled){transform:translateY(0) scale(.98)}
+button.send:disabled{opacity:.4;cursor:not-allowed;box-shadow:none;transform:none}
+button.send svg{width:14px;height:14px;transition:transform .2s var(--morph-ease)}
+button.send:hover:not(:disabled) svg{transform:translate(2px,-2px) rotate(-8deg)}
 .hint{
-  max-width:820px;margin:8px auto 0;
+  max-width:820px;margin:10px auto 0;
   font-family:'JetBrains Mono',monospace;font-size:10px;
-  color:var(--muted);text-align:center;letter-spacing:.04em;
+  color:var(--muted);text-align:center;letter-spacing:.08em;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.hint kbd{
+  font-family:inherit;background:var(--elevated);border:1px solid var(--border);
+  border-radius:4px;padding:1px 6px;color:var(--text-dim);
 }
 
 /* ── Responsive ─────────────────────────────────── */
@@ -416,20 +506,47 @@ button.send svg{width:14px;height:14px}
 
 <header>
   <div class="brand">
-    <div class="cell-logo"></div>
+    <div class="cell-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        <circle cx="12" cy="12" r="3.5" fill="currentColor" opacity=".35"/>
+      </svg>
+    </div>
     <div>
       <h1>Balance.ai</h1>
-      <span class="tag"><span class="dot"></span>Wellbeing Agent · 17 guides</span>
+      <span class="tag"><span class="dot"></span>WELLBEING AGENT · 17 GUIDES</span>
     </div>
   </div>
-  <button class="reset" id="reset">New chat</button>
+  <button class="reset" id="reset">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10a7 7 0 1 0 2.05-4.95M3 4v4h4"/></svg>
+    <span>New chat</span>
+  </button>
 </header>
 
 <div id="chat">
   <div class="welcome" id="welcome">
-    <span class="chip">Evidence-based &middot; 17 supplement guides</span>
-    <h2>Your AI guide to<br>wellbeing &amp; supplements.</h2>
-    <p>Ask about sleep, stress, mood, muscle gain, fat loss, memory, testosterone, cardiovascular health, joint health and more. Every answer cites its source guide.</p>
+    <span class="chip">EVIDENCE-BASED · 17 SUPPLEMENT GUIDES</span>
+    <h2>Your AI guide to<br><span class="accent">wellbeing &amp; supplements.</span></h2>
+    <p class="lead">Ask about any health topic. I search 17 evidence-based supplement guides and return a ranked list of what to take — with dose, form, timing, and evidence strength.</p>
+    <div class="topics">
+      <span class="topic">SLEEP</span>
+      <span class="topic">STRESS</span>
+      <span class="topic">MOOD</span>
+      <span class="topic">MUSCLE GAIN</span>
+      <span class="topic">FAT LOSS</span>
+      <span class="topic">MEMORY &amp; FOCUS</span>
+      <span class="topic">TESTOSTERONE</span>
+      <span class="topic">CARDIOVASCULAR</span>
+      <span class="topic">JOINT HEALTH</span>
+      <span class="topic">LIBIDO</span>
+      <span class="topic">SKIN · HAIR · NAILS</span>
+      <span class="topic">BLOOD SUGAR</span>
+      <span class="topic">BONE HEALTH</span>
+      <span class="topic">LIVER</span>
+      <span class="topic">IMMUNITY</span>
+      <span class="topic">HEALTHY AGING</span>
+      <span class="topic">VEGAN</span>
+    </div>
     <div class="disclaimer">
       <div class="warn-icon">!</div>
       <div><strong>Not medical advice.</strong> For personal health decisions, consult a qualified healthcare professional.</div>
@@ -438,11 +555,11 @@ button.send svg{width:14px;height:14px}
 </div>
 
 <div class="suggestions" id="suggestions">
-  <button class="suggestion">What helps me fall asleep faster?</button>
-  <button class="suggestion">Best supplements for muscle gain?</button>
-  <button class="suggestion">Does ashwagandha reduce stress?</button>
-  <button class="suggestion">What should I take for focus?</button>
-  <button class="suggestion">Joint pain supplements?</button>
+  <button class="suggestion"><span class="icon">🌙</span><span>What helps me fall asleep faster?</span></button>
+  <button class="suggestion"><span class="icon">💪</span><span>Best supplements for muscle gain?</span></button>
+  <button class="suggestion"><span class="icon">🌿</span><span>Does ashwagandha reduce stress?</span></button>
+  <button class="suggestion"><span class="icon">🧠</span><span>What should I take for focus?</span></button>
+  <button class="suggestion"><span class="icon">🦴</span><span>Joint pain supplements?</span></button>
 </div>
 
 <form id="f">
@@ -455,7 +572,11 @@ button.send svg{width:14px;height:14px}
       <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 10l14-7-7 14-1.5-6z"/></svg>
     </button>
   </div>
-  <div class="hint">Grounded in supplement research &middot; Not a substitute for medical advice</div>
+  <div class="hint">
+    <span>Press <kbd>Enter</kbd> to send</span>
+    <span>&middot;</span>
+    <span>Grounded in 17 supplement guides &middot; Not medical advice</span>
+  </div>
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
@@ -491,8 +612,10 @@ function add(role,html,{raw=false}={}){
   el.className='msg '+(role==='user'?'user':'bot');
   const r=document.createElement('div');r.className='role';
   const av=document.createElement('span');av.className='avatar';
-  av.textContent=role==='user'?'Y':'B';
-  const rl=document.createElement('span');
+  av.innerHTML=role==='user'
+    ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>'
+    :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity=".45"/></svg>';
+  const rl=document.createElement('span');rl.className='label';
   rl.textContent=role==='user'?'You':'Balance.ai';
   r.appendChild(av);r.appendChild(rl);
   const c=document.createElement('div');c.className='content';

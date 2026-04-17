@@ -158,30 +158,95 @@ header .tag .dot{
 .msg .content em{color:var(--text-dim)}
 
 /* ── Supplement cards (numbered bold items with sub-bullets) ── */
-.msg .content ol>li>strong:first-child,
-.msg .content p>strong:first-of-type{color:var(--dna)}
+.msg .content ol{counter-reset:supp;padding-left:0;margin:12px 0;list-style:none}
 .msg .content ol>li{
-  margin:14px 0;padding:14px 16px;
-  background:linear-gradient(135deg,rgba(77,148,255,.04),rgba(16,185,129,.03));
-  border:1px solid var(--border);border-radius:14px;
+  margin:12px 0;padding:18px 20px 18px 56px;
+  background:linear-gradient(135deg,rgba(77,148,255,.06),rgba(16,185,129,.03));
+  border:1px solid var(--border);border-radius:16px;
   list-style:none;position:relative;counter-increment:supp;
+  transition:all .25s var(--morph-ease);
+}
+.msg .content ol>li:hover{
+  border-color:var(--border-strong);
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
 }
 .msg .content ol>li::before{
-  content:counter(supp);position:absolute;top:14px;left:-10px;
-  width:22px;height:22px;border-radius:50%;
-  background:var(--dna);color:var(--bg);
+  content:counter(supp,decimal-leading-zero);
+  position:absolute;top:18px;left:14px;
+  width:30px;height:30px;border-radius:10px;
+  background:linear-gradient(135deg,var(--dna),var(--biolum));
+  color:var(--bg);
   font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 12px var(--dna-glow);
+  box-shadow:0 4px 14px var(--dna-glow);
+  letter-spacing:-.02em;
 }
-.msg .content ol{counter-reset:supp;padding-left:16px}
+.msg .content ol>li>p:first-child,
+.msg .content ol>li>strong:first-child{
+  display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px;
+  margin:0 0 10px;font-size:16px;
+}
+.msg .content ol>li>p:first-child strong,
+.msg .content ol>li>strong:first-child{
+  color:#fff;font-size:16px;font-weight:700;letter-spacing:-.01em;
+}
+/* Tier pill (inline code next to the name) */
+.msg .content ol>li>p:first-child code,
+.msg .content ol>li>code:first-of-type{
+  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+  padding:3px 10px;border-radius:999px;
+  background:rgba(77,148,255,.12);color:var(--dna);
+  border:1px solid rgba(77,148,255,.3);
+}
+/* Tier color variants via data attribute set by JS */
+.msg .content ol>li[data-tier="primary"]>p:first-child code,
+.msg .content ol>li[data-tier="primary"]>code:first-of-type{
+  background:rgba(16,185,129,.12);color:var(--cell);border-color:rgba(16,185,129,.35);
+}
+.msg .content ol>li[data-tier="secondary"]>p:first-child code,
+.msg .content ol>li[data-tier="secondary"]>code:first-of-type{
+  background:rgba(77,148,255,.12);color:var(--dna);border-color:rgba(77,148,255,.35);
+}
+.msg .content ol>li[data-tier="promising"]>p:first-child code,
+.msg .content ol>li[data-tier="promising"]>code:first-of-type{
+  background:rgba(255,193,7,.10);color:#ffc107;border-color:rgba(255,193,7,.3);
+}
+.msg .content ol>li[data-tier="combo"]>p:first-child code,
+.msg .content ol>li[data-tier="combo"]>code:first-of-type{
+  background:rgba(0,229,255,.10);color:var(--biolum);border-color:rgba(0,229,255,.3);
+}
+.msg .content ol>li[data-tier="unproven"]>p:first-child code,
+.msg .content ol>li[data-tier="unproven"]>code:first-of-type{
+  background:rgba(107,118,137,.12);color:var(--muted);border-color:rgba(107,118,137,.3);
+}
+/* Left accent bar colored by tier */
+.msg .content ol>li[data-tier="primary"]{border-left:3px solid var(--cell)}
+.msg .content ol>li[data-tier="secondary"]{border-left:3px solid var(--dna)}
+.msg .content ol>li[data-tier="promising"]{border-left:3px solid #ffc107}
+.msg .content ol>li[data-tier="combo"]{border-left:3px solid var(--biolum)}
+.msg .content ol>li[data-tier="unproven"]{border-left:3px solid var(--muted)}
+
+/* Attributes sub-list — clean grid layout */
 .msg .content ol>li>ul{
-  margin:8px 0 0;padding-left:6px;list-style:none;
+  margin:10px 0 0;padding:0;list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px 18px;
 }
 .msg .content ol>li>ul>li{
-  margin:3px 0;font-size:13.5px;color:var(--text-dim);
+  margin:0;padding:4px 0;font-size:13px;color:var(--text-dim);
+  border-top:1px dashed var(--border);
+  display:flex;flex-direction:column;gap:2px;
 }
+.msg .content ol>li>ul>li:first-child,
+.msg .content ol>li>ul>li:nth-child(2){border-top:0}
 .msg .content ol>li>ul>li::marker{content:""}
+.msg .content ol>li>ul>li>strong{
+  color:var(--muted);font-size:10px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;
+  font-family:'JetBrains Mono',monospace;
+}
+.msg .content ol>li>ul>li>strong::after{content:""}
 .msg .content a{color:var(--dna);text-decoration:none;border-bottom:1px dashed rgba(77,148,255,.4)}
 .msg .content a:hover{color:#fff;border-bottom-color:var(--dna)}
 .msg .content code{
@@ -408,6 +473,17 @@ function md(text){
   try{return DOMPurify.sanitize(marked.parse(text||''),{USE_PROFILES:{html:true}})}
   catch(e){const d=document.createElement('div');d.textContent=text;return d.innerHTML}
 }
+// Walk rendered supplement list and tag each item with its tier (from the
+// first inline <code> inside the <li>) so CSS can color-code the badge.
+function tagTiers(root){
+  const tiers=['primary','secondary','promising','combo','unproven'];
+  root.querySelectorAll('ol > li').forEach(li=>{
+    const firstCode=li.querySelector(':scope > p > code, :scope > code');
+    if(!firstCode)return;
+    const txt=(firstCode.textContent||'').trim().toLowerCase();
+    if(tiers.includes(txt)) li.setAttribute('data-tier',txt);
+  });
+}
 function add(role,html,{raw=false}={}){
   if(welcome&&welcome.parentNode)welcome.remove();
   if(suggestions)suggestions.style.display='none';
@@ -420,7 +496,7 @@ function add(role,html,{raw=false}={}){
   rl.textContent=role==='user'?'You':'Balance.ai';
   r.appendChild(av);r.appendChild(rl);
   const c=document.createElement('div');c.className='content';
-  if(raw)c.innerHTML=html;else c.innerHTML=md(html);
+  if(raw)c.innerHTML=html;else{c.innerHTML=md(html);tagTiers(c);}
   el.appendChild(r);el.appendChild(c);
   chat.appendChild(el);chat.scrollTop=chat.scrollHeight;
   return{content:c,wrapper:el};
@@ -449,7 +525,7 @@ async function sendMessage(text){
       body:JSON.stringify({messages:history})});
     if(!r.ok)throw new Error('HTTP '+r.status);
     const data=await r.json();
-    p.content.innerHTML=md(data.reply);
+    p.content.innerHTML=md(data.reply);tagTiers(p.content);
     renderSources(p.wrapper,data.sources);
     history.push({role:'assistant',content:data.reply});
   }catch(err){p.content.innerHTML='<em>Error: '+(err.message||'request failed')+'</em>'}

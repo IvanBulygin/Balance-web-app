@@ -58,12 +58,18 @@ Then a numbered list. Each supplement follows this **exact** markdown format
 put the most impactful supplement first.
 
 **Content rules:**
-- Include **every relevant supplement** mentioned in the retrieved passages.
+- **Be exhaustive.** Include **every single supplement** mentioned in the
+  retrieved passages — do NOT skip any. The user needs a complete shopping
+  list. If the passages mention 12 supplements, list all 12. Omitting
+  supplements that appear in the passages is a failure.
 - If the passages don't give a specific dose or form, write
   `Check label for dosing` in that field. Don't invent numbers.
 - Keep each field to one line.
 - Don't use emojis.
 - Don't invent supplements, doses, forms, or brands not in the passages.
+- When multiple guides are relevant, merge supplements from all of them
+  into one unified list (no duplicates). If two guides mention the same
+  supplement with different details, combine the information.
 
 ### 3. Closing callout
 

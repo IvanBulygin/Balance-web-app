@@ -31,9 +31,9 @@ PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
 CHAT_MODEL = "claude-sonnet-4-6"
-MAX_TOKENS = 1024
+MAX_TOKENS = 4096
 MAX_HISTORY = 20  # trailing messages to keep when the client sends more
-TOP_K = 6  # retrieved chunks per question
+TOP_K = 15  # retrieved chunks per question
 
 state: dict[str, Any] = {}
 

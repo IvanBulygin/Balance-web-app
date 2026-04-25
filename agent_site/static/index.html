@@ -116,6 +116,9 @@ body{background:var(--bg)}
 var askInit=false,chatHistory=[];
 function initAsk(){}
 function askQuestion(){}
+function showAskWelcome(){}
+function newChat(){}
+function sendMessage(){}
 
 // TAB BAR + NAV
 const TABS=[
@@ -137,7 +140,7 @@ function nav(k){
 document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
 const scr=document.getElementById('scr-'+k);if(scr)scr.classList.add('active');
 document.querySelectorAll('.tab-item').forEach(t=>{t.classList.toggle('active',t.dataset.tab===k)});
-if(k==='ask'&&!askInit)initAsk();
+if(k==='ask'){if(!askInit)initAsk();document.getElementById('ask-input').focus();}
 }
 renderTabbar();
 </script>
@@ -299,16 +302,40 @@ if(tiers.includes(txt))li.setAttribute('data-tier',txt);
 });
 }
 
+function showAskWelcome(){
+const msgs=document.getElementById('ask-messages');
+msgs.innerHTML=`
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 28px 20px;text-align:center">
+  <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>
+  </div>
+  <div class="serif" style="font-size:22px;line-height:1.25;margin-bottom:8px">Ask anything about<br>your health</div>
+  <div style="font-size:13px;color:var(--ink-3);line-height:1.5;max-width:280px">I search 17 evidence-based guides and return ranked supplements with dose, timing, and grade.</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;justify-content:center">
+    <div onclick="sendMessage('What helps me fall asleep faster?')" style="padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer">Best for sleep?</div>
+    <div onclick="sendMessage('How to improve afternoon energy?')" style="padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer">Afternoon energy</div>
+    <div onclick="sendMessage('What supplements help with stress and anxiety?')" style="padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer">Stress relief</div>
+    <div onclick="sendMessage('Best supplements for muscle recovery?')" style="padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer">Muscle recovery</div>
+  </div>
+</div>`;
+}
+
+function newChat(){
+chatHistory=[];
+showAskWelcome();
+document.getElementById('ask-input').value='';
+document.getElementById('ask-input').focus();
+}
+
 function initAsk(){
 if(askInit)return;askInit=true;
 const msgs=document.getElementById('ask-messages');
 const comp=document.getElementById('ask-composer');
 comp.innerHTML=`<div class="composer"><form id="ask-form">
-<input id="ask-input" type="text" placeholder="Ask a follow-up…" autocomplete="off"/>
+<input id="ask-input" type="text" placeholder="Ask anything about your health…" autocomplete="off"/>
 <button type="submit" id="ask-send"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--brand-soft)"><path d="M3 12l18-8-8 18-2-8-8-2z"/></svg></button>
 </form></div>`;
 
-// Ask header
 const hdr=document.createElement('div');
 hdr.style.cssText='padding:8px 18px;display:flex;justify-content:space-between;align-items:center';
 hdr.innerHTML=`
@@ -316,10 +343,12 @@ hdr.innerHTML=`
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
 </div>
 <div style="font-size:13px;color:var(--ink-3);font-weight:500">Today's chat</div>
-<div style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer" onclick="chatHistory=[];document.getElementById('ask-messages').innerHTML=''">
+<div onclick="newChat()" style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
 </div>`;
 msgs.parentNode.insertBefore(hdr,msgs);
+
+showAskWelcome();
 
 document.getElementById('ask-form').addEventListener('submit',e=>{e.preventDefault();
 const inp=document.getElementById('ask-input');
@@ -355,6 +384,9 @@ wrapper.appendChild(d);
 
 async function sendMessage(text){
 if(!text)return;
+// Clear welcome state on first message
+const msgs=document.getElementById('ask-messages');
+if(chatHistory.length===0)msgs.innerHTML='';
 addMsg('user',text);chatHistory.push({role:'user',content:text});
 const btn=document.getElementById('ask-send');btn.disabled=true;
 const p=addMsg('assistant','<div class="thinking-dots"><span></span><span></span><span></span></div>');
@@ -558,6 +590,9 @@ document.getElementById('me-content').innerHTML=`
   </div>
 </div>
 `;
+
+// Pre-init Ask screen so it's ready when user taps the tab
+initAsk();
 </script>
 
 </body>

@@ -1,790 +1,560 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Balance AI — Your Wellness Buddy</title>
-<script>if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light')</script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"/>
+<title>Balance AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.0/dist/purify.min.js"></script>
 <style>
-:root {
-  --bg: #06060e;
-  --bg-2: #08081a;
-  --surface: #0e0e1e;
-  --elevated: #141428;
-  --border: #1e1e38;
-  --border-strong: #2c2c4a;
-  --blue: #4F6AFF;
-  --blue-glow: rgba(79,106,255,0.3);
-  --blue-soft: rgba(79,106,255,0.08);
-  --purple: #8B5CF6;
-  --purple-glow: rgba(139,92,246,0.3);
-  --purple-soft: rgba(139,92,246,0.08);
-  --pink: #EC4899;
-  --pink-glow: rgba(236,72,153,0.3);
-  --azure: #60A5FA;
-  --green: #10b981;
-  --green-glow: rgba(16,185,129,0.4);
-  --amber: #f59e0b;
-  --text: #f0f0f8;
-  --text-dim: #a8a8c8;
-  --muted: #6b6b8a;
-  --radius: 20px;
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.55);
+:root{
+--brand:#5521E5;--brand-deep:#20056C;--brand-soft:#ECE5FC;
+--accent:#E978DA;--accent-soft:#FDE2F8;
+--c-cyan:#56B6C6;--c-blue:#3FA9F5;--c-indigo:#559BF0;--c-violet:#8E77E2;--c-magenta:#E978DA;--c-pink:#F3A9FD;
+--bg:#FFFFFF;--surface:#FFFFFF;--surface-2:#FAFAFA;--surface-3:#F0F0F3;
+--ink:#050304;--ink-2:#3D3D3D;--ink-3:#7F7F7F;--ink-4:#A6A6A6;--rule:#E5E5E5;
+--green:#7AC97F;--green-soft:#D8F1DA;--aqua:#56B6C6;
+--grad:linear-gradient(95deg,#56B6C6 0%,#3FA9F5 22%,#559BF0 38%,#8E77E2 56%,#E978DA 78%,#F3A9FD 100%);
+--r-sm:12px;--r-md:18px;--r-lg:26px;--r-xl:32px;
+--sh-1:0 1px 2px rgba(32,5,108,.05),0 2px 8px rgba(32,5,108,.05);
+--sh-2:0 8px 24px rgba(32,5,108,.08);
+--sh-card:0 1px 0 rgba(32,5,108,.03),0 8px 28px rgba(32,5,108,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+html,body{height:100%;overflow:hidden}
 body{
-  background:var(--bg);color:var(--text);
-  font-family:'Space Grotesk','Inter',system-ui,sans-serif;
-  font-size:15px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  display:flex;flex-direction:column;
-  overflow:hidden;
-  position:relative;
+background:radial-gradient(circle at 80% 0%,rgba(243,169,253,.06) 0%,transparent 50%),
+radial-gradient(circle at 0% 60%,rgba(86,182,198,.05) 0%,transparent 50%),#fafafa;
+font-family:'Inter',-apple-system,system-ui,sans-serif;font-size:15px;
+color:var(--ink);-webkit-font-smoothing:antialiased;
+display:flex;align-items:center;justify-content:center;
 }
-body::before{
-  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.01) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.01) 1px, transparent 1px);
-  background-size:40px 40px;
-  mask-image:radial-gradient(ellipse at center, black 15%, transparent 80%);
-  -webkit-mask-image:radial-gradient(ellipse at center, black 15%, transparent 80%);
-}
+.serif{font-family:'Fraunces','Georgia',serif;font-weight:600;letter-spacing:-.02em;font-variation-settings:'opsz' 144}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.phone{width:390px;height:844px;border-radius:54px;background:#111;padding:10px;
+box-shadow:0 30px 60px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.08);position:relative}
+.phone-inner{width:100%;height:100%;border-radius:46px;overflow:hidden;position:relative;background:var(--bg)}
+.dyn-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:120px;height:34px;border-radius:20px;background:#000;z-index:100}
+.screen{position:absolute;inset:0;display:none;flex-direction:column;overflow:hidden}
+.screen.active{display:flex}
+.screen-scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+.screen-scroll::-webkit-scrollbar{display:none}
+.bal-card{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-card)}
+.ev-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:7px;font-size:11px;font-weight:700;font-family:'Fraunces',Georgia,serif}
+.ev-badge.a{background:var(--brand);color:#fff}
+.ev-badge.b{background:var(--accent);color:#fff}
+.ev-badge.c{background:var(--accent-soft);color:var(--brand)}
+.bal-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em;background:var(--brand-soft);color:var(--brand-deep)}
+.bal-pill.accent{background:var(--accent-soft);color:var(--brand)}
+.bal-pill.dark{background:var(--brand);color:#fff}
+.bal-pill.light{background:var(--surface-3);color:var(--ink-2)}
+.tabbar{position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);
+backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+border-top:.5px solid var(--rule);padding:10px 20px 28px;display:flex;justify-content:space-around;z-index:50}
+.tab-item{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:600;color:var(--ink-4);cursor:pointer;letter-spacing:.02em}
+.tab-item.active{color:var(--brand)}
+.tab-item svg{width:22px;height:22px}
 
-/* ── Animated background blobs ──────────────────── */
-.bg-blobs{
-  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-}
-.bg-blobs .blob{
-  position:absolute;border-radius:50%;filter:blur(130px);opacity:.14;
-  animation:drift 30s ease-in-out infinite alternate;
-}
-.bg-blobs .blob-1{width:600px;height:600px;background:var(--blue);top:-15%;left:-10%;animation-duration:28s}
-.bg-blobs .blob-2{width:500px;height:500px;background:var(--purple);top:30%;right:-12%;animation-duration:34s;animation-delay:-8s}
-.bg-blobs .blob-3{width:450px;height:450px;background:var(--pink);bottom:-10%;left:30%;animation-duration:38s;animation-delay:-16s}
-@keyframes drift{
-  0%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(40px,-30px) scale(1.08)}
-  66%{transform:translate(-30px,50px) scale(0.95)}
-  100%{transform:translate(20px,-20px) scale(1.03)}
-}
-
-/* ── Header ─────────────────────────────────────── */
-header{
-  position:sticky;top:0;z-index:10;
-  padding:14px 28px;
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);
-  background:linear-gradient(180deg,rgba(6,6,14,0.88),rgba(6,6,14,0.6));
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-}
-header .brand{display:flex;align-items:center;gap:14px}
-.cell-logo{
-  width:40px;height:40px;border-radius:12px;position:relative;
-  background:linear-gradient(135deg,var(--blue),var(--purple) 55%,var(--pink));
-  box-shadow:0 0 20px var(--blue-glow),0 0 40px var(--purple-glow),inset 0 0 0 1px rgba(255,255,255,.18);
-  animation:breathe 4s ease-in-out infinite;
-  display:flex;align-items:center;justify-content:center;
-}
-.cell-logo svg{width:22px;height:22px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
-.cell-logo::after{
-  content:"";position:absolute;inset:2px;border-radius:10px;pointer-events:none;
-  background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.35),transparent 60%);
-}
-@keyframes breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.92}}
-header h1{
-  font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;
-  letter-spacing:.12em;color:#fff;text-transform:uppercase;
-}
-header h1 .tri{color:var(--blue);font-weight:700}
-header h1 .ai-sup{
-  font-size:11px;font-weight:600;vertical-align:super;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  margin-left:1px;letter-spacing:.02em;
-}
-header .tag{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:11px;margin-top:2px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
-header .tag .dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--green);box-shadow:0 0 8px var(--green-glow);
-  animation:pulse 2.5s ease-in-out infinite;
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.reset{
-  background:rgba(255,255,255,.03);color:var(--text-dim);border:1px solid var(--border);
-  padding:8px 14px;border-radius:999px;font-size:12px;font-weight:500;cursor:pointer;
-  font-family:inherit;transition:all .2s var(--ease);
-  display:inline-flex;align-items:center;gap:7px;
-}
-.reset svg{width:13px;height:13px}
-.reset:hover{color:var(--text);border-color:var(--purple);background:var(--purple-soft);box-shadow:0 0 20px var(--purple-glow)}
-.reset:active{transform:scale(.97)}
-
-/* ── Chat ───────────────────────────────────────── */
-#chat{
-  flex:1;overflow-y:auto;padding:28px 24px 16px;
-  max-width:820px;width:100%;margin:0 auto;
-  position:relative;z-index:1;
-  scroll-behavior:smooth;
-}
-#chat::-webkit-scrollbar{width:8px}
-#chat::-webkit-scrollbar-track{background:transparent}
-#chat::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
-
-.msg{
-  margin:0 0 20px;padding:18px 20px;
-  border:1px solid var(--border);
-  animation:msg-in .4s var(--ease);
-  position:relative;
-  box-shadow:var(--shadow-sm);
-}
-@keyframes msg-in{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
-.msg.user{
-  background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(79,106,255,.03));
-  border-radius:var(--radius) var(--radius) 6px var(--radius);
-  border-left:3px solid var(--purple);
-  margin-left:40px;
-}
-.msg.bot{
-  background:linear-gradient(180deg,var(--elevated),var(--surface));
-  border-radius:var(--radius) var(--radius) var(--radius) 6px;
-  border-left:3px solid var(--blue);
-  margin-right:40px;
-  box-shadow:var(--shadow-sm),0 0 0 1px rgba(79,106,255,.04);
-}
-.msg .role{
-  display:flex;align-items:center;gap:9px;
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:12px;
-}
-.msg .avatar{
-  width:24px;height:24px;border-radius:8px;
-  display:inline-flex;align-items:center;justify-content:center;
-  color:#fff;flex-shrink:0;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.15);
-}
-.msg .avatar svg{width:13px;height:13px}
-.msg.user .avatar{
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-  box-shadow:0 4px 12px var(--purple-glow),inset 0 1px 0 rgba(255,255,255,.2);
-}
-.msg.bot .avatar{
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  animation:breathe 4s ease-in-out infinite;
-  box-shadow:0 4px 14px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,.2);
-}
-.msg.bot .role .label{
-  background:linear-gradient(90deg,var(--blue),var(--purple));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  font-weight:700;
-}
-.msg.user .role .label{color:var(--purple);font-weight:700}
-
-/* ── Markdown content ───────────────────────────── */
-.msg .content{color:var(--text);word-wrap:break-word}
-.msg .content>*:first-child{margin-top:0}
-.msg .content>*:last-child{margin-bottom:0}
-.msg .content h1,.msg .content h2,.msg .content h3{
-  font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.3;margin:20px 0 8px;
-}
-.msg .content h1{font-size:20px}
-.msg .content h2{font-size:17px;color:var(--blue)}
-.msg .content h3{font-size:15px}
-.msg .content h3:has(+ ol),.msg .content h3:has(+ ul){
-  margin-top:24px;padding-top:16px;border-top:1px solid var(--border);
-}
-.msg .content p{margin:8px 0}
-.msg .content ul,.msg .content ol{margin:8px 0;padding-left:22px}
-.msg .content li{margin:4px 0}
-.msg .content li::marker{color:var(--blue)}
-.msg .content strong{color:#fff;font-weight:600}
-.msg .content em{color:var(--text-dim)}
-
-/* ── Supplement cards (numbered bold items with sub-bullets) ── */
-.msg .content ol{counter-reset:supp;padding-left:0;margin:12px 0;list-style:none}
-.msg .content ol>li{
-  margin:12px 0;padding:18px 20px 18px 56px;
-  background:linear-gradient(135deg,rgba(79,106,255,.05),rgba(139,92,246,.03));
-  border:1px solid var(--border);border-radius:16px;
-  list-style:none;position:relative;counter-increment:supp;
-  transition:all .25s var(--ease);
-}
-.msg .content ol>li:hover{
-  border-color:var(--border-strong);
-  transform:translateY(-1px);
-  box-shadow:0 8px 24px rgba(0,0,0,.25);
-}
-.msg .content ol>li::before{
-  content:counter(supp,decimal-leading-zero);
-  position:absolute;top:18px;left:14px;
-  width:30px;height:30px;border-radius:10px;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  color:#fff;
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 14px var(--blue-glow);
-  letter-spacing:-.02em;
-}
-.msg .content ol>li>p:first-child,
-.msg .content ol>li>strong:first-child{
-  display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px;
-  margin:0 0 10px;font-size:16px;
-}
-.msg .content ol>li>p:first-child strong,
-.msg .content ol>li>strong:first-child{
-  color:#fff;font-size:16px;font-weight:700;letter-spacing:-.01em;
-}
-/* Tier pill (inline code next to the name) */
-.msg .content ol>li>p:first-child code,
-.msg .content ol>li>code:first-of-type{
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.1em;
-  padding:3px 10px;border-radius:999px;
-  background:rgba(79,106,255,.12);color:var(--blue);
-  border:1px solid rgba(79,106,255,.3);
-}
-/* Tier color variants via data attribute set by JS */
-.msg .content ol>li[data-tier="primary"]>p:first-child code,
-.msg .content ol>li[data-tier="primary"]>code:first-of-type{
-  background:rgba(16,185,129,.12);color:var(--green);border-color:rgba(16,185,129,.35);
-}
-.msg .content ol>li[data-tier="secondary"]>p:first-child code,
-.msg .content ol>li[data-tier="secondary"]>code:first-of-type{
-  background:rgba(79,106,255,.12);color:var(--blue);border-color:rgba(79,106,255,.35);
-}
-.msg .content ol>li[data-tier="promising"]>p:first-child code,
-.msg .content ol>li[data-tier="promising"]>code:first-of-type{
-  background:rgba(245,158,11,.10);color:var(--amber);border-color:rgba(245,158,11,.3);
-}
-.msg .content ol>li[data-tier="combo"]>p:first-child code,
-.msg .content ol>li[data-tier="combo"]>code:first-of-type{
-  background:rgba(139,92,246,.10);color:var(--purple);border-color:rgba(139,92,246,.3);
-}
-.msg .content ol>li[data-tier="unproven"]>p:first-child code,
-.msg .content ol>li[data-tier="unproven"]>code:first-of-type{
-  background:rgba(107,118,137,.12);color:var(--muted);border-color:rgba(107,118,137,.3);
-}
-/* Left accent bar colored by tier */
-.msg .content ol>li[data-tier="primary"]{border-left:3px solid var(--green)}
-.msg .content ol>li[data-tier="secondary"]{border-left:3px solid var(--blue)}
-.msg .content ol>li[data-tier="promising"]{border-left:3px solid var(--amber)}
-.msg .content ol>li[data-tier="combo"]{border-left:3px solid var(--purple)}
-.msg .content ol>li[data-tier="unproven"]{border-left:3px solid var(--muted)}
-
-/* Attributes sub-list — clean grid layout */
-.msg .content ol>li>ul{
-  margin:10px 0 0;padding:0;list-style:none;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px 18px;
-}
-.msg .content ol>li>ul>li{
-  margin:0;padding:4px 0;font-size:13px;color:var(--text-dim);
-  border-top:1px dashed var(--border);
-  display:flex;flex-direction:column;gap:2px;
-}
-.msg .content ol>li>ul>li:first-child,
-.msg .content ol>li>ul>li:nth-child(2){border-top:0}
-.msg .content ol>li>ul>li::marker{content:""}
-.msg .content ol>li>ul>li>strong{
-  color:var(--muted);font-size:10px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.08em;
-  font-family:'JetBrains Mono',monospace;
-}
-.msg .content ol>li>ul>li>strong::after{content:""}
-.msg .content a{color:var(--blue);text-decoration:none;border-bottom:1px dashed rgba(79,106,255,.4)}
-.msg .content a:hover{color:#fff;border-bottom-color:var(--blue)}
-.msg .content code{
-  font-family:'JetBrains Mono',monospace;font-size:13px;
-  background:var(--blue-soft);color:var(--blue);
-  padding:2px 7px;border-radius:6px;border:1px solid rgba(79,106,255,.15);
-}
-.msg .content pre{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:12px;padding:14px 16px;overflow-x:auto;margin:12px 0;
-}
-.msg .content pre code{background:transparent;border:0;padding:0;color:var(--text-dim)}
-.msg .content blockquote{
-  margin:14px 0;padding:12px 16px;
-  border-left:3px solid rgba(255,193,7,.6);border-radius:0 10px 10px 0;
-  background:rgba(255,193,7,.05);color:var(--text-dim);
-  font-style:normal;font-size:13px;
-}
-.msg .content hr{border:0;border-top:1px solid var(--border);margin:16px 0}
-.msg .content table{
-  width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;
-}
-.msg .content thead{
-  background:var(--blue-soft);
-}
-.msg .content th{
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.06em;color:var(--blue);
-  text-align:left;padding:8px 10px;border-bottom:2px solid var(--border-strong);
-}
-.msg .content td{
-  padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text-dim);
-  vertical-align:top;
-}
-.msg .content tr:last-child td{border-bottom:none}
-.msg .content tr:hover td{background:rgba(79,106,255,.04)}
-
-/* ── Thinking dots ──────────────────────────────── */
-.thinking{display:inline-flex;gap:5px;align-items:center;padding:4px 0}
-.thinking .dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--blue);
-  animation:bounce 1.3s infinite ease-in-out;
-  box-shadow:0 0 8px var(--blue-glow);
-}
-.thinking .dot:nth-child(2){animation-delay:.15s}
-.thinking .dot:nth-child(3){animation-delay:.3s}
-@keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.35}40%{transform:translateY(-5px);opacity:1}}
-
-/* ── Sources ────────────────────────────────────── */
-.msg .sources{
-  margin-top:14px;padding-top:12px;
-  border-top:1px dashed var(--border);
-  display:flex;flex-wrap:wrap;gap:6px;align-items:center;
-}
-.msg .sources .label{
-  font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;
-  text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-right:4px;
-}
-.msg .sources .src{
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  color:var(--text-dim);padding:3px 10px;border-radius:999px;
-  background:var(--blue-soft);border:1px solid rgba(79,106,255,.15);
-  transition:all .15s ease;
-}
-.msg .sources .src:hover{border-color:var(--blue);box-shadow:0 0 12px var(--blue-glow)}
-
-/* ── Welcome ────────────────────────────────────── */
-.welcome{padding:56px 0 24px;animation:fade-in .6s ease;text-align:left}
-@keyframes fade-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.welcome .chip{
-  display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;
-  background:linear-gradient(135deg,rgba(79,106,255,.08),rgba(139,92,246,.08));
-  border:1px solid rgba(79,106,255,.22);
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
-  color:var(--blue);letter-spacing:.06em;margin-bottom:22px;
-}
-.welcome .chip::before{
-  content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);
-  box-shadow:0 0 8px var(--blue-glow);
-}
-.welcome h2{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:42px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:0 0 16px;
-  background:linear-gradient(180deg,#fff 0%,#fff 40%,var(--text-dim) 110%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.welcome h2 .accent{
-  background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 50%,var(--pink) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.welcome .lead{
-  color:var(--text-dim);margin:0 0 24px;max-width:58ch;font-size:16px;line-height:1.6;
-}
-.welcome .topics{
-  display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;
-}
-.welcome .topic{
-  font-family:'JetBrains Mono',monospace;font-size:10.5px;
-  padding:4px 10px;border-radius:6px;
-  background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
-  letter-spacing:.04em;
-}
-.welcome .disclaimer{
-  display:flex;gap:12px;margin-top:24px;padding:14px 16px;
-  border-radius:14px;background:rgba(255,193,7,.04);border:1px solid rgba(255,193,7,.14);
-  color:var(--text-dim);font-size:13px;
-}
-.welcome .disclaimer .warn-icon{
-  flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:0;
-  background:rgba(255,193,7,.85);box-shadow:0 0 14px rgba(255,193,7,.25);
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:800;color:var(--bg);
-}
-
-/* ── Suggestions ────────────────────────────────── */
-.suggestions{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:10px;padding:0 24px 16px;
-  max-width:820px;width:100%;margin:0 auto;position:relative;z-index:2;
-}
-.suggestion{
-  background:linear-gradient(180deg,var(--surface),var(--bg-2));
-  border:1px solid var(--border);
-  color:var(--text-dim);font-size:13.5px;font-weight:500;
-  padding:12px 16px;border-radius:14px;cursor:pointer;
-  font-family:inherit;transition:all .2s var(--ease);
-  text-align:left;display:flex;align-items:center;gap:10px;
-  box-shadow:var(--shadow-sm);
-}
-.suggestion .icon{
-  flex-shrink:0;width:28px;height:28px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--elevated);border:1px solid var(--border);
-  font-size:14px;
-}
-.suggestion:hover{
-  color:var(--text);border-color:var(--blue);
-  background:linear-gradient(180deg,var(--blue-soft),var(--surface));
-  transform:translateY(-2px);
-  box-shadow:0 8px 24px var(--blue-glow);
-}
-.suggestion:hover .icon{
-  background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;
-  border-color:transparent;
-}
-
-/* ── Composer ───────────────────────────────────── */
-form{
-  position:sticky;bottom:0;z-index:5;
-  border-top:1px solid var(--border);
-  background:linear-gradient(180deg,rgba(5,6,10,0.6),rgba(5,6,10,0.92));
-  backdrop-filter:blur(24px) saturate(130%);-webkit-backdrop-filter:blur(24px) saturate(130%);
-  padding:18px 24px 20px;
-}
-.composer{max-width:820px;margin:0 auto;display:flex;gap:10px;align-items:stretch;position:relative}
-.input-wrap{
-  flex:1;position:relative;
-  background:linear-gradient(180deg,var(--surface),var(--bg-2));
-  border:1px solid var(--border);
-  border-radius:16px;transition:all .25s var(--ease);
-  box-shadow:var(--shadow-sm),inset 0 1px 0 rgba(255,255,255,.02);
-  display:flex;align-items:center;
-}
-.input-wrap::before{
-  content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%);
-  width:6px;height:6px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 10px var(--green-glow);animation:breathe 3s var(--ease) infinite;
-  pointer-events:none;
-}
-.input-wrap:focus-within{
-  border-color:var(--blue);
-  box-shadow:0 0 0 4px var(--blue-glow),0 0 40px rgba(79,106,255,.12),var(--shadow-md);
-}
-.input-wrap:focus-within::before{background:var(--blue);box-shadow:0 0 12px var(--blue-glow)}
-input[type=text]{
-  width:100%;padding:15px 18px 15px 34px;border:0;outline:none;
-  background:transparent;color:var(--text);font:inherit;font-size:15px;letter-spacing:-.005em;
-}
-input[type=text]::placeholder{color:var(--muted)}
-button.send{
-  padding:0 22px;border-radius:14px;border:0;min-width:92px;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  color:#fff;font-weight:700;font-size:14px;font-family:inherit;cursor:pointer;
-  letter-spacing:-.005em;
-  box-shadow:0 6px 20px var(--purple-glow),inset 0 1px 0 rgba(255,255,255,.15);
-  transition:all .18s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:7px;
-}
-button.send:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 32px var(--purple-glow),inset 0 1px 0 rgba(255,255,255,.2)}
-button.send:active:not(:disabled){transform:translateY(0) scale(.98)}
-button.send:disabled{opacity:.4;cursor:not-allowed;box-shadow:none;transform:none}
-button.send svg{width:14px;height:14px;transition:transform .2s var(--ease)}
-button.send:hover:not(:disabled) svg{transform:translate(2px,-2px) rotate(-8deg)}
-.hint{
-  max-width:820px;margin:10px auto 0;
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  color:var(--muted);text-align:center;letter-spacing:.08em;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-}
-.hint kbd{
-  font-family:inherit;background:var(--elevated);border:1px solid var(--border);
-  border-radius:4px;padding:1px 6px;color:var(--text-dim);
-}
-
-/* ── Light theme ────────────────────────────────── */
-html.light{
-  --bg: #f5f5fa;
-  --bg-2: #eeeef5;
-  --surface: #ffffff;
-  --elevated: #f8f8fc;
-  --border: #dddde8;
-  --border-strong: #c8c8d8;
-  --blue: #3B5BDB;
-  --blue-glow: rgba(59,91,219,0.18);
-  --blue-soft: rgba(59,91,219,0.06);
-  --purple: #7C3AED;
-  --purple-glow: rgba(124,58,237,0.18);
-  --purple-soft: rgba(124,58,237,0.06);
-  --pink: #DB2777;
-  --pink-glow: rgba(219,39,119,0.18);
-  --azure: #3B82F6;
-  --green: #059669;
-  --green-glow: rgba(5,150,105,0.25);
-  --amber: #d97706;
-  --text: #1a1a2e;
-  --text-dim: #4a4a68;
-  --muted: #8888a8;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
-}
-html.light body::before{opacity:0}
-html.light .bg-blobs .blob{opacity:.06;filter:blur(160px)}
-html.light header{
-  background:linear-gradient(180deg,rgba(245,245,250,0.92),rgba(245,245,250,0.7));
-  border-bottom-color:var(--border);
-}
-html.light header h1{color:var(--text)}
-html.light .cell-logo{
-  box-shadow:0 4px 16px var(--blue-glow),inset 0 0 0 1px rgba(255,255,255,.5);
-}
-html.light .msg.user{
-  background:linear-gradient(135deg,rgba(124,58,237,.04),rgba(59,91,219,.03));
-}
-html.light .msg.bot{
-  background:var(--surface);
-  box-shadow:var(--shadow-sm);
-}
-html.light .msg .content strong{color:var(--text)}
-html.light .msg .content h1,
-html.light .msg .content h3{color:var(--text)}
-html.light .welcome h2{
-  background:linear-gradient(180deg,var(--text) 0%,var(--text) 40%,var(--muted) 110%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-html.light .msg .content ol>li{
-  background:linear-gradient(135deg,rgba(59,91,219,.03),rgba(124,58,237,.02));
-}
-html.light .msg .content ol>li::before{color:#fff}
-html.light .msg .content ol>li>p:first-child strong,
-html.light .msg .content ol>li>strong:first-child{color:var(--text)}
-html.light .suggestion{
-  background:var(--surface);
-  box-shadow:var(--shadow-sm);
-}
-html.light form{
-  background:linear-gradient(180deg,rgba(245,245,250,0.7),rgba(245,245,250,0.95));
-  border-top-color:var(--border);
-}
-html.light .input-wrap{
-  background:var(--surface);
-  box-shadow:var(--shadow-sm),inset 0 1px 0 rgba(255,255,255,.8);
-}
-html.light .welcome .disclaimer{
-  background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.2);
-}
-html.light .msg .content blockquote{
-  background:rgba(245,158,11,.06);border-left-color:rgba(245,158,11,.5);
-}
-html.light .reset{background:rgba(0,0,0,.03)}
-html.light .reset:hover{background:var(--purple-soft)}
-html.light #chat::-webkit-scrollbar-thumb{background:var(--border)}
-.theme-toggle{
-  background:rgba(255,255,255,.03);border:1px solid var(--border);
-  width:36px;height:36px;border-radius:50%;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s var(--ease);flex-shrink:0;
-  color:var(--text-dim);
-}
-.theme-toggle svg{width:16px;height:16px;transition:transform .3s var(--ease)}
-.theme-toggle:hover{
-  color:var(--text);border-color:var(--purple);
-  background:var(--purple-soft);box-shadow:0 0 16px var(--purple-glow);
-}
-.theme-toggle:active{transform:scale(.92)}
-html.light .theme-toggle{background:rgba(0,0,0,.04)}
-html.light .theme-toggle:hover{background:var(--purple-soft)}
-.theme-toggle .icon-sun{display:none}
-.theme-toggle .icon-moon{display:block}
-html.light .theme-toggle .icon-sun{display:block}
-html.light .theme-toggle .icon-moon{display:none}
-
-/* ── Responsive ─────────────────────────────────── */
-@media(max-width:640px){
-  header{padding:12px 16px}
-  #chat{padding:20px 16px 12px}
-  .suggestions{padding:0 16px 12px}
-  form{padding:12px 16px}
-  .welcome h2{font-size:24px}
-  .welcome{padding:32px 0 20px}
+@media(max-width:430px){
+.phone{width:100vw;height:100vh;height:100dvh;border-radius:0;padding:0;box-shadow:none}
+.phone-inner{border-radius:0}
+.dyn-island{display:none}
+body{background:var(--bg)}
 }
 </style>
 </head>
 <body>
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-</div>
+<div class="phone"><div class="phone-inner">
+<div class="dyn-island"></div>
 
-<header>
-  <div class="brand">
-    <div class="cell-logo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 4L5 18h14L12 4z"/>
-        <circle cx="12" cy="14" r="2" fill="currentColor" opacity=".5" stroke="none"/>
-      </svg>
-    </div>
-    <div>
-      <h1>BAL<span class="tri">&#916;</span>NCE<span class="ai-sup">AI</span></h1>
-      <span class="tag"><span class="dot"></span>YOUR WELLNESS BUDDY</span>
-    </div>
-  </div>
-  <div style="display:flex;align-items:center;gap:8px">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <svg class="icon-moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.3 13.3A8 8 0 1 1 6.7 2.7a6 6 0 0 0 10.6 10.6z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4"/><path d="M10 1v2M10 17v2M3.5 3.5l1.4 1.4M15.1 15.1l1.4 1.4M1 10h2M17 10h2M3.5 16.5l1.4-1.4M15.1 4.9l1.4-1.4"/></svg>
-    </button>
-    <button class="reset" id="reset">
-      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10a7 7 0 1 0 2.05-4.95M3 4v4h4"/></svg>
-      <span>New chat</span>
-    </button>
-  </div>
-</header>
-
-<div id="chat">
-  <div class="welcome" id="welcome">
-    <span class="chip">EVIDENCE-BASED · 17 SUPPLEMENT GUIDES</span>
-    <h2>Your wellness buddy.<br><span class="accent">Evidence-based. Always ready.</span></h2>
-    <p class="lead">Ask about any health topic. I search 17 evidence-based supplement guides and return a ranked list of what to take — with dose, form, timing, and evidence strength.</p>
-    <div class="topics">
-      <span class="topic">SLEEP</span>
-      <span class="topic">STRESS</span>
-      <span class="topic">MOOD</span>
-      <span class="topic">MUSCLE GAIN</span>
-      <span class="topic">FAT LOSS</span>
-      <span class="topic">MEMORY &amp; FOCUS</span>
-      <span class="topic">TESTOSTERONE</span>
-      <span class="topic">CARDIOVASCULAR</span>
-      <span class="topic">JOINT HEALTH</span>
-      <span class="topic">LIBIDO</span>
-      <span class="topic">SKIN · HAIR · NAILS</span>
-      <span class="topic">BLOOD SUGAR</span>
-      <span class="topic">BONE HEALTH</span>
-      <span class="topic">LIVER</span>
-      <span class="topic">IMMUNITY</span>
-      <span class="topic">HEALTHY AGING</span>
-      <span class="topic">VEGAN</span>
-    </div>
-    <div class="disclaimer">
-      <div class="warn-icon">!</div>
-      <div><strong>Not medical advice.</strong> For personal health decisions, consult a qualified healthcare professional.</div>
-    </div>
+<!-- SCREENS -->
+<div id="scr-today" class="screen active">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="today-content"></div>
   </div>
 </div>
 
-<div class="suggestions" id="suggestions">
-  <button class="suggestion"><span class="icon">🌙</span><span>What helps me fall asleep faster?</span></button>
-  <button class="suggestion"><span class="icon">💪</span><span>Best supplements for muscle gain?</span></button>
-  <button class="suggestion"><span class="icon">🌿</span><span>Does ashwagandha reduce stress?</span></button>
-  <button class="suggestion"><span class="icon">🧠</span><span>What should I take for focus?</span></button>
-  <button class="suggestion"><span class="icon">🦴</span><span>Joint pain supplements?</span></button>
+<div id="scr-ask" class="screen">
+  <div id="ask-content" style="display:flex;flex-direction:column;height:100%">
+    <div style="height:54px;flex-shrink:0"></div>
+    <div id="ask-messages" class="screen-scroll" style="flex:1;padding-bottom:80px"></div>
+    <div id="ask-composer"></div>
+  </div>
 </div>
 
-<form id="f">
-  <div class="composer">
-    <div class="input-wrap">
-      <input id="q" type="text" placeholder="Ask a wellbeing question..." autocomplete="off" />
-    </div>
-    <button class="send" id="send" type="submit">
-      Send
-      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 10l14-7-7 14-1.5-6z"/></svg>
-    </button>
+<div id="scr-stack" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="stack-content"></div>
   </div>
-  <div class="hint">
-    <span>Press <kbd>Enter</kbd> to send</span>
-    <span>&middot;</span>
-    <span>Grounded in 17 supplement guides &middot; Not medical advice</span>
-  </div>
-</form>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.0/dist/purify.min.js"></script>
+<div id="scr-learn" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="learn-content"></div>
+  </div>
+</div>
+
+<div id="scr-me" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="me-content"></div>
+  </div>
+</div>
+
+<!-- TABBAR -->
+<div class="tabbar" id="tabbar"></div>
+</div></div>
+
 <script>
-// Theme toggle
-const themeToggle=document.getElementById('themeToggle');
-if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light');
-themeToggle.addEventListener('click',()=>{
-  document.documentElement.classList.toggle('light');
-  localStorage.setItem('theme',document.documentElement.classList.contains('light')?'light':'dark');
+// TAB BAR + NAV
+const TABS=[
+{k:'today',l:'Today',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11L12 4l9 7"/><path d="M5 10v10h14V10"/></svg>'},
+{k:'ask',l:'Ask',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/></svg>'},
+{k:'stack',l:'Stack',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l8 4-8 4-8-4 8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 17l8 4 8-4"/></svg>'},
+{k:'learn',l:'Learn',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2V5z"/><path d="M19 3v18"/></svg>'},
+{k:'me',l:'Me',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>'}
+];
+function renderTabbar(){
+const tb=document.getElementById('tabbar');
+tb.innerHTML=TABS.map(t=>`<div class="tab-item${t.k==='today'?' active':''}" data-tab="${t.k}">${t.icon}<div>${t.l}</div></div>`).join('');
+tb.addEventListener('click',e=>{
+const item=e.target.closest('.tab-item');if(!item)return;
+const k=item.dataset.tab;nav(k);
 });
-
-const chat=document.getElementById('chat'),form=document.getElementById('f'),
-  input=document.getElementById('q'),sendBtn=document.getElementById('send'),
-  resetBtn=document.getElementById('reset'),welcome=document.getElementById('welcome'),
-  suggestions=document.getElementById('suggestions');
-
-marked.setOptions({gfm:true,breaks:true,headerIds:false,mangle:false});
-let history=[];
-
-function md(text){
-  try{return DOMPurify.sanitize(marked.parse(text||''),{USE_PROFILES:{html:true}})}
-  catch(e){const d=document.createElement('div');d.textContent=text;return d.innerHTML}
 }
-// Walk rendered supplement list and tag each item with its tier (from the
-// first inline <code> inside the <li>) so CSS can color-code the badge.
-function tagTiers(root){
-  const tiers=['primary','secondary','promising','combo','unproven'];
-  root.querySelectorAll('ol > li').forEach(li=>{
-    const firstCode=li.querySelector(':scope > p > code, :scope > code');
-    if(!firstCode)return;
-    const txt=(firstCode.textContent||'').trim().toLowerCase();
-    if(tiers.includes(txt)) li.setAttribute('data-tier',txt);
-  });
+function nav(k){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+const scr=document.getElementById('scr-'+k);if(scr)scr.classList.add('active');
+document.querySelectorAll('.tab-item').forEach(t=>{t.classList.toggle('active',t.dataset.tab===k)});
+if(k==='ask'&&!askInit)initAsk();
 }
-function add(role,html,{raw=false}={}){
-  if(welcome&&welcome.parentNode)welcome.remove();
-  if(suggestions)suggestions.style.display='none';
-  const el=document.createElement('div');
-  el.className='msg '+(role==='user'?'user':'bot');
-  const r=document.createElement('div');r.className='role';
-  const av=document.createElement('span');av.className='avatar';
-  av.innerHTML=role==='user'
-    ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>'
-    :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L5 18h14L12 4z"/><circle cx="12" cy="14" r="2" fill="currentColor" opacity=".5" stroke="none"/></svg>';
-  const rl=document.createElement('span');rl.className='label';
-  rl.textContent=role==='user'?'You':'Balance AI';
-  r.appendChild(av);r.appendChild(rl);
-  const c=document.createElement('div');c.className='content';
-  if(raw)c.innerHTML=html;else{c.innerHTML=md(html);tagTiers(c);}
-  el.appendChild(r);el.appendChild(c);
-  chat.appendChild(el);chat.scrollTop=chat.scrollHeight;
-  return{content:c,wrapper:el};
-}
-function renderSources(w,sources){
-  if(!sources||!sources.length)return;
-  const s=document.createElement('div');s.className='sources';
-  const l=document.createElement('span');l.className='label';l.textContent='Sources';
-  s.appendChild(l);
-  for(const src of sources){
-    const ch=document.createElement('span');ch.className='src';ch.textContent=src;
-    s.appendChild(ch);
-  }
-  w.appendChild(s);
-}
-function thinkingHTML(){
-  return '<span class="thinking"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>';
-}
-async function sendMessage(text){
-  if(!text)return;
-  add('user',text);history.push({role:'user',content:text});
-  sendBtn.disabled=true;
-  const p=add('assistant',thinkingHTML(),{raw:true});
-  try{
-    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages:history})});
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    const data=await r.json();
-    p.content.innerHTML=md(data.reply);tagTiers(p.content);
-    renderSources(p.wrapper,data.sources);
-    history.push({role:'assistant',content:data.reply});
-  }catch(err){p.content.innerHTML='<em>Error: '+(err.message||'request failed')+'</em>'}
-  finally{sendBtn.disabled=false;input.focus();chat.scrollTop=chat.scrollHeight}
-}
-form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();input.value='';sendMessage(q)});
-suggestions.addEventListener('click',e=>{const b=e.target.closest('.suggestion');if(b)sendMessage(b.textContent)});
-resetBtn.addEventListener('click',()=>{history=[];location.reload()});
-input.focus();
+renderTabbar();
 </script>
+
+<!-- TODAY SCREEN -->
+<script>
+document.getElementById('today-content').innerHTML=`
+<div style="padding:14px 22px 8px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div>
+      <div class="mono" style="font-size:12px;color:var(--ink-3);font-weight:500;letter-spacing:.06em;text-transform:uppercase">Fri &middot; Apr 25</div>
+      <div class="serif" style="font-size:34px;line-height:1.05;margin-top:2px">Good morning,<br><em style="font-style:italic">Sam</em>.</div>
+    </div>
+    <div style="width:40px;height:40px;border-radius:50%;background:var(--brand);color:var(--brand-soft);display:flex;align-items:center;justify-content:center;font-weight:600">S</div>
+  </div>
+</div>
+
+<div style="padding:16px 18px 0">
+  <div class="bal-card" style="background:var(--brand);color:var(--brand-soft);padding:20px;border-radius:22px;position:relative;overflow:hidden">
+    <div style="position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:rgba(243,169,253,.08)"></div>
+    <div style="position:absolute;right:-60px;bottom:-60px;width:140px;height:140px;border-radius:50%;background:rgba(233,120,218,.06)"></div>
+    <div style="position:relative">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-soft);font-weight:600">Tonight's nudge</div>
+      <div class="serif" style="font-size:26px;line-height:1.15;margin-top:10px;color:#fff">Take magnesium <em>45 min</em> before bed.</div>
+      <div style="font-size:13px;color:var(--brand-soft);margin-top:10px;line-height:1.4">You asked about falling asleep yesterday. This is your best first move.</div>
+      <div style="display:flex;gap:8px;margin-top:14px;align-items:center">
+        <div class="ev-badge" style="background:var(--brand-soft);color:var(--brand)">A</div>
+        <span style="font-size:12px;color:var(--brand-soft)">Grade A evidence &middot; 4 RCTs</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:18px 18px 0">
+  <div class="bal-card" style="padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer" onclick="nav('ask')">
+    <div style="width:28px;height:28px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>
+    </div>
+    <div style="flex:1;color:var(--ink-3);font-size:14px">Ask anything about your health&hellip;</div>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3" fill="var(--ink-3)"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:12px;overflow:hidden">
+    <div class="bal-pill light" style="padding:7px 12px;font-size:12px;cursor:pointer" onclick="askQuestion('How to improve afternoon energy?')">Afternoon energy?</div>
+    <div class="bal-pill light" style="padding:7px 12px;font-size:12px;cursor:pointer" onclick="askQuestion('Best supplements for sore joints?')">Sore joints</div>
+    <div class="bal-pill light" style="padding:7px 12px;font-size:12px;cursor:pointer" onclick="nav('ask')">+</div>
+  </div>
+</div>
+
+<div style="padding:22px 18px 0">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+    <div class="serif" style="font-size:22px">Today's stack</div>
+    <div style="font-size:12px;color:var(--accent);font-weight:500">3 of 5 done</div>
+  </div>
+  <div class="bal-card" style="padding:4px 0" id="today-stack"></div>
+</div>
+
+<div style="padding:22px 18px 20px">
+  <div class="serif" style="font-size:22px;margin-bottom:10px">What's working</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div class="bal-card" style="padding:14px">
+      <div style="font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600">Sleep onset</div>
+      <div style="display:flex;align-items:baseline;gap:4px;margin-top:6px">
+        <div class="serif" style="font-size:30px;color:var(--brand)">&minus;17</div>
+        <div style="font-size:12px;color:var(--ink-3)">min</div>
+      </div>
+      <div style="font-size:11px;color:var(--ink-3);margin-top:2px">8-week avg</div>
+      <div style="display:flex;align-items:flex-end;gap:3px;margin-top:10px;height:26px" id="sleep-bars"></div>
+    </div>
+    <div class="bal-card" style="padding:14px">
+      <div style="font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600">Streak</div>
+      <div style="display:flex;align-items:baseline;gap:4px;margin-top:6px">
+        <div class="serif" style="font-size:30px;color:var(--accent)">12</div>
+        <div style="font-size:12px;color:var(--ink-3)">days</div>
+      </div>
+      <div style="font-size:11px;color:var(--ink-3);margin-top:2px">Logging daily</div>
+      <div style="display:flex;gap:3px;margin-top:10px" id="streak-bars"></div>
+    </div>
+  </div>
+</div>
+`;
+
+// Render stack rows
+const stackItems=[
+{n:'Creatine',d:'5 g · morning',done:true,g:'A'},
+{n:'Vitamin D3',d:'2000 IU · with food',done:true,g:'B'},
+{n:'Omega-3 EPA',d:'1 g · lunch',done:true,g:'A'},
+{n:'Magnesium glycinate',d:'300 mg · 9:00 PM',done:false,g:'A',next:true},
+{n:'Ashwagandha',d:'600 mg · 9:00 PM',done:false,g:'B'}
+];
+document.getElementById('today-stack').innerHTML=stackItems.map((it,i)=>`
+<div style="display:flex;align-items:center;padding:12px 16px;border-bottom:${i<stackItems.length-1?'.5px solid var(--rule)':'none'}">
+  <div style="width:22px;height:22px;border-radius:50%;background:${it.done?'var(--brand)':'transparent'};border:${it.done?'none':'1.6px solid var(--rule)'};display:flex;align-items:center;justify-content:center;margin-right:12px">
+    ${it.done?'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--brand-soft)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>':''}
+  </div>
+  <div style="flex:1">
+    <div style="font-size:14px;font-weight:500;color:${it.done?'var(--ink-3)':'var(--ink)'};text-decoration:${it.done?'line-through':'none'}">${it.n}</div>
+    <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.d}</div>
+  </div>
+  ${it.next?'<div class="bal-pill accent" style="margin-right:8px;font-size:10px">NEXT</div>':''}
+  <div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>
+</div>`).join('');
+
+// Sleep bars
+document.getElementById('sleep-bars').innerHTML=[30,34,31,40,52,58,63,70].map((h,i)=>
+`<div style="flex:1;height:${h}%;background:${i>3?'var(--brand)':'var(--brand-soft)'};border-radius:2px 2px 0 0"></div>`).join('');
+
+// Streak bars
+document.getElementById('streak-bars').innerHTML=Array.from({length:7}).map((_,i)=>
+`<div style="flex:1;height:8px;border-radius:2px;background:${i<6?'var(--accent)':'var(--surface-3)'}"></div>`).join('');
+</script>
+
+<!-- ASK SCREEN (chat) -->
+<style>
+#ask-messages{padding:0 18px}
+.msg-user{display:flex;justify-content:flex-end;padding-top:18px}
+.msg-user .bubble{max-width:80%;background:var(--brand);color:var(--brand-soft);padding:11px 15px;border-radius:20px 20px 4px 20px;font-size:14px;line-height:1.4}
+.msg-ai{padding-top:14px}
+.msg-ai .ai-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.msg-ai .ai-spark{width:26px;height:26px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
+.msg-ai .ai-body{margin-left:34px;font-size:14px;color:var(--ink-2);line-height:1.55}
+.msg-ai .ai-body h3{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:600;color:var(--ink);margin:16px 0 8px;letter-spacing:-.02em}
+.msg-ai .ai-body ol{padding-left:0;list-style:none;counter-reset:supp}
+.msg-ai .ai-body ol>li{counter-increment:supp;margin-bottom:12px;padding:12px 14px;background:var(--surface-2);border-radius:var(--r-sm);border:.5px solid var(--rule)}
+.msg-ai .ai-body ol>li strong{color:var(--ink)}
+.msg-ai .ai-body ol>li code{font-family:'JetBrains Mono',monospace;font-size:11px;padding:2px 7px;border-radius:999px;font-weight:600}
+.msg-ai .ai-body ol>li[data-tier="primary"] code{background:var(--brand);color:#fff}
+.msg-ai .ai-body ol>li[data-tier="secondary"] code{background:var(--accent);color:#fff}
+.msg-ai .ai-body ol>li[data-tier="promising"] code{background:var(--accent-soft);color:var(--brand)}
+.msg-ai .ai-body ol>li[data-tier="combo"] code{background:var(--brand-soft);color:var(--brand-deep)}
+.msg-ai .ai-body ol>li[data-tier="unproven"] code{background:var(--surface-3);color:var(--ink-3)}
+.msg-ai .ai-body ul{padding-left:18px;margin:4px 0}
+.msg-ai .ai-body ul li{margin-bottom:2px;font-size:13px}
+.msg-ai .ai-body blockquote{margin:14px 0 0;padding:10px 14px;background:var(--accent-soft);border-radius:var(--r-sm);font-size:13px;color:var(--ink-2);border:none}
+.msg-ai .sources{margin:8px 0 0 34px;display:flex;flex-wrap:wrap;gap:6px}
+.msg-ai .sources .src{font-size:10px;padding:3px 8px;border-radius:999px;background:var(--brand-soft);color:var(--brand-deep);font-weight:500}
+.composer{padding:12px 16px 24px;background:linear-gradient(to top,var(--bg) 60%,transparent);flex-shrink:0}
+.composer form{background:var(--surface);border-radius:22px;padding:8px 10px 8px 16px;display:flex;align-items:center;gap:8px;box-shadow:var(--sh-2)}
+.composer input{flex:1;border:none;outline:none;font-size:14px;font-family:inherit;background:transparent;color:var(--ink)}
+.composer input::placeholder{color:var(--ink-3)}
+.composer button{width:34px;height:34px;border-radius:50%;background:var(--brand);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.composer button:disabled{opacity:.4;cursor:default}
+.thinking-dots{display:flex;gap:4px;padding:8px 0}
+.thinking-dots span{width:6px;height:6px;border-radius:50%;background:var(--ink-4);animation:blink 1.2s infinite}
+.thinking-dots span:nth-child(2){animation-delay:.2s}
+.thinking-dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
+.followup-pills{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0 34px}
+.followup-pills span{padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer}
+</style>
+<script>
+let askInit=false,history=[];
+marked.setOptions({gfm:true,breaks:true});
+function md(t){try{return DOMPurify.sanitize(marked.parse(t||''),{USE_PROFILES:{html:true}})}catch(e){const d=document.createElement('div');d.textContent=t;return d.innerHTML}}
+function tagTiers(root){
+const tiers=['primary','secondary','promising','combo','unproven'];
+root.querySelectorAll('ol > li').forEach(li=>{
+const c=li.querySelector(':scope > p > code, :scope > code, :scope > strong + code, p > strong + code');
+if(!c)return;const txt=(c.textContent||'').trim().toLowerCase();
+if(tiers.includes(txt))li.setAttribute('data-tier',txt);
+});
+}
+
+function initAsk(){
+if(askInit)return;askInit=true;
+const msgs=document.getElementById('ask-messages');
+const comp=document.getElementById('ask-composer');
+comp.innerHTML=`<div class="composer"><form id="ask-form">
+<input id="ask-input" type="text" placeholder="Ask a follow-up…" autocomplete="off"/>
+<button type="submit" id="ask-send"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--brand-soft)"><path d="M3 12l18-8-8 18-2-8-8-2z"/></svg></button>
+</form></div>`;
+
+// Ask header
+const hdr=document.createElement('div');
+hdr.style.cssText='padding:8px 18px;display:flex;justify-content:space-between;align-items:center';
+hdr.innerHTML=`
+<div onclick="nav('today')" style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+</div>
+<div style="font-size:13px;color:var(--ink-3);font-weight:500">Today's chat</div>
+<div style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer" onclick="history=[];document.getElementById('ask-messages').innerHTML=''">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+</div>`;
+msgs.parentNode.insertBefore(hdr,msgs);
+
+document.getElementById('ask-form').addEventListener('submit',e=>{e.preventDefault();
+const inp=document.getElementById('ask-input');
+const txt=inp.value.trim();if(!txt)return;inp.value='';sendMessage(txt);
+});
+}
+
+function askQuestion(text){nav('ask');setTimeout(()=>sendMessage(text),100)}
+
+function addMsg(role,html,opts={}){
+const msgs=document.getElementById('ask-messages');
+const wrap=document.createElement('div');
+wrap.className=role==='user'?'msg-user':'msg-ai';
+if(role==='user'){wrap.innerHTML=`<div class="bubble">${html}</div>`;
+}else{
+wrap.innerHTML=`<div class="ai-header">
+<div class="ai-spark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg></div>
+<div style="font-size:12px;font-weight:600;color:var(--ink-2)">Balance</div>
+<div style="font-size:11px;color:var(--ink-4)">&middot; searched 17 guides</div>
+</div>
+<div class="ai-body">${html}</div>`;
+}
+msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+return{wrapper:wrap,content:wrap.querySelector('.ai-body')||wrap.querySelector('.bubble')};
+}
+
+function renderSources(wrapper,sources){
+if(!sources||!sources.length)return;
+const d=document.createElement('div');d.className='sources';
+d.innerHTML=sources.map(s=>`<span class="src">${s}</span>`).join('');
+wrapper.appendChild(d);
+}
+
+async function sendMessage(text){
+if(!text)return;
+addMsg('user',text);history.push({role:'user',content:text});
+const btn=document.getElementById('ask-send');btn.disabled=true;
+const p=addMsg('assistant','<div class="thinking-dots"><span></span><span></span><span></span></div>');
+try{
+const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:history})});
+if(!r.ok)throw new Error('HTTP '+r.status);
+const data=await r.json();
+p.content.innerHTML=md(data.reply);tagTiers(p.content);
+renderSources(p.wrapper,data.sources);
+history.push({role:'assistant',content:data.reply});
+}catch(err){p.content.innerHTML='<em>Error: '+(err.message||'request failed')+'</em>'}
+finally{btn.disabled=false;document.getElementById('ask-input').focus();
+document.getElementById('ask-messages').scrollTop=document.getElementById('ask-messages').scrollHeight}
+}
+
+// STACK SCREEN
+document.getElementById('stack-content').innerHTML=`
+<div style="padding:8px 22px 4px;display:flex;justify-content:space-between;align-items:baseline">
+  <div class="serif" style="font-size:34px;line-height:1.1;padding-bottom:4px">My stack</div>
+  <div style="font-size:13px;color:var(--accent);font-weight:500;cursor:pointer">Edit</div>
+</div>
+<div style="padding:4px 22px 0;font-size:13px;color:var(--ink-3)">5 supplements &middot; 3 goals</div>
+
+<div style="padding:18px 18px 0">
+  <div class="bal-card" style="padding:18px;background:var(--brand-soft);border:.5px solid var(--brand-soft)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);font-weight:600">Stack health</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:4px">
+          <div class="serif" style="font-size:40px;line-height:1;color:var(--brand)">A&minus;</div>
+          <div style="font-size:13px;color:var(--brand-deep)">4 of 5 grade A</div>
+        </div>
+      </div>
+      <div style="width:72px;height:72px">
+        <svg viewBox="0 0 36 36" style="transform:rotate(-90deg)">
+          <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(85,33,229,.15)" stroke-width="3"/>
+          <circle cx="18" cy="18" r="15" fill="none" stroke="var(--brand)" stroke-width="3" stroke-dasharray="75 100" stroke-linecap="round" pathLength="100"/>
+        </svg>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:14px;padding:10px 12px;background:var(--surface);border-radius:12px">
+      <div style="width:4px;background:var(--accent);border-radius:2px"></div>
+      <div style="flex:1">
+        <div style="font-size:12px;font-weight:600;color:var(--ink)">Zinc + Magnesium timing</div>
+        <div style="font-size:12px;color:var(--ink-3);margin-top:2px">Take 2h apart for best absorption &middot; <span style="color:var(--accent);font-weight:500;cursor:pointer">auto-fix</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:22px 18px 0">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">By goal</div>
+  <div id="stack-goals"></div>
+  <div style="padding:14px;border:1.5px dashed var(--rule);border-radius:16px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:500;cursor:pointer">+ Add a goal</div>
+</div>
+`;
+
+const goals=[
+{icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M20 14A8 8 0 019 3a9 9 0 1011 11z"/></svg>',g:'Sleep',items:[
+{n:'Magnesium glycinate',t:'9:00 PM',g:'A',on:true},{n:'Glycine',t:'9:00 PM',g:'B',on:true},{n:'Ashwagandha',t:'9:00 PM',g:'B',on:false}]},
+{icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="8" y="11" width="8" height="2"/><rect x="16" y="7" width="3" height="10" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/></svg>',g:'Muscle',items:[
+{n:'Creatine',t:'Morning',g:'A',on:true}]},
+{icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M12 21s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11z" transform="translate(-1 0)"/></svg>',g:'Heart',items:[
+{n:'Omega-3 EPA',t:'Lunch',g:'A',on:true}]}
+];
+document.getElementById('stack-goals').innerHTML=goals.map(goal=>`
+<div class="bal-card" style="margin-bottom:12px;overflow:hidden">
+  <div style="padding:14px 16px 10px;display:flex;align-items:center;gap:10px;border-bottom:.5px solid var(--rule);background:var(--surface-2)">
+    <div style="width:28px;height:28px;border-radius:8px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center">${goal.icon}</div>
+    <div class="serif" style="font-size:20px;flex:1">${goal.g}</div>
+    <div style="font-size:12px;color:var(--ink-3)">${goal.items.length} supp${goal.items.length>1?'s':''}</div>
+  </div>
+  ${goal.items.map((it,i)=>`
+  <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:${i<goal.items.length-1?'.5px solid var(--rule)':'none'}">
+    <div style="width:6px;height:6px;border-radius:50%;background:${it.on?'var(--brand)':'var(--ink-4)'}"></div>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:500">${it.n}</div>
+      <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.t}</div>
+    </div>
+    <div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>
+  </div>`).join('')}
+</div>`).join('');
+
+// LEARN SCREEN
+const topics=[
+{k:'Sleep',icon:'moon',g:'A'},{k:'Stress',icon:'leaf',g:'A'},{k:'Focus',icon:'brain',g:'B'},
+{k:'Energy',icon:'sun',g:'A'},{k:'Muscle',icon:'dumbbell',g:'A'},{k:'Fat loss',icon:'flame',g:'B'},
+{k:'Heart',icon:'heart',g:'A'},{k:'Joints',icon:'bone',g:'B'},{k:'Immunity',icon:'shield',g:'B'},
+{k:'Skin',icon:'droplet',g:'C'},{k:'Libido',icon:'spark',g:'B'},{k:'Liver',icon:'leaf',g:'B'}
+];
+const iconSvg={
+moon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M20 14A8 8 0 019 3a9 9 0 1011 11z"/></svg>',
+leaf:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--c-violet)"><path d="M20 4c-10 0-16 6-16 14 0 1 0 1.5.5 2.5C6 17 10 14 16 12c-5 4-8 7-10 10 8 0 14-5 14-14V4z"/></svg>',
+brain:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4z" fill="var(--accent)"/><path d="M15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 0V4z" fill="var(--accent)" opacity=".55"/></svg>',
+sun:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--green)"><circle cx="12" cy="12" r="4"/><g stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M4.5 19.5l2-2M17.5 6.5l2-2"/></g></svg>',
+dumbbell:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand-deep)"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="8" y="11" width="8" height="2"/><rect x="16" y="7" width="3" height="10" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/></svg>',
+flame:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2s5 5 5 10a5 5 0 01-10 0c0-2 1-3 1-3s-1 5 2 5 3-4 2-6c3 2 4 5 4 7a6 6 0 11-12 0c0-6 8-13 8-13z"/></svg>',
+heart:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 21s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11z" transform="translate(-1 0)"/></svg>',
+bone:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M7 4a3 3 0 012 5l3 3-3 3a3 3 0 11-5 2 3 3 0 110-6 3 3 0 013-7zm10 0a3 3 0 00-2 5l3 3-3 3a3 3 0 105 2 3 3 0 100-6 3 3 0 00-3-7z" transform="rotate(45 12 12)"/></svg>',
+shield:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--c-violet)"><path d="M12 2l8 3v7c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z"/></svg>',
+droplet:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--green)"><path d="M12 3s7 7 7 12a7 7 0 11-14 0c0-5 7-12 7-12z"/></svg>',
+spark:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>'
+};
+document.getElementById('learn-content').innerHTML=`
+<div style="padding:8px 22px">
+  <div class="serif" style="font-size:34px;line-height:1">Learn</div>
+  <div style="font-size:13px;color:var(--ink-3);margin-top:4px">17 evidence-based guides</div>
+</div>
+<div style="padding:14px 18px 0">
+  <div style="background:var(--surface);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:var(--sh-1)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <div style="flex:1;font-size:14px;color:var(--ink-3)">Search guides or supplements</div>
+  </div>
+</div>
+<div style="padding:16px 18px 0">
+  <div class="bal-card" style="overflow:hidden;position:relative">
+    <div style="padding:18px 18px 16px;background:linear-gradient(140deg,var(--brand-soft) 0%,rgba(142,119,226,.15) 100%);position:relative;min-height:140px">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);font-weight:600">Featured guide</div>
+      <div class="serif" style="font-size:28px;line-height:1.18;margin-top:10px;max-width:68%;padding-bottom:4px">The sleep stack, <em>actually</em> explained</div>
+      <div style="font-size:13px;color:var(--brand-deep);margin-top:16px">6 supplements &middot; 14 studies &middot; 8 min read</div>
+      <div style="position:absolute;right:-10px;bottom:-20px;width:130px;height:130px;border-radius:50%;background:rgba(85,33,229,.08)"></div>
+      <div style="position:absolute;right:24px;bottom:18px"><svg width="44" height="44" viewBox="0 0 24 24" fill="var(--brand)"><path d="M20 14A8 8 0 019 3a9 9 0 1011 11z"/></svg></div>
+    </div>
+  </div>
+</div>
+<div style="padding:22px 18px 20px">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">All 17 topics</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+    ${topics.map(t=>`
+    <div class="bal-card" style="padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer">
+      <div style="width:32px;height:32px;border-radius:10px;background:${t.g==='A'?'var(--brand-soft)':t.g==='B'?'var(--green-soft)':'var(--accent-soft)'};display:flex;align-items:center;justify-content:center">${iconSvg[t.icon]||''}</div>
+      <div>
+        <div style="font-size:14px;font-weight:600">${t.k}</div>
+        <div style="font-size:11px;color:var(--ink-3);margin-top:2px">Grade ${t.g}</div>
+      </div>
+    </div>`).join('')}
+  </div>
+  <div style="text-align:center;font-size:12px;color:var(--ink-3);margin-top:14px;font-weight:500">Show all 17 &rarr;</div>
+</div>
+`;
+
+// ME SCREEN
+document.getElementById('me-content').innerHTML=`
+<div style="padding:8px 22px">
+  <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:600">Your month</div>
+  <div class="serif" style="font-size:34px;line-height:1.05;margin-top:4px">April, <em>in short</em>.</div>
+</div>
+<div style="padding:18px 18px 0">
+  <div class="bal-card" style="padding:18px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="width:24px;height:24px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:var(--ink-2)">Balance's read</div>
+    </div>
+    <div class="serif" style="font-size:18px;line-height:1.4">Sleep improved <em>~25%</em> since you added magnesium. Energy is flat. Want to try creatine for afternoon dips?</div>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <div style="flex:1;padding:10px 12px;background:var(--brand-soft);border-radius:10px;text-align:center;font-size:13px;font-weight:500;color:var(--brand-deep);cursor:pointer">Keep stack</div>
+      <div style="flex:1;padding:10px 12px;background:var(--brand);border-radius:10px;text-align:center;font-size:13px;font-weight:500;color:#fff;cursor:pointer">Try creatine &rarr;</div>
+    </div>
+  </div>
+</div>
+<div style="padding:22px 18px 0">
+  <div style="display:flex;gap:6px;margin-bottom:14px">
+    ${['Sleep','Energy','Focus','Stress'].map((t,i)=>`<div style="padding:6px 12px;border-radius:999px;font-size:12px;font-weight:500;background:${i===0?'var(--brand)':'transparent'};color:${i===0?'#fff':'var(--ink-3)'};border:${i===0?'none':'.5px solid var(--rule)'}">${t}</div>`).join('')}
+  </div>
+  <div class="bal-card" style="padding:18px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <div class="serif" style="font-size:22px">Sleep score</div>
+      <div style="font-size:11px;color:var(--ink-3);font-weight:500">Last 8 weeks</div>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin-top:4px">
+      <div class="serif" style="font-size:34px;color:var(--brand);line-height:1">82</div>
+      <div style="font-size:13px;color:var(--accent);font-weight:600">&uarr; 24</div>
+    </div>
+    <div style="display:flex;align-items:flex-end;gap:4px;margin-top:18px;height:100px">
+      ${[30,36,32,42,48,55,62,68,70,75,80,82].map((h,i)=>`<div style="flex:1;height:${h}%;background:${i>=6?'var(--brand)':'var(--brand-soft)'};border-radius:3px 3px 0 0"></div>`).join('')}
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--ink-4)"><span>Feb</span><span>Mar</span><span>Apr</span></div>
+    <div style="display:flex;gap:8px;margin-top:16px;padding:10px 12px;background:var(--surface-2);border-radius:10px;align-items:center">
+      <div style="width:3px;height:28px;background:var(--accent);border-radius:2px"></div>
+      <div>
+        <div style="font-size:12px;font-weight:600">+ Magnesium &middot; Feb 28</div>
+        <div style="font-size:11px;color:var(--ink-3)">The inflection point</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="padding:22px 18px 20px">
+  <div class="serif" style="font-size:22px;margin-bottom:12px">What worked</div>
+  <div class="bal-card" style="padding:4px 0">
+    ${[{n:'Magnesium glycinate',note:'Sleep onset &minus;17 min',good:true},{n:'Earlier caffeine cutoff',note:'Deep sleep +12%',good:true},{n:'Ashwagandha',note:"Didn't move the needle",good:false}].map((r,i,a)=>`
+    <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:${i<a.length-1?'.5px solid var(--rule)':'none'}">
+      <div style="width:8px;height:8px;border-radius:50%;background:${r.good?'var(--brand)':'var(--ink-4)'}"></div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:500;color:${r.good?'var(--ink)':'var(--ink-3)'}">${r.n}</div>
+        <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${r.note}</div>
+      </div>
+      ${!r.good?'<div style="font-size:12px;color:var(--accent);font-weight:500;cursor:pointer">Drop?</div>':''}
+    </div>`).join('')}
+  </div>
+</div>
+`;
+</script>
+
 </body>
 </html>

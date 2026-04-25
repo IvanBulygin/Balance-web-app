@@ -112,6 +112,11 @@ body{background:var(--bg)}
 </div></div>
 
 <script>
+// Forward declarations for Ask screen
+var askInit=false,chatHistory=[];
+function initAsk(){}
+function askQuestion(){}
+
 // TAB BAR + NAV
 const TABS=[
 {k:'today',l:'Today',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11L12 4l9 7"/><path d="M5 10v10h14V10"/></svg>'},
@@ -283,7 +288,6 @@ document.getElementById('streak-bars').innerHTML=Array.from({length:7}).map((_,i
 .followup-pills span{padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer}
 </style>
 <script>
-let askInit=false,history=[];
 marked.setOptions({gfm:true,breaks:true});
 function md(t){try{return DOMPurify.sanitize(marked.parse(t||''),{USE_PROFILES:{html:true}})}catch(e){const d=document.createElement('div');d.textContent=t;return d.innerHTML}}
 function tagTiers(root){
@@ -312,7 +316,7 @@ hdr.innerHTML=`
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
 </div>
 <div style="font-size:13px;color:var(--ink-3);font-weight:500">Today's chat</div>
-<div style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer" onclick="history=[];document.getElementById('ask-messages').innerHTML=''">
+<div style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer" onclick="chatHistory=[];document.getElementById('ask-messages').innerHTML=''">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
 </div>`;
 msgs.parentNode.insertBefore(hdr,msgs);
@@ -351,16 +355,16 @@ wrapper.appendChild(d);
 
 async function sendMessage(text){
 if(!text)return;
-addMsg('user',text);history.push({role:'user',content:text});
+addMsg('user',text);chatHistory.push({role:'user',content:text});
 const btn=document.getElementById('ask-send');btn.disabled=true;
 const p=addMsg('assistant','<div class="thinking-dots"><span></span><span></span><span></span></div>');
 try{
-const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:history})});
+const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});
 if(!r.ok)throw new Error('HTTP '+r.status);
 const data=await r.json();
 p.content.innerHTML=md(data.reply);tagTiers(p.content);
 renderSources(p.wrapper,data.sources);
-history.push({role:'assistant',content:data.reply});
+chatHistory.push({role:'assistant',content:data.reply});
 }catch(err){p.content.innerHTML='<em>Error: '+(err.message||'request failed')+'</em>'}
 finally{btn.disabled=false;document.getElementById('ask-input').focus();
 document.getElementById('ask-messages').scrollTop=document.getElementById('ask-messages').scrollHeight}

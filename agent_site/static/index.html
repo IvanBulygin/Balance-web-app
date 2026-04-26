@@ -70,6 +70,40 @@ body{background:var(--bg)}
 <div class="phone"><div class="phone-inner">
 <div class="dyn-island"></div>
 
+<!-- ONBOARDING -->
+<div id="scr-onboard" class="screen" style="background:var(--brand);">
+  <div class="screen-scroll" style="position:relative;height:100%;color:#fff">
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
+      <div style="position:absolute;right:-80px;top:-40px;width:300px;height:300px;border-radius:50%;background:rgba(243,169,253,.08)"></div>
+      <div style="position:absolute;left:-60px;bottom:120px;width:220px;height:220px;border-radius:50%;background:rgba(233,120,218,.10)"></div>
+    </div>
+    <div style="position:relative;height:100%;padding:70px 28px 40px;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M20 4c-10 0-16 6-16 14 0 1 0 1.5.5 2.5C6 17 10 14 16 12c-5 4-8 7-10 10 8 0 14-5 14-14V4z"/></svg>
+        </div>
+        <div style="font-size:16px;font-weight:600;letter-spacing:-.01em">Balance</div>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:36px;margin-bottom:8px;position:relative">
+        <div style="width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#f3a9fd 0%,#e978da 30%,#8e77e2 60%,#5521e5 100%);box-shadow:0 0 60px rgba(243,169,253,.4)"></div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end">
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-soft);font-weight:600;margin-bottom:14px">Science-backed &middot; 17 guides</div>
+        <div class="serif" style="font-size:38px;line-height:1.12;color:#fff;padding-bottom:6px">What your body needs,<br><em style="color:#f3a9fd">backed by studies</em>.</div>
+        <div style="font-size:14px;color:var(--brand-soft);margin-top:16px;line-height:1.5;max-width:90%">Ask anything about sleep, stress, energy, or recovery. We search the evidence and return a ranked stack &mdash; with dose, timing, and grade.</div>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+          <div onclick="finishOnboarding()" style="background:var(--accent);color:#fff;padding:15px 20px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 26px rgba(233,120,218,.3);cursor:pointer">
+            <div class="serif" style="font-size:20px">Get started</div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+          <div onclick="finishOnboarding()" style="text-align:center;padding:10px;font-size:14px;color:var(--brand-soft);font-weight:500;cursor:pointer">I already have an account</div>
+        </div>
+        <div style="font-size:11px;color:var(--brand-soft);opacity:.7;margin-top:14px;line-height:1.5;text-align:center">Not medical advice. For personal health decisions, consult a qualified healthcare professional.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SCREENS -->
 <div id="scr-today" class="screen active">
   <div class="screen-scroll" style="padding-bottom:90px">
@@ -141,6 +175,51 @@ body{background:var(--bg)}
   </div>
 </div>
 
+<!-- DETAIL -->
+<div id="scr-detail" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div id="detail-content"></div>
+  </div>
+</div>
+
+<!-- ADD TO STACK -->
+<div id="scr-add" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div id="add-content"></div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<div id="scr-profile" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="profile-content"></div>
+  </div>
+</div>
+
+<!-- PAYWALL -->
+<div id="scr-paywall" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div id="paywall-content"></div>
+  </div>
+</div>
+
+<!-- REMINDERS -->
+<div id="scr-reminders" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="reminders-content"></div>
+  </div>
+</div>
+
+<!-- HISTORY -->
+<div id="scr-history" class="screen">
+  <div class="screen-scroll" style="padding-bottom:90px">
+    <div style="height:54px"></div>
+    <div id="history-content"></div>
+  </div>
+</div>
+
 <!-- TABBAR -->
 <div class="tabbar" id="tabbar"></div>
 </div></div>
@@ -150,6 +229,49 @@ body{background:var(--bg)}
 var chatHistory=[];
 function newChat(){}
 function sendMessage(){}
+
+// =========================================================
+// STATE MANAGEMENT (localStorage persistence)
+// =========================================================
+const STORAGE_KEY='balance_app_state';
+const DEFAULT_STACK=[
+{id:'creatine',n:'Creatine',form:'monohydrate',dose:'5 g',time:'morning',timeKey:'08:00',g:'A',goal:'muscle',on:true},
+{id:'vitd3',n:'Vitamin D3',form:'softgel',dose:'2000 IU',time:'with food',timeKey:'12:00',g:'B',goal:'immunity',on:true},
+{id:'omega3',n:'Omega-3 EPA',form:'fish oil',dose:'1 g',time:'lunch',timeKey:'13:00',g:'A',goal:'heart',on:true},
+{id:'magnesium',n:'Magnesium glycinate',form:'glycinate',dose:'300 mg',time:'9:00 PM',timeKey:'21:00',g:'A',goal:'sleep',on:true},
+{id:'ashwagandha',n:'Ashwagandha',form:'KSM-66',dose:'600 mg',time:'9:00 PM',timeKey:'21:00',g:'B',goal:'sleep',on:true}
+];
+function loadState(){
+try{const s=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');
+return{
+stack:s.stack||DEFAULT_STACK,
+taken:s.taken||{},  // {YYYY-MM-DD: [supplementId,...]}
+onboarded:s.onboarded||false
+};}catch(e){return{stack:DEFAULT_STACK,taken:{},onboarded:false};}
+}
+function saveState(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}
+function todayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function isTaken(id){const t=state.taken[todayKey()]||[];return t.includes(id);}
+function toggleTaken(id){
+const k=todayKey();if(!state.taken[k])state.taken[k]=[];
+const i=state.taken[k].indexOf(id);
+if(i>=0)state.taken[k].splice(i,1);else state.taken[k].push(id);
+saveState();renderToday();renderStack();
+}
+function addToStack(supp){
+if(state.stack.find(s=>s.id===supp.id))return false;
+state.stack.push(supp);saveState();renderToday();renderStack();return true;
+}
+function removeFromStack(id){
+state.stack=state.stack.filter(s=>s.id!==id);saveState();renderToday();renderStack();
+}
+function toggleStackOn(id){
+const s=state.stack.find(x=>x.id===id);if(s){s.on=!s.on;saveState();renderStack();}
+}
+function finishOnboarding(){
+state.onboarded=true;saveState();nav('today');
+}
+var state=loadState();
 
 // TAB BAR + NAV
 const TABS=[
@@ -167,14 +289,34 @@ const item=e.target.closest('.tab-item');if(!item)return;
 const k=item.dataset.tab;nav(k);
 });
 }
-function nav(k){
+var navHistory=[];
+function nav(k,track){
+const cur=document.querySelector('.screen.active');
+if(track!==false&&cur)navHistory.push(cur.id.replace('scr-',''));
 document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
 const scr=document.getElementById('scr-'+k);if(scr)scr.classList.add('active');
-document.querySelectorAll('.tab-item').forEach(t=>{t.classList.toggle('active',t.dataset.tab===k)});
-document.getElementById('tabbar').style.display=k==='ask'?'none':'flex';
+document.querySelectorAll('.tab-item').forEach(t=>{t.classList.toggle('active',t.dataset.tab===k||(k==='detail'&&t.dataset.tab==='learn'))});
+const isMainTab=['today','ask','stack','learn','me'].includes(k);
+document.getElementById('tabbar').style.display=(k==='ask'||k==='detail'||k==='add'||k==='onboard'||k==='paywall')?'none':'flex';
 if(k==='ask'){var ai=document.getElementById('ask-input');if(ai)ai.focus();}
+if(k==='today'&&typeof renderToday==='function')renderToday();
+if(k==='stack'&&typeof renderStack==='function')renderStack();
+if(k==='profile'&&typeof renderProfile==='function')renderProfile();
+if(k==='paywall'&&typeof renderPaywall==='function')renderPaywall();
+if(k==='reminders'&&typeof renderReminders==='function')renderReminders();
+if(k==='history'&&typeof renderHistory==='function')renderHistory();
+window.scrollTo(0,0);
+const sc=scr&&scr.querySelector('.screen-scroll');if(sc)sc.scrollTop=0;
+}
+function goBack(){
+const prev=navHistory.pop();
+if(prev)nav(prev,false);else nav('today',false);
 }
 renderTabbar();
+// Show onboarding on first visit
+if(!state.onboarded){
+setTimeout(function(){nav('onboard',false);},10);
+}
 </script>
 
 <!-- TODAY SCREEN -->
@@ -183,15 +325,15 @@ document.getElementById('today-content').innerHTML=`
 <div style="padding:14px 22px 8px">
   <div style="display:flex;justify-content:space-between;align-items:center">
     <div>
-      <div class="mono" style="font-size:12px;color:var(--ink-3);font-weight:500;letter-spacing:.06em;text-transform:uppercase">Fri &middot; Apr 25</div>
-      <div class="serif" style="font-size:34px;line-height:1.05;margin-top:2px">Good morning,<br><em style="font-style:italic">Sam</em>.</div>
+      <div id="today-date" class="mono" style="font-size:12px;color:var(--ink-3);font-weight:500;letter-spacing:.06em;text-transform:uppercase"></div>
+      <div id="today-greeting" class="serif" style="font-size:34px;line-height:1.05;margin-top:2px"></div>
     </div>
-    <div style="width:40px;height:40px;border-radius:50%;background:var(--brand);color:var(--brand-soft);display:flex;align-items:center;justify-content:center;font-weight:600">S</div>
+    <div onclick="nav('profile')" style="width:40px;height:40px;border-radius:50%;background:var(--brand);color:var(--brand-soft);display:flex;align-items:center;justify-content:center;font-weight:600;cursor:pointer">S</div>
   </div>
 </div>
 
 <div style="padding:16px 18px 0">
-  <div class="bal-card" style="background:var(--brand);color:var(--brand-soft);padding:20px;border-radius:22px;position:relative;overflow:hidden">
+  <div onclick="openDetail('magnesium')" class="bal-card" style="background:var(--brand);color:var(--brand-soft);padding:20px;border-radius:22px;position:relative;overflow:hidden;cursor:pointer">
     <div style="position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:rgba(243,169,253,.08)"></div>
     <div style="position:absolute;right:-60px;bottom:-60px;width:140px;height:140px;border-radius:50%;background:rgba(233,120,218,.06)"></div>
     <div style="position:relative">
@@ -224,7 +366,7 @@ document.getElementById('today-content').innerHTML=`
 <div style="padding:22px 18px 0">
   <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
     <div class="serif" style="font-size:22px">Today's stack</div>
-    <div style="font-size:12px;color:var(--accent);font-weight:500">3 of 5 done</div>
+    <div id="today-count" style="font-size:12px;color:var(--accent);font-weight:500">0 of 0 done</div>
   </div>
   <div class="bal-card" style="padding:4px 0" id="today-stack"></div>
 </div>
@@ -254,26 +396,44 @@ document.getElementById('today-content').innerHTML=`
 </div>
 `;
 
-// Render stack rows
-const stackItems=[
-{n:'Creatine',d:'5 g · morning',done:true,g:'A'},
-{n:'Vitamin D3',d:'2000 IU · with food',done:true,g:'B'},
-{n:'Omega-3 EPA',d:'1 g · lunch',done:true,g:'A'},
-{n:'Magnesium glycinate',d:'300 mg · 9:00 PM',done:false,g:'A',next:true},
-{n:'Ashwagandha',d:'600 mg · 9:00 PM',done:false,g:'B'}
-];
-document.getElementById('today-stack').innerHTML=stackItems.map((it,i)=>`
-<div style="display:flex;align-items:center;padding:12px 16px;border-bottom:${i<stackItems.length-1?'.5px solid var(--rule)':'none'}">
-  <div style="width:22px;height:22px;border-radius:50%;background:${it.done?'var(--brand)':'transparent'};border:${it.done?'none':'1.6px solid var(--rule)'};display:flex;align-items:center;justify-content:center;margin-right:12px">
-    ${it.done?'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--brand-soft)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>':''}
+// Dynamic Today render
+function renderToday(){
+const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const d=new Date();const h=d.getHours();
+const greet=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+const dateEl=document.getElementById('today-date');
+if(dateEl)dateEl.textContent=days[d.getDay()]+' · '+months[d.getMonth()]+' '+d.getDate();
+const grEl=document.getElementById('today-greeting');
+if(grEl)grEl.innerHTML=greet+',<br><em style="font-style:italic">there</em>.';
+const stack=state.stack.filter(s=>s.on!==false);
+const doneCount=stack.filter(s=>isTaken(s.id)).length;
+// Update count
+const countEl=document.getElementById('today-count');
+if(countEl)countEl.textContent=doneCount+' of '+stack.length+' done';
+// Find next supplement (first not-done, sorted by timeKey)
+const undone=stack.filter(s=>!isTaken(s.id)).sort((a,b)=>(a.timeKey||'').localeCompare(b.timeKey||''));
+const nextId=undone.length?undone[0].id:null;
+// Render rows
+const ts=document.getElementById('today-stack');
+if(!ts)return;
+ts.innerHTML=stack.map((it,i)=>{
+const done=isTaken(it.id);
+const isNext=it.id===nextId;
+return `
+<div style="display:flex;align-items:center;padding:12px 16px;border-bottom:${i<stack.length-1?'.5px solid var(--rule)':'none'};cursor:pointer" onclick="event.stopPropagation();openDetail('${it.id}')">
+  <div onclick="event.stopPropagation();toggleTaken('${it.id}')" style="width:22px;height:22px;border-radius:50%;background:${done?'var(--brand)':'transparent'};border:${done?'none':'1.6px solid var(--rule)'};display:flex;align-items:center;justify-content:center;margin-right:12px;cursor:pointer;flex-shrink:0">
+    ${done?'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--brand-soft)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>':''}
   </div>
-  <div style="flex:1">
-    <div style="font-size:14px;font-weight:500;color:${it.done?'var(--ink-3)':'var(--ink)'};text-decoration:${it.done?'line-through':'none'}">${it.n}</div>
-    <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.d}</div>
+  <div style="flex:1;min-width:0">
+    <div style="font-size:14px;font-weight:500;color:${done?'var(--ink-3)':'var(--ink)'};text-decoration:${done?'line-through':'none'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${it.n}</div>
+    <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.dose} &middot; ${it.time}</div>
   </div>
-  ${it.next?'<div class="bal-pill accent" style="margin-right:8px;font-size:10px">NEXT</div>':''}
+  ${isNext?'<div class="bal-pill accent" style="margin-right:8px;font-size:10px">NEXT</div>':''}
   <div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>
-</div>`).join('');
+</div>`;}).join('');
+}
+renderToday();
 
 // Sleep bars
 document.getElementById('sleep-bars').innerHTML=[30,34,31,40,52,58,63,70].map((h,i)=>
@@ -331,6 +491,24 @@ root.querySelectorAll('ol > li').forEach(li=>{
 const c=li.querySelector(':scope > p > code, :scope > code, :scope > strong + code, p > strong + code');
 if(!c)return;const txt=(c.textContent||'').trim().toLowerCase();
 if(tiers.includes(txt))li.setAttribute('data-tier',txt);
+// Find supplement name from first <strong> and add quick-add button
+const strong=li.querySelector('strong');
+if(!strong)return;
+const name=strong.textContent.trim().toLowerCase();
+let suppId=null;
+if(name.includes('magnesium'))suppId='magnesium';
+else if(name.includes('creatine'))suppId='creatine';
+else if(name.includes('omega'))suppId='omega3';
+else if(name.includes('vitamin d'))suppId='vitd3';
+else if(name.includes('ashwagandha'))suppId='ashwagandha';
+if(suppId&&!li.querySelector('.add-stack-btn')){
+const btn=document.createElement('div');
+btn.className='add-stack-btn';
+btn.style.cssText='display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:4px 10px;background:var(--brand-soft);color:var(--brand);border-radius:999px;font-size:11px;font-weight:600;cursor:pointer';
+btn.innerHTML='<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Add to stack';
+btn.onclick=function(e){e.stopPropagation();openAddToStack(suppId);};
+li.appendChild(btn);
+}
 });
 }
 
@@ -400,13 +578,38 @@ finally{btn.disabled=false;document.getElementById('ask-input').focus();
 document.getElementById('ask-messages').scrollTop=document.getElementById('ask-messages').scrollHeight}
 }
 
-// STACK SCREEN
-document.getElementById('stack-content').innerHTML=`
+// STACK SCREEN — dynamic
+var stackEditMode=false;
+function toggleStackEdit(){stackEditMode=!stackEditMode;renderStack();}
+
+const GOAL_ICONS={
+sleep:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M20 14A8 8 0 019 3a9 9 0 1011 11z"/></svg>',
+muscle:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="8" y="11" width="8" height="2"/><rect x="16" y="7" width="3" height="10" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/></svg>',
+heart:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M12 21s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11z" transform="translate(-1 0)"/></svg>',
+immunity:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M12 2l8 3v7c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z"/></svg>',
+stress:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M20 4c-10 0-16 6-16 14 0 1 0 1.5.5 2.5C6 17 10 14 16 12c-5 4-8 7-10 10 8 0 14-5 14-14V4z"/></svg>',
+focus:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4z"/></svg>',
+energy:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><circle cx="12" cy="12" r="4"/><g stroke="var(--brand)" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M4.5 19.5l2-2M17.5 6.5l2-2"/></g></svg>'
+};
+const GOAL_NAMES={sleep:'Sleep',muscle:'Muscle',heart:'Heart',immunity:'Immunity',stress:'Stress',focus:'Focus',energy:'Energy'};
+
+function renderStack(){
+const sc=document.getElementById('stack-content');if(!sc)return;
+const stack=state.stack;
+const goals={};
+stack.forEach(s=>{const g=s.goal||'other';if(!goals[g])goals[g]=[];goals[g].push(s);});
+const goalKeys=Object.keys(goals);
+const totalA=stack.filter(s=>s.g==='A').length;
+const total=stack.length||1;
+const pct=Math.round(totalA/total*100);
+const grade=pct>=90?'A':pct>=80?'A−':pct>=70?'B+':pct>=60?'B':'C';
+
+sc.innerHTML=`
 <div style="padding:8px 22px 4px;display:flex;justify-content:space-between;align-items:baseline">
   <div class="serif" style="font-size:34px;line-height:1.1;padding-bottom:4px">My stack</div>
-  <div style="font-size:13px;color:var(--accent);font-weight:500;cursor:pointer">Edit</div>
+  <div onclick="toggleStackEdit()" style="font-size:13px;color:var(--accent);font-weight:500;cursor:pointer">${stackEditMode?'Done':'Edit'}</div>
 </div>
-<div style="padding:4px 22px 0;font-size:13px;color:var(--ink-3)">5 supplements &middot; 3 goals</div>
+<div style="padding:4px 22px 0;font-size:13px;color:var(--ink-3)">${stack.length} supplements &middot; ${goalKeys.length} goals</div>
 
 <div style="padding:18px 18px 0">
   <div class="bal-card" style="padding:18px;background:var(--brand-soft);border:.5px solid var(--brand-soft)">
@@ -414,59 +617,238 @@ document.getElementById('stack-content').innerHTML=`
       <div>
         <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);font-weight:600">Stack health</div>
         <div style="display:flex;align-items:baseline;gap:8px;margin-top:4px">
-          <div class="serif" style="font-size:40px;line-height:1;color:var(--brand)">A&minus;</div>
-          <div style="font-size:13px;color:var(--brand-deep)">4 of 5 grade A</div>
+          <div class="serif" style="font-size:40px;line-height:1;color:var(--brand)">${grade}</div>
+          <div style="font-size:13px;color:var(--brand-deep)">${totalA} of ${stack.length} grade A</div>
         </div>
       </div>
       <div style="width:72px;height:72px">
         <svg viewBox="0 0 36 36" style="transform:rotate(-90deg)">
           <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(85,33,229,.15)" stroke-width="3"/>
-          <circle cx="18" cy="18" r="15" fill="none" stroke="var(--brand)" stroke-width="3" stroke-dasharray="75 100" stroke-linecap="round" pathLength="100"/>
+          <circle cx="18" cy="18" r="15" fill="none" stroke="var(--brand)" stroke-width="3" stroke-dasharray="${pct} 100" stroke-linecap="round" pathLength="100"/>
         </svg>
       </div>
     </div>
-    <div style="display:flex;gap:8px;margin-top:14px;padding:10px 12px;background:var(--surface);border-radius:12px">
+    ${stack.find(s=>s.id==='magnesium')&&stack.find(s=>s.goal==='immunity')?`<div style="display:flex;gap:8px;margin-top:14px;padding:10px 12px;background:var(--surface);border-radius:12px">
       <div style="width:4px;background:var(--accent);border-radius:2px"></div>
       <div style="flex:1">
         <div style="font-size:12px;font-weight:600;color:var(--ink)">Zinc + Magnesium timing</div>
         <div style="font-size:12px;color:var(--ink-3);margin-top:2px">Take 2h apart for best absorption &middot; <span style="color:var(--accent);font-weight:500;cursor:pointer">auto-fix</span></div>
       </div>
-    </div>
+    </div>`:''}
   </div>
 </div>
 
 <div style="padding:22px 18px 0">
   <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">By goal</div>
-  <div id="stack-goals"></div>
-  <div style="padding:14px;border:1.5px dashed var(--rule);border-radius:16px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:500;cursor:pointer">+ Add a goal</div>
-</div>
-`;
+  ${goalKeys.map(gk=>{
+    const items=goals[gk];
+    return `<div class="bal-card" style="margin-bottom:12px;overflow:hidden">
+      <div style="padding:14px 16px 10px;display:flex;align-items:center;gap:10px;border-bottom:.5px solid var(--rule);background:var(--surface-2)">
+        <div style="width:28px;height:28px;border-radius:8px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center">${GOAL_ICONS[gk]||GOAL_ICONS.sleep}</div>
+        <div class="serif" style="font-size:20px;flex:1">${GOAL_NAMES[gk]||gk}</div>
+        <div style="font-size:12px;color:var(--ink-3)">${items.length} supp${items.length>1?'s':''}</div>
+      </div>
+      ${items.map((it,i)=>`
+      <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:${i<items.length-1?'.5px solid var(--rule)':'none'};cursor:pointer" onclick="event.stopPropagation();openDetail('${it.id}')">
+        <div onclick="event.stopPropagation();toggleStackOn('${it.id}')" style="width:6px;height:6px;border-radius:50%;background:${it.on!==false?'var(--brand)':'var(--ink-4)'};cursor:pointer;flex-shrink:0;padding:6px;margin:-6px"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${it.n}</div>
+          <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.dose} &middot; ${it.time}</div>
+        </div>
+        ${stackEditMode?`<div onclick="event.stopPropagation();removeFromStack('${it.id}')" style="color:#e74c3c;font-size:12px;font-weight:500;cursor:pointer">Remove</div>`:`<div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>`}
+      </div>`).join('')}
+    </div>`;
+  }).join('')}
+  <div onclick="nav('learn')" style="padding:14px;border:1.5px dashed var(--rule);border-radius:16px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:500;cursor:pointer">+ Add a supplement</div>
+</div>`;
+}
+renderStack();
 
-const goals=[
-{icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M20 14A8 8 0 019 3a9 9 0 1011 11z"/></svg>',g:'Sleep',items:[
-{n:'Magnesium glycinate',t:'9:00 PM',g:'A',on:true},{n:'Glycine',t:'9:00 PM',g:'B',on:true},{n:'Ashwagandha',t:'9:00 PM',g:'B',on:false}]},
-{icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="8" y="11" width="8" height="2"/><rect x="16" y="7" width="3" height="10" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/></svg>',g:'Muscle',items:[
-{n:'Creatine',t:'Morning',g:'A',on:true}]},
-{icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brand)"><path d="M12 21s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11z" transform="translate(-1 0)"/></svg>',g:'Heart',items:[
-{n:'Omega-3 EPA',t:'Lunch',g:'A',on:true}]}
-];
-document.getElementById('stack-goals').innerHTML=goals.map(goal=>`
-<div class="bal-card" style="margin-bottom:12px;overflow:hidden">
-  <div style="padding:14px 16px 10px;display:flex;align-items:center;gap:10px;border-bottom:.5px solid var(--rule);background:var(--surface-2)">
-    <div style="width:28px;height:28px;border-radius:8px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center">${goal.icon}</div>
-    <div class="serif" style="font-size:20px;flex:1">${goal.g}</div>
-    <div style="font-size:12px;color:var(--ink-3)">${goal.items.length} supp${goal.items.length>1?'s':''}</div>
-  </div>
-  ${goal.items.map((it,i)=>`
-  <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:${i<goal.items.length-1?'.5px solid var(--rule)':'none'}">
-    <div style="width:6px;height:6px;border-radius:50%;background:${it.on?'var(--brand)':'var(--ink-4)'}"></div>
-    <div style="flex:1">
-      <div style="font-size:14px;font-weight:500">${it.n}</div>
-      <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.t}</div>
+// DETAIL SCREEN — supplement deep-dive
+const SUPP_DETAILS={
+magnesium:{n:'Magnesium',form:'glycinate',dose:'200–400 mg',time:'45 min pre-bed',g:'A',goal:'sleep',
+tags:['Mineral','Sleep','Stress'],sub:'The one most adults are low on.',
+why:"Magnesium activates the parasympathetic nervous system and binds to GABA receptors — the same pathway benzodiazepines use, minus the dependence. Most adults run a low-grade deficit because modern soil is depleted and coffee flushes it out.",
+evidence:[{l:'Sleep onset',v:88,t:'−17 min avg · 4 RCTs'},{l:'Sleep quality',v:72,t:'moderate effect · 3 studies'},{l:'Anxiety',v:58,t:'mixed results · 6 studies'},{l:'Cramps',v:42,t:'weak evidence · 2 studies'}],
+warn:'Citrate form causes GI upset above 300 mg. Stick to glycinate — same absorption, no stomach surprise.'},
+creatine:{n:'Creatine',form:'monohydrate',dose:'5 g',time:'morning',g:'A',goal:'muscle',
+tags:['Amino','Muscle','Brain'],sub:'The most studied supplement on earth.',
+why:"Creatine recycles ATP — your cells' energy currency. Boosts power output by 5-15%, speeds muscle recovery, and emerging evidence shows cognitive benefits especially under sleep deprivation. Safe for long-term use.",
+evidence:[{l:'Strength',v:90,t:'+8% bench press · 30+ RCTs'},{l:'Lean mass',v:78,t:'+1.5 kg in 12 weeks'},{l:'Cognition',v:55,t:'sleep-deprived only · 8 studies'},{l:'Joint pain',v:30,t:'no effect · 4 studies'}],
+warn:'Loading phase (20 g/day x 5 days) is unnecessary — same end result with steady 5 g/day.'},
+omega3:{n:'Omega-3 EPA',form:'fish oil',dose:'1–3 g',time:'with meal',g:'A',goal:'heart',
+tags:['Fatty acid','Heart','Brain'],sub:'Anti-inflammatory powerhouse.',
+why:'EPA and DHA reduce systemic inflammation, lower triglycerides, and support brain membrane fluidity. The standard Western diet is severely deficient — most adults have an omega-6:3 ratio of 15:1 vs the optimal 4:1.',
+evidence:[{l:'Triglycerides',v:85,t:'−25% at 3 g/day · 12 RCTs'},{l:'Mood',v:65,t:'depression adjunct · 8 studies'},{l:'Cognition',v:55,t:'aging brains · 6 studies'},{l:'Joint pain',v:62,t:'RA inflammation · 4 RCTs'}],
+warn:'Look for IFOS-certified brands. Cheap fish oil is often rancid and may worsen inflammation.'},
+vitd3:{n:'Vitamin D3',form:'cholecalciferol',dose:'2000–4000 IU',time:'with food',g:'B',goal:'immunity',
+tags:['Vitamin','Immunity','Bone'],sub:"The sunshine vitamin (most don't get enough).",
+why:'D3 regulates calcium absorption, modulates the immune system, and influences over 1000 genes. Indoor lifestyles + sunscreen mean ~40% of adults are deficient (<30 ng/mL).',
+evidence:[{l:'Bone density',v:80,t:'with calcium · 10 RCTs'},{l:'Resp infections',v:58,t:'in deficient only · 25 studies'},{l:'Mood',v:48,t:'mixed · 8 studies'},{l:'Cancer prev',v:35,t:'observational only'}],
+warn:'Pair with K2 (MK-7) for safe calcium routing. Toxicity rare below 10,000 IU/day.'},
+ashwagandha:{n:'Ashwagandha',form:'KSM-66',dose:'600 mg',time:'evening',g:'B',goal:'stress',
+tags:['Adaptogen','Stress','Sleep'],sub:'The most validated adaptogen.',
+why:'Reduces cortisol, modulates the HPA axis. Works best under chronic stress — less impact on already-calm baselines. KSM-66 is the form with the most clinical validation.',
+evidence:[{l:'Cortisol',v:75,t:'−27% in stressed · 6 RCTs'},{l:'Anxiety',v:68,t:'moderate effect · 8 studies'},{l:'Sleep',v:55,t:'stress-related only · 4 studies'},{l:'Testosterone',v:45,t:'small + in trained men'}],
+warn:'Avoid with thyroid medication or autoimmune conditions. Cycle 8 weeks on, 2 off.'}
+};
+
+function openDetail(id){
+const d=SUPP_DETAILS[id];
+const inStack=state.stack.find(s=>s.id===id);
+const c=document.getElementById('detail-content');
+if(!d){
+c.innerHTML=`<div style="padding:60px 22px;text-align:center"><div class="serif" style="font-size:24px;margin-bottom:8px">No detail yet</div><div style="font-size:13px;color:var(--ink-3);margin-bottom:20px">Detail page coming soon for this supplement.</div><div onclick="nav('learn')" style="display:inline-block;padding:10px 20px;background:var(--brand);color:#fff;border-radius:12px;cursor:pointer">Back to Learn</div></div>`;
+nav('detail');return;
+}
+c.innerHTML=`
+<div style="background:linear-gradient(180deg,var(--brand) 0%,var(--brand-deep) 100%);color:var(--brand-soft);padding:54px 0 26px;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-40px;top:20px;width:200px;height:200px;border-radius:50%;background:rgba(243,169,253,.08)"></div>
+  <div style="position:relative;padding:12px 18px 0;display:flex;justify-content:space-between">
+    <div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
     </div>
-    <div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>
-  </div>`).join('')}
-</div>`).join('');
+    <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-soft)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 3h12v18l-6-4-6 4V3z"/></svg>
+    </div>
+  </div>
+  <div style="padding:18px 22px 0;position:relative">
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-soft);font-weight:600">${d.tags.join(' · ')}</div>
+    <div class="serif" style="font-size:44px;line-height:1;margin-top:8px;color:#fff">${d.n}</div>
+    <div class="serif" style="font-style:italic;font-size:15px;color:var(--brand-soft);margin-top:4px">${d.sub}</div>
+    <div style="display:flex;gap:10px;margin-top:18px">
+      <div style="flex:1;background:rgba(255,255,255,.08);padding:10px 12px;border-radius:12px">
+        <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;font-weight:600">Dose</div>
+        <div class="serif" style="font-size:18px;margin-top:2px;color:#fff">${d.dose}</div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,.08);padding:10px 12px;border-radius:12px">
+        <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;font-weight:600">Timing</div>
+        <div class="serif" style="font-size:18px;margin-top:2px;color:#fff">${d.time}</div>
+      </div>
+      <div style="width:64px;background:var(--brand-soft);color:var(--brand);padding:10px 8px;border-radius:12px;text-align:center">
+        <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;font-weight:600">Grade</div>
+        <div class="serif" style="font-size:22px;font-weight:700;line-height:1.2">${d.g}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:18px 18px 0;display:flex;gap:6px;overflow:hidden">
+  ${['Overview','Dosing','Evidence','Safety'].map((t,i)=>`<div style="padding:8px 14px;border-radius:999px;font-size:13px;font-weight:500;background:${i===0?'var(--brand)':'transparent'};color:${i===0?'#fff':'var(--ink-2)'};border:${i===0?'none':'.5px solid var(--rule)'}">${t}</div>`).join('')}
+</div>
+
+<div style="padding:22px 22px 0">
+  <div class="serif" style="font-size:22px;margin-bottom:8px">Why it works</div>
+  <div style="font-size:14px;color:var(--ink-2);line-height:1.55">${d.why}</div>
+</div>
+
+<div style="padding:22px 22px 0">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+    <div class="serif" style="font-size:22px">The evidence</div>
+    <div class="bal-pill accent">Grade ${d.g}</div>
+  </div>
+  <div class="bal-card" style="padding:16px">
+    ${d.evidence.map((b,i,a)=>`
+    <div style="margin-bottom:${i<a.length-1?14:0}px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div style="font-size:13px;font-weight:500">${b.l}</div>
+        <div style="font-size:11px;color:var(--ink-3)">${b.t}</div>
+      </div>
+      <div style="height:8px;background:var(--brand-soft);border-radius:4px;margin-top:6px;overflow:hidden">
+        <div style="height:100%;width:${b.v}%;background:${b.v>70?'var(--brand)':b.v>50?'var(--c-violet)':'var(--accent)'};border-radius:4px"></div>
+      </div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<div style="padding:22px 22px 0">
+  <div class="bal-card" style="padding:16px;background:var(--accent-soft);box-shadow:none">
+    <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600">Watch out for</div>
+    <div style="font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.5">${d.warn}</div>
+  </div>
+</div>
+
+<div style="padding:20px 18px 0">
+  ${inStack?
+  `<div style="background:var(--brand-soft);color:var(--brand-deep);padding:16px 20px;border-radius:16px;display:flex;align-items:center;justify-content:space-between">
+    <div class="serif" style="font-size:20px">Already in your stack</div>
+    <div onclick="removeFromStack('${id}');goBack()" style="font-size:13px;color:var(--accent);font-weight:500;cursor:pointer">Remove</div>
+  </div>`:
+  `<div onclick="openAddToStack('${id}')" style="background:var(--brand);color:var(--brand-soft);padding:16px 20px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer">
+    <div class="serif" style="font-size:20px">Add to my stack</div>
+    <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </div>
+  </div>`}
+</div>`;
+nav('detail');
+}
+
+// ADD-TO-STACK SCREEN
+function openAddToStack(id){
+const d=SUPP_DETAILS[id]||{n:id,form:'',dose:'',time:'morning',g:'B',goal:'sleep'};
+const c=document.getElementById('add-content');
+c.innerHTML=`
+<div style="height:54px"></div>
+<div style="padding:8px 18px;display:flex;justify-content:space-between;align-items:center">
+  <div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </div>
+  <div style="font-size:13px;color:var(--ink-3);font-weight:500">Add to stack</div>
+  <div style="width:36px"></div>
+</div>
+<div style="padding:18px 22px 0">
+  <div class="serif" style="font-size:34px;line-height:1.05">Add <em>${d.n}</em></div>
+  <div style="font-size:13px;color:var(--ink-3);margin-top:4px">Adjust dose and timing if you want.</div>
+</div>
+<div style="padding:18px 18px 0">
+  <div class="bal-card" style="padding:16px">
+    <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:6px">Form</div>
+    <input id="add-form" type="text" value="${d.form||''}" style="width:100%;border:none;outline:none;font-size:16px;padding:8px 0;border-bottom:.5px solid var(--rule);background:transparent;font-family:inherit"/>
+    <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:14px;margin-bottom:6px">Dose</div>
+    <input id="add-dose" type="text" value="${d.dose||''}" style="width:100%;border:none;outline:none;font-size:16px;padding:8px 0;border-bottom:.5px solid var(--rule);background:transparent;font-family:inherit"/>
+    <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:14px;margin-bottom:6px">Timing</div>
+    <select id="add-time" style="width:100%;border:none;outline:none;font-size:16px;padding:8px 0;border-bottom:.5px solid var(--rule);background:transparent;font-family:inherit">
+      <option value="morning">Morning</option>
+      <option value="with food">With food</option>
+      <option value="lunch">Lunch</option>
+      <option value="afternoon">Afternoon</option>
+      <option value="evening">Evening</option>
+      <option value="9:00 PM">9:00 PM</option>
+      <option value="45 min pre-bed">45 min pre-bed</option>
+    </select>
+    <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:14px;margin-bottom:6px">Goal</div>
+    <select id="add-goal" style="width:100%;border:none;outline:none;font-size:16px;padding:8px 0;border-bottom:.5px solid var(--rule);background:transparent;font-family:inherit">
+      <option value="sleep">Sleep</option><option value="stress">Stress</option><option value="focus">Focus</option>
+      <option value="energy">Energy</option><option value="muscle">Muscle</option><option value="heart">Heart</option>
+      <option value="immunity">Immunity</option>
+    </select>
+  </div>
+</div>
+<div style="padding:18px 18px 0">
+  <div onclick="confirmAddToStack('${id}','${d.n}','${d.g}')" style="background:var(--brand);color:var(--brand-soft);padding:16px 20px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:15px;cursor:pointer">
+    Add to my stack
+  </div>
+</div>`;
+const ts=document.getElementById('add-time');if(ts)ts.value=d.time||'morning';
+const gs=document.getElementById('add-goal');if(gs)gs.value=d.goal||'sleep';
+nav('add');
+}
+function confirmAddToStack(id,n,g){
+const supp={
+id:id,
+n:n||document.getElementById('add-form').value||'Supplement',
+form:document.getElementById('add-form').value||'',
+dose:document.getElementById('add-dose').value||'Check label',
+time:document.getElementById('add-time').value,
+timeKey:({'morning':'08:00','with food':'12:00','lunch':'13:00','afternoon':'15:00','evening':'19:00','9:00 PM':'21:00','45 min pre-bed':'21:30'})[document.getElementById('add-time').value]||'12:00',
+g:g||'B',
+goal:document.getElementById('add-goal').value,
+on:true
+};
+addToStack(supp);
+nav('stack');
+}
 
 // LEARN SCREEN
 const topics=[
@@ -500,7 +882,7 @@ document.getElementById('learn-content').innerHTML=`
   </div>
 </div>
 <div style="padding:16px 18px 0">
-  <div class="bal-card" style="overflow:hidden;position:relative">
+  <div onclick="openTopicDetail('Sleep')" class="bal-card" style="overflow:hidden;position:relative;cursor:pointer">
     <div style="padding:18px 18px 16px;background:linear-gradient(140deg,var(--brand-soft) 0%,rgba(142,119,226,.15) 100%);position:relative;min-height:140px">
       <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);font-weight:600">Featured guide</div>
       <div class="serif" style="font-size:28px;line-height:1.18;margin-top:10px;max-width:68%;padding-bottom:4px">The sleep stack, <em>actually</em> explained</div>
@@ -514,7 +896,7 @@ document.getElementById('learn-content').innerHTML=`
   <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">All 17 topics</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
     ${topics.map(t=>`
-    <div class="bal-card" style="padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer">
+    <div onclick="openTopicDetail('${t.k}')" class="bal-card" style="padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer">
       <div style="width:32px;height:32px;border-radius:10px;background:${t.g==='A'?'var(--brand-soft)':t.g==='B'?'var(--green-soft)':'var(--accent-soft)'};display:flex;align-items:center;justify-content:center">${iconSvg[t.icon]||''}</div>
       <div>
         <div style="font-size:14px;font-weight:600">${t.k}</div>
@@ -525,6 +907,209 @@ document.getElementById('learn-content').innerHTML=`
   <div style="text-align:center;font-size:12px;color:var(--ink-3);margin-top:14px;font-weight:500">Show all 17 &rarr;</div>
 </div>
 `;
+
+// Topic to first supplement mapping
+const TOPIC_TO_SUPP={Sleep:'magnesium',Stress:'ashwagandha',Focus:'omega3',Energy:'creatine',Muscle:'creatine',Heart:'omega3',Joints:'omega3',Immunity:'vitd3',Skin:'omega3',Libido:'ashwagandha',Liver:'omega3','Fat loss':'creatine'};
+function openTopicDetail(topic){
+const id=TOPIC_TO_SUPP[topic]||'magnesium';
+openDetail(id);
+}
+
+// PROFILE SCREEN
+function renderProfile(){
+const c=document.getElementById('profile-content');
+c.innerHTML=`
+<div style="padding:8px 22px">
+  <div class="serif" style="font-size:34px;line-height:1.05">Profile</div>
+  <div style="font-size:13px;color:var(--ink-3);margin-top:4px">Settings, goals, and account.</div>
+</div>
+<div style="padding:18px 18px 0">
+  <div class="bal-card" style="padding:18px;display:flex;align-items:center;gap:14px">
+    <div style="width:60px;height:60px;border-radius:50%;background:var(--brand);color:var(--brand-soft);display:flex;align-items:center;justify-content:center;font-size:24px;font-family:'Fraunces',Georgia,serif;font-weight:600">S</div>
+    <div style="flex:1">
+      <div class="serif" style="font-size:20px">Sam</div>
+      <div style="font-size:12px;color:var(--ink-3);margin-top:2px">Member since Apr 2026</div>
+    </div>
+    <div style="font-size:13px;color:var(--accent);font-weight:500;cursor:pointer">Edit</div>
+  </div>
+</div>
+<div style="padding:18px 18px 0">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:8px;padding-left:4px">Plan</div>
+  <div onclick="nav('paywall')" class="bal-card" style="padding:18px;background:linear-gradient(135deg,#20056c 0%,#5521e5 60%,#6f3deb 100%);color:#fff;cursor:pointer;position:relative;overflow:hidden">
+    <div style="position:absolute;right:-40px;bottom:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(243,169,253,.3) 0%,transparent 70%)"></div>
+    <div style="position:relative">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;font-weight:600">Free plan</div>
+      <div class="serif" style="font-size:22px;margin-top:6px">Upgrade to <em>Balance Plus</em></div>
+      <div style="font-size:13px;opacity:.85;margin-top:6px;line-height:1.4">Unlock the full evidence engine, custom AI recaps, and lab uploads.</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 14px;background:var(--accent);border-radius:999px;font-size:13px;font-weight:600">Upgrade &rarr;</div>
+    </div>
+  </div>
+</div>
+<div style="padding:18px 18px 0">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:8px;padding-left:4px">Settings</div>
+  <div class="bal-card" style="padding:0;overflow:hidden">
+    ${[
+      {l:'Goals',v:'Sleep, stress, energy',k:'goals'},
+      {l:'Reminders',v:'Daily at 9:00 PM',k:'reminders',action:"nav('reminders')"},
+      {l:'Lab results',v:'Upload your bloodwork',k:'labs'},
+      {l:'Conversations',v:'View chat history',k:'history',action:"nav('history')"},
+      {l:'Notifications',v:'On'},
+      {l:'Privacy & data'},
+      {l:'Help & support'},
+      {l:'Sign out',color:'#e74c3c'}
+    ].map((r,i,a)=>`
+    <div ${r.action?`onclick="${r.action}"`:''} style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:${i<a.length-1?'.5px solid var(--rule)':'none'};cursor:pointer">
+      <div>
+        <div style="font-size:14px;font-weight:500;color:${r.color||'var(--ink)'}">${r.l}</div>
+        ${r.v?`<div style="font-size:12px;color:var(--ink-3);margin-top:2px">${r.v}</div>`:''}
+      </div>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </div>`).join('')}
+  </div>
+</div>
+<div style="padding:24px 22px;text-align:center;font-size:11px;color:var(--ink-4)">
+  Balance AI v1.0 &middot; Not medical advice
+</div>`;
+}
+
+// PAYWALL SCREEN
+function renderPaywall(){
+const c=document.getElementById('paywall-content');
+c.innerHTML=`
+<div style="background:linear-gradient(180deg,var(--brand-deep) 0%,var(--brand) 100%);padding:44px 22px 36px;color:#fff;position:relative;overflow:hidden;min-height:340px">
+  <div style="position:absolute;right:-60px;top:20px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(243,169,253,.3) 0%,transparent 70%)"></div>
+  <div style="position:relative">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.85">Balance Plus</div>
+      <div style="width:36px"></div>
+    </div>
+    <div style="margin-top:54px">
+      <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-weight:600;margin-bottom:14px">Unlock everything</div>
+      <div class="serif" style="font-size:40px;line-height:1.05">Your full <em>evidence engine</em>.</div>
+      <div style="font-size:14px;opacity:.85;margin-top:14px;line-height:1.5;max-width:90%">Search across all 17 guides, get personalized AI recaps, and upload your lab results to tailor recommendations.</div>
+    </div>
+  </div>
+</div>
+<div style="padding:24px 22px 0">
+  <div style="display:grid;gap:12px">
+    ${[
+      {t:'Unlimited Ask',d:'No daily question caps. Search the full evidence library.'},
+      {t:'AI monthly recap',d:"Personalized analysis of what worked and what didn't."},
+      {t:'Lab integration',d:'Upload bloodwork. Get supplement suggestions tailored to your levels.'},
+      {t:'Stack timing engine',d:'Auto-fix conflicts and optimize for absorption.'},
+      {t:'Priority support',d:'Real humans, not just chatbots.'}
+    ].map(f=>`
+    <div style="display:flex;gap:12px;align-items:flex-start">
+      <div style="width:24px;height:24px;border-radius:50%;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:600">${f.t}</div>
+        <div style="font-size:13px;color:var(--ink-3);line-height:1.4;margin-top:2px">${f.d}</div>
+      </div>
+    </div>`).join('')}
+  </div>
+</div>
+<div style="padding:28px 18px 0">
+  <div class="bal-card" style="padding:18px;border:2px solid var(--brand)">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600">Annual</div>
+        <div class="serif" style="font-size:26px;margin-top:4px">$59 <span style="font-size:13px;color:var(--ink-3);font-weight:400">/ year</span></div>
+        <div style="font-size:12px;color:var(--brand);font-weight:500;margin-top:2px">Save 50% &middot; 7-day free trial</div>
+      </div>
+      <div class="bal-pill dark" style="font-size:11px">Best value</div>
+    </div>
+  </div>
+</div>
+<div style="padding:12px 18px 0">
+  <div class="bal-card" style="padding:18px">
+    <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600">Monthly</div>
+    <div class="serif" style="font-size:26px;margin-top:4px">$9.99 <span style="font-size:13px;color:var(--ink-3);font-weight:400">/ month</span></div>
+  </div>
+</div>
+<div style="padding:18px 18px 0">
+  <div onclick="alert('This is a demo — payment not wired.')" style="background:var(--brand);color:#fff;padding:16px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">
+    Start free trial
+  </div>
+</div>
+<div style="padding:14px 22px;text-align:center;font-size:11px;color:var(--ink-3)">
+  Cancel anytime. Auto-renews unless turned off.
+</div>`;
+}
+
+// REMINDERS SCREEN
+function renderReminders(){
+const c=document.getElementById('reminders-content');
+c.innerHTML=`
+<div style="padding:8px 22px;display:flex;align-items:center;gap:10px">
+  <div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </div>
+  <div class="serif" style="font-size:28px;line-height:1.05">Reminders</div>
+</div>
+<div style="padding:14px 22px 0;font-size:13px;color:var(--ink-3)">Schedule when to take each supplement. We will nudge you.</div>
+<div style="padding:18px 18px 0">
+  <div class="bal-card" style="padding:0;overflow:hidden">
+    ${state.stack.map((s,i,a)=>`
+    <div style="padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:${i<a.length-1?'.5px solid var(--rule)':'none'}">
+      <div class="ev-badge ${s.g.toLowerCase()}">${s.g}</div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:500">${s.n}</div>
+        <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${s.dose}</div>
+      </div>
+      <div class="mono" style="font-size:13px;color:var(--brand);font-weight:500">${s.timeKey||s.time}</div>
+    </div>`).join('')}
+  </div>
+</div>
+<div style="padding:22px 18px 0">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:8px;padding-left:4px">Notification</div>
+  <div class="bal-card" style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <div style="font-size:14px;font-weight:500">Push notifications</div>
+      <div style="font-size:12px;color:var(--ink-3);margin-top:1px">Get a nudge when it is time</div>
+    </div>
+    <div style="width:42px;height:24px;border-radius:14px;background:var(--brand);display:flex;align-items:center;padding:0 3px;justify-content:flex-end">
+      <div style="width:18px;height:18px;border-radius:50%;background:#fff"></div>
+    </div>
+  </div>
+</div>`;
+}
+
+// HISTORY SCREEN
+function renderHistory(){
+const c=document.getElementById('history-content');
+c.innerHTML=`
+<div style="padding:8px 22px;display:flex;align-items:center;gap:10px">
+  <div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </div>
+  <div class="serif" style="font-size:28px;line-height:1.05">Conversations</div>
+</div>
+<div style="padding:14px 22px 0;font-size:13px;color:var(--ink-3)">Your past chats with Balance.</div>
+<div style="padding:18px 18px 0">
+  ${chatHistory.length===0?
+    `<div style="padding:40px 18px;text-align:center;color:var(--ink-3);font-size:14px">No conversations yet. <span onclick="nav('ask')" style="color:var(--brand);font-weight:500;cursor:pointer">Start one &rarr;</span></div>`:
+    `<div class="bal-card" style="padding:0;overflow:hidden">
+      <div onclick="nav('ask')" style="padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:500">Today's chat</div>
+          <div style="font-size:12px;color:var(--ink-3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${chatHistory[0]?chatHistory[0].content.substring(0,60):'New conversation'}</div>
+        </div>
+        <div class="mono" style="font-size:11px;color:var(--ink-3)">${chatHistory.length} msgs</div>
+      </div>
+    </div>`}
+</div>
+<div style="padding:22px 18px 0">
+  <div onclick="newChat();nav('ask')" style="background:var(--brand);color:#fff;padding:14px 18px;border-radius:14px;text-align:center;font-weight:500;font-size:14px;cursor:pointer">+ New conversation</div>
+</div>`;
+}
 
 // ME SCREEN
 document.getElementById('me-content').innerHTML=`
@@ -543,7 +1128,7 @@ document.getElementById('me-content').innerHTML=`
     <div class="serif" style="font-size:18px;line-height:1.4">Sleep improved <em>~25%</em> since you added magnesium. Energy is flat. Want to try creatine for afternoon dips?</div>
     <div style="display:flex;gap:8px;margin-top:14px">
       <div style="flex:1;padding:10px 12px;background:var(--brand-soft);border-radius:10px;text-align:center;font-size:13px;font-weight:500;color:var(--brand-deep);cursor:pointer">Keep stack</div>
-      <div style="flex:1;padding:10px 12px;background:var(--brand);border-radius:10px;text-align:center;font-size:13px;font-weight:500;color:#fff;cursor:pointer">Try creatine &rarr;</div>
+      <div onclick="openDetail('creatine')" style="flex:1;padding:10px 12px;background:var(--brand);border-radius:10px;text-align:center;font-size:13px;font-weight:500;color:#fff;cursor:pointer">Try creatine &rarr;</div>
     </div>
   </div>
 </div>

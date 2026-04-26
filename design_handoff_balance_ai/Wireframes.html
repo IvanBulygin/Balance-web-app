@@ -1,0 +1,1472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Wellness AI — Wireframes</title>
+<meta name="viewport" content="width=1480" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&family=JetBrains+Mono:wght@400;500;600&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f3ec;
+    --paper-2: #efebe0;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #8a8a8a;
+    --rule: #d7d1c2;
+    --accent: #d44a26;           /* tweakable */
+    --accent-soft: #f0c9b9;      /* tweakable */
+    --stroke: 1.6px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: 'Kalam', 'Caveat', cursive;
+    font-size: 15px;
+    line-height: 1.35;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+    padding: 40px 56px 120px;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  /* Header */
+  .doc-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 40px; margin: 0 0 12px;
+    border-bottom: var(--stroke) solid var(--ink);
+    padding-bottom: 14px;
+  }
+  .doc-head h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 64px; font-weight: 700; margin: 0;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    padding-bottom: 6px;
+  }
+  .doc-head h1 em {
+    font-style: normal; color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+  }
+  .doc-head .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink-soft); text-align: right; line-height: 1.7;
+  }
+  .doc-sub {
+    font-family: 'Kalam', cursive;
+    font-size: 18px; color: var(--ink-soft);
+    max-width: 780px; margin: 22px 0 28px;
+  }
+
+  /* Section */
+  .section { margin: 56px 0 0; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin: 0 0 6px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 600;
+    background: var(--ink); color: var(--paper);
+    padding: 3px 8px; border-radius: 3px;
+    letter-spacing: 0.08em;
+  }
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 40px; font-weight: 700; margin: 0;
+    line-height: 1.08;
+    letter-spacing: -0.5px;
+    padding-bottom: 4px;
+  }
+  .section-desc {
+    font-family: 'Kalam', cursive;
+    font-size: 16px; color: var(--ink-soft);
+    max-width: 720px; margin: 18px 0 22px 72px;
+  }
+
+  /* Variation grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+  .variant {
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  .variant-head {
+    width: 100%;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .variant-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 600;
+    background: var(--paper-2);
+    border: var(--stroke) solid var(--ink);
+    padding: 2px 7px; border-radius: 3px;
+    letter-spacing: 0.06em;
+  }
+  .variant-title {
+    font-family: 'Caveat', cursive;
+    font-size: 24px; font-weight: 600; line-height: 1;
+  }
+  .variant-note {
+    font-family: 'Kalam', cursive;
+    font-size: 13px; color: var(--ink-soft);
+    width: 100%; padding: 0 4px;
+  }
+
+  /* Phone frame — sketchy */
+  .phone {
+    width: 320px; height: 660px;
+    background: var(--paper);
+    border: var(--stroke) solid var(--ink);
+    border-radius: 38px;
+    position: relative;
+    padding: 14px 10px 12px;
+    box-shadow: 3px 4px 0 rgba(0,0,0,0.08);
+  }
+  .phone::before {
+    /* slightly wonky second line for sketchy feel */
+    content: ""; position: absolute; inset: 2px;
+    border: 1px solid var(--ink);
+    border-radius: 36px;
+    opacity: 0.3;
+    transform: rotate(-0.15deg);
+    pointer-events: none;
+  }
+  .phone .notch {
+    position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    width: 80px; height: 18px;
+    border: var(--stroke) solid var(--ink);
+    border-radius: 12px; background: var(--paper-2);
+  }
+  .phone .status {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; color: var(--ink-soft);
+    padding: 0 12px 4px; margin-top: 22px;
+  }
+  .screen {
+    position: absolute; inset: 44px 10px 12px;
+    border: 1.2px dashed var(--rule);
+    border-radius: 22px;
+    padding: 14px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    background: var(--paper);
+  }
+
+  /* Primitive sketch elements */
+  .box {
+    border: var(--stroke) solid var(--ink);
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: var(--paper);
+  }
+  .box.dashed { border-style: dashed; }
+  .box.fill { background: var(--paper-2); }
+  .box.accent { border-color: var(--accent); background: var(--accent-soft); }
+  .box.ink { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .row { display: flex; align-items: center; gap: 8px; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .grow { flex: 1; }
+  .center { justify-content: center; align-items: center; }
+  .between { justify-content: space-between; }
+
+  .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+  .h { font-family: 'Caveat', cursive; font-weight: 700; line-height: 1; }
+  .h-xl { font-size: 28px; }
+  .h-lg { font-size: 22px; }
+  .h-md { font-size: 18px; }
+  .t { font-family: 'Kalam', cursive; font-size: 12px; }
+  .t-sm { font-size: 11px; }
+  .t-lg { font-size: 13px; }
+  .muted { color: var(--ink-soft); }
+
+  .line { height: 2px; background: var(--ink); border-radius: 2px; }
+  .line.thin { height: 1px; background: var(--rule); }
+  .line.w-70 { width: 70%; }
+  .line.w-50 { width: 50%; }
+  .line.w-90 { width: 90%; }
+  .line.w-40 { width: 40%; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 8px; border: var(--stroke) solid var(--ink);
+    border-radius: 999px; font-family: 'Kalam', cursive;
+    font-size: 11px; background: var(--paper);
+  }
+  .chip.accent { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+  .chip.fill { background: var(--ink); color: var(--paper); }
+
+  .pill {
+    display: inline-block; padding: 2px 7px;
+    border: 1.2px solid var(--ink); border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .pill.accent { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+  .btn {
+    border: var(--stroke) solid var(--ink);
+    border-radius: 999px; padding: 8px 14px;
+    font-family: 'Caveat', cursive; font-weight: 700;
+    font-size: 16px; background: var(--paper);
+    text-align: center;
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn.accent { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+  .btn.block { width: 100%; display: block; }
+
+  .input {
+    border: var(--stroke) solid var(--ink);
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-family: 'Kalam', cursive; font-size: 12px;
+    color: var(--ink-faint);
+    background: var(--paper);
+  }
+
+  .tab-bar {
+    margin-top: auto;
+    display: flex; justify-content: space-around;
+    padding-top: 10px; border-top: 1.2px dashed var(--rule);
+  }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10px; color: var(--ink-faint); }
+  .tab .dot { width: 18px; height: 18px; border: var(--stroke) solid var(--ink); border-radius: 5px; }
+  .tab.active .dot { background: var(--ink); }
+  .tab.active { color: var(--ink); font-weight: 600; }
+
+  /* Bar chart sketch */
+  .bars { display: flex; align-items: flex-end; gap: 5px; height: 42px; }
+  .bar { flex: 1; background: var(--paper-2); border: var(--stroke) solid var(--ink); border-radius: 3px 3px 0 0; }
+  .bar.a { background: var(--accent-soft); border-color: var(--accent); }
+
+  /* Ring / donut (simple circle with thick border) */
+  .ring {
+    width: 64px; height: 64px; border-radius: 50%;
+    border: 7px solid var(--accent-soft);
+    border-top-color: var(--accent);
+    border-right-color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Caveat', cursive; font-weight: 700; font-size: 20px;
+  }
+
+  /* Evidence meter */
+  .ev-meter { display: flex; gap: 3px; }
+  .ev-pip { width: 14px; height: 6px; border: 1.2px solid var(--ink); border-radius: 2px; }
+  .ev-pip.on { background: var(--ink); }
+  .ev-pip.on.a { background: var(--accent); border-color: var(--accent); }
+
+  /* Annotation callouts */
+  .ann {
+    position: relative;
+    margin: 4px 0 0;
+    padding: 6px 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 14px; color: var(--accent);
+    border-left: 2px solid var(--accent);
+    background: transparent;
+  }
+  .ann::before { content: "→ "; font-weight: 700; }
+
+  /* Flow connector arrows between variants (optional decorative) */
+  .flow-legend {
+    display: inline-flex; gap: 16px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--ink-soft);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 10px 0 0 72px;
+  }
+  .flow-legend span::before { content: "◆ "; color: var(--accent); }
+
+  /* Tweaks panel */
+  .tweaks {
+    position: fixed; bottom: 20px; right: 20px;
+    width: 260px;
+    background: var(--paper);
+    border: var(--stroke) solid var(--ink);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 4px 5px 0 rgba(0,0,0,0.12);
+    font-family: 'Kalam', cursive;
+    z-index: 100;
+    display: none;
+  }
+  .tweaks.show { display: block; }
+  .tweaks h3 {
+    font-family: 'Caveat', cursive; font-size: 22px;
+    margin: 0 0 8px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .tweaks .tweak-row { margin: 10px 0; }
+  .tweaks .tweak-row label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink-soft); display: block; margin-bottom: 4px;
+  }
+  .swatches { display: flex; gap: 6px; flex-wrap: wrap; }
+  .swatch {
+    width: 26px; height: 26px; border-radius: 50%;
+    border: var(--stroke) solid var(--ink);
+    cursor: pointer;
+  }
+  .swatch.active { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--ink); }
+  .tweaks select, .tweaks input[type=range] { width: 100%; font-family: inherit; }
+
+  /* Skeuomorphic paper fold at top of page */
+  .corner {
+    position: absolute; top: 0; right: 0;
+    width: 50px; height: 50px;
+    background: linear-gradient(225deg, var(--paper-2) 50%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Legend bar at bottom */
+  .footer-note {
+    margin-top: 80px; padding-top: 16px;
+    border-top: var(--stroke) solid var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--ink-soft);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    display: flex; justify-content: space-between;
+  }
+
+  /* Sketchy list item */
+  .list-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1.2px dashed var(--rule); }
+  .list-item:last-child { border-bottom: none; }
+  .bullet { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid var(--ink); flex-shrink: 0; }
+  .bullet.fill { background: var(--ink); }
+  .bullet.a { background: var(--accent); border-color: var(--accent); }
+
+  /* Check circle */
+  .check {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: var(--stroke) solid var(--ink);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+  }
+  .check.done { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+</style>
+</head>
+<body>
+<div class="corner"></div>
+
+<div class="doc-head">
+  <h1>Wellness AI · <em>wireframes</em></h1>
+  <div class="meta">
+    v0.1 — low-fi exploration<br>
+    3 variations × 7 flows<br>
+    mobile · 390×844
+  </div>
+</div>
+<p class="doc-sub">
+  Original app concept inspired by the brief: a chat-first assistant that answers health questions by searching evidence-based supplement guides, returning ranked recommendations with dose, form, timing, and evidence strength. These are <strong>rough wireframes</strong> — structure over polish — so we can map the design space before committing to a direction.
+</p>
+
+<div class="flow-legend">
+  <span>Each row explores one flow</span>
+  <span>Columns = different approaches</span>
+  <span>Goal: pick favorites, remix</span>
+</div>
+
+<!-- ==================== SECTION: ONBOARDING ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Onboarding & intake</h2>
+  </div>
+  <p class="section-desc">First-run: how do we learn enough about the user to personalize, without scaring them off? Three levels of commitment.</p>
+
+  <div class="grid">
+    <!-- A: Minimal — one question -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">Just ask</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">welcome</div>
+          <div class="h h-xl" style="margin:8px 0 6px;">What's on<br>your mind?</div>
+          <div class="t muted">Skip the quiz. Ask anything — I'll build your plan as we talk.</div>
+
+          <div style="margin-top:18px;" class="col">
+            <div class="box" style="padding:14px;">
+              <div class="lbl">try asking</div>
+              <div class="col" style="gap:6px;margin-top:6px;">
+                <div class="t">• Why can't I sleep through the night?</div>
+                <div class="t">• I want more energy in the afternoon</div>
+                <div class="t">• Something for joint pain — vegan</div>
+              </div>
+            </div>
+            <div class="input">Type a question...</div>
+          </div>
+
+          <div style="margin-top:auto;" class="col">
+            <div class="btn primary block">Start chatting</div>
+            <div class="t-sm muted" style="text-align:center;">No account needed to explore</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Zero-friction entry. Profile builds passively from chat context.</div>
+    </div>
+
+    <!-- B: Guided quiz -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">Guided intake</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between">
+            <span class="lbl">step 3 of 6</span>
+            <span class="lbl">skip</span>
+          </div>
+          <div class="row" style="gap:3px;margin-top:6px;">
+            <div class="line w-90" style="flex:3; background:var(--accent);"></div>
+            <div class="line thin" style="flex:3;"></div>
+          </div>
+
+          <div class="h h-lg" style="margin:18px 0 4px;">What do you want to work on?</div>
+          <div class="t muted">Pick up to 3. You can change later.</div>
+
+          <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="chip accent">Sleep ✓</span>
+            <span class="chip">Stress</span>
+            <span class="chip accent">Focus ✓</span>
+            <span class="chip">Energy</span>
+            <span class="chip">Muscle gain</span>
+            <span class="chip">Fat loss</span>
+            <span class="chip">Joints</span>
+            <span class="chip">Mood</span>
+            <span class="chip">Immunity</span>
+            <span class="chip">Libido</span>
+            <span class="chip">Skin</span>
+            <span class="chip">Heart</span>
+          </div>
+
+          <div class="ann">17 topic areas map to science-backed guides</div>
+
+          <div style="margin-top:auto;" class="col">
+            <div class="btn primary block">Continue →</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Classic quiz. Goals → constraints → diet → meds. ~90 seconds.</div>
+    </div>
+
+    <!-- C: Conversational onboarding -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">AI interview</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between">
+            <span class="lbl">getting to know you</span>
+            <span class="pill">1/4</span>
+          </div>
+
+          <div class="col" style="gap:10px;margin-top:14px;flex:1;">
+            <div class="box fill" style="max-width:80%;">
+              <div class="t">Hey! I'm going to ask a few things, then we'll talk.</div>
+            </div>
+            <div class="box fill" style="max-width:85%;">
+              <div class="t">First — what made you download this today? No wrong answer.</div>
+            </div>
+
+            <div style="align-self:flex-end;max-width:80%;" class="box accent">
+              <div class="t">Sleep has been rough for weeks</div>
+            </div>
+
+            <div class="box fill" style="max-width:90%;">
+              <div class="t">Got it. Falling asleep or staying asleep?</div>
+            </div>
+
+            <div class="row" style="gap:6px;">
+              <span class="chip">Falling asleep</span>
+              <span class="chip">Staying asleep</span>
+              <span class="chip">Both</span>
+            </div>
+          </div>
+
+          <div style="margin-top:10px;" class="input">Or type your answer...</div>
+        </div>
+      </div>
+      <div class="variant-note">AI-led. Feels human. Quick-reply chips keep it fast.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: HOME ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Home / dashboard</h2>
+  </div>
+  <p class="section-desc">What greets the user daily? The answer says a lot about what the app <em>is</em>.</p>
+
+  <div class="grid">
+    <!-- A: Chat-first -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">Chat-first</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between">
+            <div class="h h-md">Good morning, Sam</div>
+            <div class="lbl">●</div>
+          </div>
+          <div class="t muted" style="margin-top:2px;">Wed · Apr 22</div>
+
+          <div class="col" style="gap:10px;margin-top:16px;">
+            <div class="box accent" style="padding:14px;">
+              <div class="lbl" style="color:var(--accent);">your buddy says</div>
+              <div class="h h-md" style="margin-top:4px;">Take magnesium<br>~45min before bed.</div>
+              <div class="t-sm muted" style="margin-top:4px;">From yesterday's chat about sleep.</div>
+            </div>
+
+            <div class="lbl" style="margin-top:6px;">pick up where you left off</div>
+            <div class="list-item"><span class="bullet a"></span><div class="grow"><div class="t">Sleep stack — 3 supps</div><div class="t-sm muted">Updated 2d ago</div></div><span class="t-sm muted">→</span></div>
+            <div class="list-item"><span class="bullet"></span><div class="grow"><div class="t">Afternoon energy?</div><div class="t-sm muted">Started Mon</div></div><span class="t-sm muted">→</span></div>
+          </div>
+
+          <div style="margin-top:auto;" class="col">
+            <div class="input">Ask anything... 🎤</div>
+          </div>
+
+          <div class="tab-bar">
+            <div class="tab active"><div class="dot"></div>Ask</div>
+            <div class="tab"><div class="dot"></div>Stack</div>
+            <div class="tab"><div class="dot"></div>Learn</div>
+            <div class="tab"><div class="dot"></div>Me</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Big input, minimal chrome. Previous threads listed like messages.</div>
+    </div>
+
+    <!-- B: Dashboard with stack -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">Today view</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between">
+            <div class="h h-md">Today</div>
+            <span class="t-sm muted">Apr 22</span>
+          </div>
+
+          <div class="row" style="gap:12px;margin-top:12px;align-items:center;">
+            <div class="ring">3/5</div>
+            <div class="col" style="gap:2px;">
+              <div class="lbl">daily stack</div>
+              <div class="t">2 left today</div>
+              <div class="t-sm muted">Next: Magnesium · 9pm</div>
+            </div>
+          </div>
+
+          <div class="lbl" style="margin-top:14px;">morning</div>
+          <div class="list-item"><span class="check done">✓</span><div class="grow"><div class="t">Creatine · 5g</div></div><span class="pill accent">A</span></div>
+          <div class="list-item"><span class="check done">✓</span><div class="grow"><div class="t">Vitamin D · 2000iu</div></div><span class="pill">B+</span></div>
+          <div class="list-item"><span class="check done">✓</span><div class="grow"><div class="t">Omega-3 · 1g EPA</div></div><span class="pill">A</span></div>
+
+          <div class="lbl" style="margin-top:10px;">evening</div>
+          <div class="list-item"><span class="check"></span><div class="grow"><div class="t">Magnesium glycinate</div><div class="t-sm muted">45 min before bed</div></div><span class="pill">A</span></div>
+          <div class="list-item"><span class="check"></span><div class="grow"><div class="t">Ashwagandha · 600mg</div></div><span class="pill">B</span></div>
+
+          <div class="tab-bar">
+            <div class="tab active"><div class="dot"></div>Today</div>
+            <div class="tab"><div class="dot"></div>Ask</div>
+            <div class="tab"><div class="dot"></div>Learn</div>
+            <div class="tab"><div class="dot"></div>Me</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Tracker-first. AI is one tab away. Evidence grades visible throughout.</div>
+    </div>
+
+    <!-- C: Question-of-the-day -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">Daily card</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">apr 22 · wed</div>
+          <div class="h h-lg" style="margin:4px 0 12px;">Hey Sam 👋</div>
+
+          <div class="box" style="padding:14px;border-width:2px;">
+            <span class="pill accent">today's answer</span>
+            <div class="h h-md" style="margin:8px 0 4px;">Should I take creatine on rest days?</div>
+            <div class="t muted">Yes — daily dosing beats loading. Here's why ↓</div>
+            <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;">
+              <div class="ev-meter">
+                <span class="ev-pip on a"></span>
+                <span class="ev-pip on a"></span>
+                <span class="ev-pip on a"></span>
+                <span class="ev-pip on a"></span>
+                <span class="ev-pip"></span>
+              </div>
+              <span class="lbl">evidence A</span>
+            </div>
+          </div>
+
+          <div class="lbl" style="margin-top:16px;">topics you follow</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;">
+            <span class="chip">😴 Sleep</span>
+            <span class="chip">💪 Muscle</span>
+            <span class="chip">🧠 Focus</span>
+            <span class="chip">+</span>
+          </div>
+
+          <div style="margin-top:auto;" class="col">
+            <div class="input">Got a question?</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Content-first, Duolingo-ish. A fresh answer every day to build habit.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: CHAT ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Ask — the chat experience</h2>
+  </div>
+  <p class="section-desc">Where the core value lives. Three takes on what "answer" means.</p>
+
+  <div class="grid">
+    <!-- A: Plain chat with citations -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">Conversational</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between">
+            <span class="lbl">← back</span>
+            <span class="lbl">new chat</span>
+          </div>
+
+          <div class="col" style="gap:10px;margin-top:12px;flex:1;">
+            <div style="align-self:flex-end;max-width:80%;" class="box accent">
+              <div class="t">What helps me fall asleep faster?</div>
+            </div>
+
+            <div class="box fill" style="max-width:92%;">
+              <div class="t">Best evidence points to <strong>3 options</strong>. Start with one:</div>
+              <div style="margin-top:6px;" class="col">
+                <div class="t">1. Magnesium glycinate · <span class="pill">A</span></div>
+                <div class="t">2. Melatonin (low dose) · <span class="pill">A</span></div>
+                <div class="t">3. Glycine · <span class="pill">B+</span></div>
+              </div>
+              <div class="t-sm muted" style="margin-top:6px;">Tap any for dose + timing.</div>
+            </div>
+
+            <div class="row" style="gap:6px;flex-wrap:wrap;">
+              <span class="chip">Why magnesium?</span>
+              <span class="chip">Dose?</span>
+              <span class="chip">Stack them?</span>
+            </div>
+          </div>
+
+          <div class="input">Follow up...</div>
+        </div>
+      </div>
+      <div class="variant-note">Answers feel like messages. Follow-ups as tappable chips.</div>
+    </div>
+
+    <!-- B: Structured answer card -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">Answer cards</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">you asked</div>
+          <div class="h h-md" style="margin:4px 0 10px;">"What helps me fall<br>asleep faster?"</div>
+
+          <div class="lbl">ranked answer</div>
+          <div class="col" style="gap:8px;margin-top:6px;flex:1;">
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="row" style="gap:6px;"><span class="pill accent">#1</span><span class="h h-md">Magnesium</span></div>
+                <span class="pill">A</span>
+              </div>
+              <div class="t-sm muted">200–400mg glycinate · 45min pre-bed</div>
+            </div>
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="row" style="gap:6px;"><span class="pill">#2</span><span class="h h-md">Melatonin</span></div>
+                <span class="pill">A</span>
+              </div>
+              <div class="t-sm muted">0.3–1mg · 30min pre-bed</div>
+            </div>
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="row" style="gap:6px;"><span class="pill">#3</span><span class="h h-md">Glycine</span></div>
+                <span class="pill">B+</span>
+              </div>
+              <div class="t-sm muted">3g · before bed</div>
+            </div>
+          </div>
+
+          <div class="row" style="gap:6px;margin-top:8px;">
+            <div class="btn grow">Explain</div>
+            <div class="btn primary grow">+ Add to stack</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Ranked results as scannable cards. Evidence grade + dose front-and-center.</div>
+    </div>
+
+    <!-- C: Split — answer + evidence drawer -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">Evidence-forward</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">answer</div>
+          <div class="h h-md" style="margin:4px 0 6px;">Try magnesium<br>glycinate first.</div>
+          <div class="t muted">200–400mg, 45min before bed. Expect effect in ~1 week.</div>
+
+          <div style="margin-top:14px;" class="box fill">
+            <div class="row between">
+              <span class="lbl">why this first</span>
+              <span class="pill accent">evidence A</span>
+            </div>
+            <div class="ev-meter" style="margin-top:6px;">
+              <span class="ev-pip on a"></span><span class="ev-pip on a"></span>
+              <span class="ev-pip on a"></span><span class="ev-pip on a"></span>
+              <span class="ev-pip"></span>
+            </div>
+            <div class="t" style="margin-top:6px;">4 RCTs · sleep onset ↓ 17min · safe long-term</div>
+            <div class="t-sm muted" style="margin-top:4px;">Source: Sleep guide · updated Mar</div>
+          </div>
+
+          <div class="lbl" style="margin-top:12px;">also considered</div>
+          <div class="list-item"><span class="bullet"></span><div class="grow t">Melatonin</div><span class="pill">A</span></div>
+          <div class="list-item"><span class="bullet"></span><div class="grow t">Glycine</div><span class="pill">B+</span></div>
+          <div class="list-item"><span class="bullet"></span><div class="grow t-sm muted">L-theanine</div><span class="pill">C</span></div>
+
+          <div class="btn accent block" style="margin-top:10px;">Add magnesium to stack</div>
+        </div>
+      </div>
+      <div class="variant-note">One clear recommendation + the receipts. Ruthlessly opinionated.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: SUPPLEMENT DETAIL ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Supplement detail</h2>
+  </div>
+  <p class="section-desc">The deep-dive page. How much evidence do we show, and how?</p>
+
+  <div class="grid">
+    <!-- A: At-a-glance -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">TL;DR card</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between"><span class="lbl">← sleep</span><span class="lbl">♡ save</span></div>
+
+          <div class="h h-xl" style="margin:10px 0 0;">Magnesium</div>
+          <div class="t muted">glycinate form</div>
+
+          <div style="margin-top:14px;" class="box">
+            <div class="row between">
+              <div class="col" style="gap:2px;"><div class="lbl">dose</div><div class="h h-md">200–400mg</div></div>
+              <div class="col" style="gap:2px;"><div class="lbl">timing</div><div class="h h-md">45m pre-bed</div></div>
+              <div class="col" style="gap:2px;"><div class="lbl">evidence</div><div class="h h-md">A</div></div>
+            </div>
+          </div>
+
+          <div class="lbl" style="margin-top:14px;">works for</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;">
+            <span class="chip accent">Sleep</span>
+            <span class="chip">Stress</span>
+            <span class="chip">Muscle</span>
+          </div>
+
+          <div class="lbl" style="margin-top:12px;">watch out for</div>
+          <div class="t" style="margin-top:2px;">Citrate form → GI upset at &gt;300mg</div>
+
+          <div style="margin-top:auto;" class="row" style="gap:6px;">
+            <div class="btn grow">Ask about it</div>
+            <div class="btn primary grow">+ Stack</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Everything above fold. Deep evidence tucked behind "Ask about it".</div>
+    </div>
+
+    <!-- B: Tabbed deep dive -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">Tabbed</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between"><span class="lbl">←</span><span class="lbl">⋯</span></div>
+
+          <div class="h h-xl" style="margin:6px 0 2px;">Magnesium</div>
+          <div class="row" style="gap:4px;"><span class="pill accent">A</span><span class="t-sm muted">glycinate · 200–400mg</span></div>
+
+          <div class="row" style="gap:4px;margin-top:14px;border-bottom:var(--stroke) solid var(--ink);padding-bottom:6px;">
+            <span class="chip fill">Overview</span>
+            <span class="chip">Dosing</span>
+            <span class="chip">Evidence</span>
+            <span class="chip">Safety</span>
+          </div>
+
+          <div class="col" style="gap:8px;margin-top:10px;flex:1;">
+            <div class="t-lg"><strong>What it does</strong></div>
+            <div class="line w-90"></div><div class="line w-70"></div><div class="line w-90"></div>
+
+            <div class="t-lg" style="margin-top:6px;"><strong>Best for</strong></div>
+            <div class="line w-70"></div><div class="line w-50"></div>
+
+            <div class="t-lg" style="margin-top:6px;"><strong>Who should skip</strong></div>
+            <div class="line w-90"></div><div class="line w-40"></div>
+          </div>
+
+          <div class="btn accent block">Add to my stack</div>
+        </div>
+      </div>
+      <div class="variant-note">Reference-manual feel. For users who want everything.</div>
+    </div>
+
+    <!-- C: Narrative / scroll -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">Scroll story</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between"><span class="lbl">←</span><span class="lbl">🔖</span></div>
+
+          <div class="lbl" style="margin-top:8px;">mineral · sleep · stress</div>
+          <div class="h h-xl" style="margin:4px 0;">Magnesium</div>
+          <div class="t muted">The one most adults are low on.</div>
+
+          <div style="margin-top:14px;" class="box accent">
+            <div class="t"><strong>Start here:</strong> 200mg glycinate, 45min before bed. Increase weekly up to 400mg if needed.</div>
+          </div>
+
+          <div class="h h-md" style="margin:18px 0 4px;">Why it works</div>
+          <div class="line w-90"></div><div class="line w-90"></div><div class="line w-50"></div>
+
+          <div class="h h-md" style="margin:14px 0 4px;">The evidence</div>
+          <div class="bars">
+            <div class="bar a" style="height:80%;"></div>
+            <div class="bar a" style="height:60%;"></div>
+            <div class="bar a" style="height:70%;"></div>
+            <div class="bar" style="height:35%;"></div>
+            <div class="bar" style="height:20%;"></div>
+          </div>
+          <div class="row between"><span class="t-sm muted">4 RCTs</span><span class="pill accent">A</span></div>
+        </div>
+      </div>
+      <div class="variant-note">Reads like an article. Scroll depth tracked for recommendations.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: TOPIC BROWSE ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Topic browse · 17 guides</h2>
+  </div>
+  <p class="section-desc">The non-chat discovery surface. For users who prefer tapping over typing.</p>
+
+  <div class="grid">
+    <!-- A: Grid of cards -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">Icon grid</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="h h-lg">Explore</div>
+          <div class="t muted">17 evidence-based guides</div>
+
+          <div class="input" style="margin-top:10px;">🔍 Search a topic...</div>
+
+          <div style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1;">
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>😴</span><span class="t-sm">Sleep</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>🧘</span><span class="t-sm">Stress</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>😊</span><span class="t-sm">Mood</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>💪</span><span class="t-sm">Muscle</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>🔥</span><span class="t-sm">Fat loss</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>🧠</span><span class="t-sm">Focus</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>❤️</span><span class="t-sm">Heart</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>🦴</span><span class="t-sm">Joints</span></div>
+            <div class="box" style="aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px;"><span>🛡️</span><span class="t-sm">Immunity</span></div>
+          </div>
+
+          <div class="t-sm muted" style="text-align:center;margin-top:6px;">+ 8 more</div>
+        </div>
+      </div>
+      <div class="variant-note">Classic. Scannable. Each cell is a full guide + curated stack.</div>
+    </div>
+
+    <!-- B: List with stacks -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">Featured list</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="h h-lg">Guides</div>
+
+          <div class="row" style="gap:4px;margin-top:10px;overflow-x:auto;">
+            <span class="chip fill">All</span>
+            <span class="chip">Sleep</span>
+            <span class="chip">Energy</span>
+            <span class="chip">Body</span>
+            <span class="chip">Mind</span>
+          </div>
+
+          <div class="col" style="gap:8px;margin-top:12px;flex:1;">
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="h h-md">😴 Sleep</div>
+                <span class="t-sm muted">6 supps</span>
+              </div>
+              <div class="t-sm muted" style="margin-top:3px;">Magnesium · Melatonin · Glycine...</div>
+              <div class="ev-meter" style="margin-top:6px;">
+                <span class="ev-pip on a"></span><span class="ev-pip on a"></span>
+                <span class="ev-pip on a"></span><span class="ev-pip on"></span>
+                <span class="ev-pip"></span>
+              </div>
+            </div>
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="h h-md">🧘 Stress</div>
+                <span class="t-sm muted">5 supps</span>
+              </div>
+              <div class="t-sm muted" style="margin-top:3px;">Ashwagandha · L-theanine...</div>
+              <div class="ev-meter" style="margin-top:6px;">
+                <span class="ev-pip on a"></span><span class="ev-pip on a"></span>
+                <span class="ev-pip on a"></span><span class="ev-pip"></span>
+                <span class="ev-pip"></span>
+              </div>
+            </div>
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="h h-md">💪 Muscle</div>
+                <span class="t-sm muted">4 supps</span>
+              </div>
+              <div class="t-sm muted" style="margin-top:3px;">Creatine · Whey · Beta-alanine...</div>
+              <div class="ev-meter" style="margin-top:6px;">
+                <span class="ev-pip on a"></span><span class="ev-pip on a"></span>
+                <span class="ev-pip on a"></span><span class="ev-pip on a"></span>
+                <span class="ev-pip"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Each guide shows depth + evidence at-a-glance. Preview the stack inline.</div>
+    </div>
+
+    <!-- C: Library / bookshelf -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">Library</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">guide library</div>
+          <div class="h h-lg">17 topics.<br>One shelf.</div>
+
+          <div class="col" style="gap:10px;margin-top:14px;flex:1;">
+            <div class="lbl">› for you</div>
+            <div style="display:flex;gap:6px;overflow:hidden;">
+              <div style="flex:1;aspect-ratio:3/4;border:var(--stroke) solid var(--ink);border-radius:4px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;background:var(--accent-soft);">
+                <span class="t-sm mono">01</span>
+                <span class="h h-md">Sleep</span>
+              </div>
+              <div style="flex:1;aspect-ratio:3/4;border:var(--stroke) solid var(--ink);border-radius:4px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;">
+                <span class="t-sm mono">02</span>
+                <span class="h h-md">Focus</span>
+              </div>
+              <div style="flex:1;aspect-ratio:3/4;border:var(--stroke) solid var(--ink);border-radius:4px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;">
+                <span class="t-sm mono">03</span>
+                <span class="h h-md">Stress</span>
+              </div>
+            </div>
+
+            <div class="lbl" style="margin-top:6px;">› all guides</div>
+            <div class="list-item"><span class="mono t-sm">04</span><div class="grow t">Muscle gain</div><span class="pill">A</span></div>
+            <div class="list-item"><span class="mono t-sm">05</span><div class="grow t">Fat loss</div><span class="pill">B+</span></div>
+            <div class="list-item"><span class="mono t-sm">06</span><div class="grow t">Heart health</div><span class="pill">A</span></div>
+            <div class="list-item"><span class="mono t-sm">07</span><div class="grow t">Joint health</div><span class="pill">B</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Feels like a curated library. Editorial numbering. Good for content marketing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: MY STACK ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <h2 class="section-title">My stack</h2>
+  </div>
+  <p class="section-desc">What the user is taking. The "return" surface — the reason they come back.</p>
+
+  <div class="grid">
+    <!-- A: Timeline -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">Day timeline</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="h h-lg">My stack</div>
+          <div class="t muted">5 supplements · 3 goals</div>
+
+          <div class="col" style="gap:0;margin-top:14px;flex:1;position:relative;">
+            <div style="position:absolute;left:10px;top:10px;bottom:10px;width:1.6px;background:var(--ink);"></div>
+
+            <div class="row" style="gap:10px;padding:8px 0;align-items:center;">
+              <span class="check done">✓</span>
+              <div class="grow"><div class="t"><strong>8am</strong> · Creatine 5g</div></div>
+              <span class="pill">A</span>
+            </div>
+            <div class="row" style="gap:10px;padding:8px 0;align-items:center;">
+              <span class="check done">✓</span>
+              <div class="grow"><div class="t"><strong>8am</strong> · Vitamin D</div></div>
+              <span class="pill">B+</span>
+            </div>
+            <div class="row" style="gap:10px;padding:8px 0;align-items:center;">
+              <span class="check done">✓</span>
+              <div class="grow"><div class="t"><strong>1pm</strong> · Omega-3</div></div>
+              <span class="pill">A</span>
+            </div>
+            <div class="row" style="gap:10px;padding:8px 0;align-items:center;">
+              <span class="check"></span>
+              <div class="grow"><div class="t"><strong>9pm</strong> · Magnesium</div></div>
+              <span class="pill">A</span>
+            </div>
+            <div class="row" style="gap:10px;padding:8px 0;align-items:center;">
+              <span class="check"></span>
+              <div class="grow"><div class="t"><strong>9pm</strong> · Ashwagandha</div></div>
+              <span class="pill">B</span>
+            </div>
+          </div>
+
+          <div class="btn accent block">+ Add from chat</div>
+        </div>
+      </div>
+      <div class="variant-note">Checklist meets calendar. Reminders hook into time slots.</div>
+    </div>
+
+    <!-- B: Cards by goal -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">By goal</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="row between">
+            <div class="h h-lg">Stack</div>
+            <span class="lbl">edit</span>
+          </div>
+
+          <div class="col" style="gap:10px;margin-top:14px;flex:1;">
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="h h-md">😴 Sleep</div>
+                <span class="t-sm muted">3 supps</span>
+              </div>
+              <div class="list-item"><span class="bullet a"></span><div class="grow t">Magnesium glycinate</div><span class="t-sm muted">9pm</span></div>
+              <div class="list-item"><span class="bullet a"></span><div class="grow t">Glycine</div><span class="t-sm muted">9pm</span></div>
+              <div class="list-item"><span class="bullet"></span><div class="grow t">Ashwagandha</div><span class="t-sm muted">9pm</span></div>
+            </div>
+
+            <div class="box" style="padding:10px;">
+              <div class="row between">
+                <div class="h h-md">💪 Muscle</div>
+                <span class="t-sm muted">1 supp</span>
+              </div>
+              <div class="list-item"><span class="bullet a"></span><div class="grow t">Creatine 5g</div><span class="t-sm muted">AM</span></div>
+            </div>
+
+            <div class="box dashed center" style="padding:14px;text-align:center;">
+              <div class="t muted">+ Add a goal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">Goals as folders. Useful when a user's stack spans several concerns.</div>
+    </div>
+
+    <!-- C: Interaction check -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">Stack health</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="h h-lg">Stack health</div>
+
+          <div style="margin-top:12px;" class="box accent">
+            <div class="row between">
+              <div class="lbl" style="color:var(--accent);">heads up</div>
+              <span class="pill accent">1</span>
+            </div>
+            <div class="t" style="margin-top:6px;"><strong>Zinc + Magnesium</strong> — take 2h apart for best absorption.</div>
+            <div class="t-sm muted" style="margin-top:4px;">Tap to auto-fix timing →</div>
+          </div>
+
+          <div class="lbl" style="margin-top:14px;">coverage</div>
+          <div class="col" style="gap:6px;margin-top:4px;">
+            <div class="row between"><div class="t">Sleep</div><div class="bars" style="flex:1;margin-left:10px;height:14px;"><div class="bar a" style="height:100%;"></div><div class="bar a" style="height:100%;"></div><div class="bar a" style="height:100%;"></div></div></div>
+            <div class="row between"><div class="t">Muscle</div><div class="bars" style="flex:1;margin-left:10px;height:14px;"><div class="bar a" style="height:100%;"></div><div class="bar" style="height:100%;"></div><div class="bar" style="height:100%;"></div></div></div>
+            <div class="row between"><div class="t">Heart</div><div class="bars" style="flex:1;margin-left:10px;height:14px;"><div class="bar a" style="height:100%;"></div><div class="bar a" style="height:100%;"></div><div class="bar" style="height:100%;"></div></div></div>
+          </div>
+
+          <div class="lbl" style="margin-top:14px;">avg evidence</div>
+          <div class="row" style="gap:8px;align-items:center;margin-top:4px;">
+            <div class="h h-xl">A-</div>
+            <div class="t muted">Strong stack. 4 of 5 supps are grade A.</div>
+          </div>
+
+          <div class="btn primary block" style="margin-top:auto;">Review with AI</div>
+        </div>
+      </div>
+      <div class="variant-note">Novel angle: scores the whole stack, flags interactions, suggests fixes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: PROGRESS ==================== -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Progress & check-ins</h2>
+  </div>
+  <p class="section-desc">How do we close the loop — did it actually work? Without turning into another data-logging chore.</p>
+
+  <div class="grid">
+    <!-- A: Light check-in -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">A</span>
+        <span class="variant-title">Quick check</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">sunday check-in</div>
+          <div class="h h-lg" style="margin:4px 0;">How's sleep<br>this week?</div>
+
+          <div class="col" style="gap:6px;margin-top:14px;">
+            <div class="box center" style="padding:12px;font-size:22px;">😴 Way better</div>
+            <div class="box accent center" style="padding:12px;font-size:22px;">🙂 A bit better</div>
+            <div class="box center" style="padding:12px;font-size:22px;">😐 About the same</div>
+            <div class="box center" style="padding:12px;font-size:22px;">😕 Worse</div>
+          </div>
+
+          <div class="ann">One tap. Feeds into "what's working" on home.</div>
+
+          <div class="t-sm muted" style="text-align:center;margin-top:auto;">Skip this week</div>
+        </div>
+      </div>
+      <div class="variant-note">Subjective, weekly, low-effort. Good enough signal without wearables.</div>
+    </div>
+
+    <!-- B: Trends -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">B</span>
+        <span class="variant-title">Trends</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="h h-lg">Progress</div>
+          <div class="row" style="gap:4px;margin-top:4px;">
+            <span class="chip fill">Sleep</span>
+            <span class="chip">Energy</span>
+            <span class="chip">Focus</span>
+          </div>
+
+          <div class="lbl" style="margin-top:14px;">last 8 weeks</div>
+          <div class="bars" style="height:80px;margin-top:4px;">
+            <div class="bar" style="height:30%;"></div>
+            <div class="bar" style="height:40%;"></div>
+            <div class="bar" style="height:35%;"></div>
+            <div class="bar a" style="height:55%;"></div>
+            <div class="bar a" style="height:65%;"></div>
+            <div class="bar a" style="height:70%;"></div>
+            <div class="bar a" style="height:85%;"></div>
+            <div class="bar a" style="height:80%;"></div>
+          </div>
+          <div class="row between" style="margin-top:4px;">
+            <span class="t-sm muted">Feb</span>
+            <span class="t-sm muted">Apr</span>
+          </div>
+
+          <div style="margin-top:14px;" class="box">
+            <div class="lbl">what changed</div>
+            <div class="t" style="margin-top:4px;">+ Added magnesium · Feb 28</div>
+            <div class="t">+ Moved dose to 9pm · Mar 12</div>
+          </div>
+
+          <div class="ann">Correlates interventions with outcomes.</div>
+        </div>
+      </div>
+      <div class="variant-note">Shows cause-effect over time. Gentle gamification without streaks.</div>
+    </div>
+
+    <!-- C: AI summary -->
+    <div class="variant">
+      <div class="variant-head">
+        <span class="variant-tag">C</span>
+        <span class="variant-title">AI recap</span>
+      </div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>●●●</span></div>
+        <div class="screen">
+          <div class="lbl">your month</div>
+          <div class="h h-lg" style="margin:4px 0 12px;">April, in short</div>
+
+          <div class="box fill" style="padding:12px;">
+            <div class="t">Sleep improved ~25% since you added magnesium. Energy flat. Worth trying creatine for afternoon dips?</div>
+          </div>
+
+          <div class="lbl" style="margin-top:14px;">what worked</div>
+          <div class="list-item"><span class="bullet a"></span><div class="grow t">Magnesium for sleep onset</div></div>
+          <div class="list-item"><span class="bullet a"></span><div class="grow t">Earlier caffeine cutoff</div></div>
+
+          <div class="lbl" style="margin-top:10px;">didn't move the needle</div>
+          <div class="list-item"><span class="bullet"></span><div class="grow t muted">Ashwagandha</div><span class="t-sm muted">drop?</span></div>
+
+          <div class="row" style="gap:6px;margin-top:auto;">
+            <div class="btn grow">Keep stack</div>
+            <div class="btn primary grow">Adjust →</div>
+          </div>
+        </div>
+      </div>
+      <div class="variant-note">AI narrates progress, suggests next move. Feels like a friend, not a chart.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="footer-note">
+  <span>wellness ai · wireframes v0.1</span>
+  <span>21 screens · 7 flows · 3 variations each</span>
+  <span>next: pick favorites → hi-fi</span>
+</div>
+
+<!-- Tweaks panel -->
+<div class="tweaks" id="tweaks">
+  <h3>Tweaks <span class="lbl" style="cursor:pointer;" id="tweaks-close">×</span></h3>
+
+  <div class="tweak-row">
+    <label>Accent color</label>
+    <div class="swatches" id="swatches">
+      <div class="swatch" data-accent="#d44a26" data-accent-soft="#f0c9b9" style="background:#d44a26"></div>
+      <div class="swatch" data-accent="#2d6a4f" data-accent-soft="#b7d7c6" style="background:#2d6a4f"></div>
+      <div class="swatch" data-accent="#1d4e89" data-accent-soft="#b9cde0" style="background:#1d4e89"></div>
+      <div class="swatch" data-accent="#7a4fbf" data-accent-soft="#d5c2ed" style="background:#7a4fbf"></div>
+      <div class="swatch" data-accent="#c2831e" data-accent-soft="#ecd9a8" style="background:#c2831e"></div>
+      <div class="swatch" data-accent="#1a1a1a" data-accent-soft="#d7d1c2" style="background:#1a1a1a"></div>
+    </div>
+  </div>
+
+  <div class="tweak-row">
+    <label>Paper tone</label>
+    <div class="swatches" id="paper-swatches">
+      <div class="swatch" data-paper="#f6f3ec" data-paper-2="#efebe0" style="background:#f6f3ec;border-color:#1a1a1a;"></div>
+      <div class="swatch" data-paper="#f4efe4" data-paper-2="#e8e1d0" style="background:#f4efe4"></div>
+      <div class="swatch" data-paper="#fafafa" data-paper-2="#eeeeee" style="background:#fafafa"></div>
+      <div class="swatch" data-paper="#eef3f0" data-paper-2="#dee8e3" style="background:#eef3f0"></div>
+    </div>
+  </div>
+
+  <div class="tweak-row">
+    <label>Sketch intensity <span id="stroke-val" class="mono">1.6px</span></label>
+    <input type="range" id="stroke-slider" min="1" max="3" step="0.2" value="1.6">
+  </div>
+
+  <div class="tweak-row">
+    <label>Handwriting font</label>
+    <select id="font-select">
+      <option value="Kalam">Kalam (balanced)</option>
+      <option value="Caveat">Caveat (loose)</option>
+      <option value="Architects Daughter">Architects Daughter (tight)</option>
+    </select>
+  </div>
+</div>
+
+<script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "#d44a26",
+    "accentSoft": "#f0c9b9",
+    "paper": "#f6f3ec",
+    "paper2": "#efebe0",
+    "stroke": 1.6,
+    "font": "Kalam"
+  }/*EDITMODE-END*/;
+
+  const state = { ...TWEAK_DEFAULTS };
+
+  function apply() {
+    const r = document.documentElement;
+    r.style.setProperty('--accent', state.accent);
+    r.style.setProperty('--accent-soft', state.accentSoft);
+    r.style.setProperty('--paper', state.paper);
+    r.style.setProperty('--paper-2', state.paper2);
+    r.style.setProperty('--stroke', state.stroke + 'px');
+    document.body.style.fontFamily = `'${state.font}', 'Caveat', cursive`;
+    document.getElementById('stroke-val').textContent = state.stroke + 'px';
+
+    // Active swatch state
+    document.querySelectorAll('#swatches .swatch').forEach(s => {
+      s.classList.toggle('active', s.dataset.accent === state.accent);
+    });
+    document.querySelectorAll('#paper-swatches .swatch').forEach(s => {
+      s.classList.toggle('active', s.dataset.paper === state.paper);
+    });
+  }
+
+  function persist() {
+    try {
+      window.parent.postMessage({
+        type: '__edit_mode_set_keys',
+        edits: {
+          accent: state.accent,
+          accentSoft: state.accentSoft,
+          paper: state.paper,
+          paper2: state.paper2,
+          stroke: state.stroke,
+          font: state.font
+        }
+      }, '*');
+    } catch (e) {}
+  }
+
+  // Edit mode protocol
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') document.getElementById('tweaks').classList.add('show');
+    if (d.type === '__deactivate_edit_mode') document.getElementById('tweaks').classList.remove('show');
+  });
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+
+  document.getElementById('tweaks-close').addEventListener('click', () => {
+    document.getElementById('tweaks').classList.remove('show');
+  });
+
+  document.querySelectorAll('#swatches .swatch').forEach(s => {
+    s.addEventListener('click', () => {
+      state.accent = s.dataset.accent;
+      state.accentSoft = s.dataset.accentSoft;
+      apply(); persist();
+    });
+  });
+  document.querySelectorAll('#paper-swatches .swatch').forEach(s => {
+    s.addEventListener('click', () => {
+      state.paper = s.dataset.paper;
+      state.paper2 = s.dataset.paper2;
+      apply(); persist();
+    });
+  });
+  document.getElementById('stroke-slider').addEventListener('input', (e) => {
+    state.stroke = parseFloat(e.target.value);
+    apply(); persist();
+  });
+  document.getElementById('font-select').addEventListener('change', (e) => {
+    state.font = e.target.value;
+    apply(); persist();
+  });
+
+  apply();
+</script>
+</body>
+</html>

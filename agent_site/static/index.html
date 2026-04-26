@@ -171,6 +171,7 @@ function nav(k){
 document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
 const scr=document.getElementById('scr-'+k);if(scr)scr.classList.add('active');
 document.querySelectorAll('.tab-item').forEach(t=>{t.classList.toggle('active',t.dataset.tab===k)});
+document.getElementById('tabbar').style.display=k==='ask'?'none':'flex';
 if(k==='ask'){var ai=document.getElementById('ask-input');if(ai)ai.focus();}
 }
 renderTabbar();

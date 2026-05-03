@@ -579,6 +579,19 @@ document.getElementById('streak-bars').innerHTML=Array.from({length:7}).map((_,i
 <script>
 marked.setOptions({gfm:true,breaks:true});
 function md(t){try{return DOMPurify.sanitize(marked.parse(t||''),{USE_PROFILES:{html:true}})}catch(e){const d=document.createElement('div');d.textContent=t;return d.innerHTML}}
+function streamText(el,raw,cb){
+var words=raw.split(/(\s+)/);var i=0;var buf='';
+var msgs=document.getElementById('ask-messages');
+function tick(){
+var chunk=Math.min(3,words.length-i);
+for(var j=0;j<chunk;j++)buf+=words[i++];
+el.innerHTML=md(buf);
+msgs.scrollTop=msgs.scrollHeight;
+if(i<words.length)requestAnimationFrame(tick);
+else{tagTiers(el);if(cb)cb();}
+}
+requestAnimationFrame(tick);
+}
 
 // iHerb affiliate config — replace YOUR_CODE with your actual referral code
 var IHERB_REF='';
@@ -730,20 +743,17 @@ try{
 const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});
 if(!r.ok)throw new Error('HTTP '+r.status);
 const data=await r.json();
-p.content.innerHTML=md(data.reply);tagTiers(p.content);
+streamText(p.content,data.reply,function(){
 renderSources(p.wrapper,data.sources);
-// Add follow-up suggestion pills
 var followups=generateFollowups(text);
 if(followups.length){
 var fp=document.createElement('div');fp.className='followup-pills';
 fp.innerHTML=followups.map(function(q){return '<span onclick="sendMessage(\''+q.replace(/'/g,"\\'")+'\')">'+q+'</span>'}).join('');
 p.wrapper.appendChild(fp);
 }
-// Add prominent Add-to-stack CTA + iHerb buy for detected supplements
 var topSupp=detectTopSupplement(data.reply);
 if(topSupp){
 var allDetected=detectSuppInText(data.reply);
-// Show add-to-stack CTA for top supplement if not already in stack
 if(!state.stack.find(function(s){return s.id===topSupp.id})){
 var cta=document.createElement('div');
 cta.style.cssText='margin:14px 0 0 0;background:var(--accent);color:white;padding:14px 18px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 20px rgba(233,120,218,.25);cursor:pointer';
@@ -751,7 +761,6 @@ cta.innerHTML='<div><div style="font-size:11px;letter-spacing:.1em;text-transfor
 cta.onclick=function(){openAddToStack(topSupp.id)};
 p.wrapper.appendChild(cta);
 }
-// Show iHerb buy links for all detected supplements
 if(allDetected.length>0){
 var buyRow=document.createElement('div');
 buyRow.style.cssText='margin:10px 0 0 0;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:12px 14px;overflow:hidden';
@@ -765,9 +774,10 @@ p.wrapper.appendChild(buyRow);
 }
 chatHistory.push({role:'assistant',content:data.reply});
 if(typeof saveConversation==='function')saveConversation();
-}catch(err){p.content.innerHTML='<em>Error: '+(err.message||'request failed')+'</em>'}
-finally{btn.disabled=false;document.getElementById('ask-input').focus();
-document.getElementById('ask-messages').scrollTop=document.getElementById('ask-messages').scrollHeight}
+btn.disabled=false;document.getElementById('ask-input').focus();
+});
+}catch(err){p.content.innerHTML='<em>Error: '+(err.message||'request failed')+'</em>';
+btn.disabled=false;}
 }
 function generateFollowups(question){
 var q=question.toLowerCase();

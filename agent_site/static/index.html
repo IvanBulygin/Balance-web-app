@@ -352,6 +352,14 @@ const s=state.stack.find(x=>x.id===id);if(s){s.on=!s.on;saveState();renderStack(
 function finishOnboarding(){
 state.onboarded=true;saveState();nav('today');
 }
+function signOut(){
+if(!confirm('Sign out and clear all local data?'))return;
+localStorage.removeItem(STORAGE_KEY);
+localStorage.removeItem('balance_conversations');
+state={stack:DEFAULT_STACK.map(function(s){return Object.assign({},s)}),taken:{},onboarded:false};
+chatHistory=[];
+nav('onboard',false);
+}
 var state=loadState();
 
 // TAB BAR + NAV
@@ -1088,7 +1096,7 @@ c.innerHTML=`
       {l:'Notifications',v:'On'},
       {l:'Privacy & data'},
       {l:'Help & support'},
-      {l:'Sign out',color:'#e74c3c'}
+      {l:'Sign out',color:'#e74c3c',action:'signOut()'}
     ].map((r,i,a)=>`
     <div ${r.action?`onclick="${r.action}"`:''} style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:${i<a.length-1?'.5px solid var(--rule)':'none'};cursor:pointer">
       <div>

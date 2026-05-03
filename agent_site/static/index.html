@@ -579,29 +579,93 @@ document.getElementById('streak-bars').innerHTML=Array.from({length:7}).map((_,i
 <script>
 marked.setOptions({gfm:true,breaks:true});
 function md(t){try{return DOMPurify.sanitize(marked.parse(t||''),{USE_PROFILES:{html:true}})}catch(e){const d=document.createElement('div');d.textContent=t;return d.innerHTML}}
+
+// iHerb affiliate config — replace YOUR_CODE with your actual referral code
+var IHERB_REF='';
+var IHERB_PRODUCTS={
+magnesium:'https://www.iherb.com/pr/doctor-s-best-high-absorption-magnesium-100-chelated-with-albion-minerals-100-mg-240-tablets/16567',
+creatine:'https://www.iherb.com/pr/optimum-nutrition-micronized-creatine-powder-unflavored-1-32-lb-600-g/27878',
+omega3:'https://www.iherb.com/pr/nordic-naturals-ultimate-omega-lemon-1-280-mg-120-soft-gels/6932',
+vitd3:'https://www.iherb.com/pr/now-foods-high-potency-vitamin-d-3-2-000-iu-120-softgels/10421',
+ashwagandha:'https://www.iherb.com/pr/ksm-66-ashwagandha-by-ixoreal-root-extract-600-mg-60-veggie-capsules/114790',
+zinc:'https://www.iherb.com/pr/now-foods-zinc-picolinate-50-mg-120-veg-capsules/19540',
+melatonin:'https://www.iherb.com/pr/natrol-melatonin-sleep-fast-dissolve-strawberry-5-mg-150-tablets/78301',
+ltheanine:'https://www.iherb.com/pr/now-foods-l-theanine-200-mg-120-veg-capsules/14755',
+coq10:'https://www.iherb.com/pr/doctor-s-best-high-absorption-coq10-with-bioperine-100-mg-120-veggie-caps/15571',
+collagen:'https://www.iherb.com/pr/vital-proteins-collagen-peptides-unflavored-1-25-lbs-567-g/95498',
+probiotics:'https://www.iherb.com/pr/culturelle-digestive-health-probiotic-30-once-daily-capsules/90498',
+rhodiola:'https://www.iherb.com/pr/now-foods-rhodiola-500-mg-60-veg-capsules/14916',
+maca:'https://www.iherb.com/pr/now-foods-maca-500-mg-250-veg-capsules/52548',
+milkthistle:'https://www.iherb.com/pr/now-foods-silymarin-milk-thistle-extract-150-mg-120-veg-capsules/802',
+berberine:'https://www.iherb.com/pr/thorne-berberine-500-60-capsules/18401',
+tongkatali:'https://www.iherb.com/pr/longjack-tongkat-ali-200-1-extract-60-capsules/114325'
+};
+function iherbUrl(id){
+var url=IHERB_PRODUCTS[id];
+if(!url)return '';
+return url+(IHERB_REF?'?rcode='+IHERB_REF:'');
+}
+var SUPP_DETECT=[
+{words:['magnesium'],id:'magnesium',n:'Magnesium'},
+{words:['creatine'],id:'creatine',n:'Creatine'},
+{words:['omega-3','omega 3','fish oil','epa','dha'],id:'omega3',n:'Omega-3'},
+{words:['vitamin d','vit d','d3'],id:'vitd3',n:'Vitamin D3'},
+{words:['ashwagandha','ksm-66'],id:'ashwagandha',n:'Ashwagandha'},
+{words:['zinc'],id:'zinc',n:'Zinc'},
+{words:['melatonin'],id:'melatonin',n:'Melatonin'},
+{words:['l-theanine','theanine'],id:'ltheanine',n:'L-Theanine'},
+{words:['coq10','coenzyme q10','ubiquinol'],id:'coq10',n:'CoQ10'},
+{words:['collagen'],id:'collagen',n:'Collagen'},
+{words:['probiotic','probiotics','lactobacillus'],id:'probiotics',n:'Probiotics'},
+{words:['rhodiola'],id:'rhodiola',n:'Rhodiola'},
+{words:['maca'],id:'maca',n:'Maca'},
+{words:['milk thistle','silymarin'],id:'milkthistle',n:'Milk Thistle'},
+{words:['berberine'],id:'berberine',n:'Berberine'},
+{words:['tongkat ali','longjack'],id:'tongkatali',n:'Tongkat Ali'}
+];
+function detectSuppInText(text){
+text=text.toLowerCase();
+var found=[];
+for(var i=0;i<SUPP_DETECT.length;i++){
+for(var j=0;j<SUPP_DETECT[i].words.length;j++){
+if(text.includes(SUPP_DETECT[i].words[j])){found.push(SUPP_DETECT[i]);break;}
+}}
+return found;
+}
+
 function tagTiers(root){
 const tiers=['primary','secondary','promising','combo','unproven'];
 root.querySelectorAll('ol > li').forEach(li=>{
 const c=li.querySelector(':scope > p > code, :scope > code, :scope > strong + code, p > strong + code');
-if(!c)return;const txt=(c.textContent||'').trim().toLowerCase();
-if(tiers.includes(txt))li.setAttribute('data-tier',txt);
-// Find supplement name from first <strong> and add quick-add button
+if(c){const txt=(c.textContent||'').trim().toLowerCase();
+if(tiers.includes(txt))li.setAttribute('data-tier',txt);}
 const strong=li.querySelector('strong');
 if(!strong)return;
 const name=strong.textContent.trim().toLowerCase();
-let suppId=null;
-if(name.includes('magnesium'))suppId='magnesium';
-else if(name.includes('creatine'))suppId='creatine';
-else if(name.includes('omega'))suppId='omega3';
-else if(name.includes('vitamin d'))suppId='vitd3';
-else if(name.includes('ashwagandha'))suppId='ashwagandha';
+var suppId=null;
+for(var i=0;i<SUPP_DETECT.length;i++){
+for(var j=0;j<SUPP_DETECT[i].words.length;j++){
+if(name.includes(SUPP_DETECT[i].words[j])){suppId=SUPP_DETECT[i].id;break;}}
+if(suppId)break;}
 if(suppId&&!li.querySelector('.add-stack-btn')){
-const btn=document.createElement('div');
+var row=document.createElement('div');
+row.style.cssText='display:flex;gap:6px;margin-top:6px;flex-wrap:wrap';
+var btn=document.createElement('div');
 btn.className='add-stack-btn';
-btn.style.cssText='display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:4px 10px;background:var(--brand-soft);color:var(--brand);border-radius:999px;font-size:11px;font-weight:600;cursor:pointer';
+btn.style.cssText='display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:var(--brand-soft);color:var(--brand);border-radius:999px;font-size:11px;font-weight:600;cursor:pointer';
 btn.innerHTML='<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Add to stack';
 btn.onclick=function(e){e.stopPropagation();openAddToStack(suppId);};
-li.appendChild(btn);
+row.appendChild(btn);
+var url=iherbUrl(suppId);
+if(url){
+var buy=document.createElement('a');
+buy.href=url;buy.target='_blank';buy.rel='noopener';
+buy.style.cssText='display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#3B7A2E;color:#fff;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer;text-decoration:none';
+buy.innerHTML='<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg> Buy on iHerb';
+buy.onclick=function(e){e.stopPropagation();};
+row.appendChild(buy);
+}
+li.appendChild(row);
 }
 });
 }
@@ -673,14 +737,29 @@ var fp=document.createElement('div');fp.className='followup-pills';
 fp.innerHTML=followups.map(function(q){return '<span onclick="sendMessage(\''+q.replace(/'/g,"\\'")+'\')">'+q+'</span>'}).join('');
 p.wrapper.appendChild(fp);
 }
-// Add prominent Add-to-stack CTA if a known supplement is mentioned
+// Add prominent Add-to-stack CTA + iHerb buy for detected supplements
 var topSupp=detectTopSupplement(data.reply);
-if(topSupp&&!state.stack.find(function(s){return s.id===topSupp.id})){
+if(topSupp){
+var allDetected=detectSuppInText(data.reply);
+// Show add-to-stack CTA for top supplement if not already in stack
+if(!state.stack.find(function(s){return s.id===topSupp.id})){
 var cta=document.createElement('div');
 cta.style.cssText='margin:14px 0 0 0;background:var(--accent);color:white;padding:14px 18px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 20px rgba(233,120,218,.25);cursor:pointer';
 cta.innerHTML='<div><div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.85;font-weight:600">Recommended</div><div class="serif" style="font-size:18px;margin-top:2px">Add '+topSupp.n+' to my stack</div></div><div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>';
 cta.onclick=function(){openAddToStack(topSupp.id)};
 p.wrapper.appendChild(cta);
+}
+// Show iHerb buy links for all detected supplements
+if(allDetected.length>0){
+var buyRow=document.createElement('div');
+buyRow.style.cssText='margin:10px 0 0 0;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:12px 14px;overflow:hidden';
+buyRow.innerHTML='<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3B7A2E" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600">Buy on iHerb</span></div>'+
+'<div style="display:flex;flex-wrap:wrap;gap:6px">'+allDetected.map(function(s){
+var url=iherbUrl(s.id);if(!url)return '';
+return '<a href="'+url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;padding:7px 12px;background:#3B7A2E;color:#fff;border-radius:999px;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer">'+s.n+' <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>';
+}).join('')+'</div>';
+p.wrapper.appendChild(buyRow);
+}
 }
 chatHistory.push({role:'assistant',content:data.reply});
 if(typeof saveConversation==='function')saveConversation();
@@ -697,20 +776,8 @@ if(q.includes('muscle')||q.includes('recovery'))return['Loading phase needed?','
 return['Tell me more','Any side effects?','What about timing?','Stack with my current supps?'];
 }
 function detectTopSupplement(reply){
-var text=reply.toLowerCase();
-var supps=[
-{id:'magnesium',n:'Magnesium',words:['magnesium']},
-{id:'creatine',n:'Creatine',words:['creatine']},
-{id:'omega3',n:'Omega-3',words:['omega-3','omega 3','fish oil','epa','dha']},
-{id:'vitd3',n:'Vitamin D3',words:['vitamin d','vit d','d3']},
-{id:'ashwagandha',n:'Ashwagandha',words:['ashwagandha','ksm-66']}
-];
-for(var i=0;i<supps.length;i++){
-for(var j=0;j<supps[i].words.length;j++){
-if(text.includes(supps[i].words[j]))return supps[i];
-}
-}
-return null;
+var found=detectSuppInText(reply);
+return found.length>0?found[0]:null;
 }
 
 // STACK SCREEN — dynamic

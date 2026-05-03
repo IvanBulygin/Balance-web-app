@@ -526,6 +526,7 @@ return `
   </div>
   ${isNext?'<div class="bal-pill accent" style="margin-right:8px;font-size:10px">NEXT</div>':''}
   <div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>
+  ${iherbUrl(it.id)?`<a href="${iherbUrl(it.id)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-left:6px;padding:4px 10px;background:#3B7A2E;color:#fff;border-radius:999px;font-size:10px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:3px;flex-shrink:0">Buy<svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>`:''}
 </div>`;}).join('');
 }
 renderToday();
@@ -871,14 +872,21 @@ sc.innerHTML=`
           <div style="font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${it.n}</div>
           <div style="font-size:12px;color:var(--ink-3);margin-top:1px">${it.dose} &middot; ${it.time}</div>
         </div>
-        ${stackEditMode?`<div onclick="event.stopPropagation();removeFromStack('${it.id}')" style="color:#e74c3c;font-size:12px;font-weight:500;cursor:pointer">Remove</div>`:`<div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>`}
+        ${stackEditMode?`<div onclick="event.stopPropagation();removeFromStack('${it.id}')" style="color:#e74c3c;font-size:12px;font-weight:500;cursor:pointer">Remove</div>`:`<div class="ev-badge ${it.g.toLowerCase()}">${it.g}</div>${iherbUrl(it.id)?'<a href="'+iherbUrl(it.id)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-left:6px;padding:4px 10px;background:#3B7A2E;color:#fff;border-radius:999px;font-size:10px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:3px;flex-shrink:0">Buy<svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>':''}`}
       </div>`).join('')}
     </div>`;
   }).join('')}
   <div onclick="nav('learn')" style="padding:14px;border:1.5px dashed var(--rule);border-radius:16px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:500;cursor:pointer">+ Add a supplement</div>
+  <div onclick="buyEntireStack()" style="margin-top:10px;padding:14px;background:#3B7A2E;color:#fff;border-radius:16px;text-align:center;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(59,122,46,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>Buy entire stack on iHerb</div>
 </div>`;
 }
 renderStack();
+function buyEntireStack(){
+state.stack.forEach(function(s){
+var url=iherbUrl(s.id);
+if(url)window.open(url,'_blank');
+});
+}
 
 // DETAIL SCREEN — supplement deep-dive
 const SUPP_DETAILS={
@@ -1002,7 +1010,18 @@ ${detailTab===0?`<div style="padding:22px 22px 0"><div class="bal-card" style="p
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
     </div>
   </div>`}
-</div>`;
+</div>
+${iherbUrl(id)?`<div style="padding:12px 18px 0">
+  <a href="${iherbUrl(id)}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;background:#3B7A2E;color:#fff;padding:16px 20px;border-radius:16px;text-decoration:none;box-shadow:0 6px 16px rgba(59,122,46,.25)">
+    <div>
+      <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;font-weight:600">Shop verified</div>
+      <div class="serif" style="font-size:20px;margin-top:2px">Buy on iHerb</div>
+    </div>
+    <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </div>
+  </a>
+</div>`:''}`;
 nav('detail');
 }
 
@@ -1051,7 +1070,10 @@ c.innerHTML=`
   <div onclick="confirmAddToStack('${id}','${d.n}','${d.g}')" style="background:var(--brand);color:var(--brand-soft);padding:16px 20px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:15px;cursor:pointer">
     Add to my stack
   </div>
-</div>`;
+</div>
+${iherbUrl(id)?`<div style="padding:12px 18px 0">
+  <a href="${iherbUrl(id)}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#3B7A2E;color:#fff;padding:15px 20px;border-radius:16px;text-decoration:none;font-weight:600;font-size:15px;box-shadow:0 4px 12px rgba(59,122,46,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>Buy ${d.n} on iHerb</a>
+</div>`:''}`;
 const ts=document.getElementById('add-time');if(ts)ts.value=d.time||'morning';
 const gs=document.getElementById('add-goal');if(gs)gs.value=d.goal||'sleep';
 nav('add');
@@ -1608,18 +1630,26 @@ var sel=_vitaminSelected[v.id];
 return '<div onclick="toggleVitaminChoice(\''+v.id+'\')" style="padding:12px;border-radius:14px;border:2px solid '+(sel?'var(--brand)':'var(--rule)')+';background:'+(sel?'var(--brand-soft)':'var(--surface)')+';cursor:pointer;transition:all .15s ease-out;position:relative">'+
 '<div style="font-size:14px;font-weight:600;color:var(--ink)">'+v.n+'</div>'+
 '<div style="font-size:11px;color:var(--ink-3);margin-top:2px">'+v.desc+'</div>'+
-'<div style="display:flex;align-items:center;gap:4px;margin-top:6px"><div class="ev-badge '+v.g.toLowerCase()+'" style="width:18px;height:18px;font-size:9px">'+v.g+'</div><span style="font-size:10px;color:var(--ink-3)">'+v.dose+'</span></div>'+
+'<div style="display:flex;align-items:center;gap:4px;margin-top:6px"><div class="ev-badge '+v.g.toLowerCase()+'" style="width:18px;height:18px;font-size:9px">'+v.g+'</div><span style="font-size:10px;color:var(--ink-3)">'+v.dose+'</span>'+(iherbUrl(v.id)?'<a href="'+iherbUrl(v.id)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-left:auto;padding:2px 7px;background:#3B7A2E;color:#fff;border-radius:999px;font-size:9px;font-weight:600;text-decoration:none">Buy</a>':'')+'</div>'+
 (sel?'<div style="position:absolute;top:6px;right:6px;width:18px;height:18px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></div>':'')+
 '</div>';
 }).join('')+'</div>'+
 '<div onclick="confirmVitaminChoice()" style="background:var(--brand);color:#fff;padding:15px 20px;border-radius:14px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">'+
 'Start with '+count+' supplement'+(count!==1?'s':'')+
 '</div>'+
+'<div onclick="buySelectedVitamins()" style="margin-top:8px;background:#3B7A2E;color:#fff;padding:14px 20px;border-radius:14px;text-align:center;font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>Buy all on iHerb</div>'+
 '<div onclick="closeModal()" style="text-align:center;padding:12px;font-size:13px;color:var(--ink-3);font-weight:500;cursor:pointer">Skip for now</div>';
 }
 window.toggleVitaminChoice=function(id){
 _vitaminSelected[id]=!_vitaminSelected[id];
 renderChooser();
+};
+window.buySelectedVitamins=function(){
+var ids=Object.keys(_vitaminSelected).filter(function(k){return _vitaminSelected[k]});
+ids.forEach(function(id){
+var url=iherbUrl(id);
+if(url)window.open(url,'_blank');
+});
 };
 window.confirmVitaminChoice=function(){
 var newStack=[];

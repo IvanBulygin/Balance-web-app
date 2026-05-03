@@ -582,11 +582,12 @@ function md(t){try{return DOMPurify.sanitize(marked.parse(t||''),{USE_PROFILES:{
 function streamText(el,raw,cb){
 var words=raw.split(/(\s+)/);var i=0;var buf='';
 var msgs=document.getElementById('ask-messages');
+var wrapper=el.closest('.msg-ai')||el.parentElement;
+wrapper.scrollIntoView({behavior:'smooth',block:'start'});
 function tick(){
 var chunk=Math.min(3,words.length-i);
 for(var j=0;j<chunk;j++)buf+=words[i++];
 el.innerHTML=md(buf);
-msgs.scrollTop=msgs.scrollHeight;
 if(i<words.length)requestAnimationFrame(tick);
 else{tagTiers(el);if(cb)cb();}
 }

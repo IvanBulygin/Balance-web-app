@@ -1,453 +1,2322 @@
 Supplement Evidence Database
 
-Sources: Cochrane Reviews, PubMed, peer-reviewed journals
-Total entries: 189 supplement-condition pairs
+A comprehensive evidence-based reference guide containing ratings for 189 supplements across
+multiple health conditions, sourced from Cochrane reviews, PubMed, and peer-reviewed journals.
 
 Evidence Scale:
-0 = HARMFUL — evidence of harm, avoid
-1 = No meaningful evidence
-2 = Slight/preliminary evidence
-3 = Moderate evidence, more research needed
-4 = Good evidence from quality trials
-5 = Strong evidence from multiple trials
-6 = Very strong evidence, well-established
-
-
-HARMFUL SUPPLEMENTS (Score 0) — AVOID
-
-Aloe vera for digestion — HARMFUL. Ingestion causes diarrhea, electrolyte imbalance and kidney dysfunction. Source: Journal of Environmental Science and Health.
-
-Antioxidants for mortality — Taking antioxidants have no health benefits. Beta carotene, vitamin A and vitamin E appear to increase risk of death. Source: Cochrane.
-
-Dong quai for menopause in breast cancer patients — HARMFUL. Long term safety data is non-existent. May increase risk of cancer. Source: Lau et al. 2005.
-
-Folic acid + vitamin B12 for cancer — POTENTIALLY HARMFUL. When combined with vitamin B12 can be associated with increased cancer risk. Source: Cochrane.
-
-Fish oil / omega 3 for prostate cancer — HARMFUL? Recent studies have linked fish oil intake with increased prostate cancer risk. Source: Journal of the National Cancer Institute.
-
-Niacin (vitamin B3) for heart disease — POTENTIALLY HARMFUL. Has long been thought effective for heart disease, but recent findings show it does not help and can have severe adverse effects. Source: New England Journal of Medicine.
-
-Pau d'arco as decongestant — HARMFUL. Highly toxic. If used at all, should be used with extreme caution. Source: Oncology Nursing Forum.
-
-Valerian for insomnia — HARMFUL? No significant differences between valerian and placebo. May have adverse side effects. Source: Sleep Medicine Reviews.
-
-Vitamin A (high dose) for birth defects — HARMFUL. High doses (10,000 IU/day) can cause birth defects. Source: PubMed.
-
-Vitamin E (high dose) for mortality — HARMFUL? High dosages might increase all-cause mortality. Source: American College of Physicians.
-
-
-STRONG EVIDENCE (Score 5-6)
-
-Coffee for heart disease — Score 6. A metastudy found the more coffee a person drinks, the lower their risk of cardiovascular disease. Optimum: 3-5 cups per day. Source: Epidemiology and Prevention.
-
-Agnus castus (vitex) for PMS — Score 5. Helps improve PMS symptoms. Source: Archives of Gynecology and Obstetrics.
-
-Caffeine for memory — Score 5. Enhances consolidation of long-term memories. Improves memory in young adults during non-optimal time of day. Source: Borota et al 2014; Frontiers in Psychology.
-
-Calcium + vitamin D for bone health — Score 5. Review of 8 studies (30,970 participants): reduced total fracture risk by 15% and hip fracture risk by 30%. Source: Osteoporosis International.
-
-Cannabis for Multiple Sclerosis — Score 5. Improved muscle spasms, pain, sleep quality, and mobility. Cannabis-based drug Sativex approved in 30 countries. Source: Journal of Ethnopharmacology.
-
-Eggshell membrane for joints/arthritis — Score 5. Increases cell production and decreases inflammation. 500mg/day gives rapid results. Source: Cochrane.
-
-Feverfew for migraines — Score 5. Reduces migraine frequency by just over half a migraine per month. Source: Cochrane.
-
-Fish oil / omega 3 in pregnancy for preterm birth — Score 5. Meta-analysis concluded preterm and early preterm birth were reduced in women receiving omega-3. Source: Cochrane.
-
-Folic acid for birth defects — Score 5. Helps prevent birth defects, but timing of supplementation is important. Source: Cochrane.
-
-Hawthorn for chronic heart failure — Score 5. Improves heart function, increases functional capacity, alleviates symptoms, improves quality of life. Very favourable safety profile. Source: American Journal of Cardiovascular Drugs.
-
-Peppermint oil for IBS — Score 5. Relaxes muscles, relieves IBS-related spasms. May be more effective than conventional anti-spasmodics. Source: Cochrane.
-
-Probiotics for antibiotic-associated diarrhea — Score 5. Effective for preventing diarrhea associated with antibiotic use. Source: Cochrane.
-
-Zinc for pneumonia in children — Score 5. Reduces incidence and prevalence of pneumonia in children. Source: Cochrane, WHO.
-
-
-CARDIOVASCULAR HEALTH
-
-Calcium for blood pressure — Score 4. Extra calcium can slightly reduce blood pressure, especially in people younger than 35. Source: Cochrane.
-
-Chlorella for blood pressure, cholesterol — Score 4. Significantly decreases blood pressure, blood glucose, and some cholesterols. Source: Clinical Nutrition.
-
-Horse chestnut seed extract for chronic venous insufficiency — Score 4. Effective treatment. Source: Cochrane.
-
-Coffee for mortality — Score 3. Large study of 650,000+ people: coffee drinking reduced all-cause mortality (instant, ground, or decaf). Source: JAMA Internal Medicine.
-
-Dark chocolate for blood pressure — Score 3. Flavanols in cocoa widen blood vessels, causing minor blood pressure drop. Source: Cochrane.
-
-Ecklonia cava seaweed for cholesterol — Score 3. Evidence for decreasing total and LDL cholesterol. Source: Marine Drugs.
-
-Hawthorn for blood pressure — Score 3. Mixed results, some studies positive. Larger trials needed. Source: Cochrane.
-
-Magnesium for blood pressure — Score 3. Low dietary magnesium linked to high blood pressure. Supplementation might be effective as preventative. Source: International Journal of Cardiology.
-
-Coconut oil for obesity — Score 3. 30ml/day might reduce waist size. Source: Cochrane.
-
-Green tea for cholesterol — Score 2. Might reduce total cholesterol, but trials small and biased. Source: Cochrane.
-
-Resveratrol for heart health — Score 2. May have cardioprotective benefits. Source: Tomé-Carneiro et al 2013.
-
-Spirulina for blood pressure — Score 1. Very preliminary evidence. Source: Journal of Medicinal Food.
-
-Garlic for blood pressure — Score 1. Might reduce blood pressure but further research required. Source: Cochrane.
-
-Olive leaf extract for blood pressure — Score 1. One small study found beneficial effects. Source: British Journal of Nutrition.
-
-Omega 6 for heart health — Score 1. No benefit. Source: British Medical Journal.
-
-Omega 3 ALA for heart disease — Score 1. Insufficient evidence. Source: Cochrane.
-
-Vitamin D for cardiovascular disease — Score 1. Large trial (83,000+ participants) found no benefit. Source: JAMA; NEJM.
-
-Vitamin K for cardiovascular disease — Score 1. More evidence needed. Source: Cochrane.
-
-
-MENTAL HEALTH & COGNITION
-
-Caffeine for memory — Score 5. Enhances long-term memory consolidation. Source: Borota et al 2014.
-
-Vitamin B for schizophrenia — Score 4. Review of 18 studies: B vitamins reduced psychiatric symptoms significantly. Source: Psychological Medicine.
-
-L-tyrosine for alertness, wakefulness, memory — Score 4. Slightly improves working memory and information processing under strain. Source: Pharmacology Biochemistry and Behaviour.
-
-Ashwagandha for anxiety and stress — Score 4. Review of 5 human trials: reduces anxiety and stress. Source: Journal of Alternative and Complementary Medicine.
-
-St John's wort for depression — Score 4. Performs better than placebo, comparable to antidepressants with fewer side effects. Source: Cochrane.
-
-GABA for stress/anxiety — Score 3. Some suggestive evidence. Source: Frontiers in Neuroscience.
-
-Vitamin B8 for OCD/panic disorder — Score 3. Several small studies suggest anti-anxiety effects. Source: Journal of Clinical Pharmacology.
-
-L-tyrosine for depression — Score 3. May help by maintaining neurotransmitters affecting mood. Source: Pharmacology Biochemistry and Behaviour.
-
-Tryptophan/5-HTP for depression in women — Score 3. Might alleviate depression, but studies unreliable. Source: Cochrane.
-
-Magnesium + vitamin B6 for child ADHD — Score 3. Children with ADHD tend to have low levels. Unclear if supplementation reduces symptoms. Source: Magnes Restauracja.
-
-DHEA for memory in young men — Score 3. Might improve memory in young men. Source: Cochrane.
-
-Creatine + CoQ10 for cognition — Score 3. No effect in normal brain function, but can benefit those with impaired brain function. Source: European Neurology.
-
-Turmeric for memory — Score 2. Small but high-quality study: 90mg curcumin twice daily improved memory in adults without dementia. Source: American Journal of Geriatric Psychiatry.
-
-Melatonin for sleep disturbances — Score 2. Can help regulate body clock, but evidence is low quality and effects vary. Source: Cochrane.
-
-Caffeine for Alzheimer's/dementia — Score 2. Appears to slow cognitive decline, results not definitive. Source: Santos et al 2010.
-
-Kava for anxiety — Score 2. Might have small significant effect, safety of long-term use unclear. Source: Cochrane.
-
-Lavender for depression/anxiety — Score 2. Suggestive evidence for reduced anxiety, no effect on depression. Source: Examine.com.
-
-Saffron for depression — Score 2. Possible anti-depressant effect, solid evidence lacking. Source: Journal of Affective Disorders.
-
-Turmeric for depression — Score 2. May have benefits but poor bioavailability. Source: Phytotherapy Research.
-
-Vitamin B for Alzheimer's — Score 2. Slows brain shrinkage and reduces brain cell death. Source: PNAS.
-
-Vitamin B8 for depression — Score 2. Evidence unclear. Source: Cochrane.
-
-Piracetam for memory/dementia — Score 2. Evidence does not support use for cognitive impairment. Source: Cochrane.
-
-Fish oil/omega 3 for depression — Score 2. Low quality evidence. Source: Cochrane.
-
-Fish oil/omega 3 for psychosis — Score 2. One study: delayed onset of psychosis in at-risk individuals. Source: Nature Communications.
-
-N-acetyl cysteine (NAC) for OCD/addiction — Score 1. Might improve glutamate function in the brain. Source: Clinical Psychopharmacology and Neuroscience.
-
-Omega 3 for child ADHD — Score 1. Insufficient evidence. Source: Cochrane.
-
-Fish oil/omega 3 for Alzheimer's — Score 1. Largest and longest study found no significant impact on cognitive decline. Source: JAMA.
-
-Ginkgo biloba for dementia — Score 1. Insufficient clinical trial evidence. Source: University of Oxford.
-
-Ginseng for cognitive performance — Score 1. No convincing evidence. Source: Cochrane.
-
-Lavender for sleep/relaxation — Score 1. One tiny study found slight benefit. Source: Perceptual and Motor Skills.
-
-SAM-e for depression — Score 1. Review of 8 studies showed no strong evidence as monotherapy. Source: Cochrane.
-
-Silicic acid for Alzheimer's — Score 1. Might help by decreasing aluminium in body. Source: PubMed.
-
-Valerian for anxiety — Score 1. No difference from placebo. Source: Cochrane.
-
-Vitamin D for depression — Score 1. Low vitamin D associated with depression, but causation uncertain. Source: British Journal of Psychology.
-
-Colostrinin for Alzheimer's — Score 1. A few small studies suggest possible effects. Source: Journal of Nutritional Health and Aging.
-
-
-DIGESTION & GUT HEALTH
-
-Peppermint oil for IBS — Score 5. Relaxes muscles, relieves spasms. May be more effective than conventional treatments. Source: Cochrane.
-
-Probiotics for diarrhea — Score 5. Effective for preventing antibiotic-associated diarrhea. Source: Cochrane.
-
-Ginger for nausea and vomiting — Score 4. Prevents nausea and vomiting in certain circumstances. Source: Annals of Oncology.
-
-Cannabis for chemotherapy nausea — Score 4. Promising evidence. FDA approved 2 synthetic cannabis drugs for chemo nausea. Source: Cochrane.
-
-Turmeric for peptic ulcer/ulcerative colitis — Score 3. May be effective when combined with conventional medications. Source: Cochrane.
-
-Probiotics for IBS — Score 3. B. infantis 35624 improves symptoms (pain, bloating). Evidence for other strains limited. Source: PubMed.
-
-Probiotics for cholesterol/blood pressure — Score 3. Conflicting evidence. Source: International Journal of Molecular Sciences.
-
-Chamomile for bowel disorders — Score 1. No high-quality trials. Source: Der Pharma Chemica.
-
-Glutamine for gastrointestinal disease — Score 1. Insufficient evidence. Source: Cochrane.
-
-Fish oil/omega 3 for Crohn's disease — Score 1. No beneficial effect. Source: Cochrane.
-
-
-MUSCULOSKELETAL & JOINTS
-
-Calcium + vitamin D for bone health — Score 5. Reduced fracture risk by 15%, hip fracture by 30%. Source: Osteoporosis International.
-
-Eggshell membrane for joints/arthritis — Score 5. Rapid results at 500mg/day. Source: Cochrane.
-
-Vitamin D for bone health — Score 4. Increases bone density and prevents fractures in deficient individuals. Source: American Journal of Clinical Nutrition.
-
-Vitamin K2 for osteoporosis — Score 4. Repeatedly shown to improve bone strength, particularly in post-menopausal women. Source: Osteoporosis International.
-
-Abatacept for osteoarthritis — Score 4. Reduces joint pain and improves function. Source: Cochrane.
-
-Borage seed oil for rheumatoid arthritis — Score 4. Improves pain and function, probably no adverse effects. Source: Cochrane.
-
-Devil's claw for arthritis — Score 4. Reduces lower back pain by blocking inflammation pathways. Source: Cochrane.
-
-Iron for child development — Score 4. May benefit psychomotor development. Source: PubMed.
-
-Calcium for osteoporosis (postmenopausal) — Score 3. Might prevent fractures, contradictory results. Source: PubMed.
-
-Glucosamine for arthritis — Score 3. Some brands (Rotta) showed benefit, others showed no difference from placebo. Source: Cochrane.
-
-Bromelain for arthritis — Score 3. Reduces symptoms, more dosage research needed. Source: Annals of Internal Medicine.
-
-Hyaluronic acid for arthritis (injected) — Score 2. Might have small effect, trials biased. Source: PubMed.
-
-MSM for arthritis — Score 2. Slight reduction in pain, may not be clinically significant. Source: BMC Complementary Medicine.
-
-Horsetail for osteoporosis — Score 2. Small old study showed improved bone density. Source: Cochrane.
-
-Lingzhi + san miao san for arthritis — Score 2. May reduce pain, no other significant benefits. Source: American Journal of Clinical Nutrition.
-
-Ashwagandha for rheumatoid arthritis — Score 2. No solid evidence. Source: Indian Journal of Medical Research.
-
-Elk velvet antler for arthritis — Score 1. No good quality evidence. Source: New Zealand Medical Journal.
-
-
-INFECTIONS & IMMUNITY
-
-Zinc for pneumonia (children) — Score 5. Reduces incidence and prevalence. Source: Cochrane, WHO.
-
-Zinc for colds — Score 4. Oral zinc may shorten cold symptoms. Side effects can be common. Source: CMAJ.
-
-Vitamin A for child mortality/diarrhea — Score 4. Reduces overall death risk by 12%, reduces new occurrences of diarrhea and measles. Source: Cochrane, WHO.
-
-Iron + folic acid for maternal health — Score 4. Reduces iron deficiency anaemia in pregnancy. Source: Cochrane.
-
-Vitamin C for colds — Score 4. Does not reduce incidence but shortens duration. For extreme physical stress (marathon runners), halves cold risk. Source: Cochrane.
-
-Echinacea for colds — Score 3. Might have slight impact, statistically insignificant. Source: Cochrane.
-
-Vitamin D for flu — Score 3. Children taking D3: 10.8% contracted influenza vs 18.6% placebo. Reduced flu-related asthma attacks. Source: Urashima et al. 2010.
-
-Dandelion for tonsillitis — Score 3. Might have antimicrobial properties. Source: Evidence-Based Health Care.
-
-Astragalus for chronic kidney disease — Score 3. Low quality evidence when combined with conventional treatments. Source: Cochrane.
-
-Beta glucans for colds/immune system — Score 2. Reduced colds by 25% and severity by 15%. Source: Molecular Nutrition and Food Research.
-
-Astragalus for immune system — Score 2. Limited studies suggest immune strengthening. Source: Block, Mead 2003.
-
-Milk thistle for hepatitis/diabetes — Score 2. Might be beneficial, trials low quality. Source: Cochrane.
-
-Andrographis for respiratory infections — Score 1. Slight evidence of reduced symptoms. Source: Otolaryngologic Clinics.
-
-Garlic for colds — Score 1. Insufficient evidence. Source: Cochrane.
-
-Elderberry for flu — Score 1. Sambucol may be useful, more rigorous studies needed. Source: Phytotherapy Research.
-
-Slippery elm for sore throat — Score 1. No clinical evidence. Source: Pediatrics in Review.
-
-L-lysine for herpes — Score 1. No evidence of preventative effect. Source: Cochrane.
-
-
-DIABETES & BLOOD SUGAR
-
-Myo-inositol for gestational diabetes — Score 4. Potential benefit for reducing incidence. Source: Cochrane.
-
-Benfotiamine for anti-aging/diabetes — Score 3. High-dose study showed no significant effects over 24 months. Source: Cochrane.
-
-L-carnitine for diabetes — Score 3. May alleviate diabetic neuropathy. Source: Diabetes Care.
-
-CoQ10 for diabetes — Score 3. Improves insulin secretion in type 2 diabetes, but trials tiny. Source: Biofactors.
-
-Aloe vera for diabetes — Score 2. One study: 300mg capsule every 12 hours for 2 months benefited patients with dyslipidemia. Source: Planta Medica.
-
-Chromium for diabetes — Score 2. Might lower blood glucose. Source: Cochrane.
-
-Resveratrol for diabetes — Score 2. Preliminary evidence for relieving symptoms. Source: British Journal of Nutrition.
-
-Vitamin D for diabetes — Score 2. Association unclear. Source: Annals of Internal Medicine.
-
-Bitter melon for diabetes — Score 1. Not enough evidence. Source: Cochrane.
-
-Cinnamon for diabetes — Score 1. No more effective than placebo. Source: Cochrane.
-
-Fish oil/omega 3 for diabetes — Score 1. Probably no beneficial effect for type 2. Source: Cochrane.
-
-
-CANCER
-
-Calcium for colorectal cancer — Score 4. No evidence of preventing cancer itself, but inhibits pre-cancerous polyps. Source: Cochrane.
-
-Cannabis for chronic pain — Score 4. Modestly effective, but harms may outweigh benefits. Source: Cochrane.
-
-Green tea for cancer prevention — Score 3. Evidence conflicting, but 3-5 cups/day may have general benefits. Source: Cochrane.
-
-Garlic for cancer prevention — Score 3. Might prevent certain cancers, WHO recommends 1 clove/day for general health. Source: National Cancer Institute.
-
-Fish oil/omega 3 for colorectal cancer — Score 3. Thought to reduce risk. Source: PubMed.
-
-Cannabis for glaucoma — Score 3. Lowers eye pressure but only temporarily (3-4 hours). Source: American Glaucoma Society.
-
-Mistletoe for breast/neck cancers — Score 3. Preliminary evidence for improving quality of life in breast cancer patients. Source: Cochrane.
-
-Vitamin K2 for prostate cancer — Score 3. No conclusive evidence. Source: American Journal of Clinical Nutrition.
-
-Turmeric for cancer — Score 2. Might have anti-cancer effects on colon, pancreatic cancer. Source: PubMed.
-
-Reishi mushroom for cancer — Score 2. Possible effect on chemotherapy recovery. Source: Cochrane.
-
-Lycopene for prostate cancer — Score 2. Insufficient evidence. Source: Cochrane.
-
-Caffeine for skin cancer — Score 2. Population studies show possible lower risk with 3+ cups/day. Source: Song et al. 2012.
-
-Garlic for cancer treatment — Score 2. Aged garlic may have beneficial effects. More trials needed. Source: International Journal of Preventative Medicine.
-
-Fish oil/omega 3 for cancer symptoms — Score 2. Can counter chemotherapy damage to white blood cells. Source: Lipids.
-
-Calcium + vitamin D for breast cancer — Score 2. No firm evidence of decreased risk. Source: Cochrane.
-
-Vitamin B3 for skin cancer — Score 2. May prevent skin cancer. Source: International Journal of Cancer.
-
-Vitamin D for cancer — Score 1. Largest trial (25,871 participants, 5 years): no lower incidence. Source: NEJM.
-
-Selenium for cancer — Score 1. Insufficient evidence. Source: Cochrane.
-
-Resveratrol for cancer — Score 1. No human trials. Source: Cancer Letters.
-
-Green tea for cancer — Score 1. No clear association. Source: Nutrition and Cancer.
-
-Beta glucans for cancer — Score 1. No human trials. Source: Evidence-Based CAM.
-
-Cat's claw for cancer — Score 1. No human trials. Source: Anticancer Research.
-
-Bee pollen for cancer — Score 1. No evidence. Source: European Journal of Medicinal Chemistry.
-
-Beta-carotene for cancer — Score 1. No evidence of prevention. Source: PubMed.
-
-Flax seeds for breast cancer — Score 1. Population studies indicate slight possibility. No controlled trials. Source: Cancer Causes Control.
-
-
-REPRODUCTIVE & SEXUAL HEALTH
-
-Antioxidants for male infertility — Score 3. Evidence inconclusive. Source: Cochrane.
-
-Ashwagandha for erectile dysfunction — Score 2. Single pilot study: appeared to increase sperm count. Source: Evidence-based CAM.
-
-Probiotics for candida — Score 2. Very low quality evidence. Source: Cochrane.
-
-Fish oil/omega 3 for low sperm count — Score 1. Small study of 211 men: significant increase in sperm count. Source: Cochrane.
-
-Krill oil for PMS — Score 1. One study: reduced emotional and physical PMS symptoms. Source: PubMed.
-
-Evening primrose oil for PMS — Score 1. No more effective than placebo. Source: Journal of Psychosomatic Obstetrics.
-
-St John's wort for PMS — Score 1. No effect on emotional or physical symptoms. Source: CNS Drugs.
-
-Cranberry for urinary tract infections — Score 1. No statistically significant evidence. Source: Cochrane.
-
-Probiotics for UTIs — Score 1. No significant evidence. Source: Cochrane.
-
-Saw palmetto for prostate problems — Score 1. No evidence of improvement. Source: Cochrane.
-
-Nettle for prostate urinary problems — Score 1. Might be effective, no recent studies. Source: PubMed.
-
-
-SKIN, EYE & GENERAL HEALTH
-
-Vitamin D for general health/mortality — Score 4. D3 may reduce mortality. About 150 treated over 5 years for one saved life. Source: Cochrane.
-
-Vitamin D for asthma attacks — Score 3. Some protection in mild-to-moderate asthma adults. Source: Cochrane.
-
-Xylitol for ear infections — Score 4. Reduced middle ear infections from 30% to 22% in children. Source: Cochrane.
-
-Borage/evening primrose oil for eczema — Score 1. Review of 27 studies: no evidence. Source: Cochrane.
-
-Lutein for macular degeneration — Score 1. May have little or no effect. Source: Cochrane.
-
-Goji berry for eye health — Score 1. Some improvements for seniors, more research needed. Source: Optometry and Vision Science.
-
-Aloe vera for burns/cuts — Score 1. No high quality evidence. Source: Cochrane.
-
-Coconut oil for obesity — Score 3. 30ml/day might reduce waist size. Source: Cochrane.
-
-Carnosine for anti-aging — Score 1. Promising in mice, no human trials. Source: Molecules in Focus.
-
-Capsaicin for non-allergic rhinitis — Score 1. Low quality evidence. Source: Cochrane.
-
-Grape seed extract for wound healing — Score 1. Preliminary evidence. Source: Examine.com.
-
-DHEA for aging — Score 1. No beneficial impact on body composition or performance. Source: PubMed.
-
-Leucine for protein synthesis — Score 1. One tiny trial: may speed recovery during exercise. Source: Pasiakos et al. 2011.
-
-L-arginine for exercise performance — Score 1. One tiny study found benefit. Source: Journal of Applied Physiology.
-
-Vitamin E for Alzheimer's — Score 2. No to slight evidence. Source: Cochrane.
-
-Xylitol for teeth — Score 2. Some evidence of reduced decay by 13%, low quality. Source: Cochrane.
-
-Taurine for weight loss/cholesterol — Score 1. No human trials. Source: PubMed.
-
-TMG for metabolism — Score 1. No significant effect in humans. Source: Schwab 2002.
-
-Astaxanthin for oxidative stress — Score 1. No human trials. Source: Cochrane; PLoS One.
-
-
-PAIN
-
-Feverfew for migraines — Score 5. Reduces frequency. Source: Cochrane.
-
-Devil's claw for lower back pain/arthritis — Score 4. Blocks inflammation pathways. Source: Cochrane.
-
-Bromelain for arthritis — Score 3. Reduces symptoms. Source: Annals of Internal Medicine.
-
-Vitamin B2 for migraines — Score 2. May reduce frequency. Source: Neurological Science.
-
-Butterbur for migraines — Score 2. May lower frequency and severity. Source: Neurology.
-
-CoQ10 for migraines — Score 1. Tentative evidence. Source: Sage.
-
-
-FATIGUE & ENERGY
-
-Rhodiola rosea for fatigue — Score 2. Effective but trial quality questionable. Source: Complementary and Alternative Medicine.
-
-
-WOMEN'S HEALTH
-
-Agnus castus (vitex) for PMS — Score 5. Helps improve PMS symptoms. Source: Archives of Gynecology and Obstetrics.
-
-Fish oil/omega 3 in pregnancy for preterm birth — Score 5. Reduces preterm birth. Source: Cochrane.
-
-Folic acid for birth defects — Score 5. Prevents birth defects with proper timing. Source: Cochrane.
-
-Iron + folic acid for maternal health — Score 4. Reduces anaemia in pregnancy. Source: Cochrane.
-
-Myo-inositol for gestational diabetes — Score 4. Potential benefit. Source: Cochrane.
-
-Black cohosh for menopause — Score 2. Insufficient evidence. Source: Cochrane.
+0 = Harmful or potentially harmful (avoid)
+1 = No evidence or insufficient evidence
+2 = Slight evidence (preliminary or low-quality studies)
+3 = Moderate evidence (some supporting research, more needed)
+4 = Good evidence (well-supported by quality research)
+5 = Strong evidence (robust clinical trial support)
+6 = Very strong evidence (extensive, high-quality research)
+
+Table of Contents
+
+1. Harmful Supplements (Score 0) - Critical Warnings
+2. Cardiovascular Health (Cardio)
+3. Mental Health
+4. Digestive Health (Digestion)
+5. Cancer
+6. Musculoskeletal Health
+7. Infections
+8. Diabetes
+9. Eye and Skin Health
+10. General Health
+11. Reproductive and Sexual Health
+12. Women's Health
+13. Pain
+14. Respiratory Health
+15. Urinary Health
+16. Children's Health
+17. Cognition
+18. Weight Control
+19. Neurological Health
+
+
+==========================================================================
+SECTION 1: HARMFUL SUPPLEMENTS (SCORE 0) - CRITICAL WARNINGS
+==========================================================================
+
+WARNING: The following supplements have been rated as harmful or potentially harmful
+based on clinical evidence. They should be avoided or used only under strict medical
+supervision.
+
+--------------------------------------------------------------------------
+Aloe Vera (Ingestion) - HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Plant / Herb
+Category: Digestion (Digestive Aid)
+Notes: HARMFUL. Never eat. Ingestion can cause diarrhea, electrolyte imbalance and kidney dysfunction.
+Source: Journal of Environmental Science and Health
+Research: http://www.tandfonline.com/doi/abs/10.1080/10590500600614303#.VcDwRZNVhBc
+
+--------------------------------------------------------------------------
+Antioxidants (for Mortality) - HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Compound
+Category: General Health (Mortality)
+Notes: Taking antioxidants have no health benefits. In fact, beta carotene, vitamin A and vitamin E appear to increase the risk of death.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD007176.pub2/abstract
+
+--------------------------------------------------------------------------
+Dong Quai (for Menopause in Breast Cancer Patients) - HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Plant / Herb
+Category: Cancer / Reproductive
+Notes: HARMFUL. Long term safety data is non-existent. May increase risk of cancer.
+Source: Lau et al. 2005
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20833608
+Additional: http://www.ncbi.nlm.nih.gov/pubmed/16278617?dopt=Abstract
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 (for Prostate Cancer) - HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Compound
+Category: Cancer
+Notes: HARMFUL? Recent studies have linked fish oil intake with increased prostate cancer risk.
+Source: Journal of the National Cancer Institute
+Research: http://jnci.oxfordjournals.org/content/early/2013/07/09/jnci.djt174.abstract
+
+--------------------------------------------------------------------------
+Folic Acid (for Cancer) - POTENTIALLY HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Vitamin
+Category: Cancer
+Notes: POTENTIALLY HARMFUL. When combined with vitamin B12 can be associated with increased cancer risk.
+Source: Cochrane
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7527439/
+Additional: http://onlinelibrary.wiley.com/o/cochrane/clsysrev/articles/CD007950/frame.html
+
+--------------------------------------------------------------------------
+Niacin / Vitamin B3 (for Heart Disease) - POTENTIALLY HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Vitamin
+Category: Cardiovascular Health (Cardio)
+Notes: POTENTIALLY HARMFUL. Has long been thought an effective treatment for heart disease, but recent findings show that it does not help, and can have severe adverse effects.
+Source: The New England Journal of Medicine
+Research: http://www.nejm.org/doi/full/10.1056/NEJMoa1300955
+
+--------------------------------------------------------------------------
+Pau d'Arco (for Decongestant) - HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Plant / Herb
+Category: General Health
+Notes: HARMFUL. Highly toxic. If used at all, should be used with extreme caution.
+Source: Oncology Nursing Forum
+Research: https://pdfs.semanticscholar.org/582a/65c49c737111cc5416303877d4c5c0c5a093.pdf
+
+--------------------------------------------------------------------------
+Valerian (for Insomnia) - POTENTIALLY HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Type: Plant / Herb
+Category: Mental Health
+Notes: HARMFUL? No significant differences between valerian and placebo in the treatment of insomnia. Valerian might have a number of adverse side effects.
+Source: Sleep Medicine Reviews
+Research: http://www.sciencedirect.com/science/article/pii/S1087079214001476
+
+--------------------------------------------------------------------------
+Vitamin A / Retinol (for Birth Defects) - HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Alternative Name: Retinol
+Type: Vitamin
+Category: Children
+Notes: HARMFUL. High doses (10,000 IU/per day) can cause birth defects in human and animal infants.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/9431575
+
+--------------------------------------------------------------------------
+Vitamin E / Alpha Tocopherol (for Mortality) - POTENTIALLY HARMFUL
+--------------------------------------------------------------------------
+Evidence Score: 0
+Alternative Name: Alpha Tocopherol
+Type: Vitamin
+Category: General Health
+Notes: HARMFUL? High dosages might increase all-cause mortality. Small amounts can be beneficial, but the line between helpful and dangerous is unclear at this stage.
+Source: American College of Physicians
+Research: http://annals.org/article.aspx?articleid=718049
+
+
+==========================================================================
+SECTION 2: CARDIOVASCULAR HEALTH (CARDIO)
+==========================================================================
+
+--------------------------------------------------------------------------
+Calcium - Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Mineral
+Notes: High quality evidence has shown that extra calcium can slightly reduce blood pressure, especially in people younger than 35.
+Source: Cochrane
+Research: http://www.cochrane.org/CD010037/HTN_extra-calcium-to-prevent-high-blood-pressure
+
+--------------------------------------------------------------------------
+Chlorella - Blood Pressure, Cholesterol, Cardiovascular Disease
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Alternative Name: Algae
+Type: Alga
+Notes: Significantly decreases blood pressure, blood glucose, and some cholesterols. Meta-analysis on 19 RCTs with 797 subjects indicated that Chlorella administration significantly decreased the levels of total cholesterol, low-density lipoprotein cholesterol, systolic blood pressure, diastolic blood pressure, and fasting blood glucose whereas changes in triglycerides, high-density lipoprotein cholesterol, and body mass index were not statistically significant.
+Source: Clinical Nutrition
+Research: https://www.clinicalnutritionjournal.com/article/S0261-5614(17)31351-1/fulltext
+
+--------------------------------------------------------------------------
+Chocolate, Dark - Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: Chemicals known as flavanols, found in cocoa products, are thought to widen blood vessels and cause a minor drop in blood pressure. Further trials are needed to ascertain long-term efficacy. Does not apply to milk chocolate.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD008893.pub2/abstract
+
+--------------------------------------------------------------------------
+Coconut Oil - Obesity
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Category: Cardio / General Health
+Notes: 30ml of coconut oil per day might help to reduce waist size, but possibly because the fat in coconut oil is not as easily stored.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/529/CN-00721529/frame.html
+
+--------------------------------------------------------------------------
+Coffee - Heart Disease
+--------------------------------------------------------------------------
+Evidence Score: 6 (Very Strong Evidence)
+Type: Plant / Herb
+Notes: A metastudy found that the more coffee a person drinks, the lower their risk of cardiovascular disease. The optimum amount of coffee for this benefit was 3-5 per day.
+Source: Epidemiology and Prevention
+Research: http://circ.ahajournals.org/content/129/6/643.long
+
+--------------------------------------------------------------------------
+CoQ10 - Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Alternative Name: Ubiquinol
+Type: Enzyme
+Notes: Pooled data from two trials showed that CoQ10 did not affect blood pressure compared to placebo.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007435/HTN_coenzyme-q10-high-blood-pressure
+
+--------------------------------------------------------------------------
+Ecklonia Cava Seaweed - Cholesterol, Weight Loss
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Alga
+Category: Weight Control / Cardio
+Notes: There is evidence that seaweed supplements can combat several mechanisms behind the onset of cardiovascular disease. Ecklonia in particular has been shown to decrease cholesterol. A review suggests there is evidence that diet supplementation with whole macroalgae or products of macroalgae origin can ameliorate several mechanisms underlying the onset and propagation of CVDs. One study of ecklonia cava in particular (80 subjects) concluded that ECE supplementation improved blood lipid profiles through decreasing total cholesterol and LDL-cholesterol levels which are known as major cardiovascular risk factors. More studies are needed to establish the long-term safety and effectiveness.
+Source: Marine Drugs
+Research: https://www.mdpi.com/1660-3397/13/11/6838/htm
+
+--------------------------------------------------------------------------
+Garlic - Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Garlic might reduce blood pressure, but further research is required.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007653/HTN_garlic-for-hypertension
+
+--------------------------------------------------------------------------
+Green Tea - Cholesterol
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Might help to reduce total cholesterol levels, but trials were small and exposed to bias.
+Source: Cochrane
+Research: http://www.cochrane.org/CD009934/VASC_green-and-black-tea-to-prevent-cardiovascular-disease
+
+--------------------------------------------------------------------------
+Hawthorn - Blood Pressure, Cardiovascular Disease
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Alternative Name: Crataegus spp.
+Type: Fruit
+Notes: Mixed results, with some studies showing no effect and others suggesting positive benefits. Larger, longer-term randomized clinical trials are needed.
+Source: Cochrane; BMC Complementary and Alternative Medicine; Phytotherapy Research
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD005312.pub2/abstract
+Additional: https://bmccomplementalternmed.biomedcentral.com/articles/10.1186/1472-6882-12-26
+Additional: https://onlinelibrary.wiley.com/doi/abs/10.1002/ptr.947
+
+--------------------------------------------------------------------------
+Hawthorn - Chronic Heart Failure
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Alternative Name: Crataegus spp.
+Type: Fruit
+Notes: Hawthorn improves heart function in those with chronic heart failure. Randomized, controlled trials in patients with heart failure have demonstrated that hawthorn increases functional capacity, alleviates disabling symptoms, and improves health-related quality of life. It has a very favourable safety profile both as monotherapy and add-on therapy.
+Source: American Journal of Cardiovascular Drugs
+Research: https://link.springer.com/article/10.1007/s40256-017-0249-9
+
+--------------------------------------------------------------------------
+Horse Chestnut Seed Extract - Chronic Venous Insufficiency (CVI)
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Horse chestnut seed extract is effective in treating chronic venous insufficiency. However, further research is needed.
+Source: Cochrane
+Research: http://www.cochrane.org/CD003230/PVD_horse-chestnut-seed-extract-for-long-term-or-chronic-venous-insufficiency
+
+--------------------------------------------------------------------------
+Magnesium - Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Mineral
+Notes: Low levels of magnesium in the diet are linked to high blood pressure and cholesterol. Magnesium treatment might be effective as a preventative.
+Source: International Journal of Cardiology
+Research: http://www.sciencedirect.com/science/article/pii/S016752731501270X
+
+--------------------------------------------------------------------------
+Niacin / Vitamin B3 - Heart Disease
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Vitamin
+Notes: POTENTIALLY HARMFUL. Has long been thought an effective treatment for heart disease, but recent findings show that it does not help, and can have severe adverse effects.
+Source: The New England Journal of Medicine
+Research: http://www.nejm.org/doi/full/10.1056/NEJMoa1300955
+
+--------------------------------------------------------------------------
+Olive Leaf Extract - Blood Pressure, Cholesterol
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: One study found beneficial effects on vascular health, although the trial was small.
+Source: British Journal of Nutrition
+Research: http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=9860730&fileId=S0007114515001269
+
+--------------------------------------------------------------------------
+Omega 3: ALA - Heart Disease
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Insufficient evidence to claim that omega 3 has any impact on heart health, either in healthy people or those with cardiovascular disease.
+Source: Cochrane
+Research: http://www.cochrane.org/CD003177/VASC_there-is-not-enough-evidence-to-say-that-people-should-stop-taking-rich-sources-of-omega-3-fats-but-further-high-quality-trials-are-needed-to-confirm-the-previously-suggested-protective-effect-of-omega-3-fats-for-those-at-increased-cardiovas
+
+--------------------------------------------------------------------------
+Omega 6 - Heart Health
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: No benefit on heart health.
+Source: British Medical Journal
+Research: http://www.bmj.com/content/346/bmj.e8707
+
+--------------------------------------------------------------------------
+Potassium - Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Mineral
+Notes: Medication that prevents potassium loss has no significant impact on blood pressure at low doses. Trials at high doses are unavailable.
+Source: Cochrane
+Research: http://www.cochrane.org/CD008167/HTN_the-blood-pressure-lowering-effect-of-enac-blockers-is-not-known
+
+--------------------------------------------------------------------------
+Probiotics - Cholesterol, Blood Pressure
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Other
+Notes: Conflicting evidence and unclear results.
+Source: Internal Journal of Molecular Sciences
+Research: http://www.mdpi.com/1422-0067/11/6/2499/htm
+
+--------------------------------------------------------------------------
+Resveratrol - Heart Health
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Resveratrol may have cardioprotective benefits, although scientists do not know quite how it works.
+Source: Tome-Carneiro et al 2013
+Research: http://www.ncbi.nlm.nih.gov/pubmed/23448440
+
+--------------------------------------------------------------------------
+Spirulina - Blood Pressure, Cholesterol
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Very preliminary evidence shows Spirulina reducing blood pressure and lower lipids.
+Source: Journal of Medicinal Food
+Research: http://www.ncbi.nlm.nih.gov/pubmed/19298191
+
+--------------------------------------------------------------------------
+Taurine - Weight Loss, Cholesterol
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Category: General Health / Cardio
+Notes: No human trials.
+Source: PubMed
+Research: https://www.ncbi.nlm.nih.gov/pubmed/15221507
+
+--------------------------------------------------------------------------
+Vitamin D - Cardiovascular Disease
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Vitamin
+Notes: One of the largest and most rigorous trials ever conducted (over 83,000 participants) found that vitamin D supplementation did not result in lower incidence of cardiovascular events.
+Source: JAMA; New England Journal of Medicine
+Research: https://jamanetwork.com/journals/jamacardiology/article-abstract/2735646
+Additional: https://www.nejm.org/doi/full/10.1056/NEJMoa1809944
+
+--------------------------------------------------------------------------
+Vitamin K - Cardiovascular Disease
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Vitamin
+Notes: More evidence needed.
+Source: Cochrane
+Research: http://www.cochrane.org/CD011148/VASC_vitamin-k-supplementation-prevent-cardiovascular-disease
+
+
+==========================================================================
+SECTION 3: MENTAL HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Ashwagandha - Anxiety and Stress
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Alternative Name: Withania Somnifera
+Type: Plant / Herb
+Notes: A review of 5 human trials concludes Ashwagandha reduces anxiety and stress. The review calls for more trials.
+Source: The Journal of Alternative and Complementary Medicine
+Research: http://online.liebertpub.com/doi/abs/10.1089/acm.2014.0177
+
+--------------------------------------------------------------------------
+Caffeine - Alzheimer's Disease, Dementia
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Caffeine appears to slow cognitive decline and prevent Alzheimer's. But the results are not definitive.
+Source: Santos et al 2010
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20182026
+
+--------------------------------------------------------------------------
+Colostrinin - Alzheimer's Disease
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: A few small human studies suggest possible effects on Alzheimers.
+Source: The Journal of Nutritional Health and Aging
+Research: http://www.ncbi.nlm.nih.gov/pubmed?term=new%20insights%20colostrinin
+
+--------------------------------------------------------------------------
+Creatine and CoQ10 - Cognition
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Notes: Creatine does not have a significant effect in those with normal brain function, but it can benefit those with impaired brain function when combined with CoQ10.
+Source: European Neurology
+Research: http://www.karger.com/Article/Abstract/377676
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Alzheimer's, Dementia
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: In the largest and longest study of its kind, researchers found that fish oil/omega 3 had no statistically significant impact on cognitive decline.
+Source: The Journal of the American Medical Association
+Research: http://jama.jamanetwork.com/article.aspx?articleid=2429713
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Child Intelligence
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Category: Mental Health / Children
+Notes: Fish oil supplementation has a very minor positive impact on some measures of learning and performance.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20171055
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Psychosis
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: In one study, supplementation delayed the onset of psychosis in those on track to develop certain mental health conditions.
+Source: Nature Communications
+Research: http://www.nature.com/ncomms/2015/150811/ncomms8934/full/ncomms8934.html
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Depression
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Low quality evidence.
+Source: Cochrane
+Research: http://www.cochrane.org/CD004692/DEPRESSN_omega-3-fatty-acids-depression-adults
+
+--------------------------------------------------------------------------
+GABA - Stress, Anxiety
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Notes: Some suggestive evidence for effect on anxiety and stress.
+Source: Frontiers in Neuroscience
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7527439/
+Additional: https://www.ncbi.nlm.nih.gov/pubmed/29168225
+Additional: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3985106/
+
+--------------------------------------------------------------------------
+Ginkgo Biloba - Dementia
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Insufficient clinical trial evidence for the use of ginkgo biloba as a treatment for dementia.
+Source: University of Oxford Medical Sciences Division
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20040554
+
+--------------------------------------------------------------------------
+Ginseng - Cognitive Performance
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: No convincing evidence for ginseng enhancing cognition in healthy people, and only low quality evidence that it helps dementia patients.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007769/DEMENTIA_no-convincing-evidence-of-a-cognitive-enhancing-effect-of-panax-ginseng.
+
+--------------------------------------------------------------------------
+Iron - Child Development (When Not Anaemic)
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Mineral
+Category: Children / Mental Health / General Health
+Notes: Iron supplementation in infants might benefit their psychomotor development, but not their mental or behavioural development.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20410098
+
+--------------------------------------------------------------------------
+Kava - Anxiety
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Might have a small but significant effect on anxiety, but more information is required about the safety of long-term use.
+Source: Cochrane
+Research: http://www.cochrane.org/CD003383/DEPRESSN_kava-extract-for-treating-anxiety
+
+--------------------------------------------------------------------------
+Lavender - Depression, Anxiety
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Suggestive evidence for reduced anxiety. No effect on depression.
+Source: Examine.com
+Research: https://examine.com/supplements/lavender/
+Additional: http://europepmc.org/abstract/med/21438645
+
+--------------------------------------------------------------------------
+Lavender - Sleep, Relaxation, Anxiety
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: One small study found inhaling lavender before bed relieves sleepiness on waking in healthy adults, but the trial was tiny.
+Source: Perceptual and Motor Skills
+Research: http://www.amsciepub.com/doi/abs/10.2466/13.15.PMS.114.1.111-122
+
+--------------------------------------------------------------------------
+L-Tyrosine - Depression
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Notes: Tyrosine may help with mental health problems by maintaining neurotransmitters, which affect mood.
+Source: Pharmacology Biochemistry and Behaviour
+Research: http://www.sciencedirect.com/science/article/pii/S0091305715000945
+
+--------------------------------------------------------------------------
+Magnesium + Vitamin B6 - Child ADHD
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Vitamin
+Category: Mental Health / Children
+Notes: Children with ADHD tend to have low magnesium and vitamin B6 levels. It is unclear whether supplementation reduces the symptoms of ADHD.
+Source: Magnes Restauracja
+Research: https://www.ncbi.nlm.nih.gov/pubmed/22928358
+Additional: http://www.ncbi.nlm.nih.gov/pubmed/16846100
+
+--------------------------------------------------------------------------
+Melatonin - Sleep Disturbances
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Can help to regulate the body-clock and improve sleep. However, it does not affect all groups of people in the same way, and the evidence is low quality.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD009776.pub2/full
+
+--------------------------------------------------------------------------
+N-Acetyl Cysteine (NAC) - OCD, Addiction
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Other
+Notes: Problems with glutamate function in the brain are thought to affect addiction and compulsive behaviour. NAC might improve glutamate function.
+Source: Clinical Psychopharmacology and Neuroscience
+Research: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4423164/
+
+--------------------------------------------------------------------------
+Omega 3 - Child ADHD
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Category: Mental Health / Children
+Notes: Insufficient evidence to suggest omega 3 has any beneficial effect on children with ADHD.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007986/BEHAV_polyunsaturated-fatty-acids-pufa-supplements-for-attention-deficit-hyperactivity-disorder-adhd-in-children-and-adolescents
+
+--------------------------------------------------------------------------
+Piracetam - Memory, Dementia
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Evidence does not support the use of piracetam as a treatment for cognitive impairment.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001011/full
+
+--------------------------------------------------------------------------
+Rhodiola Rosea L. - Fatigue
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Category: Mental Health / General Health
+Notes: Rhodiola rosea L. is effective in treating fatigue. However, the quality of the trials conducted is questionable.
+Source: Complementary and Alternative Medicine
+Research: http://www.biomedcentral.com/1472-6882/12/70
+
+--------------------------------------------------------------------------
+Saffron - Depression
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Possible anti-depressant effect. But solid evidence is lacking.
+Source: Journal of Affective Disorders; Phytomedicine; Journal of Ethnopharmacology; Journal of Integrative Medicine; Human Psychopharmacology
+Research: https://www.sciencedirect.com/science/article/pii/S0165032717315884
+Additional: http://www.sciencedirect.com/science/article/pii/S2095496414601412
+Additional: http://onlinelibrary.wiley.com/doi/10.1002/hup.2434/full
+
+--------------------------------------------------------------------------
+SAM-e - Depression
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: A review of eight studies showed no strong evidence of the effectiveness of SAM-e when taken on its own. More study needed.
+Source: Current Psychiatry Reports
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD011286.pub2/full
+Additional: https://www.nlm.nih.gov/medlineplus/druginfo/natural/786.html
+
+--------------------------------------------------------------------------
+Silicic Acid - Alzheimer's
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Silicic acid might help to prevent Alzheimer's Disease by decreasing the amount of aluminium in the body. We await more research.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/16988476
+
+--------------------------------------------------------------------------
+St John's Wort - Depression
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: St John's Wort performs better than a placebo in improving depression symptoms, and not significantly different to antidepressants, which had more side-effects.
+Source: Cochrane; Systematic Reviews
+Research: https://www.cochrane.org/CD000448/DEPRESSN_st.-johns-wort-for-treating-depression.
+Additional: https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-016-0325-2
+
+--------------------------------------------------------------------------
+Tryptophan - Depression in Women
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Category: Mental Health / Women
+Notes: Tryptophan and 5-HTP might alleviate depression, but the studies conducted are unreliable, and the safety of the substances is questionable.
+Source: Cochrane
+Research: http://www.cochrane.org/CD003198/DEPRESSN_tryptophan-and-5-hydroxytryptophan-for-depression
+
+--------------------------------------------------------------------------
+Turmeric - Depression
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Curcumin
+Type: Plant / Herb
+Notes: May have benefits. However, it has poor bioavailability. 9-20 teaspoons daily would be required to get the desired effect.
+Source: Journal of the American Medical Directors Association; Journal of Affective Disorders; Phytotherapy Research; European Neuropsychopharmacology; Journal of Clinical Pharmacology
+Research: http://onlinelibrary.wiley.com/doi/10.1002/ptr.5524/full
+Additional: http://www.sciencedirect.com/science/article/pii/S1525861016306752
+
+--------------------------------------------------------------------------
+Valerian - Anxiety
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: One study found no difference between valerian and placebo in the treatment of anxiety. Research using larger samples is required.
+Source: Cochrane
+Research: http://www.cochrane.org/CD004515/DEPRESSN_valerian-for-anxiety-disorders
+
+--------------------------------------------------------------------------
+Valerian - Insomnia
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Plant / Herb
+Notes: HARMFUL? No significant differences between valerian and placebo in the treatment of insomnia. Valerian might have a number of adverse side effects.
+Source: Sleep Medicine Reviews
+Research: http://www.sciencedirect.com/science/article/pii/S1087079214001476
+
+--------------------------------------------------------------------------
+Vitamin B - Alzheimer's
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Vitamin
+Notes: Vitamin B treatment slows brain shrinkage and significantly reduces brain cell death.
+Source: Proceedings of the National Academy of Sciences of the United States of America
+Research: http://www.pnas.org/content/110/23/9523.short
+
+--------------------------------------------------------------------------
+Vitamin B - Schizophrenia
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Notes: A review of 18 studies found that vitamin B reduced psychiatric symptoms significantly more than in a control group.
+Source: Psychological Medicine
+Research: https://www.cambridge.org/core/journals/psychological-medicine/article/div-classtitlethe-effects-of-vitamin-and-mineral-supplementation-on-symptoms-of-schizophrenia-a-systematic-review-and-meta-analysisdiv/3CFE6C3B0FED2ED04B9968AD2660EA08
+
+--------------------------------------------------------------------------
+Vitamin B8 - OCD, Panic Disorder
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Vitamin
+Notes: Several small studies suggest anti-anxiety effects, but more research is needed.
+Source: Journal of Clinical Pharmacology
+Research: http://journals.lww.com/psychopharmacology/Abstract/2001/06000/Double_Blind,_Controlled,_Crossover_Trial_of.14.aspx
+
+--------------------------------------------------------------------------
+Vitamin B8 - Depression
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Vitamin
+Notes: The evidence for vitamin B8 (also known as Inositol) as a treatment for depression is unclear.
+Source: Cochrane
+Research: http://www.cochrane.org/CD004049/DEPRESSN_inositol-for-depression
+
+--------------------------------------------------------------------------
+Vitamin D - Depression, Mood Disorders
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Vitamin
+Notes: Low levels of vitamin D in the body are associated with depression, but whether or not vitamin D deficiency actually causes depression is uncertain.
+Source: British Journal of Psychology
+Research: http://bjp.rcpsych.org/content/202/2/100.short
+
+
+==========================================================================
+SECTION 4: DIGESTIVE HEALTH (DIGESTION)
+==========================================================================
+
+--------------------------------------------------------------------------
+Aloe Vera - Digestive Aid
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Plant / Herb
+Notes: HARMFUL. Never eat. Ingestion can cause diarrhea, electrolyte imbalance and kidney dysfunction.
+Source: Journal of Environmental Science and Health
+Research: http://www.tandfonline.com/doi/abs/10.1080/10590500600614303#.VcDwRZNVhBc
+
+--------------------------------------------------------------------------
+Chamomile - Bowel Disorders
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: No high-quality human trials.
+Source: Der Pharma Chemica
+Research: https://www.derpharmachemica.com/abstract/chamomile-efficacy-in-patients-of-the-irritable-bowel-syndrome-6898.html
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Crohn's Disease
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: No beneficial effect for those with Crohn's Disease.
+Source: Cochrane
+Research: http://www.cochrane.org/reviews/en/ab006320.html
+
+--------------------------------------------------------------------------
+Ginger - Nausea and Vomiting
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Ginger prevents nausea and vomiting for some people in certain circumstances.
+Source: Annals of Oncology
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3995184/
+Additional: https://academic.oup.com/annonc/article/28/10/2547/3896339
+
+--------------------------------------------------------------------------
+Glutamine - Gastrointestinal Disease in Infants
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Alternative Name: L-Glutamine
+Type: Compound
+Category: Digestion / Children
+Notes: Insufficient evidence to determine whether glutamine supplements are beneficial or harmful.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD005947.pub4/full
+
+--------------------------------------------------------------------------
+Peppermint Oil - IBS
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Plant / Herb
+Notes: Relaxes muscles, which relieves IBS-related muscle spasms. Peppermint oil might be more effective than conventional anti-spasmodics and fibre treatment.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003460.pub3/full
+
+--------------------------------------------------------------------------
+Probiotics - IBS
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Other
+Notes: A particular probiotic (B. infantis 35624) improves IBS symptoms such as pain, bloating, and bowel movement difficulty. Evidence for other types of probiotic is limited.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/19277023
+
+--------------------------------------------------------------------------
+Probiotics - Diarrhea
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Other
+Notes: Effective for preventing diarrhea associated with antibiotic use.
+Source: Cochrane
+Research: http://www.cochrane.org/CD006095/IBD_use-probiotics-prevent-clostridium-difficile-diarrhea-associated-antibiotic-use
+
+--------------------------------------------------------------------------
+Turmeric - Peptic Ulcer, Ulcerative Colitis
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Alternative Name: Curcumin
+Type: Plant / Herb
+Notes: May be an effective therapy for peptic ulcers and ulcerative colitis when combined with conventional medications. However, larger trials are needed.
+Source: Cochrane
+Research: http://www.cochrane.org/CD008424/IBD_curcumin-for-maintenance-of-remission-in-ulcerative-colitis
+
+
+==========================================================================
+SECTION 5: CANCER
+==========================================================================
+
+--------------------------------------------------------------------------
+Bee Pollen - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Other
+Notes: No evidence.
+Source: European Journal of Medicinal Chemistry
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20598400
+
+--------------------------------------------------------------------------
+Beta-Carotene - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Vitamin
+Notes: There is no evidence that beta-carotene prevents cancer.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/18689373
+
+--------------------------------------------------------------------------
+Beta Glucans - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Compounds found in brewers' yeast and mushrooms. Most studies so far have been done in animals or test tubes, rather than on human subjects. Trials on human subjects are needed.
+Source: Evidence-Based Complementary and Alternative Medicine
+Research: http://www.hindawi.com/journals/ecam/2014/252171/
+
+--------------------------------------------------------------------------
+Black Tea - Cancer Prevention
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Reviews have found no association between black tea and ovarian or breast cancer risk.
+Source: Nutrition and Cancer
+Research: http://www.tandfonline.com/doi/abs/10.1080/01635581.2014.936947#.Va-yTBNVhBc
+
+--------------------------------------------------------------------------
+Caffeine - Skin Cancer
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Population studies shows women who consume more than three cups of coffee a day MAY have a lower cancer risk than people who drink less than one cup per month.
+Source: Song et al. 2012
+Research: http://cancerres.aacrjournals.org/content/72/13/3282
+
+--------------------------------------------------------------------------
+Calcium - Colorectal Cancer
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Mineral
+Notes: No evidence that calcium supplementation stops colorectal cancer itself, but it does inhibit potentially pre-cancerous colorectal polyps (adenomatous polyps).
+Source: Cochrane
+Research: http://www.cochrane.org/CD003548/COLOCA_daily-intake-of-1-gr-dietary-calcium-may-have-moderate-protective-effect-on-development-of-colorectal-adenomatous-polyps
+
+--------------------------------------------------------------------------
+Calcium + Vitamin D - Breast Cancer in Premenopausal Women
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Mineral
+Category: Cancer / Women
+Notes: There is no firm evidence that calcium and vitamin D supplementation decreases cancer risk.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD007469.pub2/abstract
+Additional: http://www.cancer.gov/about-cancer/causes-prevention/risk/diet/vitamin-d-fact-sheet#q3
+
+--------------------------------------------------------------------------
+Cannabis - Nausea (Chemotherapy)
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Promising evidence showing a reduction in nausea and vomiting caused by chemotherapy. The FDA has approved 2 synthetic cannabis drugs for treating chemo-related nausea.
+Source: Cochrane; NAP
+Research: http://www.cochrane.org/CD009464/GYNAECA_cannabis-based-medicine-nausea-and-vomiting-people-treated-chemotherapy-cancer
+Additional: https://www.nap.edu/read/24625/chapter/4#53
+
+--------------------------------------------------------------------------
+Cat's Claw - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: No human trials.
+Source: Anticancer Research
+Research: http://europepmc.org/abstract/med/11724307
+
+--------------------------------------------------------------------------
+Dong Quai - Menopause in Breast Cancer Patients
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Plant / Herb
+Category: Cancer / Reproductive
+Notes: HARMFUL. Long term safety data is non-existent. May increase risk of cancer.
+Source: Lau et al. 2005
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20833608
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Cancer Symptoms
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Fish oil can counter chemotherapy-related damage to white blood cells.
+Source: Lipids
+Research: http://link.springer.com/article/10.1007/s11745-011-3643-0#page-2
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Colorectal Cancer
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Notes: It is thought that omega 3 reduces the risk of colorectal cancer and is effective in its treatment.
+Source: PubMed
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7373878/
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Prostate Cancer
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Compound
+Notes: HARMFUL? Recent studies have linked fish oil intake with increased prostate cancer risk.
+Source: Journal of the National Cancer Institute
+Research: http://jnci.oxfordjournals.org/content/early/2013/07/09/jnci.djt174.abstract
+
+--------------------------------------------------------------------------
+Flax Seeds - Breast Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Category: Cancer / Women
+Notes: Population studies indicate a slight possibility flaxseed could reduce breast cancer tumour growth. No controlled trials have been carried out.
+Source: Cancer Causes Control
+Research: http://link.springer.com/article/10.1007/s10552-013-0155-7#page-2
+
+--------------------------------------------------------------------------
+Folic Acid - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Vitamin
+Notes: POTENTIALLY HARMFUL. When combined with vitamin B12 can be associated with increased cancer risk.
+Source: Cochrane
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7527439/
+
+--------------------------------------------------------------------------
+Garlic - Cancer Treatment
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Aged Garlic Extract
+Type: Vegetable
+Notes: Due to anticancer properties of aged garlic, its consumption along with healthy diet may have beneficial effects on cancer. More clinical trials necessary.
+Source: International Journal of Preventative Medicine
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6212616/
+
+--------------------------------------------------------------------------
+Garlic - Cancer Prevention
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: Garlic might prevent certain cancers, but there is a lack of clinical trial evidence. The WHO recommends consuming at least one clove a day for general health benefits.
+Source: National Cancer Institute
+Research: http://www.cancer.gov/cancertopics/factsheet/Prevention/garlic-and-cancer-prevention
+
+--------------------------------------------------------------------------
+Green Tea - Cancer Prevention
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: The evidence is conflicting. However, drinking 3-5 cups a day might have general health benefits.
+Source: Cochrane
+Research: http://www.cochrane.org/reviews/en/ab005004.html
+
+--------------------------------------------------------------------------
+Lycopene - Prostate Cancer
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Category: Cancer / Men
+Notes: Insufficient evidence to support or refute the use of lycopene in preventing prostate cancer.
+Source: Cochrane
+Research: http://www.cochrane.org/CD008007/PROSTATE_lycopene-for-the-prevention-of-prostate-cancer
+
+--------------------------------------------------------------------------
+Mistletoe - Breast and Neck Cancers
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: Some preliminary evidence for improving quality of life in breast cancer patients. Evidence for other cancers is weak. More studies needed.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003297.pub2/full
+
+--------------------------------------------------------------------------
+Omega 6 - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: One study found that omega 6 prevented tumours from growing, but this was a cell study, i.e. not tested on humans.
+Source: Journal of the National Cancer Institute
+Research: http://jnci.oxfordjournals.org/cgi/content/abstract/97/21/1611
+
+--------------------------------------------------------------------------
+Reishi Mushroom - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: G. lucidum
+Type: Plant / Herb
+Notes: Possible effect on recovery from chemotherapy. But studies were small and there were some quality concerns.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007731/GYNAECA_g-lucidum-reishi-mushroom-cancer-treatment
+
+--------------------------------------------------------------------------
+Resveratrol - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: No human trials as yet.
+Source: Cancer Letters
+Research: http://onlinelibrary.wiley.com/doi/10.1111/nyas.12205/abstract
+
+--------------------------------------------------------------------------
+Selenium - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Mineral
+Notes: Insufficient evidence that selenium lowers cancer risk.
+Source: Cochrane
+Research: http://www.cochrane.org/CD005195/GYNAECA_selenium-for-preventing-cancer
+
+--------------------------------------------------------------------------
+Turmeric - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Curcumin
+Type: Plant / Herb
+Notes: Might have anti-cancer effects, particularly on colon and pancreatic cancer, cervical neoplasia and Barrets metaplasia.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20214562
+
+--------------------------------------------------------------------------
+Vitamin B3 - Skin Cancer
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Vitamin
+Notes: May prevent skin cancer.
+Source: International Journal of Cancer; Photodermatology; Photoimmunology and Photomedicine; CA: A Cancer Journal for Clinicians; New England Journal of Medicine
+Research: http://onlinelibrary.wiley.com/wol1/doi/10.1002/ijc.30630/full
+Additional: http://www.nejm.org/doi/full/10.1056/NEJMoa1506197#t=article
+
+--------------------------------------------------------------------------
+Vitamin D - Cancer
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Vitamin
+Notes: One of the largest and most rigorous trials ever conducted (25,871 participants over 5 years) found that vitamin D supplementation did not result in lower incidence of invasive cancers.
+Source: PubMed; New England Journal of Medicine
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20164683
+Additional: https://www.nejm.org/doi/full/10.1056/NEJMoa1809944
+
+--------------------------------------------------------------------------
+Vitamin K2 - Prostate Cancer
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Vitamin
+Category: Cancer / Men
+Notes: No conclusive evidence.
+Source: American Journal of Clinical Nutrition; OncoTarget
+Research: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5593683/
+Additional: http://www.ajcn.org/cgi/content/abstract/87/4/985
+
+
+==========================================================================
+SECTION 6: MUSCULOSKELETAL HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Abatacept - Osteoarthritis
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Hormone
+Notes: Appears to reduce joint pain and improve function.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007277/MUSKEL_abatacept-for-rheumatoid-arthritis
+
+--------------------------------------------------------------------------
+Ashwagandha - Rheumatoid Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Withania Somnifera
+Type: Plant / Herb
+Notes: No solid evidence.
+Source: Indian Journal of Medical Research
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/011/CN-01197011/frame.html
+
+--------------------------------------------------------------------------
+Borage Seed Oil - Rheumatoid Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Improves pain and function, and probably has no adverse effects.
+Source: Cochrane
+Research: http://www.cochrane.org/CD002948/MUSKEL_herbal-therapy-for-rheumatoid-arthritis
+
+--------------------------------------------------------------------------
+Bromelain - Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Enzyme
+Notes: Bromelain reduces arthritis symptoms. More research into dosage and side effects required.
+Source: Annals of Internal Medicine Common Knowledge
+Research: http://commons.pacificu.edu/pa/475/
+Additional: http://www.ncbi.nlm.nih.gov/pubmed/15841258
+
+--------------------------------------------------------------------------
+Calcium - Osteoporosis in Postmenopausal Women
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Mineral
+Category: Musculoskeletal / Women
+Notes: Calcium supps might help to prevent fractures, although the results have been contradictory.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/21289325
+
+--------------------------------------------------------------------------
+Calcium + Vitamin D - Bone Health
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Mineral
+Notes: A review of 8 studies including 30,970 participants found that calcium plus vitamin D supplementation reduced total fracture risk by 15% and hip fracture risk by 30%.
+Source: Osteoporosis International
+Research: https://link.springer.com/article/10.1007/s00198-015-3386-5
+
+--------------------------------------------------------------------------
+Devil's Claw - Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Devil's Claw extract can reduce lower back pain by blocking the pathways that cause joint inflammation.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD004504.pub4/abstract
+
+--------------------------------------------------------------------------
+Elk Velvet Antler - Rheumatoid Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Animal Product
+Notes: No good quality evidence for elk velvet antler as a treatment for arthritis. Claims made for velvet antler supplements do not appear to be based upon rigorous research from human trials.
+Source: The New Zealand Medical Journal
+Research: http://majsivi.wdfiles.com/local--files/2012:1214/Gilbey2012.pdf
+
+--------------------------------------------------------------------------
+Glucosamine - Arthritis, Joint Pain
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Notes: Studies using a specific brand of glucosamine (Rotta) found that patients' pain decreased. However, studies using other brands found no difference between glucosamine and placebo.
+Source: Cochrane
+Research: http://www.cochrane.org/CD002946/MUSKEL_glucosamine-for-osteoarthritis
+
+--------------------------------------------------------------------------
+Horsetail - Osteoporosis
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Equisetum arvense; Shavegrass; Common Horsetail; Field Horsetail; Tsukushi
+Type: Vegetable
+Notes: A small, old study showed horsetail improved bone density in menopausal women. Contains silicon, a mineral needed for bone health. An old (1999) study of menopausal women treated with titrated dry horsetail extract for 40 or 80 days showed improved bone density above placebo. Improvements were enhanced when the women took horsetail in combination with calcium.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/095/CN-00415095/frame.html
+
+--------------------------------------------------------------------------
+Hyaluronic Acid - Arthritis (Only When Injected)
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Injected hyaluronic acid might have a small effect in the treatment of osteoarthritis. However, the trials are biased and the results questionable.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/14679274
+
+--------------------------------------------------------------------------
+Lingzhi + San Miao San - Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: This combination of Chinese herbs may reduce pain, but does not provide any other significant benefits (e.g. antiinflammatory).
+Source: American Journal of Clinical Nutrition
+Research: http://www.ncbi.nlm.nih.gov/pubmed/17907228
+
+--------------------------------------------------------------------------
+MSM - Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Associated with slight reduction in pain and improvement in function, but the results may not be clinically significant.
+Source: BMC Complementary and Alternative Medicine
+Research: http://www.biomedcentral.com/1472-6882/11/50/
+
+--------------------------------------------------------------------------
+Vitamin D - Bone Health
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Notes: It appears that supplementation for those with vitamin D deficiency increases bone density and helps to prevent fractures.
+Source: American Journal of Clinical Nutrition
+Research: http://www.cochrane.org/CD006944/MUSKEL_vitamin-d-for-improving-bone-density-in-children
+Additional: http://www.ncbi.nlm.nih.gov/pubmed/18689393
+
+--------------------------------------------------------------------------
+Vitamin K2 - Osteoporosis
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Notes: Vitamin K2 has repeatedly been shown to improve bone strength, particularly in post-menopausal women.
+Source: Osteoporosis International
+Research: http://link.springer.com/article/10.1007/s00198-007-0337-9#page-1
+
+
+==========================================================================
+SECTION 7: INFECTIONS
+==========================================================================
+
+--------------------------------------------------------------------------
+Andrographis - Respiratory Tract Infections
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Slight evidence of reduced symptoms.
+Source: Otolaryngologic Clinics of North America
+Research: http://www.sciencedirect.com/science/article/pii/S0030666512002149
+
+--------------------------------------------------------------------------
+Dandelion - Tonsillitis
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Alternative Name: Dandelion Soup
+Type: Plant / Herb
+Notes: Dandelion might have antimicrobial properties, which could help with throat infections.
+Source: Evidence-Based Health Care
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD004877.pub3/abstract
+
+--------------------------------------------------------------------------
+Echinacea - Colds
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: Echinacea might have a slight impact on preventing and treating colds, but the results are statistically insignificant.
+Source: Cochrane
+Research: http://www.cochrane.org/CD000530/ARI_echinacea-for-preventing-and-treating-the-common-cold
+
+--------------------------------------------------------------------------
+Elderberry - Flu
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Elderberry extract Sambucol may be useful for the treatment of viral influenza infections. More rigorous studies needed.
+Source: Phytotherapy Research
+Research: http://www.actahort.org/books/1061/1061_12.htm
+Additional: http://www.ncbi.nlm.nih.gov/pubmed/19548290
+
+--------------------------------------------------------------------------
+Garlic - Colds
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Insufficient evidence for effects on the common cold.
+Source: Cochrane: Garlic for the common cold
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD006206.pub4/full
+
+--------------------------------------------------------------------------
+L-Lysine - Herpes
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Category: Sexual Health / Infections
+Notes: No evidence that lysine has a preventative effect on cold sores.
+Source: Cochrane
+Research: http://www.cochrane.org/CD010095/SKIN_measures-preventing-cold-sores
+
+--------------------------------------------------------------------------
+Milk Thistle - Hepatitis, Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Category: General Health / Infections
+Notes: Might be beneficial in treating hepatitis and other liver diseases, and protecting the liver from the impact of diabetes. However, the trials were low quality.
+Source: Cochrane
+Research: http://www.cochrane.org/CD003620/LIVER_no-evidence-supporting-or-refuting-milk-thistle-for-alcoholic-andor-hepatitis-b-or-c-virus-liver-diseases
+
+--------------------------------------------------------------------------
+Slippery Elm - Sore Throat
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: No clinical evidence for sore throats.
+Source: Pediatrics in Review
+Research: http://www.researchgate.net/profile/Kathi_Kemper2/publication/274637505_herbs_in_pediatric_and_adolescent_medicine-_gardiner-_peds_in_review_2000/links/55242e490cf2b123c51736e8.pdf
+
+--------------------------------------------------------------------------
+Vitamin A - Child Mortality, Diarrhea, Measles
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Category: General Health / Infections
+Notes: Reduces overall risk of death and death due to diarrhoea by 12%. Vitamin A does not specifically reduce death due to measles, respiratory infections, or meningitis, but it can reduce new occurrences of diarrhoea and measles.
+Source: Cochrane; WHO
+Research: http://www.cochrane.org/CD008524/BEHAV_vitamin-supplementation-preventing-disease-and-death-children-aged-six-months-five-years
+Additional: http://www.who.int/bulletin/volumes/88/9/09-068080/en/
+
+--------------------------------------------------------------------------
+Vitamin C - Colds
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Notes: Vitamin C supplementation does not reduce the incidence of colds in the general population, although it can shorten their duration. For those under extreme physical stress (e.g. marathon runners) vitamin C appears to half the risk of developing a cold.
+Source: Cochrane
+Research: http://www.cochrane.org/CD000980/ARI_vitamin-c-for-preventing-and-treating-the-common-cold
+
+--------------------------------------------------------------------------
+Vitamin D - Flu
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Vitamin
+Notes: In one trial, 10.8% of children taking vitamin D(3) contracted influenza, compared with 18.6% of children in the placebo group. It also reduced the number of flu-related asthma attacks.
+Source: Urashima et al. 2010
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20219962
+
+--------------------------------------------------------------------------
+Xylitol - Middle Ear Infection
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Was found to reduce middle ear infections in otherwise healthy children by 8% (from 30% to 22%). It was administered via chewing gum, lozenges or syrup. Other studies have had similar positive results.
+Source: Cochrane; Medicine
+Research: http://www.cochrane.org/CD007095/ARI_xylitol-sugar-supplement-preventing-middle-ear-infection-children-12-years-age
+Additional: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4753897/
+
+--------------------------------------------------------------------------
+Zinc - Colds
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Mineral
+Category: Infections / Respiratory
+Notes: Oral zinc formulations may shorten symptoms of common cold infections. However, large high-quality trials are needed. Side effects can be common.
+Source: CMAJ
+Research: http://www.cmaj.ca/content/184/10/E551.short
+
+--------------------------------------------------------------------------
+Zinc - Pneumonia (Children)
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Mineral
+Notes: Zinc supplementation in children is associated with a reduction in the incidence and prevalence of pneumonia.
+Source: Cochrane; WHO
+Research: http://www.cochrane.org/CD005978/ARI_zinc-supplementation-prevention-pneumonia-children-aged-two-59-months
+Additional: http://www.who.int/elena/titles/bbc/zinc_pneumonia_children/en/
+
+
+==========================================================================
+SECTION 8: DIABETES
+==========================================================================
+
+--------------------------------------------------------------------------
+Aloe Vera - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: One study found diabetes patients with high blood levels of fat (dyslipidemia) benefited from one 300mg capsule every 12 hours for 2 months.
+Source: Planta Medica
+Research: http://www.omni.org.il/_Uploads/dbsAttachedFiles/Research1.Antihyperglycemic.pdf
+
+--------------------------------------------------------------------------
+Benfotiamine - Anti-Aging, Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Alternative Name: Fat-Soluble Thiamin
+Type: Compound
+Category: Diabetes / General Health
+Notes: A study of high-dose benfotiamine (300 mg/day) supplementation over 24 months showed no significant effects.
+Source: Cochrane
+Research: http://www.cochrane.org/CD009403/RENAL_vitamin-b-and-its-derivatives-for-diabetic-kidney-disease
+Additional: http://www.researchgate.net/profile/Boris_Mankovsky/publication/274180185_Benfotiamine_Commentary_and_update_on_recent_studies/links/55256a0b0cf24b822b40313b.pdf
+
+--------------------------------------------------------------------------
+Bitter Melon - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Not enough evidence to support using bitter melon in diabetes treatment.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007845/ENDOC_momordica-charantia-for-type-2-diabetes-mellitus
+
+--------------------------------------------------------------------------
+Chromium - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Mineral
+Notes: Might lower blood glucose levels. It might also help with fat loss, which could benefit those with diabetes.
+Source: Cochrane
+Research: http://www.cochrane.org/CD010063/ENDOC_chromium_picolinate_supplementation_for_overweight_or_obese_people
+
+--------------------------------------------------------------------------
+Cinnamon - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: No more effective than placebo in controlling glucose levels.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007170/ENDOC_cinnamon-for-diabetes-mellitus
+
+--------------------------------------------------------------------------
+CoQ10 - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Alternative Name: Ubiquinol
+Type: Enzyme
+Notes: CoQ10 improves insulin secretion in those with type 2 diabetes. However, human trials have been tiny.
+Source: Biofactors
+Research: http://onlinelibrary.wiley.com/doi/10.1002/biof.1038/abstract
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Probably no beneficial effect for those with type 2 diabetes.
+Source: Cochrane
+Research: http://www.cochrane.org/CD003205/ENDOC_omega-3-polyunsaturated-fatty-acids-pufa-for-type-2-diabetes-mellitus
+
+--------------------------------------------------------------------------
+L-Carnitine - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Notes: May alleviate pain in patients with diabetic nerve issues (neuropathy).
+Source: Diabetes Care
+Research: http://care.diabetesjournals.org/content/28/1/89.short
+
+--------------------------------------------------------------------------
+Myo-Inositol - Gestational Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Alternative Name: In Pregnancy
+Type: Compound
+Notes: Potential benefit for reducing the incidence of gestational diabetes.
+Source: Cochrane
+Research: http://www.cochrane.org/CD011507/PREG_taking-myo-inositol-dietary-supplement-during-pregnancy-prevent-development-gestational-diabetes
+
+--------------------------------------------------------------------------
+Resveratrol - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Some preliminary evidence for relieving diabetes symptoms.
+Source: British Journal of Nutrition
+Research: http://www.ncbi.nlm.nih.gov/pubmed/21385509
+
+--------------------------------------------------------------------------
+Vitamin D - Diabetes
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Vitamin
+Notes: The association between vitamin D status and diabetes is unclear.
+Source: Annals of Internal Medicine
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20194237
+
+
+==========================================================================
+SECTION 9: EYE AND SKIN HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Borage Seed Oil - Eczema
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: A review of 27 studies found no evidence of efficacy.
+Source: Cochrane
+Research: https://www.cochrane.org/CD004416/SKIN_oral-evening-primrose-oil-and-borage-oil-eczema
+
+--------------------------------------------------------------------------
+Cannabis - Glaucoma
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: Definitely lowers eye pressure, but only temporarily (3-4hrs). Since Glaucoma is a long-term disease, a LOT of cannabis would be required to maintain low pressure levels. Also, cannabis might cause additional damage to the eye by restricting blood flow to the optic nerve.
+Source: American Glaucoma Society
+Research: https://community.americanglaucomasociety.net/about/statements
+
+--------------------------------------------------------------------------
+Evening Primrose Oil - Eczema
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: A review of 27 studies found no evidence of efficacy.
+Source: Cochrane
+Research: https://www.cochrane.org/CD004416/SKIN_oral-evening-primrose-oil-and-borage-oil-eczema
+
+--------------------------------------------------------------------------
+Goji Berry - Eye Health
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Alternative Name: Wolfberry
+Type: Plant / Herb
+Notes: Supplementation for 90 days appeared to show some improvements in eye-health for seniors. But more research is needed.
+Source: Optometry and Vision Science
+Research: http://journals.lww.com/optvissci/Abstract/2011/02000/Goji_Berry_Effects_on_Macular_Characteristics_and.12.aspx
+
+--------------------------------------------------------------------------
+Lutein - Age-Related Macular Degeneration (AMD)
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Taking lutein alone (or combined with zeaxanthin) may have little or no effect on progression to late AMD and vision loss (low-certainty evidence).
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD000254.pub4/abstract
+
+
+==========================================================================
+SECTION 10: GENERAL HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Aloe Vera - Burns, Cuts
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: No high quality evidence to support aloe vera for treatment of wounds.
+Source: Cochrane
+Research: https://www.cochrane.org/CD008762/WOUNDS_aloe-vera-for-treating-acute-and-chronic-wounds
+
+--------------------------------------------------------------------------
+Antioxidants - Mortality
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Compound
+Notes: Taking antioxidants have no health benefits. In fact, beta carotene, vitamin A and vitamin E appear to increase the risk of death.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD007176.pub2/abstract
+
+--------------------------------------------------------------------------
+Astaxanthin - Oxidative Stress
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: No human trials yet.
+Source: Cochrane; PLoS One
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/581/CN-00909581/frame.html
+Additional: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0146438
+
+--------------------------------------------------------------------------
+Astragalus - DNA Damage, Immune System
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Limited studies suggest a strengthening of the immune system. More evidence needed.
+Source: Block, Mead (2003)
+Research: http://www.ncbi.nlm.nih.gov/pubmed/15035888
+
+--------------------------------------------------------------------------
+Astragalus - Chronic Kidney Disease
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: Low quality evidence for patients with chronic kidney disease when combined with conventional treatments.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD008369.pub2/abstract
+
+--------------------------------------------------------------------------
+Capsaicin - Non-Allergic Rhinitis
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Capsaicin comes from chili peppers. Evidence has found that inhaling 4 micrograms at least 5 times a day can reduce inflammation, but the quality of the evidence is low. Who wants to inhale chilli?
+Source: Cochrane
+Research: http://www.cochrane.org/CD010591/ENT_capsaicin-non-allergic-rhinitis
+
+--------------------------------------------------------------------------
+Carnosine - Anti-Aging
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Promising results in mice and in cell studies, but no human trials yet.
+Source: Molecules in Focus
+Research: http://www.sciencedirect.com/science/article/pii/S1357272598000600
+
+--------------------------------------------------------------------------
+Coffee - Mortality
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Plant / Herb
+Notes: A large statistical study of over 650,000 people found that coffee drinking reduced all cause mortality, whether it was instant, ground, or decaffeinated.
+Source: JAMA International Medicine
+Research: https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2686145
+
+--------------------------------------------------------------------------
+DHEA - Ageing
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: DHEA has no beneficial impact on body composition, performance etc.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/17050889
+
+--------------------------------------------------------------------------
+Eggshell Membrane - Joints, Arthritis
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Other
+Notes: Egg shell membrane eases joints by increasing cell production and decreasing inflammation. 500mg a day gives rapid results.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/993/CN-00718993/frame.html
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Cystic Fibrosis
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Evidence is poor.
+Source: Cochrane
+Research: https://www.cochrane.org/CD002201/CF_use-omega-3-supplements-people-cystic-fibrosis
+
+--------------------------------------------------------------------------
+Glutamine - Mortality in Preterm Infants
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: No evidence.
+Source: Cochrane
+Research: http://www.cochrane.org/CD001457/NEONATAL_glutamine-supplementation-prevent-morbidity-and-mortality-preterm-infants
+
+--------------------------------------------------------------------------
+L-Arginine - Exercise Performance
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: One study found that L-arginine had a significant beneficial impact on exercise performance. However, the trial was tiny.
+Source: Journal of Applied Physiology
+Research: http://jap.physiology.org/cgi/content/abstract/japplphysiol.00503.2010v1
+
+--------------------------------------------------------------------------
+Leucine - Protein Synthesis
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: One study found drinking leucine solution while exercising speeds up recovery, but the trial was tiny.
+Source: Pasiakos et al. 2011
+Research: http://www.ncbi.nlm.nih.gov/pubmed/21775557
+
+--------------------------------------------------------------------------
+Pau d'Arco - Decongestant
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Type: Plant / Herb
+Notes: HARMFUL. Highly toxic. If used at all, should be used with extreme caution.
+Source: Oncology Nursing Forum
+Research: https://pdfs.semanticscholar.org/582a/65c49c737111cc5416303877d4c5c0c5a093.pdf
+
+--------------------------------------------------------------------------
+TMG - Metabolism
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Alternative Name: Trimethylglycine
+Type: Compound
+Notes: No significant effect on metabolism in humans.
+Source: Schwab 2002
+Research: http://www.ncbi.nlm.nih.gov/pubmed/12399266
+
+--------------------------------------------------------------------------
+Vitamin D - General Health, All-Cause Mortality
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Notes: A review suggests that vitamin D3 may reduce mortality, showing that about 150 participants need to be treated over five years for one additional life to be saved. It found some evidence that vitamin D3 seems to decrease mortality in elderly people not dependent on help or living in institutional care.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007470.pub3/full
+Additional: http://ebm.bmj.com/content/13/2/47.full
+
+--------------------------------------------------------------------------
+Vitamin E - Mortality
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Alternative Name: Alpha Tocopherol
+Type: Vitamin
+Notes: HARMFUL? High dosages might increase all-cause mortality. Small amounts can be beneficial, but the line between helpful and dangerous is unclear at this stage.
+Source: American College of Physicians
+Research: http://annals.org/article.aspx?articleid=718049
+
+--------------------------------------------------------------------------
+Xylitol - Teeth
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Notes: Some evidence that xylitol in toothpaste might reduce tooth decay by 13% over 3 years. The studies have been of low quality, though.
+Source: Cochrane
+Research: http://www.cochrane.org/CD010743/ORAL_can-xylitol-used-in-products-like-sweets-candy-chewing-gum-and-toothpaste-help-prevent-tooth-decay-in-children-and-adults
+
+
+==========================================================================
+SECTION 11: REPRODUCTIVE AND SEXUAL HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Antioxidants - Infertility in Men
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Category: Sexual Health / Men / Children
+Notes: Evidence of anti-oxidants as treatment for male infertility is inconclusive.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD007411.pub3/abstract
+
+--------------------------------------------------------------------------
+Ashwagandha - Erectile Dysfunction
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Withania Somnifera
+Type: Plant / Herb
+Notes: In a single pilot study on 46 men with low-sperm count, ashwagandha supplementation appeared to increase sperm count and volume.
+Source: Evidence-based Complementary and Alternative Medicine
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/963/CN-00977963/frame.html
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Low Sperm Count
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: A small study of 211 men found that omega 3 supplementation significantly increased sperm count.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/o/cochrane/clcentral/articles/203/CN-00780203/frame.html
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 (In Pregnancy) - Preterm Birth
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Compound
+Notes: A meta-analysis concluded that preterm birth and early preterm birth were reduced in women receiving omega-3.
+Source: Cochrane
+Research: https://www.cochrane.org/CD003402/PREG_omega-3-fatty-acid-addition-during-pregnancy
+
+--------------------------------------------------------------------------
+Iron + Folic Acid - Maternal and Infant Health
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Compound
+Notes: Reduces iron deficiency anaemia for pregnant women. The impact on babies is less clear.
+Source: Cochrane
+Research: http://www.cochrane.org/CD004736/PREG_effects-and-safety-preventive-oral-iron-or-iron-folic-acid-supplementation-women-during-pregnancy
+
+--------------------------------------------------------------------------
+Probiotics - Candida
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Other
+Notes: Very low quality evidence. High quality trials needed.
+Source: Cochrane
+Research: http://www.cochrane.org/CD010496/STI_probiotics-vulvovaginal-candidiasis-non-pregnant-women
+
+
+==========================================================================
+SECTION 12: WOMEN'S HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Agnus Castus - PMS
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Alternative Name: Vitex
+Type: Plant / Herb
+Notes: Helps improve PMS symptoms.
+Source: Archives of Gynecology and Obstetrics; The European Menopause Journal; Archives of Women's Mental Health; American Journal of Obstetrics and Gynecology; Electronic Physician
+Research: https://www.sciencedirect.com/science/article/pii/S0002937817303198
+Additional: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5308513/
+Additional: https://link.springer.com/article/10.1007/s00737-017-0791-0
+Additional: http://www.maturitas.org/article/S0378-5122(09)00031-0/abstract
+Additional: http://link.springer.com/article/10.1007/s004040000123
+
+--------------------------------------------------------------------------
+Black Cohosh - Menopause
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Plant / Herb
+Notes: Insufficient evidence to claim that black cohosh improves menopause symptoms.
+Source: Cochrane
+Research: http://www.cochrane.org/CD007244/MENSTR_black-cohosh-cimicifuga-spp.-for-menopausal-symptoms
+
+--------------------------------------------------------------------------
+Evening Primrose Oil - PMS
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Category: Reproductive / Women
+Notes: Evening primrose oil is no more effective than placebo.
+Source: Journal of Psychosomatic Obstetrics and Gynecology
+Research: http://www.tandfonline.com/doi/abs/10.3109/0167482X.2010.538102#.Vcnzd5NVhBc
+
+--------------------------------------------------------------------------
+Krill Oil - PMS
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Other
+Notes: Krill oil significantly reduced both emotional and physical PMS symptoms in one study.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/12777162
+
+--------------------------------------------------------------------------
+St John's Wort - PMS
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Category: Reproductive / Women
+Notes: Daily treatment with St. John's wort had no effect on the emotional and physical symptoms of PMS.
+Source: CNS Drugs
+Research: http://www.tandfonline.com/doi/abs/10.3109/0167482X.2010.538102#.VcoSgJNVhBc
+
+
+==========================================================================
+SECTION 13: PAIN
+==========================================================================
+
+--------------------------------------------------------------------------
+Butterbur - Migraines
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Petasites Hybridus
+Type: Plant / Herb
+Notes: Butterbur extract may lower the frequency and severity of migraines.
+Source: Neurology
+Research: http://www.neurology.org/content/78/17/1346.short
+
+--------------------------------------------------------------------------
+Cannabis - Chronic Pain
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Plant / Herb
+Notes: Several good quality trials have shown cannabinoids to be modestly effective in treating chronic pain. The harms and side-effects may outweigh the benefits though. Larger and longer trials needed.
+Source: British Journal of Clinical Pharmacology; Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012182.pub2/full
+Additional: http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2125.2011.03970.x/full
+
+--------------------------------------------------------------------------
+CoQ10 - Migraine
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Alternative Name: Ubiquinol
+Type: Enzyme
+Notes: Some tentative evidence on migraine sensitivity. But much more research needed.
+Source: Sage
+Research: http://cep.sagepub.com/content/31/8/897.short
+
+--------------------------------------------------------------------------
+Feverfew - Migraine
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Plant / Herb
+Notes: Feverfew reduces migraine frequency by just over half a migraine a month.
+Source: Cochrane
+Research: http://www.cochrane.org/CD002286/SYMPT_feverfew-for-preventing-migraine
+
+--------------------------------------------------------------------------
+Grape Seed Extract - Wound Healing, Swelling
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Notes: Some preliminary evidence.
+Source: Examine.com
+Research: https://examine.com/supplements/grape-seed-extract/
+Additional: http://www.ccsenet.org/journal/index.php/gjhs/article/view/40015
+
+--------------------------------------------------------------------------
+Vitamin B2 - Migraine
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Riboflavin
+Type: Vitamin
+Notes: May reduce the frequency of migraines.
+Source: Neurological Science
+Research: http://link.springer.com/article/10.1007/s10072-014-1755-z#page-1
+
+
+==========================================================================
+SECTION 14: RESPIRATORY HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Beta Glucans - Colds, Immune System
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Type: Compound
+Category: Infections / Respiratory
+Notes: Reduced number of colds by 25% and severity of symptoms by 15%. Might increase the body's ability to fend off infections.
+Source: Molecular Nutrition and Food Research
+Research: http://onlinelibrary.wiley.com/doi/10.1002/mnfr.201300338/full
+
+--------------------------------------------------------------------------
+Fish Oil / Omega 3 - Asthma
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Compound
+Notes: Review of trials found that people with asthma changing their diets to include more fish oil DID NOT improve their asthma.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001283/abstract
+Additional: http://erj.ersjournals.com/content/16/5/861.short
+
+--------------------------------------------------------------------------
+Vitamin D - Asthma Attacks
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Vitamin
+Notes: Some protection against severe asthma attacks in adults with mild to moderate asthma. Further trials focusing on children and people who experience frequent severe asthma attacks are needed.
+Source: Cochrane
+Research: http://www.cochrane.org/CD011511/AIRWAYS_vitamin-d-prevent-asthma-attacks
+
+
+==========================================================================
+SECTION 15: URINARY HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Cranberry - Urinary Tract Infections
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Alternative Name: Cranberry Juice; Cranberries
+Type: Plant / Herb
+Category: Urinary / Women
+Notes: No statistically significant evidence that cranberry juice or supplements prevent UTIs.
+Source: Cochrane
+Research: http://www.cochrane.org/CD001321/RENAL_cranberries-for-preventing-urinary-tract-infections
+
+--------------------------------------------------------------------------
+Nettle - Prostate-Related Urinary Problems
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Category: Urinary / Men
+Notes: Might be effective in treating urinary issues in men by reducing inflammation. But we could find no recent studies.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/16635963
+
+--------------------------------------------------------------------------
+Probiotics - Urinary Tract Infections
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Other
+Notes: No significant evidence that probiotics are any more effective than placebo in treating UTIs. Quality of evidence is poor.
+Source: Cochrane
+Research: http://www.cochrane.org/CD008772/RENAL_probiotics-preventing-urinary-tract-infections-adults-and-children
+
+--------------------------------------------------------------------------
+Saw Palmetto - Prostate-Related Urinary Problems
+--------------------------------------------------------------------------
+Evidence Score: 1 (No Evidence)
+Type: Plant / Herb
+Category: Urinary / Men
+Notes: No evidence that it improves urinary-tract-related problems.
+Source: Cochrane
+Research: https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001423.pub3/full
+Additional: http://www.ncbi.nlm.nih.gov/pubmed/19370565
+
+
+==========================================================================
+SECTION 16: CHILDREN'S HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Folic Acid - Birth Defects
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Vitamin
+Notes: Folic acid helps to prevent birth defects, but timing of supplementation is important.
+Source: Cochrane
+Research: http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD007950.pub2/full
+
+--------------------------------------------------------------------------
+Iron - Child Development (When Not Anaemic)
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Mineral
+Category: Children / Mental Health / General Health
+Notes: Iron supplementation in infants might benefit their psychomotor development, but not their mental or behavioural development.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/20410098
+
+--------------------------------------------------------------------------
+Vitamin A - Birth Defects (High Dose)
+--------------------------------------------------------------------------
+Evidence Score: 0 (Harmful)
+Alternative Name: Retinol
+Type: Vitamin
+Notes: HARMFUL. High doses (10,000 IU/per day) can cause birth defects in human and animal infants.
+Source: PubMed
+Research: http://www.ncbi.nlm.nih.gov/pubmed/9431575
+
+--------------------------------------------------------------------------
+Vitamin A - Child Mortality, Diarrhea, Measles
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Vitamin
+Notes: Reduces overall risk of death and death due to diarrhoea by 12%. Vitamin A does not specifically reduce death due to measles, respiratory infections, or meningitis, but it can reduce new occurrences of diarrhoea and measles.
+Source: Cochrane; WHO
+Research: http://www.cochrane.org/CD008524/BEHAV_vitamin-supplementation-preventing-disease-and-death-children-aged-six-months-five-years
+
+--------------------------------------------------------------------------
+Zinc - Pneumonia (Children)
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Mineral
+Notes: Zinc supplementation in children is associated with a reduction in the incidence and prevalence of pneumonia.
+Source: Cochrane; WHO
+Research: http://www.cochrane.org/CD005978/ARI_zinc-supplementation-prevention-pneumonia-children-aged-two-59-months
+
+
+==========================================================================
+SECTION 17: COGNITION
+==========================================================================
+
+--------------------------------------------------------------------------
+Caffeine - Memory
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Compound
+Notes: Enhances consolidation of long term memories. Improves memory in young adults during their non-optimal time of day (mornings).
+Source: Borota et al 2014; Frontiers in Psychology
+Research: http://www.ncbi.nlm.nih.gov/pubmed/24413697
+Additional: https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01764/full
+
+--------------------------------------------------------------------------
+DHEA - Memory in Young Men
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Compound
+Category: Cognition / Men
+Notes: DHEA might improve memory in young men.
+Source: Cochrane
+Research: http://www.cochrane.org/CD006221/DEMENTIA_no-current-evidence-for-an-improvement-in-memory-or-other-aspects-of-cognitive-function-of-non-demented-older-people-following-dhea-supplements
+
+--------------------------------------------------------------------------
+L-Tyrosine - Alertness, Wakefulness, Memory
+--------------------------------------------------------------------------
+Evidence Score: 4 (Good Evidence)
+Type: Compound
+Notes: Evidence suggests that tyrosine intake slightly improves working memory and information processing in healthy adults under strain.
+Source: Pharmacology Biochemistry and Behaviour
+Research: http://www.sciencedirect.com/science/article/pii/S0091305715000945
+
+--------------------------------------------------------------------------
+Turmeric - Memory
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Curcumin
+Type: Plant / Herb
+Notes: A high quality, long-term (18 months), but small study (40 subjects) found that 90mg of curcumin twice daily improved memory in adults without dementia.
+Source: American Journal of Geriatric Psychiatry
+Research: https://www.sciencedirect.com/science/article/pii/S1064748117305110
+
+
+==========================================================================
+SECTION 18: WEIGHT CONTROL
+==========================================================================
+
+--------------------------------------------------------------------------
+Ecklonia Cava Seaweed - Cholesterol, Weight Loss
+--------------------------------------------------------------------------
+Evidence Score: 3 (Moderate Evidence)
+Type: Alga
+Category: Weight Control / Cardio
+Notes: There is evidence that seaweed supplements can combat several mechanisms behind the onset of cardiovascular disease. Ecklonia in particular has been shown to decrease cholesterol. One study of ecklonia cava in particular (80 subjects) concluded that ECE supplementation improved blood lipid profiles through decreasing total cholesterol and LDL-cholesterol levels which are known as major cardiovascular risk factors.
+Source: Marine Drugs
+Research: https://www.mdpi.com/1660-3397/13/11/6838/htm
+
+
+==========================================================================
+SECTION 19: NEUROLOGICAL HEALTH
+==========================================================================
+
+--------------------------------------------------------------------------
+Cannabis - Multiple Sclerosis (MS)
+--------------------------------------------------------------------------
+Evidence Score: 5 (Strong Evidence)
+Type: Plant / Herb
+Notes: 2 studies involving a total of 790 subjects showed positive results. Improved muscle spasms, pain, sleep quality, and mobility. Cannabis-based drug Sativex is approved for use in MS patients in 30 countries.
+Source: Journal of Ethnopharmacology
+Research: http://www.sciencedirect.com/science/article/pii/S0378874106000821
+
+--------------------------------------------------------------------------
+Vitamin E - Alzheimer's Disease
+--------------------------------------------------------------------------
+Evidence Score: 2 (Slight Evidence)
+Alternative Name: Alpha Tocopherol
+Type: Vitamin
+Notes: No to slight evidence.
+Source: Cochrane
+Research: http://www.cochrane.org/CD002854/DEMENTIA_use-vitamin-e-treatment-mild-cognitive-impairment-and-alzheimers-disease-ad
+
+
+==========================================================================
+QUICK REFERENCE: SUPPLEMENTS BY EVIDENCE SCORE
+==========================================================================
+
+VERY STRONG EVIDENCE (Score 6):
+- Coffee for heart disease
+
+STRONG EVIDENCE (Score 5):
+- Agnus castus (vitex) for PMS
+- Caffeine for memory
+- Calcium + vitamin D for bone health
+- Cannabis for Multiple Sclerosis (MS)
+- Eggshell membrane for joints and arthritis
+- Feverfew for migraine
+- Fish oil / omega 3 (in pregnancy) for preterm birth
+- Folic acid for birth defects
+- Hawthorn for chronic heart failure
+- Peppermint oil for IBS
+- Probiotics for diarrhea
+- Zinc for pneumonia in children
+
+GOOD EVIDENCE (Score 4):
+- Abatacept for osteoarthritis
+- Ashwagandha for anxiety and stress
+- Borage seed oil for rheumatoid arthritis
+- Calcium for blood pressure
+- Calcium for colorectal cancer
+- Cannabis for nausea (chemotherapy)
+- Cannabis for chronic pain
+- Chlorella for blood pressure, cholesterol, and cardiovascular disease
+- Devil's claw for arthritis
+- Ginger for nausea and vomiting
+- Horse chestnut seed extract for chronic venous insufficiency (CVI)
+- Iron for child development
+- Iron + folic acid for maternal and infant health
+- L-tyrosine for alertness, wakefulness, and memory
+- Myo-inositol for gestational diabetes
+- St John's wort for depression
+- Vitamin A for child mortality, diarrhea, and measles
+- Vitamin B for schizophrenia
+- Vitamin C for colds
+- Vitamin D for bone health
+- Vitamin D for general health and all-cause mortality
+- Vitamin K2 for osteoporosis
+- Xylitol for middle ear infection
+- Zinc for colds
+
+MODERATE EVIDENCE (Score 3):
+- Antioxidants for infertility in men
+- Astragalus for chronic kidney disease
+- Benfotiamine for anti-aging and diabetes
+- Bromelain for arthritis
+- Calcium for osteoporosis in postmenopausal women
+- Cannabis for glaucoma
+- Chocolate, dark for blood pressure
+- Coconut oil for obesity
+- Coffee for mortality
+- CoQ10 for diabetes
+- Creatine and CoQ10 for cognition
+- Dandelion for tonsillitis
+- DHEA for memory in young men
+- Echinacea for colds
+- Ecklonia cava seaweed for cholesterol and weight loss
+- Fish oil / omega 3 for colorectal cancer
+- GABA for stress and anxiety
+- Garlic for cancer prevention
+- Glucosamine for arthritis and joint pain
+- Green tea for cancer prevention
+- Hawthorn for blood pressure and cardiovascular disease
+- L-carnitine for diabetes
+- L-tyrosine for depression
+- Magnesium for blood pressure
+- Magnesium + vitamin B6 for child ADHD
+- Mistletoe for breast and neck cancers
+- Probiotics for cholesterol and blood pressure
+- Probiotics for IBS
+- Tryptophan for depression in women
+- Turmeric for peptic ulcer and ulcerative colitis
+- Vitamin B8 for OCD and panic disorder
+- Vitamin D for asthma attacks
+- Vitamin D for flu
+- Vitamin K2 for prostate cancer
+
+SLIGHT EVIDENCE (Score 2):
+- Aloe vera for diabetes
+- Ashwagandha for erectile dysfunction
+- Ashwagandha for rheumatoid arthritis
+- Beta glucans for colds and immune system
+- Black cohosh for menopause
+- Butterbur for migraines
+- Caffeine for Alzheimer's disease and dementia
+- Caffeine for skin cancer
+- Calcium + vitamin D for breast cancer in premenopausal women
+- Chromium for diabetes
+- Fish oil / omega 3 for cancer symptoms
+- Fish oil / omega 3 for child intelligence
+- Fish oil / omega 3 for cystic fibrosis
+- Fish oil / omega 3 for depression
+- Fish oil / omega 3 for psychosis
+- Garlic for cancer treatment
+- Green tea for cholesterol
+- Horsetail for osteoporosis
+- Hyaluronic acid for arthritis (injection only)
+- Kava for anxiety
+- Lavender for depression and anxiety
+- Lingzhi + san miao san for arthritis
+- Lycopene for prostate cancer
+- Melatonin for sleep disturbances
+- Milk thistle for hepatitis and diabetes
+- MSM for arthritis
+- Piracetam for memory and dementia
+- Probiotics for candida
+- Reishi mushroom for cancer
+- Resveratrol for diabetes
+- Resveratrol for heart health
+- Rhodiola rosea L. for fatigue
+- Saffron for depression
+- Turmeric for cancer
+- Turmeric for depression
+- Turmeric for memory
+- Vitamin B for Alzheimer's
+- Vitamin B2 for migraine
+- Vitamin B3 for skin cancer
+- Vitamin B8 for depression
+- Vitamin D for diabetes
+- Vitamin E for Alzheimer's disease
+- Xylitol for teeth
+
+NO EVIDENCE (Score 1):
+- Aloe vera for burns and cuts
+- Andrographis for respiratory tract infections
+- Astaxanthin for oxidative stress
+- Bee pollen for cancer
+- Beta-carotene for cancer
+- Beta glucans for cancer
+- Bitter melon for diabetes
+- Black tea for cancer prevention
+- Borage seed oil for eczema
+- Capsaicin for non-allergic rhinitis
+- Carnosine for anti-aging
+- Cat's claw for cancer
+- Chamomile for bowel disorders
+- Cinnamon for diabetes
+- Colostrinin for Alzheimer's disease
+- CoQ10 for blood pressure
+- CoQ10 for migraine
+- Cranberry for urinary tract infections
+- DHEA for ageing
+- Elderberry for flu
+- Elk velvet antler for rheumatoid arthritis
+- Evening primrose oil for eczema
+- Evening primrose oil for PMS
+- Fish oil / omega 3 for Alzheimer's and dementia
+- Fish oil / omega 3 for asthma
+- Fish oil / omega 3 for Crohn's disease
+- Fish oil / omega 3 for diabetes
+- Fish oil / omega 3 for low sperm count
+- Flax seeds for breast cancer
+- Garlic for blood pressure
+- Garlic for colds
+- Ginkgo biloba for dementia
+- Ginseng for cognitive performance
+- Glutamine for gastrointestinal disease in infants
+- Glutamine for mortality in preterm infants
+- Goji berry for eye health
+- Grape seed extract for wound healing and swelling
+- Krill oil for PMS
+- L-arginine for exercise performance
+- Lavender for sleep, relaxation, and anxiety
+- Leucine for protein synthesis
+- L-lysine for herpes
+- Lutein for age-related macular degeneration (AMD)
+- N-acetyl cysteine (NAC) for OCD and addiction
+- Nettle for prostate-related urinary problems
+- Olive leaf extract for blood pressure and cholesterol
+- Omega 3 for child ADHD
+- Omega 3: ALA for heart disease
+- Omega 6 for cancer
+- Omega 6 for heart health
+- Potassium for blood pressure
+- Probiotics for urinary tract infections
+- Resveratrol for cancer
+- SAM-e for depression
+- Saw palmetto for prostate-related urinary problems
+- Selenium for cancer
+- Silicic acid for Alzheimer's
+- Slippery elm for sore throat
+- Spirulina for blood pressure and cholesterol
+- St John's wort for PMS
+- Taurine for weight loss and cholesterol
+- TMG for metabolism
+- Valerian for anxiety
+- Vitamin D for cancer
+- Vitamin D for cardiovascular disease
+- Vitamin D for depression and mood disorders
+- Vitamin K for cardiovascular disease
+
+HARMFUL (Score 0):
+- Aloe vera (ingestion) for digestive aid
+- Antioxidants for mortality
+- Dong quai for menopause in breast cancer patients
+- Fish oil / omega 3 for prostate cancer
+- Folic acid for cancer (when combined with B12)
+- Niacin / vitamin B3 for heart disease
+- Pau d'arco for decongestant
+- Valerian for insomnia
+- Vitamin A (retinol) for birth defects (high dose)
+- Vitamin E (alpha tocopherol) for mortality
+
+
+==========================================================================
+DISCLAIMER
+==========================================================================
+
+This guide is for informational purposes only and is not intended as medical advice.
+Always consult a qualified healthcare professional before starting any supplement regimen.
+Evidence ratings reflect the state of research at the time of compilation and may change
+as new studies are published. Supplements can interact with medications and may not be
+appropriate for all individuals.
+
+Sources include Cochrane systematic reviews, PubMed, and peer-reviewed journals as
+cited with each entry.

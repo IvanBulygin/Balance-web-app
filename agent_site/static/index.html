@@ -133,7 +133,7 @@ body{background:var(--bg)}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>
         </div>
         <div class="serif" style="font-size:22px;line-height:1.25;margin-bottom:8px">What do you need<br>supplements for?</div>
-        <div style="font-size:13px;color:var(--ink-3);line-height:1.5;max-width:280px">I search 17 evidence-based guides and return ranked supplements with dose, timing, and grade.</div>
+        <div style="font-size:13px;color:var(--ink-3);line-height:1.5;max-width:280px">I search 19 evidence-based guides and return ranked supplements with dose, timing, and grade.</div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;justify-content:center">
           <div onclick="sendMessage('What helps me fall asleep faster?')" style="padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer">Best for sleep?</div>
           <div onclick="sendMessage('How to improve afternoon energy?')" style="padding:8px 14px;background:var(--surface);border:.5px solid var(--rule);border-radius:999px;font-size:13px;color:var(--brand-deep);font-weight:500;cursor:pointer">Afternoon energy</div>
@@ -716,7 +716,7 @@ if(role==='user'){wrap.innerHTML=`<div class="bubble">${html}</div>`;
 wrap.innerHTML=`<div class="ai-header">
 <div class="ai-spark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg></div>
 <div style="font-size:12px;font-weight:600;color:var(--ink-2)">Balance</div>
-<div style="font-size:11px;color:var(--ink-4)">&middot; searched 17 guides</div>
+<div style="font-size:11px;color:var(--ink-4)">&middot; searched 19 guides</div>
 </div>
 <div class="ai-body">${html}</div>`;
 }
@@ -1122,7 +1122,7 @@ var filtered=q?topics.filter(function(t){return t.k.toLowerCase().includes(q)}):
 document.getElementById('learn-content').innerHTML=`
 <div style="padding:8px 22px">
   <div class="serif" style="font-size:34px;line-height:1">Learn</div>
-  <div style="font-size:13px;color:var(--ink-3);margin-top:4px">17 evidence-based guides</div>
+  <div style="font-size:13px;color:var(--ink-3);margin-top:4px">19 evidence-based guides</div>
 </div>
 <div style="padding:14px 18px 0">
   <div style="background:var(--surface);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:var(--sh-1)">
@@ -1143,7 +1143,7 @@ ${!q?`<div style="padding:16px 18px 0">
   </div>
 </div>`:''}
 <div style="padding:22px 18px 20px">
-  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">${q?filtered.length+' result'+(filtered.length!==1?'s':''):'All 17 topics'}</div>
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">${q?filtered.length+' result'+(filtered.length!==1?'s':''):'All topics'}</div>
   ${filtered.length===0?'<div style="text-align:center;padding:30px;color:var(--ink-3);font-size:14px">No topics match your search.</div>':'<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">'+filtered.map(function(t){return "<div onclick=\"openTopicDetail('"+t.k+"')\" class=\"bal-card\" style=\"padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer\"><div style=\"width:32px;height:32px;border-radius:10px;background:"+(t.g==='A'?'var(--brand-soft)':t.g==='B'?'var(--green-soft)':'var(--accent-soft)')+";display:flex;align-items:center;justify-content:center\">"+(iconSvg[t.icon]||'')+"</div><div><div style=\"font-size:14px;font-weight:600\">"+t.k+"</div><div style=\"font-size:11px;color:var(--ink-3);margin-top:2px\">Grade "+t.g+"</div></div></div>"}).join('')+'</div>'}
   ${!q?'<div style="text-align:center;font-size:12px;color:var(--ink-3);margin-top:14px;font-weight:500">Show all 17 &rarr;</div>':''}
 </div>`;

@@ -1,0 +1,453 @@
+Supplement Evidence Database
+
+Sources: Cochrane Reviews, PubMed, peer-reviewed journals
+Total entries: 189 supplement-condition pairs
+
+Evidence Scale:
+0 = HARMFUL — evidence of harm, avoid
+1 = No meaningful evidence
+2 = Slight/preliminary evidence
+3 = Moderate evidence, more research needed
+4 = Good evidence from quality trials
+5 = Strong evidence from multiple trials
+6 = Very strong evidence, well-established
+
+
+HARMFUL SUPPLEMENTS (Score 0) — AVOID
+
+Aloe vera for digestion — HARMFUL. Ingestion causes diarrhea, electrolyte imbalance and kidney dysfunction. Source: Journal of Environmental Science and Health.
+
+Antioxidants for mortality — Taking antioxidants have no health benefits. Beta carotene, vitamin A and vitamin E appear to increase risk of death. Source: Cochrane.
+
+Dong quai for menopause in breast cancer patients — HARMFUL. Long term safety data is non-existent. May increase risk of cancer. Source: Lau et al. 2005.
+
+Folic acid + vitamin B12 for cancer — POTENTIALLY HARMFUL. When combined with vitamin B12 can be associated with increased cancer risk. Source: Cochrane.
+
+Fish oil / omega 3 for prostate cancer — HARMFUL? Recent studies have linked fish oil intake with increased prostate cancer risk. Source: Journal of the National Cancer Institute.
+
+Niacin (vitamin B3) for heart disease — POTENTIALLY HARMFUL. Has long been thought effective for heart disease, but recent findings show it does not help and can have severe adverse effects. Source: New England Journal of Medicine.
+
+Pau d'arco as decongestant — HARMFUL. Highly toxic. If used at all, should be used with extreme caution. Source: Oncology Nursing Forum.
+
+Valerian for insomnia — HARMFUL? No significant differences between valerian and placebo. May have adverse side effects. Source: Sleep Medicine Reviews.
+
+Vitamin A (high dose) for birth defects — HARMFUL. High doses (10,000 IU/day) can cause birth defects. Source: PubMed.
+
+Vitamin E (high dose) for mortality — HARMFUL? High dosages might increase all-cause mortality. Source: American College of Physicians.
+
+
+STRONG EVIDENCE (Score 5-6)
+
+Coffee for heart disease — Score 6. A metastudy found the more coffee a person drinks, the lower their risk of cardiovascular disease. Optimum: 3-5 cups per day. Source: Epidemiology and Prevention.
+
+Agnus castus (vitex) for PMS — Score 5. Helps improve PMS symptoms. Source: Archives of Gynecology and Obstetrics.
+
+Caffeine for memory — Score 5. Enhances consolidation of long-term memories. Improves memory in young adults during non-optimal time of day. Source: Borota et al 2014; Frontiers in Psychology.
+
+Calcium + vitamin D for bone health — Score 5. Review of 8 studies (30,970 participants): reduced total fracture risk by 15% and hip fracture risk by 30%. Source: Osteoporosis International.
+
+Cannabis for Multiple Sclerosis — Score 5. Improved muscle spasms, pain, sleep quality, and mobility. Cannabis-based drug Sativex approved in 30 countries. Source: Journal of Ethnopharmacology.
+
+Eggshell membrane for joints/arthritis — Score 5. Increases cell production and decreases inflammation. 500mg/day gives rapid results. Source: Cochrane.
+
+Feverfew for migraines — Score 5. Reduces migraine frequency by just over half a migraine per month. Source: Cochrane.
+
+Fish oil / omega 3 in pregnancy for preterm birth — Score 5. Meta-analysis concluded preterm and early preterm birth were reduced in women receiving omega-3. Source: Cochrane.
+
+Folic acid for birth defects — Score 5. Helps prevent birth defects, but timing of supplementation is important. Source: Cochrane.
+
+Hawthorn for chronic heart failure — Score 5. Improves heart function, increases functional capacity, alleviates symptoms, improves quality of life. Very favourable safety profile. Source: American Journal of Cardiovascular Drugs.
+
+Peppermint oil for IBS — Score 5. Relaxes muscles, relieves IBS-related spasms. May be more effective than conventional anti-spasmodics. Source: Cochrane.
+
+Probiotics for antibiotic-associated diarrhea — Score 5. Effective for preventing diarrhea associated with antibiotic use. Source: Cochrane.
+
+Zinc for pneumonia in children — Score 5. Reduces incidence and prevalence of pneumonia in children. Source: Cochrane, WHO.
+
+
+CARDIOVASCULAR HEALTH
+
+Calcium for blood pressure — Score 4. Extra calcium can slightly reduce blood pressure, especially in people younger than 35. Source: Cochrane.
+
+Chlorella for blood pressure, cholesterol — Score 4. Significantly decreases blood pressure, blood glucose, and some cholesterols. Source: Clinical Nutrition.
+
+Horse chestnut seed extract for chronic venous insufficiency — Score 4. Effective treatment. Source: Cochrane.
+
+Coffee for mortality — Score 3. Large study of 650,000+ people: coffee drinking reduced all-cause mortality (instant, ground, or decaf). Source: JAMA Internal Medicine.
+
+Dark chocolate for blood pressure — Score 3. Flavanols in cocoa widen blood vessels, causing minor blood pressure drop. Source: Cochrane.
+
+Ecklonia cava seaweed for cholesterol — Score 3. Evidence for decreasing total and LDL cholesterol. Source: Marine Drugs.
+
+Hawthorn for blood pressure — Score 3. Mixed results, some studies positive. Larger trials needed. Source: Cochrane.
+
+Magnesium for blood pressure — Score 3. Low dietary magnesium linked to high blood pressure. Supplementation might be effective as preventative. Source: International Journal of Cardiology.
+
+Coconut oil for obesity — Score 3. 30ml/day might reduce waist size. Source: Cochrane.
+
+Green tea for cholesterol — Score 2. Might reduce total cholesterol, but trials small and biased. Source: Cochrane.
+
+Resveratrol for heart health — Score 2. May have cardioprotective benefits. Source: Tomé-Carneiro et al 2013.
+
+Spirulina for blood pressure — Score 1. Very preliminary evidence. Source: Journal of Medicinal Food.
+
+Garlic for blood pressure — Score 1. Might reduce blood pressure but further research required. Source: Cochrane.
+
+Olive leaf extract for blood pressure — Score 1. One small study found beneficial effects. Source: British Journal of Nutrition.
+
+Omega 6 for heart health — Score 1. No benefit. Source: British Medical Journal.
+
+Omega 3 ALA for heart disease — Score 1. Insufficient evidence. Source: Cochrane.
+
+Vitamin D for cardiovascular disease — Score 1. Large trial (83,000+ participants) found no benefit. Source: JAMA; NEJM.
+
+Vitamin K for cardiovascular disease — Score 1. More evidence needed. Source: Cochrane.
+
+
+MENTAL HEALTH & COGNITION
+
+Caffeine for memory — Score 5. Enhances long-term memory consolidation. Source: Borota et al 2014.
+
+Vitamin B for schizophrenia — Score 4. Review of 18 studies: B vitamins reduced psychiatric symptoms significantly. Source: Psychological Medicine.
+
+L-tyrosine for alertness, wakefulness, memory — Score 4. Slightly improves working memory and information processing under strain. Source: Pharmacology Biochemistry and Behaviour.
+
+Ashwagandha for anxiety and stress — Score 4. Review of 5 human trials: reduces anxiety and stress. Source: Journal of Alternative and Complementary Medicine.
+
+St John's wort for depression — Score 4. Performs better than placebo, comparable to antidepressants with fewer side effects. Source: Cochrane.
+
+GABA for stress/anxiety — Score 3. Some suggestive evidence. Source: Frontiers in Neuroscience.
+
+Vitamin B8 for OCD/panic disorder — Score 3. Several small studies suggest anti-anxiety effects. Source: Journal of Clinical Pharmacology.
+
+L-tyrosine for depression — Score 3. May help by maintaining neurotransmitters affecting mood. Source: Pharmacology Biochemistry and Behaviour.
+
+Tryptophan/5-HTP for depression in women — Score 3. Might alleviate depression, but studies unreliable. Source: Cochrane.
+
+Magnesium + vitamin B6 for child ADHD — Score 3. Children with ADHD tend to have low levels. Unclear if supplementation reduces symptoms. Source: Magnes Restauracja.
+
+DHEA for memory in young men — Score 3. Might improve memory in young men. Source: Cochrane.
+
+Creatine + CoQ10 for cognition — Score 3. No effect in normal brain function, but can benefit those with impaired brain function. Source: European Neurology.
+
+Turmeric for memory — Score 2. Small but high-quality study: 90mg curcumin twice daily improved memory in adults without dementia. Source: American Journal of Geriatric Psychiatry.
+
+Melatonin for sleep disturbances — Score 2. Can help regulate body clock, but evidence is low quality and effects vary. Source: Cochrane.
+
+Caffeine for Alzheimer's/dementia — Score 2. Appears to slow cognitive decline, results not definitive. Source: Santos et al 2010.
+
+Kava for anxiety — Score 2. Might have small significant effect, safety of long-term use unclear. Source: Cochrane.
+
+Lavender for depression/anxiety — Score 2. Suggestive evidence for reduced anxiety, no effect on depression. Source: Examine.com.
+
+Saffron for depression — Score 2. Possible anti-depressant effect, solid evidence lacking. Source: Journal of Affective Disorders.
+
+Turmeric for depression — Score 2. May have benefits but poor bioavailability. Source: Phytotherapy Research.
+
+Vitamin B for Alzheimer's — Score 2. Slows brain shrinkage and reduces brain cell death. Source: PNAS.
+
+Vitamin B8 for depression — Score 2. Evidence unclear. Source: Cochrane.
+
+Piracetam for memory/dementia — Score 2. Evidence does not support use for cognitive impairment. Source: Cochrane.
+
+Fish oil/omega 3 for depression — Score 2. Low quality evidence. Source: Cochrane.
+
+Fish oil/omega 3 for psychosis — Score 2. One study: delayed onset of psychosis in at-risk individuals. Source: Nature Communications.
+
+N-acetyl cysteine (NAC) for OCD/addiction — Score 1. Might improve glutamate function in the brain. Source: Clinical Psychopharmacology and Neuroscience.
+
+Omega 3 for child ADHD — Score 1. Insufficient evidence. Source: Cochrane.
+
+Fish oil/omega 3 for Alzheimer's — Score 1. Largest and longest study found no significant impact on cognitive decline. Source: JAMA.
+
+Ginkgo biloba for dementia — Score 1. Insufficient clinical trial evidence. Source: University of Oxford.
+
+Ginseng for cognitive performance — Score 1. No convincing evidence. Source: Cochrane.
+
+Lavender for sleep/relaxation — Score 1. One tiny study found slight benefit. Source: Perceptual and Motor Skills.
+
+SAM-e for depression — Score 1. Review of 8 studies showed no strong evidence as monotherapy. Source: Cochrane.
+
+Silicic acid for Alzheimer's — Score 1. Might help by decreasing aluminium in body. Source: PubMed.
+
+Valerian for anxiety — Score 1. No difference from placebo. Source: Cochrane.
+
+Vitamin D for depression — Score 1. Low vitamin D associated with depression, but causation uncertain. Source: British Journal of Psychology.
+
+Colostrinin for Alzheimer's — Score 1. A few small studies suggest possible effects. Source: Journal of Nutritional Health and Aging.
+
+
+DIGESTION & GUT HEALTH
+
+Peppermint oil for IBS — Score 5. Relaxes muscles, relieves spasms. May be more effective than conventional treatments. Source: Cochrane.
+
+Probiotics for diarrhea — Score 5. Effective for preventing antibiotic-associated diarrhea. Source: Cochrane.
+
+Ginger for nausea and vomiting — Score 4. Prevents nausea and vomiting in certain circumstances. Source: Annals of Oncology.
+
+Cannabis for chemotherapy nausea — Score 4. Promising evidence. FDA approved 2 synthetic cannabis drugs for chemo nausea. Source: Cochrane.
+
+Turmeric for peptic ulcer/ulcerative colitis — Score 3. May be effective when combined with conventional medications. Source: Cochrane.
+
+Probiotics for IBS — Score 3. B. infantis 35624 improves symptoms (pain, bloating). Evidence for other strains limited. Source: PubMed.
+
+Probiotics for cholesterol/blood pressure — Score 3. Conflicting evidence. Source: International Journal of Molecular Sciences.
+
+Chamomile for bowel disorders — Score 1. No high-quality trials. Source: Der Pharma Chemica.
+
+Glutamine for gastrointestinal disease — Score 1. Insufficient evidence. Source: Cochrane.
+
+Fish oil/omega 3 for Crohn's disease — Score 1. No beneficial effect. Source: Cochrane.
+
+
+MUSCULOSKELETAL & JOINTS
+
+Calcium + vitamin D for bone health — Score 5. Reduced fracture risk by 15%, hip fracture by 30%. Source: Osteoporosis International.
+
+Eggshell membrane for joints/arthritis — Score 5. Rapid results at 500mg/day. Source: Cochrane.
+
+Vitamin D for bone health — Score 4. Increases bone density and prevents fractures in deficient individuals. Source: American Journal of Clinical Nutrition.
+
+Vitamin K2 for osteoporosis — Score 4. Repeatedly shown to improve bone strength, particularly in post-menopausal women. Source: Osteoporosis International.
+
+Abatacept for osteoarthritis — Score 4. Reduces joint pain and improves function. Source: Cochrane.
+
+Borage seed oil for rheumatoid arthritis — Score 4. Improves pain and function, probably no adverse effects. Source: Cochrane.
+
+Devil's claw for arthritis — Score 4. Reduces lower back pain by blocking inflammation pathways. Source: Cochrane.
+
+Iron for child development — Score 4. May benefit psychomotor development. Source: PubMed.
+
+Calcium for osteoporosis (postmenopausal) — Score 3. Might prevent fractures, contradictory results. Source: PubMed.
+
+Glucosamine for arthritis — Score 3. Some brands (Rotta) showed benefit, others showed no difference from placebo. Source: Cochrane.
+
+Bromelain for arthritis — Score 3. Reduces symptoms, more dosage research needed. Source: Annals of Internal Medicine.
+
+Hyaluronic acid for arthritis (injected) — Score 2. Might have small effect, trials biased. Source: PubMed.
+
+MSM for arthritis — Score 2. Slight reduction in pain, may not be clinically significant. Source: BMC Complementary Medicine.
+
+Horsetail for osteoporosis — Score 2. Small old study showed improved bone density. Source: Cochrane.
+
+Lingzhi + san miao san for arthritis — Score 2. May reduce pain, no other significant benefits. Source: American Journal of Clinical Nutrition.
+
+Ashwagandha for rheumatoid arthritis — Score 2. No solid evidence. Source: Indian Journal of Medical Research.
+
+Elk velvet antler for arthritis — Score 1. No good quality evidence. Source: New Zealand Medical Journal.
+
+
+INFECTIONS & IMMUNITY
+
+Zinc for pneumonia (children) — Score 5. Reduces incidence and prevalence. Source: Cochrane, WHO.
+
+Zinc for colds — Score 4. Oral zinc may shorten cold symptoms. Side effects can be common. Source: CMAJ.
+
+Vitamin A for child mortality/diarrhea — Score 4. Reduces overall death risk by 12%, reduces new occurrences of diarrhea and measles. Source: Cochrane, WHO.
+
+Iron + folic acid for maternal health — Score 4. Reduces iron deficiency anaemia in pregnancy. Source: Cochrane.
+
+Vitamin C for colds — Score 4. Does not reduce incidence but shortens duration. For extreme physical stress (marathon runners), halves cold risk. Source: Cochrane.
+
+Echinacea for colds — Score 3. Might have slight impact, statistically insignificant. Source: Cochrane.
+
+Vitamin D for flu — Score 3. Children taking D3: 10.8% contracted influenza vs 18.6% placebo. Reduced flu-related asthma attacks. Source: Urashima et al. 2010.
+
+Dandelion for tonsillitis — Score 3. Might have antimicrobial properties. Source: Evidence-Based Health Care.
+
+Astragalus for chronic kidney disease — Score 3. Low quality evidence when combined with conventional treatments. Source: Cochrane.
+
+Beta glucans for colds/immune system — Score 2. Reduced colds by 25% and severity by 15%. Source: Molecular Nutrition and Food Research.
+
+Astragalus for immune system — Score 2. Limited studies suggest immune strengthening. Source: Block, Mead 2003.
+
+Milk thistle for hepatitis/diabetes — Score 2. Might be beneficial, trials low quality. Source: Cochrane.
+
+Andrographis for respiratory infections — Score 1. Slight evidence of reduced symptoms. Source: Otolaryngologic Clinics.
+
+Garlic for colds — Score 1. Insufficient evidence. Source: Cochrane.
+
+Elderberry for flu — Score 1. Sambucol may be useful, more rigorous studies needed. Source: Phytotherapy Research.
+
+Slippery elm for sore throat — Score 1. No clinical evidence. Source: Pediatrics in Review.
+
+L-lysine for herpes — Score 1. No evidence of preventative effect. Source: Cochrane.
+
+
+DIABETES & BLOOD SUGAR
+
+Myo-inositol for gestational diabetes — Score 4. Potential benefit for reducing incidence. Source: Cochrane.
+
+Benfotiamine for anti-aging/diabetes — Score 3. High-dose study showed no significant effects over 24 months. Source: Cochrane.
+
+L-carnitine for diabetes — Score 3. May alleviate diabetic neuropathy. Source: Diabetes Care.
+
+CoQ10 for diabetes — Score 3. Improves insulin secretion in type 2 diabetes, but trials tiny. Source: Biofactors.
+
+Aloe vera for diabetes — Score 2. One study: 300mg capsule every 12 hours for 2 months benefited patients with dyslipidemia. Source: Planta Medica.
+
+Chromium for diabetes — Score 2. Might lower blood glucose. Source: Cochrane.
+
+Resveratrol for diabetes — Score 2. Preliminary evidence for relieving symptoms. Source: British Journal of Nutrition.
+
+Vitamin D for diabetes — Score 2. Association unclear. Source: Annals of Internal Medicine.
+
+Bitter melon for diabetes — Score 1. Not enough evidence. Source: Cochrane.
+
+Cinnamon for diabetes — Score 1. No more effective than placebo. Source: Cochrane.
+
+Fish oil/omega 3 for diabetes — Score 1. Probably no beneficial effect for type 2. Source: Cochrane.
+
+
+CANCER
+
+Calcium for colorectal cancer — Score 4. No evidence of preventing cancer itself, but inhibits pre-cancerous polyps. Source: Cochrane.
+
+Cannabis for chronic pain — Score 4. Modestly effective, but harms may outweigh benefits. Source: Cochrane.
+
+Green tea for cancer prevention — Score 3. Evidence conflicting, but 3-5 cups/day may have general benefits. Source: Cochrane.
+
+Garlic for cancer prevention — Score 3. Might prevent certain cancers, WHO recommends 1 clove/day for general health. Source: National Cancer Institute.
+
+Fish oil/omega 3 for colorectal cancer — Score 3. Thought to reduce risk. Source: PubMed.
+
+Cannabis for glaucoma — Score 3. Lowers eye pressure but only temporarily (3-4 hours). Source: American Glaucoma Society.
+
+Mistletoe for breast/neck cancers — Score 3. Preliminary evidence for improving quality of life in breast cancer patients. Source: Cochrane.
+
+Vitamin K2 for prostate cancer — Score 3. No conclusive evidence. Source: American Journal of Clinical Nutrition.
+
+Turmeric for cancer — Score 2. Might have anti-cancer effects on colon, pancreatic cancer. Source: PubMed.
+
+Reishi mushroom for cancer — Score 2. Possible effect on chemotherapy recovery. Source: Cochrane.
+
+Lycopene for prostate cancer — Score 2. Insufficient evidence. Source: Cochrane.
+
+Caffeine for skin cancer — Score 2. Population studies show possible lower risk with 3+ cups/day. Source: Song et al. 2012.
+
+Garlic for cancer treatment — Score 2. Aged garlic may have beneficial effects. More trials needed. Source: International Journal of Preventative Medicine.
+
+Fish oil/omega 3 for cancer symptoms — Score 2. Can counter chemotherapy damage to white blood cells. Source: Lipids.
+
+Calcium + vitamin D for breast cancer — Score 2. No firm evidence of decreased risk. Source: Cochrane.
+
+Vitamin B3 for skin cancer — Score 2. May prevent skin cancer. Source: International Journal of Cancer.
+
+Vitamin D for cancer — Score 1. Largest trial (25,871 participants, 5 years): no lower incidence. Source: NEJM.
+
+Selenium for cancer — Score 1. Insufficient evidence. Source: Cochrane.
+
+Resveratrol for cancer — Score 1. No human trials. Source: Cancer Letters.
+
+Green tea for cancer — Score 1. No clear association. Source: Nutrition and Cancer.
+
+Beta glucans for cancer — Score 1. No human trials. Source: Evidence-Based CAM.
+
+Cat's claw for cancer — Score 1. No human trials. Source: Anticancer Research.
+
+Bee pollen for cancer — Score 1. No evidence. Source: European Journal of Medicinal Chemistry.
+
+Beta-carotene for cancer — Score 1. No evidence of prevention. Source: PubMed.
+
+Flax seeds for breast cancer — Score 1. Population studies indicate slight possibility. No controlled trials. Source: Cancer Causes Control.
+
+
+REPRODUCTIVE & SEXUAL HEALTH
+
+Antioxidants for male infertility — Score 3. Evidence inconclusive. Source: Cochrane.
+
+Ashwagandha for erectile dysfunction — Score 2. Single pilot study: appeared to increase sperm count. Source: Evidence-based CAM.
+
+Probiotics for candida — Score 2. Very low quality evidence. Source: Cochrane.
+
+Fish oil/omega 3 for low sperm count — Score 1. Small study of 211 men: significant increase in sperm count. Source: Cochrane.
+
+Krill oil for PMS — Score 1. One study: reduced emotional and physical PMS symptoms. Source: PubMed.
+
+Evening primrose oil for PMS — Score 1. No more effective than placebo. Source: Journal of Psychosomatic Obstetrics.
+
+St John's wort for PMS — Score 1. No effect on emotional or physical symptoms. Source: CNS Drugs.
+
+Cranberry for urinary tract infections — Score 1. No statistically significant evidence. Source: Cochrane.
+
+Probiotics for UTIs — Score 1. No significant evidence. Source: Cochrane.
+
+Saw palmetto for prostate problems — Score 1. No evidence of improvement. Source: Cochrane.
+
+Nettle for prostate urinary problems — Score 1. Might be effective, no recent studies. Source: PubMed.
+
+
+SKIN, EYE & GENERAL HEALTH
+
+Vitamin D for general health/mortality — Score 4. D3 may reduce mortality. About 150 treated over 5 years for one saved life. Source: Cochrane.
+
+Vitamin D for asthma attacks — Score 3. Some protection in mild-to-moderate asthma adults. Source: Cochrane.
+
+Xylitol for ear infections — Score 4. Reduced middle ear infections from 30% to 22% in children. Source: Cochrane.
+
+Borage/evening primrose oil for eczema — Score 1. Review of 27 studies: no evidence. Source: Cochrane.
+
+Lutein for macular degeneration — Score 1. May have little or no effect. Source: Cochrane.
+
+Goji berry for eye health — Score 1. Some improvements for seniors, more research needed. Source: Optometry and Vision Science.
+
+Aloe vera for burns/cuts — Score 1. No high quality evidence. Source: Cochrane.
+
+Coconut oil for obesity — Score 3. 30ml/day might reduce waist size. Source: Cochrane.
+
+Carnosine for anti-aging — Score 1. Promising in mice, no human trials. Source: Molecules in Focus.
+
+Capsaicin for non-allergic rhinitis — Score 1. Low quality evidence. Source: Cochrane.
+
+Grape seed extract for wound healing — Score 1. Preliminary evidence. Source: Examine.com.
+
+DHEA for aging — Score 1. No beneficial impact on body composition or performance. Source: PubMed.
+
+Leucine for protein synthesis — Score 1. One tiny trial: may speed recovery during exercise. Source: Pasiakos et al. 2011.
+
+L-arginine for exercise performance — Score 1. One tiny study found benefit. Source: Journal of Applied Physiology.
+
+Vitamin E for Alzheimer's — Score 2. No to slight evidence. Source: Cochrane.
+
+Xylitol for teeth — Score 2. Some evidence of reduced decay by 13%, low quality. Source: Cochrane.
+
+Taurine for weight loss/cholesterol — Score 1. No human trials. Source: PubMed.
+
+TMG for metabolism — Score 1. No significant effect in humans. Source: Schwab 2002.
+
+Astaxanthin for oxidative stress — Score 1. No human trials. Source: Cochrane; PLoS One.
+
+
+PAIN
+
+Feverfew for migraines — Score 5. Reduces frequency. Source: Cochrane.
+
+Devil's claw for lower back pain/arthritis — Score 4. Blocks inflammation pathways. Source: Cochrane.
+
+Bromelain for arthritis — Score 3. Reduces symptoms. Source: Annals of Internal Medicine.
+
+Vitamin B2 for migraines — Score 2. May reduce frequency. Source: Neurological Science.
+
+Butterbur for migraines — Score 2. May lower frequency and severity. Source: Neurology.
+
+CoQ10 for migraines — Score 1. Tentative evidence. Source: Sage.
+
+
+FATIGUE & ENERGY
+
+Rhodiola rosea for fatigue — Score 2. Effective but trial quality questionable. Source: Complementary and Alternative Medicine.
+
+
+WOMEN'S HEALTH
+
+Agnus castus (vitex) for PMS — Score 5. Helps improve PMS symptoms. Source: Archives of Gynecology and Obstetrics.
+
+Fish oil/omega 3 in pregnancy for preterm birth — Score 5. Reduces preterm birth. Source: Cochrane.
+
+Folic acid for birth defects — Score 5. Prevents birth defects with proper timing. Source: Cochrane.
+
+Iron + folic acid for maternal health — Score 4. Reduces anaemia in pregnancy. Source: Cochrane.
+
+Myo-inositol for gestational diabetes — Score 4. Potential benefit. Source: Cochrane.
+
+Black cohosh for menopause — Score 2. Insufficient evidence. Source: Cochrane.

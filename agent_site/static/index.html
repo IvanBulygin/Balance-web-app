@@ -1714,28 +1714,35 @@ setTimeout(function(){document.getElementById('modal-overlay').style.display='no
 var _vitaminSelected={};
 function showVitaminChooser(){
 var vitamins=[
-{id:'magnesium',n:'Magnesium',dose:'300 mg',time:'9:00 PM',timeKey:'21:00',form:'glycinate',g:'A',goal:'sleep',desc:'Better sleep & relaxation'},
-{id:'vitd3',n:'Vitamin D3',dose:'2000 IU',time:'with food',timeKey:'12:00',form:'softgel',g:'B',goal:'immunity',desc:'Immunity & bone health'},
-{id:'omega3',n:'Omega-3 EPA',dose:'1 g',time:'lunch',timeKey:'13:00',form:'fish oil',g:'A',goal:'heart',desc:'Heart & brain health'},
-{id:'creatine',n:'Creatine',dose:'5 g',time:'morning',timeKey:'08:00',form:'monohydrate',g:'A',goal:'muscle',desc:'Strength & recovery'},
-{id:'ashwagandha',n:'Ashwagandha',dose:'600 mg',time:'9:00 PM',timeKey:'21:00',form:'KSM-66',g:'B',goal:'stress',desc:'Stress & cortisol relief'},
-{id:'zinc',n:'Zinc',dose:'15 mg',time:'morning',timeKey:'08:00',form:'picolinate',g:'B',goal:'immunity',desc:'Immune defense'},
-{id:'melatonin',n:'Melatonin',dose:'1 mg',time:'before bed',timeKey:'21:30',form:'sublingual',g:'A',goal:'sleep',desc:'Fall asleep faster'},
-{id:'ltheanine',n:'L-Theanine',dose:'200 mg',time:'morning',timeKey:'08:00',form:'capsule',g:'B',goal:'stress',desc:'Calm focus'},
-{id:'coq10',n:'CoQ10',dose:'100 mg',time:'with food',timeKey:'12:00',form:'ubiquinol',g:'B',goal:'energy',desc:'Cellular energy'},
-{id:'collagen',n:'Collagen',dose:'10 g',time:'morning',timeKey:'08:00',form:'peptides',g:'B',goal:'skin',desc:'Skin & joint support'},
-{id:'probiotics',n:'Probiotics',dose:'30B CFU',time:'morning',timeKey:'08:00',form:'multi-strain',g:'B',goal:'gut',desc:'Gut health & digestion'},
-{id:'rhodiola',n:'Rhodiola',dose:'300 mg',time:'morning',timeKey:'08:00',form:'SHR-5',g:'B',goal:'energy',desc:'Fight fatigue & burnout'}
+{id:'magnesium',n:'Magnesium',dose:'300 mg',time:'9:00 PM',timeKey:'21:00',form:'glycinate',g:'A',goal:'sleep',desc:'Better sleep & relaxation',goals:['sleep','stress','muscle','heart']},
+{id:'vitd3',n:'Vitamin D3',dose:'2000 IU',time:'with food',timeKey:'12:00',form:'softgel',g:'B',goal:'immunity',desc:'Immunity & bone health',goals:['immunity','joints','heart','energy']},
+{id:'omega3',n:'Omega-3 EPA',dose:'1 g',time:'lunch',timeKey:'13:00',form:'fish oil',g:'A',goal:'heart',desc:'Heart & brain health',goals:['heart','focus','muscle','joints','immunity']},
+{id:'creatine',n:'Creatine',dose:'5 g',time:'morning',timeKey:'08:00',form:'monohydrate',g:'A',goal:'muscle',desc:'Strength & recovery',goals:['muscle','energy','focus']},
+{id:'ashwagandha',n:'Ashwagandha',dose:'600 mg',time:'9:00 PM',timeKey:'21:00',form:'KSM-66',g:'B',goal:'stress',desc:'Stress & cortisol relief',goals:['stress','sleep','muscle']},
+{id:'zinc',n:'Zinc',dose:'15 mg',time:'morning',timeKey:'08:00',form:'picolinate',g:'B',goal:'immunity',desc:'Immune defense',goals:['immunity','muscle','energy']},
+{id:'melatonin',n:'Melatonin',dose:'1 mg',time:'before bed',timeKey:'21:30',form:'sublingual',g:'A',goal:'sleep',desc:'Fall asleep faster',goals:['sleep']},
+{id:'ltheanine',n:'L-Theanine',dose:'200 mg',time:'morning',timeKey:'08:00',form:'capsule',g:'B',goal:'stress',desc:'Calm focus',goals:['stress','focus','sleep','energy']},
+{id:'coq10',n:'CoQ10',dose:'100 mg',time:'with food',timeKey:'12:00',form:'ubiquinol',g:'B',goal:'energy',desc:'Cellular energy',goals:['energy','heart','focus']},
+{id:'collagen',n:'Collagen',dose:'10 g',time:'morning',timeKey:'08:00',form:'peptides',g:'B',goal:'joints',desc:'Skin & joint support',goals:['joints','muscle']},
+{id:'probiotics',n:'Probiotics',dose:'30B CFU',time:'morning',timeKey:'08:00',form:'multi-strain',g:'B',goal:'immunity',desc:'Gut health & digestion',goals:['immunity','stress','energy']},
+{id:'rhodiola',n:'Rhodiola',dose:'300 mg',time:'morning',timeKey:'08:00',form:'SHR-5',g:'B',goal:'energy',desc:'Fight fatigue & burnout',goals:['energy','stress','focus']}
 ];
+var userGoals=state.goals||['sleep','energy','stress'];
+var filtered=vitamins.filter(function(v){
+return v.goals.some(function(g){return userGoals.indexOf(g)>=0;});
+});
+if(filtered.length<3)filtered=vitamins;
 _vitaminSelected={};
-DEFAULT_STACK.forEach(function(s){_vitaminSelected[s.id]=true;});
+filtered.forEach(function(v){
+if(DEFAULT_STACK.find(function(s){return s.id===v.id}))_vitaminSelected[v.id]=true;
+});
 function renderChooser(){
 var count=Object.keys(_vitaminSelected).filter(function(k){return _vitaminSelected[k]}).length;
 document.getElementById('modal-content').innerHTML=
-'<div class="serif" style="font-size:24px;margin-bottom:4px">Choose your vitamins</div>'+
-'<div style="font-size:13px;color:var(--ink-3);margin-bottom:16px;line-height:1.4">Pick the supplements you’d like in your starter stack. You can change these anytime.</div>'+
+'<div class="serif" style="font-size:24px;margin-bottom:4px">Your recommended stack</div>'+
+'<div style="font-size:13px;color:var(--ink-3);margin-bottom:16px;line-height:1.4">Based on your goals — these supplements have the best evidence. Tap to add or remove.</div>'+
 '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:340px;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:2px;margin-bottom:16px">'+
-vitamins.map(function(v){
+filtered.map(function(v){
 var sel=_vitaminSelected[v.id];
 return '<div onclick="toggleVitaminChoice(\''+v.id+'\')" style="padding:12px;border-radius:14px;border:2px solid '+(sel?'var(--brand)':'var(--rule)')+';background:'+(sel?'var(--brand-soft)':'var(--surface)')+';cursor:pointer;transition:all .15s ease-out;position:relative">'+
 '<div style="font-size:14px;font-weight:600;color:var(--ink)">'+v.n+'</div>'+
@@ -1763,7 +1770,7 @@ if(url)window.open(url,'_blank');
 };
 window.confirmVitaminChoice=function(){
 var newStack=[];
-vitamins.forEach(function(v){
+filtered.forEach(function(v){
 if(_vitaminSelected[v.id]){
 newStack.push({id:v.id,n:v.n,form:v.form,dose:v.dose,time:v.time,timeKey:v.timeKey,g:v.g,goal:v.goal,on:true});
 }

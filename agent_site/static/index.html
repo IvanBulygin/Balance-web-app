@@ -1398,6 +1398,116 @@ renderIntake();
 }
 function finishIntake(){
 state.goals=selectedGoals.length?selectedGoals:['sleep','energy','stress'];
+saveState();
+showGoalEducation();
+}
+var GOAL_EDUCATION={
+sleep:{
+title:'What determines sleep quality',
+facts:[
+{h:'Light exposure',t:'Blue light from screens suppresses melatonin by up to 50%. Stop screens 1 hour before bed, or use a red-light filter.'},
+{h:'Core body temperature',t:'Your body needs to drop 1–2°F to initiate sleep. A cool room (65–68°F / 18–20°C) and a warm shower 90 min before bed accelerate this drop.'},
+{h:'Cortisol & caffeine timing',t:'Caffeine has a 6-hour half-life. A 2pm coffee still has 50% active at 8pm. Cortisol peaks in the morning — exercising late shifts it into the evening and delays sleep.'},
+{h:'Magnesium & GABA',t:'Magnesium binds to GABA receptors (the same calming pathway as sleep medications). Most adults are deficient because modern soil is depleted. Glycinate form absorbs best for sleep.'},
+{h:'Sleep pressure (adenosine)',t:'Adenosine builds up the longer you are awake, creating "sleep pressure." Napping after 2pm or sleeping in late reduces this pressure and makes it harder to fall asleep at night.'}
+]},
+stress:{
+title:'What drives stress & cortisol',
+facts:[
+{h:'HPA axis',t:'Chronic stress keeps your hypothalamus-pituitary-adrenal axis firing. Cortisol stays elevated, causing anxiety, belly fat, and poor sleep. Adaptogens like ashwagandha modulate this axis.'},
+{h:'Magnesium depletion',t:'Stress burns through magnesium, and low magnesium increases stress — a vicious cycle. Supplementing 200–400 mg glycinate breaks the loop.'},
+{h:'Breathing & vagus nerve',t:'Slow exhales (4 sec in, 8 sec out) activate the vagus nerve and shift your nervous system from fight-or-flight to rest-and-digest within 90 seconds.'},
+{h:'Blood sugar swings',t:'Skipping meals or eating refined carbs causes cortisol spikes. Stable blood sugar = stable mood. Protein at every meal helps.'},
+{h:'Sleep–stress loop',t:'Poor sleep raises cortisol by 37%. High cortisol fragments sleep. Breaking either side fixes both — magnesium and ashwagandha target both.'}
+]},
+energy:{
+title:'What controls your energy levels',
+facts:[
+{h:'Mitochondria & CoQ10',t:'Every cell has mitochondria — your energy factories. CoQ10 is essential for ATP production. Levels decline 40% after age 40. Ubiquinol form absorbs best.'},
+{h:'Iron & oxygen transport',t:'Low ferritin (iron stores) is the #1 hidden cause of fatigue, especially in women. Even "normal" levels below 50 ng/mL can cause tiredness.'},
+{h:'Creatine beyond muscle',t:'Creatine recycles ATP in your brain too. 5g/day improves cognitive performance under sleep deprivation and reduces mental fatigue.'},
+{h:'B vitamins & methylation',t:'B12, folate, and B6 drive the methylation cycle that produces energy, neurotransmitters, and repairs DNA. Deficiency causes fatigue before any blood test shows it.'},
+{h:'Afternoon cortisol dip',t:'Cortisol naturally drops 2–4pm causing the "afternoon slump." L-theanine + small protein snack stabilizes energy without caffeine.'}
+]},
+focus:{
+title:'What sharpens cognitive function',
+facts:[
+{h:'Omega-3 & brain membranes',t:'60% of your brain is fat. DHA (omega-3) maintains neuronal membrane fluidity — essential for fast signal transmission. Most Western diets are severely deficient.'},
+{h:'Dopamine & L-tyrosine',t:'Focus depends on dopamine. L-tyrosine is the amino acid precursor. It improves working memory under stress — evidence score 4 from clinical trials.'},
+{h:'Neuroinflammation',t:'Chronic low-grade brain inflammation impairs focus and memory. EPA (omega-3) and curcumin reduce neuroinflammatory markers.'},
+{h:'Blood sugar & the brain',t:'Your brain uses 20% of your glucose. Blood sugar crashes = brain fog. Stable glucose through protein, fiber, and berberine keeps cognition sharp.'},
+{h:'Sleep & memory consolidation',t:'Deep sleep consolidates memories and clears brain waste (glymphatic system). One bad night reduces cognitive performance by 30%.'}
+]},
+muscle:{
+title:'What drives muscle growth & recovery',
+facts:[
+{h:'Protein synthesis window',t:'Muscle protein synthesis peaks 24–48 hours post-training, not just 30 minutes. Total daily protein (1.6–2.2g/kg) matters more than timing.'},
+{h:'Creatine & ATP',t:'Creatine is the most studied supplement in history. 5g/day increases strength by 5–15% and speeds recovery. Works by recycling ATP for explosive movements.'},
+{h:'Magnesium & muscle function',t:'Magnesium is required for 300+ enzyme reactions including muscle contraction and relaxation. Low levels cause cramps and slower recovery.'},
+{h:'Inflammation & omega-3',t:'Post-exercise inflammation is necessary but excess slows recovery. 2–3g EPA/DHA daily reduces DOMS and accelerates repair without blocking adaptation.'},
+{h:'Sleep & growth hormone',t:'75% of growth hormone is released during deep sleep. Poor sleep = poor recovery. Magnesium glycinate before bed improves both.'}
+]},
+heart:{
+title:'What protects cardiovascular health',
+facts:[
+{h:'Omega-3 & triglycerides',t:'EPA/DHA at 2–3g/day reduces triglycerides by 25%. Fish oil is one of the few supplements with strong cardio evidence (score 6 for coffee, 4 for omega-3).'},
+{h:'Magnesium & blood pressure',t:'Magnesium relaxes blood vessel walls. Population studies link low magnesium to hypertension. 300–400mg/day glycinate supports healthy blood pressure.'},
+{h:'CoQ10 & statin users',t:'Statins deplete CoQ10 by up to 40%. Supplementing 100–200mg ubiquinol restores levels and may reduce statin-related muscle pain.'},
+{h:'Vitamin K2 & calcium routing',t:'K2 activates proteins that direct calcium to bones instead of arteries. Essential when supplementing vitamin D + calcium to prevent arterial calcification.'},
+{h:'Inflammation markers',t:'Chronic inflammation (high CRP) is the strongest predictor of heart events. Omega-3, curcumin, and magnesium all reduce inflammatory markers.'}
+]},
+immunity:{
+title:'What strengthens your immune system',
+facts:[
+{h:'Vitamin D & immune cells',t:'Vitamin D activates T-cells and modulates immune response. 40% of adults are deficient. 2000–5000 IU/day brings levels to the 40–60 ng/mL target range.'},
+{h:'Zinc & first-line defense',t:'Zinc is critical for immune cell production and function. Supplementing within 24 hours of cold onset shortens duration by 33%. Score 4 for colds, score 5 for pneumonia in children.'},
+{h:'Gut = 70% of immunity',t:'Most immune tissue lives in your gut (GALT). Probiotics restore gut barrier integrity and reduce antibiotic-associated illness. Multi-strain, 10–50 billion CFU.'},
+{h:'Vitamin C & white blood cells',t:'Vitamin C concentrates in white blood cells at 50x blood levels. 1000mg/day shortens cold duration. Under extreme physical stress, halves cold risk.'},
+{h:'Sleep & immune memory',t:'One night of poor sleep reduces natural killer cell activity by 70%. Consistent 7–9 hours is the single most important immune factor.'}
+]},
+joints:{
+title:'What protects joint health',
+facts:[
+{h:'Collagen turnover',t:'Joint cartilage has no blood supply — it relies on diffusion. Collagen peptides (10g/day) provide the building blocks. Takes 3–6 months to see results.'},
+{h:'Inflammation cascade',t:'Joint pain is driven by inflammatory cytokines (IL-6, TNF-α). Omega-3, curcumin, and borage seed oil reduce these markers. Score 4 for devil\'s claw and borage oil.'},
+{h:'Glucosamine controversy',t:'Evidence is mixed — specific brands (Rotta) showed benefit, others didn\'t. Score 3. If trying, use glucosamine sulfate form for 3 months before judging.'},
+{h:'Eggshell membrane',t:'Score 5 — one of the strongest joint supplements. 500mg/day increases cell production and decreases inflammation with rapid results.'},
+{h:'Vitamin D & bone density',t:'Joint health depends on the bones beneath. Vitamin D + calcium reduces fracture risk by 15%. K2 ensures calcium reaches bones, not soft tissue.'}
+]}
+};
+function showGoalEducation(){
+var goal=selectedGoals[0]||'sleep';
+var edu=GOAL_EDUCATION[goal]||GOAL_EDUCATION.sleep;
+var c=document.getElementById('step3-content');
+c.innerHTML=
+'<div style="padding:12px 18px 0;display:flex;justify-content:space-between;align-items:center">'+
+'<div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></div>'+
+'<div style="display:flex;gap:4px"><div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="width:22px;height:4px;border-radius:2px;background:#fff"></div></div>'+
+'<div style="width:36px"></div>'+
+'</div>'+
+'<div style="padding:22px 22px 0">'+
+'<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:10px">Step 3 of 3</div>'+
+'<div style="font-family:Fraunces,Georgia,serif;font-size:30px;line-height:1.1">'+edu.title+'</div>'+
+'<div style="font-size:13px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Based on your goals — here\'s what the science says matters most.</div>'+
+'</div>'+
+'<div style="padding:18px 18px 0;display:flex;flex-direction:column;gap:10px">'+
+edu.facts.map(function(f,i){
+return '<div style="background:rgba(255,255,255,.1);border-radius:16px;padding:16px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)">'+
+'<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">'+
+'<div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">'+(i+1)+'</div>'+
+'<div style="font-size:15px;font-weight:600">'+f.h+'</div>'+
+'</div>'+
+'<div style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;padding-left:34px">'+f.t+'</div>'+
+'</div>';
+}).join('')+
+'</div>'+
+'<div style="padding:22px 18px">'+
+'<div onclick="finishEducation()" style="background:rgba(255,255,255,.95);color:var(--brand-deep);padding:16px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">Build my supplement stack</div>'+
+'<div onclick="finishEducation()" style="text-align:center;padding:14px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500;cursor:pointer">Skip</div>'+
+'</div>';
+nav('step3');
+}
+function finishEducation(){
 state.onboarded=true;saveState();nav('today');
 setTimeout(showVitaminChooser,400);
 }

@@ -89,7 +89,7 @@ body{background:var(--bg)}
       </div>
       <div style="text-align:center;margin-top:4px;font-size:14px;color:var(--brand-soft);font-weight:500;letter-spacing:.02em">Your Wellness Buddy</div>
       <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end">
-        <div class="serif" style="font-size:34px;line-height:1.12;color:#fff;padding-bottom:6px">What your body really needs,<br><em style="color:#f3a9fd">no marketing and BS</em>.</div>
+        <div class="serif" style="font-size:28px;line-height:1.15;color:#fff;padding-bottom:6px">What your body really needs,<br><em style="color:#f3a9fd">no marketing and BS</em>.</div>
         <div style="font-size:13.5px;color:var(--brand-soft);margin-top:14px;line-height:1.55;max-width:95%">Ask anything about improving sleep, stress and anxiety, memory and focus, libido, healthy aging and more. We search the evidence and return a ranked stack &mdash; with dose, timing, and useful perks.</div>
         <div style="font-size:13px;color:var(--brand-soft);opacity:.85;margin-top:10px;line-height:1.5;max-width:95%">Evaluating supplementation options can be overwhelming. Balance AI is here to help.</div>
         <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
@@ -1405,76 +1405,107 @@ showGoalEducation();
 var GOAL_EDUCATION={
 sleep:{
 title:'Sleep',
-intro:'Sleep quality depends on melatonin timing, nervous system regulation, and mineral status. Even mild sleep loss correlates with lower cognitive scores, higher stress, and impaired recovery. The research points to a small set of supplements that address the root causes.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Core combo',t:'Start with 0.5 mg of melatonin 30 min before bed. Increase by 0.5 mg each week until you find the lowest effective dose (max 5 mg). Also helps with jet lag.'},
-{h:'Anxiety & intrusive thoughts',t:'Add 80 mg Silexan (lavender oil) 30-45 min before bed. If insufficient after 2 weeks, add ashwagandha 250 mg/day split into two doses, increasing to 600 mg/day if needed.'},
-{h:'General support',t:'Magnesium glycinate 200-400 mg in the evening supports GABA activity and relaxation. L-theanine 200 mg before bed promotes calm without sedation.'}
+intro:'Even mild sleep loss impairs focus, skill acquisition, and glucose metabolism. It increases inflammation, raises cardiovascular risk, and hinders muscle gain. As you sleep less you eat more — partial sleep deprivation can cause a 20% increase in voluntary energy intake.',
+problems:[
+{h:'Impaired focus & skill learning',t:'Sleep deprivation reduces concentration for both mental and physical tasks. Your ability to build brain-muscle connections decreases, possibly due to reduced myelin production.'},
+{h:'Increased inflammation & fat gain',t:'Poor sleep triggers low-level inflammation, worsens mood, and causes fatigue. Your body burns less fat and more muscle, while hunger hormones drive you to eat more.'},
+{h:'Impaired cardiovascular & metabolic health',t:'Insufficient sleep raises risk for cardiovascular disease and impairs insulin signaling, making it harder for your body to burn glucose efficiently.'}
+],
+solutions:[
+{h:'Schedule enough time',t:'No supplement will pack 8 hours of sleep into 5. You need to schedule enough time for sleep each day — this is the foundation.'},
+{h:'Consistent bedtime',t:'Going to bed at the same time every day, even during weekends, improves sleep quality and reduces the time it takes to fall asleep.'},
+{h:'Avoid blue light before bed',t:'Blue light from screens suppresses melatonin production. For at least 1 hour before bed, relax and avoid screens, or use blue-light-blocking glasses.'}
 ]},
 stress:{
 title:'Stress & Anxiety',
-intro:'Up to a third of people experience significant stress or anxiety. Chronic stress keeps the HPA axis firing, elevating cortisol and causing a cycle of anxiety, poor sleep, and fatigue. Supplements can help modulate this axis alongside lifestyle strategies.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Generalized anxiety',t:'Saffron 30 mg/day (two 15 mg doses) and oral lavender (Silexan) starting at 80 mg/day, increasing to 160 mg/day over a week if needed. Both have clinical trial support.'},
-{h:'Stress without anxiety',t:'Start with lavender aromatherapy (2 drops essential oil in a diffuser). Ashwagandha has more evidence for subclinical stress than anxiety. Theanine and magnesium are safe nonherbal options.'},
-{h:'PMS-related anxiety',t:'Chaste tree (Vitex agnus-castus) once daily: 150-250 mg dried berry, 20 mg Ze 110 extract, or 4 mg BNO 1095 extract.'}
+intro:'Up to a third of the world experiences significant stress or anxiety. Chronic stress triggers the fight-or-flight response, which if prolonged can lead to general adaptation syndrome — bodily damage from sustained cortisol elevation, impaired sleep, and metabolic disruption.',
+problems:[
+{h:'Fight-or-flight overload',t:'When stress becomes chronic, the sympathetic nervous system stays activated. Cortisol remains elevated, causing anxiety, weight gain, poor sleep, and impaired immunity.'},
+{h:'Anxiety vs. stress confusion',t:'Stress, anxiety, fear, and worry are different things. Anxiety is about future threats; stress is about present demands. Different types respond to different interventions.'},
+{h:'The vicious cycle',t:'Stress fragments sleep, and poor sleep raises cortisol by up to 37%. High cortisol increases anxiety, which further disrupts sleep — creating a self-reinforcing loop.'}
+],
+solutions:[
+{h:'Therapy & CBT',t:'Cognitive-behavioral therapy works well for many anxiety disorders, especially combined with medication. Internet-based CBT and self-help methods can also be effective.'},
+{h:'Exercise',t:'Aerobic exercise reduces anxiety in people with clinical anxiety, with higher intensity tending to be more effective. Roughly on par with therapy for benefits.'},
+{h:'Meditation & breathing',t:'Some evidence that meditation reduces anxiety symptoms. Slow exhales (4 sec in, 8 sec out) activate the vagus nerve and shift the nervous system to rest-and-digest within 90 seconds.'}
 ]},
 energy:{
 title:'Energy & Fat Loss',
-intro:'Energy and body composition depend on protein intake, metabolic rate, and micronutrient status. Higher protein intake (up to 30% of calories) consistently shows benefit for satiety and lean mass retention. Several supplements can support these goals.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Core combo',t:'Consume protein throughout the day, replacing a portion of fats and carbs. Aim for 20-30% of calories from protein. Casein or pea protein may be slightly more effective than whey for satiety.'},
-{h:'High body fat + caffeine tolerant',t:'Add highly viscous fiber daily. Consider caffeine (max 400 mg/day) with green tea extract (500 mg EGCG) for synergistic fat loss. 15-25 g/day medium-chain triglycerides as a fat substitute.'},
-{h:'Stress-related overeating',t:'5-HTP at 200-300 mg taken 3 times per day before meals may help reduce the tendency to overeat. Address underlying sleep and stress issues first.'}
+intro:'Everyone wants a quick fix for fat loss, but most supplements marketed for this are backed by extremely poor studies. The real formula is simple: take in less energy than you expend. Exercise helps, but not as much as diet. Supplements are secondary to fundamentals.',
+problems:[
+{h:'Calorie balance is king',t:'A 5K run burns roughly the same calories as 7 Oreo cookies. Exercise alone is rarely sufficient — a hypocaloric diet is the primary driver of fat loss.'},
+{h:'Body composition confusion',t:'DXA scans can vary by 3 percentage points. Hydration, creatine, and glycogen levels all affect readings. Tracking trends matters more than single measurements.'},
+{h:'Insecurity & poor body image',t:'The pursuit of low body fat can lead to poor body image and self-esteem issues. Very low body fat in athletes is associated with fatigue, chronic pain, and impaired immunity.'}
+],
+solutions:[
+{h:'Protein is the foundation',t:'Higher protein intake (20-30% of calories) increases satiety and preserves lean mass. This is the single most evidence-backed dietary strategy for fat loss.'},
+{h:'Address sleep & stress first',t:'If you overeat due to stress, depression, or insomnia, fixing those root causes is more effective than any fat burner. Poor sleep alone can increase food intake by 20%.'},
+{h:'Sustainable deficit',t:'A moderate calorie deficit maintained over time beats aggressive restriction. Extreme dieting impairs cognition, mood, and immunity.'}
 ]},
 focus:{
 title:'Memory & Focus',
-intro:'Cognitive performance varies day to day based on sleep, nutrition, and neurochemistry. Blueberry anthocyanins are the single best-supported supplement for general cognitive function. Additional stacks target specific aspects of memory and attention.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Core combo',t:'Daily blueberries: 0.5-1 g anthocyanins, 12 g powder, 24 g freeze-dried, 60-120 g fresh, or 500 mL pure juice. Other dark berries can substitute.'},
-{h:'Long-term memory',t:'Core blueberries plus Bacopa monnieri (150 mg bacosides) with food. Add CDP-choline 500-2000 mg/day or alpha-GPC 1200 mg/day for choline support.'},
-{h:'Attention & focus',t:'Core blueberries plus 200 mg caffeine with 200 mg theanine, 30 min before you need focus. Start at 50 mg caffeine + 100 mg theanine if not used to caffeine.'}
+intro:'Some mornings we feel sharp and capable; other days feel slow and foggy. Sleep deprivation, aging, and nutritional deficiencies all impair cognitive function. The brain uses 15% of blood flow each heartbeat and demands constant fuel, oxygen, and micronutrients.',
+problems:[
+{h:'Sleep deprivation',t:'A sleepless night turns routine tasks into a slog. The prefrontal cortex, responsible for complex thinking and creativity, is especially compromised by poor sleep.'},
+{h:'Age-related cognitive decline',t:'Brain fog days become more frequent with age. Short-term recall becomes harder, names are more elusive, and memories take longer to stick.'},
+{h:'Nutritional deficiencies',t:'B vitamins, magnesium, zinc, and alpha-lipoic acid are required for energy production in neurons. Deficiencies impair cognitive function by disrupting fuel supply to the brain.'}
+],
+solutions:[
+{h:'Adequate energy supply',t:'The brain runs on glucose (or ketones). Extreme calorie restriction causes brain fog. Stable blood sugar through balanced meals keeps cognition sharp.'},
+{h:'Blood flow & exercise',t:'Exercise increases brain blood flow acutely and long-term. Proper cardiovascular function is intimately tied to maintaining cognitive performance.'},
+{h:'Neurotransmitter support',t:'Neurons communicate via neurotransmitters synthesized from amino acids and B vitamins. Choline, vitamin C, and zinc are also required. Diet quality directly affects brain chemistry.'}
 ]},
 muscle:{
 title:'Muscle & Performance',
-intro:'Muscle gain and exercise performance depend on protein synthesis, energy metabolism, and recovery. Supplement needs vary by activity type, so there is no one-size-fits-all stack. The research supports targeted combos for different training goals.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Weightlifting',t:'Protein 1.6-2.4 g/kg throughout the day. Creatine 3-5 g daily (or 20 g/day loading for 5-7 days then 3-5 g maintenance). Caffeine 3-6 mg/kg 1 hour pre-workout.'},
-{h:'Endurance (1+ hour)',t:'Protein ~1.8 g/kg daily. Caffeine 3-6 mg/kg pre-workout. Beta-alanine 3.2-6.4 g/day split into doses every 3-4 hours for 4-24 weeks. Nitrates 2-3 hours before exercise.'},
-{h:'Recovery support',t:'Optimize carbohydrate intake around training. Magnesium 200-400 mg in the evening for muscle relaxation and sleep quality. Omega-3 (2-3 g EPA/DHA) for inflammation.'}
+intro:'To build muscle, exercise is a necessity — unlike fat loss, where diet alone can work. Any supplement that helps you train harder can help build stronger muscles, and stronger muscles let you train harder, creating a positive feedback loop. But genetics, fiber type, and training style all matter.',
+problems:[
+{h:'Genetics & individual variation',t:'In a 12-week trial, untrained people showed vastly different muscle gain. Factors like muscle fiber type (slow vs. fast twitch) determine response to different training styles.'},
+{h:'Recovery limitations',t:'Training breaks down muscle; recovery rebuilds it. Without adequate sleep, nutrition, and rest, training just accumulates damage. 75% of growth hormone is released during deep sleep.'},
+{h:'Nutrition misconceptions',t:'The "anabolic window" is largely overstated. Total daily protein (1.6-2.4 g/kg) matters far more than timing. Most people need more calories, not more supplements.'}
+],
+solutions:[
+{h:'Protein throughout the day',t:'Distribute protein intake across meals. The type matters less than the total amount. Whey, casein, pea — all work. Get enough total calories to support growth.'},
+{h:'Train for your goal',t:'Weightlifting builds fast-twitch fibers (power). Endurance training builds slow-twitch fibers (stamina). Your training type determines the kind of muscle you grow.'},
+{h:'Sleep & recovery first',t:'Prioritize 7-9 hours of sleep for growth hormone release and tissue repair. Manage inflammation through rest days and nutrition before adding supplements.'}
 ]},
 heart:{
 title:'Cardiovascular Health',
-intro:'Cardiovascular health involves managing blood pressure, cholesterol, and inflammation. Cocoa polyphenols, aged garlic extract, and nitrate-rich vegetables form a strong evidence-based foundation. Additional supplements target specific cardiac risk factors.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Core combo',t:'Cocoa polyphenols 200-1000 mg (or 10-30 g cocoa powder / 10-40 g dark chocolate 75%+). Aged garlic extract 1000-2400 mg. Nitrate-rich vegetables daily. Start low, monitor blood pressure.'},
-{h:'High blood pressure',t:'Core combo plus L-arginine 3 g three times daily (9 g total). L-citrulline 3-6 g/day may also work but has less direct evidence.'},
-{h:'Post heart attack',t:'After physician consultation: core combo plus carnitine 5-9 g, taurine 1.5-4.5 g, and D-ribose 15 g, all in three divided doses through the day.'}
+intro:'For decades the advice was simple: avoid cholesterol and saturated fat. But recent evidence shows the picture is far more nuanced. The diet-heart hypothesis has been challenged, and cardiovascular health depends on the whole dietary pattern, not single nutrients.',
+problems:[
+{h:'The cholesterol confusion',t:'Dietary cholesterol and saturated fat are not as dangerous as once believed. Whether they affect heart health depends on what they replace or are replaced by in the diet.'},
+{h:'Standard tests fall short',t:'The standard lipid panel is a relatively poor reflection of cardiovascular health. It estimates how much cholesterol your blood carries, but not the full risk picture.'},
+{h:'Inflammation is key',t:'Chronic low-grade inflammation (high CRP) is a strong predictor of cardiovascular events. Addressing inflammation may matter more than obsessing over cholesterol numbers.'}
+],
+solutions:[
+{h:'Diet quality over single nutrients',t:'Focus on overall dietary pattern rather than demonizing individual fats. Cocoa, garlic, and nitrate-rich vegetables have strong evidence for blood pressure and vessel health.'},
+{h:'Exercise & lifestyle',t:'Regular physical activity improves nearly every cardiovascular marker. Combined with stress management and adequate sleep, lifestyle changes outperform most supplements.'},
+{h:'Know your real numbers',t:'Get beyond the basic lipid panel. Inflammation markers (CRP), blood pressure trends, and family history give a more complete picture of your cardiovascular risk.'}
 ]},
 immunity:{
 title:'Immunity & Allergies',
-intro:'Your immune system fights an invisible horde 24/7, adapting to threats that evolve faster than we can. Vitamin D status is the foundation of immune support, with additional supplements targeting specific situations like cold prevention and seasonal allergies.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Core combo',t:'Vitamin D3: 400-1000 IU/day if levels are adequate; 800-2000 IU/day if low. Take with a fat-containing meal for better absorption.'},
-{h:'Frequent illness',t:'Core vitamin D plus vitamin C 200-1000 mg daily. Optionally add echinacea extract 2400 mg/day in 3 divided doses for cold risk reduction.'},
-{h:'Cold onset',t:'Zinc acetate lozenges every 1.5-3 hours (75-95 mg zinc/day total). Start within 24 hours of first symptoms for maximum benefit.'},
-{h:'Seasonal allergies',t:'Core vitamin D plus spirulina 2 g/day. Optionally add Nigella sativa oil 500-2000 mg daily.'}
+intro:'In good health, we barely notice our immune system. But it is constantly fighting an invisible horde that evolves faster than we can. The system has two arms: innate (first responders) and adaptive (targeted, memory-based) — and their coordination determines how well you fight infections.',
+problems:[
+{h:'Innate vs. adaptive imbalance',t:'The innate immune system responds immediately but non-specifically. The adaptive system is precise but slower. Disrupting either arm — through poor nutrition, stress, or lack of sleep — compromises overall defense.'},
+{h:'Immune boosters are a myth',t:'An overactive immune system is just as dangerous as a weak one — it causes autoimmune diseases and allergies. What you want is immune modulation, not blind boosting.'},
+{h:'Vitamin D deficiency is widespread',t:'Vitamin D activates T-cells and modulates immune response. Low levels are linked to higher infection rates, and maintaining adequate levels is the single most impactful step.'}
+],
+solutions:[
+{h:'Sleep is #1',t:'One night of poor sleep reduces natural killer cell activity significantly. Consistent 7-9 hours is the single most important factor for immune function.'},
+{h:'Maintain vitamin D levels',t:'If your blood levels are adequate, 400-1000 IU/day of D3 maintains them. If low, 800-2000 IU/day brings them up. Take with fat for better absorption.'},
+{h:'Act fast at cold onset',t:'Zinc lozenges started within 24 hours of first symptoms can shorten cold duration. Vitamin C at 200-1000 mg/day supports baseline immune function.'}
 ]},
 joints:{
 title:'Joint Health',
-intro:'Joint health is highly complex with no single supplement addressing all causes of pain. Factors include cartilage integrity, inflammation, autoimmune activity, and mechanical stress. The research supports targeted stacks depending on the type of joint issue.',
-solution:'Recommended stacks from the research',
-combos:[
-{h:'Osteoarthritis',t:'Curcumin 400-1000 mg/day with food, plus collagen (undenatured type-II 40 mg, hydrolyzed 10 g, or gelatin 10-15 g). Add Boswellia serrata after one month if needed.'},
-{h:'Rheumatoid arthritis',t:'EPA + DHA 3 g/day from fatty fish or fish oil. Plus undenatured type-II collagen 40 mg once daily. Consider adding curcumin after one month if no improvement.'},
-{h:'Athletic joint pain',t:'Try the rheumatoid arthritis combo. Optionally swap undenatured collagen for hydrolyzed collagen (10 g) or gelatin (10-15 g). MSM 3375 mg/day in 3 doses may add benefit.'}
+intro:'Joint health is highly complex — there is no simple formula like "eat less, move more." Joints can be damaged by forcing past their range of motion, repetitive stress, aging, disease, or genetics. The multiplicity of causes makes addressing joint pain uniquely difficult.',
+problems:[
+{h:'No single cause',t:'Joint pain stems from many overlapping factors: cartilage degradation, inflammation, autoimmune activity, old injuries, diet, and lifestyle. No single supplement can address all of them.'},
+{h:'Misdiagnosis is common',t:'Lasting joint pain is often blamed on inflammatory tendonitis, but could be noninflammatory tendinosis. Several joint surgeries have been found less effective than assumed.'},
+{h:'Sleep & pain cycle',t:'People with joint pain often suffer from disturbed sleep. Sleep problems worsen with pain severity, and poor sleep increases inflammation — creating another vicious cycle.'}
+],
+solutions:[
+{h:'Get a proper diagnosis',t:'Weird joint pain is worth digging into via second opinions and self-education. The cause might be as common as osteoarthritis or as complex as nutrient deficiency from an old injury.'},
+{h:'Address inflammation first',t:'Curcumin and omega-3 fatty acids (EPA/DHA) have the strongest evidence for reducing inflammatory joint pain. Results take time — plan for 1-3 months.'},
+{h:'Collagen & structural support',t:'Undenatured type-II collagen (40 mg) or hydrolyzed collagen (10 g) provides building blocks for cartilage repair. Joint cartilage has no blood supply, so healing is slow.'}
 ]}
 };
 function showGoalEducation(){
@@ -1492,12 +1523,24 @@ c.innerHTML=
 '<div style="font-family:Fraunces,Georgia,serif;font-size:30px;line-height:1.1">'+edu.title+'</div>'+
 '<div style="font-size:13px;color:rgba(255,255,255,.8);margin-top:12px;line-height:1.55">'+edu.intro+'</div>'+
 '</div>'+
-'<div style="padding:18px 22px 0"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:10px">'+edu.solution+'</div></div>'+
+'<div style="padding:18px 22px 0"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:10px">The problem</div></div>'+
 '<div style="padding:8px 18px 0;display:flex;flex-direction:column;gap:10px">'+
-edu.combos.map(function(f,i){
+edu.problems.map(function(f,i){
+return '<div style="background:rgba(255,255,255,.08);border-radius:16px;padding:16px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)">'+
+'<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">'+
+'<div style="width:24px;height:24px;border-radius:50%;background:rgba(255,100,100,.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;color:rgba(255,180,180,.9)">'+(i+1)+'</div>'+
+'<div style="font-size:15px;font-weight:600">'+f.h+'</div>'+
+'</div>'+
+'<div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.5;padding-left:34px">'+f.t+'</div>'+
+'</div>';
+}).join('')+
+'</div>'+
+'<div style="padding:18px 22px 0"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:10px">What you can do</div></div>'+
+'<div style="padding:8px 18px 0;display:flex;flex-direction:column;gap:10px">'+
+edu.solutions.map(function(f,i){
 return '<div style="background:rgba(255,255,255,.1);border-radius:16px;padding:16px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)">'+
 '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">'+
-'<div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">'+(i+1)+'</div>'+
+'<div style="width:24px;height:24px;border-radius:50%;background:rgba(100,220,100,.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;color:rgba(180,255,180,.9)">'+(i+1)+'</div>'+
 '<div style="font-size:15px;font-weight:600">'+f.h+'</div>'+
 '</div>'+
 '<div style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;padding-left:34px">'+f.t+'</div>'+

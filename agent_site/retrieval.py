@@ -38,7 +38,7 @@ class Chunk:
     text: str
 
 
-def _split_into_chunks(text: str, target_chars: int = 1200, overlap: int = 150) -> list[str]:
+def _split_into_chunks(text: str, target_chars: int = 600, overlap: int = 100) -> list[str]:
     """Split text into chunks of ~target_chars, breaking on paragraph boundaries
     where possible. Small overlap keeps context across chunk boundaries."""
     # Normalize whitespace but preserve paragraph breaks.

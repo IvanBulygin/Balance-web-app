@@ -31,7 +31,7 @@ PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
 CHAT_MODEL = "gemini-3.5-flash"
-MAX_TOKENS = 4096
+MAX_TOKENS = 8192
 MAX_HISTORY = 20
 TOP_K = 15
 
@@ -122,6 +122,11 @@ def chat(req: ChatRequest):
         "Use only these passages to answer. If they don't cover the "
         "question, say so.\n\n"
         + context_block
+        + "\n\n## Reminder\n\n"
+        "You MUST list EVERY supplement mentioned in the passages above. "
+        "Do NOT stop after one or two. Include ALL Primary, Secondary, "
+        "and Promising supplements with their Form, Dose, Timing, and "
+        "Evidence fields. The user needs a COMPLETE shopping list."
     )
 
     # Gemini uses "model" instead of "assistant" for the AI role

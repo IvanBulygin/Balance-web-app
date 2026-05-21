@@ -11,9 +11,9 @@ Fetch everything from GitHub:
 | Path | Purpose |
 |------|---------|
 | `agent_site/static/index.html` | Complete frontend — single file, ~2050 lines, all 15 screens, CSS, JS |
-| `agent_site/app.py` | FastAPI backend — Claude API integration, RAG pipeline |
+| `agent_site/app.py` | FastAPI backend — Gemini API integration, RAG pipeline, SSE streaming |
 | `agent_site/retrieval.py` | BM25 search engine over supplement guide text files |
-| `agent_site/system_prompt.md` | System prompt controlling Claude response format |
+| `agent_site/system_prompt.md` | System prompt controlling Gemini response format |
 | `agent_site/requirements.txt` | Python dependencies |
 | `agent_site/data/pdfs/*.txt` | 19 supplement guide text files — the knowledge base (~2.4MB) |
 | `Balance AI/design_handoff_balance_ai/*.html` | Design reference wireframes |
@@ -24,7 +24,7 @@ The `index.html` is the design spec. The `.txt` files are the database. The `sys
 
 ## What This App Does
 
-Balance AI is a mobile-first wellness chatbot that helps users find evidence-based supplement recommendations. Users ask questions. The app searches 19 supplement guide text files using BM25 retrieval, feeds the top matching passages to Claude Sonnet 4.6, and Claude answers strictly from those passages (RAG pattern). Every surface where supplements appear has iHerb affiliate buy buttons.
+Balance AI is a mobile-first wellness chatbot that helps users find evidence-based supplement recommendations. Users ask questions. The app searches 19 supplement guide text files using BM25 retrieval, feeds the top matching passages to Google Gemini 3.5 Flash, and Gemini answers strictly from those passages (RAG pattern). Responses stream in real-time via Server-Sent Events (SSE). Every surface where supplements appear has iHerb affiliate buy buttons.
 
 ---
 
@@ -34,7 +34,7 @@ Balance AI is a mobile-first wellness chatbot that helps users find evidence-bas
 
 ```
 agent_site/
-├── app.py                    # FastAPI server + Claude API
+├── app.py                    # FastAPI server + Gemini API + SSE streaming
 ├── retrieval.py              # BM25 search engine
 ├── system_prompt.md          # System prompt for Claude
 ├── requirements.txt          # Python deps
@@ -65,30 +65,35 @@ agent_site/
 ### Backend flow
 
 1. **Startup:** Load all 19 `.txt` files, split into ~1200-char chunks with 150-char overlap at paragraph boundaries, build BM25 index in memory
-2. **Each chat request** (`POST /api/chat`):
+2. **Each chat request** (`POST /api/chat/stream` — primary, SSE streaming):
    - Extract user's latest question plus one prior message for context
    - BM25 search returns top 15 matching chunks
-   - Inject chunks into Claude's system prompt as "Retrieved passages"
-   - Claude answers ONLY from those passages
-   - Return response text + list of source guide names
-3. `GET /` serves the single-page frontend
-4. `GET /api/health` returns status with model name and chunk count
+   - Inject chunks into Gemini's system instruction as "Retrieved passages"
+   - Gemini answers ONLY from those passages
+   - Stream response tokens as SSE events: `data: {"text": "chunk"}` for each token batch
+   - Final event: `data: {"done": true, "sources": [...]}` with source guide names
+3. **Fallback** (`POST /api/chat` — non-streaming):
+   - Same RAG pipeline, returns full JSON response `{reply, sources}`
+4. `GET /` serves the single-page frontend
+5. `GET /api/health` returns status with model name and chunk count
 
 ### Backend code — app.py
 
 ```python
 from __future__ import annotations
+import json
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
-from anthropic import Anthropic
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from google import genai
 from pydantic import BaseModel, Field
+from starlette.responses import StreamingResponse
 
 from retrieval import BM25Index, build_index, format_context
 
@@ -99,8 +104,8 @@ STATIC_DIR = ROOT / "static"
 PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
-CHAT_MODEL = "claude-sonnet-4-6"
-MAX_TOKENS = 4096
+CHAT_MODEL = "gemini-3.5-flash"
+MAX_TOKENS = 8192
 MAX_HISTORY = 20
 TOP_K = 15
 
@@ -111,14 +116,15 @@ async def lifespan(app: FastAPI):
     if not PROMPT_PATH.exists():
         raise RuntimeError(f"Missing {PROMPT_PATH}")
     state["system_prompt"] = PROMPT_PATH.read_text(encoding="utf-8")
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY not set")
-    state["client"] = Anthropic(api_key=api_key)
+        raise RuntimeError("GOOGLE_API_KEY not set")
+    state["client"] = genai.Client(api_key=api_key)
     print(f"Building BM25 index from {PDF_TEXT_DIR}...")
     index: BM25Index = build_index(PDF_TEXT_DIR)
     state["index"] = index
     print(f"Index ready. {len(index.chunks):,} chunks from {len({c.source for c in index.chunks})} guides.")
+    print(f"Agent ready. Model: {CHAT_MODEL}.")
     yield
 
 app = FastAPI(title="Balance.ai Wellbeing Agent", lifespan=lifespan)
@@ -152,30 +158,58 @@ def _build_query(messages: list[Message]) -> str:
         return f"{user_turns[-2]}\n{user_turns[-1]}"
     return user_turns[-1]
 
-@app.post("/api/chat", response_model=ChatResponse)
-def chat(req: ChatRequest):
-    if not req.messages:
-        raise HTTPException(400, "messages required")
-    trimmed = req.messages[-MAX_HISTORY:]
+def _prepare_chat(messages: list[Message]):
+    trimmed = messages[-MAX_HISTORY:]
     query = _build_query(trimmed)
     index: BM25Index = state["index"]
     hits = index.search(query, k=TOP_K) if query else []
     context_block = format_context(hits)
     sources = sorted({f"supplement-guide-{c.source}" for c, _ in hits})
-    system_blocks = [
-        {"type": "text", "text": state["system_prompt"]},
-        {"type": "text", "text": (
-            "## Retrieved passages\n\n"
-            "Use only these passages to answer. If they don't cover the question, say so.\n\n"
-            f"{context_block}"
-        )},
-    ]
-    convo = [{"role": m.role, "content": m.content} for m in trimmed]
-    response = state["client"].messages.create(
-        model=CHAT_MODEL, max_tokens=MAX_TOKENS, system=system_blocks, messages=convo,
+    system_instruction = (
+        state["system_prompt"]
+        + "\n\n## Retrieved passages\n\n"
+        "Use only these passages to answer. If they don't cover the question, say so.\n\n"
+        + context_block
+        + "\n\n## Reminder\n\n"
+        "You MUST list EVERY supplement mentioned in the passages above. "
+        "Do NOT stop after one or two. Include ALL Primary, Secondary, "
+        "and Promising supplements with their Form, Dose, Timing, and "
+        "Evidence fields. The user needs a COMPLETE shopping list."
     )
-    reply = "".join(block.text for block in response.content if getattr(block, "type", None) == "text")
+    convo = []
+    for m in trimmed:
+        role = "model" if m.role == "assistant" else "user"
+        convo.append({"role": role, "parts": [{"text": m.content}]})
+    return convo, system_instruction, sources
+
+@app.post("/api/chat", response_model=ChatResponse)
+def chat(req: ChatRequest):
+    if not req.messages:
+        raise HTTPException(400, "messages required")
+    convo, system_instruction, sources = _prepare_chat(req.messages)
+    response = state["client"].models.generate_content(
+        model=CHAT_MODEL, contents=convo,
+        config={"system_instruction": system_instruction, "max_output_tokens": MAX_TOKENS, "temperature": 0.7},
+    )
+    reply = response.text or ""
     return ChatResponse(reply=reply, sources=sources)
+
+@app.post("/api/chat/stream")
+def chat_stream(req: ChatRequest):
+    if not req.messages:
+        raise HTTPException(400, "messages required")
+    convo, system_instruction, sources = _prepare_chat(req.messages)
+    def generate():
+        stream = state["client"].models.generate_content_stream(
+            model=CHAT_MODEL, contents=convo,
+            config={"system_instruction": system_instruction, "max_output_tokens": MAX_TOKENS, "temperature": 0.7},
+        )
+        for chunk in stream:
+            text = chunk.text or ""
+            if text:
+                yield f"data: {json.dumps({'text': text})}\n\n"
+        yield f"data: {json.dumps({'done': True, 'sources': sources})}\n\n"
+    return StreamingResponse(generate(), media_type="text/event-stream")
 ```
 
 ### Backend code — retrieval.py
@@ -273,7 +307,7 @@ def format_context(hits: list[tuple[Chunk, float]]) -> str:
 ```
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
-anthropic==0.42.0
+google-genai==1.14.0
 python-dotenv==1.0.1
 pydantic==2.9.2
 rank_bm25==0.2.2
@@ -283,8 +317,10 @@ numpy==1.26.4
 ### Environment variables
 
 ```
-ANTHROPIC_API_KEY=sk-ant-...
+GOOGLE_API_KEY=AIza...
 ```
+
+Get a key from [Google AI Studio](https://aistudio.google.com/apikey).
 
 ---
 
@@ -490,7 +526,7 @@ On mobile <430px: fullscreen, no shell, no dynamic island
 .tab-item   — icon + label, active = brand color
 ```
 
-### Tier Badge Colors (applied to Claude response parsing)
+### Tier Badge Colors (applied to Gemini response parsing)
 ```
 Primary    → background: var(--brand-soft), color: var(--brand)
 Secondary  → background: var(--accent-soft), color: var(--brand)
@@ -614,16 +650,16 @@ Education data for all 8 goals (from the GOAL_EDUCATION object in index.html):
 - **Chat state:**
   - User messages: right-aligned, purple background
   - AI messages: left-aligned, white card with shadow
-  - Streaming text animation: words appear 3 at a time via requestAnimationFrame
-  - Markdown rendered via marked.js + DOMPurify
-  - Tier labels (`Primary`, `Secondary`, etc.) parsed and colored as pill badges
+  - **Real-time SSE streaming:** tokens appear instantly as Gemini generates them via `fetch()` + `ReadableStream` reader consuming `text/event-stream` from `/api/chat/stream`
+  - Markdown rendered progressively via marked.js + DOMPurify as chunks arrive
+  - Tier labels (`Primary`, `Secondary`, etc.) parsed and colored as pill badges after stream completes
   - After each AI response:
     - Source tags (which guides were searched)
     - Follow-up suggestion pills
     - "Shop supplements on iHerb" CTA with detected supplement names
 - Composer: text input + send button (purple circle with arrow icon)
 - Tapping the message area dismisses the keyboard (blur input)
-- Scroll behavior: scrolls to START of AI message when streaming begins
+- Scroll behavior: auto-scrolls to END of AI message as tokens stream in
 
 ### Screen 6: scr-stack (My Stack)
 - List of user's added supplements
@@ -744,8 +780,7 @@ All client-side, localStorage only. No auth, no database, no user accounts.
 |----------|---------|
 | `nav(id)` | Navigate to screen, manage history |
 | `goBack()` | Back navigation |
-| `sendMessage(text)` | Send user message, call API, render response |
-| `streamText(el, raw, cb)` | Word-by-word streaming animation |
+| `sendMessage(text)` | Send user message, stream SSE from `/api/chat/stream`, render tokens in real-time |
 | `md(text)` | Markdown to HTML via marked.js + DOMPurify |
 | `tagTiers(el)` | Parse and color-code tier labels in AI response |
 | `showVitaminChooser()` | Open filtered vitamin chooser modal |
@@ -763,16 +798,18 @@ All client-side, localStorage only. No auth, no database, no user accounts.
 
 ## Critical Implementation Details
 
-1. **Streaming animation is required** — AI responses must appear word-by-word (3 words per requestAnimationFrame tick). Responses must NOT appear all at once.
-2. **RAG pipeline is mandatory** — Claude must answer only from retrieved guide passages. Without retrieval, it is just a generic chatbot and loses all value.
+1. **Real-time SSE streaming is required** — AI responses stream token-by-token via Server-Sent Events from `/api/chat/stream`. The backend uses Gemini's `generate_content_stream()` and yields `data: {"text": "..."}` events. The frontend reads chunks via `fetch()` + `response.body.getReader()` and renders markdown progressively. Responses must NOT wait for full completion before displaying.
+2. **RAG pipeline is mandatory** — Gemini must answer only from retrieved guide passages. Without retrieval, it is just a generic chatbot and loses all value.
 3. **Tier badge parsing** — Frontend scans backtick-wrapped tier labels in AI response and replaces them with colored pill badges. System prompt format and frontend parser must match exactly.
 4. **BM25 chunking params** — 1200 char target, 150 char overlap, paragraph boundary splitting, top 15 results per query.
 5. **Keyboard dismiss** — Tapping chat message area calls `document.getElementById('ask-input').blur()`.
-6. **Scroll to message start** — When AI response starts streaming, scroll to the TOP of the message bubble, not the bottom.
+6. **Scroll during streaming** — As tokens arrive, auto-scroll to the END of the AI message bubble so the user sees the latest content.
 7. **Education screen shows problems + solutions, NOT supplements** — This is a deliberate design decision. Step 3 educates about the health topic before recommending products.
 8. **Vitamin chooser filters by goals** — Each vitamin has a `goals:[]` array. Only supplements matching the user's selected goals appear.
 9. **19 guides** — This number appears in the welcome screen, chat header, and learn screen. Keep it consistent.
 10. **No emojis** — The system prompt and UI do not use emojis. Keep it clean.
+11. **Gemini message format** — Gemini uses `"model"` role instead of `"assistant"`, and messages use `{"role": "model", "parts": [{"text": "..."}]}` format. The system prompt is passed as a single `system_instruction` string (not array blocks).
+12. **Exhaustive supplement listing** — A "Reminder" section is appended to the system instruction forcing Gemini to list ALL supplements from the retrieved passages, not just the top 1-2. MAX_TOKENS is set to 8192 to accommodate long lists.
 
 ---
 
@@ -794,7 +831,30 @@ Step 4: Vitamin chooser modal → select supplements → add to stack / buy on i
 2. **Set up the backend** — `app.py` + `retrieval.py` + all 19 `.txt` files in `data/pdfs/`
 3. **Set up the frontend** — `index.html` is the complete reference. Replicate pixel-for-pixel.
 4. **Configure the system prompt** — `system_prompt.md` controls AI behavior and response format
-5. **Set ANTHROPIC_API_KEY** — Required for Claude API calls
+5. **Set GOOGLE_API_KEY** — Required for Gemini API calls. Get from [Google AI Studio](https://aistudio.google.com/apikey)
 6. **Run:** `uvicorn app:app --host 0.0.0.0 --port 8000`
 
 The `index.html` IS the design spec. The `.txt` files ARE the database. The `system_prompt.md` IS the AI behavior spec. Everything needed is in the repo.
+
+### Deployment — Render
+
+The app deploys to Render. Config in `render.yaml`:
+
+```yaml
+services:
+  - type: web
+    name: balance-ai-project-agent
+    runtime: python
+    rootDir: agent_site
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11"
+```
+
+Set `GOOGLE_API_KEY` in Render's environment variables dashboard (not committed to git).

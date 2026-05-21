@@ -4,4 +4,6 @@ google-genai==1.14.0
 python-dotenv==1.0.1
 pydantic==2.9.2
 rank_bm25==0.2.2
-numpy==1.26.4
+numpy>=1.26.4,<2
+cffi
+cryptography

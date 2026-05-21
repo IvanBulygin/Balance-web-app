@@ -34,8 +34,8 @@ PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
 CHAT_MODEL = "gemini-3.5-flash"
 MAX_TOKENS = 8192
-MAX_HISTORY = 20
-TOP_K = 15
+MAX_HISTORY = 10
+TOP_K = 8
 
 state: dict[str, Any] = {}
 

@@ -747,7 +747,8 @@ if(!r.ok)throw new Error('HTTP '+r.status);
 const reader=r.body.getReader();
 const decoder=new TextDecoder();
 var fullText='';var sources=[];var buf='';
-var started=false;
+var started=false;var renderDirty=false;var rafId=0;
+function flushRender(){renderDirty=false;rafId=0;p.content.innerHTML=md(fullText);var w=p.content.closest('.msg-ai')||p.content.parentElement;w.scrollIntoView({behavior:'smooth',block:'end'})}
 while(true){
 var{done,value}=await reader.read();
 if(done)break;
@@ -762,12 +763,12 @@ if(ev.done){sources=ev.sources||[];continue}
 if(ev.text){
 if(!started){p.content.innerHTML='';started=true}
 fullText+=ev.text;
+if(!rafId){rafId=requestAnimationFrame(flushRender)}
+}
+}
+}
+if(rafId){cancelAnimationFrame(rafId);rafId=0}
 p.content.innerHTML=md(fullText);
-var wrapper=p.content.closest('.msg-ai')||p.content.parentElement;
-wrapper.scrollIntoView({behavior:'smooth',block:'end'});
-}
-}
-}
 tagTiers(p.content);
 renderSources(p.wrapper,sources);
 var followups=generateFollowups(text);

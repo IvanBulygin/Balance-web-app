@@ -1,9 +1,9 @@
 """
 Balance.ai Wellbeing Agent — hosted as a web chatbot.
 
-Serves a chat UI at / that talks to Anthropic Claude. Every user question
-triggers BM25 retrieval over 17 supplement-guide PDFs; the top matching
-passages are injected into the system prompt so Claude answers only from
+Serves a chat UI at / that talks to Google Gemini. Every user question
+triggers BM25 retrieval over 19 supplement-guide text files; the top matching
+passages are injected into the system prompt so Gemini answers only from
 the retrieved evidence.
 """
 
@@ -14,11 +14,11 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
-from anthropic import Anthropic
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from google import genai
 from pydantic import BaseModel, Field
 
 from retrieval import BM25Index, build_index, format_context
@@ -30,10 +30,10 @@ STATIC_DIR = ROOT / "static"
 PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
-CHAT_MODEL = "claude-sonnet-4-6"
+CHAT_MODEL = "gemini-2.5-flash"
 MAX_TOKENS = 4096
-MAX_HISTORY = 20  # trailing messages to keep when the client sends more
-TOP_K = 15  # retrieved chunks per question
+MAX_HISTORY = 20
+TOP_K = 15
 
 state: dict[str, Any] = {}
 
@@ -44,10 +44,10 @@ async def lifespan(app: FastAPI):
         raise RuntimeError(f"Missing {PROMPT_PATH}")
     state["system_prompt"] = PROMPT_PATH.read_text(encoding="utf-8")
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY not set")
-    state["client"] = Anthropic(api_key=api_key)
+        raise RuntimeError("GOOGLE_API_KEY not set")
+    state["client"] = genai.Client(api_key=api_key)
 
     print(f"Building BM25 index from {PDF_TEXT_DIR}...")
     index: BM25Index = build_index(PDF_TEXT_DIR)
@@ -98,8 +98,6 @@ def _build_query(messages: list[Message]) -> str:
     user_turns = [m.content for m in messages if m.role == "user"]
     if not user_turns:
         return ""
-    # Most recent user turn carries the weight; include the one before it
-    # if present, to catch pronoun/topic references.
     if len(user_turns) >= 2:
         return f"{user_turns[-2]}\n{user_turns[-1]}"
     return user_turns[-1]
@@ -118,30 +116,28 @@ def chat(req: ChatRequest):
     context_block = format_context(hits)
     sources = sorted({f"supplement-guide-{c.source}" for c, _ in hits})
 
-    # Put the system prompt first (cacheable-shaped) and append retrieved
-    # passages as a secondary system block so they can vary per request.
-    system_blocks = [
-        {"type": "text", "text": state["system_prompt"]},
-        {
-            "type": "text",
-            "text": (
-                "## Retrieved passages\n\n"
-                "Use only these passages to answer. If they don't cover the "
-                "question, say so.\n\n"
-                f"{context_block}"
-            ),
-        },
-    ]
+    system_instruction = (
+        state["system_prompt"]
+        + "\n\n## Retrieved passages\n\n"
+        "Use only these passages to answer. If they don't cover the "
+        "question, say so.\n\n"
+        + context_block
+    )
 
-    convo = [{"role": m.role, "content": m.content} for m in trimmed]
+    # Gemini uses "model" instead of "assistant" for the AI role
+    convo = []
+    for m in trimmed:
+        role = "model" if m.role == "assistant" else "user"
+        convo.append({"role": role, "parts": [{"text": m.content}]})
 
-    response = state["client"].messages.create(
+    response = state["client"].models.generate_content(
         model=CHAT_MODEL,
-        max_tokens=MAX_TOKENS,
-        system=system_blocks,
-        messages=convo,
+        contents=convo,
+        config={
+            "system_instruction": system_instruction,
+            "max_output_tokens": MAX_TOKENS,
+            "temperature": 0.7,
+        },
     )
-    reply = "".join(
-        block.text for block in response.content if getattr(block, "type", None) == "text"
-    )
+    reply = response.text or ""
     return ChatResponse(reply=reply, sources=sources)

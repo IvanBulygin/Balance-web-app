@@ -9,6 +9,7 @@ the retrieved evidence.
 
 from __future__ import annotations
 
+import json
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -20,6 +21,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from google import genai
 from pydantic import BaseModel, Field
+from starlette.responses import StreamingResponse
 
 from retrieval import BM25Index, build_index, format_context
 
@@ -108,7 +110,23 @@ def chat(req: ChatRequest):
     if not req.messages:
         raise HTTPException(400, "messages required")
 
-    trimmed = req.messages[-MAX_HISTORY:]
+    convo, system_instruction, sources = _prepare_chat(req.messages)
+
+    response = state["client"].models.generate_content(
+        model=CHAT_MODEL,
+        contents=convo,
+        config={
+            "system_instruction": system_instruction,
+            "max_output_tokens": MAX_TOKENS,
+            "temperature": 0.7,
+        },
+    )
+    reply = response.text or ""
+    return ChatResponse(reply=reply, sources=sources)
+
+
+def _prepare_chat(messages: list[Message]):
+    trimmed = messages[-MAX_HISTORY:]
     query = _build_query(trimmed)
 
     index: BM25Index = state["index"]
@@ -129,20 +147,35 @@ def chat(req: ChatRequest):
         "Evidence fields. The user needs a COMPLETE shopping list."
     )
 
-    # Gemini uses "model" instead of "assistant" for the AI role
     convo = []
     for m in trimmed:
         role = "model" if m.role == "assistant" else "user"
         convo.append({"role": role, "parts": [{"text": m.content}]})
 
-    response = state["client"].models.generate_content(
-        model=CHAT_MODEL,
-        contents=convo,
-        config={
-            "system_instruction": system_instruction,
-            "max_output_tokens": MAX_TOKENS,
-            "temperature": 0.7,
-        },
-    )
-    reply = response.text or ""
-    return ChatResponse(reply=reply, sources=sources)
+    return convo, system_instruction, sources
+
+
+@app.post("/api/chat/stream")
+def chat_stream(req: ChatRequest):
+    if not req.messages:
+        raise HTTPException(400, "messages required")
+
+    convo, system_instruction, sources = _prepare_chat(req.messages)
+
+    def generate():
+        stream = state["client"].models.generate_content_stream(
+            model=CHAT_MODEL,
+            contents=convo,
+            config={
+                "system_instruction": system_instruction,
+                "max_output_tokens": MAX_TOKENS,
+                "temperature": 0.7,
+            },
+        )
+        for chunk in stream:
+            text = chunk.text or ""
+            if text:
+                yield f"data: {json.dumps({'text': text})}\n\n"
+        yield f"data: {json.dumps({'done': True, 'sources': sources})}\n\n"
+
+    return StreamingResponse(generate(), media_type="text/event-stream")

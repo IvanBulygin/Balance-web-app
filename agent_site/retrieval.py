@@ -37,13 +37,19 @@ _SECTION_ORDER = {name: i for i, name in enumerate(RECOMMENDATION_SECTIONS)}
 # supplement / its tier ("What makes X a secondary supplement") and its dose
 # ("How to take X") — the parts an answer actually needs.
 _KEY_RECO_RE = re.compile(r"what makes |how to take ", re.IGNORECASE)
+# A dose, e.g. "5 g", "2000 IU", "300 mg", "10 billion CFU" — marks the chunks
+# in the Combos section that hold real protocols rather than boilerplate.
+_DOSE_RE = re.compile(r"\d[\d,.]*\s?(?:mg|mcg|µg|g|grams?|iu|ml|billion)\b", re.IGNORECASE)
 
 
 def _reco_priority(chunk: Chunk) -> int:
-    if chunk.section == "combos":
-        return 0
+    # Surface actionable content first: per-supplement intro/dosing and the
+    # combo protocols that actually carry doses. Combos boilerplate (quality
+    # disclaimers, "why we don't recommend brands") sinks below them.
     if _KEY_RECO_RE.search(chunk.text):
-        return 1
+        return 0
+    if chunk.section == "combos":
+        return 0 if _DOSE_RE.search(chunk.text) else 1
     return 2
 
 # Minimal stopword list. Kept short on purpose — BM25 handles common terms
@@ -153,18 +159,28 @@ class BM25Index:
         return out
 
     def guide_aware_search(
-        self, query: str, k: int = 5, pool: int = 12, max_reco_chunks: int = 45
+        self,
+        query: str,
+        k: int = 5,
+        pool: int = 40,
+        max_reco_chunks: int = 45,
+        boost_min_score: float = 50.0,
     ) -> list[tuple[Chunk, float]]:
         """Retrieve, then — if one guide clearly owns the query — inject that
-        guide's full recommendation sections.
+        guide's recommendation sections.
 
         Plain BM25 ranks chunks by how often they echo the query words, which
         surfaces topical prose ("...sore joints...") while burying the chunks
         that actually name and dose supplements (those often share almost no
-        words with a question like "best supplements for sore joints"). Once a
-        dominant guide is identified from the BM25 hits, we pull in its
-        Combos/Primary/Secondary/Promising sections so the model can list every
-        recommended supplement, then append the remaining BM25 hits for context.
+        words with a question like "best supplements for sore joints"). Worse,
+        the single top-scoring chunk is noisy — for "increase testosterone" one
+        stray blood-sugar chunk can outrank the whole testosterone guide. So we
+        pick the dominant guide by *aggregating* BM25 score per guide across the
+        pool, and only inject when that guide clears a score floor (off-topic or
+        vague queries like "what's the weather" stay well below it and fall back
+        to plain ranking). The injected Combos/Primary/Secondary/Promising
+        sections let the model list every recommended supplement; the top BM25
+        hits are appended for context.
         """
         tokens = _tokenize(query)
         if not tokens:
@@ -175,10 +191,16 @@ class BM25Index:
         if not top:
             return []
 
-        # Dominant guide = highest-ranked source that has recommendation sections.
-        dominant = next(
-            (self.chunks[i].source for i in top if self.chunks[i].source in self._reco_index),
-            None,
+        # Dominant guide = the recommendation-having guide with the highest total
+        # BM25 score across the pool, provided it clears the boost floor.
+        agg: dict[str, float] = {}
+        for i in top:
+            agg[self.chunks[i].source] = agg.get(self.chunks[i].source, 0.0) + scores[i]
+        reco_sources = [s for s in sorted(agg, key=lambda s: -agg[s]) if s in self._reco_index]
+        dominant = (
+            reco_sources[0]
+            if reco_sources and agg[reco_sources[0]] >= boost_min_score
+            else None
         )
 
         selected: list[int] = []
@@ -187,7 +209,7 @@ class BM25Index:
             for i in self._reco_index[dominant][:max_reco_chunks]:
                 selected.append(i)
                 seen.add(i)
-        for i in top[:k] if dominant else top:
+        for i in top[:k]:
             if i not in seen:
                 selected.append(i)
                 seen.add(i)
@@ -214,7 +236,9 @@ def format_context(hits: list[tuple[Chunk, float]]) -> str:
         return "(no relevant passages retrieved)"
     blocks = []
     for i, (chunk, score) in enumerate(hits, 1):
-        blocks.append(
-            f"[{i}] source: supplement-guide-{chunk.source} (score {score:.2f})\n{chunk.text}"
-        )
+        label = f"supplement-guide-{chunk.source}"
+        if chunk.section in _SECTION_ORDER:
+            # Expose the tier so the model labels supplements correctly.
+            label += f" · {chunk.section}"
+        blocks.append(f"[{i}] source: {label} (score {score:.2f})\n{chunk.text}")
     return "\n\n---\n\n".join(blocks)

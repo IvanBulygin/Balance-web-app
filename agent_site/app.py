@@ -134,6 +134,16 @@ def _build_query(messages: list[Message]) -> str:
     return "\n".join(parts)
 
 
+def _friendly_error(exc: Exception) -> str:
+    msg = str(exc)
+    if "429" in msg or "RESOURCE_EXHAUSTED" in msg or "quota" in msg.lower():
+        return (
+            "⚠️ We've reached today's usage limit for the AI service. "
+            "Please try again later."
+        )
+    return "⚠️ The assistant is temporarily unavailable — please try again in a moment."
+
+
 @app.post("/api/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
     if not req.messages:
@@ -165,7 +175,7 @@ def chat(req: ChatRequest):
             last_err = exc
             print(f"[chat] model {model} failed: {exc}")
     if last_err is not None and not reply:
-        raise HTTPException(502, f"Model error: {last_err}")
+        raise HTTPException(503, _friendly_error(last_err))
     return ChatResponse(reply=reply, sources=sources)
 
 
@@ -241,7 +251,7 @@ def chat_stream(req: ChatRequest):
                 if produced:
                     break  # already streamed partial output; retrying would duplicate
         if last_err is not None:
-            note = f"\n\n⚠️ The AI service returned an error: {last_err}"
+            note = "\n\n" + _friendly_error(last_err)
             yield f"data: {json.dumps({'text': note})}\n\n"
         yield f"data: {json.dumps({'done': True, 'sources': sources})}\n\n"
 

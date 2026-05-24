@@ -287,11 +287,12 @@ body{background:var(--bg)}
 </div>
 
 <!-- STEP 3 — BUILDING STACK -->
-<div id="scr-step3" class="screen" style="background:var(--brand);">
-  <div class="screen-scroll" style="position:relative;height:100%;color:#fff">
+<div id="scr-step3" class="screen" style="background:var(--brand);display:flex;flex-direction:column">
+  <div class="screen-scroll" style="position:relative;flex:1;overflow-y:auto;color:#fff">
     <div style="height:54px"></div>
     <div id="step3-content"></div>
   </div>
+  <div id="step3-bottom" style="padding:12px 18px 16px;background:var(--brand);color:#fff"></div>
 </div>
 
 <!-- MODAL OVERLAY -->
@@ -1617,10 +1618,10 @@ navRow+
 slides+
 '</div>'+
 '</div>'+
-'<div style="padding:22px 18px">'+
+'<div style="height:20px"></div>';
+document.getElementById('step3-bottom').innerHTML=
 '<div onclick="finishEducation()" style="background:rgba(255,255,255,.95);color:var(--brand-deep);padding:16px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">Build my supplement stack</div>'+
-'<div onclick="finishEducation()" style="text-align:center;padding:14px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500;cursor:pointer">Skip</div>'+
-'</div>';
+'<div onclick="finishEducation()" style="text-align:center;padding:10px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500;cursor:pointer">Skip</div>';
 var track=document.getElementById('edu-track');
 var tx=0,sx=0,moving=false;
 function _dragStart(x){sx=x;moving=true;track.style.transition='none';}

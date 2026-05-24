@@ -33,6 +33,11 @@ _SECTION_HEADER_RE = re.compile(
 RECOMMENDATION_SECTIONS = ("combos", "primary supplements", "secondary supplements", "promising supplements")
 _SECTION_ORDER = {name: i for i, name in enumerate(RECOMMENDATION_SECTIONS)}
 
+# Aggregated BM25 score a guide must reach for a query to count as clearly
+# "about" that guide — used both to gate the recommendation injection and to
+# tell a self-contained question from a vague follow-up.
+BOOST_MIN_SCORE = 50.0
+
 # Within a supplement entry, these phrases mark the chunks that name the
 # supplement / its tier ("What makes X a secondary supplement") and its dose
 # ("How to take X") — the parts an answer actually needs.
@@ -168,7 +173,7 @@ class BM25Index:
         k: int = 5,
         pool: int = 40,
         max_reco_chunks: int = 30,
-        boost_min_score: float = 50.0,
+        boost_min_score: float = BOOST_MIN_SCORE,
     ) -> list[tuple[Chunk, float]]:
         """Retrieve, then — if one guide clearly owns the query — inject that
         guide's recommendation sections.
@@ -218,6 +223,25 @@ class BM25Index:
                 selected.append(i)
                 seen.add(i)
         return [(self.chunks[i], float(scores[i])) for i in selected]
+
+    def topical_score(self, query: str, pool: int = 40) -> float:
+        """Highest aggregated BM25 score among recommendation-having guides for
+        the query on its own. Lets callers tell a self-contained question
+        ("how to improve afternoon energy?") from a vague follow-up ("best time
+        to take it?") that needs conversation context to resolve."""
+        tokens = _tokenize(query)
+        if not tokens:
+            return 0.0
+        scores = self.bm25.get_scores(tokens)
+        ranked = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)
+        agg: dict[str, float] = {}
+        for i in ranked[:pool]:
+            if scores[i] <= 0:
+                continue
+            src = self.chunks[i].source
+            if src in self._reco_index:
+                agg[src] = agg.get(src, 0.0) + scores[i]
+        return max(agg.values(), default=0.0)
 
 
 def build_index(pdf_text_dir: Path) -> BM25Index:

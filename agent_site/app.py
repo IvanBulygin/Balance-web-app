@@ -22,7 +22,7 @@ from fastapi.staticfiles import StaticFiles
 from google import genai
 from pydantic import BaseModel, Field
 
-from retrieval import BM25Index, build_index, format_context
+from retrieval import BM25Index, BOOST_MIN_SCORE, build_index, format_context
 
 load_dotenv()
 
@@ -109,22 +109,28 @@ def health():
 def _build_query(messages: list[Message]) -> str:
     """Build a retrieval query from the latest question plus recent context.
 
-    Follow-ups like "best time to take it?" or "any side effects?" carry no
-    topic words on their own — the supplement they refer to lives in the
-    previous answer. Folding in the last assistant turn (capped) and the prior
-    user turn lets retrieval resolve the reference and fetch the right passages
-    instead of guessing from the bare follow-up.
+    A self-contained question ("how to improve afternoon energy?") is used on
+    its own — folding in the previous exchange would drag a fresh topic toward
+    whatever was discussed before. A vague follow-up ("best time to take it?",
+    "any side effects?") carries no topic words, so we fold in the last
+    assistant turn and prior user turn to resolve what it refers to.
     """
     user_turns = [m.content for m in messages if m.role == "user"]
     if not user_turns:
         return ""
+    current = user_turns[-1]
+
+    index: BM25Index | None = state.get("index")
+    if index is not None and index.topical_score(current) >= BOOST_MIN_SCORE:
+        return current  # self-contained — don't pollute with prior context
+
     assistant_turns = [m.content for m in messages if m.role == "assistant"]
     parts: list[str] = []
     if len(user_turns) >= 2:
         parts.append(user_turns[-2])
     if assistant_turns:
         parts.append(assistant_turns[-1][:2000])
-    parts.append(user_turns[-1])
+    parts.append(current)
     return "\n".join(parts)
 
 

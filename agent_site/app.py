@@ -32,10 +32,10 @@ PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
 # Primary is 3.5 Flash (Gemini's current all-around tier) for better answers.
-# If that exact ID isn't enabled on the API key, fall back to a known-good model
-# so chat keeps working. Both are overridable via env without a code change.
+# Fallback defaults to the same model; both are overridable via env without a
+# code change. (When the two match, only one model is tried.)
 CHAT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
-FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
+FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash")
 CHAT_MODELS = [CHAT_MODEL] + (
     [FALLBACK_MODEL] if FALLBACK_MODEL and FALLBACK_MODEL != CHAT_MODEL else []
 )

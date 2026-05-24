@@ -145,6 +145,11 @@ def chat(req: ChatRequest):
         "system_instruction": system_instruction,
         "max_output_tokens": MAX_TOKENS,
         "temperature": 0.7,
+        # 3.5 Flash is a thinking model; left on, thinking tokens consume the
+        # output budget and truncate long answers (finishReason=MAX_TOKENS).
+        # This RAG task just formats retrieved facts, so disable thinking for
+        # complete (and faster) responses.
+        "thinking_config": {"thinking_budget": 0},
     }
     reply = ""
     last_err: Exception | None = None
@@ -208,6 +213,11 @@ def chat_stream(req: ChatRequest):
         "system_instruction": system_instruction,
         "max_output_tokens": MAX_TOKENS,
         "temperature": 0.7,
+        # 3.5 Flash is a thinking model; left on, thinking tokens consume the
+        # output budget and truncate long answers (finishReason=MAX_TOKENS).
+        # This RAG task just formats retrieved facts, so disable thinking for
+        # complete (and faster) responses.
+        "thinking_config": {"thinking_budget": 0},
     }
 
     def generate():

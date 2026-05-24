@@ -848,7 +848,8 @@ addMsg('user',text);chatHistory.push({role:'user',content:text});
 const btn=document.getElementById('ask-send');btn.disabled=true;
 const p=addMsg('assistant','<div class="thinking-dots"><span></span><span></span><span></span></div>');
 try{
-const r=await fetch('/api/chat/stream',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory})});
+var activeStack=(state.stack||[]).filter(function(s){return s.on!==false}).map(function(s){return s.dose?s.n+' ('+s.dose+')':s.n});
+const r=await fetch('/api/chat/stream',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory,stack:activeStack})});
 if(!r.ok)throw new Error('HTTP '+r.status);
 const reader=r.body.getReader();
 const decoder=new TextDecoder();

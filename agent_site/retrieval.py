@@ -43,13 +43,17 @@ _DOSE_RE = re.compile(r"\d[\d,.]*\s?(?:mg|mcg|µg|g|grams?|iu|ml|billion)\b", re
 
 
 def _reco_priority(chunk: Chunk) -> int:
-    # Surface actionable content first: per-supplement intro/dosing and the
-    # combo protocols that actually carry doses. Combos boilerplate (quality
-    # disclaimers, "why we don't recommend brands") sinks below them.
+    # Surface actionable content first: per-supplement intro/dosing headers and
+    # combo protocols that carry doses, then any other chunk that states a dose
+    # (timing/how-much detail often spills past the "How to take" header), then
+    # the rest. Combos boilerplate (quality disclaimers, "why we don't recommend
+    # brands") sinks to the bottom.
     if _KEY_RECO_RE.search(chunk.text):
         return 0
     if chunk.section == "combos":
-        return 0 if _DOSE_RE.search(chunk.text) else 1
+        return 0 if _DOSE_RE.search(chunk.text) else 2
+    if _DOSE_RE.search(chunk.text):
+        return 1
     return 2
 
 # Minimal stopword list. Kept short on purpose — BM25 handles common terms

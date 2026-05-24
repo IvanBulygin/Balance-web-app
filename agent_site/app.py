@@ -41,7 +41,10 @@ CHAT_MODELS = [CHAT_MODEL] + (
 )
 MAX_TOKENS = 4096
 MAX_HISTORY = 6
-TOP_K = 5
+# Number of query-specific BM25 hits to include alongside any guide injection.
+# Kept a bit above 5 so a precise follow-up ("best time to take it?") still
+# pulls in the exact passage, which can sit just outside the top few.
+TOP_K = 8
 
 state: dict[str, Any] = {}
 
@@ -79,6 +82,7 @@ class Message(BaseModel):
 
 class ChatRequest(BaseModel):
     messages: list[Message]
+    stack: list[str] = Field(default_factory=list)
 
 
 class ChatResponse(BaseModel):
@@ -103,13 +107,25 @@ def health():
 
 
 def _build_query(messages: list[Message]) -> str:
-    """Use the latest user message plus a bit of prior context for retrieval."""
+    """Build a retrieval query from the latest question plus recent context.
+
+    Follow-ups like "best time to take it?" or "any side effects?" carry no
+    topic words on their own — the supplement they refer to lives in the
+    previous answer. Folding in the last assistant turn (capped) and the prior
+    user turn lets retrieval resolve the reference and fetch the right passages
+    instead of guessing from the bare follow-up.
+    """
     user_turns = [m.content for m in messages if m.role == "user"]
     if not user_turns:
         return ""
+    assistant_turns = [m.content for m in messages if m.role == "assistant"]
+    parts: list[str] = []
     if len(user_turns) >= 2:
-        return f"{user_turns[-2]}\n{user_turns[-1]}"
-    return user_turns[-1]
+        parts.append(user_turns[-2])
+    if assistant_turns:
+        parts.append(assistant_turns[-1][:2000])
+    parts.append(user_turns[-1])
+    return "\n".join(parts)
 
 
 @app.post("/api/chat", response_model=ChatResponse)
@@ -117,7 +133,7 @@ def chat(req: ChatRequest):
     if not req.messages:
         raise HTTPException(400, "messages required")
 
-    convo, system_instruction, sources = _prepare_chat(req.messages)
+    convo, system_instruction, sources = _prepare_chat(req.messages, req.stack)
 
     gen_config = {
         "system_instruction": system_instruction,
@@ -142,7 +158,7 @@ def chat(req: ChatRequest):
     return ChatResponse(reply=reply, sources=sources)
 
 
-def _prepare_chat(messages: list[Message]):
+def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
     trimmed = messages[-MAX_HISTORY:]
     query = _build_query(trimmed)
 
@@ -156,6 +172,16 @@ def _prepare_chat(messages: list[Message]):
         + "\n\n## Retrieved passages\n\n"
         + context_block
     )
+    if stack:
+        names = ", ".join(s.strip() for s in stack if s.strip())
+        if names:
+            system_instruction += (
+                "\n\n## User's current stack\n\n"
+                f"The user already takes: {names}. "
+                "When they ask about stacking, combining, or interactions with "
+                '"my current supps", reason about these specific supplements '
+                "using the retrieved passages."
+            )
 
     convo = []
     for m in trimmed:
@@ -170,7 +196,7 @@ def chat_stream(req: ChatRequest):
     if not req.messages:
         raise HTTPException(400, "messages required")
 
-    convo, system_instruction, sources = _prepare_chat(req.messages)
+    convo, system_instruction, sources = _prepare_chat(req.messages, req.stack)
 
     gen_config = {
         "system_instruction": system_instruction,

@@ -172,7 +172,7 @@ class BM25Index:
         query: str,
         k: int = 5,
         pool: int = 40,
-        max_reco_chunks: int = 30,
+        max_reco_chunks: int = 45,
         boost_min_score: float = BOOST_MIN_SCORE,
     ) -> list[tuple[Chunk, float]]:
         """Retrieve, then — if one guide clearly owns the query — inject that

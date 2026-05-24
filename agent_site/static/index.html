@@ -1563,7 +1563,8 @@ return '<div style="background:rgba(255,255,255,.1);border-radius:16px;padding:1
 }
 function _eduGoTo(idx){
 var goals=state.goals&&state.goals.length?state.goals:(selectedGoals.length?selectedGoals:['sleep']);
-if(idx<0||idx>=goals.length)return;
+if(idx<0)idx=0;
+if(idx>=goals.length)idx=goals.length-1;
 _eduIdx=idx;
 var track=document.getElementById('edu-track');
 track.style.transform='translateX(-'+idx*100+'%)';
@@ -1623,20 +1624,25 @@ document.getElementById('step3-bottom').innerHTML=
 '<div onclick="finishEducation()" style="background:rgba(255,255,255,.95);color:var(--brand-deep);padding:16px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">Build my supplement stack</div>'+
 '<div onclick="finishEducation()" style="text-align:center;padding:10px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500;cursor:pointer">Skip</div>';
 var track=document.getElementById('edu-track');
-var tx=0,sx=0,moving=false;
+var tx=0,sx=0,moving=false,_totalSlides=goals.length;
 function _dragStart(x){sx=x;moving=true;track.style.transition='none';}
 function _dragMove(x){
 if(!moving)return;
 tx=x-sx;
-var base=-_eduIdx*track.parentElement.offsetWidth;
+var w=track.parentElement.offsetWidth;
+var base=-_eduIdx*w;
+var maxDrag=w*0.25;
+if(_eduIdx===0&&tx>0)tx=tx*0.3;
+if(_eduIdx===_totalSlides-1&&tx<0)tx=tx*0.3;
 track.style.transform='translateX('+(base+tx)+'px)';
 }
 function _dragEnd(){
 if(!moving)return;moving=false;
 track.style.transition='transform .35s cubic-bezier(.4,0,.2,1)';
-if(tx<-50)_eduGoTo(_eduIdx+1);
-else if(tx>50)_eduGoTo(_eduIdx-1);
-else _eduGoTo(_eduIdx);
+var next=_eduIdx;
+if(tx<-50&&_eduIdx<_totalSlides-1)next=_eduIdx+1;
+else if(tx>50&&_eduIdx>0)next=_eduIdx-1;
+_eduGoTo(next);
 tx=0;
 }
 track.addEventListener('touchstart',function(e){_dragStart(e.touches[0].clientX);},{passive:true});

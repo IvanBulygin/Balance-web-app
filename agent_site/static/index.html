@@ -618,7 +618,56 @@ rhodiola:'rhodiola+rosea',
 maca:'maca+root',
 milkthistle:'milk+thistle+silymarin',
 berberine:'berberine+500mg',
-tongkatali:'tongkat+ali'
+tongkatali:'tongkat+ali',
+vitaminc:'vitamin+c+ascorbic+acid',
+vitamine:'vitamin+e+tocopherol',
+b12:'vitamin+b12+methylcobalamin',
+k2:'vitamin+k2+mk-7',
+boswellia:'boswellia+serrata+extract',
+curcumin:'curcumin+turmeric',
+glucosamine:'glucosamine+sulfate',
+chondroitin:'chondroitin+sulfate',
+msm:'msm+methylsulfonylmethane',
+pycnogenol:'pycnogenol+pine+bark',
+caffeine:'caffeine+200mg',
+greentea:'green+tea+extract+egcg',
+carnitine:'l-carnitine',
+citrulline:'l-citrulline+malate',
+arginine:'l-arginine',
+betaalanine:'beta-alanine',
+bcaa:'bcaa',
+protein:'whey+protein',
+taurine:'taurine',
+bicarbonate:'sodium+bicarbonate',
+nitrates:'beetroot+powder+nitrate',
+tartcherry:'tart+cherry+extract',
+bacopa:'bacopa+monnieri',
+nac:'nac+n-acetyl+cysteine',
+same:'same+s-adenosylmethionine',
+tudca:'tudca',
+sjw:'st+johns+wort',
+saffron:'saffron+extract',
+fivehtp:'5-htp',
+yohimbine:'yohimbine',
+fenugreek:'fenugreek+extract',
+tribulus:'tribulus+terrestris',
+dhea:'dhea',
+inositol:'inositol+myo-inositol',
+cinnamon:'cinnamon+extract',
+chromium:'chromium+picolinate',
+fiber:'psyllium+fiber',
+quercetin:'quercetin',
+spirulina:'spirulina',
+echinacea:'echinacea',
+lavender:'lavender+oil+silexan',
+passionflower:'passionflower',
+kava:'kava+kava',
+garlic:'garlic+extract+allicin',
+cocoa:'cocoa+flavanols',
+grapeseed:'grape+seed+extract',
+oliveleaf:'olive+leaf+extract',
+mct:'mct+oil',
+iodine:'iodine+kelp'
 };
 function iherbUrl(id){
 var q=IHERB_PRODUCTS[id];
@@ -630,7 +679,7 @@ return url;
 var SUPP_DETECT=[
 {words:['magnesium'],id:'magnesium',n:'Magnesium'},
 {words:['creatine'],id:'creatine',n:'Creatine'},
-{words:['omega-3','omega 3','fish oil','epa','dha'],id:'omega3',n:'Omega-3'},
+{words:['omega-3','omega 3','fish oil','epa+dha','epa and dha','algae oil','algal oil'],id:'omega3',n:'Omega-3'},
 {words:['vitamin d','vit d','d3'],id:'vitd3',n:'Vitamin D3'},
 {words:['ashwagandha','ksm-66'],id:'ashwagandha',n:'Ashwagandha'},
 {words:['zinc'],id:'zinc',n:'Zinc'},
@@ -643,8 +692,62 @@ var SUPP_DETECT=[
 {words:['maca'],id:'maca',n:'Maca'},
 {words:['milk thistle','silymarin'],id:'milkthistle',n:'Milk Thistle'},
 {words:['berberine'],id:'berberine',n:'Berberine'},
-{words:['tongkat ali','longjack'],id:'tongkatali',n:'Tongkat Ali'}
+{words:['tongkat ali','longjack','eurycoma'],id:'tongkatali',n:'Tongkat Ali'},
+{words:['vitamin c','ascorbic'],id:'vitaminc',n:'Vitamin C'},
+{words:['vitamin e','tocopherol'],id:'vitamine',n:'Vitamin E'},
+{words:['vitamin b12','b-12','cobalamin'],id:'b12',n:'Vitamin B12'},
+{words:['vitamin k','k2','menaquinone'],id:'k2',n:'Vitamin K2'},
+{words:['boswellia'],id:'boswellia',n:'Boswellia'},
+{words:['curcumin','turmeric'],id:'curcumin',n:'Curcumin'},
+{words:['glucosamine'],id:'glucosamine',n:'Glucosamine'},
+{words:['chondroitin'],id:'chondroitin',n:'Chondroitin'},
+{words:['msm','methylsulfonylmethane'],id:'msm',n:'MSM'},
+{words:['pycnogenol','pine bark'],id:'pycnogenol',n:'Pycnogenol'},
+{words:['caffeine'],id:'caffeine',n:'Caffeine'},
+{words:['green tea','egcg'],id:'greentea',n:'Green Tea Extract'},
+{words:['carnitine'],id:'carnitine',n:'L-Carnitine'},
+{words:['citrulline'],id:'citrulline',n:'L-Citrulline'},
+{words:['arginine'],id:'arginine',n:'L-Arginine'},
+{words:['beta-alanine','beta alanine'],id:'betaalanine',n:'Beta-Alanine'},
+{words:['bcaa','branched-chain'],id:'bcaa',n:'BCAAs'},
+{words:['whey protein','protein powder'],id:'protein',n:'Protein'},
+{words:['taurine'],id:'taurine',n:'Taurine'},
+{words:['sodium bicarbonate','baking soda'],id:'bicarbonate',n:'Sodium Bicarbonate'},
+{words:['nitrate','beetroot','beet root','beet juice'],id:'nitrates',n:'Beetroot (Nitrates)'},
+{words:['tart cherry','montmorency'],id:'tartcherry',n:'Tart Cherry'},
+{words:['bacopa'],id:'bacopa',n:'Bacopa Monnieri'},
+{words:['n-acetylcysteine','n-acetyl cysteine','acetylcysteine'],id:'nac',n:'NAC'},
+{words:['s-adenosyl','sam-e'],id:'same',n:'SAMe'},
+{words:['tudca','tauroursodeoxycholic'],id:'tudca',n:'TUDCA'},
+{words:['st. john','st john','hypericum'],id:'sjw',n:"St. John's Wort"},
+{words:['saffron','crocus'],id:'saffron',n:'Saffron'},
+{words:['5-htp','5htp','hydroxytryptophan'],id:'fivehtp',n:'5-HTP'},
+{words:['yohimbine','yohimbe'],id:'yohimbine',n:'Yohimbine'},
+{words:['fenugreek'],id:'fenugreek',n:'Fenugreek'},
+{words:['tribulus'],id:'tribulus',n:'Tribulus Terrestris'},
+{words:['dhea'],id:'dhea',n:'DHEA'},
+{words:['inositol'],id:'inositol',n:'Inositol'},
+{words:['cinnamon'],id:'cinnamon',n:'Cinnamon'},
+{words:['chromium'],id:'chromium',n:'Chromium'},
+{words:['psyllium','glucomannan'],id:'fiber',n:'Fiber'},
+{words:['quercetin'],id:'quercetin',n:'Quercetin'},
+{words:['spirulina'],id:'spirulina',n:'Spirulina'},
+{words:['echinacea'],id:'echinacea',n:'Echinacea'},
+{words:['lavender','silexan'],id:'lavender',n:'Lavender'},
+{words:['passionflower','passiflora'],id:'passionflower',n:'Passionflower'},
+{words:['kava'],id:'kava',n:'Kava'},
+{words:['garlic','allicin'],id:'garlic',n:'Garlic'},
+{words:['cocoa','cacao','flavanol'],id:'cocoa',n:'Cocoa Flavanols'},
+{words:['grape seed','grapeseed'],id:'grapeseed',n:'Grape Seed Extract'},
+{words:['olive leaf'],id:'oliveleaf',n:'Olive Leaf'},
+{words:['mct oil','medium-chain'],id:'mct',n:'MCT Oil'},
+{words:['iodine','kelp'],id:'iodine',n:'Iodine'}
 ];
+function suppDisplayName(id){
+if(SUPP_DETAILS[id])return SUPP_DETAILS[id].n;
+for(var i=0;i<SUPP_DETECT.length;i++)if(SUPP_DETECT[i].id===id)return SUPP_DETECT[i].n;
+return id;
+}
 function detectSuppInText(text){
 text=text.toLowerCase();
 var found=[];
@@ -1140,7 +1243,7 @@ nav('detail');
 
 // ADD-TO-STACK SCREEN
 function openAddToStack(id){
-const d=SUPP_DETAILS[id]||{n:id,form:'',dose:'',time:'morning',g:'B',goal:'sleep'};
+const d=SUPP_DETAILS[id]||{n:suppDisplayName(id),form:'',dose:'',time:'morning',g:'B',goal:'sleep'};
 const c=document.getElementById('add-content');
 c.innerHTML=`
 <div style="height:54px"></div>

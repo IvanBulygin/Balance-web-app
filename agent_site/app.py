@@ -31,7 +31,14 @@ STATIC_DIR = ROOT / "static"
 PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
-CHAT_MODEL = "gemini-3.5-flash-lite"
+# Primary is the fast/cheap Flash-Lite tier. If that exact ID is not enabled on
+# the API key, fall back to a known-good model so chat keeps working. Both are
+# overridable via env without a code change.
+CHAT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
+FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash")
+CHAT_MODELS = [CHAT_MODEL] + (
+    [FALLBACK_MODEL] if FALLBACK_MODEL and FALLBACK_MODEL != CHAT_MODEL else []
+)
 MAX_TOKENS = 4096
 MAX_HISTORY = 6
 TOP_K = 5
@@ -57,7 +64,7 @@ async def lifespan(app: FastAPI):
         f"Index ready. {len(index.chunks):,} chunks from "
         f"{len({c.source for c in index.chunks})} guides."
     )
-    print(f"Agent ready. Model: {CHAT_MODEL}.")
+    print(f"Agent ready. Models (in order): {CHAT_MODELS}.")
     yield
 
 
@@ -90,6 +97,7 @@ def health():
     return {
         "status": "ok",
         "model": CHAT_MODEL,
+        "models": CHAT_MODELS,
         "chunks": len(idx.chunks) if idx else 0,
     }
 
@@ -111,16 +119,26 @@ def chat(req: ChatRequest):
 
     convo, system_instruction, sources = _prepare_chat(req.messages)
 
-    response = state["client"].models.generate_content(
-        model=CHAT_MODEL,
-        contents=convo,
-        config={
-            "system_instruction": system_instruction,
-            "max_output_tokens": MAX_TOKENS,
-            "temperature": 0.7,
-        },
-    )
-    reply = response.text or ""
+    gen_config = {
+        "system_instruction": system_instruction,
+        "max_output_tokens": MAX_TOKENS,
+        "temperature": 0.7,
+    }
+    reply = ""
+    last_err: Exception | None = None
+    for model in CHAT_MODELS:
+        try:
+            response = state["client"].models.generate_content(
+                model=model, contents=convo, config=gen_config
+            )
+            reply = response.text or ""
+            last_err = None
+            break
+        except Exception as exc:  # noqa: BLE001 - surface model/runtime errors
+            last_err = exc
+            print(f"[chat] model {model} failed: {exc}")
+    if last_err is not None and not reply:
+        raise HTTPException(502, f"Model error: {last_err}")
     return ChatResponse(reply=reply, sources=sources)
 
 
@@ -154,20 +172,35 @@ def chat_stream(req: ChatRequest):
 
     convo, system_instruction, sources = _prepare_chat(req.messages)
 
+    gen_config = {
+        "system_instruction": system_instruction,
+        "max_output_tokens": MAX_TOKENS,
+        "temperature": 0.7,
+    }
+
     def generate():
-        stream = state["client"].models.generate_content_stream(
-            model=CHAT_MODEL,
-            contents=convo,
-            config={
-                "system_instruction": system_instruction,
-                "max_output_tokens": MAX_TOKENS,
-                "temperature": 0.7,
-            },
-        )
-        for chunk in stream:
-            text = chunk.text or ""
-            if text:
-                yield f"data: {json.dumps({'text': text})}\n\n"
+        last_err: Exception | None = None
+        for model in CHAT_MODELS:
+            produced = False
+            try:
+                stream = state["client"].models.generate_content_stream(
+                    model=model, contents=convo, config=gen_config
+                )
+                for chunk in stream:
+                    text = chunk.text or ""
+                    if text:
+                        produced = True
+                        yield f"data: {json.dumps({'text': text})}\n\n"
+                last_err = None
+                break
+            except Exception as exc:  # noqa: BLE001 - surface model/runtime errors
+                last_err = exc
+                print(f"[chat] stream model {model} failed: {exc}")
+                if produced:
+                    break  # already streamed partial output; retrying would duplicate
+        if last_err is not None:
+            note = f"\n\n⚠️ The AI service returned an error: {last_err}"
+            yield f"data: {json.dumps({'text': note})}\n\n"
         yield f"data: {json.dumps({'done': True, 'sources': sources})}\n\n"
 
     return StreamingResponse(generate(), media_type="text/event-stream")

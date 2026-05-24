@@ -147,7 +147,7 @@ def _prepare_chat(messages: list[Message]):
     query = _build_query(trimmed)
 
     index: BM25Index = state["index"]
-    hits = index.search(query, k=TOP_K) if query else []
+    hits = index.guide_aware_search(query, k=TOP_K) if query else []
     context_block = format_context(hits)
     sources = sorted({f"supplement-guide-{c.source}" for c, _ in hits})
 

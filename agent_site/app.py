@@ -39,7 +39,7 @@ FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash")
 CHAT_MODELS = [CHAT_MODEL] + (
     [FALLBACK_MODEL] if FALLBACK_MODEL and FALLBACK_MODEL != CHAT_MODEL else []
 )
-MAX_TOKENS = 4096
+MAX_TOKENS = 8192
 MAX_HISTORY = 6
 # Number of query-specific BM25 hits to include alongside any guide injection.
 # Kept a bit above 5 so a precise follow-up ("best time to take it?") still
@@ -144,7 +144,7 @@ def chat(req: ChatRequest):
     gen_config = {
         "system_instruction": system_instruction,
         "max_output_tokens": MAX_TOKENS,
-        "temperature": 0.7,
+        "temperature": 0.3,
         # 3.5 Flash is a thinking model; left on, thinking tokens consume the
         # output budget and truncate long answers (finishReason=MAX_TOKENS).
         # This RAG task just formats retrieved facts, so disable thinking for
@@ -212,7 +212,7 @@ def chat_stream(req: ChatRequest):
     gen_config = {
         "system_instruction": system_instruction,
         "max_output_tokens": MAX_TOKENS,
-        "temperature": 0.7,
+        "temperature": 0.3,
         # 3.5 Flash is a thinking model; left on, thinking tokens consume the
         # output budget and truncate long answers (finishReason=MAX_TOKENS).
         # This RAG task just formats retrieved facts, so disable thinking for

@@ -31,11 +31,11 @@ STATIC_DIR = ROOT / "static"
 PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 
-# Primary is 3.5 Flash (Gemini's current all-around tier) for better answers.
-# Fallback defaults to the same model; both are overridable via env without a
-# code change. (When the two match, only one model is tried.)
-CHAT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
-FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash")
+# Primary is 2.5 Flash — capable, with a much higher free-tier daily quota than
+# 3.5 Flash (which the free tier caps at 20 requests/day). Fallback matches;
+# both are overridable via env. (When the two match, only one model is tried.)
+CHAT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
 CHAT_MODELS = [CHAT_MODEL] + (
     [FALLBACK_MODEL] if FALLBACK_MODEL and FALLBACK_MODEL != CHAT_MODEL else []
 )
@@ -155,7 +155,7 @@ def chat(req: ChatRequest):
         "system_instruction": system_instruction,
         "max_output_tokens": MAX_TOKENS,
         "temperature": 0.3,
-        # 3.5 Flash is a thinking model; left on, thinking tokens consume the
+        # 2.5 Flash is a thinking model; left on, thinking tokens consume the
         # output budget and truncate long answers (finishReason=MAX_TOKENS).
         # This RAG task just formats retrieved facts, so disable thinking for
         # complete (and faster) responses.
@@ -223,7 +223,7 @@ def chat_stream(req: ChatRequest):
         "system_instruction": system_instruction,
         "max_output_tokens": MAX_TOKENS,
         "temperature": 0.3,
-        # 3.5 Flash is a thinking model; left on, thinking tokens consume the
+        # 2.5 Flash is a thinking model; left on, thinking tokens consume the
         # output budget and truncate long answers (finishReason=MAX_TOKENS).
         # This RAG task just formats retrieved facts, so disable thinking for
         # complete (and faster) responses.

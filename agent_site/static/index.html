@@ -1529,18 +1529,9 @@ solutions:[
 {h:'Collagen & structural support',t:'Undenatured type-II collagen (40 mg) or hydrolyzed collagen (10 g) provides building blocks for cartilage repair. Joint cartilage has no blood supply, so healing is slow.'}
 ]}
 };
-function showGoalEducation(){
-var goal=selectedGoals[0]||'sleep';
-var edu=GOAL_EDUCATION[goal]||GOAL_EDUCATION.sleep;
-var c=document.getElementById('step3-content');
-c.innerHTML=
-'<div style="padding:12px 18px 0;display:flex;justify-content:space-between;align-items:center">'+
-'<div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></div>'+
-'<div style="display:flex;gap:4px"><div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="width:22px;height:4px;border-radius:2px;background:#fff"></div></div>'+
-'<div style="width:36px"></div>'+
-'</div>'+
-'<div style="padding:22px 22px 0">'+
-'<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:10px">Step 3 of 3</div>'+
+var _eduIdx=0;
+function _renderEduSlide(edu){
+return '<div style="padding:22px 22px 0">'+
 '<div style="font-family:Fraunces,Georgia,serif;font-size:30px;line-height:1.1">'+edu.title+'</div>'+
 '<div style="font-size:13px;color:rgba(255,255,255,.8);margin-top:12px;line-height:1.55">'+edu.intro+'</div>'+
 '</div>'+
@@ -1567,11 +1558,76 @@ return '<div style="background:rgba(255,255,255,.1);border-radius:16px;padding:1
 '<div style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;padding-left:34px">'+f.t+'</div>'+
 '</div>';
 }).join('')+
+'</div>';
+}
+function _eduGoTo(idx){
+var goals=state.goals&&state.goals.length?state.goals:(selectedGoals.length?selectedGoals:['sleep']);
+if(idx<0||idx>=goals.length)return;
+_eduIdx=idx;
+var track=document.getElementById('edu-track');
+track.style.transform='translateX(-'+idx*100+'%)';
+var dots=document.querySelectorAll('.edu-dot');
+dots.forEach(function(d,i){d.style.background=i===idx?'#fff':'rgba(255,255,255,.35)';});
+var label=document.getElementById('edu-counter');
+if(label)label.textContent=(idx+1)+' / '+goals.length;
+document.getElementById('scr-step3').querySelector('.screen-scroll').scrollTop=0;
+}
+function showGoalEducation(){
+var goals=selectedGoals.length?selectedGoals:['sleep'];
+_eduIdx=0;
+var c=document.getElementById('step3-content');
+var slides=goals.map(function(g){
+var edu=GOAL_EDUCATION[g]||GOAL_EDUCATION.sleep;
+return '<div class="edu-slide" style="min-width:100%;box-sizing:border-box">'+_renderEduSlide(edu)+'</div>';
+}).join('');
+var dots=goals.length>1?goals.map(function(_,i){
+return '<div class="edu-dot" style="width:8px;height:8px;border-radius:50%;background:'+(i===0?'#fff':'rgba(255,255,255,.35)')+';cursor:pointer" onclick="_eduGoTo('+i+')"></div>';
+}).join(''):'';
+var arrows='';
+if(goals.length>1){
+arrows='<div style="display:flex;align-items:center;gap:12px">'+
+'<div onclick="_eduGoTo(_eduIdx-1)" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></div>'+
+'<span id="edu-counter" style="font-size:13px;color:rgba(255,255,255,.7);font-weight:600;min-width:32px;text-align:center">1 / '+goals.length+'</span>'+
+'<div onclick="_eduGoTo(_eduIdx+1)" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></div>'+
+'</div>';
+}
+c.innerHTML=
+'<div style="padding:12px 18px 0;display:flex;justify-content:space-between;align-items:center">'+
+'<div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></div>'+
+'<div style="display:flex;gap:4px"><div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="width:22px;height:4px;border-radius:2px;background:#fff"></div></div>'+
+'<div style="width:36px"></div>'+
+'</div>'+
+'<div style="padding:22px 22px 0">'+
+'<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:10px">Step 3 of 3</div>'+
+'</div>'+
+(goals.length>1?'<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:0 22px 4px">'+dots+'</div>':'')+
+'<div style="overflow:hidden">'+
+'<div id="edu-track" style="display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1)">'+
+slides+
+'</div>'+
 '</div>'+
 '<div style="padding:22px 18px">'+
+(goals.length>1?'<div style="display:flex;justify-content:center;margin-bottom:16px">'+arrows+'</div>':'')+
 '<div onclick="finishEducation()" style="background:rgba(255,255,255,.95);color:var(--brand-deep);padding:16px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">Build my supplement stack</div>'+
 '<div onclick="finishEducation()" style="text-align:center;padding:14px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500;cursor:pointer">Skip</div>'+
 '</div>';
+var track=document.getElementById('edu-track');
+var tx=0,sx=0,moving=false;
+track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;moving=true;track.style.transition='none';},{passive:true});
+track.addEventListener('touchmove',function(e){
+if(!moving)return;
+tx=e.touches[0].clientX-sx;
+var base=-_eduIdx*track.parentElement.offsetWidth;
+track.style.transform='translateX('+(base+tx)+'px)';
+},{passive:true});
+track.addEventListener('touchend',function(){
+if(!moving)return;moving=false;
+track.style.transition='transform .35s cubic-bezier(.4,0,.2,1)';
+if(tx<-50)_eduGoTo(_eduIdx+1);
+else if(tx>50)_eduGoTo(_eduIdx-1);
+else _eduGoTo(_eduIdx);
+tx=0;
+});
 nav('step3');
 }
 function finishEducation(){

@@ -287,12 +287,12 @@ body{background:var(--bg)}
 </div>
 
 <!-- STEP 3 — BUILDING STACK -->
-<div id="scr-step3" class="screen" style="background:var(--brand);display:flex;flex-direction:column">
-  <div class="screen-scroll" style="position:relative;flex:1;overflow-y:auto;color:#fff">
+<div id="scr-step3" class="screen" style="background:var(--brand);">
+  <div class="screen-scroll" style="position:relative;height:100%;color:#fff;display:flex;flex-direction:column">
     <div style="height:54px"></div>
-    <div id="step3-content"></div>
+    <div id="step3-content" style="flex:1;overflow-y:auto"></div>
+    <div id="step3-bottom" style="padding:12px 18px 16px;flex-shrink:0"></div>
   </div>
-  <div id="step3-bottom" style="padding:12px 18px 16px;background:var(--brand);color:#fff"></div>
 </div>
 
 <!-- MODAL OVERLAY -->

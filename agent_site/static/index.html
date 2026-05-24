@@ -1591,6 +1591,17 @@ arrows='<div style="display:flex;align-items:center;gap:12px">'+
 '<div onclick="_eduGoTo(_eduIdx+1)" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></div>'+
 '</div>';
 }
+var navRow='';
+if(goals.length>1){
+navRow='<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 22px 0">'+
+'<div onclick="_eduGoTo(_eduIdx-1)" style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></div>'+
+'<div style="display:flex;flex-direction:column;align-items:center;gap:6px">'+
+'<div style="display:flex;gap:6px">'+dots+'</div>'+
+'<span id="edu-counter" style="font-size:12px;color:rgba(255,255,255,.6);font-weight:600">1 / '+goals.length+'</span>'+
+'</div>'+
+'<div onclick="_eduGoTo(_eduIdx+1)" style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></div>'+
+'</div>';
+}
 c.innerHTML=
 '<div style="padding:12px 18px 0;display:flex;justify-content:space-between;align-items:center">'+
 '<div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></div>'+
@@ -1600,34 +1611,39 @@ c.innerHTML=
 '<div style="padding:22px 22px 0">'+
 '<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:10px">Step 3 of 3</div>'+
 '</div>'+
-(goals.length>1?'<div style="display:flex;align-items:center;justify-content:center;gap:6px;padding:0 22px 4px">'+dots+'</div>':'')+
+navRow+
 '<div style="overflow:hidden">'+
 '<div id="edu-track" style="display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1)">'+
 slides+
 '</div>'+
 '</div>'+
 '<div style="padding:22px 18px">'+
-(goals.length>1?'<div style="display:flex;justify-content:center;margin-bottom:16px">'+arrows+'</div>':'')+
 '<div onclick="finishEducation()" style="background:rgba(255,255,255,.95);color:var(--brand-deep);padding:16px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;cursor:pointer">Build my supplement stack</div>'+
 '<div onclick="finishEducation()" style="text-align:center;padding:14px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500;cursor:pointer">Skip</div>'+
 '</div>';
 var track=document.getElementById('edu-track');
 var tx=0,sx=0,moving=false;
-track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;moving=true;track.style.transition='none';},{passive:true});
-track.addEventListener('touchmove',function(e){
+function _dragStart(x){sx=x;moving=true;track.style.transition='none';}
+function _dragMove(x){
 if(!moving)return;
-tx=e.touches[0].clientX-sx;
+tx=x-sx;
 var base=-_eduIdx*track.parentElement.offsetWidth;
 track.style.transform='translateX('+(base+tx)+'px)';
-},{passive:true});
-track.addEventListener('touchend',function(){
+}
+function _dragEnd(){
 if(!moving)return;moving=false;
 track.style.transition='transform .35s cubic-bezier(.4,0,.2,1)';
 if(tx<-50)_eduGoTo(_eduIdx+1);
 else if(tx>50)_eduGoTo(_eduIdx-1);
 else _eduGoTo(_eduIdx);
 tx=0;
-});
+}
+track.addEventListener('touchstart',function(e){_dragStart(e.touches[0].clientX);},{passive:true});
+track.addEventListener('touchmove',function(e){_dragMove(e.touches[0].clientX);},{passive:true});
+track.addEventListener('touchend',_dragEnd);
+track.addEventListener('mousedown',function(e){e.preventDefault();_dragStart(e.clientX);});
+document.addEventListener('mousemove',function(e){if(moving)_dragMove(e.clientX);});
+document.addEventListener('mouseup',function(){if(moving)_dragEnd();});
 nav('step3');
 }
 function finishEducation(){

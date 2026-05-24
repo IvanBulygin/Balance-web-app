@@ -42,6 +42,10 @@ box-shadow:0 30px 60px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.08);position:relati
 .screen.active{display:flex;opacity:1}
 .screen-scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .screen-scroll::-webkit-scrollbar{display:none}
+.chiprow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 18px}
+.chiprow::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;background:var(--surface);color:var(--ink-2);border:.5px solid var(--rule)}
+.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
 #step3-content{scrollbar-width:none}
 #step3-content::-webkit-scrollbar{display:none}
 .bal-card{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-card)}
@@ -190,6 +194,15 @@ body{background:var(--bg)}
 <div id="scr-add" class="screen">
   <div class="screen-scroll" style="padding-bottom:90px">
     <div id="add-content"></div>
+  </div>
+</div>
+
+<!-- BROWSE / ADD SUPPLEMENT -->
+<div id="scr-browse" class="screen">
+  <div style="display:flex;flex-direction:column;height:100%">
+    <div style="height:54px;flex-shrink:0"></div>
+    <div id="browse-top" style="flex-shrink:0"></div>
+    <div id="browse-list" class="screen-scroll" style="flex:1;padding:8px 18px 90px"></div>
   </div>
 </div>
 
@@ -391,10 +404,11 @@ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
 const scr=document.getElementById('scr-'+k);if(scr)scr.classList.add('active');
 document.querySelectorAll('.tab-item').forEach(t=>{t.classList.toggle('active',t.dataset.tab===k||(k==='detail'&&t.dataset.tab==='learn'))});
 const isMainTab=['today','ask','stack','learn','me'].includes(k);
-document.getElementById('tabbar').style.display=(k==='ask'||k==='detail'||k==='add'||k==='onboard'||k==='paywall'||k==='signin'||k==='intake'||k==='step3')?'none':'flex';
+document.getElementById('tabbar').style.display=(k==='ask'||k==='detail'||k==='add'||k==='browse'||k==='onboard'||k==='paywall'||k==='signin'||k==='intake'||k==='step3')?'none':'flex';
 if(k==='ask'){var ai=document.getElementById('ask-input');if(ai)ai.focus();}
 if(k==='today'&&typeof renderToday==='function')renderToday();
 if(k==='stack'&&typeof renderStack==='function')renderStack();
+if(k==='browse'&&typeof renderBrowse==='function')renderBrowse();
 if(k==='learn'&&typeof renderLearn==='function')renderLearn();
 if(k==='profile'&&typeof renderProfile==='function')renderProfile();
 if(k==='paywall'&&typeof renderPaywall==='function')renderPaywall();
@@ -1008,7 +1022,7 @@ sc.innerHTML=`
       </div>`).join('')}
     </div>`;
   }).join('')}
-  <div onclick="nav('learn')" style="padding:14px;border:1.5px dashed var(--rule);border-radius:16px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:500;cursor:pointer">+ Add a supplement</div>
+  <div onclick="nav('browse')" style="padding:14px;border:1.5px dashed var(--rule);border-radius:16px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:500;cursor:pointer">+ Add a supplement</div>
   <div onclick="buyEntireStack()" style="margin-top:10px;padding:14px;background:#3B7A2E;color:#fff;border-radius:16px;text-align:center;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(59,122,46,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>Buy entire stack on iHerb</div>
 </div>`;
 }
@@ -1247,7 +1261,8 @@ nav('detail');
 
 // ADD-TO-STACK SCREEN
 function openAddToStack(id){
-const d=SUPP_DETAILS[id]||{n:suppDisplayName(id),form:'',dose:'',time:'morning',g:'B',goal:'sleep'};
+var _cat=(typeof SUPP_CATALOG!=='undefined')?SUPP_CATALOG[id]:null;
+const d=SUPP_DETAILS[id]||{n:suppDisplayName(id),form:'',dose:'',time:'morning',g:_cat?({primary:'A',secondary:'B',promising:'C'}[_cat.t]||'B'):'B',goal:'sleep'};
 const c=document.getElementById('add-content');
 c.innerHTML=`
 <div style="height:54px"></div>
@@ -2368,5 +2383,127 @@ row.onclick=function(){nav('labs')};
 };
 </script>
 
+<!-- BROWSE / ADD SUPPLEMENT SCREEN -->
+<script>
+var SUPP_CATALOG={
+magnesium:{n:"Magnesium",g:["Aging","Blood sugar","Bone","Focus","Mood","Stress","Vegan"],t:"primary"},
+creatine:{n:"Creatine",g:["Aging","Blood sugar","Focus","Muscle","Vegan"],t:"primary"},
+omega3:{n:"Omega-3",g:["Heart","Joints","Mood","Stress","Vegan"],t:"primary"},
+vitd3:{n:"Vitamin D3",g:["Aging","Immunity","Mood","Vegan"],t:"primary"},
+ashwagandha:{n:"Ashwagandha",g:["Muscle","Sleep","Stress","Testosterone"],t:"promising"},
+zinc:{n:"Zinc",g:["Blood sugar","Immunity","Mood","Testosterone"],t:"secondary"},
+melatonin:{n:"Melatonin",g:["Sleep"],t:"secondary"},
+ltheanine:{n:"L-Theanine",g:["Focus","Stress"],t:"secondary"},
+coq10:{n:"CoQ10",g:["Heart"],t:"secondary"},
+collagen:{n:"Collagen",g:["Joints"],t:"secondary"},
+probiotics:{n:"Probiotics",g:["Immunity","Skin"],t:"secondary"},
+rhodiola:{n:"Rhodiola",g:["Mood"],t:"promising"},
+maca:{n:"Maca",g:["Aging","Libido"],t:"primary"},
+milkthistle:{n:"Milk Thistle",g:["Liver"],t:"secondary"},
+berberine:{n:"Berberine",g:["Blood sugar","Fat loss"],t:"secondary"},
+tongkatali:{n:"Tongkat Ali",g:["Libido"],t:"promising"},
+vitaminc:{n:"Vitamin C",g:["Immunity","Joints"],t:"primary"},
+vitamine:{n:"Vitamin E",g:["Aging","Immunity"],t:"promising"},
+b12:{n:"Vitamin B12",g:["Aging","Vegan"],t:"primary"},
+k2:{n:"Vitamin K2",g:["Aging"],t:"secondary"},
+boswellia:{n:"Boswellia",g:["Joints"],t:"secondary"},
+curcumin:{n:"Curcumin",g:["Joints","Mood","Stress"],t:"secondary"},
+glucosamine:{n:"Glucosamine",g:["Joints"],t:"promising"},
+chondroitin:{n:"Chondroitin",g:["Joints"],t:"promising"},
+msm:{n:"MSM",g:["Joints"],t:"promising"},
+pycnogenol:{n:"Pycnogenol",g:["Heart","Joints"],t:"promising"},
+caffeine:{n:"Caffeine",g:["Fat loss","Focus","Muscle"],t:"primary"},
+greentea:{n:"Green Tea Extract",g:["Fat loss"],t:"secondary"},
+carnitine:{n:"L-Carnitine",g:["Aging","Fat loss","Heart","Vegan"],t:"primary"},
+citrulline:{n:"L-Citrulline",g:["Heart","Muscle"],t:"secondary"},
+arginine:{n:"L-Arginine",g:["Heart","Libido"],t:"secondary"},
+betaalanine:{n:"Beta-Alanine",g:["Muscle","Vegan"],t:"primary"},
+bcaa:{n:"BCAAs",g:["Muscle"],t:"secondary"},
+protein:{n:"Protein",g:["Aging","Fat loss","Muscle"],t:"primary"},
+taurine:{n:"Taurine",g:["Heart","Muscle"],t:"secondary"},
+bicarbonate:{n:"Sodium Bicarbonate",g:["Muscle"],t:"secondary"},
+nitrates:{n:"Beetroot (Nitrates)",g:["Heart","Muscle"],t:"primary"},
+tartcherry:{n:"Tart Cherry",g:["Muscle"],t:"promising"},
+bacopa:{n:"Bacopa Monnieri",g:["Focus"],t:"secondary"},
+nac:{n:"NAC",g:["Liver","Mood"],t:"secondary"},
+same:{n:"SAMe",g:["Liver","Mood"],t:"primary"},
+tudca:{n:"TUDCA",g:["Liver"],t:"secondary"},
+sjw:{n:"St. John's Wort",g:["Mood"],t:"secondary"},
+saffron:{n:"Saffron",g:["Joints","Mood","Stress"],t:"primary"},
+fivehtp:{n:"5-HTP",g:["Fat loss"],t:"promising"},
+yohimbine:{n:"Yohimbine",g:["Fat loss","Libido"],t:"secondary"},
+fenugreek:{n:"Fenugreek",g:["Libido","Testosterone"],t:"promising"},
+tribulus:{n:"Tribulus Terrestris",g:["Libido"],t:"promising"},
+dhea:{n:"DHEA",g:["Aging","Testosterone"],t:"secondary"},
+inositol:{n:"Inositol",g:["Blood sugar"],t:"secondary"},
+cinnamon:{n:"Cinnamon",g:["Blood sugar"],t:"promising"},
+chromium:{n:"Chromium",g:["Blood sugar"],t:"promising"},
+fiber:{n:"Fiber",g:["Blood sugar","Fat loss"],t:"primary"},
+quercetin:{n:"Quercetin",g:["Immunity"],t:"promising"},
+spirulina:{n:"Spirulina",g:["Heart","Immunity","Liver"],t:"promising"},
+echinacea:{n:"Echinacea",g:["Immunity"],t:"promising"},
+lavender:{n:"Lavender",g:["Sleep","Stress"],t:"secondary"},
+passionflower:{n:"Passionflower",g:["Stress"],t:"secondary"},
+kava:{n:"Kava",g:["Stress"],t:"promising"},
+garlic:{n:"Garlic",g:["Heart"],t:"primary"},
+cocoa:{n:"Cocoa Flavanols",g:["Heart","Libido","Skin"],t:"primary"},
+grapeseed:{n:"Grape Seed Extract",g:["Heart"],t:"secondary"},
+oliveleaf:{n:"Olive Leaf",g:["Heart"],t:"promising"},
+mct:{n:"MCT Oil",g:["Fat loss"],t:"promising"},
+iodine:{n:"Iodine",g:["Vegan"],t:"secondary"}
+};
+var browseSearch='',browseGoal='',browseTier='';
+function setBrowseGoal(g){browseGoal=(browseGoal===g?'':g);renderBrowse();}
+function setBrowseTier(t){browseTier=(browseTier===t?'':t);renderBrowse();}
+function onBrowseSearch(el){browseSearch=el.value;renderBrowse();}
+function browseGoalList(){var s={};for(var k in SUPP_CATALOG){SUPP_CATALOG[k].g.forEach(function(g){s[g]=1;});}return Object.keys(s).sort();}
+function _tierBadge(t){
+var bg={primary:'var(--brand)',secondary:'var(--accent)',promising:'var(--accent-soft)'}[t]||'var(--surface-3)';
+var fg={primary:'#fff',secondary:'#fff',promising:'var(--brand)'}[t]||'var(--ink-3)';
+var lbl=t?t.charAt(0).toUpperCase()+t.slice(1):'';
+return '<span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;background:'+bg+';color:'+fg+';flex-shrink:0">'+lbl+'</span>';
+}
+function renderBrowse(){
+var q=browseSearch.toLowerCase().trim();
+var items=Object.keys(SUPP_CATALOG).map(function(id){var c=SUPP_CATALOG[id];return{id:id,n:c.n,g:c.g,t:c.t};});
+items=items.filter(function(it){
+if(q&&it.n.toLowerCase().indexOf(q)<0)return false;
+if(browseGoal&&it.g.indexOf(browseGoal)<0)return false;
+if(browseTier&&it.t!==browseTier)return false;
+return true;
+});
+var rank={primary:0,secondary:1,promising:2};
+items.sort(function(a,b){return (rank[a.t]-rank[b.t])||a.n.localeCompare(b.n);});
+function chip(active,label,cb){return '<div onclick="'+cb+'" class="chip'+(active?' on':'')+'">'+label+'</div>';}
+var goalChips=chip(!browseGoal,'All goals',"setBrowseGoal('')")+browseGoalList().map(function(g){return chip(browseGoal===g,g,"setBrowseGoal('"+g+"')");}).join('');
+var tierChips=chip(!browseTier,'All','setBrowseTier(\'\')')+chip(browseTier==='primary','Primary',"setBrowseTier('primary')")+chip(browseTier==='secondary','Secondary',"setBrowseTier('secondary')")+chip(browseTier==='promising','Promising',"setBrowseTier('promising')");
+document.getElementById('browse-top').innerHTML=`
+<div style="padding:8px 18px;display:flex;align-items:center;gap:10px">
+  <div onclick="goBack()" style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);cursor:pointer;flex-shrink:0">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </div>
+  <div class="serif" style="font-size:26px">Add a supplement</div>
+</div>
+<div style="padding:8px 18px 0">
+  <div style="background:var(--surface);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:var(--sh-1)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <input oninput="onBrowseSearch(this)" value="${browseSearch}" type="text" placeholder="Search supplements" style="flex:1;border:none;outline:none;font-size:14px;font-family:inherit;background:transparent;color:var(--ink)"/>
+    ${browseSearch?"<div onclick=\"browseSearch='';renderBrowse()\" style=\"width:20px;height:20px;border-radius:50%;background:var(--surface-3);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--ink-3);font-weight:700\">&times;</div>":""}
+  </div>
+</div>
+<div class="chiprow" style="padding-top:12px;padding-bottom:2px">${goalChips}</div>
+<div class="chiprow" style="padding-top:8px;padding-bottom:10px">${tierChips}</div>`;
+var listHtml=items.length===0
+?'<div style="text-align:center;padding:40px 20px;color:var(--ink-3);font-size:14px">No supplements match these filters.</div>'
+:'<div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin:4px 2px 10px">'+items.length+' supplement'+(items.length!==1?'s':'')+'</div>'+items.map(function(it){
+var inStack=state.stack.some(function(s){return s.id===it.id;});
+var action=inStack?'<span style="font-size:11px;color:var(--brand);font-weight:600;flex-shrink:0">&#10003; Added</span>':'<span style="font-size:12px;font-weight:700;color:var(--brand);background:var(--brand-soft);padding:6px 12px;border-radius:999px;flex-shrink:0">+ Add</span>';
+var click=inStack?"openDetail('"+it.id+"')":"openAddToStack('"+it.id+"')";
+return '<div onclick="'+click+'" class="bal-card" style="padding:12px 14px;display:flex;align-items:center;gap:10px;margin-bottom:8px;cursor:pointer"><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:600">'+it.n+'</div><div style="font-size:11px;color:var(--ink-3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+it.g.join(' · ')+'</div></div>'+_tierBadge(it.t)+action+'</div>';
+}).join('');
+document.getElementById('browse-list').innerHTML=listHtml;
+if(browseSearch){var inp=document.querySelector('#browse-top input');if(inp){inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);}}
+}
+</script>
 </body>
 </html>

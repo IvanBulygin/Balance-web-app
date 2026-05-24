@@ -1139,11 +1139,22 @@ shield:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--c-violet)"><
 droplet:'<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--green)"><path d="M12 3s7 7 7 12a7 7 0 11-14 0c0-5 7-12 7-12z"/></svg>',
 spark:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/><circle cx="12" cy="12" r="2.2" fill="var(--accent)" stroke="none"/></svg>'
 };
+const suppGuides=[
+{id:'magnesium',icon:'moon'},{id:'creatine',icon:'dumbbell'},{id:'omega3',icon:'heart'},
+{id:'vitd3',icon:'shield'},{id:'ashwagandha',icon:'leaf'}
+];
 var learnSearch='';
+var learnTab=0;
+function setLearnTab(i){if(learnTab===i)return;learnTab=i;learnSearch='';renderLearn();}
 function onLearnSearch(el){learnSearch=el.value;renderLearn();}
+function gradeBg(g){return g==='A'?'var(--brand-soft)':g&&g.charAt(0)==='B'?'var(--green-soft)':'var(--accent-soft)';}
 function renderLearn(){
 var q=learnSearch.toLowerCase();
 var filtered=q?topics.filter(function(t){return t.k.toLowerCase().includes(q)}):topics;
+var filteredSupps=q?suppGuides.filter(function(s){var d=SUPP_DETAILS[s.id];return d&&(d.n.toLowerCase().includes(q)||(d.tags||[]).join(' ').toLowerCase().includes(q)||(d.sub||'').toLowerCase().includes(q))}):suppGuides;
+var topicsBody=filtered.length===0?'<div style="text-align:center;padding:30px;color:var(--ink-3);font-size:14px">No topics match your search.</div>':'<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">'+filtered.map(function(t){return "<div onclick=\"openTopicDetail('"+t.k+"')\" class=\"bal-card\" style=\"padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer\"><div style=\"width:32px;height:32px;border-radius:10px;background:"+gradeBg(t.g)+";display:flex;align-items:center;justify-content:center\">"+(iconSvg[t.icon]||'')+"</div><div><div style=\"font-size:14px;font-weight:600\">"+t.k+"</div><div style=\"font-size:11px;color:var(--ink-3);margin-top:2px\">Grade "+t.g+"</div></div></div>"}).join('')+'</div>'+(q?'':'<div style="text-align:center;font-size:12px;color:var(--ink-3);margin-top:14px;font-weight:500">Show all 17 &rarr;</div>');
+var suppBody=filteredSupps.length===0?'<div style="text-align:center;padding:30px;color:var(--ink-3);font-size:14px">No supplements match your search.</div>':'<div style="display:flex;flex-direction:column;gap:10px">'+filteredSupps.map(function(s){var d=SUPP_DETAILS[s.id];var ic=(iconSvg[s.icon]||'').replace(/width="18"/g,'width="20"').replace(/height="18"/g,'height="20"');return "<div onclick=\"openDetail('"+s.id+"')\" class=\"bal-card\" style=\"padding:14px;display:flex;align-items:center;gap:14px;cursor:pointer\"><div style=\"width:44px;height:44px;border-radius:12px;flex-shrink:0;background:"+gradeBg(d.g)+";display:flex;align-items:center;justify-content:center\">"+ic+"</div><div style=\"flex:1;min-width:0\"><div style=\"font-size:15px;font-weight:600\">"+d.n+"</div><div style=\"font-size:12px;color:var(--ink-3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis\">"+d.sub+"</div></div><div class=\"bal-pill light\" style=\"flex-shrink:0\">Grade "+d.g+"</div><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"var(--ink-4)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"flex-shrink:0\"><path d=\"M9 6l6 6-6 6\"/></svg></div>"}).join('')+'</div>';
+function tab(i,label){return '<div onclick="setLearnTab('+i+')" style="flex:1;text-align:center;padding:8px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;background:'+(learnTab===i?'var(--surface)':'transparent')+';color:'+(learnTab===i?'var(--ink)':'var(--ink-3)')+';box-shadow:'+(learnTab===i?'var(--sh-1)':'none')+'">'+label+'</div>';}
 document.getElementById('learn-content').innerHTML=`
 <div style="padding:8px 22px">
   <div class="serif" style="font-size:34px;line-height:1">Learn</div>
@@ -1152,10 +1163,14 @@ document.getElementById('learn-content').innerHTML=`
 <div style="padding:14px 18px 0">
   <div style="background:var(--surface);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:var(--sh-1)">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-    <input oninput="onLearnSearch(this)" value="${learnSearch}" type="text" placeholder="Search guides or supplements" style="flex:1;border:none;outline:none;font-size:14px;font-family:inherit;background:transparent;color:var(--ink)"/>
+    <input oninput="onLearnSearch(this)" value="${learnSearch}" type="text" placeholder="${learnTab===0?'Search topics':'Search supplements'}" style="flex:1;border:none;outline:none;font-size:14px;font-family:inherit;background:transparent;color:var(--ink)"/>
     ${learnSearch?"<div onclick=\"learnSearch='';renderLearn()\" style=\"width:20px;height:20px;border-radius:50%;background:var(--surface-3);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--ink-3);font-weight:700\">&times;</div>":""}
   </div>
 </div>
+<div style="padding:14px 18px 0">
+  <div style="display:flex;gap:4px;background:var(--surface-3);padding:4px;border-radius:12px">${tab(0,'Topics')}${tab(1,'Supplements')}</div>
+</div>
+${learnTab===0?`
 ${!q?`<div style="padding:16px 18px 0">
   <div onclick="openTopicDetail('Sleep')" class="bal-card" style="overflow:hidden;position:relative;cursor:pointer">
     <div style="padding:18px 18px 16px;background:linear-gradient(140deg,var(--brand-soft) 0%,rgba(142,119,226,.15) 100%);position:relative;min-height:140px">
@@ -1169,9 +1184,12 @@ ${!q?`<div style="padding:16px 18px 0">
 </div>`:''}
 <div style="padding:22px 18px 20px">
   <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">${q?filtered.length+' result'+(filtered.length!==1?'s':''):'All topics'}</div>
-  ${filtered.length===0?'<div style="text-align:center;padding:30px;color:var(--ink-3);font-size:14px">No topics match your search.</div>':'<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">'+filtered.map(function(t){return "<div onclick=\"openTopicDetail('"+t.k+"')\" class=\"bal-card\" style=\"padding:14px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer\"><div style=\"width:32px;height:32px;border-radius:10px;background:"+(t.g==='A'?'var(--brand-soft)':t.g==='B'?'var(--green-soft)':'var(--accent-soft)')+";display:flex;align-items:center;justify-content:center\">"+(iconSvg[t.icon]||'')+"</div><div><div style=\"font-size:14px;font-weight:600\">"+t.k+"</div><div style=\"font-size:11px;color:var(--ink-3);margin-top:2px\">Grade "+t.g+"</div></div></div>"}).join('')+'</div>'}
-  ${!q?'<div style="text-align:center;font-size:12px;color:var(--ink-3);margin-top:14px;font-weight:500">Show all 17 &rarr;</div>':''}
-</div>`;
+  ${topicsBody}
+</div>`:`
+<div style="padding:22px 18px 20px">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px">${q?filteredSupps.length+' result'+(filteredSupps.length!==1?'s':''):'All supplements'}</div>
+  ${suppBody}
+</div>`}`;
 if(learnSearch){var inp=document.querySelector('#learn-content input');if(inp){inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);}}
 }
 renderLearn();

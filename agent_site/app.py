@@ -35,7 +35,7 @@ PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 # the API key, fall back to a known-good model so chat keeps working. Both are
 # overridable via env without a code change.
 CHAT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
-FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-3.5-flash")
+FALLBACK_MODEL = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
 CHAT_MODELS = [CHAT_MODEL] + (
     [FALLBACK_MODEL] if FALLBACK_MODEL and FALLBACK_MODEL != CHAT_MODEL else []
 )

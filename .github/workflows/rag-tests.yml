@@ -1,12 +1,12 @@
 name: RAG Evaluation
 
-# Runs the LLM-as-a-judge RAG evaluation harness on every push to main.
-# gemini-2.5-flash answers the dataset questions AND judges the answers, so the
-# only secret required is GOOGLE_API_KEY (add it under
-# Settings -> Secrets and variables -> Actions).
+# Runs the LLM-as-a-judge RAG evaluation harness on every push to the
+# production/deploy branch. gemini-2.5-flash answers the dataset questions AND
+# judges the answers, so the only secret required is GOOGLE_API_KEY (add it
+# under Settings -> Secrets and variables -> Actions).
 on:
   push:
-    branches: [main]
+    branches: [claude/balance-ai-product-agent-zbC53]
   workflow_dispatch: {}
 
 # Don't stack overlapping runs — each one consumes free-tier quota.

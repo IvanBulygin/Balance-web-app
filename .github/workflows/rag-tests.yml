@@ -1,0 +1,57 @@
+name: RAG Evaluation
+
+# Runs the LLM-as-a-judge RAG evaluation harness on every push to main.
+# gemini-2.5-flash answers the dataset questions AND judges the answers, so the
+# only secret required is GOOGLE_API_KEY (add it under
+# Settings -> Secrets and variables -> Actions).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Don't stack overlapping runs — each one consumes free-tier quota.
+concurrency:
+  group: rag-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: agent_site
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      # gemini-2.5-flash free tier is ~10 requests/min; space calls accordingly.
+      GEMINI_MIN_REQUEST_INTERVAL: "7.0"
+      # Keep the run hermetic — no anonymous usage tracking from the eval lib.
+      DEEPEVAL_TELEMETRY_OPT_OUT: "YES"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            agent_site/requirements.txt
+            agent_site/requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Fail early if the API key is missing
+        run: |
+          if [ -z "$GOOGLE_API_KEY" ]; then
+            echo "::error::GOOGLE_API_KEY secret is not set. Add it under Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+
+      - name: Run RAG evaluation
+        run: python -m pytest test_rag.py -v --no-header

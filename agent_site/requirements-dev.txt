@@ -1,0 +1,5 @@
+# Evaluation/test-only dependencies for the RAG harness (test_rag.py).
+# Kept separate from requirements.txt so production deploys stay lean.
+# Install both for local eval:  pip install -r requirements.txt -r requirements-dev.txt
+deepeval==4.0.3
+pytest==9.0.3

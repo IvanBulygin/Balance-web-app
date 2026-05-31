@@ -9,402 +9,529 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400..900,30..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* ============================================================
-       Priego — self-hosted (demo .otf shipped in the design pack;
-       swap for licensed .woff2 in production).
-       ============================================================ */
-    @font-face { font-family:'Priego'; font-weight:300; font-style:normal; src:url('/static/fonts/Priego-Light.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:400; font-style:normal; src:url('/static/fonts/Priego-Regular.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:500; font-style:normal; src:url('/static/fonts/Priego-Medium.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:600; font-style:normal; src:url('/static/fonts/Priego-SemiBold.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:700; font-style:normal; src:url('/static/fonts/Priego-Bold.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:800; font-style:normal; src:url('/static/fonts/Priego-ExtraBold.otf') format('opentype'); font-display:swap; }
+    @font-face { font-family:'Priego'; font-weight:300; src:url('/static/fonts/Priego-Light.otf') format('opentype'); font-display:swap; }
+    @font-face { font-family:'Priego'; font-weight:400; src:url('/static/fonts/Priego-Regular.otf') format('opentype'); font-display:swap; }
+    @font-face { font-family:'Priego'; font-weight:500; src:url('/static/fonts/Priego-Medium.otf') format('opentype'); font-display:swap; }
+    @font-face { font-family:'Priego'; font-weight:600; src:url('/static/fonts/Priego-SemiBold.otf') format('opentype'); font-display:swap; }
+    @font-face { font-family:'Priego'; font-weight:700; src:url('/static/fonts/Priego-Bold.otf') format('opentype'); font-display:swap; }
+    @font-face { font-family:'Priego'; font-weight:800; src:url('/static/fonts/Priego-ExtraBold.otf') format('opentype'); font-display:swap; }
 
-    /* Tokens copied verbatim from Balance App v2.html so the imported
-       screen JSX renders unchanged. */
     :root {
-      --bg: #ffffff; --bg-2: #f7f7f7;
-      --surface: #ffffff; --surface-2: #fafafa; --surface-3: #f0f0f3;
-      --ink: #050304; --ink-2: #3d3d3d; --ink-3: #7f7f7f; --ink-4: #a6a6a6;
-      --rule: #e5e5e5;
-
-      --c-cyan: #56b6c6; --c-blue: #3fa9f5; --c-indigo: #559bf0;
-      --c-violet: #8e77e2; --c-magenta: #e978da; --c-pink: #f3a9fd;
-
-      --brand: #5521e5; --brand-deep: #20056c; --brand-soft: #ece5fc;
-      --accent: #e978da; --accent-soft: #fde2f8;
-      --aqua: #56b6c6; --green: #7ac97f; --green-soft: #d8f1da;
-
+      --bg:#ffffff; --bg-2:#f7f7f7; --surface:#ffffff; --surface-2:#fafafa; --surface-3:#f0f0f3;
+      --ink:#050304; --ink-2:#3d3d3d; --ink-3:#7f7f7f; --ink-4:#a6a6a6; --rule:#e5e5e5;
+      --c-cyan:#56b6c6; --c-blue:#3fa9f5; --c-indigo:#559bf0; --c-violet:#8e77e2; --c-magenta:#e978da; --c-pink:#f3a9fd;
+      --brand:#5521e5; --brand-deep:#20056c; --brand-soft:#ece5fc; --accent:#e978da; --accent-soft:#fde2f8;
+      --aqua:#56b6c6; --green:#7ac97f; --green-soft:#d8f1da;
       --grad-balance: linear-gradient(95deg, #56b6c6 0%, #3fa9f5 22%, #559bf0 38%, #8e77e2 56%, #e978da 78%, #f3a9fd 100%);
       --grad-radial: radial-gradient(circle at 30% 30%, #f3a9fd 0%, #e978da 18%, #8e77e2 38%, #559bf0 60%, #3fa9f5 80%, #56b6c6 100%);
-
-      --r-sm: 12px; --r-md: 18px; --r-lg: 26px; --r-xl: 32px;
-      --sh-1: 0 1px 2px rgba(32,5,108,0.05), 0 2px 8px rgba(32,5,108,0.05);
-      --sh-2: 0 8px 24px rgba(32,5,108,0.08);
-      --sh-card: 0 1px 0 rgba(32,5,108,0.03), 0 8px 28px rgba(32,5,108,0.06);
-
-      /* The original v2 JSX references aliased names for the legacy palette */
-      --forest-ink: #050304; --forest-2: #20056c; --forest: #5521e5;
-      --moss-2: #ece5fc; --moss: #8e77e2;
-      --sage-2: #ece5fc; --sage: #ece5fc;
-      --clay-soft: #fde2f8; --clay-2: #f3a9fd; --clay: #e978da;
-      --ochre-soft: #d8f1da; --ochre: #7ac97f;
-      --violet: #8e77e2;
-      --grade-a: #5521e5; --grade-b: #8e77e2; --grade-c: #e978da;
+      --r-sm:12px; --r-md:18px; --r-lg:26px; --r-xl:32px;
+      --sh-1:0 1px 2px rgba(32,5,108,0.05), 0 2px 8px rgba(32,5,108,0.05);
+      --sh-2:0 8px 24px rgba(32,5,108,0.08);
+      --sh-card:0 1px 0 rgba(32,5,108,0.03), 0 8px 28px rgba(32,5,108,0.06);
+      --forest-ink:#050304; --forest-2:#20056c; --forest:#5521e5; --moss-2:#ece5fc; --moss:#8e77e2;
+      --sage-2:#ece5fc; --sage:#ece5fc; --clay-soft:#fde2f8; --clay-2:#f3a9fd; --clay:#e978da;
+      --ochre-soft:#d8f1da; --ochre:#7ac97f; --violet:#8e77e2; --grade-a:#5521e5; --grade-b:#8e77e2; --grade-c:#e978da;
     }
-
     html, body { margin:0; padding:0; background:#fafafa; }
-    body {
-      font-family: 'Inter', -apple-system, system-ui, sans-serif;
-      color: var(--ink);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    body { font-family:'Inter', -apple-system, system-ui, sans-serif; color:var(--ink); min-height:100vh; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 
-    /* Single-screen phone container.
-       - Phone-frame chrome on wide viewports.
-       - Edge-to-edge on actual mobile so the app feels native. */
-    .phone-frame {
-      width: 100%;
-      max-width: 100vw;
-      min-height: 100vh;
-      background: var(--bg);
-      position: relative;
-      overflow: hidden;
+    .phone-frame { width:100%; max-width:100vw; min-height:100vh; background:var(--bg); position:relative; overflow:hidden; }
+    @media (min-width:540px) {
+      body { background: radial-gradient(circle at 80% 0%, rgba(243,169,253,0.08) 0%, transparent 50%), radial-gradient(circle at 0% 60%, rgba(86,182,198,0.06) 0%, transparent 50%), #fafafa; display:flex; align-items:center; justify-content:center; padding:24px 16px; }
+      .phone-frame { width:390px; height:844px; max-width:100%; border-radius:54px; padding:10px; background:#111; box-shadow:0 30px 60px rgba(26,31,28,0.18), 0 0 0 1px rgba(26,31,28,0.08); min-height:0; }
+      .phone-inner { width:100%; height:100%; border-radius:46px; overflow:hidden; position:relative; background:var(--bg); }
+      .dyn-island { position:absolute; top:10px; left:50%; transform:translateX(-50%); width:120px; height:34px; border-radius:20px; background:#000; z-index:100; }
     }
-    @media (min-width: 540px) {
-      body {
-        background:
-          radial-gradient(circle at 80% 0%, rgba(243,169,253,0.08) 0%, transparent 50%),
-          radial-gradient(circle at 0% 60%, rgba(86,182,198,0.06) 0%, transparent 50%),
-          #fafafa;
-        display: flex; align-items: center; justify-content: center;
-        padding: 24px 16px;
-      }
-      .phone-frame {
-        width: 390px; height: 844px;
-        max-width: 100%;
-        border-radius: 54px;
-        padding: 10px;
-        background: #111;
-        box-shadow: 0 30px 60px rgba(26,31,28,0.18), 0 0 0 1px rgba(26,31,28,0.08);
-        min-height: 0;
-      }
-      .phone-inner {
-        width: 100%; height: 100%;
-        border-radius: 46px;
-        overflow: hidden;
-        position: relative;
-        background: var(--bg);
-      }
-      .dyn-island {
-        position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
-        width: 120px; height: 34px; border-radius: 20px; background: #000; z-index: 100;
-      }
-    }
-    @media (max-width: 539px) {
-      .phone-inner { width: 100%; min-height: 100vh; position: relative; }
-      .dyn-island { display: none; }
-    }
+    @media (max-width:539px) { .phone-inner { width:100%; min-height:100vh; position:relative; } .dyn-island { display:none; } }
 
-    /* These need to be reachable from the screen JSX (which uses
-       .screen-root, .serif, etc.). Copied from v2.html top. */
-    .screen-root {
-      height: 100%; background: var(--bg); color: var(--ink);
-      font-family: 'Inter', -apple-system, system-ui, sans-serif;
-      font-size: 15px; line-height: 1.35; letter-spacing: -0.01em;
-      overflow: hidden; position: relative;
-    }
-    @media (max-width: 539px) {
-      .screen-root { height: 100vh; }
-    }
-    .screen-root * { box-sizing: border-box; }
-    .serif { font-family: 'Priego', 'Fraunces', 'Iowan Old Style', Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
-    .mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-    .scroll { overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
-    .scroll::-webkit-scrollbar { display: none; }
-    .bal-pill { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:600; letter-spacing:.02em; background: var(--brand-soft); color: var(--brand-deep); }
-    .bal-pill.accent { background: var(--accent-soft); color: var(--brand); }
-    .bal-pill.dark   { background: var(--brand); color: white; }
-    .bal-pill.light  { background: var(--surface-3); color: var(--ink-2); }
+    .screen-root { height:100%; background:var(--bg); color:var(--ink); font-family:'Inter', -apple-system, system-ui, sans-serif; font-size:15px; line-height:1.35; letter-spacing:-0.01em; overflow:hidden; position:relative; }
+    @media (max-width:539px) { .screen-root { height:100vh; } }
+    .screen-root * { box-sizing:border-box; }
+    .serif { font-family:'Priego','Fraunces','Iowan Old Style',Georgia,serif; font-weight:600; letter-spacing:-0.02em; }
+    .mono { font-family:'JetBrains Mono', ui-monospace, monospace; }
+    .scroll { overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; }
+    .scroll::-webkit-scrollbar { display:none; }
+    .bal-pill { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:600; letter-spacing:.02em; background:var(--brand-soft); color:var(--brand-deep); }
+    .bal-pill.accent { background:var(--accent-soft); color:var(--brand); }
+    .bal-pill.dark { background:var(--brand); color:white; }
+    .bal-pill.light { background:var(--surface-3); color:var(--ink-2); }
     .ev-badge { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:7px; font-size:11px; font-weight:700; font-family:'Priego','Fraunces',Georgia,serif; }
-    .ev-badge.a { background: var(--brand);  color: white; }
-    .ev-badge.b { background: var(--accent); color: white; }
-    .ev-badge.c { background: var(--accent-soft); color: var(--brand); }
-    .bal-card { background: var(--surface); border-radius: var(--r-lg); box-shadow: var(--sh-card); }
-    .tabbar { position:absolute; left:0; right:0; bottom:0; background: rgba(255,255,255,.92); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); border-top: 0.5px solid var(--rule); padding: 10px 20px 28px; display:flex; justify-content:space-around; z-index: 10; }
-    .tab-item { display:flex; flex-direction:column; align-items:center; gap:3px; font-size:10px; font-weight:600; color: var(--ink-4); letter-spacing:.02em; cursor:pointer; }
-    .tab-item.active { color: var(--brand); }
+    .ev-badge.a { background:var(--brand); color:white; }
+    .ev-badge.b { background:var(--accent); color:white; }
+    .ev-badge.c { background:var(--accent-soft); color:var(--brand); }
+    .bal-card { background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--sh-card); }
+    .tabbar { position:absolute; left:0; right:0; bottom:0; background:rgba(255,255,255,.92); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border-top:0.5px solid var(--rule); padding:10px 20px 28px; display:flex; justify-content:space-around; z-index:10; }
+    .tab-item { display:flex; flex-direction:column; align-items:center; gap:3px; font-size:10px; font-weight:600; color:var(--ink-4); letter-spacing:.02em; cursor:pointer; background:none; border:none; }
+    .tab-item.active { color:var(--brand); }
     .tab-item svg { width:22px; height:22px; }
-
     .bal-mark { display:inline-flex; align-items:baseline; gap:2px; font-family:'Priego','Fraunces',Georgia,serif; font-weight:700; letter-spacing:-.04em; }
-    .bal-mark .a  { background: var(--grad-radial); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .bal-mark .ai { font-size: .45em; vertical-align: super; margin-left: 1px; background: var(--grad-radial); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700; }
-
-    /* Category screen styles (the AI-content surface I add on top of the design) */
-    @keyframes balShimmer {
-      0% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }
-    }
-    .cat-skel {
-      background: linear-gradient(90deg, var(--surface-3) 0%, #E8E8EE 50%, var(--surface-3) 100%);
-      background-size: 400% 100%;
-      animation: balShimmer 1.4s ease-in-out infinite;
-      border-radius: 12px;
-    }
+    .bal-mark .a { background:var(--grad-radial); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .bal-mark .ai { font-size:.45em; vertical-align:super; margin-left:1px; background:var(--grad-radial); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700; }
+    button { font-family:inherit; cursor:pointer; }
+    @keyframes balShimmer { 0% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
+    .cat-skel { background:linear-gradient(90deg, var(--surface-3) 0%, #E8E8EE 50%, var(--surface-3) 100%); background-size:400% 100%; animation:balShimmer 1.4s ease-in-out infinite; border-radius:12px; }
+    @keyframes balDot { 0%,80%,100%{opacity:.3;} 40%{opacity:1;} }
+    .typing span { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--ink-4); margin:0 2px; animation:balDot 1.2s infinite; }
+    .typing span:nth-child(2){ animation-delay:.2s; } .typing span:nth-child(3){ animation-delay:.4s; }
   </style>
 
-  <!-- React + ReactDOM + Babel (in-browser JSX, matches what the design package shipped with). -->
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
-
-  <!-- The brand library (logo + 8 extra screens) loaded verbatim from the design package. -->
+  <!-- Brand library from the design package: BalLogo / BalLogoMark, the Icon set + Tabbar. -->
   <script type="text/babel" src="/static/logo.jsx"></script>
-  <script type="text/babel" src="/static/screens-extra.jsx"></script>
-  <!-- Core 7 screens (Icon, Tabbar, Home, Ask, Stack, Learn, Detail, Progress, Onboard) extracted from Balance App v2.html. -->
   <script type="text/babel" src="/static/screens-core.jsx"></script>
 </head>
 <body>
-  <div class="phone-frame">
-    <div class="phone-inner">
-      <div class="dyn-island"></div>
-      <div id="root" style="height:100%;"></div>
-    </div>
-  </div>
+  <div class="phone-frame"><div class="phone-inner"><div class="dyn-island"></div><div id="root" style="height:100%;"></div></div></div>
 
   <script type="text/babel" data-presets="env,react">
-    /* ============================================================
-       Balance app shell.
-       - Tracks the active screen.
-       - Implements window.__bal_nav so all the design screens'
-         Tabbars and back/link buttons drive a real router.
-       - Adds a CategoryScreen that calls /api/category/{slug} and
-         renders the AI-generated PROBLEMS / WHAT YOU CAN DO /
-         tiered supplement stack with iHerb buy links — i.e. the
-         "texts we improved" living inside the new design chrome.
-       ============================================================ */
+    const { useState, useEffect, useRef, useCallback, useMemo } = React;
+    const GRAD = 'linear-gradient(135deg,#56b6c6 0%,#3fa9f5 18%,#559bf0 36%,#8e77e2 56%,#e978da 78%,#f3a9fd 100%)';
 
-    const { useState, useEffect, useCallback, useMemo } = React;
+    const LS = {
+      get(k, d){ try { const v = localStorage.getItem(k); return v==null?d:JSON.parse(v); } catch { return d; } },
+      set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    };
 
-    // Slug ↔ display + icon mapping. Slugs match BM25 sources in the backend
-    // so any tile triggers a working /api/category/{slug} call. Memory &
-    // Focus is the slug we've verified end-to-end; the others use the same
-    // schema and will Just Work but may surface a 10s first-call latency.
+    // Intake goal cards → each maps to a real backend category slug.
+    const GOAL_OPTIONS = [
+      { slug:'sleep',                 label:'Sleep deeper',     icon:'Moon',     d:'Fall asleep · stay asleep' },
+      { slug:'stress-anxiety',        label:'Lower stress',     icon:'Leaf',     d:'Calm without sedation' },
+      { slug:'memory-focus',          label:'Sharpen focus',    icon:'Brain',    d:'Memory · attention' },
+      { slug:'mood-depression',       label:'Lift mood',        icon:'Sun',      d:'Steady, brighter days' },
+      { slug:'muscle-gain',           label:'Build muscle',     icon:'Dumbbell', d:'Strength & recovery' },
+      { slug:'fat-loss',              label:'Lose fat',         icon:'Flame',    d:'Lean, sustainable' },
+      { slug:'cardiovascular-health', label:'Heart health',     icon:'Heart',    d:'Circulation · lipids' },
+      { slug:'joint-health',          label:'Joint comfort',    icon:'Bone',     d:'Mobility · ease' },
+      { slug:'allergies-immunity',    label:'Stronger immunity',icon:'Shield',   d:'Daily defense' },
+      { slug:'healthy-aging',         label:'Healthy aging',    icon:'Sun',      d:'Longevity basics' },
+    ];
+
     const TOPICS = [
-      { slug:'sleep',                 name:'Sleep',         icon:'Moon',     grade:'A' },
-      { slug:'stress-anxiety',        name:'Stress',        icon:'Leaf',     grade:'A' },
-      { slug:'memory-focus',          name:'Memory & Focus',icon:'Brain',    grade:'B', live:true },
-      { slug:'mood-depression',       name:'Mood',          icon:'Sun',      grade:'B' },
-      { slug:'muscle-gain',           name:'Muscle',        icon:'Dumbbell', grade:'A' },
-      { slug:'fat-loss',              name:'Fat loss',      icon:'Flame',    grade:'B' },
-      { slug:'cardiovascular-health', name:'Heart',         icon:'Heart',    grade:'A' },
-      { slug:'joint-health',          name:'Joints',        icon:'Bone',     grade:'B' },
-      { slug:'allergies-immunity',    name:'Immunity',      icon:'Shield',   grade:'B' },
-      { slug:'skin-hair-nails',       name:'Skin',          icon:'Droplet',  grade:'C' },
-      { slug:'libido',                name:'Libido',        icon:'Spark',    grade:'B' },
-      { slug:'liver-health',          name:'Liver',         icon:'Leaf',     grade:'B' },
-      { slug:'bone-health',           name:'Bones',         icon:'Bone',     grade:'B' },
-      { slug:'blood-sugar',           name:'Blood sugar',   icon:'Droplet',  grade:'B' },
-      { slug:'testosterone',          name:'Testosterone',  icon:'Flame',    grade:'B' },
-      { slug:'recovery-wellness',     name:'Recovery',      icon:'Heart',    grade:'B' },
-      { slug:'vegetarians-vegans',    name:'Vegetarian',    icon:'Leaf',     grade:'B' },
-      { slug:'healthy-aging',         name:'Aging',         icon:'Sun',      grade:'B' },
+      { slug:'sleep', name:'Sleep', icon:'Moon', grade:'A' },
+      { slug:'stress-anxiety', name:'Stress', icon:'Leaf', grade:'A' },
+      { slug:'memory-focus', name:'Memory & Focus', icon:'Brain', grade:'B' },
+      { slug:'mood-depression', name:'Mood', icon:'Sun', grade:'B' },
+      { slug:'muscle-gain', name:'Muscle', icon:'Dumbbell', grade:'A' },
+      { slug:'fat-loss', name:'Fat loss', icon:'Flame', grade:'B' },
+      { slug:'cardiovascular-health', name:'Heart', icon:'Heart', grade:'A' },
+      { slug:'joint-health', name:'Joints', icon:'Bone', grade:'B' },
+      { slug:'allergies-immunity', name:'Immunity', icon:'Shield', grade:'B' },
+      { slug:'skin-hair-nails', name:'Skin', icon:'Droplet', grade:'C' },
+      { slug:'libido', name:'Libido', icon:'Spark', grade:'B' },
+      { slug:'liver-health', name:'Liver', icon:'Leaf', grade:'B' },
+      { slug:'bone-health', name:'Bones', icon:'Bone', grade:'B' },
+      { slug:'blood-sugar', name:'Blood sugar', icon:'Droplet', grade:'B' },
+      { slug:'testosterone', name:'Testosterone', icon:'Flame', grade:'B' },
+      { slug:'recovery-wellness', name:'Recovery', icon:'Heart', grade:'B' },
+      { slug:'vegetarians-vegans', name:'Vegetarian', icon:'Leaf', grade:'B' },
+      { slug:'healthy-aging', name:'Aging', icon:'Sun', grade:'B' },
     ];
     const TOPIC_BY_SLUG = Object.fromEntries(TOPICS.map(t => [t.slug, t]));
+    const GRADE = { Primary:'a', Secondary:'b', Promising:'c' };
+    const GRADE_LETTER = { Primary:'A', Secondary:'B', Promising:'C' };
 
-    // -------------------------------------------------------------
-    // MyLearnScreen — replaces the design's hardcoded 12-tile Learn
-    // with all 18 real category slugs the backend has data for.
-    // Visuals match the design (3-col grid, tinted icon tiles).
-    // -------------------------------------------------------------
-    const MyLearnScreen = ({ onOpen }) => {
-      const { Icon, Tabbar } = window;
+    const ExternalIcon = ({size=12, c='currentColor'}) => (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 14v5H5V5h5"/></svg>
+    );
+    const greeting = () => { const h = new Date().getHours(); return h<12?'Good morning':h<18?'Good afternoon':'Good evening'; };
+
+    // ============ Onboarding ============
+    const Onboarding = ({ onStart }) => {
+      const { Icon } = window;
       return (
-        <div className="screen-root">
-          <div className="scroll" style={{height:'100%', paddingBottom: 130}}>
-            <div style={{height: 54}}/>
-            <div style={{padding:'8px 22px'}}>
-              <div className="serif" style={{fontSize:34, lineHeight:1, color:'var(--ink)'}}>Learn</div>
-              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:4}}>{TOPICS.length} evidence-based guides</div>
+        <div className="screen-root" style={{background:'var(--brand)'}}>
+          <div style={{position:'absolute', inset:0, overflow:'hidden'}}>
+            <div style={{position:'absolute', right:-80, top:-40, width:300, height:300, borderRadius:'50%', background:'rgba(243,169,253,0.12)'}}/>
+            <div style={{position:'absolute', left:-60, bottom:120, width:220, height:220, borderRadius:'50%', background:'rgba(86,182,198,0.10)'}}/>
+          </div>
+          <div style={{position:'relative', height:'100%', padding:'70px 28px 40px', display:'flex', flexDirection:'column', color:'var(--brand-soft)'}}>
+            <window.BalLogo size={22} variant="mono" color="white"/>
+            <div style={{display:'flex', justifyContent:'center', marginTop:36, position:'relative'}}>
+              <div style={{width:160, height:160, borderRadius:'50%', background:'radial-gradient(circle, rgba(243,169,253,0.5) 0%, rgba(142,119,226,0.2) 50%, transparent 75%)', filter:'blur(8px)', position:'absolute'}}/>
+              <window.BalLogoMark size={140} glow/>
             </div>
-
-            {/* Search (visual only) */}
-            <div style={{padding:'14px 18px 0'}}>
-              <div style={{background:'var(--surface)', borderRadius:14, padding:'10px 14px', display:'flex', alignItems:'center', gap:10, boxShadow:'var(--sh-1)'}}>
-                <Icon.Search size={16} c="var(--ink-3)"/>
-                <div style={{flex:1, fontSize:14, color:'var(--ink-3)'}}>Search guides or supplements</div>
+            <div style={{flex:1, display:'flex', flexDirection:'column', justifyContent:'flex-end'}}>
+              <div style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--brand-soft)', fontWeight:600, marginBottom:14}}>Science-backed · 18 guides</div>
+              <div className="serif" style={{fontSize:38, lineHeight:1.12, color:'white', paddingBottom:6}}>
+                What your body needs,<br/><em style={{color:'var(--c-pink)'}}>backed by studies</em>.
               </div>
-            </div>
-
-            {/* Featured guide → opens Memory & Focus (the verified one) */}
-            <div style={{padding:'16px 18px 0', cursor:'pointer'}} onClick={() => onOpen('memory-focus')}>
-              <div className="bal-card" style={{padding:0, overflow:'hidden', position:'relative'}}>
-                <div style={{padding:'18px 18px 16px', background:'linear-gradient(140deg, var(--brand-soft) 0%, #d6cffa 100%)', position:'relative', minHeight:140}}>
-                  <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-deep)', fontWeight:600}}>Featured guide</div>
-                  <div className="serif" style={{fontSize:28, lineHeight:1.18, marginTop:10, color:'var(--ink)', maxWidth:'68%', paddingBottom:4}}>
-                    Memory &amp; Focus, <em>backed by studies</em>
-                  </div>
-                  <div style={{fontSize:13, color:'var(--brand-deep)', marginTop:16}}>AI-built stack · iHerb links · 1-tap</div>
-                  <div style={{position:'absolute', right:-10, bottom:-20, width:130, height:130, borderRadius:'50%', background:'rgba(85,33,229,0.10)'}}/>
-                  <div style={{position:'absolute', right:24, bottom:18}}>
-                    <Icon.Brain size={44} c="var(--brand)"/>
-                  </div>
-                </div>
+              <div style={{fontSize:14, color:'var(--brand-soft)', marginTop:16, lineHeight:1.5, maxWidth:'90%'}}>
+                Pick a goal and get a ranked supplement stack — dose, timing, evidence tier, and a link to buy.
               </div>
-            </div>
-
-            {/* All 18 topics */}
-            <div style={{padding:'22px 18px 0'}}>
-              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:12}}>All {TOPICS.length} topics</div>
-              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
-                {TOPICS.map((t, i) => {
-                  const Ic = Icon[t.icon];
-                  return (
-                    <div key={i} className="bal-card" style={{padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between', cursor:'pointer'}} onClick={() => onOpen(t.slug)}>
-                      <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>
-                        {Ic && <Ic size={18} c="var(--brand)"/>}
-                      </div>
-                      <div>
-                        <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{t.name}</div>
-                        <div style={{fontSize:11, color:'var(--ink-3)', marginTop:2}}>Grade {t.grade}</div>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div style={{marginTop:24, display:'flex', flexDirection:'column', gap:10}}>
+                <button onClick={onStart} style={{background:'var(--accent)', color:'white', padding:'15px 20px', borderRadius:14, display:'flex', alignItems:'center', justifyContent:'space-between', boxShadow:'0 10px 26px rgba(233,120,218,0.35)', border:'none'}}>
+                  <span className="serif" style={{fontSize:20}}>Get started</span>
+                  <Icon.Chevron size={14} c="white"/>
+                </button>
+                <button onClick={onStart} style={{textAlign:'center', padding:10, fontSize:14, color:'var(--brand-soft)', fontWeight:500, background:'none', border:'none'}}>I already have an account</button>
+              </div>
+              <div style={{fontSize:11, color:'var(--brand-soft)', opacity:0.7, marginTop:14, lineHeight:1.5, textAlign:'center'}}>
+                Not medical advice. For personal health decisions, consult a qualified healthcare professional.
               </div>
             </div>
           </div>
-          <Tabbar active="browse" onNav={window.__bal_nav}/>
         </div>
       );
     };
 
-    // -------------------------------------------------------------
-    // CategoryScreen — the AI-content surface. Hero in brand gradient,
-    // two cards (Problems, What you can do), then tiered supplement
-    // list with iHerb buy buttons. This is where the "texts we
-    // improved" live, dropped into the new design chrome.
-    // -------------------------------------------------------------
-    const TIERS = ['Primary', 'Secondary', 'Promising'];
-    const TIER_BADGE = { Primary:'a', Secondary:'b', Promising:'c' };
-
-    const ExternalIcon = ({size=12, c='currentColor'}) => (
-      <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 14v5H5V5h5"/>
-      </svg>
-    );
-
-    const CategorySkeleton = () => (
-      <div style={{padding:'14px 18px'}}>
-        {[0,1,2].map(i => (
-          <div key={i} className="cat-skel" style={{height: i===0 ? 88 : 64, marginBottom: 12}}/>
-        ))}
-      </div>
-    );
-
-    const CategoryScreen = ({ slug, data, loading, error, onBack }) => {
-      const { Icon, Tabbar } = window;
-      const topic = TOPIC_BY_SLUG[slug] || { name: 'Guide' };
-      const title = data?.title || topic.name;
-      // Split the title so the second word is italic, matching the design's
-      // editorial-display feel ("Memory & Focus" → "Memory" / "& Focus" italic).
-      const parts = title.split(' ');
-      const head1 = parts[0];
-      const headRest = parts.slice(1).join(' ');
-
-      // Group supplements by tier, preserving Primary→Secondary→Promising order.
-      const byTier = useMemo(() => {
-        const acc = { Primary: [], Secondary: [], Promising: [] };
-        (data?.supplements || []).forEach(s => { if (acc[s.tier]) acc[s.tier].push(s); });
-        return acc;
-      }, [data]);
-
+    // ============ Intake (goals) ============
+    const Intake = ({ initial, onDone }) => {
+      const { Icon } = window;
+      const [sel, setSel] = useState(new Set(initial || []));
+      const toggle = (slug) => setSel(prev => { const n = new Set(prev); n.has(slug)?n.delete(slug):n.add(slug); return n; });
+      const count = sel.size;
       return (
         <div className="screen-root">
-          <div className="scroll" style={{height:'100%', paddingBottom: 110}}>
-            {/* Hero */}
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'18px 22px 0'}}>
+              <div style={{height:4, borderRadius:4, background:'#ece5fc', overflow:'hidden'}}>
+                <div style={{width: Math.min(100, 20 + count*16) + '%', height:'100%', background:GRAD, transition:'width 200ms'}}/>
+              </div>
+            </div>
+            <div style={{padding:'30px 22px 0'}}>
+              <div className="serif" style={{fontSize:30, lineHeight:1.1, color:'var(--ink)'}}>
+                Pick the goals you want<br/>Balance to <em style={{background:GRAD, WebkitBackgroundClip:'text', backgroundClip:'text', color:'transparent'}}>focus on</em>.
+              </div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:10, lineHeight:1.5}}>Choose a few. We'll prioritize evidence and recommendations around these.</div>
+            </div>
+            <div style={{padding:'22px 18px 0', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10}}>
+              {GOAL_OPTIONS.map((g,i) => {
+                const on = sel.has(g.slug); const Ic = Icon[g.icon];
+                return (
+                  <button key={i} onClick={()=>toggle(g.slug)} style={{textAlign:'left', padding:'14px 14px 12px', borderRadius:18, background:on?'var(--brand)':'white', border:on?'none':'1px solid var(--rule)', color:on?'white':'var(--ink)', position:'relative', boxShadow:on?'0 6px 18px rgba(85,33,229,0.18)':'none'}}>
+                    <div style={{width:36, height:36, borderRadius:11, background:on?'rgba(255,255,255,0.16)':'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center', marginBottom:10}}>
+                      {Ic && <Ic size={19} c={on?'white':'var(--brand)'}/>}
+                    </div>
+                    <div style={{fontSize:14, fontWeight:600}}>{g.label}</div>
+                    <div style={{fontSize:11, opacity:on?0.78:1, color:on?'white':'var(--ink-3)', marginTop:2, lineHeight:1.4}}>{g.d}</div>
+                    {on && <div style={{position:'absolute', top:11, right:11, width:20, height:20, borderRadius:'50%', background:'white', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Check size={11} c="var(--brand)"/></div>}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'14px 22px 30px', background:'linear-gradient(to top, white 60%, rgba(255,255,255,0))'}}>
+            <button disabled={count===0} onClick={()=>onDone([...sel])} style={{width:'100%', height:54, borderRadius:16, border:'none', background:count?'var(--brand)':'var(--surface-3)', color:count?'white':'var(--ink-4)', fontSize:15, fontWeight:600, boxShadow:count?'0 8px 22px rgba(85,33,229,0.26)':'none', display:'flex', alignItems:'center', justifyContent:'center', gap:8}}>
+              {count ? `Continue · ${count} selected` : 'Select at least one goal'}
+              {count>0 && <Icon.Chevron size={14} c="white"/>}
+            </button>
+          </div>
+        </div>
+      );
+    };
+
+    // ============ Home ============
+    const Home = ({ goals, stack, taken, onToggleTaken, onOpenCategory, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
+      const doneCount = stack.filter(s => taken.includes(s.name)).length;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:110}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'14px 22px 8px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+              <div>
+                <div style={{fontSize:12, color:'var(--ink-3)', fontWeight:500, letterSpacing:'0.06em', textTransform:'uppercase'}}>{new Date().toLocaleDateString(undefined,{weekday:'short', month:'short', day:'numeric'})}</div>
+                <div className="serif" style={{fontSize:32, lineHeight:1.05, marginTop:2, color:'var(--ink)'}}>{greeting()},<br/><em style={{fontStyle:'italic'}}>there</em>.</div>
+              </div>
+              <button onClick={()=>onNav('me')} style={{width:40, height:40, borderRadius:'50%', background:'var(--brand)', color:'white', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:600, border:'none'}}>Y</button>
+            </div>
+
+            {goalTopics[0] && (
+              <div style={{padding:'16px 18px 0'}}>
+                <button onClick={()=>onOpenCategory(goalTopics[0].slug)} style={{display:'block', width:'100%', textAlign:'left', border:'none', background:'var(--brand)', color:'var(--brand-soft)', padding:20, borderRadius:22, position:'relative', overflow:'hidden'}}>
+                  <div style={{position:'absolute', right:-30, top:-30, width:160, height:160, borderRadius:'50%', background:'rgba(243,169,253,0.10)'}}/>
+                  <div style={{position:'absolute', right:18, top:18}}><window.BalLogoMark size={36} dark/></div>
+                  <div style={{position:'relative'}}>
+                    <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-soft)', fontWeight:600}}>Today's focus</div>
+                    <div className="serif" style={{fontSize:26, lineHeight:1.15, marginTop:10, maxWidth:'78%', color:'white'}}>Build your <em>{goalTopics[0].name}</em> stack.</div>
+                    <div style={{fontSize:13, color:'var(--brand-soft)', marginTop:10, maxWidth:'82%'}}>An AI-built, evidence-graded stack with how to take each one.</div>
+                    <div style={{display:'inline-flex', gap:8, marginTop:14, alignItems:'center', background:'rgba(255,255,255,0.14)', padding:'6px 12px', borderRadius:999}}>
+                      <span style={{fontSize:12, color:'white', fontWeight:600}}>Open guide</span><Icon.Chevron size={12} c="white"/>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            )}
+
+            <div style={{padding:'18px 18px 0'}}>
+              <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', border:'none', background:'var(--surface)', boxShadow:'var(--sh-card)', borderRadius:'var(--r-lg)', padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
+                <div style={{width:28, height:28, borderRadius:'50%', background:'var(--accent-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Spark size={16} c="var(--accent)"/></div>
+                <div style={{flex:1, color:'var(--ink-3)', fontSize:14}}>Ask anything about your health…</div>
+                <Icon.Mic size={18} c="var(--ink-3)"/>
+              </button>
+              <div style={{display:'flex', gap:8, marginTop:12, flexWrap:'wrap'}}>
+                {goalTopics.slice(0,3).map(t => (
+                  <button key={t.slug} onClick={()=>onOpenCategory(t.slug)} className="bal-pill light" style={{padding:'7px 12px', fontSize:12, border:'none'}}>{t.name}</button>
+                ))}
+              </div>
+            </div>
+
+            {goalTopics.length>0 && (
+              <div style={{padding:'22px 18px 0'}}>
+                <div className="serif" style={{fontSize:22, color:'var(--ink)', marginBottom:10}}>Your goals</div>
+                <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
+                  {goalTopics.map(t => { const Ic = Icon[t.icon]; return (
+                    <button key={t.slug} onClick={()=>onOpenCategory(t.slug)} className="bal-card" style={{border:'none', padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between', textAlign:'left'}}>
+                      <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic && <Ic size={18} c="var(--brand)"/>}</div>
+                      <div style={{fontSize:13, fontWeight:600, color:'var(--ink)'}}>{t.name}</div>
+                    </button>
+                  ); })}
+                </div>
+              </div>
+            )}
+
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
+                <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>Today's stack</div>
+                {stack.length>0 && <div style={{fontSize:12, color:'var(--accent)', fontWeight:500}}>{doneCount} of {stack.length} done</div>}
+              </div>
+              {stack.length===0 ? (
+                <button onClick={()=>onNav('browse')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:18, color:'var(--ink-2)', fontSize:14}}>
+                  No supplements yet. <span style={{color:'var(--brand)', fontWeight:600}}>Open a guide →</span> to build your stack.
+                </button>
+              ) : (
+                <div className="bal-card" style={{padding:'4px 0'}}>
+                  {stack.map((it,i,arr) => { const done = taken.includes(it.name); return (
+                    <div key={i} style={{display:'flex', alignItems:'center', padding:'12px 16px', borderBottom:i<arr.length-1?'0.5px solid var(--rule)':'none'}}>
+                      <button onClick={()=>onToggleTaken(it.name)} style={{width:22, height:22, borderRadius:'50%', background:done?'var(--brand)':'transparent', border:done?'none':'1.6px solid var(--rule)', display:'flex', alignItems:'center', justifyContent:'center', marginRight:12, padding:0}}>{done && <Icon.Check size={12} c="white"/>}</button>
+                      <div style={{flex:1}}>
+                        <div style={{fontSize:14, fontWeight:500, color:done?'var(--ink-3)':'var(--ink)', textDecoration:done?'line-through':'none'}}>{it.name}</div>
+                        <div style={{fontSize:12, color:'var(--ink-3)', marginTop:1}}>{[it.dose, it.timing].filter(Boolean).join(' · ')}</div>
+                      </div>
+                      <div className={`ev-badge ${GRADE[it.tier]||'c'}`}>{GRADE_LETTER[it.tier]||'·'}</div>
+                    </div>
+                  ); })}
+                </div>
+              )}
+            </div>
+          </div>
+          <Tabbar active="home" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Ask (functional chat) ============
+    const inline = (s) => {
+      const parts = (s||'').split(/(\*\*[^*]+\*\*)/g);
+      return parts.map((p,i) => /^\*\*[^*]+\*\*$/.test(p) ? <strong key={i}>{p.slice(2,-2)}</strong> : <React.Fragment key={i}>{p}</React.Fragment>);
+    };
+    const fmt = (text) => {
+      const lines = (text||'').split('\n');
+      return lines.map((ln, i) => {
+        if (/^###\s+/.test(ln)) return <div key={i} className="serif" style={{fontSize:16, margin:'10px 0 4px', color:'var(--ink)'}}>{ln.replace(/^###\s+/,'')}</div>;
+        if (/^>\s+/.test(ln)) return <div key={i} style={{borderLeft:'3px solid var(--accent)', paddingLeft:10, color:'var(--ink-3)', fontSize:13, margin:'8px 0'}}>{inline(ln.replace(/^>\s+/,''))}</div>;
+        if (/^[-*]\s+/.test(ln)) return <div key={i} style={{display:'flex', gap:8, margin:'2px 0'}}><span style={{color:'var(--brand)'}}>•</span><span>{inline(ln.replace(/^[-*]\s+/,''))}</span></div>;
+        if (ln.trim()==='') return <div key={i} style={{height:6}}/>;
+        return <div key={i} style={{margin:'2px 0'}}>{inline(ln)}</div>;
+      });
+    };
+
+    const Ask = ({ stack, onNav }) => {
+      const { Icon } = window;
+      const [messages, setMessages] = useState([]);
+      const [input, setInput] = useState('');
+      const [busy, setBusy] = useState(false);
+      const scrollRef = useRef(null);
+      useEffect(() => { if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; }, [messages, busy]);
+
+      const send = async (q) => {
+        const question = (q ?? input).trim();
+        if (!question || busy) return;
+        setInput('');
+        const next = [...messages, { role:'user', content:question }];
+        setMessages(next);
+        setBusy(true);
+        const payload = { messages: next.map(m => ({ role:m.role, content:m.content })), stack: stack.map(s => s.name) };
+        try {
+          const res = await fetch('/api/chat/stream', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
+          if (!res.ok || !res.body) throw new Error('HTTP ' + res.status);
+          const reader = res.body.getReader();
+          const dec = new TextDecoder();
+          let buf = '', acc = '', sources = [];
+          setMessages(m => [...m, { role:'assistant', content:'' }]);
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buf += dec.decode(value, { stream:true });
+            const events = buf.split('\n\n'); buf = events.pop();
+            for (const ev of events) {
+              const line = ev.split('\n').find(l => l.startsWith('data:'));
+              if (!line) continue;
+              try {
+                const j = JSON.parse(line.slice(5).trim());
+                if (j.text) { acc += j.text; setMessages(m => { const c=[...m]; c[c.length-1]={role:'assistant', content:acc, sources}; return c; }); }
+                if (j.sources) { sources = j.sources; setMessages(m => { const c=[...m]; c[c.length-1]={role:'assistant', content:acc, sources}; return c; }); }
+              } catch {}
+            }
+          }
+        } catch (err) {
+          setMessages(m => [...m, { role:'assistant', content:'⚠️ The assistant is temporarily unavailable — please try again in a moment.' }]);
+        } finally { setBusy(false); }
+      };
+
+      const suggestions = ['What helps me fall asleep faster?','Best supplements for focus?','How do I take creatine?'];
+      return (
+        <div className="screen-root">
+          <div ref={scrollRef} className="scroll" style={{height:'100%', paddingBottom:96}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 18px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+              <button onClick={()=>onNav('home')} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Back size={16} c="var(--ink-2)"/></button>
+              <div style={{fontSize:13, color:'var(--ink-3)', fontWeight:500}}>Ask Balance</div>
+              <button onClick={()=>setMessages([])} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Plus size={16} c="var(--ink-2)"/></button>
+            </div>
+
+            {messages.length===0 && (
+              <div style={{padding:'24px 22px'}}>
+                <div style={{display:'flex', justifyContent:'center', marginBottom:18}}><window.BalLogoMark size={56}/></div>
+                <div className="serif" style={{fontSize:24, textAlign:'center', color:'var(--ink)', lineHeight:1.2}}>Ask anything about<br/><em style={{color:'var(--brand)'}}>supplements & wellbeing</em>.</div>
+                <div style={{fontSize:13, color:'var(--ink-3)', textAlign:'center', marginTop:10}}>Answers come grounded in 18 evidence-based guides.</div>
+                <div style={{display:'flex', flexDirection:'column', gap:8, marginTop:22}}>
+                  {suggestions.map(s => <button key={s} onClick={()=>send(s)} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--ink-2)'}}>{s}</button>)}
+                </div>
+              </div>
+            )}
+
+            {messages.map((m,i) => m.role==='user' ? (
+              <div key={i} style={{padding:'14px 18px 0', display:'flex', justifyContent:'flex-end'}}>
+                <div style={{maxWidth:'82%', background:'var(--brand)', color:'white', padding:'11px 15px', borderRadius:'20px 20px 4px 20px', fontSize:14, lineHeight:1.4}}>{m.content}</div>
+              </div>
+            ) : (
+              <div key={i} style={{padding:'16px 18px 0'}}>
+                <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                  <window.BalLogoMark size={26}/>
+                  <div style={{fontSize:12, fontWeight:600, color:'var(--ink-2)'}}>Balance</div>
+                  {m.sources && m.sources.length>0 && <div style={{fontSize:11, color:'var(--ink-4)'}}>· {m.sources.length} guide{m.sources.length>1?'s':''}</div>}
+                </div>
+                <div style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.5, marginLeft:34}}>
+                  {m.content ? fmt(m.content) : <div className="typing"><span></span><span></span><span></span></div>}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 16px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <div style={{display:'flex', alignItems:'center', gap:8, background:'var(--surface)', borderRadius:24, boxShadow:'var(--sh-2)', padding:'6px 6px 6px 16px'}}>
+              <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>{ if(e.key==='Enter') send(); }} placeholder="Ask a follow-up…" style={{flex:1, border:'none', outline:'none', fontSize:15, fontFamily:'inherit', background:'transparent', color:'var(--ink)'}}/>
+              <button onClick={()=>send()} disabled={busy||!input.trim()} style={{width:38, height:38, borderRadius:'50%', background:(busy||!input.trim())?'var(--surface-3)':'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}>
+                <Icon.Send size={16} c={(busy||!input.trim())?'var(--ink-4)':'white'}/>
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // ============ Learn ============
+    const Learn = ({ onOpen, onNav }) => {
+      const { Icon, Tabbar } = window;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 22px'}}>
+              <div className="serif" style={{fontSize:34, lineHeight:1, color:'var(--ink)'}}>Learn</div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:4}}>{TOPICS.length} evidence-based guides</div>
+            </div>
+            <div style={{padding:'14px 18px 0'}}>
+              <div style={{background:'var(--surface)', borderRadius:14, padding:'10px 14px', display:'flex', alignItems:'center', gap:10, boxShadow:'var(--sh-1)'}}>
+                <Icon.Search size={16} c="var(--ink-3)"/><div style={{flex:1, fontSize:14, color:'var(--ink-3)'}}>Search guides or supplements</div>
+              </div>
+            </div>
+            <div style={{padding:'16px 18px 0'}}>
+              <button onClick={()=>onOpen('memory-focus')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:0, overflow:'hidden', position:'relative'}}>
+                <div style={{padding:'18px 18px 16px', background:'linear-gradient(140deg, var(--brand-soft) 0%, #d6cffa 100%)', position:'relative', minHeight:140}}>
+                  <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-deep)', fontWeight:600}}>Featured guide</div>
+                  <div className="serif" style={{fontSize:28, lineHeight:1.18, marginTop:10, color:'var(--ink)', maxWidth:'68%'}}>Memory &amp; Focus, <em>backed by studies</em></div>
+                  <div style={{fontSize:13, color:'var(--brand-deep)', marginTop:16}}>AI-built stack · iHerb links · 1-tap</div>
+                  <div style={{position:'absolute', right:24, bottom:18}}><Icon.Brain size={44} c="var(--brand)"/></div>
+                </div>
+              </button>
+            </div>
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:12}}>All {TOPICS.length} topics</div>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
+                {TOPICS.map((t,i) => { const Ic = Icon[t.icon]; return (
+                  <button key={i} onClick={()=>onOpen(t.slug)} className="bal-card" style={{border:'none', textAlign:'left', padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
+                    <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic && <Ic size={18} c="var(--brand)"/>}</div>
+                    <div><div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{t.name}</div><div style={{fontSize:11, color:'var(--ink-3)', marginTop:2}}>Grade {t.grade}</div></div>
+                  </button>
+                ); })}
+              </div>
+            </div>
+          </div>
+          <Tabbar active="browse" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Category ============
+    const CategorySkeleton = () => (
+      <div style={{padding:'14px 18px'}}>{[0,1,2].map(i => <div key={i} className="cat-skel" style={{height:i===0?88:64, marginBottom:12}}/>)}</div>
+    );
+    const TIERS = ['Primary','Secondary','Promising'];
+    const Category = ({ slug, data, loading, error, inStack, onAdd, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const topic = TOPIC_BY_SLUG[slug] || { name:'Guide' };
+      const title = data?.title || topic.name;
+      const parts = title.split(' '); const head1 = parts[0]; const headRest = parts.slice(1).join(' ');
+      const byTier = useMemo(() => { const a={Primary:[],Secondary:[],Promising:[]}; (data?.supplements||[]).forEach(s=>{ if(a[s.tier]) a[s.tier].push(s); }); return a; }, [data]);
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:110}}>
             <div style={{background:'linear-gradient(160deg, var(--brand) 0%, var(--brand-deep) 100%)', color:'white', padding:'18px 22px 30px', position:'relative', overflow:'hidden'}}>
               <div style={{position:'absolute', top:-60, right:-40, width:200, height:200, borderRadius:'50%', background:'rgba(243,169,253,0.10)'}}/>
               <div style={{position:'absolute', bottom:-80, left:-40, width:240, height:240, borderRadius:'50%', background:'rgba(86,182,198,0.08)'}}/>
               <div style={{height:54}}/>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', position:'relative', zIndex:1}}>
-                <div onClick={onBack} style={{width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.14)', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer'}}>
-                  <Icon.Back size={16} c="white"/>
-                </div>
-                <a href="/chat" style={{width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.14)', display:'flex', alignItems:'center', justifyContent:'center', textDecoration:'none'}}>
-                  <Icon.Spark size={18} c="white"/>
-                </a>
+                <button onClick={onBack} style={{width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.14)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Back size={16} c="white"/></button>
+                <button onClick={()=>onNav('ask')} style={{width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.14)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Spark size={18} c="white"/></button>
               </div>
               <div style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--accent-soft)', marginTop:22, fontWeight:600, position:'relative'}}>Evidence-based guide</div>
-              <div className="serif" style={{fontSize:40, lineHeight:1.06, marginTop:8, position:'relative'}}>
-                {head1}{headRest && <> <em style={{fontStyle:'italic', color:'var(--accent-soft)'}}>{headRest}</em></>}
-              </div>
-              <div style={{fontSize:14, color:'rgba(255,255,255,0.78)', marginTop:8, maxWidth:'92%', position:'relative'}}>
-                An AI-built stack from the supplement guide — tiered by evidence, with how to take each one and a link to iHerb.
-              </div>
+              <div className="serif" style={{fontSize:40, lineHeight:1.06, marginTop:8, position:'relative'}}>{head1}{headRest && <> <em style={{fontStyle:'italic', color:'var(--accent-soft)'}}>{headRest}</em></>}</div>
+              <div style={{fontSize:14, color:'rgba(255,255,255,0.78)', marginTop:8, maxWidth:'92%', position:'relative'}}>An AI-built stack from the supplement guide — tiered by evidence, with how to take each one and a link to iHerb.</div>
             </div>
 
-            {error && (
-              <div style={{margin:'18px 22px', padding:'14px 16px', background:'var(--accent-soft)', color:'var(--brand-deep)', borderRadius:12, fontSize:13}}>
-                Couldn't load this guide: {error}
-              </div>
-            )}
+            {error && <div style={{margin:'18px 22px', padding:'14px 16px', background:'var(--accent-soft)', color:'var(--brand-deep)', borderRadius:12, fontSize:13}}>Couldn't load this guide: {error}</div>}
 
-            {/* Problems */}
             <div style={{padding:'22px 22px 6px'}}>
-              <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>
-                What hurts <em style={{fontStyle:'italic', color:'var(--brand)'}}>{title.toLowerCase()}</em>
-              </div>
+              <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>What hurts <em style={{fontStyle:'italic', color:'var(--brand)'}}>{title.toLowerCase()}</em></div>
               <div className="bal-card" style={{padding:'4px 0'}}>
-                {(loading || !data) ? <CategorySkeleton/> : (data.problems || []).map((p, i, arr) => (
-                  <div key={i} style={{display:'flex', gap:14, padding:'16px 18px', borderBottom: i<arr.length-1 ? '0.5px solid var(--rule)' : 'none'}}>
-                    <div style={{width:26, height:26, borderRadius:8, background:'var(--brand-soft)', color:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0}} className="mono" >
-                      <span style={{fontSize:12, fontWeight:600}}>{String(i+1).padStart(2,'0')}</span>
-                    </div>
-                    <div>
-                      <div style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>{p.title}</div>
-                      <div style={{fontSize:13, color:'var(--ink-2)', marginTop:2, lineHeight:1.45}}>{p.description}</div>
-                    </div>
+                {(loading||!data) ? <CategorySkeleton/> : (data.problems||[]).map((p,i,arr) => (
+                  <div key={i} style={{display:'flex', gap:14, padding:'16px 18px', borderBottom:i<arr.length-1?'0.5px solid var(--rule)':'none'}}>
+                    <div className="mono" style={{width:26, height:26, borderRadius:8, background:'var(--brand-soft)', color:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, fontSize:12, fontWeight:600}}>{String(i+1).padStart(2,'0')}</div>
+                    <div><div style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>{p.title}</div><div style={{fontSize:13, color:'var(--ink-2)', marginTop:2, lineHeight:1.45}}>{p.description}</div></div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* What you can do */}
             <div style={{padding:'22px 22px 6px'}}>
               <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>What you can <em style={{fontStyle:'italic', color:'var(--brand)'}}>do</em></div>
               <div className="bal-card" style={{padding:'4px 0'}}>
-                {(loading || !data) ? <CategorySkeleton/> : (data.what_you_can_do || []).map((l, i, arr) => (
-                  <div key={i} style={{display:'flex', gap:14, padding:'16px 18px', borderBottom: i<arr.length-1 ? '0.5px solid var(--rule)' : 'none'}}>
-                    <div style={{width:26, height:26, borderRadius:8, background:'var(--accent-soft)', color:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0}} className="mono">
-                      <span style={{fontSize:12, fontWeight:600}}>{String(i+1).padStart(2,'0')}</span>
-                    </div>
-                    <div>
-                      <div style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>{l.title}</div>
-                      <div style={{fontSize:13, color:'var(--ink-2)', marginTop:2, lineHeight:1.45}}>{l.description}</div>
-                    </div>
+                {(loading||!data) ? <CategorySkeleton/> : (data.what_you_can_do||[]).map((l,i,arr) => (
+                  <div key={i} style={{display:'flex', gap:14, padding:'16px 18px', borderBottom:i<arr.length-1?'0.5px solid var(--rule)':'none'}}>
+                    <div className="mono" style={{width:26, height:26, borderRadius:8, background:'var(--accent-soft)', color:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, fontSize:12, fontWeight:600}}>{String(i+1).padStart(2,'0')}</div>
+                    <div><div style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>{l.title}</div><div style={{fontSize:13, color:'var(--ink-2)', marginTop:2, lineHeight:1.45}}>{l.description}</div></div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Recommended stack — tier-grouped supplements with iHerb buttons */}
             <div style={{padding:'24px 22px 6px'}}>
-              <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>
-                Recommended <em style={{fontStyle:'italic', color:'var(--brand)'}}>stack</em>
-              </div>
+              <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>Recommended <em style={{fontStyle:'italic', color:'var(--brand)'}}>stack</em></div>
               <div style={{fontSize:13, color:'var(--ink-3)', marginBottom:14}}>Tiered by evidence in the guide. Unproven supplements are filtered out.</div>
-
-              {(loading || !data) && <CategorySkeleton/>}
-
-              {data && TIERS.map(t => byTier[t].length > 0 && (
+              {(loading||!data) && <CategorySkeleton/>}
+              {data && TIERS.map(t => byTier[t].length>0 && (
                 <div key={t} style={{marginBottom:18}}>
                   <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:10}}>
-                    <div className={`ev-badge ${TIER_BADGE[t]}`}>{t[0]}</div>
+                    <div className={`ev-badge ${GRADE[t]}`}>{GRADE_LETTER[t]}</div>
                     <div className="mono" style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', fontWeight:600, color:'var(--ink-2)'}}>{t} supplements</div>
                   </div>
-                  {byTier[t].map((s, i) => (
+                  {byTier[t].map((s,i) => { const added = inStack(s.name); return (
                     <div key={i} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
                       <div style={{display:'flex', alignItems:'baseline', justifyContent:'space-between', gap:10}}>
                         <div style={{fontSize:16, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
@@ -415,130 +542,179 @@
                         {s.timing && <span className="bal-pill light mono" style={{fontSize:11}}>{s.timing}</span>}
                       </div>
                       {s.evidence && <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.45, marginTop:8}}>{s.evidence}</div>}
-                      <a href={s.iherb_url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, marginTop:10, padding:'8px 14px', background:'var(--brand)', color:'white', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>
-                        Buy on iHerb <ExternalIcon/>
-                      </a>
+                      <div style={{display:'flex', gap:8, marginTop:10}}>
+                        <button onClick={()=>onAdd(s, title)} disabled={added} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
+                          {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
+                        </button>
+                        <a href={s.iherb_url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>iHerb <ExternalIcon c="var(--ink-2)"/></a>
+                      </div>
                     </div>
-                  ))}
+                  ); })}
                 </div>
               ))}
-
-              <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px 24px', lineHeight:1.5}}>
-                Always check with your healthcare provider before starting any new supplement, especially if you take medication or have a health condition.
-              </div>
+              <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px 24px', lineHeight:1.5}}>Always check with your healthcare provider before starting any new supplement, especially if you take medication or have a health condition.</div>
             </div>
           </div>
-          <Tabbar active="browse" onNav={window.__bal_nav}/>
+          <Tabbar active="browse" onNav={onNav}/>
         </div>
       );
     };
 
-    // -------------------------------------------------------------
-    // Root: holds current-screen state, wires window.__bal_nav for
-    // every imported screen's Tabbar/back/link buttons, and fetches
-    // the category content on demand.
-    // -------------------------------------------------------------
+    // ============ Stack ============
+    const Stack = ({ stack, onRemove, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const groups = useMemo(() => { const g={}; stack.forEach(s => { const k = s.sourceTitle || 'My supplements'; (g[k]=g[k]||[]).push(s); }); return g; }, [stack]);
+      const goalCount = Object.keys(groups).length;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 22px'}}>
+              <div className="serif" style={{fontSize:34, lineHeight:1, color:'var(--ink)'}}>My stack</div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:4}}>{stack.length} supplement{stack.length!==1?'s':''} · {goalCount} goal{goalCount!==1?'s':''}</div>
+            </div>
+
+            {stack.length===0 ? (
+              <div style={{padding:'22px'}}>
+                <div className="bal-card" style={{padding:24, textAlign:'center'}}>
+                  <div style={{display:'flex', justifyContent:'center', marginBottom:14}}><Icon.Stack size={40} c="var(--brand-soft)"/></div>
+                  <div className="serif" style={{fontSize:20, color:'var(--ink)'}}>Your stack is empty</div>
+                  <div style={{fontSize:13, color:'var(--ink-3)', marginTop:6, lineHeight:1.5}}>Open a guide, get your AI-built recommendations, and tap “Add to stack”.</div>
+                  <button onClick={()=>onNav('browse')} style={{marginTop:16, padding:'12px 20px', background:'var(--brand)', color:'white', border:'none', borderRadius:14, fontSize:14, fontWeight:600}}>Browse guides</button>
+                </div>
+              </div>
+            ) : (
+              <div style={{padding:'14px 18px 0'}}>
+                <div className="bal-card" style={{padding:18, marginBottom:16, background:'var(--brand-soft)', boxShadow:'none', border:'1px solid #d6cffa'}}>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--brand)', fontWeight:600}}>Stack health</div>
+                  <div className="serif" style={{fontSize:30, color:'var(--brand-deep)', marginTop:4}}>{stack.length} active</div>
+                  <div style={{fontSize:13, color:'var(--brand-deep)', opacity:0.8, marginTop:2}}>across {goalCount} goal{goalCount!==1?'s':''}</div>
+                </div>
+                {Object.entries(groups).map(([title, items]) => (
+                  <div key={title} className="bal-card" style={{padding:'4px 0', marginBottom:14}}>
+                    <div style={{padding:'12px 16px 8px', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'0.5px solid var(--rule)'}}>
+                      <div className="serif" style={{fontSize:18, color:'var(--ink)'}}>{title}</div>
+                      <div style={{fontSize:12, color:'var(--ink-3)'}}>{items.length} supp{items.length>1?'s':''}</div>
+                    </div>
+                    {items.map((s,i) => (
+                      <div key={i} style={{display:'flex', alignItems:'center', padding:'12px 16px', borderBottom:i<items.length-1?'0.5px solid var(--rule)':'none'}}>
+                        <div className={`ev-badge ${GRADE[s.tier]||'c'}`} style={{marginRight:12}}>{GRADE_LETTER[s.tier]||'·'}</div>
+                        <div style={{flex:1}}>
+                          <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                          <div style={{fontSize:12, color:'var(--ink-3)', marginTop:1}}>{[s.dose, s.timing].filter(Boolean).join(' · ')}</div>
+                        </div>
+                        <a href={s.iherb_url} target="_blank" rel="noopener noreferrer" style={{marginRight:6, padding:'6px 10px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:12, fontWeight:600, display:'inline-flex', alignItems:'center', gap:4}}>iHerb<ExternalIcon size={11} c="var(--ink-2)"/></a>
+                        <button onClick={()=>onRemove(s.name)} style={{width:28, height:28, borderRadius:'50%', background:'var(--surface-3)', border:'none', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--ink-3)', fontSize:16, lineHeight:1}}>×</button>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <Tabbar active="stack" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Profile (Me) ============
+    const Profile = ({ goals, stack, onReset, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 22px 0'}}><window.BalLogo size={24} variant="full"/></div>
+            <div style={{padding:'22px 18px 0'}}>
+              <div className="bal-card" style={{padding:20, display:'flex', alignItems:'center', gap:14}}>
+                <div style={{width:56, height:56, borderRadius:'50%', background:GRAD, display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:22}} className="serif">Y</div>
+                <div>
+                  <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>You</div>
+                  <div style={{fontSize:13, color:'var(--ink-3)', marginTop:2}}>{stack.length} in stack · {goalTopics.length} goals</div>
+                </div>
+              </div>
+            </div>
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Your goals</div>
+              <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
+                {goalTopics.length ? goalTopics.map(t => <span key={t.slug} className="bal-pill" style={{padding:'8px 12px'}}>{t.name}</span>) : <div style={{fontSize:13, color:'var(--ink-3)'}}>No goals selected yet.</div>}
+                <button onClick={()=>onNav('intake')} className="bal-pill light" style={{padding:'8px 12px', border:'none'}}>Edit goals</button>
+              </div>
+            </div>
+            <div style={{padding:'24px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>App</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <a href="/chat" style={{display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', textDecoration:'none', color:'var(--ink)'}}><Icon.Spark size={18} c="var(--brand)"/><span style={{fontSize:14, fontWeight:500}}>Open classic chat</span></a>
+                <button onClick={onReset} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', color:'var(--accent)'}}><span style={{fontSize:14, fontWeight:500}}>Reset app & data</span></button>
+              </div>
+            </div>
+            <div style={{padding:'24px 22px', fontSize:11, color:'var(--ink-3)', textAlign:'center', lineHeight:1.5}}>Not medical advice. For personal health decisions, consult a qualified healthcare professional.</div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Root ============
     const Root = () => {
+      const [onboarded, setOnboarded] = useState(() => LS.get('bal_onboarded', false));
+      const [goals, setGoals] = useState(() => LS.get('bal_goals', []));
+      const [stack, setStack] = useState(() => LS.get('bal_stack', []));
+      const [taken, setTaken] = useState(() => LS.get('bal_taken', []));
+      const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
-      const [cache, setCache] = useState({});  // slug -> {data, loading, error}
+      const [cache, setCache] = useState({});
 
-      // Map design Tabbar keys → real screens.
+      useEffect(()=>LS.set('bal_goals', goals), [goals]);
+      useEffect(()=>LS.set('bal_stack', stack), [stack]);
+      useEffect(()=>LS.set('bal_taken', taken), [taken]);
+      useEffect(()=>LS.set('bal_onboarded', onboarded), [onboarded]);
+
       const navTo = useCallback((k) => {
-        const map = {
-          home: 'home', ask: 'ask', stack: 'stack',
-          browse: 'learn', me: 'profile',
-          detail: 'detail', add: 'add', signin: 'signin', onboard: 'onboard',
-          intake: 'intake', progress: 'progress', reminders: 'reminders',
-          history: 'history', learn: 'learn', labs: 'labs',
-          profile: 'profile', paywall: 'paywall',
-        };
+        const map = { home:'home', ask:'ask', stack:'stack', browse:'learn', me:'profile' };
+        if (k==='intake') { setFlow('intake'); return; }
         setScreen(map[k] || 'home');
-        if (window.location.hash) history.replaceState(null, '', window.location.pathname);
       }, []);
+      const openCategory = useCallback((s) => { setSlug(s); setScreen('category'); }, []);
+      const addToStack = useCallback((s, sourceTitle) => { setStack(prev => prev.some(x => x.name===s.name) ? prev : [...prev, { ...s, sourceTitle }]); }, []);
+      const removeFromStack = useCallback((name) => setStack(prev => prev.filter(x => x.name!==name)), []);
+      const inStack = useCallback((name) => stack.some(x => x.name===name), [stack]);
+      const toggleTaken = useCallback((name) => setTaken(prev => prev.includes(name) ? prev.filter(n=>n!==name) : [...prev, name]), []);
+      const resetAll = () => {
+        ['bal_onboarded','bal_goals','bal_stack','bal_taken'].forEach(k => { try { localStorage.removeItem(k); } catch {} });
+        setOnboarded(false); setGoals([]); setStack([]); setTaken([]); setFlow('onboard'); setScreen('home');
+      };
 
-      const openCategory = useCallback((s) => {
-        setSlug(s);
-        setScreen('category');
-        history.replaceState(null, '', '#/category/' + s);
-      }, []);
-
-      // Install global hooks the imported design screens use to navigate.
-      useEffect(() => {
-        window.__bal_nav = navTo;
-        window.__bal_open_category = openCategory;
-      }, [navTo, openCategory]);
-
-      // Hash deep-link: #/category/<slug> opens that category directly.
-      useEffect(() => {
-        const handle = () => {
-          const m = window.location.hash.match(/^#\/category\/([\w-]+)$/);
-          if (m) { setSlug(m[1]); setScreen('category'); }
-        };
-        window.addEventListener('hashchange', handle);
-        handle();
-        return () => window.removeEventListener('hashchange', handle);
-      }, []);
-
-      // Fetch on entering category, cache by slug.
       useEffect(() => {
         if (screen !== 'category') return;
         if (cache[slug]?.data || cache[slug]?.loading) return;
-        setCache(c => ({ ...c, [slug]: { loading: true } }));
+        setCache(c => ({ ...c, [slug]: { loading:true } }));
         fetch('/api/category/' + slug)
-          .then(async r => {
-            if (!r.ok) {
-              let msg = 'HTTP ' + r.status;
-              try { const j = await r.json(); msg = j.detail || msg; } catch {}
-              throw new Error(msg);
-            }
-            return r.json();
-          })
+          .then(async r => { if (!r.ok) { let m='HTTP '+r.status; try { const j=await r.json(); m=j.detail||m; } catch {} throw new Error(m); } return r.json(); })
           .then(data => setCache(c => ({ ...c, [slug]: { data } })))
-          .catch(err => setCache(c => ({ ...c, [slug]: { error: String(err.message || err) } })));
+          .catch(err => setCache(c => ({ ...c, [slug]: { error:String(err.message||err) } })));
       }, [screen, slug]);
 
-      const SCREENS = {
-        signin:    window.SignInScreen,
-        onboard:   window.OnboardScreen,
-        intake:    window.IntakeScreen,
-        home:      window.HomeScreen,
-        progress:  window.ProgressScreen,
-        reminders: window.RemindersScreen,
-        ask:       window.AskScreen,
-        history:   window.ChatHistoryScreen,
-        detail:    window.DetailScreen,
-        add:       window.AddSuppScreen,
-        labs:      window.LabsScreen,
-        stack:     window.StackScreen,
-        profile:   window.ProfileScreen,
-        paywall:   window.PaywallScreen,
-      };
+      if (flow === 'onboard') return <Onboarding onStart={()=>setFlow('intake')}/>;
+      if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
-      if (screen === 'learn') return <MyLearnScreen onOpen={openCategory}/>;
-      if (screen === 'category') {
-        const c = cache[slug] || {};
-        return <CategoryScreen slug={slug} data={c.data} loading={c.loading} error={c.error} onBack={() => setScreen('learn')}/>;
-      }
-      const C = SCREENS[screen] || SCREENS.home;
-      return C ? <C/> : <div style={{padding:40, fontFamily:'Inter', color:'#666'}}>Loading…</div>;
+      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
+      if (screen === 'ask')     return <Ask stack={stack} onNav={navTo}/>;
+      if (screen === 'learn')   return <Learn onOpen={openCategory} onNav={navTo}/>;
+      if (screen === 'stack')   return <Stack stack={stack} onRemove={removeFromStack} onNav={navTo}/>;
+      if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}/>;
+      if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
+      return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
     };
 
-    // Wait until every component the screens depend on is registered.
-    const REQUIRED = ['Icon','Tabbar','BalLogo','BalLogoMark',
-      'HomeScreen','AskScreen','StackScreen','LearnScreen','DetailScreen','ProgressScreen','OnboardScreen',
-      'SignInScreen','IntakeScreen','AddSuppScreen','RemindersScreen','ChatHistoryScreen','LabsScreen','ProfileScreen','PaywallScreen'];
-
-    const mountWhenReady = () => {
-      const missing = REQUIRED.filter(n => !window[n]);
-      if (missing.length) {
-        // Babel-in-browser is asynchronous; the external <script type="text/babel" src=>
-        // files load and transform in parallel, so we poll until all globals exist.
-        return setTimeout(mountWhenReady, 60);
-      }
+    const REQUIRED = ['Icon','Tabbar','BalLogo','BalLogoMark'];
+    const mount = () => {
+      if (REQUIRED.some(n => !window[n])) return setTimeout(mount, 60);
       ReactDOM.createRoot(document.getElementById('root')).render(<Root/>);
     };
-    mountWhenReady();
+    mount();
   </script>
 </body>
 </html>

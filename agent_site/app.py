@@ -19,10 +19,9 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
+from google import genai
 from pydantic import BaseModel, Field
 
-from categories import CategoryCache, CategoryResponse, DISPLAY_TITLES, available_slugs
-from gemini_client import get_client
 from retrieval import BM25Index, BOOST_MIN_SCORE, build_index, format_context
 
 load_dotenv()
@@ -56,12 +55,14 @@ async def lifespan(app: FastAPI):
         raise RuntimeError(f"Missing {PROMPT_PATH}")
     state["system_prompt"] = PROMPT_PATH.read_text(encoding="utf-8")
 
-    state["client"] = get_client()  # reads GOOGLE_API_KEY, raises if missing
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if not api_key:
+        raise RuntimeError("GOOGLE_API_KEY not set")
+    state["client"] = genai.Client(api_key=api_key)
 
     print(f"Building BM25 index from {PDF_TEXT_DIR}...")
     index: BM25Index = build_index(PDF_TEXT_DIR)
     state["index"] = index
-    state["category_cache"] = CategoryCache()
     print(
         f"Index ready. {len(index.chunks):,} chunks from "
         f"{len({c.source for c in index.chunks})} guides."
@@ -91,14 +92,7 @@ class ChatResponse(BaseModel):
 
 @app.get("/")
 def index():
-    # New guided Learn-grid → Detail → Stack flow.
     return FileResponse(STATIC_DIR / "index.html")
-
-
-@app.get("/chat")
-def chat_page():
-    # Open chat UI, still reachable alongside the guided flow.
-    return FileResponse(STATIC_DIR / "chat.html")
 
 
 @app.get("/api/health")
@@ -110,40 +104,6 @@ def health():
         "models": CHAT_MODELS,
         "chunks": len(idx.chunks) if idx else 0,
     }
-
-
-class CategorySummary(BaseModel):
-    slug: str
-    title: str
-
-
-@app.get("/api/categories", response_model=list[CategorySummary])
-def list_categories():
-    idx: BM25Index | None = state.get("index")
-    if idx is None:
-        raise HTTPException(503, "index not ready")
-    summaries = [
-        CategorySummary(slug=slug, title=DISPLAY_TITLES.get(slug, slug.replace("-", " ").title()))
-        for slug in available_slugs(idx)
-    ]
-    return summaries
-
-
-@app.get("/api/category/{slug}", response_model=CategoryResponse)
-def get_category(slug: str):
-    idx: BM25Index | None = state.get("index")
-    cache: CategoryCache | None = state.get("category_cache")
-    if idx is None or cache is None:
-        raise HTTPException(503, "index not ready")
-    if slug not in available_slugs(idx):
-        raise HTTPException(404, f"unknown category '{slug}'")
-    try:
-        return cache.get_or_fetch(state["client"], idx, slug)
-    except LookupError as exc:
-        raise HTTPException(404, str(exc))
-    except Exception as exc:  # noqa: BLE001 - surface friendly to UI
-        print(f"[category {slug}] {exc}")
-        raise HTTPException(503, _friendly_error(exc))
 
 
 def _build_query(messages: list[Message]) -> str:

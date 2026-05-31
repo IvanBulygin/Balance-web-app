@@ -74,6 +74,23 @@ app = FastAPI(title="Balance.ai Wellbeing Agent", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 
+@app.middleware("http")
+async def revalidate_html_and_jsx(request, call_next):
+    """Force browsers to revalidate the app shell on every load.
+
+    The HTML and JSX change on every deploy; without this, browsers
+    heuristically cache them and users keep seeing the previous build until
+    a manual hard-refresh. ``no-cache`` still allows caching but requires a
+    conditional request (304 when unchanged), so deploys appear immediately
+    on a normal reload. Fonts/other static assets keep their default caching.
+    """
+    response = await call_next(request)
+    path = request.url.path
+    if path in ("/", "/chat") or path.endswith((".html", ".jsx")):
+        response.headers["Cache-Control"] = "no-cache, must-revalidate"
+    return response
+
+
 class Message(BaseModel):
     role: str = Field(pattern="^(user|assistant)$")
     content: str

@@ -591,8 +591,212 @@
       );
     };
 
+    // ============ Checkout (CartAI integration, TEST MODE) ============
+    // Renders as a full-screen drawer over the Stack screen. Collects a
+    // shipping address, then POSTs the stack to /api/checkout. CartAI returns
+    // a taskId; we poll /api/checkout/{taskId} every 4s until terminal.
+    const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+    const blankAddress = () => ({
+      firstName:'', lastName:'', email:'', phone:'',
+      addressLine1:'', addressLine2:'', city:'', province:'NY', postalCode:''
+    });
+    const TERMINAL = ['SUCCEEDED','SUCCESS','COMPLETED','FAILED','CANCELED','CANCELLED','ERROR'];
+
+    const Checkout = ({ stack, onClose }) => {
+      const { Icon } = window;
+      const [addr, setAddr] = useState(() => ({ ...blankAddress(), ...LS.get('bal_addr', {}) }));
+      const [items, setItems] = useState(() => stack.map(s => ({ name: s.name, url: s.iherb_url, quantity: 1 })));
+      const [submitting, setSubmitting] = useState(false);
+      const [error, setError] = useState(null);
+      const [task, setTask] = useState(null);          // {taskId, ...}
+      const [status, setStatus] = useState(null);      // last poll response
+      const [pollErr, setPollErr] = useState(null);
+
+      useEffect(() => { LS.set('bal_addr', addr); }, [addr]);
+      const set = (k, v) => setAddr(a => ({ ...a, [k]: v }));
+      const setItem = (i, k, v) => setItems(prev => prev.map((it, j) => j===i ? { ...it, [k]: v } : it));
+      const removeItem = (i) => setItems(prev => prev.filter((_, j) => j !== i));
+
+      const valid = useMemo(() => {
+        const reqd = ['firstName','lastName','email','phone','addressLine1','city','province','postalCode'];
+        return reqd.every(k => (addr[k]||'').trim().length) && /.+@.+\..+/.test(addr.email) && items.length>0 && items.every(it => it.url.trim());
+      }, [addr, items]);
+
+      const submit = async () => {
+        if (!valid || submitting) return;
+        setSubmitting(true); setError(null);
+        try {
+          const body = {
+            contact: { firstName: addr.firstName, lastName: addr.lastName, email: addr.email, phone: addr.phone },
+            address: { addressLine1: addr.addressLine1, addressLine2: addr.addressLine2, city: addr.city, province: addr.province, postalCode: addr.postalCode },
+            items: items.map(it => ({ url: it.url, quantity: it.quantity || 1 })),
+          };
+          const res = await fetch('/api/checkout', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(typeof data.detail==='string' ? data.detail : (res.status===503 ? 'Checkout not configured. Add CARTAI_API_KEY to the Render dashboard.' : `HTTP ${res.status}`));
+          setTask(data);
+        } catch (e) {
+          setError(String(e.message || e));
+        } finally {
+          setSubmitting(false);
+        }
+      };
+
+      // Poll status every 4s until a terminal state.
+      useEffect(() => {
+        if (!task?.taskId) return;
+        let stop = false, timer = null;
+        const poll = async () => {
+          try {
+            const r = await fetch('/api/checkout/' + encodeURIComponent(task.taskId));
+            const j = await r.json().catch(() => ({}));
+            if (!r.ok) throw new Error(j.detail || ('HTTP ' + r.status));
+            if (stop) return;
+            setStatus(j); setPollErr(null);
+            const s = String(j.status || j.state || j.currentStatus || '').toUpperCase();
+            if (!TERMINAL.includes(s)) timer = setTimeout(poll, 4000);
+          } catch (e) {
+            if (!stop) { setPollErr(String(e.message || e)); timer = setTimeout(poll, 6000); }
+          }
+        };
+        poll();
+        return () => { stop = true; if (timer) clearTimeout(timer); };
+      }, [task]);
+
+      const currentStatus = status && (status.status || status.state || status.currentStatus);
+      const terminal = currentStatus && TERMINAL.includes(String(currentStatus).toUpperCase());
+
+      // ---------- post-submit status view ----------
+      if (task) return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 18px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+              <button onClick={onClose} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', border:'none', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Back size={16} c="var(--ink-2)"/></button>
+              <div style={{fontSize:13, color:'var(--ink-3)', fontWeight:500}}>Test checkout</div>
+              <div style={{width:36}}/>
+            </div>
+            <div style={{padding:'24px 22px'}}>
+              <div className="bal-pill accent" style={{padding:'5px 10px'}}>TEST MODE · NO REAL MONEY</div>
+              <div className="serif" style={{fontSize:30, lineHeight:1.1, marginTop:12, color:'var(--ink)'}}>
+                Your order is <em style={{color:'var(--brand)'}}>{terminal ? (String(currentStatus).toUpperCase().includes('FAIL') || String(currentStatus).toUpperCase().includes('ERROR') || String(currentStatus).toUpperCase().includes('CANCEL') ? 'failed' : 'placed') : 'in progress'}</em>.
+              </div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:8}}>Task id <span className="mono">{task.taskId}</span></div>
+            </div>
+
+            <div style={{padding:'4px 22px'}}>
+              <div className="bal-card" style={{padding:'18px'}}>
+                <div style={{display:'flex', alignItems:'center', gap:10}}>
+                  {!terminal && <div className="typing"><span></span><span></span><span></span></div>}
+                  <div style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>Status: {currentStatus || (pollErr ? 'unknown' : 'awaiting first update…')}</div>
+                </div>
+                {pollErr && <div style={{fontSize:12, color:'var(--accent)', marginTop:8}}>Polling error: {pollErr}</div>}
+                {status && (
+                  <pre className="mono" style={{marginTop:14, padding:12, background:'var(--surface-2)', borderRadius:10, fontSize:11, color:'var(--ink-2)', overflowX:'auto', whiteSpace:'pre-wrap', wordBreak:'break-word', maxHeight:280}}>{JSON.stringify(status, null, 2)}</pre>
+                )}
+              </div>
+              <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px', lineHeight:1.5}}>
+                Checkout is fulfilled by CartAI's AI agent. In test mode the order is simulated and no money or product moves.
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+
+      // ---------- form view ----------
+      const field = (label, key, props={}) => (
+        <div style={{marginBottom:10}}>
+          <div style={{fontSize:11, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.06em', textTransform:'uppercase', marginBottom:4}}>{label}</div>
+          <input value={addr[key]||''} onChange={e=>set(key, e.target.value)} {...props}
+            style={{width:'100%', padding:'12px 14px', border:'1px solid var(--rule)', borderRadius:12, fontSize:15, fontFamily:'inherit', outline:'none', background:'var(--surface)'}}/>
+        </div>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 18px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+              <button onClick={onClose} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', border:'none', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Back size={16} c="var(--ink-2)"/></button>
+              <div style={{fontSize:13, color:'var(--ink-3)', fontWeight:500}}>Test checkout</div>
+              <div style={{width:36}}/>
+            </div>
+            <div style={{padding:'8px 22px 4px'}}>
+              <div className="bal-pill accent" style={{padding:'5px 10px'}}>TEST MODE</div>
+              <div className="serif" style={{fontSize:32, lineHeight:1.1, marginTop:12, color:'var(--ink)'}}>Buy my <em style={{color:'var(--brand)'}}>stack</em>.</div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:8, lineHeight:1.5}}>
+                CartAI's agent will attempt to complete the checkout. Sandbox card is pre-filled; no real money moves.
+              </div>
+            </div>
+
+            {/* Items */}
+            <div style={{padding:'16px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>{items.length} item{items.length!==1?'s':''}</div>
+              {items.length===0 && <div style={{fontSize:13, color:'var(--accent)', padding:'8px 0'}}>Your stack is empty — add a supplement first.</div>}
+              {items.map((it, i) => (
+                <div key={i} className="bal-card" style={{padding:'12px 14px', marginBottom:8}}>
+                  <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', gap:8}}>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', flex:1}}>{it.name}</div>
+                    <button onClick={()=>removeItem(i)} style={{background:'none', border:'none', color:'var(--ink-4)', fontSize:18, padding:'0 4px'}}>×</button>
+                  </div>
+                  <input value={it.url} onChange={e=>setItem(i,'url', e.target.value)} placeholder="Product URL"
+                    style={{width:'100%', marginTop:6, padding:'8px 10px', border:'1px solid var(--rule)', borderRadius:8, fontSize:12, fontFamily:'JetBrains Mono, monospace', outline:'none'}}/>
+                  <div style={{fontSize:11, color:'var(--ink-3)', marginTop:6, lineHeight:1.4}}>
+                    Pre-filled with the iHerb search URL. For best results paste an exact product page URL (CartAI needs to land on a product, not a list).
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Shipping */}
+            <div style={{padding:'18px 18px 0'}}>
+              <div className="serif" style={{fontSize:20, color:'var(--ink)', marginBottom:10}}>Shipping</div>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:10}}>
+                <div>{field('First name','firstName',{autoComplete:'given-name'})}</div>
+                <div>{field('Last name','lastName',{autoComplete:'family-name'})}</div>
+              </div>
+              {field('Email','email',{type:'email', autoComplete:'email'})}
+              {field('Phone','phone',{type:'tel', autoComplete:'tel', placeholder:'5555555555'})}
+              {field('Address line 1','addressLine1',{autoComplete:'address-line1'})}
+              {field('Address line 2 (optional)','addressLine2',{autoComplete:'address-line2'})}
+              <div style={{display:'grid', gridTemplateColumns:'2fr 1fr 1fr', gap:10}}>
+                <div>{field('City','city',{autoComplete:'address-level2'})}</div>
+                <div>
+                  <div style={{fontSize:11, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.06em', textTransform:'uppercase', marginBottom:4}}>State</div>
+                  <select value={addr.province} onChange={e=>set('province', e.target.value)}
+                    style={{width:'100%', padding:'12px 10px', border:'1px solid var(--rule)', borderRadius:12, fontSize:15, fontFamily:'inherit', background:'var(--surface)'}}>
+                    {US_STATES.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+                <div>{field('ZIP','postalCode',{autoComplete:'postal-code', inputMode:'numeric'})}</div>
+              </div>
+            </div>
+
+            {/* Payment (sandbox info) */}
+            <div style={{padding:'18px 18px 0'}}>
+              <div className="serif" style={{fontSize:20, color:'var(--ink)', marginBottom:10}}>Payment</div>
+              <div className="bal-card" style={{padding:'14px 16px', background:'var(--surface-2)'}}>
+                <div style={{fontSize:11, letterSpacing:'.1em', textTransform:'uppercase', color:'var(--brand)', fontWeight:600}}>Sandbox card · pre-filled</div>
+                <div className="mono" style={{fontSize:14, color:'var(--ink-2)', marginTop:6}}>4242 4242 4242 4242 · 12/2034 · 444</div>
+                <div style={{fontSize:12, color:'var(--ink-3)', marginTop:6, lineHeight:1.5}}>Real-card checkout is intentionally out of scope. It would put us in PCI-DSS scope, which needs a separate plan.</div>
+              </div>
+            </div>
+
+            {error && <div style={{margin:'14px 18px 0', padding:'12px 14px', background:'var(--accent-soft)', color:'var(--brand-deep)', borderRadius:12, fontSize:13}}>{error}</div>}
+
+            <div style={{padding:'20px 18px 0'}}>
+              <button disabled={!valid || submitting} onClick={submit}
+                style={{width:'100%', padding:'14px 20px', borderRadius:16, border:'none', background:(!valid||submitting)?'var(--surface-3)':'var(--brand)', color:(!valid||submitting)?'var(--ink-4)':'white', fontSize:15, fontWeight:600, boxShadow:(!valid||submitting)?'none':'0 8px 22px rgba(85,33,229,0.26)'}}>
+                {submitting ? 'Submitting to CartAI…' : 'Place test order'}
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
     // ============ Stack ============
-    const Stack = ({ stack, onRemove, onNav }) => {
+    const Stack = ({ stack, onRemove, onCheckout, checkoutEnabled, onNav }) => {
       const { Icon, Tabbar } = window;
       const groups = useMemo(() => { const g={}; stack.forEach(s => { const k = s.sourceTitle || 'My supplements'; (g[k]=g[k]||[]).push(s); }); return g; }, [stack]);
       const goalCount = Object.keys(groups).length;
@@ -616,11 +820,20 @@
               </div>
             ) : (
               <div style={{padding:'14px 18px 0'}}>
-                <div className="bal-card" style={{padding:18, marginBottom:16, background:'var(--brand-soft)', boxShadow:'none', border:'1px solid #d6cffa'}}>
+                <div className="bal-card" style={{padding:18, marginBottom:12, background:'var(--brand-soft)', boxShadow:'none', border:'1px solid #d6cffa'}}>
                   <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--brand)', fontWeight:600}}>Stack health</div>
                   <div className="serif" style={{fontSize:30, color:'var(--brand-deep)', marginTop:4}}>{stack.length} active</div>
                   <div style={{fontSize:13, color:'var(--brand-deep)', opacity:0.8, marginTop:2}}>across {goalCount} goal{goalCount!==1?'s':''}</div>
                 </div>
+                <button onClick={onCheckout} disabled={!checkoutEnabled}
+                  title={checkoutEnabled ? '' : 'Checkout is unavailable — CARTAI_API_KEY is not set on the server.'}
+                  style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'14px 18px', borderRadius:16, marginBottom:16, border:'none', background: checkoutEnabled ? 'var(--accent)' : 'var(--surface-3)', color: checkoutEnabled ? 'white' : 'var(--ink-4)', boxShadow: checkoutEnabled ? '0 8px 22px rgba(233,120,218,0.32)' : 'none'}}>
+                  <span style={{textAlign:'left'}}>
+                    <span style={{fontSize:11, letterSpacing:'.12em', textTransform:'uppercase', opacity:0.85, display:'block'}}>{checkoutEnabled ? 'Test checkout · CartAI' : 'Checkout unavailable'}</span>
+                    <span className="serif" style={{fontSize:20, display:'block', marginTop:2}}>Buy my stack</span>
+                  </span>
+                  {checkoutEnabled && <Icon.Chevron size={16} c="white"/>}
+                </button>
                 {Object.entries(groups).map(([title, items]) => (
                   <div key={title} className="bal-card" style={{padding:'4px 0', marginBottom:14}}>
                     <div style={{padding:'12px 16px 8px', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'0.5px solid var(--rule)'}}>
@@ -697,6 +910,17 @@
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
       const [cache, setCache] = useState({});
+      const [checkoutOpen, setCheckoutOpen] = useState(false);
+      const [checkoutEnabled, setCheckoutEnabled] = useState(false);
+
+      // Probe whether the server has CARTAI_API_KEY set — drives the Buy
+      // button's enabled/disabled state on Stack.
+      useEffect(() => {
+        fetch('/api/checkout/config')
+          .then(r => r.ok ? r.json() : null)
+          .then(j => { if (j && typeof j.enabled === 'boolean') setCheckoutEnabled(j.enabled); })
+          .catch(() => {});
+      }, []);
 
       useEffect(()=>LS.set('bal_goals', goals), [goals]);
       useEffect(()=>LS.set('bal_stack', stack), [stack]);
@@ -734,7 +958,10 @@
       if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
       if (screen === 'ask')     return <Ask stack={stack} onNav={navTo}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onNav={navTo}/>;
-      if (screen === 'stack')   return <Stack stack={stack} onRemove={removeFromStack} onNav={navTo}/>;
+      if (screen === 'stack') {
+        if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;
+        return <Stack stack={stack} onRemove={removeFromStack} onCheckout={() => setCheckoutOpen(true)} checkoutEnabled={checkoutEnabled} onNav={navTo}/>;
+      }
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;

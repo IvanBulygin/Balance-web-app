@@ -25,6 +25,9 @@ from categories import CategoryCache, CategoryResponse, DISPLAY_TITLES, availabl
 from gemini_client import get_client
 from retrieval import BM25Index, BOOST_MIN_SCORE, build_index, format_context
 
+import httpx
+from cartai import CheckoutRequest, create_checkout, get_checkout, is_enabled as cartai_enabled
+
 load_dotenv()
 
 ROOT = Path(__file__).resolve().parent
@@ -144,6 +147,47 @@ def list_categories():
         for slug in available_slugs(idx)
     ]
     return summaries
+
+
+@app.get("/api/checkout/config")
+def checkout_config():
+    """UI probe: should the 'Buy my stack' button be visible?"""
+    return {"enabled": cartai_enabled(), "mode": "test"}
+
+
+def _cartai_http_error(exc: Exception) -> HTTPException:
+    if isinstance(exc, httpx.HTTPStatusError):
+        try:
+            detail = exc.response.json()
+        except Exception:
+            detail = exc.response.text or str(exc)
+        return HTTPException(exc.response.status_code, detail)
+    if isinstance(exc, httpx.HTTPError):
+        return HTTPException(502, f"CartAI request failed: {exc}")
+    return HTTPException(500, str(exc))
+
+
+@app.post("/api/checkout")
+def checkout_create(req: CheckoutRequest):
+    try:
+        return create_checkout(req)
+    except RuntimeError as e:
+        # CARTAI_API_KEY not configured.
+        raise HTTPException(503, str(e))
+    except Exception as e:  # noqa: BLE001
+        print(f"[cartai] create_checkout failed: {e}")
+        raise _cartai_http_error(e)
+
+
+@app.get("/api/checkout/{task_id}")
+def checkout_status(task_id: str):
+    try:
+        return get_checkout(task_id)
+    except RuntimeError as e:
+        raise HTTPException(503, str(e))
+    except Exception as e:  # noqa: BLE001
+        print(f"[cartai] get_checkout failed: {e}")
+        raise _cartai_http_error(e)
 
 
 @app.get("/api/category/{slug}", response_model=CategoryResponse)

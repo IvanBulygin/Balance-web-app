@@ -137,6 +137,80 @@
     );
     const greeting = () => { const h = new Date().getHours(); return h<12?'Good morning':h<18?'Good afternoon':'Good evening'; };
 
+    // ---- iHerb integration (ported from the classic chat) -----------------
+    // Curated supplement → iHerb search-query map, plus answer-text detection
+    // so chat replies surface "Buy on iHerb" pills and an add-to-stack CTA.
+    const IHERB_REF = ''; // set an affiliate rcode here to append &rcode=...
+    const IHERB_PRODUCTS = {
+      magnesium:'magnesium+glycinate', creatine:'creatine+monohydrate', omega3:'omega+3+fish+oil+epa+dha',
+      vitd3:'vitamin+d3+2000+iu', ashwagandha:'ashwagandha+ksm-66', zinc:'zinc+picolinate', melatonin:'melatonin',
+      ltheanine:'l-theanine', coq10:'coq10+ubiquinol', collagen:'collagen+peptides', probiotics:'probiotics+multi-strain',
+      rhodiola:'rhodiola+rosea', maca:'maca+root+powder', milkthistle:'milk+thistle+silymarin', berberine:'berberine+hcl',
+      tongkatali:'tongkat+ali+eurycoma', vitaminc:'vitamin+c+ascorbic+acid', vitamine:'vitamin+e+tocopherol',
+      b12:'vitamin+b12+methylcobalamin', k2:'vitamin+k2+mk-7', boswellia:'boswellia+serrata', curcumin:'curcumin+with+bioperine',
+      glucosamine:'glucosamine+sulfate', chondroitin:'chondroitin+sulfate', msm:'msm+methylsulfonylmethane',
+      pycnogenol:'pycnogenol+pine+bark', caffeine:'caffeine+anhydrous', greentea:'egcg+green+tea+extract',
+      carnitine:'l-carnitine', citrulline:'l-citrulline', arginine:'l-arginine', betaalanine:'beta-alanine',
+      bcaa:'bcaa+branched+chain', protein:'whey+protein+isolate', taurine:'taurine', bicarbonate:'sodium+bicarbonate',
+      nitrates:'beetroot+nitrate', tartcherry:'tart+cherry+extract', bacopa:'bacopa+monnieri', nac:'n-acetyl+cysteine',
+      same:'sam-e', tudca:'tudca', sjw:'st+johns+wort', saffron:'saffron+extract', fivehtp:'5-htp', yohimbine:'yohimbine',
+      fenugreek:'fenugreek+extract', tribulus:'tribulus+terrestris', dhea:'dhea', inositol:'inositol', cinnamon:'cinnamon+extract',
+      chromium:'chromium+picolinate', fiber:'psyllium+fiber', quercetin:'quercetin+dihydrate', spirulina:'spirulina',
+      echinacea:'echinacea', lavender:'lavender+silexan', passionflower:'passionflower+extract', kava:'kava', garlic:'garlic+extract',
+      cocoa:'cocoa+flavanols', grapeseed:'grape+seed+extract', oliveleaf:'olive+leaf+extract', mct:'mct+oil', iodine:'iodine+kelp',
+    };
+    const iherbProductUrl = (id) => { const q = IHERB_PRODUCTS[id]; if (!q) return null; let u = 'https://www.iherb.com/search?kw=' + q; if (IHERB_REF) u += '&rcode=' + IHERB_REF; return u; };
+    const SUPP_DETECT = [
+      {words:['magnesium'],id:'magnesium',n:'Magnesium'},{words:['creatine'],id:'creatine',n:'Creatine'},
+      {words:['omega-3','omega 3','fish oil','epa+dha','epa and dha','algae oil','algal oil'],id:'omega3',n:'Omega-3'},
+      {words:['vitamin d','vit d','d3'],id:'vitd3',n:'Vitamin D3'},{words:['ashwagandha','ksm-66'],id:'ashwagandha',n:'Ashwagandha'},
+      {words:['zinc'],id:'zinc',n:'Zinc'},{words:['melatonin'],id:'melatonin',n:'Melatonin'},
+      {words:['l-theanine','theanine'],id:'ltheanine',n:'L-Theanine'},{words:['coq10','coenzyme q10','ubiquinol'],id:'coq10',n:'CoQ10'},
+      {words:['collagen'],id:'collagen',n:'Collagen'},{words:['probiotic','probiotics','lactobacillus'],id:'probiotics',n:'Probiotics'},
+      {words:['rhodiola'],id:'rhodiola',n:'Rhodiola'},{words:['maca'],id:'maca',n:'Maca'},
+      {words:['milk thistle','silymarin'],id:'milkthistle',n:'Milk Thistle'},{words:['berberine'],id:'berberine',n:'Berberine'},
+      {words:['tongkat ali','longjack','eurycoma'],id:'tongkatali',n:'Tongkat Ali'},{words:['vitamin c','ascorbic'],id:'vitaminc',n:'Vitamin C'},
+      {words:['vitamin e','tocopherol'],id:'vitamine',n:'Vitamin E'},{words:['vitamin b12','b-12','cobalamin'],id:'b12',n:'Vitamin B12'},
+      {words:['vitamin k','k2','menaquinone'],id:'k2',n:'Vitamin K2'},{words:['boswellia'],id:'boswellia',n:'Boswellia'},
+      {words:['curcumin','turmeric'],id:'curcumin',n:'Curcumin'},{words:['glucosamine'],id:'glucosamine',n:'Glucosamine'},
+      {words:['chondroitin'],id:'chondroitin',n:'Chondroitin'},{words:['msm','methylsulfonylmethane'],id:'msm',n:'MSM'},
+      {words:['pycnogenol','pine bark'],id:'pycnogenol',n:'Pycnogenol'},{words:['caffeine'],id:'caffeine',n:'Caffeine'},
+      {words:['green tea','egcg'],id:'greentea',n:'Green Tea Extract'},{words:['carnitine'],id:'carnitine',n:'L-Carnitine'},
+      {words:['citrulline'],id:'citrulline',n:'L-Citrulline'},{words:['arginine'],id:'arginine',n:'L-Arginine'},
+      {words:['beta-alanine','beta alanine'],id:'betaalanine',n:'Beta-Alanine'},{words:['bcaa','branched-chain'],id:'bcaa',n:'BCAAs'},
+      {words:['whey protein','protein powder'],id:'protein',n:'Protein'},{words:['taurine'],id:'taurine',n:'Taurine'},
+      {words:['sodium bicarbonate','baking soda'],id:'bicarbonate',n:'Sodium Bicarbonate'},
+      {words:['nitrate','beetroot','beet root','beet juice'],id:'nitrates',n:'Beetroot (Nitrates)'},
+      {words:['tart cherry','montmorency'],id:'tartcherry',n:'Tart Cherry'},{words:['bacopa'],id:'bacopa',n:'Bacopa Monnieri'},
+      {words:['n-acetylcysteine','n-acetyl cysteine','acetylcysteine'],id:'nac',n:'NAC'},{words:['s-adenosyl','sam-e'],id:'same',n:'SAMe'},
+      {words:['tudca','tauroursodeoxycholic'],id:'tudca',n:'TUDCA'},{words:['st. john','st john','hypericum'],id:'sjw',n:"St. John's Wort"},
+      {words:['saffron','crocus'],id:'saffron',n:'Saffron'},{words:['5-htp','5htp','hydroxytryptophan'],id:'fivehtp',n:'5-HTP'},
+      {words:['yohimbine','yohimbe'],id:'yohimbine',n:'Yohimbine'},{words:['fenugreek'],id:'fenugreek',n:'Fenugreek'},
+      {words:['tribulus'],id:'tribulus',n:'Tribulus Terrestris'},{words:['dhea'],id:'dhea',n:'DHEA'},{words:['inositol'],id:'inositol',n:'Inositol'},
+      {words:['cinnamon'],id:'cinnamon',n:'Cinnamon'},{words:['chromium'],id:'chromium',n:'Chromium'},
+      {words:['psyllium','glucomannan'],id:'fiber',n:'Fiber'},{words:['quercetin'],id:'quercetin',n:'Quercetin'},
+      {words:['spirulina'],id:'spirulina',n:'Spirulina'},{words:['echinacea'],id:'echinacea',n:'Echinacea'},
+      {words:['lavender','silexan'],id:'lavender',n:'Lavender'},{words:['passionflower','passiflora'],id:'passionflower',n:'Passionflower'},
+      {words:['kava'],id:'kava',n:'Kava'},{words:['garlic','allicin'],id:'garlic',n:'Garlic'},
+      {words:['cocoa','cacao','flavanol'],id:'cocoa',n:'Cocoa Flavanols'},{words:['grape seed','grapeseed'],id:'grapeseed',n:'Grape Seed Extract'},
+      {words:['olive leaf'],id:'oliveleaf',n:'Olive Leaf'},{words:['mct oil','medium-chain'],id:'mct',n:'MCT Oil'},
+      {words:['iodine','kelp'],id:'iodine',n:'Iodine'},
+    ];
+    const detectSupps = (text) => {
+      const t = (text||'').toLowerCase(); const found = []; const seen = new Set();
+      for (const s of SUPP_DETECT) { if (seen.has(s.id)) continue; if (s.words.some(w => t.includes(w))) { found.push(s); seen.add(s.id); } }
+      return found;
+    };
+    const generateFollowups = (question) => {
+      const q = (question||'').toLowerCase();
+      if (q.includes('sleep')) return ['Can I take both?','What about L-theanine?','Any side effects?'];
+      if (q.includes('energy')) return ['Best time to take it?','Works with caffeine?','How fast does it kick in?'];
+      if (q.includes('stress') || q.includes('anxiety')) return ['Is it safe long-term?','Can I combine with magnesium?','How quickly does it work?'];
+      if (q.includes('muscle') || q.includes('recovery')) return ['Loading phase needed?','Best timing around workouts?','Any water retention?'];
+      return ['Tell me more','Any side effects?','What about timing?','Stack with my current supps?'];
+    };
+    const suppIherbUrl = (s) => iherbProductUrl(s.id) || ('https://www.iherb.com/search?kw=' + encodeURIComponent(s.n));
+
     // ============ Onboarding ============
     const Onboarding = ({ onStart }) => {
       const { Icon } = window;
@@ -545,7 +619,7 @@
       return { whole:false, item };
     };
 
-    const Ask = ({ stack, onNav }) => {
+    const Ask = ({ stack, onAdd, inStack, onNav }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
       const [input, setInput] = useState('');
@@ -609,7 +683,7 @@
         } finally { setBusy(false); }
       };
 
-      const suggestions = ['What helps me fall asleep faster?','Best supplements for focus?','How do I take creatine?'];
+      const suggestions = ['Best for sleep?','Afternoon energy','Stress relief','Muscle recovery','Recovery & detox'];
       return (
         <div className="screen-root">
           <div ref={scrollRef} className="scroll" style={{height:'100%', paddingBottom:96}}>
@@ -626,12 +700,12 @@
             {messages.length===0 && (
               <div style={{padding:'24px 22px'}}>
                 <div style={{display:'flex', justifyContent:'center', marginBottom:18}}><window.BalLogoMark size={56}/></div>
-                <div className="serif" style={{fontSize:24, textAlign:'center', color:'var(--ink)', lineHeight:1.2}}>Ask anything about<br/><em style={{color:'var(--brand)'}}>supplements & wellbeing</em>.</div>
-                <div style={{fontSize:13, color:'var(--ink-3)', textAlign:'center', marginTop:10}}>Answers come grounded in 18 evidence-based guides.</div>
-                <div style={{display:'flex', flexDirection:'column', gap:8, marginTop:22}}>
-                  <button onClick={()=>startOrder('Order my stack', null, null)} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--brand-deep)', background:'var(--brand-soft)', display:'flex', alignItems:'center', gap:10, fontWeight:600}}><CartIcon size={16} c="var(--brand)"/> Order my stack</button>
-                  {suggestions.map(s => <button key={s} onClick={()=>send(s)} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--ink-2)'}}>{s}</button>)}
+                <div className="serif" style={{fontSize:26, textAlign:'center', color:'var(--ink)', lineHeight:1.15}}>What do you need<br/><em style={{color:'var(--brand)'}}>supplements for?</em></div>
+                <div style={{fontSize:13, color:'var(--ink-3)', textAlign:'center', marginTop:10, lineHeight:1.5, maxWidth:'90%', marginLeft:'auto', marginRight:'auto'}}>I search 19 evidence-based guides and return ranked supplements with dose, timing, and grade.</div>
+                <div style={{display:'flex', flexWrap:'wrap', gap:8, marginTop:20, justifyContent:'center'}}>
+                  {suggestions.map(s => <button key={s} onClick={()=>send(s)} className="bal-pill" style={{border:'none', padding:'9px 14px', fontSize:13, cursor:'pointer'}}>{s}</button>)}
                 </div>
+                <button onClick={()=>startOrder('Order my stack', null, null)} className="bal-card" style={{border:'none', width:'100%', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--brand-deep)', background:'var(--brand-soft)', display:'flex', alignItems:'center', gap:10, fontWeight:600, marginTop:14}}><CartIcon size={16} c="var(--brand)"/> Order my stack</button>
               </div>
             )}
 
@@ -641,18 +715,57 @@
               </div>
             ) : m.kind==='order' ? (
               <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow items={m.cart}/></div>
-            ) : (
+            ) : (() => {
+              // Extras (buy pills, sources, recommended-add, follow-ups) appear
+              // once the answer is complete — not on the actively-streaming one.
+              const complete = m.content && !(busy && i === messages.length-1);
+              const supps = complete ? detectSupps(m.content) : [];
+              const prevUser = complete ? [...messages.slice(0,i)].reverse().find(x => x.role==='user') : null;
+              const followups = complete ? generateFollowups(prevUser ? prevUser.content : '') : [];
+              const topSupp = supps.find(s => !inStack(s.n));
+              return (
               <div key={i} style={{padding:'16px 18px 0'}}>
                 <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
                   <window.BalLogoMark size={26}/>
                   <div style={{fontSize:12, fontWeight:600, color:'var(--ink-2)'}}>Balance</div>
-                  {m.sources && m.sources.length>0 && <div style={{fontSize:11, color:'var(--ink-4)'}}>· {m.sources.length} guide{m.sources.length>1?'s':''}</div>}
+                  {m.sources && m.sources.length>0 && <div style={{fontSize:11, color:'var(--ink-4)'}}>· searched {m.sources.length} guide{m.sources.length>1?'s':''}</div>}
                 </div>
                 <div style={{fontSize:14.5, color:'var(--ink-2)', lineHeight:1.55, marginLeft:34}}>
                   {m.content ? fmt(m.content) : <div className="typing"><span></span><span></span><span></span></div>}
                 </div>
+
+                {supps.length>0 && (
+                  <div style={{marginLeft:34, marginTop:12}}>
+                    <div style={{display:'flex', alignItems:'center', gap:6, marginBottom:8}}><CartIcon size={13} c="var(--brand)"/><span style={{fontSize:11, letterSpacing:'.08em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Buy on iHerb</span></div>
+                    <div style={{display:'flex', flexWrap:'wrap', gap:6}}>
+                      {supps.map(s => (
+                        <a key={s.id} href={suppIherbUrl(s)} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:4, padding:'7px 12px', background:'var(--brand)', color:'white', borderRadius:999, fontSize:12, fontWeight:600, textDecoration:'none'}}>{s.n}<ExternalIcon size={10} c="white"/></a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {topSupp && (
+                  <button onClick={()=>onAdd({ name:topSupp.n, tier:'Secondary', dose:'', iherb_url:suppIherbUrl(topSupp) }, 'From chat')} style={{marginLeft:34, marginTop:12, width:'calc(100% - 34px)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 16px', background:'var(--accent)', color:'white', border:'none', borderRadius:16, boxShadow:'0 6px 16px rgba(233,120,218,0.28)'}}>
+                    <span style={{textAlign:'left'}}><span style={{fontSize:10, letterSpacing:'.1em', textTransform:'uppercase', opacity:.85, display:'block'}}>Recommended</span><span className="serif" style={{fontSize:17, display:'block', marginTop:2}}>Add {topSupp.n} to my stack</span></span>
+                    <span style={{width:34, height:34, borderRadius:'50%', background:'rgba(255,255,255,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Plus size={16} c="white"/></span>
+                  </button>
+                )}
+
+                {m.sources && m.sources.length>0 && complete && (
+                  <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:6}}>
+                    {m.sources.map(s => <span key={s} style={{fontSize:10, padding:'3px 8px', borderRadius:999, background:'var(--brand-soft)', color:'var(--brand-deep)', fontWeight:500}}>{s.replace(/^supplement-guide-/,'')}</span>)}
+                  </div>
+                )}
+
+                {followups.length>0 && (
+                  <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:8}}>
+                    {followups.map(q => <button key={q} onClick={()=>send(q)} style={{padding:'8px 14px', background:'var(--surface)', border:'0.5px solid var(--rule)', borderRadius:999, fontSize:13, color:'var(--brand-deep)', fontWeight:500, cursor:'pointer'}}>{q}</button>)}
+                  </div>
+                )}
               </div>
-            ))}
+              );
+            })())}
           </div>
 
           <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 16px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
@@ -1169,7 +1282,7 @@
       if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
       if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
-      if (screen === 'ask')     return <Ask stack={stack} onNav={navTo}/>;
+      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onNav={navTo}/>;
       if (screen === 'stack') {
         if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;

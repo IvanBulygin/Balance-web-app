@@ -394,10 +394,10 @@
       { s:'SUCCEEDED',   label:'Order confirmed' },
     ];
 
-    const OrderFlow = ({ stack }) => {
+    const OrderFlow = ({ items }) => {
       const { Icon } = window;
-      const cart = (stack && stack.length) ? stack : SAMPLE_CART;
-      const usingSample = !(stack && stack.length);
+      const cart = (items && items.length) ? items : SAMPLE_CART;
+      const usingSample = !(items && items.length);
       const [stage, setStage] = useState('cart');          // cart | details | processing | done
       const [addr, setAddr] = useState(() => ({ ...blankAddress(), ...LS.get('bal_addr', {}) }));
       const [stepIdx, setStepIdx] = useState(0);
@@ -526,7 +526,21 @@
       );
     };
 
-    const ORDER_INTENT = /\b(check\s?out|place (an |my )?order|order (my stack|these|now|my supplements)|buy (my stack|these|my supplements)|order my stack)\b/i;
+    const titleCase = (s) => s.replace(/\b\w/g, c => c.toUpperCase());
+    // Detect purchase intent in a chat message and, when present, what to order.
+    // Returns null (not an order), {whole:true} (order the whole stack), or
+    // {item:"Saffron"} (order a specific named supplement).
+    const parseOrderIntent = (text) => {
+      const t = text.trim();
+      if (/\b(check\s?out|place (an |my )?order|order my (stack|supps|supplements)|buy my (stack|supps|supplements))\b/i.test(t)) return { whole:true };
+      // "order/buy/get/purchase [me] [some] X" — anchored at the start so genuine
+      // questions ("what should I buy for sleep?") don't get hijacked.
+      const m = t.match(/^(?:can you |could you |please |i(?:'| )?d like to |i want to |i wanna )?(?:order|buy|purchase|get)\s+(?:me\s+)?(?:some\s+)?(.+)$/i);
+      if (!m) return null;
+      const item = m[1].trim().replace(/[.?!,]+$/,'').replace(/\s+for me$/i,'').replace(/\s+(right\s+)?now$/i,'').replace(/\s+please$/i,'').trim();
+      if (!item || /^(my )?(stack|supps|supplements|these|them|it|now|please)$/i.test(item)) return { whole:true };
+      return { whole:false, item };
+    };
 
     const Ask = ({ stack, onNav }) => {
       const { Icon } = window;
@@ -536,13 +550,15 @@
       const scrollRef = useRef(null);
       useEffect(() => { if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; }, [messages, busy]);
 
-      // Drop the simulated order card into the conversation.
-      const startOrder = (userText) => {
+      // Drop the simulated CartAI order card into the conversation. `cart` is the
+      // resolved line-items; `itemName` (optional) is the single named supplement.
+      const startOrder = (userText, cart, itemName) => {
+        const resolved = (cart && cart.length) ? cart : (stack.length ? stack : SAMPLE_CART);
         setMessages(m => [
           ...m,
           ...(userText ? [{ role:'user', content:userText }] : []),
-          { role:'assistant', content:"Let's get these ordered — here's your cart. 🛒" },
-          { role:'assistant', kind:'order' },
+          { role:'assistant', content: itemName ? `On it — ordering ${itemName} via CartAI. 🛒` : "Let's get your stack ordered via CartAI. 🛒" },
+          { role:'assistant', kind:'order', cart: resolved },
         ]);
       };
 
@@ -550,8 +566,15 @@
         const question = (q ?? input).trim();
         if (!question || busy) return;
         setInput('');
-        // Purchase intent → run the in-chat (simulated) checkout instead of the LLM.
-        if (ORDER_INTENT.test(question)) { startOrder(question); return; }
+        // Purchase intent → run the in-chat (simulated) CartAI checkout, not the LLM.
+        const intent = parseOrderIntent(question);
+        if (intent) {
+          if (intent.whole) { startOrder(question, null, null); return; }
+          const name = titleCase(intent.item);
+          const cart = [{ name, tier:'Secondary', dose:'', iherb_url:'https://www.iherb.com/search?kw=' + encodeURIComponent(intent.item) }];
+          startOrder(question, cart, name);
+          return;
+        }
         const next = [...messages, { role:'user', content:question }];
         setMessages(next);
         setBusy(true);
@@ -592,7 +615,7 @@
               <button onClick={()=>onNav('home')} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Back size={16} c="var(--ink-2)"/></button>
               <div style={{fontSize:13, color:'var(--ink-3)', fontWeight:500}}>Ask Balance</div>
               <div style={{display:'flex', gap:8}}>
-                <button onClick={()=>startOrder()} title="Order your stack (test)" style={{width:36, height:36, borderRadius:'50%', background:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><CartIcon size={16} c="white"/></button>
+                <button onClick={()=>startOrder('Order my stack', null, null)} title="Order your stack (test)" style={{width:36, height:36, borderRadius:'50%', background:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><CartIcon size={16} c="white"/></button>
                 <button onClick={()=>setMessages([])} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Plus size={16} c="var(--ink-2)"/></button>
               </div>
             </div>
@@ -603,7 +626,7 @@
                 <div className="serif" style={{fontSize:24, textAlign:'center', color:'var(--ink)', lineHeight:1.2}}>Ask anything about<br/><em style={{color:'var(--brand)'}}>supplements & wellbeing</em>.</div>
                 <div style={{fontSize:13, color:'var(--ink-3)', textAlign:'center', marginTop:10}}>Answers come grounded in 18 evidence-based guides.</div>
                 <div style={{display:'flex', flexDirection:'column', gap:8, marginTop:22}}>
-                  <button onClick={()=>startOrder('Order my stack')} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--brand-deep)', background:'var(--brand-soft)', display:'flex', alignItems:'center', gap:10, fontWeight:600}}><CartIcon size={16} c="var(--brand)"/> Order my stack</button>
+                  <button onClick={()=>startOrder('Order my stack', null, null)} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--brand-deep)', background:'var(--brand-soft)', display:'flex', alignItems:'center', gap:10, fontWeight:600}}><CartIcon size={16} c="var(--brand)"/> Order my stack</button>
                   {suggestions.map(s => <button key={s} onClick={()=>send(s)} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--ink-2)'}}>{s}</button>)}
                 </div>
               </div>
@@ -614,7 +637,7 @@
                 <div style={{maxWidth:'82%', background:'var(--brand)', color:'white', padding:'11px 15px', borderRadius:'20px 20px 4px 20px', fontSize:14, lineHeight:1.4}}>{m.content}</div>
               </div>
             ) : m.kind==='order' ? (
-              <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow stack={stack}/></div>
+              <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow items={m.cart}/></div>
             ) : (
               <div key={i} style={{padding:'16px 18px 0'}}>
                 <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
@@ -1074,7 +1097,7 @@
             <div style={{padding:'24px 18px 0'}}>
               <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>App</div>
               <div className="bal-card" style={{padding:'4px 0'}}>
-                <a href="/chat" style={{display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', textDecoration:'none', color:'var(--ink)'}}><Icon.Spark size={18} c="var(--brand)"/><span style={{fontSize:14, fontWeight:500}}>Open classic chat</span></a>
+                <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)'}}><Icon.Spark size={18} c="var(--brand)"/><span style={{fontSize:14, fontWeight:500}}>Open chat</span></button>
                 <button onClick={onReset} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', color:'var(--accent)'}}><span style={{fontSize:14, fontWeight:500}}>Reset app & data</span></button>
               </div>
             </div>

@@ -17,7 +17,7 @@ from typing import Any
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -117,8 +117,9 @@ def index():
 
 @app.get("/chat")
 def chat_page():
-    # Open chat UI, still reachable alongside the guided flow.
-    return FileResponse(STATIC_DIR / "chat.html")
+    # The classic standalone chat UI is retired — its design is superseded by
+    # the in-app Ask screen. Redirect old links to the current app.
+    return RedirectResponse("/", status_code=307)
 
 
 @app.get("/api/health")

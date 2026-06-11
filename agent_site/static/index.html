@@ -394,6 +394,19 @@
       { s:'SUCCEEDED',   label:'Order confirmed' },
     ];
 
+    // Defined at module scope (NOT inside OrderFlow) so its identity is stable
+    // across re-renders — otherwise React remounts the form on every keystroke
+    // and the focused input loses focus.
+    const OrderCard = ({ children }) => (
+      <div className="bal-card" style={{marginLeft:34, marginTop:4, padding:0, overflow:'hidden', border:'1px solid var(--rule)'}}>
+        <div style={{padding:'10px 14px', background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+          <div style={{display:'flex', alignItems:'center', gap:8}}><CartIcon size={15} c="var(--brand)"/><span style={{fontSize:12, fontWeight:600, color:'var(--brand-deep)'}}>CartAI checkout</span></div>
+          <span className="mono" style={{fontSize:9, letterSpacing:'.1em', color:'var(--brand)', background:'white', padding:'2px 7px', borderRadius:5}}>TEST MODE</span>
+        </div>
+        <div style={{padding:'14px'}}>{children}</div>
+      </div>
+    );
+
     const OrderFlow = ({ items }) => {
       const { Icon } = window;
       const cart = (items && items.length) ? items : SAMPLE_CART;
@@ -429,18 +442,8 @@
         return () => clearTimeout(timer);
       }, [stage]);
 
-      const Card = ({ children }) => (
-        <div className="bal-card" style={{marginLeft:34, marginTop:4, padding:0, overflow:'hidden', border:'1px solid var(--rule)'}}>
-          <div style={{padding:'10px 14px', background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
-            <div style={{display:'flex', alignItems:'center', gap:8}}><CartIcon size={15} c="var(--brand)"/><span style={{fontSize:12, fontWeight:600, color:'var(--brand-deep)'}}>CartAI checkout</span></div>
-            <span className="mono" style={{fontSize:9, letterSpacing:'.1em', color:'var(--brand)', background:'white', padding:'2px 7px', borderRadius:5}}>TEST MODE</span>
-          </div>
-          <div style={{padding:'14px'}}>{children}</div>
-        </div>
-      );
-
       if (stage === 'cart') return (
-        <Card>
+        <OrderCard>
           {usingSample && <div style={{fontSize:12, color:'var(--ink-3)', marginBottom:10}}>Your stack was empty, so here's a sample cart you can order.</div>}
           {cart.map((it,i) => (
             <div key={i} style={{display:'flex', alignItems:'center', padding:'8px 0', borderBottom:i<cart.length-1?'0.5px solid var(--rule)':'none'}}>
@@ -458,7 +461,7 @@
             <div style={{display:'flex', justifyContent:'space-between', padding:'6px 0 0', fontWeight:700, color:'var(--ink)'}}><span>Total</span><span className="mono">{money(total)}</span></div>
           </div>
           <button onClick={()=>setStage('details')} style={{width:'100%', marginTop:14, padding:'12px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontSize:14, fontWeight:600}}>Continue to checkout</button>
-        </Card>
+        </OrderCard>
       );
 
       if (stage === 'details') {
@@ -469,7 +472,7 @@
           </div>
         );
         return (
-          <Card>
+          <OrderCard>
             <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:8}}>
               <div>{f('First name','firstName')}</div><div>{f('Last name','lastName')}</div>
             </div>
@@ -487,12 +490,12 @@
               <div className="mono" style={{fontSize:13, color:'var(--ink-2)', marginTop:3}}>4242 4242 4242 4242 · 12/34 · 444</div>
             </div>
             <button disabled={!detailsValid} onClick={()=>setStage('processing')} style={{width:'100%', marginTop:12, padding:'12px', borderRadius:12, border:'none', background:detailsValid?'var(--accent)':'var(--surface-3)', color:detailsValid?'white':'var(--ink-4)', fontSize:14, fontWeight:600}}>Place order · {money(total)}</button>
-          </Card>
+          </OrderCard>
         );
       }
 
       if (stage === 'processing') return (
-        <Card>
+        <OrderCard>
           {ORDER_STEPS.map((st,i) => {
             const done = i < stepIdx, active = i === stepIdx;
             if (i > stepIdx) return null;
@@ -506,12 +509,12 @@
               </div>
             );
           })}
-        </Card>
+        </OrderCard>
       );
 
       // done
       return (
-        <Card>
+        <OrderCard>
           <div style={{textAlign:'center', padding:'4px 0 10px'}}>
             <div style={{width:48, height:48, borderRadius:'50%', background:'var(--brand)', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:10}}><Icon.Check size={24} c="white"/></div>
             <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>Order placed</div>
@@ -522,7 +525,7 @@
             <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Est. delivery</span><span>{order.eta}</span></div>
           </div>
           <div style={{marginTop:12, fontSize:11, color:'var(--ink-3)', lineHeight:1.5, textAlign:'center'}}>Simulated CartAI order — no real money or product. Swap in your live CartAI key to make it real.</div>
-        </Card>
+        </OrderCard>
       );
     };
 

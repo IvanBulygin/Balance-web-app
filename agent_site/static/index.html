@@ -368,6 +368,166 @@
       return out;
     };
 
+    // ============ In-chat order flow (SIMULATED CartAI) ============
+    // A fully self-contained, fake CartAI checkout that runs inside the chat.
+    // No network, no real money, no real product — it mimics CartAI's state
+    // machine (QUEUED → STARTED → IN_PROGRESS → SUCCEEDED) for a believable
+    // demo. (The real /api/checkout integration on the Stack screen is a
+    // separate, key-gated path — CartAI's live API is currently down.)
+    const CartIcon = ({size=18, c='currentColor'}) => (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h3l2.3 12.2a1 1 0 001 .8h8.8a1 1 0 001-.8L21 7H6"/></svg>
+    );
+    const SAMPLE_CART = [
+      { name:'Magnesium Glycinate', tier:'Primary',   dose:'300 mg', iherb_url:'https://www.iherb.com/search?kw=magnesium+glycinate' },
+      { name:'Creatine Monohydrate', tier:'Secondary', dose:'5 g',     iherb_url:'https://www.iherb.com/search?kw=creatine+monohydrate' },
+      { name:'Vitamin D3',           tier:'Secondary', dose:'2000 IU', iherb_url:'https://www.iherb.com/search?kw=vitamin+d3' },
+    ];
+    const fakePrice = (name) => { let h=0; for (let i=0;i<name.length;i++) h=(h*31+name.charCodeAt(i))>>>0; return 6.99 + (h % 1800)/100; };
+    const money = (n) => '$' + n.toFixed(2);
+    const ORDER_STEPS = [
+      { s:'QUEUED',      label:'Order received — queued' },
+      { s:'STARTED',     label:'CartAI agent starting' },
+      { s:'IN_PROGRESS', label:'Navigating to iHerb' },
+      { s:'IN_PROGRESS', label:'Adding items to cart' },
+      { s:'IN_PROGRESS', label:'Entering shipping & payment' },
+      { s:'IN_PROGRESS', label:'Placing your order' },
+      { s:'SUCCEEDED',   label:'Order confirmed' },
+    ];
+
+    const OrderFlow = ({ stack }) => {
+      const { Icon } = window;
+      const cart = (stack && stack.length) ? stack : SAMPLE_CART;
+      const usingSample = !(stack && stack.length);
+      const [stage, setStage] = useState('cart');          // cart | details | processing | done
+      const [addr, setAddr] = useState(() => ({ ...blankAddress(), ...LS.get('bal_addr', {}) }));
+      const [stepIdx, setStepIdx] = useState(0);
+      const [order, setOrder] = useState(null);
+
+      useEffect(() => { LS.set('bal_addr', addr); }, [addr]);
+      const set = (k,v) => setAddr(a => ({ ...a, [k]: v }));
+      const subtotal = useMemo(() => cart.reduce((a,it)=>a+fakePrice(it.name),0), [cart]);
+      const shipping = 4.99;
+      const total = subtotal + shipping;
+      const detailsValid = ['firstName','lastName','addressLine1','city','postalCode'].every(k => (addr[k]||'').trim());
+
+      // Drive the simulated CartAI state machine.
+      useEffect(() => {
+        if (stage !== 'processing') return;
+        let i = 0; setStepIdx(0);
+        let timer = setTimeout(function tick(){
+          i += 1;
+          if (i < ORDER_STEPS.length) { setStepIdx(i); timer = setTimeout(tick, 1150); }
+          else {
+            setOrder({
+              num: 'BAL-' + Math.random().toString(36).slice(2,7).toUpperCase(),
+              eta: new Date(Date.now()+4*864e5).toLocaleDateString(undefined,{month:'short', day:'numeric'}),
+              total, items: cart.length,
+            });
+            setStage('done');
+          }
+        }, 1150);
+        return () => clearTimeout(timer);
+      }, [stage]);
+
+      const Card = ({ children }) => (
+        <div className="bal-card" style={{marginLeft:34, marginTop:4, padding:0, overflow:'hidden', border:'1px solid var(--rule)'}}>
+          <div style={{padding:'10px 14px', background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+            <div style={{display:'flex', alignItems:'center', gap:8}}><CartIcon size={15} c="var(--brand)"/><span style={{fontSize:12, fontWeight:600, color:'var(--brand-deep)'}}>CartAI checkout</span></div>
+            <span className="mono" style={{fontSize:9, letterSpacing:'.1em', color:'var(--brand)', background:'white', padding:'2px 7px', borderRadius:5}}>TEST MODE</span>
+          </div>
+          <div style={{padding:'14px'}}>{children}</div>
+        </div>
+      );
+
+      if (stage === 'cart') return (
+        <Card>
+          {usingSample && <div style={{fontSize:12, color:'var(--ink-3)', marginBottom:10}}>Your stack was empty, so here's a sample cart you can order.</div>}
+          {cart.map((it,i) => (
+            <div key={i} style={{display:'flex', alignItems:'center', padding:'8px 0', borderBottom:i<cart.length-1?'0.5px solid var(--rule)':'none'}}>
+              <div className={`ev-badge ${GRADE[it.tier]||'c'}`} style={{marginRight:10}}>{GRADE_LETTER[it.tier]||'·'}</div>
+              <div style={{flex:1}}>
+                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{it.name}</div>
+                <div style={{fontSize:12, color:'var(--ink-3)'}}>{it.dose || ''}</div>
+              </div>
+              <div className="mono" style={{fontSize:13, color:'var(--ink-2)'}}>{money(fakePrice(it.name))}</div>
+            </div>
+          ))}
+          <div style={{marginTop:10, fontSize:13, color:'var(--ink-2)'}}>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Subtotal</span><span className="mono">{money(subtotal)}</span></div>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Shipping</span><span className="mono">{money(shipping)}</span></div>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'6px 0 0', fontWeight:700, color:'var(--ink)'}}><span>Total</span><span className="mono">{money(total)}</span></div>
+          </div>
+          <button onClick={()=>setStage('details')} style={{width:'100%', marginTop:14, padding:'12px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontSize:14, fontWeight:600}}>Continue to checkout</button>
+        </Card>
+      );
+
+      if (stage === 'details') {
+        const f = (label,key,props={}) => (
+          <div style={{marginBottom:8}}>
+            <div style={{fontSize:10, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.05em', textTransform:'uppercase', marginBottom:3}}>{label}</div>
+            <input value={addr[key]||''} onChange={e=>set(key,e.target.value)} {...props} style={{width:'100%', padding:'9px 11px', border:'1px solid var(--rule)', borderRadius:9, fontSize:14, fontFamily:'inherit', outline:'none'}}/>
+          </div>
+        );
+        return (
+          <Card>
+            <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:8}}>
+              <div>{f('First name','firstName')}</div><div>{f('Last name','lastName')}</div>
+            </div>
+            {f('Address','addressLine1')}
+            <div style={{display:'grid', gridTemplateColumns:'2fr 1fr 1fr', gap:8}}>
+              <div>{f('City','city')}</div>
+              <div>
+                <div style={{fontSize:10, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.05em', textTransform:'uppercase', marginBottom:3}}>State</div>
+                <select value={addr.province} onChange={e=>set('province', e.target.value)} style={{width:'100%', padding:'9px 7px', border:'1px solid var(--rule)', borderRadius:9, fontSize:14, fontFamily:'inherit', background:'white'}}>{US_STATES.map(s=><option key={s} value={s}>{s}</option>)}</select>
+              </div>
+              <div>{f('ZIP','postalCode',{inputMode:'numeric'})}</div>
+            </div>
+            <div style={{marginTop:8, padding:'10px 12px', background:'var(--surface-2)', borderRadius:10}}>
+              <div style={{fontSize:10, letterSpacing:'.08em', textTransform:'uppercase', color:'var(--brand)', fontWeight:600}}>Payment · sandbox card</div>
+              <div className="mono" style={{fontSize:13, color:'var(--ink-2)', marginTop:3}}>4242 4242 4242 4242 · 12/34 · 444</div>
+            </div>
+            <button disabled={!detailsValid} onClick={()=>setStage('processing')} style={{width:'100%', marginTop:12, padding:'12px', borderRadius:12, border:'none', background:detailsValid?'var(--accent)':'var(--surface-3)', color:detailsValid?'white':'var(--ink-4)', fontSize:14, fontWeight:600}}>Place order · {money(total)}</button>
+          </Card>
+        );
+      }
+
+      if (stage === 'processing') return (
+        <Card>
+          {ORDER_STEPS.map((st,i) => {
+            const done = i < stepIdx, active = i === stepIdx;
+            if (i > stepIdx) return null;
+            return (
+              <div key={i} style={{display:'flex', alignItems:'center', gap:10, padding:'7px 0', opacity: done?0.65:1}}>
+                <div style={{width:22, height:22, borderRadius:'50%', background:done?'var(--brand)':'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                  {done ? <Icon.Check size={12} c="white"/> : <div className="typing" style={{transform:'scale(0.7)'}}><span></span><span></span><span></span></div>}
+                </div>
+                <div style={{fontSize:14, color:done?'var(--ink-3)':'var(--ink)', fontWeight:active?600:400}}>{st.label}</div>
+                <div className="mono" style={{marginLeft:'auto', fontSize:9, color:'var(--ink-4)'}}>{st.s}</div>
+              </div>
+            );
+          })}
+        </Card>
+      );
+
+      // done
+      return (
+        <Card>
+          <div style={{textAlign:'center', padding:'4px 0 10px'}}>
+            <div style={{width:48, height:48, borderRadius:'50%', background:'var(--brand)', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:10}}><Icon.Check size={24} c="white"/></div>
+            <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>Order placed</div>
+            <div style={{fontSize:13, color:'var(--ink-3)', marginTop:2}}>Confirmation <span className="mono" style={{color:'var(--brand)'}}>{order.num}</span></div>
+          </div>
+          <div style={{borderTop:'0.5px solid var(--rule)', paddingTop:10, fontSize:13, color:'var(--ink-2)'}}>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>{order.items} item{order.items>1?'s':''}</span><span className="mono">{money(order.total)}</span></div>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Est. delivery</span><span>{order.eta}</span></div>
+          </div>
+          <div style={{marginTop:12, fontSize:11, color:'var(--ink-3)', lineHeight:1.5, textAlign:'center'}}>Simulated CartAI order — no real money or product. Swap in your live CartAI key to make it real.</div>
+        </Card>
+      );
+    };
+
+    const ORDER_INTENT = /\b(check\s?out|place (an |my )?order|order (my stack|these|now|my supplements)|buy (my stack|these|my supplements)|order my stack)\b/i;
+
     const Ask = ({ stack, onNav }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
@@ -376,10 +536,22 @@
       const scrollRef = useRef(null);
       useEffect(() => { if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; }, [messages, busy]);
 
+      // Drop the simulated order card into the conversation.
+      const startOrder = (userText) => {
+        setMessages(m => [
+          ...m,
+          ...(userText ? [{ role:'user', content:userText }] : []),
+          { role:'assistant', content:"Let's get these ordered — here's your cart. 🛒" },
+          { role:'assistant', kind:'order' },
+        ]);
+      };
+
       const send = async (q) => {
         const question = (q ?? input).trim();
         if (!question || busy) return;
         setInput('');
+        // Purchase intent → run the in-chat (simulated) checkout instead of the LLM.
+        if (ORDER_INTENT.test(question)) { startOrder(question); return; }
         const next = [...messages, { role:'user', content:question }];
         setMessages(next);
         setBusy(true);
@@ -419,7 +591,10 @@
             <div style={{padding:'8px 18px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
               <button onClick={()=>onNav('home')} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Back size={16} c="var(--ink-2)"/></button>
               <div style={{fontSize:13, color:'var(--ink-3)', fontWeight:500}}>Ask Balance</div>
-              <button onClick={()=>setMessages([])} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Plus size={16} c="var(--ink-2)"/></button>
+              <div style={{display:'flex', gap:8}}>
+                <button onClick={()=>startOrder()} title="Order your stack (test)" style={{width:36, height:36, borderRadius:'50%', background:'var(--brand)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><CartIcon size={16} c="white"/></button>
+                <button onClick={()=>setMessages([])} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Plus size={16} c="var(--ink-2)"/></button>
+              </div>
             </div>
 
             {messages.length===0 && (
@@ -428,6 +603,7 @@
                 <div className="serif" style={{fontSize:24, textAlign:'center', color:'var(--ink)', lineHeight:1.2}}>Ask anything about<br/><em style={{color:'var(--brand)'}}>supplements & wellbeing</em>.</div>
                 <div style={{fontSize:13, color:'var(--ink-3)', textAlign:'center', marginTop:10}}>Answers come grounded in 18 evidence-based guides.</div>
                 <div style={{display:'flex', flexDirection:'column', gap:8, marginTop:22}}>
+                  <button onClick={()=>startOrder('Order my stack')} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--brand-deep)', background:'var(--brand-soft)', display:'flex', alignItems:'center', gap:10, fontWeight:600}}><CartIcon size={16} c="var(--brand)"/> Order my stack</button>
                   {suggestions.map(s => <button key={s} onClick={()=>send(s)} className="bal-card" style={{border:'none', textAlign:'left', padding:'13px 15px', fontSize:14, color:'var(--ink-2)'}}>{s}</button>)}
                 </div>
               </div>
@@ -437,6 +613,8 @@
               <div key={i} style={{padding:'14px 18px 0', display:'flex', justifyContent:'flex-end'}}>
                 <div style={{maxWidth:'82%', background:'var(--brand)', color:'white', padding:'11px 15px', borderRadius:'20px 20px 4px 20px', fontSize:14, lineHeight:1.4}}>{m.content}</div>
               </div>
+            ) : m.kind==='order' ? (
+              <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow stack={stack}/></div>
             ) : (
               <div key={i} style={{padding:'16px 18px 0'}}>
                 <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>

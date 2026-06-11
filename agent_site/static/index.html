@@ -228,6 +228,14 @@
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const doneCount = stack.filter(s => taken.includes(s.name)).length;
+      // Classic flow has no onboarding, so Home must look populated for a fresh
+      // user: fall back to a featured set when no goals have been picked yet.
+      const FEATURED_SLUGS = ['sleep','memory-focus','stress-anxiety','muscle-gain','cardiovascular-health','joint-health'];
+      const featured = FEATURED_SLUGS.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
+      const hasGoals = goalTopics.length > 0;
+      const heroTopic = goalTopics[0] || TOPIC_BY_SLUG['memory-focus'];
+      const chipTopics = hasGoals ? goalTopics.slice(0,3) : featured.slice(0,3);
+      const gridTopics = hasGoals ? goalTopics : featured;
       return (
         <div className="screen-root">
           <div className="scroll" style={{height:'100%', paddingBottom:110}}>
@@ -240,22 +248,20 @@
               <button onClick={()=>onNav('me')} style={{width:40, height:40, borderRadius:'50%', background:'var(--brand)', color:'white', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:600, border:'none'}}>Y</button>
             </div>
 
-            {goalTopics[0] && (
-              <div style={{padding:'16px 18px 0'}}>
-                <button onClick={()=>onOpenCategory(goalTopics[0].slug)} style={{display:'block', width:'100%', textAlign:'left', border:'none', background:'var(--brand)', color:'var(--brand-soft)', padding:20, borderRadius:22, position:'relative', overflow:'hidden'}}>
-                  <div style={{position:'absolute', right:-30, top:-30, width:160, height:160, borderRadius:'50%', background:'rgba(243,169,253,0.10)'}}/>
-                  <div style={{position:'absolute', right:18, top:18}}><window.BalLogoMark size={36} dark/></div>
-                  <div style={{position:'relative'}}>
-                    <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-soft)', fontWeight:600}}>Today's focus</div>
-                    <div className="serif" style={{fontSize:26, lineHeight:1.15, marginTop:10, maxWidth:'78%', color:'white'}}>Build your <em>{goalTopics[0].name}</em> stack.</div>
-                    <div style={{fontSize:13, color:'var(--brand-soft)', marginTop:10, maxWidth:'82%'}}>An AI-built, evidence-graded stack with how to take each one.</div>
-                    <div style={{display:'inline-flex', gap:8, marginTop:14, alignItems:'center', background:'rgba(255,255,255,0.14)', padding:'6px 12px', borderRadius:999}}>
-                      <span style={{fontSize:12, color:'white', fontWeight:600}}>Open guide</span><Icon.Chevron size={12} c="white"/>
-                    </div>
+            <div style={{padding:'16px 18px 0'}}>
+              <button onClick={()=>onOpenCategory(heroTopic.slug)} style={{display:'block', width:'100%', textAlign:'left', border:'none', background:'var(--brand)', color:'var(--brand-soft)', padding:20, borderRadius:22, position:'relative', overflow:'hidden'}}>
+                <div style={{position:'absolute', right:-30, top:-30, width:160, height:160, borderRadius:'50%', background:'rgba(243,169,253,0.10)'}}/>
+                <div style={{position:'absolute', right:18, top:18}}><window.BalLogoMark size={36} dark/></div>
+                <div style={{position:'relative'}}>
+                  <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-soft)', fontWeight:600}}>{hasGoals ? "Today's focus" : 'Featured guide'}</div>
+                  <div className="serif" style={{fontSize:26, lineHeight:1.15, marginTop:10, maxWidth:'78%', color:'white'}}>Build your <em>{heroTopic.name}</em> stack.</div>
+                  <div style={{fontSize:13, color:'var(--brand-soft)', marginTop:10, maxWidth:'82%'}}>An AI-built, evidence-graded stack with how to take each one.</div>
+                  <div style={{display:'inline-flex', gap:8, marginTop:14, alignItems:'center', background:'rgba(255,255,255,0.14)', padding:'6px 12px', borderRadius:999}}>
+                    <span style={{fontSize:12, color:'white', fontWeight:600}}>Open guide</span><Icon.Chevron size={12} c="white"/>
                   </div>
-                </button>
-              </div>
-            )}
+                </div>
+              </button>
+            </div>
 
             <div style={{padding:'18px 18px 0'}}>
               <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', border:'none', background:'var(--surface)', boxShadow:'var(--sh-card)', borderRadius:'var(--r-lg)', padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
@@ -264,25 +270,26 @@
                 <Icon.Mic size={18} c="var(--ink-3)"/>
               </button>
               <div style={{display:'flex', gap:8, marginTop:12, flexWrap:'wrap'}}>
-                {goalTopics.slice(0,3).map(t => (
+                {chipTopics.map(t => (
                   <button key={t.slug} onClick={()=>onOpenCategory(t.slug)} className="bal-pill light" style={{padding:'7px 12px', fontSize:12, border:'none'}}>{t.name}</button>
                 ))}
               </div>
             </div>
 
-            {goalTopics.length>0 && (
-              <div style={{padding:'22px 18px 0'}}>
-                <div className="serif" style={{fontSize:22, color:'var(--ink)', marginBottom:10}}>Your goals</div>
-                <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
-                  {goalTopics.map(t => { const Ic = Icon[t.icon]; return (
-                    <button key={t.slug} onClick={()=>onOpenCategory(t.slug)} className="bal-card" style={{border:'none', padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between', textAlign:'left'}}>
-                      <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic && <Ic size={18} c="var(--brand)"/>}</div>
-                      <div style={{fontSize:13, fontWeight:600, color:'var(--ink)'}}>{t.name}</div>
-                    </button>
-                  ); })}
-                </div>
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
+                <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>{hasGoals ? 'Your goals' : 'Popular guides'}</div>
+                <button onClick={()=>onNav('intake')} style={{fontSize:12, color:'var(--brand)', fontWeight:600, background:'none', border:'none'}}>{hasGoals ? 'Edit' : 'Personalize'}</button>
               </div>
-            )}
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
+                {gridTopics.map(t => { const Ic = Icon[t.icon]; return (
+                  <button key={t.slug} onClick={()=>onOpenCategory(t.slug)} className="bal-card" style={{border:'none', padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between', textAlign:'left'}}>
+                    <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic && <Ic size={18} c="var(--brand)"/>}</div>
+                    <div style={{fontSize:13, fontWeight:600, color:'var(--ink)'}}>{t.name}</div>
+                  </button>
+                ); })}
+              </div>
+            </div>
 
             <div style={{padding:'22px 18px 0'}}>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
@@ -906,7 +913,9 @@
       const [goals, setGoals] = useState(() => LS.get('bal_goals', []));
       const [stack, setStack] = useState(() => LS.get('bal_stack', []));
       const [taken, setTaken] = useState(() => LS.get('bal_taken', []));
-      const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
+      // Classic flow: open straight into the app (Today/Home). Onboarding is
+      // not a gate; goal personalization stays reachable via Profile → Edit goals.
+      const [flow, setFlow] = useState('app');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
       const [cache, setCache] = useState({});

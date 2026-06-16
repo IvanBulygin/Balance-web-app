@@ -25,7 +25,7 @@
       --ink:#050304; --ink-2:#3d3d3d; --ink-3:#7f7f7f; --ink-4:#a6a6a6; --rule:#e5e5e5;
       --c-cyan:#56b6c6; --c-blue:#3fa9f5; --c-indigo:#559bf0; --c-violet:#8e77e2; --c-magenta:#e978da; --c-pink:#f3a9fd;
       --brand:#5521e5; --brand-deep:#20056c; --brand-soft:#ece5fc; --accent:#e978da; --accent-soft:#fde2f8;
-      --aqua:#56b6c6; --green:#7ac97f; --green-soft:#d8f1da;
+      --aqua:#56b6c6; --green:#7ac97f; --green-soft:#d8f1da; --green-deep:#13a05c;
       --grad-balance: linear-gradient(95deg, #56b6c6 0%, #3fa9f5 22%, #559bf0 38%, #8e77e2 56%, #e978da 78%, #f3a9fd 100%);
       --grad-radial: radial-gradient(circle at 30% 30%, #f3a9fd 0%, #e978da 18%, #8e77e2 38%, #559bf0 60%, #3fa9f5 80%, #56b6c6 100%);
       --r-sm:12px; --r-md:18px; --r-lg:26px; --r-xl:32px;
@@ -626,6 +626,43 @@
       return { whole:false, item };
     };
 
+    // Supplements detected in an answer, rendered as a build-your-order list.
+    // Each row has a "+" to add it to the order; the order button at the bottom
+    // is grey/disabled until at least one is selected, then turns green.
+    // Module-scope so its selection state survives Ask re-renders.
+    const AnswerSupps = ({ supps, onOrder }) => {
+      const { Icon } = window;
+      const [sel, setSel] = useState(() => new Set());
+      const toggle = (id) => setSel(prev => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
+      const count = sel.size;
+      const order = () => onOrder(supps.filter(s => sel.has(s.id)).map(s => ({ name:s.n, tier:'Secondary', dose:'', iherb_url:suppIherbUrl(s) })));
+      return (
+        <div style={{marginLeft:34, marginTop:12}}>
+          <div style={{display:'flex', alignItems:'center', gap:6, marginBottom:8}}>
+            <CartIcon size={13} c="var(--brand)"/>
+            <span style={{fontSize:11, letterSpacing:'.08em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Build your order</span>
+          </div>
+          <div className="bal-card" style={{padding:'2px 0', border:'1px solid var(--rule)'}}>
+            {supps.map((s,i) => { const on = sel.has(s.id); return (
+              <div key={s.id} style={{display:'flex', alignItems:'center', gap:10, padding:'10px 14px', borderBottom:i<supps.length-1?'0.5px solid var(--rule)':'none'}}>
+                <div style={{flex:1, minWidth:0}}>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</div>
+                  <a href={suppIherbUrl(s)} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:3, fontSize:11, color:'var(--brand)', fontWeight:500, textDecoration:'none', marginTop:2}}>View on iHerb <ExternalIcon size={9} c="var(--brand)"/></a>
+                </div>
+                <button onClick={()=>toggle(s.id)} aria-pressed={on} aria-label={(on?'Remove ':'Add ')+s.n} style={{width:32, height:32, borderRadius:'50%', border:'none', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', background:on?'var(--green-deep)':'var(--brand-soft)', cursor:'pointer', transition:'background 150ms'}}>
+                  {on ? <Icon.Check size={15} c="white"/> : <Icon.Plus size={16} c="var(--brand)"/>}
+                </button>
+              </div>
+            ); })}
+          </div>
+          <button disabled={count===0} onClick={order} style={{width:'100%', marginTop:10, padding:'13px', borderRadius:14, border:'none', fontSize:15, fontWeight:600, display:'flex', alignItems:'center', justifyContent:'center', gap:8, background:count?'var(--green-deep)':'var(--surface-3)', color:count?'white':'var(--ink-4)', boxShadow:count?'0 6px 16px rgba(19,160,92,0.28)':'none', cursor:count?'pointer':'default', transition:'background 150ms, box-shadow 150ms'}}>
+            <CartIcon size={16} c={count?'white':'var(--ink-4)'}/>
+            {count ? `Order ${count} supplement${count>1?'s':''}` : 'Select supplements to order'}
+          </button>
+        </div>
+      );
+    };
+
     const Ask = ({ stack, onAdd, inStack, onNav }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
@@ -643,6 +680,16 @@
           ...(userText ? [{ role:'user', content:userText }] : []),
           { role:'assistant', content: itemName ? `On it — ordering ${itemName} via CartAI. 🛒` : "Let's get your stack ordered via CartAI. 🛒" },
           { role:'assistant', kind:'order', cart: resolved },
+        ]);
+      };
+
+      // Order a specific set of selected supplements from an answer's order list.
+      const orderItems = (items) => {
+        if (!items || !items.length) return;
+        setMessages(m => [
+          ...m,
+          { role:'assistant', content: `On it — ordering ${items.length} selected supplement${items.length>1?'s':''} via CartAI. 🛒` },
+          { role:'assistant', kind:'order', cart: items },
         ]);
       };
 
@@ -723,13 +770,12 @@
             ) : m.kind==='order' ? (
               <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow items={m.cart}/></div>
             ) : (() => {
-              // Extras (buy pills, sources, recommended-add, follow-ups) appear
-              // once the answer is complete — not on the actively-streaming one.
+              // Extras (the build-your-order supplement list, sources, follow-ups)
+              // appear once the answer is complete — not while it's streaming.
               const complete = m.content && !(busy && i === messages.length-1);
               const supps = complete ? detectSupps(m.content) : [];
               const prevUser = complete ? [...messages.slice(0,i)].reverse().find(x => x.role==='user') : null;
               const followups = complete ? generateFollowups(prevUser ? prevUser.content : '') : [];
-              const topSupp = supps.find(s => !inStack(s.n));
               return (
               <div key={i} style={{padding:'16px 18px 0'}}>
                 <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
@@ -741,23 +787,7 @@
                   {m.content ? fmt(m.content) : <div className="typing"><span></span><span></span><span></span></div>}
                 </div>
 
-                {supps.length>0 && (
-                  <div style={{marginLeft:34, marginTop:12}}>
-                    <div style={{display:'flex', alignItems:'center', gap:6, marginBottom:8}}><CartIcon size={13} c="var(--brand)"/><span style={{fontSize:11, letterSpacing:'.08em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Buy on iHerb</span></div>
-                    <div style={{display:'flex', flexWrap:'wrap', gap:6}}>
-                      {supps.map(s => (
-                        <a key={s.id} href={suppIherbUrl(s)} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:4, padding:'7px 12px', background:'var(--brand)', color:'white', borderRadius:999, fontSize:12, fontWeight:600, textDecoration:'none'}}>{s.n}<ExternalIcon size={10} c="white"/></a>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {topSupp && (
-                  <button onClick={()=>onAdd({ name:topSupp.n, tier:'Secondary', dose:'', iherb_url:suppIherbUrl(topSupp) }, 'From chat')} style={{marginLeft:34, marginTop:12, width:'calc(100% - 34px)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 16px', background:'var(--accent)', color:'white', border:'none', borderRadius:16, boxShadow:'0 6px 16px rgba(233,120,218,0.28)'}}>
-                    <span style={{textAlign:'left'}}><span style={{fontSize:10, letterSpacing:'.1em', textTransform:'uppercase', opacity:.85, display:'block'}}>Recommended</span><span className="serif" style={{fontSize:17, display:'block', marginTop:2}}>Add {topSupp.n} to my stack</span></span>
-                    <span style={{width:34, height:34, borderRadius:'50%', background:'rgba(255,255,255,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Plus size={16} c="white"/></span>
-                  </button>
-                )}
+                {supps.length>0 && <AnswerSupps supps={supps} onOrder={orderItems}/>}
 
                 {m.sources && m.sources.length>0 && complete && (
                   <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:6}}>

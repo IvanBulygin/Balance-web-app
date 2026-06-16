@@ -221,18 +221,21 @@
             <div style={{position:'absolute', left:-60, bottom:120, width:220, height:220, borderRadius:'50%', background:'rgba(86,182,198,0.10)'}}/>
           </div>
           <div style={{position:'relative', height:'100%', padding:'70px 28px 40px', display:'flex', flexDirection:'column', color:'var(--brand-soft)'}}>
-            <window.BalLogo size={22} variant="mono" color="white"/>
+            <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:6}}>
+              <window.BalLogo size={22} variant="mono" color="white"/>
+              <div style={{fontSize:13, letterSpacing:'0.04em', color:'var(--brand-soft)', fontWeight:500}}>Your Wellness Buddy</div>
+            </div>
             <div style={{display:'flex', justifyContent:'center', marginTop:36, position:'relative'}}>
               <div style={{width:160, height:160, borderRadius:'50%', background:'radial-gradient(circle, rgba(243,169,253,0.5) 0%, rgba(142,119,226,0.2) 50%, transparent 75%)', filter:'blur(8px)', position:'absolute'}}/>
               <window.BalLogoMark size={140} glow/>
             </div>
             <div style={{flex:1, display:'flex', flexDirection:'column', justifyContent:'flex-end'}}>
-              <div style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--brand-soft)', fontWeight:600, marginBottom:14}}>Science-backed · 18 guides</div>
+              <div style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--brand-soft)', fontWeight:600, marginBottom:14}}>Science Backed Supplements Guide</div>
               <div className="serif" style={{fontSize:38, lineHeight:1.12, color:'white', paddingBottom:6}}>
-                What your body needs,<br/><em style={{color:'var(--c-pink)'}}>backed by studies</em>.
+                What your body really needs,<br/><em style={{color:'var(--c-pink)'}}>no marketing and BS</em>.
               </div>
               <div style={{fontSize:14, color:'var(--brand-soft)', marginTop:16, lineHeight:1.5, maxWidth:'90%'}}>
-                Pick a goal and get a ranked supplement stack — dose, timing, evidence tier, and a link to buy.
+                Pick your health goals and full supplement stack — dose, timing, evidence tier, and a link to buy.
               </div>
               <div style={{marginTop:24, display:'flex', flexDirection:'column', gap:10}}>
                 <button onClick={onStart} style={{background:'var(--accent)', color:'white', padding:'15px 20px', borderRadius:14, display:'flex', alignItems:'center', justifyContent:'space-between', boxShadow:'0 10px 26px rgba(233,120,218,0.35)', border:'none'}}>
@@ -1230,9 +1233,10 @@
       const [goals, setGoals] = useState(() => LS.get('bal_goals', []));
       const [stack, setStack] = useState(() => LS.get('bal_stack', []));
       const [taken, setTaken] = useState(() => LS.get('bal_taken', []));
-      // Classic flow: open straight into the app (Today/Home). Onboarding is
-      // not a gate; goal personalization stays reachable via Profile → Edit goals.
-      const [flow, setFlow] = useState('app');
+      // New users land on the welcome screen first; returning (onboarded) users
+      // open straight into the app (Today/Home). Goal personalization also stays
+      // reachable later via Profile → Edit goals.
+      const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
       const [cache, setCache] = useState({});

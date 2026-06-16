@@ -200,9 +200,16 @@
       {words:['olive leaf'],id:'oliveleaf',n:'Olive Leaf'},{words:['mct oil','medium-chain'],id:'mct',n:'MCT Oil'},
       {words:['iodine','kelp'],id:'iodine',n:'Iodine'},
     ];
+    // Precompile a word-boundary matcher per keyword so detection requires the
+    // term to appear as a real token — not as a substring of another word
+    // (e.g. "d3" inside "d3-times", or "maca" inside "unmaca-like"). This keeps
+    // the detected list aligned with what the answer actually recommends.
+    SUPP_DETECT.forEach(s => {
+      s._res = s.words.map(w => new RegExp('(?:^|[^a-z0-9])' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:[^a-z0-9]|$)'));
+    });
     const detectSupps = (text) => {
       const t = (text||'').toLowerCase(); const found = []; const seen = new Set();
-      for (const s of SUPP_DETECT) { if (seen.has(s.id)) continue; if (s.words.some(w => t.includes(w))) { found.push(s); seen.add(s.id); } }
+      for (const s of SUPP_DETECT) { if (seen.has(s.id)) continue; if (s._res.some(re => re.test(t))) { found.push(s); seen.add(s.id); } }
       return found;
     };
     const generateFollowups = (question) => {
@@ -488,14 +495,19 @@
       </div>
     );
 
-    const OrderFlow = ({ items }) => {
+    const OrderFlow = ({ items, answer }) => {
       const { Icon } = window;
-      const cart = (items && items.length) ? items : SAMPLE_CART;
+      const fullCart = (items && items.length) ? items : SAMPLE_CART;
       const usingSample = !(items && items.length);
       const [stage, setStage] = useState('cart');          // cart | details | processing | done
       const [addr, setAddr] = useState(() => ({ ...blankAddress(), ...LS.get('bal_addr', {}) }));
       const [stepIdx, setStepIdx] = useState(0);
       const [order, setOrder] = useState(null);
+      // Double-check: every line item starts approved; the user can untick any
+      // before checkout so the order matches exactly what they want to buy.
+      const [confirmed, setConfirmed] = useState(() => new Set(fullCart.map((_,i)=>i)));
+      const toggleItem = (i) => setConfirmed(prev => { const n = new Set(prev); n.has(i) ? n.delete(i) : n.add(i); return n; });
+      const cart = useMemo(() => fullCart.filter((_,i)=>confirmed.has(i)), [fullCart, confirmed]);
 
       useEffect(() => { LS.set('bal_addr', addr); }, [addr]);
       const set = (k,v) => setAddr(a => ({ ...a, [k]: v }));
@@ -526,22 +538,24 @@
       if (stage === 'cart') return (
         <OrderCard>
           {usingSample && <div style={{fontSize:12, color:'var(--ink-3)', marginBottom:10}}>Your stack was empty, so here's a sample cart you can order.</div>}
-          {cart.map((it,i) => (
-            <div key={i} style={{display:'flex', alignItems:'center', padding:'8px 0', borderBottom:i<cart.length-1?'0.5px solid var(--rule)':'none'}}>
-              <div className={`ev-badge ${GRADE[it.tier]||'c'}`} style={{marginRight:10}}>{GRADE_LETTER[it.tier]||'·'}</div>
-              <div style={{flex:1}}>
-                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{it.name}</div>
+          <div style={{fontSize:12, color:'var(--ink-3)', marginBottom:8}}>{answer ? `Double-check the ${fullCart.length} supplement${fullCart.length>1?'s':''} from the answer before ordering — untick anything you don't want.` : 'Double-check your order — untick anything you don’t want before checkout.'}</div>
+          {fullCart.map((it,i) => { const on = confirmed.has(i); return (
+            <div key={i} style={{display:'flex', alignItems:'center', gap:10, padding:'8px 0', borderBottom:i<fullCart.length-1?'0.5px solid var(--rule)':'none', opacity:on?1:0.45}}>
+              <button onClick={()=>toggleItem(i)} aria-pressed={on} aria-label={(on?'Remove ':'Include ')+it.name} style={{width:24, height:24, borderRadius:7, flexShrink:0, border:on?'none':'1.6px solid var(--rule)', background:on?'var(--green-deep)':'transparent', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', padding:0}}>{on && <Icon.Check size={13} c="white"/>}</button>
+              <div className={`ev-badge ${GRADE[it.tier]||'c'}`}>{GRADE_LETTER[it.tier]||'·'}</div>
+              <div style={{flex:1, minWidth:0}}>
+                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', textDecoration:on?'none':'line-through'}}>{it.name}</div>
                 <div style={{fontSize:12, color:'var(--ink-3)'}}>{it.dose || ''}</div>
               </div>
-              <div className="mono" style={{fontSize:13, color:'var(--ink-2)'}}>{money(fakePrice(it.name))}</div>
+              <div className="mono" style={{fontSize:13, color:on?'var(--ink-2)':'var(--ink-4)'}}>{money(fakePrice(it.name))}</div>
             </div>
-          ))}
+          ); })}
           <div style={{marginTop:10, fontSize:13, color:'var(--ink-2)'}}>
-            <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Subtotal</span><span className="mono">{money(subtotal)}</span></div>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Subtotal · {cart.length} item{cart.length===1?'':'s'}</span><span className="mono">{money(subtotal)}</span></div>
             <div style={{display:'flex', justifyContent:'space-between', padding:'2px 0'}}><span>Shipping</span><span className="mono">{money(shipping)}</span></div>
             <div style={{display:'flex', justifyContent:'space-between', padding:'6px 0 0', fontWeight:700, color:'var(--ink)'}}><span>Total</span><span className="mono">{money(total)}</span></div>
           </div>
-          <button onClick={()=>setStage('details')} style={{width:'100%', marginTop:14, padding:'12px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontSize:14, fontWeight:600}}>Continue to checkout</button>
+          <button disabled={cart.length===0} onClick={()=>setStage('details')} style={{width:'100%', marginTop:14, padding:'12px', borderRadius:12, border:'none', background:cart.length?'var(--brand)':'var(--surface-3)', color:cart.length?'white':'var(--ink-4)', fontSize:14, fontWeight:600, cursor:cart.length?'pointer':'default'}}>{cart.length ? `Continue to checkout · ${cart.length} item${cart.length>1?'s':''}` : 'Select at least one supplement'}</button>
         </OrderCard>
       );
 
@@ -630,12 +644,12 @@
     // Each row has a "+" to add it to the order; the order button at the bottom
     // is grey/disabled until at least one is selected, then turns green.
     // Module-scope so its selection state survives Ask re-renders.
-    const AnswerSupps = ({ supps, onOrder }) => {
+    const AnswerSupps = ({ supps, answer, onOrder }) => {
       const { Icon } = window;
       const [sel, setSel] = useState(() => new Set());
       const toggle = (id) => setSel(prev => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
       const count = sel.size;
-      const order = () => onOrder(supps.filter(s => sel.has(s.id)).map(s => ({ name:s.n, tier:'Secondary', dose:'', iherb_url:suppIherbUrl(s) })));
+      const order = () => onOrder(supps.filter(s => sel.has(s.id)).map(s => ({ name:s.n, tier:'Secondary', dose:'', iherb_url:suppIherbUrl(s) })), answer);
       return (
         <div style={{marginLeft:34, marginTop:12}}>
           <div style={{display:'flex', alignItems:'center', gap:6, marginBottom:8}}>
@@ -684,12 +698,13 @@
       };
 
       // Order a specific set of selected supplements from an answer's order list.
-      const orderItems = (items) => {
+      // `answer` is carried through so the order card can show the double-check.
+      const orderItems = (items, answer) => {
         if (!items || !items.length) return;
         setMessages(m => [
           ...m,
-          { role:'assistant', content: `On it — ordering ${items.length} selected supplement${items.length>1?'s':''} via CartAI. 🛒` },
-          { role:'assistant', kind:'order', cart: items },
+          { role:'assistant', content: `Review your order below — confirm the supplement${items.length>1?'s':''} you want, then check out. 🛒` },
+          { role:'assistant', kind:'order', cart: items, answer },
         ]);
       };
 
@@ -768,7 +783,7 @@
                 <div style={{maxWidth:'82%', background:'var(--brand)', color:'white', padding:'11px 15px', borderRadius:'20px 20px 4px 20px', fontSize:14, lineHeight:1.4}}>{m.content}</div>
               </div>
             ) : m.kind==='order' ? (
-              <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow items={m.cart}/></div>
+              <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow items={m.cart} answer={m.answer}/></div>
             ) : (() => {
               // Extras (the build-your-order supplement list, sources, follow-ups)
               // appear once the answer is complete — not while it's streaming.
@@ -787,7 +802,7 @@
                   {m.content ? fmt(m.content) : <div className="typing"><span></span><span></span><span></span></div>}
                 </div>
 
-                {supps.length>0 && <AnswerSupps supps={supps} onOrder={orderItems}/>}
+                {supps.length>0 && <AnswerSupps supps={supps} answer={m.content} onOrder={orderItems}/>}
 
                 {m.sources && m.sources.length>0 && complete && (
                   <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:6}}>

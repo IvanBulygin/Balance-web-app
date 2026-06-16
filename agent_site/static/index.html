@@ -9,12 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400..900,30..100&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    @font-face { font-family:'Priego'; font-weight:300; src:url('/static/fonts/Priego-Light.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:400; src:url('/static/fonts/Priego-Regular.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:500; src:url('/static/fonts/Priego-Medium.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:600; src:url('/static/fonts/Priego-SemiBold.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:700; src:url('/static/fonts/Priego-Bold.otf') format('opentype'); font-display:swap; }
-    @font-face { font-family:'Priego'; font-weight:800; src:url('/static/fonts/Priego-ExtraBold.otf') format('opentype'); font-display:swap; }
+    /* The free/demo Priego only watermarks a fixed set of glyphs (the digit 4 and
+       most punctuation/symbols). unicode-range limits Priego to its clean glyphs
+       (letters, digits except 4, and basic punctuation); watermarked characters
+       fall back to the next serif in the stack, so no watermark is ever shown. */
+    @font-face { font-family:'Priego'; font-weight:300; src:url('/static/fonts/Priego-Light.otf') format('opentype'); font-display:swap; unicode-range:U+0020, U+002C, U+002E, U+0030-0033, U+0035-003B, U+003F, U+0041-005A, U+0061-007A; }
+    @font-face { font-family:'Priego'; font-weight:400; src:url('/static/fonts/Priego-Regular.otf') format('opentype'); font-display:swap; unicode-range:U+0020, U+002C, U+002E, U+0030-0033, U+0035-003B, U+003F, U+0041-005A, U+0061-007A; }
+    @font-face { font-family:'Priego'; font-weight:500; src:url('/static/fonts/Priego-Medium.otf') format('opentype'); font-display:swap; unicode-range:U+0020, U+002C, U+002E, U+0030-0033, U+0035-003B, U+003F, U+0041-005A, U+0061-007A; }
+    @font-face { font-family:'Priego'; font-weight:600; src:url('/static/fonts/Priego-SemiBold.otf') format('opentype'); font-display:swap; unicode-range:U+0020, U+002C, U+002E, U+0030-0033, U+0035-003B, U+003F, U+0041-005A, U+0061-007A; }
+    @font-face { font-family:'Priego'; font-weight:700; src:url('/static/fonts/Priego-Bold.otf') format('opentype'); font-display:swap; unicode-range:U+0020, U+002C, U+002E, U+0030-0033, U+0035-003B, U+003F, U+0041-005A, U+0061-007A; }
+    @font-face { font-family:'Priego'; font-weight:800; src:url('/static/fonts/Priego-ExtraBold.otf') format('opentype'); font-display:swap; unicode-range:U+0020, U+002C, U+002E, U+0030-0033, U+0035-003B, U+003F, U+0041-005A, U+0061-007A; }
 
     :root {
       --bg:#ffffff; --bg-2:#f7f7f7; --surface:#ffffff; --surface-2:#fafafa; --surface-3:#f0f0f3;

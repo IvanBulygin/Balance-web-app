@@ -1,0 +1,29 @@
+{
+  "_about": "Golden evaluation set for the Balance chat RAG pipeline. Each case maps a user query to the guide it should retrieve and the key supplements a correct answer must surface. 'must_include' is a curated subset of that guide's recommended supplements (the must-haves), not necessarily the full list. Queries are a deliberate mix of canonical phrasings and colloquial/paraphrased ones so retrieval improvements (query expansion, multi-guide injection, score normalization) show up as measurable gains. Supplement names are matched by alias + word boundary (see aliases in run_eval.py).",
+  "cases": [
+    { "id": "sleep-canonical", "query": "What supplements can help me sleep better?", "guide": "sleep", "must_include": ["Melatonin", "Lavender", "Ashwagandha", "Lemon Balm"] },
+    { "id": "sleep-colloquial", "query": "I can't fall asleep at night, what can I take?", "guide": "sleep", "must_include": ["Melatonin", "Lavender", "Ashwagandha"] },
+    { "id": "stress-canonical", "query": "What can I take to help with stress and anxiety?", "guide": "stress-anxiety", "must_include": ["Ashwagandha", "Saffron", "L-Theanine", "Lavender", "Magnesium"] },
+    { "id": "stress-colloquial", "query": "I feel anxious and on edge all the time", "guide": "stress-anxiety", "must_include": ["Ashwagandha", "Saffron", "L-Theanine"] },
+    { "id": "memory-canonical", "query": "How can I improve my memory and focus?", "guide": "memory-focus", "must_include": ["Caffeine", "L-Theanine", "Bacopa Monnieri", "Creatine"] },
+    { "id": "memory-colloquial", "query": "I keep getting brain fog and can't concentrate", "guide": "memory-focus", "must_include": ["Caffeine", "L-Theanine", "Bacopa Monnieri"] },
+    { "id": "energy-colloquial", "query": "How do I beat my afternoon energy crash?", "guide": "fat-loss", "must_include": ["Caffeine"] },
+    { "id": "muscle-canonical", "query": "Which supplements support muscle gain?", "guide": "muscle-gain", "must_include": ["Creatine", "Protein", "Beta-Alanine", "Citrulline"] },
+    { "id": "strength-colloquial", "query": "What should I take to get stronger in the gym?", "guide": "muscle-gain", "must_include": ["Creatine", "Protein", "Beta-Alanine"] },
+    { "id": "joints-canonical", "query": "Which supplements are recommended for joint health?", "guide": "joint-health", "must_include": ["Glucosamine", "Chondroitin", "Curcumin", "Boswellia", "Collagen"] },
+    { "id": "joints-colloquial", "query": "My knees ache, what helps with sore joints?", "guide": "joint-health", "must_include": ["Glucosamine", "Chondroitin", "Curcumin"] },
+    { "id": "bloodsugar-canonical", "query": "What helps with managing blood sugar levels?", "guide": "blood-sugar", "must_include": ["Berberine", "Chromium", "Cinnamon", "Inositol", "Fiber"] },
+    { "id": "cardio-canonical", "query": "Which supplements support cardiovascular health?", "guide": "cardiovascular-health", "must_include": ["Omega-3", "Garlic", "Nitrates", "Citrulline"] },
+    { "id": "testosterone-canonical", "query": "Which supplements can raise testosterone?", "guide": "testosterone", "must_include": ["Zinc", "Ashwagandha", "Fenugreek", "DHEA"] },
+    { "id": "testosterone-colloquial", "query": "How do I fix low T naturally?", "guide": "testosterone", "must_include": ["Zinc", "Ashwagandha", "Fenugreek"] },
+    { "id": "libido-canonical", "query": "What supplements help with libido?", "guide": "libido", "must_include": ["Maca", "Tongkat Ali", "Fenugreek", "Tribulus"] },
+    { "id": "mood-canonical", "query": "What can help with low mood and depression?", "guide": "mood-depression", "must_include": ["Omega-3", "Saffron", "Vitamin D", "Rhodiola"] },
+    { "id": "liver-canonical", "query": "Which supplements support liver health and detox?", "guide": "liver-health", "must_include": ["Milk Thistle", "NAC", "TUDCA", "SAMe"] },
+    { "id": "immunity-canonical", "query": "What should I take to support my immune system?", "guide": "allergies-immunity", "must_include": ["Vitamin C", "Vitamin D", "Zinc", "Echinacea"] },
+    { "id": "bone-canonical", "query": "Which supplements are good for bone health?", "guide": "bone-health", "must_include": ["Calcium", "Vitamin D", "Vitamin K", "Magnesium"] },
+    { "id": "fatloss-canonical", "query": "What supplements help with fat loss?", "guide": "fat-loss", "must_include": ["Caffeine", "Green Tea", "Protein", "Fiber"] },
+    { "id": "vegan-canonical", "query": "What supplements should vegans and vegetarians take?", "guide": "vegetarians-vegans", "must_include": ["Vitamin B12", "Omega-3", "Iron", "Vitamin D", "Iodine"] },
+    { "id": "aging-canonical", "query": "Which supplements support healthy aging?", "guide": "healthy-aging", "must_include": ["Creatine", "Vitamin D", "Protein", "Vitamin B12"] },
+    { "id": "offtopic-weather", "query": "What's the weather like today?", "guide": null, "must_include": [] }
+  ]
+}

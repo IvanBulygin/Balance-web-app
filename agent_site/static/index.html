@@ -303,31 +303,51 @@
     const productQuery = (s) => IHERB_PRODUCTS[s.id] || encodeURIComponent((s.n || '').toLowerCase());
 
     // Affiliate retailers, in preference order (highest commission first).
-    // `carries` is the set of supplement ids a retailer actually stocks; a null
-    // `carries` means "everything" (iHerb is the broad fallback). Momentous and
-    // Thorne carry a focused catalog, so we only link to them for products they
-    // really sell — otherwise the link would land on an empty search page.
-    const MOMENTOUS_CATALOG = new Set([
-      'creatine','protein','omega3','vitd3','magnesium','ltheanine','apigenin','tyrosine',
-      'alphagpc','tongkatali','zinc','rhodiola','ashwagandha','collagen','fiber','inositol','glycine',
-    ]);
-    const THORNE_CATALOG = new Set([
-      'magnesium','creatine','omega3','vitd3','zinc','berberine','curcumin','nac','quercetin',
-      'glucosamine','chondroitin','collagen','b12','k2','vitaminc','vitamine','ashwagandha','rhodiola',
-      'ltheanine','fivehtp','iron','probiotics','greentea','resveratrol','choline','betaine','glutamine',
-      'carnitine','b2','b3','b6','folate','calcium','selenium','chromium','boswellia','msm','betaalanine',
-      'citrulline','taurine','bcaa','fiber','melatonin','inositol','lysine','phosphatidylserine','glycine','cordyceps',
-    ]);
+    // Momentous & Thorne map a supplement id to a REAL product-page slug (only
+    // products they actually sell), so links land on the exact product. iHerb
+    // has a null product map → it's the broad search-based fallback for anything
+    // the partner retailers don't carry. (Slugs verified from Momentous'
+    // Shopify products.json and Thorne's sitemap, 2026-06.)
+    const MOMENTOUS_PRODUCTS = {
+      creatine:'creatine-monohydrate', protein:'essential-whey-protein', omega3:'omega-3',
+      vitd3:'vitamin-d3-2000-iu', magnesium:'magnesium-threonate', ltheanine:'l-theanine',
+      apigenin:'apigenin', tyrosine:'tyrosine', alphagpc:'alpha-gpc', tongkatali:'tongkat',
+      zinc:'zinc-picolinate', rhodiola:'rhodiola-rosea-extract', ashwagandha:'ashwagandha',
+      collagen:'collagen-peptides', fiber:'fiber-plus', inositol:'inositol', curcumin:'turmeric-ultra',
+    };
+    const THORNE_PRODUCTS = {
+      magnesium:'magnesium-bisglycinate', creatine:'creatine', omega3:'super-epa', vitd3:'vitamin-d3',
+      k2:'vitamin-d-k2-liquid', zinc:'zinc-picolinate', berberine:'berberine-500', curcumin:'meriva-sf',
+      nac:'nac-180', quercetin:'quercetin-phytosome', glucosamine:'glucosamine-chondroitin',
+      chondroitin:'glucosamine-chondroitin', collagen:'collagen-plus', b12:'methylcobalamin',
+      vitaminc:'ascorbic-acid', ashwagandha:'ashwagandha', rhodiola:'rhodiola', ltheanine:'theanine',
+      fivehtp:'5-hydroxytryptophan', iron:'iron-bisglycinate', probiotics:'floramend-prime-probiotic',
+      greentea:'green-tea-phytosome', resveratrol:'resveracel', choline:'phosphatidyl-choline',
+      glutamine:'l-glutamine', carnitine:'carnityl-reg', b2:'riboflavin-5-phosphate', b3:'niacinamide',
+      b6:'pyridoxal-5-phosphate-60-s-1', folate:'5-mthf-1-mg', calcium:'dicalcium-malate',
+      selenium:'selenomethionine', chromium:'chromium-picolinate', boswellia:'boswellia-phytosome',
+      betaalanine:'beta-alanine-sr', bcaa:'amino-complex-berry', fiber:'fibermend-trade',
+      melatonin:'melaton-3-trade', lysine:'l-lysine', phosphatidylserine:'iso-phos-reg', glycine:'glycine',
+    };
     const RETAILERS = [
-      { key:'momentous', name:'Momentous', carries:MOMENTOUS_CATALOG,
-        link:(q)=>{ let u='https://www.livemomentous.com/search?q='+q; if(MOMENTOUS_REF) u+='&ref='+MOMENTOUS_REF; return u; } },
-      { key:'thorne', name:'Thorne', carries:THORNE_CATALOG,
-        link:(q)=>{ let u='https://www.thorne.com/search?query='+q; if(THORNE_REF) u+='&utm_source='+THORNE_REF; return u; } },
-      { key:'iherb', name:'iHerb', carries:null,
+      { key:'momentous', name:'Momentous', products:MOMENTOUS_PRODUCTS,
+        link:(h)=>{ let u='https://www.livemomentous.com/products/'+h; if(MOMENTOUS_REF) u+='?ref='+MOMENTOUS_REF; return u; } },
+      { key:'thorne', name:'Thorne', products:THORNE_PRODUCTS,
+        link:(h)=>{ let u='https://www.thorne.com/products/dp/'+h; if(THORNE_REF) u+='?utm_source='+THORNE_REF; return u; } },
+      { key:'iherb', name:'iHerb', products:null,
         link:(q)=>{ let u='https://www.iherb.com/search?kw='+q; if(IHERB_REF) u+='&rcode='+IHERB_REF; return u; } },
     ];
-    // All retailers (preference order) that stock supplement `s`.
-    const buyLinksFor = (s) => { const q = productQuery(s); return RETAILERS.filter(r => !r.carries || r.carries.has(s.id)).map(r => ({ key:r.key, name:r.name, url:r.link(q) })); };
+    // All retailers (preference order) that stock supplement `s`: partner
+    // retailers link to their real product page; iHerb uses a search query.
+    const buyLinksFor = (s) => {
+      const q = productQuery(s);
+      const out = [];
+      for (const r of RETAILERS) {
+        if (r.products) { const h = r.products[s.id]; if (h) out.push({ key:r.key, name:r.name, url:r.link(h) }); }
+        else out.push({ key:r.key, name:r.name, url:r.link(q) });
+      }
+      return out;
+    };
     // Preferred single buy URL — the highest-commission retailer that stocks it.
     const suppBuyUrl = (s) => buyLinksFor(s)[0].url;
     // Back-compat alias for existing call sites.

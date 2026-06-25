@@ -141,10 +141,15 @@
     );
     const greeting = () => { const h = new Date().getHours(); return h<12?'Good morning':h<18?'Good afternoon':'Good evening'; };
 
-    // ---- iHerb integration (ported from the classic chat) -----------------
-    // Curated supplement → iHerb search-query map, plus answer-text detection
-    // so chat replies surface "Buy on iHerb" pills and an add-to-stack CTA.
-    const IHERB_REF = ''; // set an affiliate rcode here to append &rcode=...
+    // ---- Retailer integration (iHerb + Momentous + Thorne) ----------------
+    // Curated supplement → search-query map, plus answer-text detection so chat
+    // replies surface "Buy" links and an order builder. The same query string is
+    // reused across retailers; only the base URL + affiliate ref differ.
+    // Set each *_REF to your real tracking code once the affiliate is approved
+    // (empty = a plain, untracked link).
+    const IHERB_REF = '';      // iHerb rcode → appended as &rcode=
+    const MOMENTOUS_REF = '';  // Momentous affiliate ref → appended as &ref=
+    const THORNE_REF = '';     // Thorne (Impact) ref → appended as &utm_source=
     const IHERB_PRODUCTS = {
       magnesium:'magnesium+glycinate', creatine:'creatine+monohydrate', omega3:'omega+3+fish+oil+epa+dha',
       vitd3:'vitamin+d3+2000+iu', ashwagandha:'ashwagandha+ksm-66', zinc:'zinc+picolinate', melatonin:'melatonin',
@@ -294,7 +299,49 @@
       if (q.includes('muscle') || q.includes('recovery')) return ['Loading phase needed?','Best timing around workouts?','Any water retention?'];
       return ['Tell me more','Any side effects?','What about timing?','Stack with my current supps?'];
     };
-    const suppIherbUrl = (s) => iherbProductUrl(s.id) || ('https://www.iherb.com/search?kw=' + encodeURIComponent(s.n));
+    // The search query for a supplement: its curated query, else its name.
+    const productQuery = (s) => IHERB_PRODUCTS[s.id] || encodeURIComponent((s.n || '').toLowerCase());
+
+    // Affiliate retailers, in preference order (highest commission first).
+    // `carries` is the set of supplement ids a retailer actually stocks; a null
+    // `carries` means "everything" (iHerb is the broad fallback). Momentous and
+    // Thorne carry a focused catalog, so we only link to them for products they
+    // really sell — otherwise the link would land on an empty search page.
+    const MOMENTOUS_CATALOG = new Set([
+      'creatine','protein','omega3','vitd3','magnesium','ltheanine','apigenin','tyrosine',
+      'alphagpc','tongkatali','zinc','rhodiola','ashwagandha','collagen','fiber','inositol','glycine',
+    ]);
+    const THORNE_CATALOG = new Set([
+      'magnesium','creatine','omega3','vitd3','zinc','berberine','curcumin','nac','quercetin',
+      'glucosamine','chondroitin','collagen','b12','k2','vitaminc','vitamine','ashwagandha','rhodiola',
+      'ltheanine','fivehtp','iron','probiotics','greentea','resveratrol','choline','betaine','glutamine',
+      'carnitine','b2','b3','b6','folate','calcium','selenium','chromium','boswellia','msm','betaalanine',
+      'citrulline','taurine','bcaa','fiber','melatonin','inositol','lysine','phosphatidylserine','glycine','cordyceps',
+    ]);
+    const RETAILERS = [
+      { key:'momentous', name:'Momentous', carries:MOMENTOUS_CATALOG,
+        link:(q)=>{ let u='https://www.livemomentous.com/search?q='+q; if(MOMENTOUS_REF) u+='&ref='+MOMENTOUS_REF; return u; } },
+      { key:'thorne', name:'Thorne', carries:THORNE_CATALOG,
+        link:(q)=>{ let u='https://www.thorne.com/search?query='+q; if(THORNE_REF) u+='&utm_source='+THORNE_REF; return u; } },
+      { key:'iherb', name:'iHerb', carries:null,
+        link:(q)=>{ let u='https://www.iherb.com/search?kw='+q; if(IHERB_REF) u+='&rcode='+IHERB_REF; return u; } },
+    ];
+    // All retailers (preference order) that stock supplement `s`.
+    const buyLinksFor = (s) => { const q = productQuery(s); return RETAILERS.filter(r => !r.carries || r.carries.has(s.id)).map(r => ({ key:r.key, name:r.name, url:r.link(q) })); };
+    // Preferred single buy URL — the highest-commission retailer that stocks it.
+    const suppBuyUrl = (s) => buyLinksFor(s)[0].url;
+    // Back-compat alias for existing call sites.
+    const suppIherbUrl = suppBuyUrl;
+    // Resolve a free-text supplement name to a detection entry, so server-provided
+    // items (which carry a name, not our id) can also get multi-retailer links.
+    const suppFromName = (name) => { const t = (name || '').toLowerCase(); return SUPP_DETECT.find(s => s._res.some(re => re.test(t))) || null; };
+    // Retailer links for a named item; falls back to a provided URL (e.g. the
+    // server's iHerb link) when the name isn't in our catalog.
+    const buyLinksForName = (name, fallbackUrl) => {
+      const s = suppFromName(name);
+      if (s) return buyLinksFor(s);
+      return [{ key:'iherb', name:'iHerb', url: fallbackUrl || ('https://www.iherb.com/search?kw=' + encodeURIComponent((name || '').toLowerCase())) }];
+    };
 
     // ============ Onboarding ============
     const Onboarding = ({ onStart }) => {
@@ -735,7 +782,11 @@
               <div key={s.id} style={{display:'flex', alignItems:'center', gap:10, padding:'10px 14px', borderBottom:i<supps.length-1?'0.5px solid var(--rule)':'none'}}>
                 <div style={{flex:1, minWidth:0}}>
                   <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</div>
-                  <a href={suppIherbUrl(s)} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:3, fontSize:11, color:'var(--brand)', fontWeight:500, textDecoration:'none', marginTop:2}}>View on iHerb <ExternalIcon size={9} c="var(--brand)"/></a>
+                  <div style={{display:'flex', flexWrap:'wrap', gap:6, marginTop:3}}>
+                    {buyLinksFor(s).map(r => (
+                      <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:3, fontSize:11, color:'var(--brand)', fontWeight:500, textDecoration:'none'}}>{r.name} <ExternalIcon size={9} c="var(--brand)"/></a>
+                    ))}
+                  </div>
                 </div>
                 <button onClick={()=>toggle(s.id)} aria-pressed={on} aria-label={(on?'Remove ':'Add ')+s.n} style={{width:32, height:32, borderRadius:'50%', border:'none', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', background:on?'var(--green-deep)':'var(--brand-soft)', cursor:'pointer', transition:'background 150ms'}}>
                   {on ? <Icon.Check size={15} c="white"/> : <Icon.Plus size={16} c="var(--brand)"/>}
@@ -1027,7 +1078,9 @@
                         <button onClick={()=>onAdd(s, title)} disabled={added} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
                           {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
                         </button>
-                        <a href={s.iherb_url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>iHerb <ExternalIcon c="var(--ink-2)"/></a>
+                        {buyLinksForName(s.name, s.iherb_url).map(r => (
+                          <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>{r.name} <ExternalIcon c="var(--ink-2)"/></a>
+                        ))}
                       </div>
                     </div>
                   ); })}
@@ -1055,7 +1108,7 @@
     const Checkout = ({ stack, onClose }) => {
       const { Icon } = window;
       const [addr, setAddr] = useState(() => ({ ...blankAddress(), ...LS.get('bal_addr', {}) }));
-      const [items, setItems] = useState(() => stack.map(s => ({ name: s.name, url: s.iherb_url, quantity: 1 })));
+      const [items, setItems] = useState(() => stack.map(s => ({ name: s.name, url: buyLinksForName(s.name, s.iherb_url)[0].url, quantity: 1 })));
       const [submitting, setSubmitting] = useState(false);
       const [error, setError] = useState(null);
       const [task, setTask] = useState(null);          // {taskId, ...}
@@ -1297,7 +1350,9 @@
                           <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
                           <div style={{fontSize:12, color:'var(--ink-3)', marginTop:1}}>{[s.dose, s.timing].filter(Boolean).join(' · ')}</div>
                         </div>
-                        <a href={s.iherb_url} target="_blank" rel="noopener noreferrer" style={{marginRight:6, padding:'6px 10px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:12, fontWeight:600, display:'inline-flex', alignItems:'center', gap:4}}>iHerb<ExternalIcon size={11} c="var(--ink-2)"/></a>
+                        {(() => { const r = buyLinksForName(s.name, s.iherb_url)[0]; return (
+                          <a href={r.url} target="_blank" rel="noopener noreferrer" style={{marginRight:6, padding:'6px 10px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:12, fontWeight:600, display:'inline-flex', alignItems:'center', gap:4}}>{r.name}<ExternalIcon size={11} c="var(--ink-2)"/></a>
+                        ); })()}
                         <button onClick={()=>onRemove(s.name)} style={{width:28, height:28, borderRadius:'50%', background:'var(--surface-3)', border:'none', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--ink-3)', fontSize:16, lineHeight:1}}>×</button>
                       </div>
                     ))}

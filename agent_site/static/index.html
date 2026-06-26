@@ -468,7 +468,7 @@
     };
 
     // ============ Home ============
-    const Home = ({ goals, stack, taken, onToggleTaken, onOpenCategory, onNav }) => {
+    const Home = ({ goals, stack, taken, onToggleTaken, onOpenCategory, onAsk, onNav }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const doneCount = stack.filter(s => taken.includes(s.name)).length;
@@ -482,7 +482,7 @@
       const gridTopics = hasGoals ? goalTopics : featured;
       return (
         <div className="screen-root">
-          <div className="scroll" style={{height:'100%', paddingBottom:110}}>
+          <div className="scroll" style={{height:'100%', paddingBottom:132}}>
             <div style={{height:54}}/>
             <div style={{padding:'14px 22px 8px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
               <div>
@@ -515,7 +515,7 @@
               </button>
               <div style={{display:'flex', gap:8, marginTop:12, flexWrap:'wrap'}}>
                 {chipTopics.map(t => (
-                  <button key={t.slug} onClick={()=>onOpenCategory(t.slug)} className="bal-pill light" style={{padding:'7px 12px', fontSize:12, border:'none'}}>{t.name}</button>
+                  <button key={t.slug} onClick={()=>onAsk('Best supplements for ' + t.name.toLowerCase() + '?')} className="bal-pill light" style={{padding:'7px 12px', fontSize:12, border:'none'}}>{t.name}</button>
                 ))}
               </div>
             </div>
@@ -837,12 +837,13 @@
       );
     };
 
-    const Ask = ({ stack, onAdd, inStack, onNav }) => {
+    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
       const [input, setInput] = useState('');
       const [busy, setBusy] = useState(false);
       const scrollRef = useRef(null);
+      const didInit = useRef(false);
       useEffect(() => { if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; }, [messages, busy]);
 
       // Drop the simulated CartAI order card into the conversation. `cart` is the
@@ -911,6 +912,9 @@
           setMessages(m => [...m, { role:'assistant', content:'⚠️ The assistant is temporarily unavailable — please try again in a moment.' }]);
         } finally { setBusy(false); }
       };
+
+      // A quick-search chip from Home seeds an initial question — auto-run it once.
+      useEffect(() => { if (!didInit.current && initialQuery) { didInit.current = true; send(initialQuery); } }, []);
 
       const suggestions = ['Best for sleep?','Afternoon energy','Stress relief','Muscle recovery','Recovery & detox'];
       return (
@@ -1452,6 +1456,7 @@
       const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
+      const [askQuery, setAskQuery] = useState(null);  // seeds a quick search into Ask
       const [cache, setCache] = useState({});
       const [checkoutOpen, setCheckoutOpen] = useState(false);
       const [checkoutEnabled, setCheckoutEnabled] = useState(false);
@@ -1473,8 +1478,11 @@
       const navTo = useCallback((k) => {
         const map = { home:'home', ask:'ask', stack:'stack', browse:'learn', me:'profile' };
         if (k==='intake') { setFlow('intake'); return; }
+        if (k==='ask') setAskQuery(null);  // opening Ask plainly = empty chat
         setScreen(map[k] || 'home');
       }, []);
+      // Quick-search: jump into Ask and auto-run a question (from a Home chip).
+      const askSearch = useCallback((q) => { setAskQuery(q); setScreen('ask'); }, []);
       const openCategory = useCallback((s) => { setSlug(s); setScreen('category'); }, []);
       const addToStack = useCallback((s, sourceTitle) => { setStack(prev => prev.some(x => x.name===s.name) ? prev : [...prev, { ...s, sourceTitle }]); }, []);
       const removeFromStack = useCallback((name) => setStack(prev => prev.filter(x => x.name!==name)), []);
@@ -1498,8 +1506,8 @@
       if (flow === 'onboard') return <Onboarding onStart={()=>setFlow('intake')}/>;
       if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
-      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
-      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo}/>;
+      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo}/>;
+      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onNav={navTo}/>;
       if (screen === 'stack') {
         if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;

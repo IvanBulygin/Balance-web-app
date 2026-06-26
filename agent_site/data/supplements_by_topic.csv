@@ -1,0 +1,142 @@
+#,Topic,Tier,Supplement
+1,Allergies & Immunity,Primary,Vitamin C
+1,Allergies & Immunity,Primary,Vitamin D
+1,Allergies & Immunity,Secondary,Zinc
+1,Allergies & Immunity,Promising,Echinacea
+1,Allergies & Immunity,Promising,Honey
+1,Allergies & Immunity,Promising,Spirulina
+1,Allergies & Immunity,Promising,Vitamin E
+1,Allergies & Immunity,Promising,Quercetin
+1,Allergies & Immunity,Promising,Nigella Sativa
+2,Blood Sugar,Primary,Fiber
+2,Blood Sugar,Secondary,Berberine
+2,Blood Sugar,Secondary,Inositol
+2,Blood Sugar,Secondary,Magnesium
+2,Blood Sugar,Secondary,Zinc
+2,Blood Sugar,Promising,Chromium
+2,Blood Sugar,Promising,Cinnamon
+3,Bone Health,Core,Protein
+3,Bone Health,Core,Vitamin D
+3,Bone Health,Core,Vitamin K
+3,Bone Health,Primary,Calcium
+3,Bone Health,Primary,Magnesium
+4,Cardiovascular Health,Primary,Cocoa
+4,Cardiovascular Health,Primary,Garlic
+4,Cardiovascular Health,Primary,Nitrates
+4,Cardiovascular Health,Secondary,L-Carnitine
+4,Cardiovascular Health,Secondary,Fish oil
+4,Cardiovascular Health,Secondary,Grape seed
+4,Cardiovascular Health,Secondary,Taurine
+4,Cardiovascular Health,Secondary,Venotropics
+4,Cardiovascular Health,Secondary,Arginine
+4,Cardiovascular Health,Promising,D-Ribose
+4,Cardiovascular Health,Promising,Olive leaf
+4,Cardiovascular Health,Promising,Pycnogenol
+4,Cardiovascular Health,Promising,Citrulline
+4,Cardiovascular Health,Promising,Spirulina
+4,Cardiovascular Health,Promising,Arjuna
+5,Fat Loss,Primary,Protein
+5,Fat Loss,Secondary,Caffeine
+5,Fat Loss,Secondary,Green tea
+5,Fat Loss,Promising,Yohimbine
+5,Fat Loss,Promising,L-Carnitine
+5,Fat Loss,Promising,5-HTP
+5,Fat Loss,Promising,Fiber
+5,Fat Loss,Promising,MCTs
+5,Fat Loss,Promising,Garcinia Cambogia
+5,Fat Loss,Promising,Irvingia Gabonensis
+5,Fat Loss,Promising,Green Coffee Extract
+5,Fat Loss,Promising,Berberine
+6,Healthy Aging,Primary,Blueberries
+6,Healthy Aging,Primary,Carnitine
+6,Healthy Aging,Primary,Protein
+6,Healthy Aging,Primary,Vitamin B12
+6,Healthy Aging,Primary,Vitamin D
+6,Healthy Aging,Secondary,Creatine
+6,Healthy Aging,Secondary,DHEA
+6,Healthy Aging,Secondary,Maca
+6,Healthy Aging,Secondary,Magnesium
+6,Healthy Aging,Secondary,Vitamin K
+6,Healthy Aging,Promising,Cholinergics
+6,Healthy Aging,Promising,Vitamin E
+7,Joint Health,Secondary,Boswellia Serrata
+7,Joint Health,Secondary,Collagen
+7,Joint Health,Secondary,Curcumin
+7,Joint Health,Secondary,Fish oil
+7,Joint Health,Promising,Chondroitin
+7,Joint Health,Promising,Glucosamine
+7,Joint Health,Promising,MSM
+7,Joint Health,Promising,Pycnogenol
+7,Joint Health,Promising,Saffron
+7,Joint Health,Promising,Vitamin C
+8,Libido,Primary,Maca
+8,Libido,Primary,Cocoa
+8,Libido,Secondary,Arginine
+8,Libido,Secondary,Yohimbine
+8,Libido,Promising,Tongkat Ali (Eurycoma)
+8,Libido,Promising,Fenugreek
+8,Libido,Promising,Procyanidins
+8,Libido,Promising,Tribulus Terrestris
+9,Liver Health,Primary,SAMe
+9,Liver Health,Secondary,Milk thistle
+9,Liver Health,Secondary,NAC
+9,Liver Health,Secondary,TUDCA
+9,Liver Health,Promising,Coffee
+9,Liver Health,Promising,Picrorhiza Kurroa
+9,Liver Health,Promising,Spirulina
+10,Memory & Focus,Primary,Blueberries
+10,Memory & Focus,Secondary,Bacopa Monnieri
+10,Memory & Focus,Secondary,Caffeine + L-Theanine
+10,Memory & Focus,Promising,Cholinergics
+10,Memory & Focus,Promising,Creatine
+10,Memory & Focus,Promising,Soy Isoflavones
+10,Memory & Focus,Promising,Uridine
+10,Memory & Focus,Promising,Atypical Caffeine Sources
+11,Mood & Depression,Primary,Omega-3
+11,Mood & Depression,Primary,Saffron
+11,Mood & Depression,Secondary,St. John's Wort
+11,Mood & Depression,Secondary,Vitamin D
+11,Mood & Depression,Promising,Rhodiola Rosea
+11,Mood & Depression,Promising,NAC
+11,Mood & Depression,Promising,Curcumin
+11,Mood & Depression,Promising,Zinc
+11,Mood & Depression,Promising,SAMe
+11,Mood & Depression,Promising,Magnesium
+12,Muscle Gain,Primary,Beta-alanine
+12,Muscle Gain,Primary,Creatine
+12,Muscle Gain,Primary,Protein
+12,Muscle Gain,Primary,Carbohydrates
+12,Muscle Gain,Primary,Caffeine
+12,Muscle Gain,Secondary,BCAAs
+12,Muscle Gain,Secondary,Citrulline
+12,Muscle Gain,Secondary,Nitrates
+12,Muscle Gain,Secondary,Sodium bicarbonate
+12,Muscle Gain,Promising,Ashwagandha
+12,Muscle Gain,Promising,Tart cherry
+12,Muscle Gain,Promising,Taurine
+13,Sleep,Secondary,Lavender
+13,Sleep,Secondary,Melatonin
+13,Sleep,Promising,Ashwagandha
+13,Sleep,Promising,Lemon Balm (Melissa officinalis)
+14,Stress & Anxiety,Secondary,Saffron
+14,Stress & Anxiety,Secondary,Lavender
+14,Stress & Anxiety,Secondary,Passionflower
+14,Stress & Anxiety,Promising,Curcumin
+14,Stress & Anxiety,Promising,Theanine
+14,Stress & Anxiety,Promising,Kava
+14,Stress & Anxiety,Promising,Ashwagandha
+14,Stress & Anxiety,Promising,Omega-3
+14,Stress & Anxiety,Promising,Magnesium
+15,Testosterone,Secondary,Zinc
+15,Testosterone,Secondary,DHEA
+15,Testosterone,Promising,Ashwagandha
+15,Testosterone,Promising,Fenugreek
+16,Vegetarians & Vegans,Primary,Carnitine
+16,Vegetarians & Vegans,Primary,Creatine
+16,Vegetarians & Vegans,Primary,Omega-3
+16,Vegetarians & Vegans,Primary,Vitamin B12
+16,Vegetarians & Vegans,Secondary,Iodine
+16,Vegetarians & Vegans,Secondary,Iron (with Vitamin C)
+16,Vegetarians & Vegans,Secondary,Protein
+16,Vegetarians & Vegans,Secondary,Vitamin D
+16,Vegetarians & Vegans,Promising,Beta-alanine

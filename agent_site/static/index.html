@@ -133,6 +133,96 @@
       { slug:'healthy-aging', name:'Aging', icon:'Sun', grade:'B' },
     ];
     const TOPIC_BY_SLUG = Object.fromEntries(TOPICS.map(t => [t.slug, t]));
+    // Every supplement recommended across the guides, with the categories it
+    // appears in (drives the Learn screen's Supplements tab + search).
+    const SUPPLEMENTS = [
+      {n:'5-HTP',t:['fat-loss']},
+      {n:'Arginine',t:['cardiovascular-health','libido']},
+      {n:'Arjuna',t:['cardiovascular-health']},
+      {n:'Ashwagandha',t:['muscle-gain','sleep','stress-anxiety','testosterone']},
+      {n:'Atypical Caffeine Sources',t:['memory-focus']},
+      {n:'Bacopa Monnieri',t:['memory-focus']},
+      {n:'BCAAs',t:['muscle-gain']},
+      {n:'Berberine',t:['blood-sugar','fat-loss']},
+      {n:'Beta-Alanine',t:['muscle-gain','vegetarians-vegans']},
+      {n:'Blueberries',t:['healthy-aging','memory-focus']},
+      {n:'Boswellia Serrata',t:['joint-health']},
+      {n:'Caffeine',t:['fat-loss','muscle-gain']},
+      {n:'Caffeine + L-Theanine',t:['memory-focus']},
+      {n:'Calcium',t:['bone-health']},
+      {n:'Carbohydrates',t:['muscle-gain']},
+      {n:'Carnitine',t:['healthy-aging','vegetarians-vegans']},
+      {n:'Cholinergics',t:['healthy-aging','memory-focus']},
+      {n:'Chondroitin',t:['joint-health']},
+      {n:'Chromium',t:['blood-sugar']},
+      {n:'Cinnamon',t:['blood-sugar']},
+      {n:'Citrulline',t:['cardiovascular-health','muscle-gain']},
+      {n:'Cocoa',t:['cardiovascular-health','libido']},
+      {n:'Coffee',t:['liver-health']},
+      {n:'Collagen',t:['joint-health']},
+      {n:'Creatine',t:['healthy-aging','memory-focus','muscle-gain','vegetarians-vegans']},
+      {n:'Curcumin',t:['joint-health','mood-depression','stress-anxiety']},
+      {n:'D-Ribose',t:['cardiovascular-health']},
+      {n:'DHEA',t:['healthy-aging','testosterone']},
+      {n:'Echinacea',t:['allergies-immunity']},
+      {n:'Fenugreek',t:['libido','testosterone']},
+      {n:'Fiber',t:['blood-sugar','fat-loss']},
+      {n:'Fish Oil',t:['cardiovascular-health','joint-health']},
+      {n:'Garcinia Cambogia',t:['fat-loss']},
+      {n:'Garlic',t:['cardiovascular-health']},
+      {n:'Glucosamine',t:['joint-health']},
+      {n:'Grape Seed',t:['cardiovascular-health']},
+      {n:'Green Coffee Extract',t:['fat-loss']},
+      {n:'Green Tea',t:['fat-loss']},
+      {n:'Honey',t:['allergies-immunity']},
+      {n:'Inositol',t:['blood-sugar']},
+      {n:'Iodine',t:['vegetarians-vegans']},
+      {n:'Iron',t:['vegetarians-vegans']},
+      {n:'Irvingia Gabonensis',t:['fat-loss']},
+      {n:'Kava',t:['stress-anxiety']},
+      {n:'L-Carnitine',t:['cardiovascular-health','fat-loss']},
+      {n:'L-Theanine',t:['stress-anxiety']},
+      {n:'Lavender',t:['sleep','stress-anxiety']},
+      {n:'Lemon Balm',t:['sleep']},
+      {n:'Maca',t:['healthy-aging','libido']},
+      {n:'Magnesium',t:['blood-sugar','bone-health','healthy-aging','mood-depression','stress-anxiety']},
+      {n:'MCTs',t:['fat-loss']},
+      {n:'Melatonin',t:['sleep']},
+      {n:'Milk Thistle',t:['liver-health']},
+      {n:'MSM',t:['joint-health']},
+      {n:'NAC',t:['liver-health','mood-depression']},
+      {n:'Nigella Sativa',t:['allergies-immunity']},
+      {n:'Nitrates',t:['cardiovascular-health','muscle-gain']},
+      {n:'Olive Leaf',t:['cardiovascular-health']},
+      {n:'Omega-3',t:['mood-depression','stress-anxiety','vegetarians-vegans']},
+      {n:'Passionflower',t:['stress-anxiety']},
+      {n:'Picrorhiza Kurroa',t:['liver-health']},
+      {n:'Procyanidins',t:['libido']},
+      {n:'Protein',t:['bone-health','fat-loss','healthy-aging','muscle-gain','vegetarians-vegans']},
+      {n:'Pycnogenol',t:['cardiovascular-health','joint-health']},
+      {n:'Quercetin',t:['allergies-immunity']},
+      {n:'Rhodiola Rosea',t:['mood-depression']},
+      {n:'Saffron',t:['joint-health','mood-depression','stress-anxiety']},
+      {n:'SAMe',t:['liver-health','mood-depression']},
+      {n:'Sodium Bicarbonate',t:['muscle-gain']},
+      {n:'Soy Isoflavones',t:['memory-focus']},
+      {n:'Spirulina',t:['allergies-immunity','cardiovascular-health','liver-health']},
+      {n:"St. John's Wort",t:['mood-depression']},
+      {n:'Tart Cherry',t:['muscle-gain']},
+      {n:'Taurine',t:['cardiovascular-health','muscle-gain']},
+      {n:'Tongkat Ali',t:['libido']},
+      {n:'Tribulus',t:['libido']},
+      {n:'TUDCA',t:['liver-health']},
+      {n:'Uridine',t:['memory-focus']},
+      {n:'Venotropics',t:['cardiovascular-health']},
+      {n:'Vitamin B12',t:['healthy-aging','vegetarians-vegans']},
+      {n:'Vitamin C',t:['allergies-immunity','joint-health']},
+      {n:'Vitamin D',t:['allergies-immunity','bone-health','healthy-aging','mood-depression','vegetarians-vegans']},
+      {n:'Vitamin E',t:['allergies-immunity','healthy-aging']},
+      {n:'Vitamin K',t:['bone-health','healthy-aging']},
+      {n:'Yohimbine',t:['fat-loss','libido']},
+      {n:'Zinc',t:['allergies-immunity','blood-sugar','mood-depression','testosterone']},
+    ];
     const GRADE = { Primary:'a', Secondary:'b', Promising:'c' };
     const GRADE_LETTER = { Primary:'A', Secondary:'B', Promising:'C' };
 
@@ -999,39 +1089,86 @@
     // ============ Learn ============
     const Learn = ({ onOpen, onNav }) => {
       const { Icon, Tabbar } = window;
+      const [mode, setMode] = useState('topics');   // 'topics' | 'supplements'
+      const [q, setQ] = useState('');
+      const query = q.trim().toLowerCase();
+      // Results update live as you type (instant client-side filter).
+      const topics = TOPICS.filter(t => !query || t.name.toLowerCase().includes(query) || t.slug.replace(/-/g,' ').includes(query));
+      const supps = SUPPLEMENTS.filter(s => !query || s.n.toLowerCase().includes(query) || s.t.some(slug => (TOPIC_BY_SLUG[slug]?.name||'').toLowerCase().includes(query)));
+      const seg = (k, label, count) => (
+        <button onClick={()=>setMode(k)} style={{flex:1, padding:'9px 0', borderRadius:9, border:'none', cursor:'pointer', background: mode===k?'white':'transparent', color: mode===k?'var(--brand)':'var(--ink-3)', fontWeight:600, fontSize:13, boxShadow: mode===k?'var(--sh-1)':'none', transition:'background 150ms'}}>{label} <span style={{opacity:.55}}>{count}</span></button>
+      );
+      const empty = (
+        <div style={{textAlign:'center', padding:'48px 20px', color:'var(--ink-3)'}}>
+          <div style={{fontSize:15, fontWeight:600, color:'var(--ink-2)'}}>No matches</div>
+          <div style={{fontSize:13, marginTop:4}}>Nothing here for “{q}”. Try another term.</div>
+        </div>
+      );
       return (
         <div className="screen-root">
           <div className="scroll" style={{height:'100%', paddingBottom:130}}>
             <div style={{height:54}}/>
             <div style={{padding:'8px 22px'}}>
               <div className="serif" style={{fontSize:34, lineHeight:1, color:'var(--ink)'}}>Learn</div>
-              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:4}}>{TOPICS.length} evidence-based guides</div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:4}}>{TOPICS.length} categories · {SUPPLEMENTS.length} supplements</div>
             </div>
+            {/* Live search */}
             <div style={{padding:'14px 18px 0'}}>
               <div style={{background:'var(--surface)', borderRadius:14, padding:'10px 14px', display:'flex', alignItems:'center', gap:10, boxShadow:'var(--sh-1)'}}>
-                <Icon.Search size={16} c="var(--ink-3)"/><div style={{flex:1, fontSize:14, color:'var(--ink-3)'}}>Search guides or supplements</div>
+                <Icon.Search size={16} c="var(--ink-3)"/>
+                <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search categories or supplements" style={{flex:1, border:'none', outline:'none', background:'transparent', fontSize:14, fontFamily:'inherit', color:'var(--ink)'}}/>
+                {q && <button onClick={()=>setQ('')} aria-label="Clear search" style={{border:'none', background:'var(--surface-3)', width:20, height:20, borderRadius:'50%', color:'var(--ink-3)', fontSize:14, lineHeight:1, cursor:'pointer', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center'}}>×</button>}
               </div>
             </div>
-            <div style={{padding:'16px 18px 0'}}>
-              <button onClick={()=>onOpen('memory-focus')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:0, overflow:'hidden', position:'relative'}}>
-                <div style={{padding:'18px 18px 16px', background:'linear-gradient(140deg, var(--brand-soft) 0%, #d6cffa 100%)', position:'relative', minHeight:140}}>
-                  <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-deep)', fontWeight:600}}>Featured guide</div>
-                  <div className="serif" style={{fontSize:28, lineHeight:1.18, marginTop:10, color:'var(--ink)', maxWidth:'68%'}}>Memory &amp; Focus, <em>backed by studies</em></div>
-                  <div style={{fontSize:13, color:'var(--brand-deep)', marginTop:16}}>AI-built stack · iHerb links · 1-tap</div>
-                  <div style={{position:'absolute', right:24, bottom:18}}><Icon.Brain size={44} c="var(--brand)"/></div>
-                </div>
-              </button>
-            </div>
-            <div style={{padding:'22px 18px 0'}}>
-              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:12}}>All {TOPICS.length} topics</div>
-              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
-                {TOPICS.map((t,i) => { const Ic = Icon[t.icon]; return (
-                  <button key={i} onClick={()=>onOpen(t.slug)} className="bal-card" style={{border:'none', textAlign:'left', padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
-                    <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic && <Ic size={18} c="var(--brand)"/>}</div>
-                    <div><div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{t.name}</div><div style={{fontSize:11, color:'var(--ink-3)', marginTop:2}}>Grade {t.grade}</div></div>
-                  </button>
-                ); })}
+            {/* Selection toggle: categories vs supplements */}
+            <div style={{padding:'12px 18px 0'}}>
+              <div style={{display:'flex', background:'var(--surface-3)', borderRadius:12, padding:3}}>
+                {seg('topics','Categories', topics.length)}
+                {seg('supplements','Supplements', supps.length)}
               </div>
+            </div>
+            {/* Featured guide — only on Categories with no active search */}
+            {mode==='topics' && !query && (
+              <div style={{padding:'16px 18px 0'}}>
+                <button onClick={()=>onOpen('memory-focus')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:0, overflow:'hidden', position:'relative'}}>
+                  <div style={{padding:'18px 18px 16px', background:'linear-gradient(140deg, var(--brand-soft) 0%, #d6cffa 100%)', position:'relative', minHeight:140}}>
+                    <div style={{fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--brand-deep)', fontWeight:600}}>Featured guide</div>
+                    <div className="serif" style={{fontSize:28, lineHeight:1.18, marginTop:10, color:'var(--ink)', maxWidth:'68%'}}>Memory &amp; Focus, <em>backed by studies</em></div>
+                    <div style={{fontSize:13, color:'var(--brand-deep)', marginTop:16}}>AI-built stack · buy links · 1-tap</div>
+                    <div style={{position:'absolute', right:24, bottom:18}}><Icon.Brain size={44} c="var(--brand)"/></div>
+                  </div>
+                </button>
+              </div>
+            )}
+            {/* Results */}
+            <div style={{padding:'18px 18px 0'}}>
+              {mode==='topics' ? (
+                topics.length ? (
+                  <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:10}}>
+                    {topics.map(t => { const Ic = Icon[t.icon]; return (
+                      <button key={t.slug} onClick={()=>onOpen(t.slug)} className="bal-card" style={{border:'none', textAlign:'left', padding:14, aspectRatio:'1', display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
+                        <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic && <Ic size={18} c="var(--brand)"/>}</div>
+                        <div><div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{t.name}</div><div style={{fontSize:11, color:'var(--ink-3)', marginTop:2}}>Grade {t.grade}</div></div>
+                      </button>
+                    ); })}
+                  </div>
+                ) : empty
+              ) : (
+                supps.length ? (
+                  <div className="bal-card" style={{padding:'2px 0'}}>
+                    {supps.map((s,i) => (
+                      <button key={s.n} onClick={()=>onOpen(s.t[0])} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'12px 16px', borderBottom:i<supps.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                        <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', color:'var(--brand)', fontWeight:700, fontSize:14}}>{s.n[0]}</div>
+                        <div style={{flex:1, minWidth:0}}>
+                          <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</div>
+                          <div style={{fontSize:11, color:'var(--ink-3)', marginTop:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{s.t.map(slug => (TOPIC_BY_SLUG[slug]?.name)||slug).join(' · ')}</div>
+                        </div>
+                        <Icon.Chevron size={13} c="var(--ink-4)"/>
+                      </button>
+                    ))}
+                  </div>
+                ) : empty
+              )}
             </div>
           </div>
           <Tabbar active="browse" onNav={onNav}/>

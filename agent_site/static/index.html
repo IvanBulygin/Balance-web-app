@@ -482,9 +482,9 @@
       const gridTopics = hasGoals ? goalTopics : featured;
       return (
         <div className="screen-root">
-          <div className="scroll" style={{height:'100%', paddingBottom:132}}>
-            <div style={{height:54}}/>
-            <div style={{padding:'14px 22px 8px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+          <div className="scroll" style={{height:'100%', paddingBottom:96}}>
+            <div style={{height:48}}/>
+            <div style={{padding:'6px 22px 4px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
               <div>
                 <div style={{fontSize:12, color:'var(--ink-3)', fontWeight:500, letterSpacing:'0.06em', textTransform:'uppercase'}}>{new Date().toLocaleDateString(undefined,{weekday:'short', month:'short', day:'numeric'})}</div>
                 <div className="serif" style={{fontSize:32, lineHeight:1.05, marginTop:2, color:'var(--ink)'}}>{greeting()},<br/><em style={{fontStyle:'italic'}}>there</em>.</div>
@@ -492,8 +492,8 @@
               <button onClick={()=>onNav('me')} style={{width:40, height:40, borderRadius:'50%', background:'var(--brand)', color:'white', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:600, border:'none'}}>Y</button>
             </div>
 
-            <div style={{padding:'16px 18px 0'}}>
-              <button onClick={()=>onOpenCategory(heroTopic.slug)} style={{display:'block', width:'100%', textAlign:'left', border:'none', background:'var(--brand)', color:'var(--brand-soft)', padding:20, borderRadius:22, position:'relative', overflow:'hidden'}}>
+            <div style={{padding:'8px 18px 0'}}>
+              <button onClick={()=>onOpenCategory(heroTopic.slug)} style={{display:'block', width:'100%', textAlign:'left', border:'none', background:'var(--brand)', color:'var(--brand-soft)', padding:18, borderRadius:22, position:'relative', overflow:'hidden'}}>
                 <div style={{position:'absolute', right:-30, top:-30, width:160, height:160, borderRadius:'50%', background:'rgba(243,169,253,0.10)'}}/>
                 <div style={{position:'absolute', right:18, top:18}}><window.BalLogoMark size={36} dark/></div>
                 <div style={{position:'relative'}}>
@@ -507,7 +507,7 @@
               </button>
             </div>
 
-            <div style={{padding:'18px 18px 0'}}>
+            <div style={{padding:'12px 18px 0'}}>
               <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', border:'none', background:'var(--surface)', boxShadow:'var(--sh-card)', borderRadius:'var(--r-lg)', padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
                 <div style={{width:28, height:28, borderRadius:'50%', background:'var(--accent-soft)', display:'flex', alignItems:'center', justifyContent:'center'}}><Icon.Spark size={16} c="var(--accent)"/></div>
                 <div style={{flex:1, color:'var(--ink-3)', fontSize:14}}>Ask anything about your health…</div>
@@ -520,7 +520,7 @@
               </div>
             </div>
 
-            <div style={{padding:'22px 18px 0'}}>
+            <div style={{padding:'14px 18px 0'}}>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
                 <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>{hasGoals ? 'Your goals' : 'Popular guides'}</div>
                 <button onClick={()=>onNav('intake')} style={{fontSize:12, color:'var(--brand)', fontWeight:600, background:'none', border:'none'}}>{hasGoals ? 'Edit' : 'Personalize'}</button>
@@ -535,7 +535,7 @@
               </div>
             </div>
 
-            <div style={{padding:'22px 18px 0'}}>
+            <div style={{padding:'14px 18px 0'}}>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
                 <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>Today's stack</div>
                 {stack.length>0 && <div style={{fontSize:12, color:'var(--accent)', fontWeight:500}}>{doneCount} of {stack.length} done</div>}

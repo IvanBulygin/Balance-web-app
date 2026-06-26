@@ -17,8 +17,10 @@ matters here.
 
 from __future__ import annotations
 
+import json
 import threading
 import urllib.parse
+from pathlib import Path
 from typing import Dict, List, Literal, Optional
 
 from google.genai import types
@@ -214,11 +216,43 @@ def _extract(client, slug: str, index: BM25Index) -> CategoryResponse:
 
 
 class CategoryCache:
-    """In-process cache keyed by slug. One Gemini call per category per process."""
+    """Cache keyed by slug, backed by an on-disk JSON store.
 
-    def __init__(self) -> None:
+    Category guides are deterministic per slug, so we never want to pay the
+    Gemini extraction more than once. Lookup order is: in-memory → disk →
+    Gemini (then written through to both). Committing ``cache_dir`` into the
+    repo makes every guide load instantly in production with zero LLM calls —
+    important on hosts with an ephemeral filesystem (e.g. Render free tier),
+    where a runtime-only cache is lost on each cold start.
+    """
+
+    def __init__(self, cache_dir: Optional[Path] = None) -> None:
         self._lock = threading.Lock()
         self._cache: Dict[str, CategoryResponse] = {}
+        self._dir = Path(cache_dir) if cache_dir else None
+
+    def _path(self, slug: str) -> Optional[Path]:
+        return (self._dir / f"{slug}.json") if self._dir else None
+
+    def _load_disk(self, slug: str) -> Optional[CategoryResponse]:
+        path = self._path(slug)
+        if not path or not path.exists():
+            return None
+        try:
+            return CategoryResponse.model_validate_json(path.read_text(encoding="utf-8"))
+        except Exception as exc:  # noqa: BLE001 - a corrupt cache file shouldn't 500
+            print(f"[category {slug}] ignoring bad cache file: {exc}")
+            return None
+
+    def _save_disk(self, slug: str, response: CategoryResponse) -> None:
+        path = self._path(slug)
+        if not path:
+            return
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(response.model_dump_json(indent=2), encoding="utf-8")
+        except Exception as exc:  # noqa: BLE001 - caching is best-effort
+            print(f"[category {slug}] could not write cache: {exc}")
 
     def get_or_fetch(
         self, client, index: BM25Index, slug: str, *, force: bool = False
@@ -227,11 +261,16 @@ class CategoryCache:
             cached = self._cache.get(slug)
             if cached is not None:
                 return cached
-        # Acquire the lock only for the actual write so concurrent first-hits
-        # on different slugs don't serialize on each other unnecessarily.
+            disk = self._load_disk(slug)
+            if disk is not None:
+                with self._lock:
+                    self._cache[slug] = disk
+                return disk
+        # Miss: pay the one Gemini extraction, then write through to memory+disk.
         response = _extract(client, slug, index)
         with self._lock:
             self._cache[slug] = response
+        self._save_disk(slug, response)
         return response
 
     def invalidate(self, slug: Optional[str] = None) -> None:

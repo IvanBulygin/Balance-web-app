@@ -64,7 +64,7 @@ async def lifespan(app: FastAPI):
     print(f"Building BM25 index from {PDF_TEXT_DIR}...")
     index: BM25Index = build_index(PDF_TEXT_DIR)
     state["index"] = index
-    state["category_cache"] = CategoryCache()
+    state["category_cache"] = CategoryCache(cache_dir=ROOT / "data" / "categories")
     print(
         f"Index ready. {len(index.chunks):,} chunks from "
         f"{len({c.source for c in index.chunks})} guides."

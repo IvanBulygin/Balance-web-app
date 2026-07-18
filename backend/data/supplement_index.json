@@ -1,0 +1,988 @@
+{
+  "system_description": "Supplement taxonomy / link-out index built from guide text. Stores names + link-out URLs + source filenames only (no guide text).",
+  "supplement_count": 102,
+  "data": {
+    "5-HTP": {
+      "canonical_name": "5-HTP",
+      "reference_url": "https://examine.com/supplements/5-htp/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "7-Keto DHEA": {
+      "canonical_name": "7-Keto DHEA",
+      "reference_url": "https://examine.com/supplements/7-keto-dhea/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt"
+      ]
+    },
+    "African Mango": {
+      "canonical_name": "African Mango",
+      "reference_url": "https://examine.com/supplements/african-mango/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Agmatine": {
+      "canonical_name": "Agmatine",
+      "reference_url": "https://examine.com/supplements/agmatine/",
+      "found_in_guides": [
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Alanine": {
+      "canonical_name": "Alanine",
+      "reference_url": "https://examine.com/supplements/alanine/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Alpha-GPC": {
+      "canonical_name": "Alpha-GPC",
+      "reference_url": "https://examine.com/supplements/alpha-gpc/",
+      "found_in_guides": [
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Alpha-Ketoglutarate": {
+      "canonical_name": "Alpha-Ketoglutarate",
+      "reference_url": "https://examine.com/supplements/alpha-ketoglutarate/",
+      "found_in_guides": [
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Alpha-Linolenic Acid": {
+      "canonical_name": "Alpha-Linolenic Acid",
+      "reference_url": "https://examine.com/supplements/alpha-linolenic-acid/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Alpha-Lipoic Acid": {
+      "canonical_name": "Alpha-Lipoic Acid",
+      "reference_url": "https://examine.com/supplements/alpha-lipoic-acid/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Aniracetam": {
+      "canonical_name": "Aniracetam",
+      "reference_url": "https://examine.com/supplements/aniracetam/",
+      "found_in_guides": [
+        "supplement-guide-memory-focus.txt"
+      ]
+    },
+    "Anthocyanins": {
+      "canonical_name": "Anthocyanins",
+      "reference_url": "https://examine.com/supplements/anthocyanins/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Antioxidants": {
+      "canonical_name": "Antioxidants",
+      "reference_url": "https://examine.com/supplements/antioxidants/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Arachidonic Acid": {
+      "canonical_name": "Arachidonic Acid",
+      "reference_url": "https://examine.com/supplements/arachidonic-acid/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Arginine": {
+      "canonical_name": "Arginine",
+      "reference_url": "https://examine.com/supplements/arginine/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-libido.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Artichoke Extract": {
+      "canonical_name": "Artichoke Extract",
+      "reference_url": "https://examine.com/supplements/artichoke-extract/",
+      "found_in_guides": [
+        "supplement-guide-memory-focus.txt"
+      ]
+    },
+    "B Vitamins": {
+      "canonical_name": "B Vitamins",
+      "reference_url": "https://examine.com/supplements/b-vitamins/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Bacopa monnieri": {
+      "canonical_name": "Bacopa monnieri",
+      "reference_url": "https://examine.com/supplements/bacopa-monnieri/",
+      "found_in_guides": [
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-mood-depression.txt"
+      ]
+    },
+    "Banaba Leaf": {
+      "canonical_name": "Banaba Leaf",
+      "reference_url": "https://examine.com/supplements/banaba-leaf/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt"
+      ]
+    },
+    "Berberine": {
+      "canonical_name": "Berberine",
+      "reference_url": "https://examine.com/supplements/berberine/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Beta-Alanine": {
+      "canonical_name": "Beta-Alanine",
+      "reference_url": "https://examine.com/supplements/beta-alanine/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Beta-Carotene": {
+      "canonical_name": "Beta-Carotene",
+      "reference_url": "https://examine.com/supplements/beta-carotene/",
+      "found_in_guides": [
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Betaine": {
+      "canonical_name": "Betaine",
+      "reference_url": "https://examine.com/supplements/betaine/",
+      "found_in_guides": [
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Betalains": {
+      "canonical_name": "Betalains",
+      "reference_url": "https://examine.com/supplements/betalains/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt"
+      ]
+    },
+    "Biotin (Vitamin B7)": {
+      "canonical_name": "Biotin (Vitamin B7)",
+      "reference_url": "https://examine.com/supplements/biotin-vitamin-b7/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Bitter Orange": {
+      "canonical_name": "Bitter Orange",
+      "reference_url": "https://examine.com/supplements/bitter-orange/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "CDP-Choline": {
+      "canonical_name": "CDP-Choline",
+      "reference_url": "https://examine.com/supplements/cdp-choline/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt"
+      ]
+    },
+    "Caffeine": {
+      "canonical_name": "Caffeine",
+      "reference_url": "https://examine.com/supplements/caffeine/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-libido.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Calcium": {
+      "canonical_name": "Calcium",
+      "reference_url": "https://examine.com/supplements/calcium/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Cannabidiol (CBD)": {
+      "canonical_name": "Cannabidiol (CBD)",
+      "reference_url": "https://examine.com/supplements/cannabidiol-cbd/",
+      "found_in_guides": [
+        "supplement-guide-joint-health.txt"
+      ]
+    },
+    "Capsaicin": {
+      "canonical_name": "Capsaicin",
+      "reference_url": "https://examine.com/supplements/capsaicin/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Carnosine": {
+      "canonical_name": "Carnosine",
+      "reference_url": "https://examine.com/supplements/carnosine/",
+      "found_in_guides": [
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Carotenoids": {
+      "canonical_name": "Carotenoids",
+      "reference_url": "https://examine.com/supplements/carotenoids/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Casein": {
+      "canonical_name": "Casein",
+      "reference_url": "https://examine.com/supplements/casein/",
+      "found_in_guides": [
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "D-Aspartic Acid": {
+      "canonical_name": "D-Aspartic Acid",
+      "reference_url": "https://examine.com/supplements/d-aspartic-acid/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-testosterone.txt"
+      ]
+    },
+    "D-Ribose": {
+      "canonical_name": "D-Ribose",
+      "reference_url": "https://examine.com/supplements/d-ribose/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt"
+      ]
+    },
+    "DHEA": {
+      "canonical_name": "DHEA",
+      "reference_url": "https://examine.com/supplements/dhea/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-libido.txt",
+        "supplement-guide-testosterone.txt"
+      ]
+    },
+    "Dill": {
+      "canonical_name": "Dill",
+      "reference_url": "https://examine.com/supplements/dill/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Docosahexaenoic Acid (DHA)": {
+      "canonical_name": "Docosahexaenoic Acid (DHA)",
+      "reference_url": "https://examine.com/supplements/docosahexaenoic-acid-dha/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Echinacea": {
+      "canonical_name": "Echinacea",
+      "reference_url": "https://examine.com/supplements/echinacea/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt"
+      ]
+    },
+    "Eicosapentaenoic Acid (EPA)": {
+      "canonical_name": "Eicosapentaenoic Acid (EPA)",
+      "reference_url": "https://examine.com/supplements/eicosapentaenoic-acid-epa/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Elderberry": {
+      "canonical_name": "Elderberry",
+      "reference_url": "https://examine.com/supplements/elderberry/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt"
+      ]
+    },
+    "Ellagic Acid": {
+      "canonical_name": "Ellagic Acid",
+      "reference_url": "https://examine.com/supplements/ellagic-acid/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Ephedrine": {
+      "canonical_name": "Ephedrine",
+      "reference_url": "https://examine.com/supplements/ephedrine/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Epigallocatechin Gallate": {
+      "canonical_name": "Epigallocatechin Gallate",
+      "reference_url": "https://examine.com/supplements/epigallocatechin-gallate/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Essential Amino Acid (EAA)": {
+      "canonical_name": "Essential Amino Acid (EAA)",
+      "reference_url": "https://examine.com/supplements/essential-amino-acid-eaa/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Essential Fatty Acid (EFA)": {
+      "canonical_name": "Essential Fatty Acid (EFA)",
+      "reference_url": "https://examine.com/supplements/essential-fatty-acid-efa/",
+      "found_in_guides": [
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Fennel": {
+      "canonical_name": "Fennel",
+      "reference_url": "https://examine.com/supplements/fennel/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Fenugreek": {
+      "canonical_name": "Fenugreek",
+      "reference_url": "https://examine.com/supplements/fenugreek/",
+      "found_in_guides": [
+        "supplement-guide-libido.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-testosterone.txt"
+      ]
+    },
+    "Fiber": {
+      "canonical_name": "Fiber",
+      "reference_url": "https://examine.com/supplements/fiber/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Fish Oil": {
+      "canonical_name": "Fish Oil",
+      "reference_url": "https://examine.com/supplements/fish-oil/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Flavanols": {
+      "canonical_name": "Flavanols",
+      "reference_url": "https://examine.com/supplements/flavanols/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt"
+      ]
+    },
+    "Flavonoids": {
+      "canonical_name": "Flavonoids",
+      "reference_url": "https://examine.com/supplements/flavonoids/",
+      "found_in_guides": [
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Folic Acid (Vitamin B9)": {
+      "canonical_name": "Folic Acid (Vitamin B9)",
+      "reference_url": "https://examine.com/supplements/folic-acid-vitamin-b9/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "GABA": {
+      "canonical_name": "GABA",
+      "reference_url": "https://examine.com/supplements/gaba/",
+      "found_in_guides": [
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Garcinia": {
+      "canonical_name": "Garcinia",
+      "reference_url": "https://examine.com/supplements/garcinia/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Ginkgo Biloba": {
+      "canonical_name": "Ginkgo Biloba",
+      "reference_url": "https://examine.com/supplements/ginkgo-biloba/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt"
+      ]
+    },
+    "Glucosamine": {
+      "canonical_name": "Glucosamine",
+      "reference_url": "https://examine.com/supplements/glucosamine/",
+      "found_in_guides": [
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Glutamate": {
+      "canonical_name": "Glutamate",
+      "reference_url": "https://examine.com/supplements/glutamate/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Glutamine": {
+      "canonical_name": "Glutamine",
+      "reference_url": "https://examine.com/supplements/glutamine/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Glutathione": {
+      "canonical_name": "Glutathione",
+      "reference_url": "https://examine.com/supplements/glutathione/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Glycine": {
+      "canonical_name": "Glycine",
+      "reference_url": "https://examine.com/supplements/glycine/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Grape Seed Extract": {
+      "canonical_name": "Grape Seed Extract",
+      "reference_url": "https://examine.com/supplements/grape-seed-extract/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-libido.txt"
+      ]
+    },
+    "Green Coffee Extract": {
+      "canonical_name": "Green Coffee Extract",
+      "reference_url": "https://examine.com/supplements/green-coffee-extract/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Green Tea Extract": {
+      "canonical_name": "Green Tea Extract",
+      "reference_url": "https://examine.com/supplements/green-tea-extract/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Guarana": {
+      "canonical_name": "Guarana",
+      "reference_url": "https://examine.com/supplements/guarana/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-sleep.txt"
+      ]
+    },
+    "HMB": {
+      "canonical_name": "HMB",
+      "reference_url": "https://examine.com/supplements/hmb/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Hesperidin": {
+      "canonical_name": "Hesperidin",
+      "reference_url": "https://examine.com/supplements/hesperidin/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt"
+      ]
+    },
+    "Histidine": {
+      "canonical_name": "Histidine",
+      "reference_url": "https://examine.com/supplements/histidine/",
+      "found_in_guides": [
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Horny Goat Weed": {
+      "canonical_name": "Horny Goat Weed",
+      "reference_url": "https://examine.com/supplements/horny-goat-weed/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt"
+      ]
+    },
+    "Horse Chestnut": {
+      "canonical_name": "Horse Chestnut",
+      "reference_url": "https://examine.com/supplements/horse-chestnut/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt"
+      ]
+    },
+    "Hyaluronic Acid": {
+      "canonical_name": "Hyaluronic Acid",
+      "reference_url": "https://examine.com/supplements/hyaluronic-acid/",
+      "found_in_guides": [
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Inositol": {
+      "canonical_name": "Inositol",
+      "reference_url": "https://examine.com/supplements/inositol/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Inulin": {
+      "canonical_name": "Inulin",
+      "reference_url": "https://examine.com/supplements/inulin/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-fat-loss.txt"
+      ]
+    },
+    "Iodine": {
+      "canonical_name": "Iodine",
+      "reference_url": "https://examine.com/supplements/iodine/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Iron": {
+      "canonical_name": "Iron",
+      "reference_url": "https://examine.com/supplements/iron/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Isoleucine": {
+      "canonical_name": "Isoleucine",
+      "reference_url": "https://examine.com/supplements/isoleucine/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Kaempferol": {
+      "canonical_name": "Kaempferol",
+      "reference_url": "https://examine.com/supplements/kaempferol/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt"
+      ]
+    },
+    "Kava": {
+      "canonical_name": "Kava",
+      "reference_url": "https://examine.com/supplements/kava/",
+      "found_in_guides": [
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Keratin": {
+      "canonical_name": "Keratin",
+      "reference_url": "https://examine.com/supplements/keratin/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-skin-hair-nails.txt"
+      ]
+    },
+    "Krill Oil": {
+      "canonical_name": "Krill Oil",
+      "reference_url": "https://examine.com/supplements/krill-oil/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "L-Carnitine": {
+      "canonical_name": "L-Carnitine",
+      "reference_url": "https://examine.com/supplements/l-carnitine/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "L-Cysteine": {
+      "canonical_name": "L-Cysteine",
+      "reference_url": "https://examine.com/supplements/l-cysteine/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-mood-depression.txt"
+      ]
+    },
+    "L-Tyrosine": {
+      "canonical_name": "L-Tyrosine",
+      "reference_url": "https://examine.com/supplements/l-tyrosine/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Lavender": {
+      "canonical_name": "Lavender",
+      "reference_url": "https://examine.com/supplements/lavender/",
+      "found_in_guides": [
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Lemon Balm": {
+      "canonical_name": "Lemon Balm",
+      "reference_url": "https://examine.com/supplements/lemon-balm/",
+      "found_in_guides": [
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Leucine": {
+      "canonical_name": "Leucine",
+      "reference_url": "https://examine.com/supplements/leucine/",
+      "found_in_guides": [
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Lysine": {
+      "canonical_name": "Lysine",
+      "reference_url": "https://examine.com/supplements/lysine/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Maca": {
+      "canonical_name": "Maca",
+      "reference_url": "https://examine.com/supplements/maca/",
+      "found_in_guides": [
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-libido.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-testosterone.txt"
+      ]
+    },
+    "Magnesium": {
+      "canonical_name": "Magnesium",
+      "reference_url": "https://examine.com/supplements/magnesium/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Melatonin": {
+      "canonical_name": "Melatonin",
+      "reference_url": "https://examine.com/supplements/melatonin/",
+      "found_in_guides": [
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-sleep.txt"
+      ]
+    },
+    "N-Acetylcysteine": {
+      "canonical_name": "N-Acetylcysteine",
+      "reference_url": "https://examine.com/supplements/n-acetylcysteine/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Quercetin": {
+      "canonical_name": "Quercetin",
+      "reference_url": "https://examine.com/supplements/quercetin/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-libido.txt",
+        "supplement-guide-memory-focus.txt"
+      ]
+    },
+    "Rhodiola rosea": {
+      "canonical_name": "Rhodiola rosea",
+      "reference_url": "https://examine.com/supplements/rhodiola-rosea/",
+      "found_in_guides": [
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Taurine": {
+      "canonical_name": "Taurine",
+      "reference_url": "https://examine.com/supplements/taurine/",
+      "found_in_guides": [
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-liver-health.txt",
+        "supplement-guide-muscle-gain.txt"
+      ]
+    },
+    "Theanine": {
+      "canonical_name": "Theanine",
+      "reference_url": "https://examine.com/supplements/theanine/",
+      "found_in_guides": [
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-sleep.txt",
+        "supplement-guide-stress-anxiety.txt"
+      ]
+    },
+    "Tongkat Ali": {
+      "canonical_name": "Tongkat Ali",
+      "reference_url": "https://examine.com/supplements/tongkat-ali/",
+      "found_in_guides": [
+        "supplement-guide-libido.txt"
+      ]
+    },
+    "Type-II Collagen": {
+      "canonical_name": "Type-II Collagen",
+      "reference_url": "https://examine.com/supplements/type-ii-collagen/",
+      "found_in_guides": [
+        "supplement-guide-joint-health.txt"
+      ]
+    },
+    "Vitamin C": {
+      "canonical_name": "Vitamin C",
+      "reference_url": "https://examine.com/supplements/vitamin-c/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-memory-focus.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Vitamin D": {
+      "canonical_name": "Vitamin D",
+      "reference_url": "https://examine.com/supplements/vitamin-d/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-stress-anxiety.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Vitamin E": {
+      "canonical_name": "Vitamin E",
+      "reference_url": "https://examine.com/supplements/vitamin-e/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-joint-health.txt",
+        "supplement-guide-libido.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Whey Protein": {
+      "canonical_name": "Whey Protein",
+      "reference_url": "https://examine.com/supplements/whey-protein/",
+      "found_in_guides": [
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-cardiovascular-health.txt",
+        "supplement-guide-fat-loss.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-muscle-gain.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    },
+    "Zinc": {
+      "canonical_name": "Zinc",
+      "reference_url": "https://examine.com/supplements/zinc/",
+      "found_in_guides": [
+        "supplement-guide-allergies-immunity.txt",
+        "supplement-guide-blood-sugar.txt",
+        "supplement-guide-bone-health.txt",
+        "supplement-guide-healthy-aging.txt",
+        "supplement-guide-mood-depression.txt",
+        "supplement-guide-skin-hair-nails.txt",
+        "supplement-guide-testosterone.txt",
+        "supplement-guide-vegetarians-vegans.txt"
+      ]
+    }
+  }
+}

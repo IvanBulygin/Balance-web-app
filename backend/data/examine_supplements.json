@@ -1,0 +1,758 @@
+{
+    "source": "Examine.com Public Supplement Index Reference",
+    "total_count": 188,
+    "supplements": [
+        {
+            "name": "1,3-Dimethylamylamine",
+            "url": "https://examine.com/supplements/13-dimethylamylamine/"
+        },
+        {
+            "name": "5-HTP",
+            "url": "https://examine.com/supplements/5-htp/"
+        },
+        {
+            "name": "7-Keto DHEA",
+            "url": "https://examine.com/supplements/7-keto-dhea/"
+        },
+        {
+            "name": "7,8-Dihydroxyflavone",
+            "url": "https://examine.com/supplements/78-dihydroxyflavone/"
+        },
+        {
+            "name": "Acetate",
+            "url": "https://examine.com/supplements/acetate/"
+        },
+        {
+            "name": "African Mango",
+            "url": "https://examine.com/supplements/african-mango/"
+        },
+        {
+            "name": "Agmatine",
+            "url": "https://examine.com/supplements/agmatine/"
+        },
+        {
+            "name": "Akarkara",
+            "url": "https://examine.com/supplements/akarkara/"
+        },
+        {
+            "name": "Akkermansia muciniphila",
+            "url": "https://examine.com/supplements/akkermansia-muciniphila/"
+        },
+        {
+            "name": "Alanine",
+            "url": "https://examine.com/supplements/alanine/"
+        },
+        {
+            "name": "Alanylglutamine",
+            "url": "https://examine.com/supplements/alanylglutamine/"
+        },
+        {
+            "name": "Aloe vera",
+            "url": "https://examine.com/supplements/aloe-vera/"
+        },
+        {
+            "name": "Alpha-GPC",
+            "url": "https://examine.com/supplements/alpha-gpc/"
+        },
+        {
+            "name": "Alpha-Ketoglutarate",
+            "url": "https://examine.com/supplements/alpha-ketoglutarate/"
+        },
+        {
+            "name": "Alpha-Lactalbumin",
+            "url": "https://examine.com/supplements/alpha-lactalbumin/"
+        },
+        {
+            "name": "Alpha-Linolenic Acid",
+            "url": "https://examine.com/supplements/alpha-linolenic-acid/"
+        },
+        {
+            "name": "Alpha-Lipoic Acid",
+            "url": "https://examine.com/supplements/alpha-lipoic-acid/"
+        },
+        {
+            "name": "Althaea officinalis",
+            "url": "https://examine.com/supplements/althaea-officinalis/"
+        },
+        {
+            "name": "Amla",
+            "url": "https://examine.com/supplements/amla/"
+        },
+        {
+            "name": "Anatabine",
+            "url": "https://examine.com/supplements/anatabine/"
+        },
+        {
+            "name": "Aniracetam",
+            "url": "https://examine.com/supplements/aniracetam/"
+        },
+        {
+            "name": "Anthocyanins",
+            "url": "https://examine.com/supplements/anthocyanins/"
+        },
+        {
+            "name": "Antioxidants",
+            "url": "https://examine.com/supplements/antioxidants/"
+        },
+        {
+            "name": "Apigenin",
+            "url": "https://examine.com/supplements/apigenin/"
+        },
+        {
+            "name": "Arachidonic Acid",
+            "url": "https://examine.com/supplements/arachidonic-acid/"
+        },
+        {
+            "name": "Arginine",
+            "url": "https://examine.com/supplements/arginine/"
+        },
+        {
+            "name": "Arnica",
+            "url": "https://examine.com/supplements/arnica/"
+        },
+        {
+            "name": "Artemisia annua",
+            "url": "https://examine.com/supplements/artemisia-annua/"
+        },
+        {
+            "name": "Artichoke Extract",
+            "url": "https://examine.com/supplements/artichoke-extract/"
+        },
+        {
+            "name": "Asafoetida",
+            "url": "https://examine.com/supplements/asafoetida/"
+        },
+        {
+            "name": "B Vitamins",
+            "url": "https://examine.com/supplements/b-vitamins/"
+        },
+        {
+            "name": "Bacopa monnieri",
+            "url": "https://examine.com/supplements/bacopa-monnieri/"
+        },
+        {
+            "name": "Baikal skullcap",
+            "url": "https://examine.com/supplements/baikal-skullcap/"
+        },
+        {
+            "name": "Bakuchi",
+            "url": "https://examine.com/supplements/bakuchi/"
+        },
+        {
+            "name": "Banaba Leaf",
+            "url": "https://examine.com/supplements/banaba-leaf/"
+        },
+        {
+            "name": "Banana Flower",
+            "url": "https://examine.com/supplements/banana-flower/"
+        },
+        {
+            "name": "Beef Protein",
+            "url": "https://examine.com/supplements/beef-protein/"
+        },
+        {
+            "name": "Benfotiamine",
+            "url": "https://examine.com/supplements/benfotiamine/"
+        },
+        {
+            "name": "Berberine",
+            "url": "https://examine.com/supplements/berberine/"
+        },
+        {
+            "name": "Beta-Alanine",
+            "url": "https://examine.com/supplements/beta-alanine/"
+        },
+        {
+            "name": "Beta-Carotene",
+            "url": "https://examine.com/supplements/beta-carotene/"
+        },
+        {
+            "name": "Beta-Glucans",
+            "url": "https://examine.com/supplements/beta-glucans/"
+        },
+        {
+            "name": "Betaine",
+            "url": "https://examine.com/supplements/betaine/"
+        },
+        {
+            "name": "Betalains",
+            "url": "https://examine.com/supplements/betalains/"
+        },
+        {
+            "name": "Bhringaraj",
+            "url": "https://examine.com/supplements/bhringaraj/"
+        },
+        {
+            "name": "Biotin (Vitamin B7)",
+            "url": "https://examine.com/supplements/biotin-vitamin-b7/"
+        },
+        {
+            "name": "Bitter Cucumber",
+            "url": "https://examine.com/supplements/bitter-cucumber/"
+        },
+        {
+            "name": "Bitter Orange",
+            "url": "https://examine.com/supplements/bitter-orange/"
+        },
+        {
+            "name": "Black Barberry Extract",
+            "url": "https://examine.com/supplements/black-barberry-extract/"
+        },
+        {
+            "name": "Black Chokeberry",
+            "url": "https://examine.com/supplements/black-chokeberry/"
+        },
+        {
+            "name": "Black Cohosh",
+            "url": "https://examine.com/supplements/black-cohosh/"
+        },
+        {
+            "name": "Black Currant",
+            "url": "https://examine.com/supplements/black-currant/"
+        },
+        {
+            "name": "Black Garlic Extract",
+            "url": "https://examine.com/supplements/black-garlic-extract/"
+        },
+        {
+            "name": "Black Ginger",
+            "url": "https://examine.com/supplements/black-ginger/"
+        },
+        {
+            "name": "Caffeine",
+            "url": "https://examine.com/supplements/caffeine/"
+        },
+        {
+            "name": "Calcium",
+            "url": "https://examine.com/supplements/calcium/"
+        },
+        {
+            "name": "Calcium Caseinate",
+            "url": "https://examine.com/supplements/calcium-caseinate/"
+        },
+        {
+            "name": "Calcium-D-Glucarate",
+            "url": "https://examine.com/supplements/calcium-d-glucarate/"
+        },
+        {
+            "name": "Calendula Officinalis",
+            "url": "https://examine.com/supplements/calendula-officinalis/"
+        },
+        {
+            "name": "California Poppy",
+            "url": "https://examine.com/supplements/california-poppy/"
+        },
+        {
+            "name": "Calorie-Blocker",
+            "url": "https://examine.com/supplements/calorie-blocker/"
+        },
+        {
+            "name": "Cannabidiol (CBD)",
+            "url": "https://examine.com/supplements/cannabidiol-cbd/"
+        },
+        {
+            "name": "Capsaicin",
+            "url": "https://examine.com/supplements/capsaicin/"
+        },
+        {
+            "name": "Capsicum Carotenoids",
+            "url": "https://examine.com/supplements/capsicum-carotenoids/"
+        },
+        {
+            "name": "Capsinoids",
+            "url": "https://examine.com/supplements/capsinoids/"
+        },
+        {
+            "name": "Caralluma Fimbriata",
+            "url": "https://examine.com/supplements/caralluma-fimbriata/"
+        },
+        {
+            "name": "Carnosine",
+            "url": "https://examine.com/supplements/carnosine/"
+        },
+        {
+            "name": "Carotenoids",
+            "url": "https://examine.com/supplements/carotenoids/"
+        },
+        {
+            "name": "Casein",
+            "url": "https://examine.com/supplements/casein/"
+        },
+        {
+            "name": "Cat's Claw",
+            "url": "https://examine.com/supplements/cat's-claw/"
+        },
+        {
+            "name": "Cat's Whiskers",
+            "url": "https://examine.com/supplements/cat's-whiskers/"
+        },
+        {
+            "name": "CDP-Choline",
+            "url": "https://examine.com/supplements/cdp-choline/"
+        },
+        {
+            "name": "Celastrus paniculatus",
+            "url": "https://examine.com/supplements/celastrus-paniculatus/"
+        },
+        {
+            "name": "Celery Seed",
+            "url": "https://examine.com/supplements/celery-seed/"
+        },
+        {
+            "name": "D-Aspartic Acid",
+            "url": "https://examine.com/supplements/d-aspartic-acid/"
+        },
+        {
+            "name": "D-Ribose",
+            "url": "https://examine.com/supplements/d-ribose/"
+        },
+        {
+            "name": "D-Serine",
+            "url": "https://examine.com/supplements/d-serine/"
+        },
+        {
+            "name": "Damiana Leaf",
+            "url": "https://examine.com/supplements/damiana-leaf/"
+        },
+        {
+            "name": "Dandelion",
+            "url": "https://examine.com/supplements/dandelion/"
+        },
+        {
+            "name": "Dang Shen",
+            "url": "https://examine.com/supplements/dang-shen/"
+        },
+        {
+            "name": "Danshen",
+            "url": "https://examine.com/supplements/danshen/"
+        },
+        {
+            "name": "Date Palm Pollen",
+            "url": "https://examine.com/supplements/date-palm-pollen/"
+        },
+        {
+            "name": "Dendrobium",
+            "url": "https://examine.com/supplements/dendrobium/"
+        },
+        {
+            "name": "Devil's Claw",
+            "url": "https://examine.com/supplements/devil's-claw/"
+        },
+        {
+            "name": "DHEA",
+            "url": "https://examine.com/supplements/dhea/"
+        },
+        {
+            "name": "Dihydroberberine",
+            "url": "https://examine.com/supplements/dihydroberberine/"
+        },
+        {
+            "name": "Dill",
+            "url": "https://examine.com/supplements/dill/"
+        },
+        {
+            "name": "DIM",
+            "url": "https://examine.com/supplements/dim/"
+        },
+        {
+            "name": "DMAE",
+            "url": "https://examine.com/supplements/dmae/"
+        },
+        {
+            "name": "Docosahexaenoic Acid (DHA)",
+            "url": "https://examine.com/supplements/docosahexaenoic-acid-dha/"
+        },
+        {
+            "name": "Dong Quai",
+            "url": "https://examine.com/supplements/dong-quai/"
+        },
+        {
+            "name": "Ecdysteroids",
+            "url": "https://examine.com/supplements/ecdysteroids/"
+        },
+        {
+            "name": "Echinacea",
+            "url": "https://examine.com/supplements/echinacea/"
+        },
+        {
+            "name": "Ecklonia Cava",
+            "url": "https://examine.com/supplements/ecklonia-cava/"
+        },
+        {
+            "name": "Eicosapentaenoic Acid (EPA)",
+            "url": "https://examine.com/supplements/eicosapentaenoic-acid-epa/"
+        },
+        {
+            "name": "Elderberry",
+            "url": "https://examine.com/supplements/elderberry/"
+        },
+        {
+            "name": "Electrolytes",
+            "url": "https://examine.com/supplements/electrolytes/"
+        },
+        {
+            "name": "Eleuthero",
+            "url": "https://examine.com/supplements/eleuthero/"
+        },
+        {
+            "name": "Ellagic Acid",
+            "url": "https://examine.com/supplements/ellagic-acid/"
+        },
+        {
+            "name": "Ephedrine",
+            "url": "https://examine.com/supplements/ephedrine/"
+        },
+        {
+            "name": "Epigallocatechin Gallate",
+            "url": "https://examine.com/supplements/epigallocatechin-gallate/"
+        },
+        {
+            "name": "Essential Amino Acid (EAA)",
+            "url": "https://examine.com/supplements/essential-amino-acid-eaa/"
+        },
+        {
+            "name": "Essential Fatty Acid (EFA)",
+            "url": "https://examine.com/supplements/essential-fatty-acid-efa/"
+        },
+        {
+            "name": "Fadogia agrestis",
+            "url": "https://examine.com/supplements/fadogia-agrestis/"
+        },
+        {
+            "name": "Fennel",
+            "url": "https://examine.com/supplements/fennel/"
+        },
+        {
+            "name": "Fenugreek",
+            "url": "https://examine.com/supplements/fenugreek/"
+        },
+        {
+            "name": "Ferulic Acid",
+            "url": "https://examine.com/supplements/ferulic-acid/"
+        },
+        {
+            "name": "Feverfew",
+            "url": "https://examine.com/supplements/feverfew/"
+        },
+        {
+            "name": "Fiber",
+            "url": "https://examine.com/supplements/fiber/"
+        },
+        {
+            "name": "Fish Oil",
+            "url": "https://examine.com/supplements/fish-oil/"
+        },
+        {
+            "name": "Flavanols",
+            "url": "https://examine.com/supplements/flavanols/"
+        },
+        {
+            "name": "Flavonoids",
+            "url": "https://examine.com/supplements/flavonoids/"
+        },
+        {
+            "name": "Flavonols",
+            "url": "https://examine.com/supplements/flavonols/"
+        },
+        {
+            "name": "Folic Acid (Vitamin B9)",
+            "url": "https://examine.com/supplements/folic-acid-vitamin-b9/"
+        },
+        {
+            "name": "GABA",
+            "url": "https://examine.com/supplements/gaba/"
+        },
+        {
+            "name": "Garcinia",
+            "url": "https://examine.com/supplements/garcinia/"
+        },
+        {
+            "name": "Ginkgo Biloba",
+            "url": "https://examine.com/supplements/ginkgo-biloba/"
+        },
+        {
+            "name": "Glucosamine",
+            "url": "https://examine.com/supplements/glucosamine/"
+        },
+        {
+            "name": "Glucuronolactone",
+            "url": "https://examine.com/supplements/glucuronolactone/"
+        },
+        {
+            "name": "Glutamate",
+            "url": "https://examine.com/supplements/glutamate/"
+        },
+        {
+            "name": "Glutamine",
+            "url": "https://examine.com/supplements/glutamine/"
+        },
+        {
+            "name": "Glutathione",
+            "url": "https://examine.com/supplements/glutathione/"
+        },
+        {
+            "name": "Glycine",
+            "url": "https://examine.com/supplements/glycine/"
+        },
+        {
+            "name": "GlyNAC",
+            "url": "https://examine.com/supplements/glynac/"
+        },
+        {
+            "name": "Gotu Kola",
+            "url": "https://examine.com/supplements/gotu-kola/"
+        },
+        {
+            "name": "Grains of Paradise",
+            "url": "https://examine.com/supplements/grains-of-paradise/"
+        },
+        {
+            "name": "Grape Seed Extract",
+            "url": "https://examine.com/supplements/grape-seed-extract/"
+        },
+        {
+            "name": "Green Coffee Extract",
+            "url": "https://examine.com/supplements/green-coffee-extract/"
+        },
+        {
+            "name": "Green Tea Extract",
+            "url": "https://examine.com/supplements/green-tea-extract/"
+        },
+        {
+            "name": "Guarana",
+            "url": "https://examine.com/supplements/guarana/"
+        },
+        {
+            "name": "Guggul",
+            "url": "https://examine.com/supplements/guggul/"
+        },
+        {
+            "name": "Gymnema",
+            "url": "https://examine.com/supplements/gymnema/"
+        },
+        {
+            "name": "Hesperidin",
+            "url": "https://examine.com/supplements/hesperidin/"
+        },
+        {
+            "name": "Hibiscus sabdariffa",
+            "url": "https://examine.com/supplements/hibiscus-sabdariffa/"
+        },
+        {
+            "name": "Higenamine",
+            "url": "https://examine.com/supplements/higenamine/"
+        },
+        {
+            "name": "Histidine",
+            "url": "https://examine.com/supplements/histidine/"
+        },
+        {
+            "name": "HMB",
+            "url": "https://examine.com/supplements/hmb/"
+        },
+        {
+            "name": "Hordenine",
+            "url": "https://examine.com/supplements/hordenine/"
+        },
+        {
+            "name": "Horny Goat Weed",
+            "url": "https://examine.com/supplements/horny-goat-weed/"
+        },
+        {
+            "name": "Horse Chestnut",
+            "url": "https://examine.com/supplements/horse-chestnut/"
+        },
+        {
+            "name": "Huperzine A",
+            "url": "https://examine.com/supplements/huperzine-a/"
+        },
+        {
+            "name": "Hyaluronic Acid",
+            "url": "https://examine.com/supplements/hyaluronic-acid/"
+        },
+        {
+            "name": "Idebenone",
+            "url": "https://examine.com/supplements/idebenone/"
+        },
+        {
+            "name": "Inositol",
+            "url": "https://examine.com/supplements/inositol/"
+        },
+        {
+            "name": "Insect Protein",
+            "url": "https://examine.com/supplements/insect-protein/"
+        },
+        {
+            "name": "Inulin",
+            "url": "https://examine.com/supplements/inulin/"
+        },
+        {
+            "name": "Iodine",
+            "url": "https://examine.com/supplements/iodine/"
+        },
+        {
+            "name": "Iron",
+            "url": "https://examine.com/supplements/iron/"
+        },
+        {
+            "name": "Isoleucine",
+            "url": "https://examine.com/supplements/isoleucine/"
+        },
+        {
+            "name": "Jiaogulan",
+            "url": "https://examine.com/supplements/jiaogulan/"
+        },
+        {
+            "name": "Jujube",
+            "url": "https://examine.com/supplements/jujube/"
+        },
+        {
+            "name": "Kaempferol",
+            "url": "https://examine.com/supplements/kaempferol/"
+        },
+        {
+            "name": "Kanna",
+            "url": "https://examine.com/supplements/kanna/"
+        },
+        {
+            "name": "Kava",
+            "url": "https://examine.com/supplements/kava/"
+        },
+        {
+            "name": "Keratin",
+            "url": "https://examine.com/supplements/keratin/"
+        },
+        {
+            "name": "Krill Oil",
+            "url": "https://examine.com/supplements/krill-oil/"
+        },
+        {
+            "name": "Kudzu",
+            "url": "https://examine.com/supplements/kudzu/"
+        },
+        {
+            "name": "L-Carnitine",
+            "url": "https://examine.com/supplements/l-carnitine/"
+        },
+        {
+            "name": "L-Cysteine",
+            "url": "https://examine.com/supplements/l-cysteine/"
+        },
+        {
+            "name": "L-Threonate",
+            "url": "https://examine.com/supplements/l-threonate/"
+        },
+        {
+            "name": "L-Tyrosine",
+            "url": "https://examine.com/supplements/l-tyrosine/"
+        },
+        {
+            "name": "Lactoferrin",
+            "url": "https://examine.com/supplements/lactoferrin/"
+        },
+        {
+            "name": "Lavender",
+            "url": "https://examine.com/supplements/lavender/"
+        },
+        {
+            "name": "Lemon Balm",
+            "url": "https://examine.com/supplements/lemon-balm/"
+        },
+        {
+            "name": "Leucine",
+            "url": "https://examine.com/supplements/leucine/"
+        },
+        {
+            "name": "Licorice",
+            "url": "https://examine.com/supplements/licorice/"
+        },
+        {
+            "name": "Limonene",
+            "url": "https://examine.com/supplements/limonene/"
+        },
+        {
+            "name": "Lion's Mane",
+            "url": "https://examine.com/supplements/lion's-mane/"
+        },
+        {
+            "name": "Lutein",
+            "url": "https://examine.com/supplements/lutein/"
+        },
+        {
+            "name": "Lycopene",
+            "url": "https://examine.com/supplements/lycopene/"
+        },
+        {
+            "name": "Lysine",
+            "url": "https://examine.com/supplements/lysine/"
+        },
+        {
+            "name": "Maca",
+            "url": "https://examine.com/supplements/maca/"
+        },
+        {
+            "name": "Magnesium",
+            "url": "https://examine.com/supplements/magnesium/"
+        },
+        {
+            "name": "Melatonin",
+            "url": "https://examine.com/supplements/melatonin/"
+        },
+        {
+            "name": "N-Acetylcysteine",
+            "url": "https://examine.com/supplements/n-acetylcysteine/"
+        },
+        {
+            "name": "Nattokinase",
+            "url": "https://examine.com/supplements/nattokinase/"
+        },
+        {
+            "name": "Nicotinamide Mononucleotide",
+            "url": "https://examine.com/supplements/nicotinamide-mononucleotide/"
+        },
+        {
+            "name": "Quercetin",
+            "url": "https://examine.com/supplements/quercetin/"
+        },
+        {
+            "name": "Rhodiola rosea",
+            "url": "https://examine.com/supplements/rhodiola-rosea/"
+        },
+        {
+            "name": "Taurine",
+            "url": "https://examine.com/supplements/taurine/"
+        },
+        {
+            "name": "Theanine",
+            "url": "https://examine.com/supplements/theanine/"
+        },
+        {
+            "name": "Tongkat Ali",
+            "url": "https://examine.com/supplements/tongkat-ali/"
+        },
+        {
+            "name": "Type-II Collagen",
+            "url": "https://examine.com/supplements/type-ii-collagen/"
+        },
+        {
+            "name": "Vitamin C",
+            "url": "https://examine.com/supplements/vitamin-c/"
+        },
+        {
+            "name": "Vitamin D",
+            "url": "https://examine.com/supplements/vitamin-d/"
+        },
+        {
+            "name": "Vitamin E",
+            "url": "https://examine.com/supplements/vitamin-e/"
+        },
+        {
+            "name": "Whey Protein",
+            "url": "https://examine.com/supplements/whey-protein/"
+        },
+        {
+            "name": "Zinc",
+            "url": "https://examine.com/supplements/zinc/"
+        }
+    ]
+}

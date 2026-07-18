@@ -1274,25 +1274,41 @@
     // A supplement-centric page. Aggregates this supplement's entry across the
     // category guides it appears in (dose / timing / evidence / tier pulled from
     // those guides). Replaces the old behaviour of jumping to a condition guide.
+    //
+    // The Learn list uses umbrella names ("Blueberries", "CDP-Choline") while the
+    // guide data uses specific forms ("Blueberry powder", "CDP-choline
+    // (citicoline)"), so we match tolerantly (normalized substring, either way)
+    // and — crucially — never dead-end: if nothing matches we still link out to
+    // the guides the supplement is tagged to.
+    const _suppNorm = (s) => (s||'').toLowerCase().replace(/\([^)]*\)/g,' ').replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
+    const _suppMatches = (a, b) => { const x=_suppNorm(a), y=_suppNorm(b); return !!x && !!y && (x.includes(y) || y.includes(x)); };
+
     const Supplement = ({ name, cache, onOpenCategory, inStack, onAdd, onBack, onNav }) => {
       const { Icon, Tabbar } = window;
       const meta = SUPPLEMENTS.find(s => s.n === name) || { n:name, t:[] };
       const slugs = meta.t;
       const tierRank = { Primary:0, Secondary:1, Promising:2 };
 
-      // Collect this supplement's appearance in each guide it belongs to.
+      // Still waiting on any guide this supplement belongs to?
+      const loading = slugs.some(slug => { const c = cache[slug]; return !c || c.loading; });
+
+      // Collect every guide-entry that matches this supplement (there can be
+      // more than one form per guide, e.g. blueberry variants).
       const appearances = [];
-      let anyLoading = false, anyError = false;
       slugs.forEach(slug => {
         const c = cache[slug] || {};
-        if (c.loading) { anyLoading = true; return; }
-        if (c.error)   { anyError = true; return; }
-        const entry = (c.data?.supplements || []).find(s => s.name.toLowerCase() === name.toLowerCase());
-        if (entry) appearances.push({ slug, title: c.data.title || (TOPIC_BY_SLUG[slug]?.name) || slug, entry });
+        (c.data?.supplements || []).forEach(entry => {
+          if (_suppMatches(name, entry.name)) {
+            appearances.push({ slug, title: c.data.title || (TOPIC_BY_SLUG[slug]?.name) || slug, entry });
+          }
+        });
       });
       appearances.sort((a,b) => (tierRank[a.entry.tier] ?? 9) - (tierRank[b.entry.tier] ?? 9));
-      const best = appearances[0];            // strongest-evidence appearance
-      const added = inStack(name);
+      const best = appearances[0];            // strongest-evidence match
+      const addName = best ? best.entry.name : name;
+      const added = inStack(addName);
+      // Guides to link to when we couldn't pull structured detail.
+      const fallbackGuides = slugs.map(slug => ({ slug, name: (TOPIC_BY_SLUG[slug]?.name) || slug, icon: TOPIC_BY_SLUG[slug]?.icon }));
 
       return (
         <div className="screen-root">
@@ -1312,17 +1328,13 @@
               </div>
             </div>
 
-            {anyLoading && appearances.length===0 && <CategorySkeleton/>}
-            {!anyLoading && appearances.length===0 && (
-              <div style={{margin:'18px 22px', padding:'14px 16px', background:'var(--accent-soft)', color:'var(--brand-deep)', borderRadius:12, fontSize:13}}>
-                Couldn't load details for {name} right now{anyError ? ' — a guide failed to load.' : '.'} Try again in a moment.
-              </div>
-            )}
+            {loading && appearances.length===0 && <CategorySkeleton/>}
 
             {best && (
               <div style={{padding:'22px 22px 6px'}}>
                 <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>How to <em style={{fontStyle:'italic', color:'var(--brand)'}}>take it</em></div>
                 <div className="bal-card" style={{padding:'14px 16px'}}>
+                  {best.entry.name && _suppNorm(best.entry.name)!==_suppNorm(name) && <div style={{fontSize:13, fontWeight:600, color:'var(--ink)', marginBottom:4}}>{best.entry.name}</div>}
                   {best.entry.form && <div style={{fontStyle:'italic', color:'var(--ink-3)', fontSize:12, marginBottom:8}}>{best.entry.form}</div>}
                   <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
                     {best.entry.dose && <span className="bal-pill light mono" style={{fontSize:11}}>{best.entry.dose}</span>}
@@ -1330,10 +1342,10 @@
                   </div>
                   {best.entry.evidence && <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.45, marginTop:8}}>{best.entry.evidence}</div>}
                   <div style={{display:'flex', gap:8, marginTop:10, flexWrap:'wrap'}}>
-                    <button onClick={()=>onAdd({ ...best.entry, name }, best.title)} disabled={added} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
+                    <button onClick={()=>onAdd(best.entry, best.title)} disabled={added} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
                       {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
                     </button>
-                    {buyLinksForName(name, best.entry.iherb_url).map(r => (
+                    {buyLinksForName(addName, best.entry.iherb_url).map(r => (
                       <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>{r.name} <ExternalIcon c="var(--ink-2)"/></a>
                     ))}
                   </div>
@@ -1341,23 +1353,36 @@
               </div>
             )}
 
-            {appearances.length>0 && (
+            {appearances.length>0 ? (
               <div style={{padding:'24px 22px 6px'}}>
                 <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>In your <em style={{fontStyle:'italic', color:'var(--brand)'}}>guides</em></div>
                 <div style={{fontSize:13, color:'var(--ink-3)', marginBottom:14}}>Where {name} is recommended, and its evidence tier in each. Tap to open the guide.</div>
-                {appearances.map(a => (
-                  <button key={a.slug} onClick={()=>onOpenCategory(a.slug)} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'14px 16px', marginBottom:10, display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
+                {appearances.map((a,i) => (
+                  <button key={a.slug+':'+i} onClick={()=>onOpenCategory(a.slug)} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'14px 16px', marginBottom:10, display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
                     <div className={`ev-badge ${GRADE[a.entry.tier]||'c'}`}>{GRADE_LETTER[a.entry.tier]||'·'}</div>
                     <div style={{flex:1, minWidth:0}}>
                       <div style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>{a.title}</div>
-                      <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{a.entry.tier}{a.entry.dose ? ' · ' + a.entry.dose : ''}</div>
+                      <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{a.entry.tier}{_suppNorm(a.entry.name)!==_suppNorm(name) ? ' · ' + a.entry.name : ''}{a.entry.dose ? ' · ' + a.entry.dose : ''}</div>
                     </div>
                     <Icon.Chevron size={13} c="var(--ink-4)"/>
                   </button>
                 ))}
                 <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px 24px', lineHeight:1.5}}>Always check with your healthcare provider before starting any new supplement, especially if you take medication or have a health condition.</div>
               </div>
-            )}
+            ) : (!loading && slugs.length>0 && (
+              <div style={{padding:'24px 22px 6px'}}>
+                <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>In your <em style={{fontStyle:'italic', color:'var(--brand)'}}>guides</em></div>
+                <div style={{fontSize:13, color:'var(--ink-3)', marginBottom:14}}>{name} is recommended in your {fallbackGuides.map(g=>g.name).join(' · ')} guide{slugs.length>1?'s':''}. Open one to see the full stack and dosing.</div>
+                {fallbackGuides.map(g => { const Ic = Icon[g.icon]; return (
+                  <button key={g.slug} onClick={()=>onOpenCategory(g.slug)} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'14px 16px', marginBottom:10, display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
+                    <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center'}}>{Ic ? <Ic size={18} c="var(--brand)"/> : null}</div>
+                    <div style={{flex:1, minWidth:0, fontSize:15, fontWeight:600, color:'var(--ink)'}}>{g.name}</div>
+                    <Icon.Chevron size={13} c="var(--ink-4)"/>
+                  </button>
+                ); })}
+                <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px 24px', lineHeight:1.5}}>Always check with your healthcare provider before starting any new supplement, especially if you take medication or have a health condition.</div>
+              </div>
+            ))}
           </div>
           <Tabbar active="browse" onNav={onNav}/>
         </div>

@@ -870,6 +870,134 @@
       );
     };
 
+    // ============ Substance support (curated, prototype) ============
+    // Curated substance -> nutritional-support lists. IMPORTANT: this is a
+    // human-curated dataset shown as-is (the assistant never generates these),
+    // labelled a prototype and pending clinician/pharmacist review before any
+    // real-world use. Content is educational, not medical advice or treatment.
+    const SUBSTANCE_DISCLAIMER = "Educational prototype — not medical advice or treatment. Supplements can interact with medications and substances (timing and dose matter). Never start, stop, or change a prescribed medication based on this. Check with a doctor or pharmacist first, especially if you take prescription drugs. In an emergency, contact emergency services.";
+    const SUBSTANCE_GROUPS = [
+      { key:'recreational', label:'Recreational substances' },
+      { key:'medication',   label:'Medications' },
+      { key:'steroid',      label:'Anabolic steroids' },
+    ];
+    const SUBSTANCE_SUPPORT = [
+      { key:'methamphetamine', name:'Methamphetamine', group:'recreational', aliases:['meth','methamphetamine'],
+        effects:'Stimulant. Associated with dopamine/nutrient depletion, high oxidative stress, and disrupted sleep, appetite and mood.',
+        supps:['Vitamin B6','Vitamin B12','Folic Acid','Omega-3','Magnesium','Vitamin D','Ashwagandha','Vitamin E','Vitamin C','NAC','Curcumin','CoQ10','Vitamin A','Leafy greens','Calcium','Protein'] },
+      { key:'mdma', name:'MDMA', group:'recreational', aliases:['mdma','ecstasy','molly'],
+        effects:'Associated with serotonin depletion, dehydration, jaw tension and next-day low mood ("comedown").',
+        caution:'5-HTP is used after MDMA, not before or during — taken too close together it can raise serotonin-syndrome risk.',
+        supps:['Magnesium','Vitamin E','Alpha-Lipoic Acid','5-HTP','Omega-3','ZMA','L-Glutamine','Niacin','Biotin','Vitamin B1','Vitamin B5','Vitamin B6','Calcium','Amino acids'] },
+      { key:'heroin', name:'Heroin', group:'recreational', aliases:['heroin'],
+        effects:'Opioid. Associated with suppressed immunity, poor nutrition, constipation and fatigue.',
+        supps:['Vitamin C','Vitamin D','Zinc','Selenium','Omega-3','Curcumin','Echinacea'] },
+      { key:'fentanyl', name:'Fentanyl', group:'recreational', aliases:['fentanyl'],
+        effects:'An extremely potent opioid. Associated with sedation, respiratory suppression and nutritional depletion.',
+        caution:'Fentanyl can be fatal in tiny amounts. Carry naloxone (Narcan) — no supplement reduces overdose risk.',
+        supps:['Vitamin C','Vitamin E','Vitamin A','Vitamin D','Zinc','Selenium','Omega-3'] },
+      { key:'ketamine', name:'Ketamine', group:'recreational', aliases:['ketamine'],
+        effects:'Dissociative. Associated with bladder and liver strain and next-day fog with heavy use.',
+        supps:['Milk Thistle','NAC','Alpha-Lipoic Acid','Butyrate'] },
+      { key:'ghb', name:'GHB', group:'recreational', aliases:['ghb','gbl'],
+        effects:'A depressant with a narrow margin between doses. Associated with heavy sedation and dependence risk.',
+        supps:['Vitamin C','Vitamin E','Vitamin A','Vitamin D','Zinc','Selenium','Omega-3'] },
+      { key:'alcohol', name:'Alcohol', group:'recreational', aliases:['alcohol'],
+        effects:'Burdens the liver and depletes B-vitamins, magnesium and antioxidants.',
+        supps:['Milk Thistle','L-Carnitine','Vitamin E','Spirulina','Vitamin U','CoQ10','Omega-3','Vitamin C','Zinc','Vitamin D'] },
+      { key:'cocaine', name:'Cocaine', group:'recreational', aliases:['cocaine','coke'],
+        effects:'Stimulant. Raises cardiovascular strain and oxidative stress and depletes nutrients.',
+        supps:['Milk Thistle','Vitamin B6','Vitamin B12','Vitamin B1','Vitamin E','NAC','Curcumin','Omega-3','CoQ10','Magnesium','L-Glutamine','Aloe Vera'] },
+      { key:'psilocybin', name:'Psilocybin mushrooms', group:'recreational', aliases:['psilocybin','mushrooms','shrooms'],
+        effects:'Associated with short-term nausea and intense psychological effects.',
+        supps:['Omega-3','Folic Acid','Vitamin B6','Vitamin B12','Vitamin D','Vitamin C','Vitamin E','Magnesium','Potassium','Ashwagandha','CoQ10','Aloe Vera','L-Glutamine'] },
+      { key:'tobacco', name:'Tobacco / nicotine', group:'recreational', aliases:['tobacco','nicotine','smoking','cigarettes','vaping'],
+        effects:'Oxidative stress and depletion of vitamin C and other antioxidants.',
+        supps:['Vitamin C','Vitamin E','Selenium','Vitamin B6','Vitamin B12','Omega-3','Folic Acid'] },
+
+      { key:'olanzapine', name:'Olanzapine', group:'medication', aliases:['olanzapine','zyprexa'],
+        effects:'Antipsychotic. Can affect metabolism, weight and blood lipids.',
+        supps:['Omega-3','Vitamin C','Vitamin E','Milk Thistle','Folic Acid','Vitamin B6','Vitamin B12','Chromium'] },
+      { key:'valproate', name:'Valproate', group:'medication', aliases:['valproate','valproic','depakote'],
+        effects:'Anticonvulsant / mood stabiliser. Can affect the liver and deplete certain nutrients.',
+        supps:['Milk Thistle','NAC','Curcumin','Vitamin B6','Vitamin B12','Folic Acid','Vitamin D'] },
+      { key:'prozac', name:'Prozac (fluoxetine)', group:'medication', aliases:['prozac','fluoxetine'],
+        effects:'SSRI antidepressant. Can affect sleep, digestion and nutrient status.',
+        caution:'Do not add serotonin-raising supplements (5-HTP, St John’s Wort, tryptophan) — with an SSRI they can cause serotonin syndrome.',
+        supps:['Milk Thistle','Omega-3','CoQ10','Magnesium','Vitamin D','Vitamin C','Vitamin E','Vitamin B6','Vitamin B12','Folic Acid'] },
+      { key:'atorvastatin', name:'Atorvastatin', group:'medication', aliases:['atorvastatin','lipitor'],
+        effects:'Statin (cholesterol). Can lower CoQ10 and sometimes cause muscle aches.',
+        caution:'Don’t stop your statin. CoQ10 is sometimes used for statin-related muscle aches — ask your doctor.',
+        supps:['CoQ10','Vitamin C','Vitamin E','Omega-3','Vitamin B6','Vitamin B12','Folic Acid','Magnesium','Milk Thistle'] },
+      { key:'levothyroxine', name:'Levothyroxine (L-thyroxine)', group:'medication', aliases:['levothyroxine','l-thyroxine','thyroxine','synthroid'],
+        effects:'Thyroid hormone. Its absorption is sensitive to the timing of minerals.',
+        caution:'Calcium, iron, magnesium and some multivitamins block thyroid-hormone absorption — take them at least 4 hours apart, under your doctor’s guidance.',
+        supps:['Multivitamin','Vitamin C','Vitamin E','Selenium','Omega-3','Vitamin B6','Vitamin B12','Folic Acid','Zinc','Calcium','Magnesium'] },
+      { key:'lisinopril', name:'Lisinopril', group:'medication', aliases:['lisinopril'],
+        effects:'ACE-inhibitor for blood pressure. Can affect potassium and minerals.',
+        caution:'This medicine can raise potassium — be cautious with potassium supplements.',
+        supps:['Magnesium','Vitamin C','Vitamin E','Omega-3','CoQ10','Multivitamin'] },
+      { key:'amlodipine', name:'Amlodipine', group:'medication', aliases:['amlodipine','norvasc'],
+        effects:'Calcium-channel blocker for blood pressure. Can cause ankle swelling.',
+        supps:['Milk Thistle','Vitamin E','Curcumin','Omega-3','CoQ10','Vitamin D','Vitamin C','Magnesium'] },
+      { key:'metoprolol', name:'Metoprolol', group:'medication', aliases:['metoprolol'],
+        effects:'Beta-blocker. Can affect energy levels and CoQ10.',
+        supps:['Omega-3','CoQ10','Milk Thistle','Vitamin B6','Vitamin B12','Folic Acid','Vitamin C','Curcumin','Magnesium','Chromium','Calcium'] },
+      { key:'albuterol', name:'Albuterol', group:'medication', aliases:['albuterol','salbutamol','ventolin'],
+        effects:'Asthma reliever. Can cause jitteriness and lower potassium.',
+        supps:['Vitamin C','CoQ10','Milk Thistle','Spirulina','Omega-3','Vitamin B6','Vitamin B12','Folic Acid','Vitamin D'] },
+      { key:'ozempic', name:'Ozempic (semaglutide)', group:'medication', aliases:['ozempic','semaglutide','wegovy'],
+        effects:'GLP-1 for blood sugar / weight. Can cause nausea and reduced food intake.',
+        supps:['Multivitamin','Omega-3','Vitamin B6','Vitamin B12','Folic Acid','Milk Thistle','Vitamin C','Vitamin E','Magnesium','L-Tryptophan','Curcumin'] },
+
+      { key:'testosterone', name:'Testosterone (anabolic use)', group:'steroid', aliases:['testosterone cycle','trt','anabolic'],
+        effects:'Anabolic steroid. Can strain the liver, blood lipids and natural hormone balance.',
+        supps:['Vitamin E','Vitamin C','Omega-3','Vitamin B12','Vitamin B6','Folic Acid','Magnesium','Zinc','Milk Thistle','NAC','CoQ10','L-Carnitine'] },
+      { key:'nandrolone', name:'Nandrolone', group:'steroid', aliases:['nandrolone','deca'],
+        effects:'Anabolic steroid. Can strain the liver, lipids and hormones.',
+        supps:['Vitamin C','Vitamin E','Vitamin B6','Vitamin B12','Folic Acid','Zinc','Magnesium','Curcumin','Glutathione'] },
+      { key:'trenbolone', name:'Trenbolone', group:'steroid', aliases:['trenbolone','tren'],
+        effects:'Anabolic steroid. Can strain the liver, kidneys, lipids and sleep.',
+        supps:['Milk Thistle','NAC','Vitamin B6','Vitamin B12','CoQ10','L-Carnitine','Omega-3','L-Glutamine','Vitamin C','Vitamin E','Zinc','Ashwagandha','Multivitamin'] },
+      { key:'boldenone', name:'Boldenone', group:'steroid', aliases:['boldenone','equipoise','eq'],
+        effects:'Anabolic steroid. Can strain the liver, lipids and blood counts.',
+        supps:['Milk Thistle','NAC','Vitamin B6','Vitamin B12','CoQ10','Omega-3','Arginine','Magnesium','Zinc','Spirulina','Vitamin D','Multivitamin'] },
+      { key:'masteron', name:'Masteron', group:'steroid', aliases:['masteron','drostanolone'],
+        effects:'Anabolic steroid. Can strain the liver, lipids and hormones.',
+        supps:['Milk Thistle','NAC','Vitamin E','Omega-3','CoQ10','Tribulus','Curcumin','Multivitamin','Vitamin B12','Vitamin B6','Vitamin D'] },
+    ];
+    const SUBSTANCE_BY_KEY = Object.fromEntries(SUBSTANCE_SUPPORT.map(s => [s.key, s]));
+    const GROUP_LABEL = Object.fromEntries(SUBSTANCE_GROUPS.map(g => [g.key, g.label]));
+
+    // Chat detection: only intercept when the message clearly asks about
+    // mitigating a substance (a substance name + a support/harm cue, or a
+    // message that is essentially just the substance name). Keeps normal
+    // questions like "supplements for testosterone" going to the assistant.
+    const _SUB_CUE = /\b(side\s?effect|reduce|recover|recovery|detox|protect|support|comedown|come\s?down|coming\s?off|withdraw|withdrawal|hangover|after (?:taking|using)|on (?:a )?cycle|cycle|liver|damage|deplet|harm)\b/i;
+    const detectSubstance = (text) => {
+      const t = (text||'').toLowerCase();
+      const hit = SUBSTANCE_SUPPORT.find(s => s.aliases.some(a => new RegExp('(?:^|[^a-z])'+a.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:[^a-z]|$)','i').test(t)));
+      if (!hit) return null;
+      const bareName = t.replace(/[^a-z]/g,'').length <= (hit.name.replace(/[^a-z]/gi,'').length + 6);
+      return (_SUB_CUE.test(t) || bareName) ? hit : null;
+    };
+
+    // Shared body: brief effects + curated supplement list + safety notes.
+    // Used by the full-screen Substance page and the in-chat substance card.
+    const SubstancePanel = ({ sub }) => (
+      <div>
+        {sub.caution && (
+          <div style={{margin:'0 0 12px', padding:'11px 13px', background:'#fdecef', color:'#8a1f33', borderRadius:12, fontSize:12.5, lineHeight:1.45, fontWeight:500}}>⚠️ {sub.caution}</div>
+        )}
+        <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5, marginBottom:14}}>{sub.effects}</div>
+        <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Supplements that may help</div>
+        <div style={{display:'flex', flexWrap:'wrap', gap:7, marginBottom:14}}>
+          {sub.supps.map(s => <span key={s} className="bal-pill light" style={{padding:'7px 12px', fontSize:12.5}}>{s}</span>)}
+        </div>
+        <div style={{fontSize:11, color:'var(--ink-3)', lineHeight:1.5, padding:'10px 12px', background:'var(--surface-3)', borderRadius:10}}>{SUBSTANCE_DISCLAIMER}</div>
+      </div>
+    );
+
     const titleCase = (s) => s.replace(/\b\w/g, c => c.toUpperCase());
     // Detect purchase intent in a chat message and, when present, what to order.
     // Returns null (not an order), {whole:true} (order the whole stack), or
@@ -972,6 +1100,13 @@
           startOrder(question, cart, name);
           return;
         }
+        // Substance-support intent → show the curated, vetted card instead of
+        // letting the assistant generate drug/supplement advice.
+        const sub = detectSubstance(question);
+        if (sub) {
+          setMessages(m => [...m, { role:'user', content:question }, { role:'assistant', kind:'substance', sub }]);
+          return;
+        }
         const next = [...messages, { role:'user', content:question }];
         setMessages(next);
         setBusy(true);
@@ -1038,6 +1173,20 @@
               </div>
             ) : m.kind==='order' ? (
               <div key={i} style={{padding:'10px 18px 0'}}><OrderFlow items={m.cart} answer={m.answer}/></div>
+            ) : m.kind==='substance' ? (
+              <div key={i} style={{padding:'16px 18px 0'}}>
+                <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                  <window.BalLogoMark size={26}/>
+                  <div style={{fontSize:12, fontWeight:600, color:'var(--ink-2)'}}>Balance</div>
+                  <div style={{fontSize:11, color:'var(--ink-4)'}}>· {GROUP_LABEL[m.sub.group]}</div>
+                </div>
+                <div style={{marginLeft:34}}>
+                  <div className="bal-card" style={{padding:'14px 16px'}}>
+                    <div style={{fontSize:16, fontWeight:600, color:'var(--ink)', marginBottom:10}}>Support for {m.sub.name}</div>
+                    <SubstancePanel sub={m.sub}/>
+                  </div>
+                </div>
+              </div>
             ) : (() => {
               // Extras (the build-your-order supplement list, sources, follow-ups)
               // appear once the answer is complete — not while it's streaming.
@@ -1087,14 +1236,15 @@
     };
 
     // ============ Learn ============
-    const Learn = ({ onOpen, onOpenSupplement, onNav }) => {
+    const Learn = ({ onOpen, onOpenSupplement, onOpenSubstance, onNav }) => {
       const { Icon, Tabbar } = window;
-      const [mode, setMode] = useState('topics');   // 'topics' | 'supplements'
+      const [mode, setMode] = useState('topics');   // 'topics' | 'supplements' | 'substances'
       const [q, setQ] = useState('');
       const query = q.trim().toLowerCase();
       // Results update live as you type (instant client-side filter).
       const topics = TOPICS.filter(t => !query || t.name.toLowerCase().includes(query) || t.slug.replace(/-/g,' ').includes(query));
       const supps = SUPPLEMENTS.filter(s => !query || s.n.toLowerCase().includes(query) || s.t.some(slug => (TOPIC_BY_SLUG[slug]?.name||'').toLowerCase().includes(query)));
+      const subs = SUBSTANCE_SUPPORT.filter(s => !query || s.name.toLowerCase().includes(query) || GROUP_LABEL[s.group].toLowerCase().includes(query) || s.aliases.some(a => a.includes(query)));
       const seg = (k, label, count) => (
         <button onClick={()=>setMode(k)} style={{flex:1, padding:'9px 0', borderRadius:9, border:'none', cursor:'pointer', background: mode===k?'white':'transparent', color: mode===k?'var(--brand)':'var(--ink-3)', fontWeight:600, fontSize:13, boxShadow: mode===k?'var(--sh-1)':'none', transition:'background 150ms'}}>{label} <span style={{opacity:.55}}>{count}</span></button>
       );
@@ -1125,6 +1275,7 @@
               <div style={{display:'flex', background:'var(--surface-3)', borderRadius:12, padding:3}}>
                 {seg('topics','Categories', topics.length)}
                 {seg('supplements','Supplements', supps.length)}
+                {seg('substances','Substances', subs.length)}
               </div>
             </div>
             {/* Featured guide — only on Categories with no active search */}
@@ -1153,7 +1304,7 @@
                     ); })}
                   </div>
                 ) : empty
-              ) : (
+              ) : mode==='supplements' ? (
                 supps.length ? (
                   <div className="bal-card" style={{padding:'2px 0'}}>
                     {supps.map((s,i) => (
@@ -1166,6 +1317,29 @@
                         <Icon.Chevron size={13} c="var(--ink-4)"/>
                       </button>
                     ))}
+                  </div>
+                ) : empty
+              ) : (
+                subs.length ? (
+                  <div>
+                    <div style={{fontSize:11.5, color:'var(--ink-3)', lineHeight:1.5, padding:'11px 13px', background:'var(--surface-3)', borderRadius:12, marginBottom:14}}>Nutritional-support ideas for substances & medications — <b>educational prototype, not medical advice</b>. Always check with a doctor or pharmacist, especially with prescription drugs.</div>
+                    {SUBSTANCE_GROUPS.map(g => { const items = subs.filter(s => s.group===g.key); if (!items.length) return null; return (
+                      <div key={g.key} style={{marginBottom:18}}>
+                        <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>{g.label}</div>
+                        <div className="bal-card" style={{padding:'2px 0'}}>
+                          {items.map((s,i) => (
+                            <button key={s.key} onClick={()=>onOpenSubstance(s.key)} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'12px 16px', borderBottom:i<items.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                              <div style={{width:32, height:32, borderRadius:10, background:'var(--brand-soft)', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', color:'var(--brand)', fontWeight:700, fontSize:14}}>{s.name[0]}</div>
+                              <div style={{flex:1, minWidth:0}}>
+                                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                                <div style={{fontSize:11, color:'var(--ink-3)', marginTop:1}}>{s.supps.length} support supplements</div>
+                              </div>
+                              <Icon.Chevron size={13} c="var(--ink-4)"/>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ); })}
                   </div>
                 ) : empty
               )}
@@ -1383,6 +1557,35 @@
                 <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px 24px', lineHeight:1.5}}>Always check with your healthcare provider before starting any new supplement, especially if you take medication or have a health condition.</div>
               </div>
             ))}
+          </div>
+          <Tabbar active="browse" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Substance support detail ============
+    const Substance = ({ sub, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      if (!sub) return null;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:110}}>
+            <div style={{background:'linear-gradient(160deg, var(--brand) 0%, var(--brand-deep) 100%)', color:'white', padding:'18px 22px 30px', position:'relative', overflow:'hidden'}}>
+              <div style={{position:'absolute', top:-60, right:-40, width:200, height:200, borderRadius:'50%', background:'rgba(243,169,253,0.10)'}}/>
+              <div style={{height:54}}/>
+              <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', position:'relative', zIndex:1}}>
+                <button onClick={onBack} style={{width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.14)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Back size={16} c="white"/></button>
+                <button onClick={()=>onNav('ask')} style={{width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.14)', display:'flex', alignItems:'center', justifyContent:'center', border:'none'}}><Icon.Spark size={18} c="white"/></button>
+              </div>
+              <div style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--accent-soft)', marginTop:22, fontWeight:600, position:'relative'}}>{GROUP_LABEL[sub.group]}</div>
+              <div className="serif" style={{fontSize:36, lineHeight:1.08, marginTop:8, position:'relative'}}>{sub.name}</div>
+            </div>
+            <div style={{padding:'22px 22px 8px'}}>
+              <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>What it <em style={{fontStyle:'italic', color:'var(--brand)'}}>does</em></div>
+              <div className="bal-card" style={{padding:'16px'}}>
+                <SubstancePanel sub={sub}/>
+              </div>
+            </div>
           </div>
           <Tabbar active="browse" onNav={onNav}/>
         </div>
@@ -1713,6 +1916,7 @@
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
       const [suppName, setSuppName] = useState(null);   // open supplement (detail screen)
+      const [substanceKey, setSubstanceKey] = useState(null);  // open substance-support page
       const [askQuery, setAskQuery] = useState(null);  // seeds a quick search into Ask
       const [cache, setCache] = useState({});
       const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -1742,6 +1946,7 @@
       const askSearch = useCallback((q) => { setAskQuery(q); setScreen('ask'); }, []);
       const openCategory = useCallback((s) => { setSlug(s); setScreen('category'); }, []);
       const openSupplement = useCallback((n) => { setSuppName(n); setScreen('supplement'); }, []);
+      const openSubstance = useCallback((k) => { setSubstanceKey(k); setScreen('substance'); }, []);
       const addToStack = useCallback((s, sourceTitle) => { setStack(prev => prev.some(x => x.name===s.name) ? prev : [...prev, { ...s, sourceTitle }]); }, []);
       const removeFromStack = useCallback((name) => setStack(prev => prev.filter(x => x.name!==name)), []);
       const inStack = useCallback((name) => stack.some(x => x.name===name), [stack]);
@@ -1781,7 +1986,7 @@
 
       if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo}/>;
       if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery}/>;
-      if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onNav={navTo}/>;
+      if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}/>;
       if (screen === 'stack') {
         if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;
         return <Stack stack={stack} onRemove={removeFromStack} onCheckout={() => setCheckoutOpen(true)} checkoutEnabled={checkoutEnabled} onNav={navTo}/>;
@@ -1789,6 +1994,7 @@
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
+      if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
     };
 

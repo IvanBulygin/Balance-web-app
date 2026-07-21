@@ -984,19 +984,49 @@
 
     // Shared body: brief effects + curated supplement list + safety notes.
     // Used by the full-screen Substance page and the in-chat substance card.
-    const SubstancePanel = ({ sub }) => (
-      <div>
-        {sub.caution && (
-          <div style={{margin:'0 0 12px', padding:'11px 13px', background:'#fdecef', color:'#8a1f33', borderRadius:12, fontSize:12.5, lineHeight:1.45, fontWeight:500}}>⚠️ {sub.caution}</div>
-        )}
-        <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5, marginBottom:14}}>{sub.effects}</div>
-        <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Supplements that may help</div>
-        <div style={{display:'flex', flexWrap:'wrap', gap:7, marginBottom:14}}>
-          {sub.supps.map(s => <span key={s} className="bal-pill light" style={{padding:'7px 12px', fontSize:12.5}}>{s}</span>)}
+    const SubstancePanel = ({ sub, onAdd, inStack }) => {
+      const { Icon } = window;
+      const canOrder = !!onAdd && !!inStack;
+      const mkItem = (name) => ({ name, tier:'', dose:'', iherb_url: buyLinksForName(name)[0].url });
+      const addOne = (name) => onAdd(mkItem(name), sub.name + ' support');
+      const addAll = () => sub.supps.forEach(name => { if (!inStack(name)) addOne(name); });
+      return (
+        <div>
+          {sub.caution && (
+            <div style={{margin:'0 0 12px', padding:'11px 13px', background:'#fdecef', color:'#8a1f33', borderRadius:12, fontSize:12.5, lineHeight:1.45, fontWeight:500}}>⚠️ {sub.caution}</div>
+          )}
+          <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5, marginBottom:14}}>{sub.effects}</div>
+          <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, marginBottom:8}}>
+            <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Supplements that may help</div>
+            {canOrder && <button onClick={addAll} style={{border:'none', background:'var(--brand-soft)', color:'var(--brand-deep)', fontWeight:600, fontSize:12, padding:'6px 12px', borderRadius:999, cursor:'pointer', flexShrink:0}}>Add all to stack</button>}
+          </div>
+          {canOrder ? (
+            <div className="bal-card" style={{padding:'2px 0', border:'1px solid var(--rule)', marginBottom:14}}>
+              {sub.supps.map((name,i) => { const added = inStack(name); return (
+                <div key={name} style={{display:'flex', alignItems:'center', gap:10, padding:'10px 14px', borderBottom:i<sub.supps.length-1?'0.5px solid var(--rule)':'none'}}>
+                  <div style={{flex:1, minWidth:0}}>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{name}</div>
+                    <div style={{display:'flex', flexWrap:'wrap', gap:6, marginTop:3}}>
+                      {buyLinksForName(name).map(r => (
+                        <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:3, fontSize:11, color:'var(--brand)', fontWeight:500, textDecoration:'none'}}>{r.name} <ExternalIcon size={9} c="var(--brand)"/></a>
+                      ))}
+                    </div>
+                  </div>
+                  <button onClick={()=>addOne(name)} disabled={added} aria-label={(added?'Added ':'Add ')+name} style={{flexShrink:0, display:'inline-flex', alignItems:'center', gap:5, padding:'7px 12px', borderRadius:999, border:'none', fontSize:12.5, fontWeight:600, cursor:added?'default':'pointer', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white'}}>
+                    {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add <Icon.Plus size={13} c="white"/></>}
+                  </button>
+                </div>
+              ); })}
+            </div>
+          ) : (
+            <div style={{display:'flex', flexWrap:'wrap', gap:7, marginBottom:14}}>
+              {sub.supps.map(s => <span key={s} className="bal-pill light" style={{padding:'7px 12px', fontSize:12.5}}>{s}</span>)}
+            </div>
+          )}
+          <div style={{fontSize:11, color:'var(--ink-3)', lineHeight:1.5, padding:'10px 12px', background:'var(--surface-3)', borderRadius:10}}>{SUBSTANCE_DISCLAIMER}</div>
         </div>
-        <div style={{fontSize:11, color:'var(--ink-3)', lineHeight:1.5, padding:'10px 12px', background:'var(--surface-3)', borderRadius:10}}>{SUBSTANCE_DISCLAIMER}</div>
-      </div>
-    );
+      );
+    };
 
     const titleCase = (s) => s.replace(/\b\w/g, c => c.toUpperCase());
     // Detect purchase intent in a chat message and, when present, what to order.
@@ -1183,7 +1213,7 @@
                 <div style={{marginLeft:34}}>
                   <div className="bal-card" style={{padding:'14px 16px'}}>
                     <div style={{fontSize:16, fontWeight:600, color:'var(--ink)', marginBottom:10}}>Support for {m.sub.name}</div>
-                    <SubstancePanel sub={m.sub}/>
+                    <SubstancePanel sub={m.sub} onAdd={onAdd} inStack={inStack}/>
                   </div>
                 </div>
               </div>
@@ -1564,7 +1594,7 @@
     };
 
     // ============ Substance support detail ============
-    const Substance = ({ sub, onBack, onNav }) => {
+    const Substance = ({ sub, onAdd, inStack, onBack, onNav }) => {
       const { Icon, Tabbar } = window;
       if (!sub) return null;
       return (
@@ -1583,7 +1613,7 @@
             <div style={{padding:'22px 22px 8px'}}>
               <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>What it <em style={{fontStyle:'italic', color:'var(--brand)'}}>does</em></div>
               <div className="bal-card" style={{padding:'16px'}}>
-                <SubstancePanel sub={sub}/>
+                <SubstancePanel sub={sub} onAdd={onAdd} inStack={inStack}/>
               </div>
             </div>
           </div>
@@ -1994,7 +2024,7 @@
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
-      if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onBack={()=>setScreen('learn')} onNav={navTo}/>;
+      if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
     };
 

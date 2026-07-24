@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
@@ -34,6 +35,7 @@ ROOT = Path(__file__).resolve().parent
 STATIC_DIR = ROOT / "static"
 PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
+MUSHROOMS_PATH = ROOT / "data" / "functional_mushrooms.json"
 
 # Primary is 2.5 Flash — capable, with a much higher free-tier daily quota than
 # 3.5 Flash (which the free tier caps at 20 requests/day). Fallback matches;
@@ -65,6 +67,12 @@ async def lifespan(app: FastAPI):
     index: BM25Index = build_index(PDF_TEXT_DIR)
     state["index"] = index
     state["category_cache"] = CategoryCache(cache_dir=ROOT / "data" / "categories")
+    try:
+        state["mushrooms"] = json.loads(MUSHROOMS_PATH.read_text(encoding="utf-8"))
+        print(f"Loaded functional-mushroom DB: {len(state['mushrooms'].get('mushrooms', []))} entries.")
+    except FileNotFoundError:
+        state["mushrooms"] = {"mushrooms": []}
+        print("No functional-mushroom DB found.")
     print(
         f"Index ready. {len(index.chunks):,} chunks from "
         f"{len({c.source for c in index.chunks})} guides."
@@ -131,6 +139,12 @@ def health():
         "models": CHAT_MODELS,
         "chunks": len(idx.chunks) if idx else 0,
     }
+
+
+@app.get("/api/mushrooms")
+def mushrooms():
+    """Functional-mushroom evidence DB — powers the in-chat curated card (b)."""
+    return state.get("mushrooms", {"mushrooms": []})
 
 
 class CategorySummary(BaseModel):
@@ -206,6 +220,41 @@ def get_category(slug: str):
     except Exception as exc:  # noqa: BLE001 - surface friendly to UI
         print(f"[category {slug}] {exc}")
         raise HTTPException(503, _friendly_error(exc))
+
+
+# Extra aliases so mushroom mentions are caught regardless of naming.
+_MUSHROOM_ALIASES = {
+    "Cordyceps": ["cordyceps"],
+    "Lion's Mane": ["lion's mane", "lions mane", "lion’s mane", "hericium"],
+    "Reishi": ["reishi", "ganoderma", "lingzhi"],
+}
+
+
+def _aliases_for(m: dict) -> set[str]:
+    al = {m["name"].lower()}
+    for tok in re.split(r"[\s/(),]+", (m.get("latin") or "").lower()):
+        if len(tok) > 4:
+            al.add(tok)
+    al.update(a.lower() for a in _MUSHROOM_ALIASES.get(m["name"], []))
+    return {a for a in al if a}
+
+
+def find_mushrooms(text: str) -> list[dict]:
+    t = (text or "").lower()
+    return [m for m in state.get("mushrooms", {}).get("mushrooms", []) if any(a in t for a in _aliases_for(m))]
+
+
+def format_mushroom_block(hits: list[dict]) -> str:
+    lines: list[str] = []
+    for m in hits:
+        lines.append(f"### {m['name']} ({m['latin']})")
+        for b in m.get("benefits", []):
+            src = "; ".join(f"{s['type']}: {s['url']}" for s in b.get("sources", []))
+            lines.append(
+                f"- [{b['evidence_tier']}] {b['benefit']} — {b['summary']} "
+                f"Caveats: {b.get('caveats', 'n/a')}. Sources: {src}"
+            )
+    return "\n".join(lines)
 
 
 def _build_query(messages: list[Message]) -> str:
@@ -295,6 +344,21 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
         + "\n\n## Retrieved passages\n\n"
         + context_block
     )
+
+    # (a) Inject the curated functional-mushroom evidence DB when relevant. The
+    # guides don't cover these, so this is the authoritative source for them.
+    recent_user = "\n".join(m.content for m in trimmed if m.role == "user")
+    mush = find_mushrooms(query or recent_user)
+    if mush:
+        system_instruction += (
+            "\n\n## Functional-mushroom evidence database (AUTHORITATIVE — use "
+            "this, not the guide passages, for these mushrooms)\n\n"
+            + format_mushroom_block(mush)
+            + "\n\nWhen answering about these mushrooms: use ONLY this database, "
+            "state each benefit's evidence tier, include the caveats, never "
+            "overstate or invent benefits/doses, and note this isn't medical "
+            "advice. " + (state.get("mushrooms", {}).get("agent_guidance", ""))
+        )
     if stack:
         names = ", ".join(s.strip() for s in stack if s.strip())
         if names:

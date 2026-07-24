@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "title": "Functional mushrooms — benefits ranked by strength of evidence",
+  "purpose": "Curated evidence database for the Balance AI agent to answer user questions about functional mushrooms. Benefits within each mushroom are ordered by strength of human evidence (rank 1 = best-supported).",
+  "sources_policy": "Substance is drawn from PubMed / PubMed Central (peer-reviewed primary studies and systematic reviews) and Cochrane systematic reviews. Examine.com is included as a link-out reference only; its text is not reproduced.",
+  "evidence_scale": {
+    "Limited": "A systematic review / Cochrane review or several RCTs exist, but the evidence is low-quality or inconsistent. The most-studied claims sit here — 'studied', not 'proven'.",
+    "Preliminary": "A few small, short human trials show early signals; not yet robust.",
+    "Preclinical/Traditional": "Supported only by lab/animal studies or traditional use — no adequate human trials.",
+    "Insufficient/Unproven": "Studied in humans but no clear benefit demonstrated, or evidence too weak to judge."
+  },
+  "agent_guidance": "When answering users: (1) always state the evidence tier and that trials are typically small/short; (2) never present these as treatments or medical advice; (3) for anything involving a disease, medication, pregnancy, or cancer, tell the user to consult a doctor/pharmacist; (4) cite the linked sources; (5) do not invent benefits or doses beyond this database.",
+  "disclaimer": "Educational information, not medical advice. Functional-mushroom evidence is generally early-stage. Consult a healthcare professional before use, especially with medications or a health condition.",
+  "mushrooms": [
+    {
+      "name": "Cordyceps",
+      "latin": "Cordyceps militaris / Cordyceps sinensis (Cs-4)",
+      "note": "Species and extraction methods vary widely between studies, which limits comparability.",
+      "benefits": [
+        {
+          "rank": 1,
+          "benefit": "Aerobic exercise performance (VO2max, time to exhaustion, ventilatory threshold)",
+          "evidence_tier": "Preliminary",
+          "summary": "Small RCTs and a meta-analysis report modest improvements in aerobic capacity in healthy/active adults and older adults. Effects are small and trials are short, heterogeneous, and sometimes industry-funded.",
+          "human_evidence": "Meta-analysis of ~8 RCTs: modest VO2max gains; a 3-week RCT of C. militaris reported +4.8 mL/kg/min VO2max and +69.8 s time-to-exhaustion; a Cs-4 RCT improved aerobic capacity in healthy elderly.",
+          "caveats": "Small samples, short durations, mixed species/doses; single-dose/acute effects less consistent.",
+          "sources": [
+            {"type": "PubMed", "title": "Cordyceps militaris ergogenic effects — narrative review (Nutrients, 2024)", "url": "https://www.mdpi.com/2072-6643/18/5/781"},
+            {"type": "PubMed", "title": "Cs-4 aerobic capacity RCT in healthy elderly (Chin J Integr Med)", "url": "https://link.springer.com/article/10.1007/BF02836405"},
+            {"type": "Examine", "title": "Cordyceps overview (link-out)", "url": "https://examine.com/supplements/cordyceps/"}
+          ]
+        },
+        {
+          "rank": 2,
+          "benefit": "Chronic kidney disease — adjuvant to conventional care",
+          "evidence_tier": "Limited",
+          "summary": "As an add-on to standard therapy, Cordyceps preparations may lower serum creatinine, raise creatinine clearance, and reduce proteinuria — but the Cochrane review rated the evidence low-quality, so no firm conclusions.",
+          "human_evidence": "Cochrane review (Zhang 2014) and a later meta-analysis of Cordyceps as adjuvant in renal dysfunction.",
+          "caveats": "Low-quality trials, mostly from settings using traditional Chinese medicine; adjuvant only, not a replacement for treatment.",
+          "sources": [
+            {"type": "Cochrane", "title": "Cordyceps sinensis for chronic kidney disease (Cochrane, 2014)", "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008353.pub2/full"},
+            {"type": "PubMed", "title": "Cordyceps as adjunct in renal dysfunction — systematic review & meta-analysis", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11747039/"}
+          ]
+        },
+        {
+          "rank": 3,
+          "benefit": "COPD (GOLD stages 2–3) — adjunct",
+          "evidence_tier": "Preliminary",
+          "summary": "A systematic review/meta-analysis suggests oral Cordyceps as an add-on may improve lung-function and quality-of-life measures in stable COPD, but trial quality is limited.",
+          "human_evidence": "Systematic review & meta-analysis of oral Cordyceps sinensis in stable COPD.",
+          "caveats": "Heterogeneous, mostly lower-quality trials; adjunct only.",
+          "sources": [
+            {"type": "PubMed", "title": "Oral Cordyceps sinensis in stable COPD — systematic review & meta-analysis", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6470429/"}
+          ]
+        },
+        {
+          "rank": 4,
+          "benefit": "Immune support / anti-fatigue / vitality",
+          "evidence_tier": "Preclinical/Traditional",
+          "summary": "Widely used traditionally for energy and immunity, with supportive lab/animal data, but adequate human RCTs are lacking.",
+          "human_evidence": "Mechanistic and traditional-use evidence; no robust human trials for these specific claims.",
+          "caveats": "Do not present as proven.",
+          "sources": [
+            {"type": "Examine", "title": "Cordyceps overview (link-out)", "url": "https://examine.com/supplements/cordyceps/"}
+          ]
+        },
+        {
+          "rank": 5,
+          "benefit": "Kidney-transplant support / hypertension",
+          "evidence_tier": "Insufficient/Unproven",
+          "summary": "Cochrane reviews found benefits and harms unclear — not enough good evidence to judge.",
+          "human_evidence": "Cochrane reviews on Cordyceps for kidney-transplant recipients and for hypertension.",
+          "caveats": "Transplant/BP patients must not self-treat — interactions with immunosuppressants and BP meds.",
+          "sources": [
+            {"type": "Cochrane", "title": "Cordyceps sinensis for kidney transplant recipients (Cochrane)", "url": "https://www.cochrane.org/CD009698/RENAL_cordyceps-sinensis-traditional-chinese-medicine-kidney-transplant-recipients"},
+            {"type": "Cochrane", "title": "Cordyceps sinensis for hypertension in adults (Cochrane)", "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008894/references"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lion's Mane",
+      "latin": "Hericium erinaceus",
+      "note": "Active compounds: hericenones (fruiting body) and erinacines (mycelium), which stimulate nerve growth factor (NGF). No dedicated Cochrane review exists yet.",
+      "benefits": [
+        {
+          "rank": 1,
+          "benefit": "Cognition with chronic use, incl. mild cognitive impairment",
+          "evidence_tier": "Preliminary",
+          "summary": "Small RCTs report improved attention/working memory over weeks, and a 16-week trial improved cognition in older adults with mild cognitive impairment — but benefits faded after stopping.",
+          "human_evidence": "8-week RCT (n≈109) improved attention/memory; 16-week RCT in mild cognitive impairment; supported by a systematic review.",
+          "caveats": "Small, short trials; benefits not durable after discontinuation.",
+          "sources": [
+            {"type": "PubMed", "title": "Benefits/side effects of H. erinaceus — systematic review", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12434001/"},
+            {"type": "Examine", "title": "Lion's Mane overview (link-out)", "url": "https://examine.com/supplements/lionsmane/"}
+          ]
+        },
+        {
+          "rank": 2,
+          "benefit": "Mood, stress & sleep quality",
+          "evidence_tier": "Preliminary",
+          "summary": "Small studies report reduced stress and better mood/sleep with chronic use; early and not robust.",
+          "human_evidence": "RCTs in healthy adults reporting mood/sleep improvements.",
+          "caveats": "Small samples; not a treatment for mood disorders.",
+          "sources": [
+            {"type": "PubMed", "title": "Acute & chronic effects on cognition, stress and mood — RCT", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10675414/"}
+          ]
+        },
+        {
+          "rank": 3,
+          "benefit": "Nerve growth / neuroregeneration",
+          "evidence_tier": "Preclinical/Traditional",
+          "summary": "Lab/animal data show NGF stimulation and nerve-repair potential; human clinical evidence for nerve regeneration is not established.",
+          "human_evidence": "Mechanistic reviews; no adequate human trials for nerve regeneration specifically.",
+          "caveats": "Mechanism, not proven human outcome.",
+          "sources": [
+            {"type": "PubMed", "title": "Neuroprotective properties of H. erinaceus — narrative review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12030463/"}
+          ]
+        },
+        {
+          "rank": 4,
+          "benefit": "Single-dose (acute) cognitive boost",
+          "evidence_tier": "Insufficient/Unproven",
+          "summary": "Acute single doses did not reliably improve overall cognition; only isolated task speed improvements seen.",
+          "human_evidence": "Double-blind RCT of acute dosing in younger adults — mixed/null on global cognition.",
+          "caveats": "Do not claim acute effects.",
+          "sources": [
+            {"type": "PubMed", "title": "Acute effects of H. erinaceus on cognition & mood — RCT", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12018234/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reishi",
+      "latin": "Ganoderma lucidum",
+      "note": "The only one of these three with a dedicated Cochrane review. Active constituents: polysaccharides (beta-glucans) and triterpenes.",
+      "benefits": [
+        {
+          "rank": 1,
+          "benefit": "Cancer care — adjuvant alongside chemotherapy/radiotherapy (NOT a standalone treatment)",
+          "evidence_tier": "Limited",
+          "summary": "A Cochrane review of 5 RCTs (373 patients) found Reishi may increase tumour response when combined with conventional cancer treatment and could improve quality of life/immune markers, but the evidence was low to very-low quality. It should not be used as a sole cancer therapy.",
+          "human_evidence": "Cochrane systematic review (Jin 2016): 5 RCTs, 373 participants; well tolerated, no major toxicity; low–very low quality evidence.",
+          "caveats": "Adjuvant only; cancer patients must involve their oncologist. Never present as a cure.",
+          "sources": [
+            {"type": "Cochrane", "title": "Ganoderma lucidum (Reishi) for cancer treatment (Cochrane, 2016)", "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007731.pub3/full"},
+            {"type": "PubMed", "title": "Summary of the Cochrane review (PubMed)", "url": "https://pubmed.ncbi.nlm.nih.gov/28083078/"}
+          ]
+        },
+        {
+          "rank": 2,
+          "benefit": "Cardiovascular risk factors (cholesterol, blood sugar)",
+          "evidence_tier": "Preliminary",
+          "summary": "A GRADE-assessed systematic review/meta-analysis of clinical trials suggests possible effects on some CVD risk factors, but results are inconsistent and trials small.",
+          "human_evidence": "GRADE-assessed systematic review & meta-analysis of clinical trials.",
+          "caveats": "Inconsistent methods/formulations; not a substitute for cardiovascular treatment.",
+          "sources": [
+            {"type": "PubMed", "title": "Nutritional significance of G. lucidum — GRADE-assessed systematic review & meta-analysis", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12160064/"}
+          ]
+        },
+        {
+          "rank": 3,
+          "benefit": "Immune modulation",
+          "evidence_tier": "Preliminary",
+          "summary": "Preclinical and some clinical data show immune-modulating effects (T/B lymphocytes, NK cells); human outcome evidence is early.",
+          "human_evidence": "Clinical immune-marker changes reported alongside extensive preclinical data.",
+          "caveats": "Immune-marker changes ≠ proven clinical benefit.",
+          "sources": [
+            {"type": "Examine", "title": "Reishi overview (link-out)", "url": "https://examine.com/supplements/reishi/"}
+          ]
+        },
+        {
+          "rank": 4,
+          "benefit": "Standalone cancer treatment",
+          "evidence_tier": "Insufficient/Unproven",
+          "summary": "Evidence does NOT support Reishi as a sole cancer treatment; the Cochrane review supports only adjuvant use.",
+          "human_evidence": "Cochrane review conclusion.",
+          "caveats": "Explicitly not supported — flag strongly to users.",
+          "sources": [
+            {"type": "Cochrane", "title": "Ganoderma lucidum for cancer treatment (Cochrane, 2016)", "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007731.pub3/full"}
+          ]
+        }
+      ]
+    }
+  ]
+}

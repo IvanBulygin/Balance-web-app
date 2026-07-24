@@ -182,6 +182,7 @@
       {n:'Kava',t:['stress-anxiety']},
       {n:'L-Carnitine',t:['cardiovascular-health','fat-loss']},
       {n:'L-Theanine',t:['stress-anxiety']},
+      {n:"Lion's Mane",t:['memory-focus','stress-anxiety']},
       {n:'Lavender',t:['sleep','stress-anxiety']},
       {n:'Lemon Balm',t:['sleep']},
       {n:'Maca',t:['healthy-aging','libido']},
@@ -1487,10 +1488,37 @@
     const _suppNorm = (s) => (s||'').toLowerCase().replace(/\([^)]*\)/g,' ').replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
     const _suppMatches = (a, b) => { const x=_suppNorm(a), y=_suppNorm(b); return !!x && !!y && (x.includes(y) || y.includes(x)); };
 
+    // Curated supplement entries — for supplements not covered by the Examine
+    // guides. Evidence is summarised from freely-usable public sources
+    // (PubMed / open-access reviews); Examine is a link-out only, not reproduced.
+    const CURATED_SUPPLEMENTS = {
+      "Lion's Mane": {
+        aka: "Hericium erinaceus",
+        summary: "A culinary-medicinal mushroom studied for cognition and nerve health. Its compounds (hericenones, erinacines) stimulate nerve growth factor (NGF), with anti-inflammatory and antioxidant effects.",
+        dose: "1,050–3,000 mg/day, split into 3–4 doses",
+        safety: "Generally well-tolerated (GRAS). Avoid if you're allergic to mushrooms. Long-term human safety data is limited.",
+        benefits: [
+          { claim: "Attention & working memory (≈8-week use)", strength: "Preliminary" },
+          { claim: "Cognition in mild cognitive impairment (16-week)", strength: "Preliminary" },
+          { claim: "Mood & sleep quality", strength: "Preliminary" },
+          { claim: "Single-dose cognitive boost", strength: "Mixed / weak" },
+        ],
+        note: "Human trials are small and short; chronic use looks more consistent than single doses. No dedicated Cochrane systematic review exists yet.",
+        sources: [
+          { name: "PubMed — RCT (younger adults)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12018234/" },
+          { name: "PubMed — systematic review", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12434001/" },
+          { name: "PubMed — neuroprotective review", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12030463/" },
+          { name: "Examine — overview", url: "https://examine.com/supplements/lionsmane/" },
+        ],
+      },
+    };
+    const STRENGTH_TONE = { "Preliminary":"c", "Mixed / weak":"c", "Moderate":"b", "Strong":"a" };
+
     const Supplement = ({ name, cache, onOpenCategory, inStack, onAdd, onBack, onNav }) => {
       const { Icon, Tabbar } = window;
       const meta = SUPPLEMENTS.find(s => s.n === name) || { n:name, t:[] };
       const slugs = meta.t;
+      const curated = CURATED_SUPPLEMENTS[name];   // our own open-source evidence entry
       const tierRank = { Primary:0, Secondary:1, Promising:2 };
 
       // Still waiting on any guide this supplement belongs to?
@@ -1528,11 +1556,49 @@
               <div style={{fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--accent-soft)', marginTop:22, fontWeight:600, position:'relative'}}>Supplement</div>
               <div className="serif" style={{fontSize:40, lineHeight:1.06, marginTop:8, position:'relative'}}>{name}</div>
               <div style={{fontSize:14, color:'rgba(255,255,255,0.78)', marginTop:8, maxWidth:'92%', position:'relative'}}>
-                {slugs.length ? <>Recommended in {slugs.length} of your evidence-based guide{slugs.length>1?'s':''} — here's how to take it and where it's backed.</> : 'Supplement details.'}
+                {curated ? <><i>{curated.aka}</i> · evidence summary from public research.</> : slugs.length ? <>Recommended in {slugs.length} of your evidence-based guide{slugs.length>1?'s':''} — here's how to take it and where it's backed.</> : 'Supplement details.'}
               </div>
             </div>
 
-            {loading && appearances.length===0 && <CategorySkeleton/>}
+            {curated && (() => { const cadded = inStack(name); return (
+              <div style={{padding:'22px 22px 6px'}}>
+                <div className="serif" style={{fontSize:22, marginBottom:12, color:'var(--ink)'}}>Research <em style={{fontStyle:'italic', color:'var(--brand)'}}>summary</em></div>
+                <div className="bal-card" style={{padding:'16px'}}>
+                  <div style={{fontSize:13.5, color:'var(--ink-2)', lineHeight:1.5, marginBottom:12}}>{curated.summary}</div>
+                  <div style={{display:'flex', flexWrap:'wrap', gap:8, marginBottom:12}}>
+                    <span className="bal-pill light mono" style={{fontSize:11}}>{curated.dose}</span>
+                  </div>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>What the research suggests</div>
+                  <div style={{marginBottom:12}}>
+                    {curated.benefits.map((b,i) => (
+                      <div key={i} style={{display:'flex', alignItems:'center', gap:10, padding:'7px 0', borderBottom:i<curated.benefits.length-1?'0.5px solid var(--rule)':'none'}}>
+                        <div style={{flex:1, fontSize:13.5, color:'var(--ink)'}}>{b.claim}</div>
+                        <span className={`ev-badge ${STRENGTH_TONE[b.strength]||'c'}`} style={{width:'auto', height:'auto', padding:'2px 9px', borderRadius:6, fontSize:10}}>{b.strength}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.5, marginBottom:12}}><b>Safety:</b> {curated.safety}</div>
+                  {curated.note && <div style={{fontSize:12, color:'var(--ink-3)', lineHeight:1.5, marginBottom:12}}>{curated.note}</div>}
+                  <div style={{display:'flex', gap:8, marginBottom:14, flexWrap:'wrap'}}>
+                    <button onClick={()=>onAdd({ name, tier:'', dose:curated.dose, iherb_url: buyLinksForName(name)[0].url }, name)} disabled={cadded} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:cadded?'var(--brand-soft)':'var(--brand)', color:cadded?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
+                      {cadded ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
+                    </button>
+                    {buyLinksForName(name).map(r => (
+                      <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>{r.name} <ExternalIcon c="var(--ink-2)"/></a>
+                    ))}
+                  </div>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Sources</div>
+                  <div style={{display:'flex', flexWrap:'wrap', gap:7, marginBottom:12}}>
+                    {curated.sources.map(s => (
+                      <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="bal-pill light" style={{padding:'6px 11px', fontSize:11.5, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:5}}>{s.name} <ExternalIcon size={9} c="var(--brand)"/></a>
+                    ))}
+                  </div>
+                  <div style={{fontSize:11, color:'var(--ink-3)', lineHeight:1.5, padding:'10px 12px', background:'var(--surface-3)', borderRadius:10}}>Summary of publicly available research (PubMed / open-access reviews), with Examine as a link-out. Educational, not medical advice — check with a healthcare professional.</div>
+                </div>
+              </div>
+            ); })()}
+
+            {!curated && loading && appearances.length===0 && <CategorySkeleton/>}
 
             {best && (
               <div style={{padding:'22px 22px 6px'}}>
@@ -1573,7 +1639,7 @@
                 ))}
                 <div style={{fontSize:11, color:'var(--ink-3)', textAlign:'center', padding:'18px 8px 24px', lineHeight:1.5}}>Always check with your healthcare provider before starting any new supplement, especially if you take medication or have a health condition.</div>
               </div>
-            ) : (!loading && slugs.length>0 && (
+            ) : (!curated && !loading && slugs.length>0 && (
               <div style={{padding:'24px 22px 6px'}}>
                 <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>In your <em style={{fontStyle:'italic', color:'var(--brand)'}}>guides</em></div>
                 <div style={{fontSize:13, color:'var(--ink-3)', marginBottom:14}}>{name} is recommended in your {fallbackGuides.map(g=>g.name).join(' · ')} guide{slugs.length>1?'s':''}. Open one to see the full stack and dosing.</div>

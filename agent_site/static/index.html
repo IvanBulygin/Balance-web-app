@@ -1086,9 +1086,29 @@
       try { return new RegExp('(?<!\\w)' + alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?!\\w)').test(t); }
       catch (e) { return t.includes(alias); }
     };
+    // Levenshtein distance (bounded) for typo tolerance ("alchohol"→"alcohol").
+    const _lev = (a, b) => {
+      if (Math.abs(a.length - b.length) > 2) return 99;
+      let prev = Array.from({length:b.length+1}, (_,i) => i);
+      for (let i=1;i<=a.length;i++) {
+        const cur = [i];
+        for (let j=1;j<=b.length;j++) cur[j] = Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+(a[i-1]===b[j-1]?0:1));
+        prev = cur;
+      }
+      return prev[b.length];
+    };
+    // Fuzzy-match single-word aliases of length ≥6 (skip short ones / phrases to
+    // avoid false positives). tol 1 normally, 2 for long medical names.
+    const _fuzzyHit = (alias, tokens) => {
+      if (alias.indexOf(' ') >= 0 || alias.length < 6) return false;
+      const tol = alias.length >= 10 ? 2 : 1;
+      return tokens.some(tok => Math.abs(tok.length - alias.length) <= 2 && _lev(tok, alias) <= tol);
+    };
     const detectInteractions = (text, rules) => {
       const t = (text || '').toLowerCase();
-      const hits = (rules || []).filter(r => (r.a||[]).some(a => _wbTest(a, t)) && (r.b||[]).some(b => _wbTest(b, t)));
+      const tokens = t.split(/[^a-z0-9']+/).filter(Boolean);
+      const side = (aliases) => (aliases||[]).some(a => _wbTest(a, t) || _fuzzyHit(a, tokens));
+      const hits = (rules || []).filter(r => side(r.a) && side(r.b));
       return hits.sort((x,y) => (_INTER_ORDER[x.severity] ?? 9) - (_INTER_ORDER[y.severity] ?? 9));
     };
     const INTER_STYLE = {

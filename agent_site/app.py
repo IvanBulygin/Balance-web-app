@@ -276,12 +276,39 @@ def _wb(alias: str, t: str) -> bool:
     return re.search(r"(?<!\w)" + re.escape(alias) + r"(?!\w)", t) is not None
 
 
+def _lev(a: str, b: str) -> int:
+    if abs(len(a) - len(b)) > 2:
+        return 99
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
+def _fuzzy_hit(alias: str, tokens: list[str]) -> bool:
+    # Typo tolerance for single-word aliases ≥6 chars ("alchohol"→"alcohol").
+    if " " in alias or len(alias) < 6:
+        return False
+    tol = 2 if len(alias) >= 10 else 1
+    return any(abs(len(tok) - len(alias)) <= 2 and _lev(tok, alias) <= tol for tok in tokens)
+
+
+def _alias_present(alias: str, t: str, tokens: list[str]) -> bool:
+    return _wb(alias, t) or _fuzzy_hit(alias, tokens)
+
+
 def find_interactions(text: str) -> list[dict]:
     """Curated dangerous-combination rules that match the text (both sides present)."""
     t = (text or "").lower()
+    tokens = [w for w in re.split(r"[^a-z0-9']+", t) if w]
     out = []
     for r in state.get("interactions", {}).get("rules", []):
-        if any(_wb(a, t) for a in r.get("a", [])) and any(_wb(b, t) for b in r.get("b", [])):
+        if any(_alias_present(a, t, tokens) for a in r.get("a", [])) and any(
+            _alias_present(b, t, tokens) for b in r.get("b", [])
+        ):
             out.append(r)
     order = {"Dangerous": 0, "Serious": 1, "Caution": 2}
     return sorted(out, key=lambda r: order.get(r.get("severity"), 9))

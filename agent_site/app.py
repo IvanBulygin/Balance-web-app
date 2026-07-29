@@ -432,14 +432,21 @@ def lookup_drug(text: str) -> Optional[dict]:
     return result
 
 
-def find_substance_effects(text: str) -> Optional[dict]:
-    """Curated effects entry for a recreational substance (no FDA label exists)."""
+def find_substance_effects(text: str, limit: int = 3) -> list[dict]:
+    """Curated effects entries for every recreational substance mentioned.
+
+    Returns all matches (capped) so a question like "weed and cocaine" gets
+    both, rather than silently answering only the first.
+    """
     t = (text or "").lower()
     tokens = [w for w in re.split(r"[^a-z0-9']+", t) if w]
+    out = []
     for s in state.get("drug_effects", {}).get("substances", []):
         if any(_alias_present(a, t, tokens) for a in s.get("aliases", [])):
-            return s
-    return None
+            out.append(s)
+            if len(out) >= limit:
+                break
+    return out
 
 
 def format_substance_block(s: dict) -> str:
@@ -572,17 +579,21 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
         # Recreational substances have no FDA label — use the curated
         # harm-reduction entry, and check it first so "weed"/"alcohol" aren't
         # mis-resolved to an unrelated pharmaceutical by the fuzzy drug lookup.
-        substance = find_substance_effects(recent_user)
-        drug = None if substance else lookup_drug(recent_user)
-        if substance:
+        substances = find_substance_effects(recent_user)
+        drug = None if substances else lookup_drug(recent_user)
+        if substances:
             sdb = state.get("drug_effects", {})
             system_instruction += (
                 "\n\n## Substance effects (AUTHORITATIVE — curated harm-reduction data)\n\n"
-                + format_substance_block(substance)
-                + "\n\nThe user asked about this SUBSTANCE. Answer using ONLY the data "
-                "above (ignore the supplement response format for this). "
+                + "\n\n".join(format_substance_block(s) for s in substances)
+                + f"\n\nThe user asked about {len(substances)} substance(s); an entry is "
+                "provided for EACH — cover every one of them, and answer using ONLY the "
+                "data above (ignore the supplement response format for this). "
                 + sdb.get("agent_guidance", "") + " " + sdb.get("disclaimer", "")
             )
+            # The answer came from this database, not the supplement guides —
+            # don't mislabel it with unrelated guide citations.
+            sources = ["harm-reduction reference"]
         elif drug:
             system_instruction += (
                 "\n\n## FDA drug label (AUTHORITATIVE — official openFDA data)\n\n"
@@ -595,6 +606,7 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
                 "they should check with their doctor or pharmacist. Do not recommend "
                 "changing any medication. If the label doesn't cover their question, say so."
             )
+            sources = [f"FDA label: {drug['name']}"]
 
     # Dangerous-combination warnings (curated). Inject whenever the message
     # matches a known interaction so the agent warns from vetted data, not guesses.

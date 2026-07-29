@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "title": "Recreational substance effects (curated, harm-reduction reference)",
+  "purpose": "Curated factual effects/risks for substances that have no FDA drug label, so the agent can answer 'what are the side effects of X' instead of refusing. Educational harm-reduction information only.",
+  "agent_guidance": "Answer the user's question using ONLY this entry. Be factual, calm and non-judgemental — do not lecture or moralise. Cover what they asked (usually short-term effects, longer-term risks, and the main dangers). Never give doses, sourcing, or instructions for using a substance. Always close by noting this is general harm-reduction information, not medical advice, and mention support is available (SAMHSA 1-800-662-4357) when the question suggests problem use.",
+  "disclaimer": "Educational harm-reduction information, not medical advice and not encouragement to use any substance.",
+  "sources_note": "Summarised from public health sources (NIDA/NIH, WHO, NHS) — general, widely documented effects.",
+  "substances": [
+    {
+      "key": "cannabis",
+      "name": "Cannabis (weed, marijuana, THC)",
+      "aliases": ["weed", "cannabis", "marijuana", "thc", "pot", "hash", "edible", "edibles", "ganja"],
+      "short_term": "Relaxation and altered perception, but also dry mouth, red eyes, increased heart rate, poor coordination, slowed reaction time, impaired short-term memory and judgement. Higher doses — especially edibles, which come on slowly and are easy to over-consume — can cause anxiety, panic, paranoia, nausea and vomiting.",
+      "longer_term": "Regular use is linked to dependence (roughly 1 in 10 users, higher when starting young), persistent memory/attention problems, reduced motivation, chronic bronchitis when smoked, and cannabinoid hyperemesis syndrome (cycles of severe vomiting) in some heavy users.",
+      "key_risks": "Can trigger or worsen psychosis and schizophrenia, particularly in people with a family history or who start in adolescence. Strongly impairs driving. High-THC concentrates raise all of these risks.",
+      "notes": "Alcohol raises blood-THC levels, making effects and impairment stronger."
+    },
+    {
+      "key": "alcohol",
+      "name": "Alcohol",
+      "aliases": ["alcohol", "booze", "beer", "wine", "liquor", "spirits", "drinking"],
+      "short_term": "Impaired coordination, judgement and reaction time; slurred speech; nausea and vomiting; dehydration; blackouts (memory loss) at higher intakes. Very high intakes cause alcohol poisoning — confusion, slow or irregular breathing, hypothermia and unconsciousness, which is a medical emergency.",
+      "longer_term": "Liver disease (fatty liver, hepatitis, cirrhosis), high blood pressure and heart damage, pancreatitis, dependence, depression and anxiety, nutritional deficiencies (especially B vitamins), and increased risk of several cancers including breast, liver and bowel.",
+      "key_risks": "Withdrawal from heavy, sustained drinking can be life-threatening (seizures, delirium tremens) and needs medical supervision — do not stop abruptly alone. Extremely dangerous combined with opioids, benzodiazepines or GHB.",
+      "notes": "No safe amount is established for cancer risk; risk rises with quantity."
+    },
+    {
+      "key": "cocaine",
+      "name": "Cocaine",
+      "aliases": ["cocaine", "coke", "crack", "blow"],
+      "short_term": "Euphoria, alertness and talkativeness, followed by a crash. Raises heart rate, blood pressure and body temperature; causes reduced appetite, insomnia, anxiety, agitation and paranoia. Can trigger chest pain, heart-rhythm disturbances, heart attack, stroke or seizure — even in young, healthy people and even on a first use.",
+      "longer_term": "Dependence, damage to the nasal septum when snorted, lung damage when smoked, chronic anxiety, paranoia and psychosis, weight loss and malnutrition, and lasting cardiovascular damage.",
+      "key_risks": "Combined with alcohol the body forms cocaethylene, which strains the heart and liver and is linked to sudden death. Increasingly contaminated with fentanyl — a major overdose risk.",
+      "notes": "Chest pain after use should be treated as a medical emergency."
+    },
+    {
+      "key": "methamphetamine",
+      "name": "Methamphetamine",
+      "aliases": ["meth", "methamphetamine", "crystal", "ice", "speed", "amphetamine"],
+      "short_term": "Intense alertness, euphoria and wakefulness; suppressed appetite; raised heart rate, blood pressure and body temperature; jaw clenching; anxiety, agitation, paranoia and aggression. High doses risk dangerous overheating, seizures, heart-rhythm problems and stroke.",
+      "longer_term": "Strong dependence, severe dental decay ('meth mouth'), skin sores from picking, dramatic weight loss, insomnia, memory and decision-making problems, and long-lasting paranoia or psychosis that can persist after stopping.",
+      "key_risks": "Serious cardiovascular strain and overheating; psychosis. Frequently contaminated with fentanyl.",
+      "notes": "Depletes nutrients and sleep — recovery is often limited by both."
+    },
+    {
+      "key": "mdma",
+      "name": "MDMA (ecstasy, molly)",
+      "aliases": ["mdma", "ecstasy", "molly", "pills"],
+      "short_term": "Euphoria, emotional closeness and heightened senses, alongside jaw clenching, raised heart rate and body temperature, dehydration, nausea and dilated pupils. Main acute dangers are overheating (hyperthermia) and, conversely, drinking too much plain water, which can cause dangerously low sodium (hyponatraemia).",
+      "longer_term": "Mid-week low mood and irritability ('comedown'), sleep disruption, anxiety, and with heavy repeated use, memory and mood problems thought to relate to serotonin changes.",
+      "key_risks": "Serotonin syndrome when combined with MAOIs (potentially fatal) or other serotonergic drugs. Pills are frequently mis-sold or adulterated. Hot, crowded environments greatly increase overheating risk.",
+      "notes": "5-HTP is used after MDMA, never before or during, because of serotonin-syndrome risk."
+    },
+    {
+      "key": "opioids",
+      "name": "Heroin and other opioids (fentanyl, oxycodone, morphine)",
+      "aliases": ["heroin", "opioid", "opioids", "fentanyl", "oxycodone", "oxy", "morphine", "codeine", "methadone", "smack"],
+      "short_term": "Pain relief, sedation and euphoria, with nausea and vomiting, itching, constipation, pinpoint pupils and slowed breathing. Overdose presents as unresponsiveness, very slow or stopped breathing and blue-tinged lips or fingertips — a medical emergency.",
+      "longer_term": "Rapid tolerance and physical dependence, chronic constipation, hormonal disruption, poor nutrition and immunity, and infection risk (including HIV and hepatitis C) with injecting.",
+      "key_risks": "Respiratory depression is the killer, and risk multiplies when combined with alcohol, benzodiazepines or gabapentinoids. Fentanyl contamination makes street supply unpredictable — a fatal amount is tiny. Tolerance drops fast after a break, so returning to a previous dose is a common cause of fatal overdose.",
+      "notes": "Naloxone (Narcan) reverses opioid overdose — carrying it saves lives. Withdrawal is rarely fatal but is severe; medical support helps."
+    },
+    {
+      "key": "ketamine",
+      "name": "Ketamine",
+      "aliases": ["ketamine", "ket", "special k"],
+      "short_term": "Dissociation, distorted perception of time and body, and at higher doses the immobilising 'k-hole'. Causes poor coordination, confusion, nausea and vomiting, and raised heart rate and blood pressure.",
+      "longer_term": "Ketamine-induced bladder damage (urinary urgency, pain and bleeding, sometimes irreversible), abdominal 'k-cramps', liver and bile-duct problems, memory impairment and psychological dependence.",
+      "key_risks": "Vomiting while heavily dissociated carries a real choking risk — never leave someone alone. Dangerous combined with alcohol, opioids or other depressants.",
+      "notes": "Bladder symptoms are the most common serious harm in regular users and warrant medical review."
+    },
+    {
+      "key": "ghb",
+      "name": "GHB / GBL",
+      "aliases": ["ghb", "gbl", "g", "liquid ecstasy"],
+      "short_term": "Euphoria, sociability and sedation. The gap between a recreational dose and an overdose is very small — overdose causes vomiting, deep unconsciousness, slowed breathing and seizures.",
+      "longer_term": "Dependence can develop quickly with frequent dosing, and withdrawal is severe — agitation, tremor, insomnia, hallucinations and seizures, which is a medical emergency requiring hospital care.",
+      "key_risks": "Extremely dangerous with alcohol, benzodiazepines or opioids. Unconsciousness with vomiting risks choking.",
+      "notes": "GHB withdrawal must not be attempted alone — it can be life-threatening."
+    },
+    {
+      "key": "psilocybin",
+      "name": "Psilocybin mushrooms",
+      "aliases": ["psilocybin", "mushrooms", "shrooms", "magic mushrooms"],
+      "short_term": "Visual and perceptual changes, altered mood and thinking, with nausea and vomiting early on, dilated pupils, raised heart rate, and poor coordination. Difficult experiences ('bad trips') bring intense anxiety, confusion and paranoia; accidents can happen through impaired judgement.",
+      "longer_term": "Physical dependence is not typical. Some people experience lasting anxiety or, rarely, persistent perceptual changes (HPPD).",
+      "key_risks": "Can trigger or worsen psychosis in people predisposed to it. Serious risk of misidentifying poisonous wild mushrooms. Serotonin-syndrome risk if combined with MAOIs or other serotonergic drugs.",
+      "notes": "Set, setting and a sober companion substantially reduce risk of harm."
+    },
+    {
+      "key": "nicotine",
+      "name": "Tobacco and nicotine (including vaping)",
+      "aliases": ["tobacco", "nicotine", "cigarette", "cigarettes", "smoking", "vape", "vaping", "snus"],
+      "short_term": "Brief alertness and reduced appetite, with raised heart rate and blood pressure, dizziness or nausea in new users, and irritated airways. Withdrawal brings irritability, anxiety, poor concentration and strong cravings.",
+      "longer_term": "Smoking causes lung, throat and many other cancers, COPD and emphysema, heart disease and stroke, and poor circulation and wound healing. Nicotine itself is strongly addictive and can harm adolescent brain development; vaping avoids combustion products but is not risk-free and carries its own lung concerns.",
+      "key_risks": "Tobacco smoking is the leading preventable cause of death. Risk falls substantially after quitting.",
+      "notes": "Depletes vitamin C and other antioxidants; quitting support markedly improves success rates."
+    },
+    {
+      "key": "benzodiazepines",
+      "name": "Benzodiazepines (Xanax, Valium, etc. — non-prescribed use)",
+      "aliases": ["benzo", "benzos", "benzodiazepine", "xanax", "valium", "diazepam", "alprazolam", "clonazepam", "bars"],
+      "short_term": "Sedation, reduced anxiety, poor coordination, slurred speech, memory gaps and blackouts. Higher doses cause heavy sedation and suppressed breathing.",
+      "longer_term": "Tolerance and dependence develop quickly, along with rebound anxiety and insomnia, memory and concentration problems, and falls in older people.",
+      "key_risks": "Withdrawal from regular use can cause seizures and be life-threatening — never stop abruptly without medical supervision, taper under a doctor. Very dangerous with alcohol or opioids. Counterfeit 'Xanax' pills frequently contain fentanyl.",
+      "notes": "Combined benzodiazepine and opioid use is a leading pattern in overdose deaths."
+    }
+  ]
+}

@@ -37,6 +37,7 @@ PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 MUSHROOMS_PATH = ROOT / "data" / "functional_mushrooms.json"
 INTERACTIONS_PATH = ROOT / "data" / "interactions.json"
+DRUG_EFFECTS_PATH = ROOT / "data" / "drug_effects.json"
 
 # Primary is 2.5 Flash — capable, with a much higher free-tier daily quota than
 # 3.5 Flash (which the free tier caps at 20 requests/day). Fallback matches;
@@ -80,6 +81,12 @@ async def lifespan(app: FastAPI):
     except FileNotFoundError:
         state["interactions"] = {"rules": []}
         print("No interaction DB found.")
+    try:
+        state["drug_effects"] = json.loads(DRUG_EFFECTS_PATH.read_text(encoding="utf-8"))
+        print(f"Loaded substance-effects DB: {len(state['drug_effects'].get('substances', []))} entries.")
+    except FileNotFoundError:
+        state["drug_effects"] = {"substances": []}
+        print("No substance-effects DB found.")
     print(
         f"Index ready. {len(index.chunks):,} chunks from "
         f"{len({c.source for c in index.chunks})} guides."
@@ -321,7 +328,9 @@ def format_interaction_block(hits: list[dict]) -> str:
 # ---- Medication lookup: RxNav (typo-correct) → openFDA (official label) ----
 _MED_INTENT = re.compile(
     r"side[\s-]?effect|adverse|medication|prescription|\bdrug\b|dosage|\bdose[sd]?\b"
-    r"|contraindicat|interaction|\bpill\b|tablet|what (is|are)|tell me about|is .{2,25} safe",
+    r"|contraindicat|interaction|\bpill\b|tablet|what (is|are)|tell me about"
+    r"|is .{2,25} (safe|bad|dangerous|harmful|addictive)|what does .{2,25} do"
+    r"|effects? of|harms?|risks?|withdrawal|overdose|long[\s-]?term",
     re.I,
 )
 _DRUG_STOP = {
@@ -419,6 +428,25 @@ def lookup_drug(text: str) -> Optional[dict]:
                 break
     _drug_cache[key] = result
     return result
+
+
+def find_substance_effects(text: str) -> Optional[dict]:
+    """Curated effects entry for a recreational substance (no FDA label exists)."""
+    t = (text or "").lower()
+    tokens = [w for w in re.split(r"[^a-z0-9']+", t) if w]
+    for s in state.get("drug_effects", {}).get("substances", []):
+        if any(_alias_present(a, t, tokens) for a in s.get("aliases", [])):
+            return s
+    return None
+
+
+def format_substance_block(s: dict) -> str:
+    parts = [f"### {s['name']}"]
+    for label, key in (("Short-term effects", "short_term"), ("Longer-term effects", "longer_term"),
+                       ("Key risks", "key_risks"), ("Notes", "notes")):
+        if s.get(key):
+            parts.append(f"**{label}:** {s[key]}")
+    return "\n\n".join(parts)
 
 
 def format_drug_block(d: dict) -> str:
@@ -537,8 +565,21 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
     # Medication questions: pull the official FDA label (via openFDA, with RxNav
     # typo-correction) so the agent can answer instead of refusing.
     if _MED_INTENT.search(recent_user):
-        drug = lookup_drug(recent_user)
-        if drug:
+        # Recreational substances have no FDA label — use the curated
+        # harm-reduction entry, and check it first so "weed"/"alcohol" aren't
+        # mis-resolved to an unrelated pharmaceutical by the fuzzy drug lookup.
+        substance = find_substance_effects(recent_user)
+        drug = None if substance else lookup_drug(recent_user)
+        if substance:
+            sdb = state.get("drug_effects", {})
+            system_instruction += (
+                "\n\n## Substance effects (AUTHORITATIVE — curated harm-reduction data)\n\n"
+                + format_substance_block(substance)
+                + "\n\nThe user asked about this SUBSTANCE. Answer using ONLY the data "
+                "above (ignore the supplement response format for this). "
+                + sdb.get("agent_guidance", "") + " " + sdb.get("disclaimer", "")
+            )
+        elif drug:
             system_instruction += (
                 "\n\n## FDA drug label (AUTHORITATIVE — official openFDA data)\n\n"
                 + format_drug_block(drug)

@@ -330,7 +330,9 @@ _MED_INTENT = re.compile(
     r"side[\s-]?effect|adverse|medication|prescription|\bdrug\b|dosage|\bdose[sd]?\b"
     r"|contraindicat|interaction|\bpill\b|tablet|what (is|are)|tell me about"
     r"|is .{2,25} (safe|bad|dangerous|harmful|addictive)|what does .{2,25} do"
-    r"|effects? of|harms?|risks?|withdrawal|overdose|long[\s-]?term",
+    r"|effects? of|harms?|risks?|danger|withdrawal|overdose|long[\s-]?term"
+    r"|how to (reduce|lower|avoid|minimi[sz]e|prevent|ease)|reduce .{0,20}(effect|harm|risk|damage)"
+    r"|comedown|come down|hangover|safer|harm reduction|recover from",
     re.I,
 )
 _DRUG_STOP = {
@@ -443,7 +445,9 @@ def find_substance_effects(text: str) -> Optional[dict]:
 def format_substance_block(s: dict) -> str:
     parts = [f"### {s['name']}"]
     for label, key in (("Short-term effects", "short_term"), ("Longer-term effects", "longer_term"),
-                       ("Key risks", "key_risks"), ("Notes", "notes")):
+                       ("Key risks", "key_risks"),
+                       ("How to reduce harm / side effects", "harm_reduction"),
+                       ("Notes", "notes")):
         if s.get(key):
             parts.append(f"**{label}:** {s[key]}")
     return "\n\n".join(parts)

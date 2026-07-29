@@ -1,109 +1,388 @@
 {
   "schema_version": "1.0",
-  "title": "Recreational substance effects (curated, harm-reduction reference)",
+  "title": "Substance effects and harm reduction (curated reference)",
   "purpose": "Curated factual effects/risks for substances that have no FDA drug label, so the agent can answer 'what are the side effects of X' instead of refusing. Educational harm-reduction information only.",
-  "agent_guidance": "Answer the user's question using ONLY this entry. Be factual, calm and non-judgemental — do not lecture or moralise. Cover what they asked (usually short-term effects, longer-term risks, and the main dangers). Never give doses, sourcing, or instructions for using a substance. Always close by noting this is general harm-reduction information, not medical advice, and mention support is available (SAMHSA 1-800-662-4357) when the question suggests problem use.",
+  "agent_guidance": "Answer the user's question using ONLY this entry. Be factual, calm and non-judgemental — do not lecture or moralise; a user asking how to reduce harm deserves a straight answer. If they ask how to reduce side effects or risks, use the harm_reduction field and give the practical steps plainly. Never give doses for taking a substance, sourcing, or instructions for producing or obtaining one. Always close by noting this is general harm-reduction information, not medical advice, and mention support is available (SAMHSA 1-800-662-4357) when the question suggests problem use.",
   "disclaimer": "Educational harm-reduction information, not medical advice and not encouragement to use any substance.",
   "sources_note": "Summarised from public health sources (NIDA/NIH, WHO, NHS) — general, widely documented effects.",
   "substances": [
     {
       "key": "cannabis",
       "name": "Cannabis (weed, marijuana, THC)",
-      "aliases": ["weed", "cannabis", "marijuana", "thc", "pot", "hash", "edible", "edibles", "ganja"],
+      "aliases": [
+        "weed",
+        "cannabis",
+        "marijuana",
+        "thc",
+        "pot",
+        "hash",
+        "edible",
+        "edibles",
+        "ganja"
+      ],
       "short_term": "Relaxation and altered perception, but also dry mouth, red eyes, increased heart rate, poor coordination, slowed reaction time, impaired short-term memory and judgement. Higher doses — especially edibles, which come on slowly and are easy to over-consume — can cause anxiety, panic, paranoia, nausea and vomiting.",
       "longer_term": "Regular use is linked to dependence (roughly 1 in 10 users, higher when starting young), persistent memory/attention problems, reduced motivation, chronic bronchitis when smoked, and cannabinoid hyperemesis syndrome (cycles of severe vomiting) in some heavy users.",
       "key_risks": "Can trigger or worsen psychosis and schizophrenia, particularly in people with a family history or who start in adolescence. Strongly impairs driving. High-THC concentrates raise all of these risks.",
-      "notes": "Alcohol raises blood-THC levels, making effects and impairment stronger."
+      "notes": "Alcohol raises blood-THC levels, making effects and impairment stronger.",
+      "harm_reduction": "Use less and wait — especially with edibles, which take 1-2 hours to peak; most 'overdoses' are from redosing too early. Products with more CBD relative to THC tend to cause less anxiety. Avoid mixing with alcohol (it raises blood-THC and worsens nausea and dizziness). For acute anxiety: a calm setting, cool air, hydration and reassurance; it passes. Don't drive. Take tolerance breaks to limit dependence. Vaporising or edibles avoid the airway irritation of smoking. Recurrent vomiting in a regular user suggests cannabinoid hyperemesis — that needs a doctor and stopping cannabis."
     },
     {
       "key": "alcohol",
       "name": "Alcohol",
-      "aliases": ["alcohol", "booze", "beer", "wine", "liquor", "spirits", "drinking"],
+      "aliases": [
+        "alcohol",
+        "booze",
+        "beer",
+        "wine",
+        "liquor",
+        "spirits",
+        "drinking"
+      ],
       "short_term": "Impaired coordination, judgement and reaction time; slurred speech; nausea and vomiting; dehydration; blackouts (memory loss) at higher intakes. Very high intakes cause alcohol poisoning — confusion, slow or irregular breathing, hypothermia and unconsciousness, which is a medical emergency.",
       "longer_term": "Liver disease (fatty liver, hepatitis, cirrhosis), high blood pressure and heart damage, pancreatitis, dependence, depression and anxiety, nutritional deficiencies (especially B vitamins), and increased risk of several cancers including breast, liver and bowel.",
       "key_risks": "Withdrawal from heavy, sustained drinking can be life-threatening (seizures, delirium tremens) and needs medical supervision — do not stop abruptly alone. Extremely dangerous combined with opioids, benzodiazepines or GHB.",
-      "notes": "No safe amount is established for cancer risk; risk rises with quantity."
+      "notes": "No safe amount is established for cancer risk; risk rises with quantity.",
+      "harm_reduction": "Eat before and while drinking, alternate with water, and pace to roughly one drink an hour. Avoid combining with any sedative (opioids, benzodiazepines, GHB, sleeping pills) or with paracetamol/acetaminophen. Keep several alcohol-free days a week. B-vitamins (especially thiamine/B1), magnesium and zinc are commonly depleted. Never leave someone unconscious on their back — recovery position, and call emergency services for slow or irregular breathing, cold skin or unresponsiveness. If you drink heavily and daily, do not stop abruptly on your own — withdrawal can cause seizures and needs medical supervision."
     },
     {
       "key": "cocaine",
       "name": "Cocaine",
-      "aliases": ["cocaine", "coke", "crack", "blow"],
+      "aliases": [
+        "cocaine",
+        "coke",
+        "crack",
+        "blow"
+      ],
       "short_term": "Euphoria, alertness and talkativeness, followed by a crash. Raises heart rate, blood pressure and body temperature; causes reduced appetite, insomnia, anxiety, agitation and paranoia. Can trigger chest pain, heart-rhythm disturbances, heart attack, stroke or seizure — even in young, healthy people and even on a first use.",
       "longer_term": "Dependence, damage to the nasal septum when snorted, lung damage when smoked, chronic anxiety, paranoia and psychosis, weight loss and malnutrition, and lasting cardiovascular damage.",
       "key_risks": "Combined with alcohol the body forms cocaethylene, which strains the heart and liver and is linked to sudden death. Increasingly contaminated with fentanyl — a major overdose risk.",
-      "notes": "Chest pain after use should be treated as a medical emergency."
+      "notes": "Chest pain after use should be treated as a medical emergency.",
+      "harm_reduction": "Never combine with alcohol (forms cocaethylene, extra cardiac strain) or opioids. Test the supply — fentanyl contamination is now common — and carry naloxone. Space doses and avoid long binges; use your own straw to avoid hepatitis C. Stay hydrated and cool. Chest pain, severe headache or breathlessness means stop and get emergency care immediately."
     },
     {
       "key": "methamphetamine",
       "name": "Methamphetamine",
-      "aliases": ["meth", "methamphetamine", "crystal", "ice", "speed", "amphetamine"],
+      "aliases": [
+        "meth",
+        "methamphetamine",
+        "crystal",
+        "ice",
+        "speed",
+        "amphetamine"
+      ],
       "short_term": "Intense alertness, euphoria and wakefulness; suppressed appetite; raised heart rate, blood pressure and body temperature; jaw clenching; anxiety, agitation, paranoia and aggression. High doses risk dangerous overheating, seizures, heart-rhythm problems and stroke.",
       "longer_term": "Strong dependence, severe dental decay ('meth mouth'), skin sores from picking, dramatic weight loss, insomnia, memory and decision-making problems, and long-lasting paranoia or psychosis that can persist after stopping.",
       "key_risks": "Serious cardiovascular strain and overheating; psychosis. Frequently contaminated with fentanyl.",
-      "notes": "Depletes nutrients and sleep — recovery is often limited by both."
+      "notes": "Depletes nutrients and sleep — recovery is often limited by both.",
+      "harm_reduction": "Sleep and food are the most protective things — depletion, not the drug alone, drives much of the harm. Hydrate, avoid overheating, and take breaks to sleep. Never mix with other stimulants or with MAOIs. Use your own equipment; smoking and injecting carry extra risks. Dental care and protein/vitamin intake matter with regular use. Paranoia or hallucinations that persist after stopping warrant medical help."
     },
     {
       "key": "mdma",
       "name": "MDMA (ecstasy, molly)",
-      "aliases": ["mdma", "ecstasy", "molly", "pills"],
+      "aliases": [
+        "mdma",
+        "ecstasy",
+        "molly",
+        "pills"
+      ],
       "short_term": "Euphoria, emotional closeness and heightened senses, alongside jaw clenching, raised heart rate and body temperature, dehydration, nausea and dilated pupils. Main acute dangers are overheating (hyperthermia) and, conversely, drinking too much plain water, which can cause dangerously low sodium (hyponatraemia).",
       "longer_term": "Mid-week low mood and irritability ('comedown'), sleep disruption, anxiety, and with heavy repeated use, memory and mood problems thought to relate to serotonin changes.",
       "key_risks": "Serotonin syndrome when combined with MAOIs (potentially fatal) or other serotonergic drugs. Pills are frequently mis-sold or adulterated. Hot, crowded environments greatly increase overheating risk.",
-      "notes": "5-HTP is used after MDMA, never before or during, because of serotonin-syndrome risk."
+      "notes": "5-HTP is used after MDMA, never before or during, because of serotonin-syndrome risk.",
+      "harm_reduction": "Space use to a few months apart to limit serotonin and mood harm. Test your pills — mis-sold and adulterated product is common. Take breaks from dancing, cool down, and drink water in moderation (about 500 ml/hour when active; too much plain water can cause dangerous low sodium). Avoid combining with MAOIs, SSRIs, tramadol or other stimulants. Magnesium can reduce jaw clenching. 5-HTP only after, never during, and not at all if you take an SSRI."
     },
     {
       "key": "opioids",
       "name": "Heroin and other opioids (fentanyl, oxycodone, morphine)",
-      "aliases": ["heroin", "opioid", "opioids", "fentanyl", "oxycodone", "oxy", "morphine", "codeine", "methadone", "smack"],
+      "aliases": [
+        "heroin",
+        "opioid",
+        "opioids",
+        "fentanyl",
+        "oxycodone",
+        "oxy",
+        "morphine",
+        "codeine",
+        "methadone",
+        "smack"
+      ],
       "short_term": "Pain relief, sedation and euphoria, with nausea and vomiting, itching, constipation, pinpoint pupils and slowed breathing. Overdose presents as unresponsiveness, very slow or stopped breathing and blue-tinged lips or fingertips — a medical emergency.",
       "longer_term": "Rapid tolerance and physical dependence, chronic constipation, hormonal disruption, poor nutrition and immunity, and infection risk (including HIV and hepatitis C) with injecting.",
       "key_risks": "Respiratory depression is the killer, and risk multiplies when combined with alcohol, benzodiazepines or gabapentinoids. Fentanyl contamination makes street supply unpredictable — a fatal amount is tiny. Tolerance drops fast after a break, so returning to a previous dose is a common cause of fatal overdose.",
-      "notes": "Naloxone (Narcan) reverses opioid overdose — carrying it saves lives. Withdrawal is rarely fatal but is severe; medical support helps."
+      "notes": "Naloxone (Narcan) reverses opioid overdose — carrying it saves lives. Withdrawal is rarely fatal but is severe; medical support helps.",
+      "harm_reduction": "Never use alone — if no one is present, use a hotline or supervised service. Carry naloxone (Narcan) and make sure people around you know how to use it. Test the supply for fentanyl and start with a much smaller amount than usual, especially after any break, when tolerance has dropped. Never combine with alcohol, benzodiazepines or gabapentinoids. Put anyone unresponsive in the recovery position and call emergency services. For dependence, opioid agonist treatment (methadone or buprenorphine) is the most effective medical option — ask a doctor."
     },
     {
       "key": "ketamine",
       "name": "Ketamine",
-      "aliases": ["ketamine", "ket", "special k"],
+      "aliases": [
+        "ketamine",
+        "ket",
+        "special k"
+      ],
       "short_term": "Dissociation, distorted perception of time and body, and at higher doses the immobilising 'k-hole'. Causes poor coordination, confusion, nausea and vomiting, and raised heart rate and blood pressure.",
       "longer_term": "Ketamine-induced bladder damage (urinary urgency, pain and bleeding, sometimes irreversible), abdominal 'k-cramps', liver and bile-duct problems, memory impairment and psychological dependence.",
       "key_risks": "Vomiting while heavily dissociated carries a real choking risk — never leave someone alone. Dangerous combined with alcohol, opioids or other depressants.",
-      "notes": "Bladder symptoms are the most common serious harm in regular users and warrant medical review."
+      "notes": "Bladder symptoms are the most common serious harm in regular users and warrant medical review.",
+      "harm_reduction": "Bladder damage is dose- and frequency-driven, so lower doses and longer gaps are the single most protective step; urinary pain or urgency means stop and see a doctor. Never use alone or in an unsafe place; never combine with alcohol or opioids. Stay upright and have a sober person present because of the vomiting/choking risk. Nasal use: rinse with saline and rotate nostrils."
     },
     {
       "key": "ghb",
       "name": "GHB / GBL",
-      "aliases": ["ghb", "gbl", "g", "liquid ecstasy"],
+      "aliases": [
+        "ghb",
+        "gbl",
+        "g",
+        "liquid ecstasy"
+      ],
       "short_term": "Euphoria, sociability and sedation. The gap between a recreational dose and an overdose is very small — overdose causes vomiting, deep unconsciousness, slowed breathing and seizures.",
       "longer_term": "Dependence can develop quickly with frequent dosing, and withdrawal is severe — agitation, tremor, insomnia, hallucinations and seizures, which is a medical emergency requiring hospital care.",
       "key_risks": "Extremely dangerous with alcohol, benzodiazepines or opioids. Unconsciousness with vomiting risks choking.",
-      "notes": "GHB withdrawal must not be attempted alone — it can be life-threatening."
+      "notes": "GHB withdrawal must not be attempted alone — it can be life-threatening.",
+      "harm_reduction": "The margin between a dose and an overdose is very small — measure accurately with a syringe rather than eyeballing, and never redose because 'it isn't working yet'. Never combine with alcohol, benzodiazepines or opioids. Never use alone; put anyone unconscious in the recovery position and call emergency services. If you use daily, do not stop abruptly — withdrawal can cause seizures and requires hospital care."
     },
     {
       "key": "psilocybin",
       "name": "Psilocybin mushrooms",
-      "aliases": ["psilocybin", "mushrooms", "shrooms", "magic mushrooms"],
+      "aliases": [
+        "psilocybin",
+        "mushrooms",
+        "shrooms",
+        "magic mushrooms"
+      ],
       "short_term": "Visual and perceptual changes, altered mood and thinking, with nausea and vomiting early on, dilated pupils, raised heart rate, and poor coordination. Difficult experiences ('bad trips') bring intense anxiety, confusion and paranoia; accidents can happen through impaired judgement.",
       "longer_term": "Physical dependence is not typical. Some people experience lasting anxiety or, rarely, persistent perceptual changes (HPPD).",
       "key_risks": "Can trigger or worsen psychosis in people predisposed to it. Serious risk of misidentifying poisonous wild mushrooms. Serotonin-syndrome risk if combined with MAOIs or other serotonergic drugs.",
-      "notes": "Set, setting and a sober companion substantially reduce risk of harm."
+      "notes": "Set, setting and a sober companion substantially reduce risk of harm.",
+      "harm_reduction": "Set and setting matter most: a familiar, safe place and a sober sitter. Start low and wait — effects take 30-60 minutes. Be certain of identification; misidentified wild mushrooms can be lethal. Avoid if you or close family have a history of psychosis or bipolar disorder, and avoid combining with MAOIs, SSRIs or lithium. For a difficult experience: change setting, calm music, slow breathing, reassurance that it will pass."
     },
     {
       "key": "nicotine",
       "name": "Tobacco and nicotine (including vaping)",
-      "aliases": ["tobacco", "nicotine", "cigarette", "cigarettes", "smoking", "vape", "vaping", "snus"],
+      "aliases": [
+        "tobacco",
+        "nicotine",
+        "cigarette",
+        "cigarettes",
+        "smoking",
+        "vape",
+        "vaping",
+        "snus"
+      ],
       "short_term": "Brief alertness and reduced appetite, with raised heart rate and blood pressure, dizziness or nausea in new users, and irritated airways. Withdrawal brings irritability, anxiety, poor concentration and strong cravings.",
       "longer_term": "Smoking causes lung, throat and many other cancers, COPD and emphysema, heart disease and stroke, and poor circulation and wound healing. Nicotine itself is strongly addictive and can harm adolescent brain development; vaping avoids combustion products but is not risk-free and carries its own lung concerns.",
       "key_risks": "Tobacco smoking is the leading preventable cause of death. Risk falls substantially after quitting.",
-      "notes": "Depletes vitamin C and other antioxidants; quitting support markedly improves success rates."
+      "notes": "Depletes vitamin C and other antioxidants; quitting support markedly improves success rates.",
+      "harm_reduction": "Quitting is the only change that substantially reduces risk, and combining nicotine replacement (patch plus a fast-acting form) with behavioural support roughly doubles success rates; prescription options like varenicline are more effective again — ask a doctor or pharmacist. Switching completely from smoking to vaping reduces exposure to combustion toxins, but it isn't risk-free and isn't a long-term goal. Vitamin C and other antioxidants are depleted by smoking."
     },
     {
       "key": "benzodiazepines",
       "name": "Benzodiazepines (Xanax, Valium, etc. — non-prescribed use)",
-      "aliases": ["benzo", "benzos", "benzodiazepine", "xanax", "valium", "diazepam", "alprazolam", "clonazepam", "bars"],
+      "aliases": [
+        "benzo",
+        "benzos",
+        "benzodiazepine",
+        "xanax",
+        "valium",
+        "diazepam",
+        "alprazolam",
+        "clonazepam",
+        "bars"
+      ],
       "short_term": "Sedation, reduced anxiety, poor coordination, slurred speech, memory gaps and blackouts. Higher doses cause heavy sedation and suppressed breathing.",
       "longer_term": "Tolerance and dependence develop quickly, along with rebound anxiety and insomnia, memory and concentration problems, and falls in older people.",
       "key_risks": "Withdrawal from regular use can cause seizures and be life-threatening — never stop abruptly without medical supervision, taper under a doctor. Very dangerous with alcohol or opioids. Counterfeit 'Xanax' pills frequently contain fentanyl.",
-      "notes": "Combined benzodiazepine and opioid use is a leading pattern in overdose deaths."
+      "notes": "Combined benzodiazepine and opioid use is a leading pattern in overdose deaths.",
+      "harm_reduction": "Never combine with alcohol or opioids — that combination is a leading cause of overdose death. Counterfeit tablets frequently contain fentanyl, so pressed pills are especially risky. Use the lowest amount and avoid daily use, as tolerance and dependence build within weeks. Critically: if you take them regularly, do not stop suddenly — withdrawal can cause seizures and can be fatal. A doctor-supervised slow taper is the safe route."
+    },
+    {
+      "key": "lsd",
+      "name": "LSD (acid)",
+      "aliases": [
+        "lsd",
+        "acid",
+        "tabs",
+        "lucy"
+      ],
+      "short_term": "Visual and perceptual changes, altered thinking and emotion for 8-12 hours, with dilated pupils, raised heart rate and blood pressure, jaw tension, tremor and appetite loss. Difficult experiences bring intense anxiety, confusion and paranoia.",
+      "longer_term": "Physical dependence is not typical and tolerance builds fast. A minority experience lasting anxiety or persistent visual disturbances (HPPD).",
+      "key_risks": "Can trigger prolonged psychosis in people predisposed to it. Accidents and injury through impaired judgement are the main physical danger. Blotters sold as LSD are sometimes NBOMe compounds, which are far more toxic and have caused deaths.",
+      "harm_reduction": "Test your supply — NBOMe substitution is the biggest single danger and tastes bitter, unlike LSD. Use a low dose, a safe familiar setting and a sober sitter, and allow a full day plus recovery sleep. Avoid if you or close family have psychosis or bipolar history. Avoid combining with lithium or tramadol (seizure risk) and with stimulants. For a hard trip: change environment, calm music, breathing, reassurance."
+    },
+    {
+      "key": "amphetamine_rx",
+      "name": "Amphetamine / ADHD stimulants (Adderall, dexamphetamine) — non-prescribed use",
+      "aliases": [
+        "adderall",
+        "dexamphetamine",
+        "dextroamphetamine",
+        "vyvanse",
+        "lisdexamfetamine",
+        "ritalin",
+        "methylphenidate",
+        "concerta",
+        "study drug"
+      ],
+      "short_term": "Alertness, focus and reduced appetite, with raised heart rate and blood pressure, insomnia, anxiety, jaw clenching and irritability. Higher doses risk chest pain, arrhythmias, agitation and, rarely, seizures or psychosis.",
+      "longer_term": "Tolerance and dependence, disrupted sleep architecture, weight loss, low mood and fatigue between doses, and cardiovascular strain. Non-prescribed use also carries the risk that an underlying condition goes properly untreated.",
+      "key_risks": "Dangerous with MAOIs (hypertensive crisis) and with other stimulants. Risky in undiagnosed heart conditions. Counterfeit 'Adderall' pills have contained methamphetamine and fentanyl.",
+      "harm_reduction": "Prescription and medical supervision is the meaningful risk reduction here — dose and cardiac suitability are the whole issue. Otherwise: avoid redosing late in the day, protect sleep, eat and hydrate deliberately since appetite is suppressed, and never combine with other stimulants or MAOIs. Chest pain or fainting means emergency care."
+    },
+    {
+      "key": "kratom",
+      "name": "Kratom",
+      "aliases": [
+        "kratom",
+        "mitragynine"
+      ],
+      "short_term": "Stimulant-like at low doses and opioid-like sedation at higher ones, with nausea, vomiting, itching, constipation, dizziness and sweating.",
+      "longer_term": "Dependence with a genuine opioid-like withdrawal syndrome, liver injury in some users, weight loss and constipation.",
+      "key_risks": "Deaths have occurred, usually in combination with other depressants. Unregulated products vary widely in strength and have been contaminated with heavy metals and salmonella. Dangerous with alcohol, benzodiazepines or opioids.",
+      "harm_reduction": "Avoid daily use — dependence develops faster than most users expect. Never combine with other sedatives or alcohol. Keep doses low and consistent, given the wide variability between products. Persistent nausea, dark urine or yellowing skin suggests liver injury and needs a doctor. Withdrawal responds to the same medical support as opioid withdrawal."
+    },
+    {
+      "key": "nitrous",
+      "name": "Nitrous oxide (laughing gas, balloons)",
+      "aliases": [
+        "nitrous",
+        "nitrous oxide",
+        "laughing gas",
+        "whippits",
+        "whippets",
+        "nangs",
+        "balloons",
+        "n2o"
+      ],
+      "short_term": "Brief euphoria, dizziness and distorted sound lasting under a minute, with loss of coordination and risk of falls. Direct inhalation from a pressurised canister can cause frostbite to the airway and lung injury.",
+      "longer_term": "Regular use inactivates vitamin B12, causing nerve damage — numbness and tingling in hands and feet, weakness and unsteady walking, which can become permanent. Also linked to anaemia and mood problems.",
+      "key_risks": "Oxygen deprivation is the acute danger — deaths occur when it's used in enclosed spaces, with a bag over the head, or in ways that exclude air. Never use while standing or in water.",
+      "harm_reduction": "Never inhale directly from a canister (use a balloon so the gas warms and pressure drops), never with a bag over the head, and never in a confined space — always allow normal air between inhalations. Sit down. Limit quantity and frequency; B12 supplementation does not fully protect against nerve damage with heavy use, and any numbness or tingling means stop and see a doctor promptly."
+    },
+    {
+      "key": "poppers",
+      "name": "Poppers (alkyl nitrites)",
+      "aliases": [
+        "poppers",
+        "amyl nitrite",
+        "alkyl nitrite",
+        "isopropyl nitrite",
+        "rush"
+      ],
+      "short_term": "A brief head rush, warmth and muscle relaxation lasting a couple of minutes, with flushing, headache, dizziness and a drop in blood pressure.",
+      "longer_term": "Chemical burns around the nose and mouth, and — particularly with isopropyl nitrite — visual disturbance and retinal damage that can persist.",
+      "key_risks": "Fatal with erectile-dysfunction drugs (Viagra/sildenafil, Cialis/tadalafil) — the combined blood-pressure drop can cause collapse. Swallowing poppers (rather than inhaling) can be fatal by causing methaemoglobinaemia. Also dangerous in glaucoma, anaemia and heart disease.",
+      "harm_reduction": "Never with erectile-dysfunction drugs, ever. Never swallow. Inhale from the bottle rather than pouring onto skin, keep away from flames (highly flammable), sit or lie down to avoid fainting, and stop if vision changes. Blue lips or severe breathlessness after ingestion is an emergency."
+    },
+    {
+      "key": "synthetic_cannabinoids",
+      "name": "Synthetic cannabinoids (spice, K2)",
+      "aliases": [
+        "spice",
+        "k2",
+        "synthetic cannabinoid",
+        "synthetic weed",
+        "mamba",
+        "black mamba"
+      ],
+      "short_term": "Far stronger and less predictable than cannabis: severe anxiety, agitation, paranoia, hallucinations, vomiting, racing heart, chest pain, seizures and loss of consciousness.",
+      "longer_term": "Rapid dependence with a marked withdrawal syndrome, persistent psychosis, kidney injury and heart damage.",
+      "key_risks": "These are the most dangerous of the cannabis-type substances by a wide margin — potency varies enormously between and within batches, and deaths have resulted from single doses. Some batches have contained rat poison (brodifacoum), causing severe bleeding.",
+      "harm_reduction": "The honest answer is that there is no reliably safe way to use these — potency is unpredictable even within one packet, so 'a small amount' isn't a dependable safeguard. If someone does use: never alone, never combined with anything else, tiny amount, and seek emergency care for seizures, chest pain, unresponsiveness or unusual bleeding. Cannabis itself is substantially less dangerous."
+    },
+    {
+      "key": "cathinones",
+      "name": "Cathinones (mephedrone, bath salts, MDPV)",
+      "aliases": [
+        "mephedrone",
+        "mcat",
+        "meow meow",
+        "bath salts",
+        "mdpv",
+        "cathinone",
+        "alpha-pvp",
+        "monkey dust",
+        "3-mmc"
+      ],
+      "short_term": "Stimulation, euphoria and talkativeness with strong compulsive redosing, plus raised heart rate and blood pressure, jaw clenching, insomnia, anxiety, paranoia and overheating.",
+      "longer_term": "Dependence, severe sleep deprivation, weight loss, persistent paranoia and psychosis, nasal and vein damage.",
+      "key_risks": "The compulsion to redose is unusually strong, which drives binges and cardiac strain. Composition is highly variable. Dangerous with other stimulants and with MAOIs.",
+      "harm_reduction": "Pre-measure and physically separate the amount you intend to use, because compulsive redosing is the defining risk. Set a hard stop time, hydrate, stay cool, and protect sleep afterwards. Never combine with other stimulants or MAOIs. Chest pain, very high temperature or severe agitation needs emergency care."
+    },
+    {
+      "key": "dxm",
+      "name": "DXM (dextromethorphan, cough syrup)",
+      "aliases": [
+        "dxm",
+        "dextromethorphan",
+        "robotripping",
+        "robitussin",
+        "cough syrup"
+      ],
+      "short_term": "Dissociation and altered perception at high doses, with nausea and vomiting, itching, poor coordination, raised blood pressure and confusion.",
+      "longer_term": "Psychological dependence, cognitive problems with heavy repeated use, and liver damage where the product also contains paracetamol/acetaminophen.",
+      "key_risks": "Combination cough products are the main hazard: paracetamol/acetaminophen in them causes liver failure at these doses, and antihistamines or pseudoephedrine add their own toxicity. Serotonin syndrome risk with SSRIs, MAOIs or tramadol.",
+      "harm_reduction": "Check the label — any product containing paracetamol/acetaminophen, antihistamine or decongestant is dangerous at recreational doses; only single-ingredient DXM avoids that. Never combine with SSRIs, MAOIs or tramadol. Don't drive. Vomiting is common, so never lie on your back alone."
+    },
+    {
+      "key": "anabolic_steroids",
+      "name": "Anabolic steroids (non-medical use)",
+      "aliases": [
+        "anabolic steroid",
+        "anabolic steroids",
+        "testosterone cycle",
+        "trenbolone",
+        "nandrolone",
+        "boldenone",
+        "masteron",
+        "winstrol",
+        "dianabol",
+        "sustanon"
+      ],
+      "short_term": "Increased muscle mass and strength, with acne, fluid retention, raised blood pressure, mood swings, irritability and aggression, and disturbed sleep.",
+      "longer_term": "Suppression of natural testosterone (testicular shrinkage, infertility, erectile problems), adverse cholesterol changes and cardiovascular disease, liver strain especially with oral 17-alkylated compounds, gynaecomastia, hair loss, acne scarring, and depression or anxiety on withdrawal. In women, deepened voice and hair changes can be permanent.",
+      "key_risks": "Cardiovascular disease is the leading long-term harm — left ventricular hypertrophy, high haematocrit and clot risk. Injecting introduces infection risk. Products are frequently counterfeit or misdosed.",
+      "harm_reduction": "Regular bloodwork is the single most useful step — lipids, haematocrit, liver enzymes, blood pressure and hormone panel, ideally with a doctor who won't judge you. Sterile injecting technique and never sharing equipment. Avoid oral 17-alkylated compounds, which are hardest on the liver. Support recovery of natural hormone production after a cycle, and get cardiovascular risk assessed rather than assuming youth protects you."
+    },
+    {
+      "key": "caffeine",
+      "name": "Caffeine (high-dose / powders / energy drinks)",
+      "aliases": [
+        "caffeine",
+        "energy drink",
+        "energy drinks",
+        "caffeine powder",
+        "pre-workout"
+      ],
+      "short_term": "Alertness, then jitteriness, anxiety, palpitations, raised blood pressure, tremor, stomach upset and insomnia. Very high doses cause vomiting, arrhythmias and seizures.",
+      "longer_term": "Tolerance and dependence with headaches, fatigue and irritability on withdrawal; chronic sleep disruption, anxiety and reflux.",
+      "key_risks": "Pure caffeine powder is genuinely dangerous — a teaspoon is roughly equivalent to 25 cups of coffee and deaths have resulted from mismeasurement. Risk rises with heart conditions, pregnancy, and combined with other stimulants.",
+      "harm_reduction": "Keep to roughly 400 mg a day for most healthy adults (about four cups of coffee) and none within 8-10 hours of bed. Never measure pure powder by eye — it should be weighed on a milligram scale, and it's safer to avoid it entirely. Watch hidden sources in pre-workout and energy drinks stacked together. Taper rather than stopping abruptly to avoid withdrawal headaches."
+    },
+    {
+      "key": "dmt",
+      "name": "DMT / ayahuasca",
+      "aliases": [
+        "dmt",
+        "ayahuasca",
+        "changa",
+        "5-meo-dmt"
+      ],
+      "short_term": "Very rapid, intense perceptual and emotional effects — minutes when smoked, hours with ayahuasca — with raised heart rate and blood pressure, and intense nausea and vomiting with ayahuasca specifically.",
+      "longer_term": "Physical dependence is not typical. Some experience lasting psychological difficulty after overwhelming experiences.",
+      "key_risks": "Ayahuasca contains an MAOI, which makes it dangerous with SSRIs and many other antidepressants, tramadol, stimulants and tyramine-rich foods — serotonin syndrome and hypertensive crisis are real risks. Can trigger psychosis in predisposed people. 5-MeO-DMT is far more potent and less forgiving.",
+      "harm_reduction": "The MAOI interaction is the central danger with ayahuasca — antidepressants must be discussed with a doctor and require a long washout, which is not a do-it-yourself matter. Never use alone; a sober sitter is essential given complete incapacitation. Avoid entirely with psychosis or bipolar history, and with heart conditions. Vomiting is expected with ayahuasca — stay upright."
+    },
+    {
+      "key": "tramadol",
+      "name": "Tramadol (non-prescribed use)",
+      "aliases": [
+        "tramadol",
+        "ultram"
+      ],
+      "short_term": "Pain relief and mild euphoria, with nausea, dizziness, drowsiness, constipation and sweating.",
+      "longer_term": "Dependence with a withdrawal that combines opioid symptoms and atypical ones (anxiety, paraesthesia, confusion), which many find harder than expected.",
+      "key_risks": "Lowers the seizure threshold — seizures occur even at therapeutic doses, and risk rises sharply with higher doses or with antidepressants. Serotonin syndrome risk with SSRIs, SNRIs and MAOIs. Respiratory depression with alcohol or benzodiazepines. Metabolism varies genetically, so the same dose affects people very differently.",
+      "harm_reduction": "Never combine with antidepressants without medical advice (both seizure and serotonin-syndrome risk), and never with alcohol or benzodiazepines. Because metabolism varies genetically, dose unpredictability is inherent — treat it as a full opioid, not a mild one, and carry naloxone. Seizure history is a contraindication."
     }
   ]
 }

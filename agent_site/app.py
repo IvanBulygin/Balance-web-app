@@ -270,12 +270,18 @@ def format_mushroom_block(hits: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def _wb(alias: str, t: str) -> bool:
+    # Word-boundary match so short aliases ("ket", "oxy", "meth") don't fire
+    # inside unrelated words ("jacket", "oxygen", "method").
+    return re.search(r"(?<!\w)" + re.escape(alias) + r"(?!\w)", t) is not None
+
+
 def find_interactions(text: str) -> list[dict]:
     """Curated dangerous-combination rules that match the text (both sides present)."""
     t = (text or "").lower()
     out = []
     for r in state.get("interactions", {}).get("rules", []):
-        if any(a in t for a in r.get("a", [])) and any(b in t for b in r.get("b", [])):
+        if any(_wb(a, t) for a in r.get("a", [])) and any(_wb(b, t) for b in r.get("b", [])):
             out.append(r)
     order = {"Dangerous": 0, "Serious": 1, "Caution": 2}
     return sorted(out, key=lambda r: order.get(r.get("severity"), 9))

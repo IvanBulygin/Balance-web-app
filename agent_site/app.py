@@ -36,6 +36,7 @@ STATIC_DIR = ROOT / "static"
 PROMPT_PATH = ROOT / "system_prompt.md"
 PDF_TEXT_DIR = ROOT / "data" / "pdfs"
 MUSHROOMS_PATH = ROOT / "data" / "functional_mushrooms.json"
+INTERACTIONS_PATH = ROOT / "data" / "interactions.json"
 
 # Primary is 2.5 Flash — capable, with a much higher free-tier daily quota than
 # 3.5 Flash (which the free tier caps at 20 requests/day). Fallback matches;
@@ -73,6 +74,12 @@ async def lifespan(app: FastAPI):
     except FileNotFoundError:
         state["mushrooms"] = {"mushrooms": []}
         print("No functional-mushroom DB found.")
+    try:
+        state["interactions"] = json.loads(INTERACTIONS_PATH.read_text(encoding="utf-8"))
+        print(f"Loaded interaction DB: {len(state['interactions'].get('rules', []))} rules.")
+    except FileNotFoundError:
+        state["interactions"] = {"rules": []}
+        print("No interaction DB found.")
     print(
         f"Index ready. {len(index.chunks):,} chunks from "
         f"{len({c.source for c in index.chunks})} guides."
@@ -145,6 +152,12 @@ def health():
 def mushrooms():
     """Functional-mushroom evidence DB — powers the in-chat curated card (b)."""
     return state.get("mushrooms", {"mushrooms": []})
+
+
+@app.get("/api/interactions")
+def interactions():
+    """Curated dangerous-combination rules — powers the in-chat warning card."""
+    return state.get("interactions", {"rules": []})
 
 
 class CategorySummary(BaseModel):
@@ -257,6 +270,21 @@ def format_mushroom_block(hits: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def find_interactions(text: str) -> list[dict]:
+    """Curated dangerous-combination rules that match the text (both sides present)."""
+    t = (text or "").lower()
+    out = []
+    for r in state.get("interactions", {}).get("rules", []):
+        if any(a in t for a in r.get("a", [])) and any(b in t for b in r.get("b", [])):
+            out.append(r)
+    order = {"Dangerous": 0, "Serious": 1, "Caution": 2}
+    return sorted(out, key=lambda r: order.get(r.get("severity"), 9))
+
+
+def format_interaction_block(hits: list[dict]) -> str:
+    return "\n".join(f"- [{r['severity']}] {r['label']}: {r['reason']}" for r in hits)
+
+
 def _build_query(messages: list[Message]) -> str:
     """Build a retrieval query from the latest question plus recent context.
 
@@ -358,6 +386,18 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
             "state each benefit's evidence tier, include the caveats, never "
             "overstate or invent benefits/doses, and note this isn't medical "
             "advice. " + (state.get("mushrooms", {}).get("agent_guidance", ""))
+        )
+
+    # Dangerous-combination warnings (curated). Inject whenever the message
+    # matches a known interaction so the agent warns from vetted data, not guesses.
+    inter = find_interactions(recent_user)
+    if inter:
+        idb = state.get("interactions", {})
+        system_instruction += (
+            "\n\n## Dangerous-combination warnings (AUTHORITATIVE — curated)\n\n"
+            + format_interaction_block(inter)
+            + "\n\n" + idb.get("agent_guidance", "")
+            + " " + idb.get("emergency", "") + " " + idb.get("not_exhaustive", "")
         )
     if stack:
         names = ", ".join(s.strip() for s in stack if s.strip())

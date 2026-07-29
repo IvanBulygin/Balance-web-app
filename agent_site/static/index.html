@@ -1078,6 +1078,37 @@
       </div>
     );
 
+    // ============ Dangerous-combination warning (curated) ============
+    const _INTER_ORDER = { Dangerous:0, Serious:1, Caution:2 };
+    const detectInteractions = (text, rules) => {
+      const t = (text || '').toLowerCase();
+      const hits = (rules || []).filter(r => (r.a||[]).some(a => t.includes(a)) && (r.b||[]).some(b => t.includes(b)));
+      return hits.sort((x,y) => (_INTER_ORDER[x.severity] ?? 9) - (_INTER_ORDER[y.severity] ?? 9));
+    };
+    const INTER_STYLE = {
+      Dangerous: { bg:'#fdecef', fg:'#8a1f33' },
+      Serious:   { bg:'#fff1e6', fg:'#8a3f0a' },
+      Caution:   { bg:'#fdf6d8', fg:'#6f5a12' },
+    };
+    const InteractionCard = ({ rules, meta }) => {
+      const anyDanger = rules.some(r => r.severity === 'Dangerous');
+      return (
+        <div>
+          {rules.map((r,i) => { const s = INTER_STYLE[r.severity] || INTER_STYLE.Caution; return (
+            <div key={i} style={{padding:'11px 13px', background:s.bg, borderRadius:12, marginBottom:8}}>
+              <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:4, flexWrap:'wrap'}}>
+                <span style={{fontSize:10, fontWeight:700, letterSpacing:'.04em', textTransform:'uppercase', color:s.fg, background:'rgba(255,255,255,0.65)', padding:'2px 8px', borderRadius:999}}>{r.severity}</span>
+                <span style={{fontSize:13, fontWeight:600, color:s.fg}}>{r.label}</span>
+              </div>
+              <div style={{fontSize:12.5, color:s.fg, lineHeight:1.45}}>{r.reason}</div>
+            </div>
+          ); })}
+          {anyDanger && meta.emergency && <div style={{fontSize:12, fontWeight:600, color:'#8a1f33', background:'#fdecef', borderRadius:10, padding:'10px 12px', marginBottom:8}}>🚨 {meta.emergency}</div>}
+          <div style={{fontSize:11, color:'var(--ink-3)', lineHeight:1.5, padding:'10px 12px', background:'var(--surface-3)', borderRadius:10}}>{meta.not_exhaustive} {meta.disclaimer}</div>
+        </div>
+      );
+    };
+
     const titleCase = (s) => s.replace(/\b\w/g, c => c.toUpperCase());
     // Detect purchase intent in a chat message and, when present, what to order.
     // Returns null (not an order), {whole:true} (order the whole stack), or
@@ -1135,7 +1166,7 @@
       );
     };
 
-    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery, mushrooms }) => {
+    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery, mushrooms, interactions }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
       const [input, setInput] = useState('');
@@ -1178,6 +1209,13 @@
           const name = titleCase(intent.item);
           const cart = [{ name, tier:'Secondary', dose:'', iherb_url:'https://www.iherb.com/search?kw=' + encodeURIComponent(intent.item) }];
           startOrder(question, cart, name);
+          return;
+        }
+        // Dangerous-combination question → curated warning card (highest priority,
+        // so "alcohol + heroin" warns rather than showing a support card).
+        const inter = detectInteractions(question, interactions && interactions.rules);
+        if (inter.length) {
+          setMessages(m => [...m, { role:'user', content:question }, { role:'assistant', kind:'interaction', rules:inter }]);
           return;
         }
         // Substance-support intent → show the curated, vetted card instead of
@@ -1271,6 +1309,20 @@
                   <div className="bal-card" style={{padding:'14px 16px'}}>
                     <div style={{fontSize:16, fontWeight:600, color:'var(--ink)', marginBottom:10}}>Support for {m.sub.name}</div>
                     <SubstancePanel sub={m.sub} onAdd={onAdd} inStack={inStack}/>
+                  </div>
+                </div>
+              </div>
+            ) : m.kind==='interaction' ? (
+              <div key={i} style={{padding:'16px 18px 0'}}>
+                <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                  <window.BalLogoMark size={26}/>
+                  <div style={{fontSize:12, fontWeight:600, color:'var(--ink-2)'}}>Balance</div>
+                  <div style={{fontSize:11, color:'var(--ink-4)'}}>· combination safety</div>
+                </div>
+                <div style={{marginLeft:34}}>
+                  <div className="bal-card" style={{padding:'14px 16px'}}>
+                    <div style={{fontSize:16, fontWeight:600, color:'var(--ink)', marginBottom:10}}>Combination safety</div>
+                    <InteractionCard rules={m.rules} meta={interactions}/>
                   </div>
                 </div>
               </div>
@@ -2087,6 +2139,7 @@
       const [checkoutOpen, setCheckoutOpen] = useState(false);
       const [checkoutEnabled, setCheckoutEnabled] = useState(false);
       const [mushrooms, setMushrooms] = useState([]);   // functional-mushroom DB (from /api/mushrooms)
+      const [interactions, setInteractions] = useState({ rules: [] });  // dangerous-combination DB
 
       // Probe whether the server has CARTAI_API_KEY set — drives the Buy
       // button's enabled/disabled state on Stack.
@@ -2098,6 +2151,10 @@
         fetch('/api/mushrooms')
           .then(r => r.ok ? r.json() : null)
           .then(j => { if (j && Array.isArray(j.mushrooms)) setMushrooms(j.mushrooms); })
+          .catch(() => {});
+        fetch('/api/interactions')
+          .then(r => r.ok ? r.json() : null)
+          .then(j => { if (j && Array.isArray(j.rules)) setInteractions(j); })
           .catch(() => {});
       }, []);
 
@@ -2155,7 +2212,7 @@
       if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
       if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo}/>;
-      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms}/>;
+      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}/>;
       if (screen === 'stack') {
         if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;

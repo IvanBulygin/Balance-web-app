@@ -18,7 +18,12 @@
         "hash",
         "edible",
         "edibles",
-        "ganja"
+        "ganja",
+        "марихуана",
+        "каннабис",
+        "травка",
+        "гашиш",
+        "шишки"
       ],
       "short_term": "Relaxation and altered perception, but also dry mouth, red eyes, increased heart rate, poor coordination, slowed reaction time, impaired short-term memory and judgement. Higher doses — especially edibles, which come on slowly and are easy to over-consume — can cause anxiety, panic, paranoia, nausea and vomiting.",
       "longer_term": "Regular use is linked to dependence (roughly 1 in 10 users, higher when starting young), persistent memory/attention problems, reduced motivation, chronic bronchitis when smoked, and cannabinoid hyperemesis syndrome (cycles of severe vomiting) in some heavy users.",
@@ -36,13 +41,30 @@
         "wine",
         "liquor",
         "spirits",
-        "drinking"
+        "drinking",
+        "алкоголь",
+        "спиртное",
+        "водка",
+        "пиво",
+        "вино"
       ],
       "short_term": "Impaired coordination, judgement and reaction time; slurred speech; nausea and vomiting; dehydration; blackouts (memory loss) at higher intakes. Very high intakes cause alcohol poisoning — confusion, slow or irregular breathing, hypothermia and unconsciousness, which is a medical emergency.",
       "longer_term": "Liver disease (fatty liver, hepatitis, cirrhosis), high blood pressure and heart damage, pancreatitis, dependence, depression and anxiety, nutritional deficiencies (especially B vitamins), and increased risk of several cancers including breast, liver and bowel.",
       "key_risks": "Withdrawal from heavy, sustained drinking can be life-threatening (seizures, delirium tremens) and needs medical supervision — do not stop abruptly alone. Extremely dangerous combined with opioids, benzodiazepines or GHB.",
       "notes": "No safe amount is established for cancer risk; risk rises with quantity.",
-      "harm_reduction": "Eat before and while drinking, alternate with water, and pace to roughly one drink an hour. Avoid combining with any sedative (opioids, benzodiazepines, GHB, sleeping pills) or with paracetamol/acetaminophen. Keep several alcohol-free days a week. B-vitamins (especially thiamine/B1), magnesium and zinc are commonly depleted. Never leave someone unconscious on their back — recovery position, and call emergency services for slow or irregular breathing, cold skin or unresponsiveness. If you drink heavily and daily, do not stop abruptly on your own — withdrawal can cause seizures and needs medical supervision."
+      "harm_reduction": "Eat before and while drinking, alternate with water, and pace to roughly one drink an hour. Avoid combining with any sedative (opioids, benzodiazepines, GHB, sleeping pills) or with paracetamol/acetaminophen. Keep several alcohol-free days a week. B-vitamins (especially thiamine/B1), magnesium and zinc are commonly depleted. Never leave someone unconscious on their back — recovery position, and call emergency services for slow or irregular breathing, cold skin or unresponsiveness. If you drink heavily and daily, do not stop abruptly on your own — withdrawal can cause seizures and needs medical supervision.",
+      "supplements": [
+        "Milk Thistle",
+        "L-Carnitine",
+        "Vitamin E",
+        "Spirulina",
+        "Vitamin U",
+        "CoQ10",
+        "Omega-3",
+        "Vitamin C",
+        "Zinc",
+        "Vitamin D"
+      ]
     },
     {
       "key": "cocaine",
@@ -51,13 +73,29 @@
         "cocaine",
         "coke",
         "crack",
-        "blow"
+        "blow",
+        "кокаин",
+        "кокс"
       ],
       "short_term": "Euphoria, alertness and talkativeness, followed by a crash. Raises heart rate, blood pressure and body temperature; causes reduced appetite, insomnia, anxiety, agitation and paranoia. Can trigger chest pain, heart-rhythm disturbances, heart attack, stroke or seizure — even in young, healthy people and even on a first use.",
       "longer_term": "Dependence, damage to the nasal septum when snorted, lung damage when smoked, chronic anxiety, paranoia and psychosis, weight loss and malnutrition, and lasting cardiovascular damage.",
       "key_risks": "Combined with alcohol the body forms cocaethylene, which strains the heart and liver and is linked to sudden death. Increasingly contaminated with fentanyl — a major overdose risk.",
       "notes": "Chest pain after use should be treated as a medical emergency.",
-      "harm_reduction": "Never combine with alcohol (forms cocaethylene, extra cardiac strain) or opioids. Test the supply — fentanyl contamination is now common — and carry naloxone. Space doses and avoid long binges; use your own straw to avoid hepatitis C. Stay hydrated and cool. Chest pain, severe headache or breathlessness means stop and get emergency care immediately."
+      "harm_reduction": "Never combine with alcohol (forms cocaethylene, extra cardiac strain) or opioids. Test the supply — fentanyl contamination is now common — and carry naloxone. Space doses and avoid long binges; use your own straw to avoid hepatitis C. Stay hydrated and cool. Chest pain, severe headache or breathlessness means stop and get emergency care immediately.",
+      "supplements": [
+        "Milk Thistle",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Vitamin B1",
+        "Vitamin E",
+        "NAC",
+        "Curcumin",
+        "Omega-3",
+        "CoQ10",
+        "Magnesium",
+        "L-Glutamine",
+        "Aloe Vera"
+      ]
     },
     {
       "key": "methamphetamine",
@@ -68,13 +106,35 @@
         "crystal",
         "ice",
         "speed",
-        "amphetamine"
+        "amphetamine",
+        "метамфетамин",
+        "мет",
+        "амфетамин",
+        "фен"
       ],
       "short_term": "Intense alertness, euphoria and wakefulness; suppressed appetite; raised heart rate, blood pressure and body temperature; jaw clenching; anxiety, agitation, paranoia and aggression. High doses risk dangerous overheating, seizures, heart-rhythm problems and stroke.",
       "longer_term": "Strong dependence, severe dental decay ('meth mouth'), skin sores from picking, dramatic weight loss, insomnia, memory and decision-making problems, and long-lasting paranoia or psychosis that can persist after stopping.",
       "key_risks": "Serious cardiovascular strain and overheating; psychosis. Frequently contaminated with fentanyl.",
       "notes": "Depletes nutrients and sleep — recovery is often limited by both.",
-      "harm_reduction": "Sleep and food are the most protective things — depletion, not the drug alone, drives much of the harm. Hydrate, avoid overheating, and take breaks to sleep. Never mix with other stimulants or with MAOIs. Use your own equipment; smoking and injecting carry extra risks. Dental care and protein/vitamin intake matter with regular use. Paranoia or hallucinations that persist after stopping warrant medical help."
+      "harm_reduction": "Sleep and food are the most protective things — depletion, not the drug alone, drives much of the harm. Hydrate, avoid overheating, and take breaks to sleep. Never mix with other stimulants or with MAOIs. Use your own equipment; smoking and injecting carry extra risks. Dental care and protein/vitamin intake matter with regular use. Paranoia or hallucinations that persist after stopping warrant medical help.",
+      "supplements": [
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Omega-3",
+        "Magnesium",
+        "Vitamin D",
+        "Ashwagandha",
+        "Vitamin E",
+        "Vitamin C",
+        "NAC",
+        "Curcumin",
+        "CoQ10",
+        "Vitamin A",
+        "Leafy greens",
+        "Calcium",
+        "Protein"
+      ]
     },
     {
       "key": "mdma",
@@ -83,13 +143,32 @@
         "mdma",
         "ecstasy",
         "molly",
-        "pills"
+        "pills",
+        "мдма",
+        "экстази",
+        "мефедрон"
       ],
       "short_term": "Euphoria, emotional closeness and heightened senses, alongside jaw clenching, raised heart rate and body temperature, dehydration, nausea and dilated pupils. Main acute dangers are overheating (hyperthermia) and, conversely, drinking too much plain water, which can cause dangerously low sodium (hyponatraemia).",
       "longer_term": "Mid-week low mood and irritability ('comedown'), sleep disruption, anxiety, and with heavy repeated use, memory and mood problems thought to relate to serotonin changes.",
       "key_risks": "Serotonin syndrome when combined with MAOIs (potentially fatal) or other serotonergic drugs. Pills are frequently mis-sold or adulterated. Hot, crowded environments greatly increase overheating risk.",
       "notes": "5-HTP is used after MDMA, never before or during, because of serotonin-syndrome risk.",
-      "harm_reduction": "Space use to a few months apart to limit serotonin and mood harm. Test your pills — mis-sold and adulterated product is common. Take breaks from dancing, cool down, and drink water in moderation (about 500 ml/hour when active; too much plain water can cause dangerous low sodium). Avoid combining with MAOIs, SSRIs, tramadol or other stimulants. Magnesium can reduce jaw clenching. 5-HTP only after, never during, and not at all if you take an SSRI."
+      "harm_reduction": "Space use to a few months apart to limit serotonin and mood harm. Test your pills — mis-sold and adulterated product is common. Take breaks from dancing, cool down, and drink water in moderation (about 500 ml/hour when active; too much plain water can cause dangerous low sodium). Avoid combining with MAOIs, SSRIs, tramadol or other stimulants. Magnesium can reduce jaw clenching. 5-HTP only after, never during, and not at all if you take an SSRI.",
+      "supplements": [
+        "Magnesium",
+        "Vitamin E",
+        "Alpha-Lipoic Acid",
+        "5-HTP",
+        "Omega-3",
+        "ZMA",
+        "L-Glutamine",
+        "Niacin",
+        "Biotin",
+        "Vitamin B1",
+        "Vitamin B5",
+        "Vitamin B6",
+        "Calcium",
+        "Amino acids"
+      ]
     },
     {
       "key": "opioids",
@@ -104,13 +183,30 @@
         "morphine",
         "codeine",
         "methadone",
-        "smack"
+        "smack",
+        "героин",
+        "опиоид",
+        "опиоиды",
+        "фентанил",
+        "морфин",
+        "трамал"
       ],
       "short_term": "Pain relief, sedation and euphoria, with nausea and vomiting, itching, constipation, pinpoint pupils and slowed breathing. Overdose presents as unresponsiveness, very slow or stopped breathing and blue-tinged lips or fingertips — a medical emergency.",
       "longer_term": "Rapid tolerance and physical dependence, chronic constipation, hormonal disruption, poor nutrition and immunity, and infection risk (including HIV and hepatitis C) with injecting.",
       "key_risks": "Respiratory depression is the killer, and risk multiplies when combined with alcohol, benzodiazepines or gabapentinoids. Fentanyl contamination makes street supply unpredictable — a fatal amount is tiny. Tolerance drops fast after a break, so returning to a previous dose is a common cause of fatal overdose.",
       "notes": "Naloxone (Narcan) reverses opioid overdose — carrying it saves lives. Withdrawal is rarely fatal but is severe; medical support helps.",
-      "harm_reduction": "Never use alone — if no one is present, use a hotline or supervised service. Carry naloxone (Narcan) and make sure people around you know how to use it. Test the supply for fentanyl and start with a much smaller amount than usual, especially after any break, when tolerance has dropped. Never combine with alcohol, benzodiazepines or gabapentinoids. Put anyone unresponsive in the recovery position and call emergency services. For dependence, opioid agonist treatment (methadone or buprenorphine) is the most effective medical option — ask a doctor."
+      "harm_reduction": "Never use alone — if no one is present, use a hotline or supervised service. Carry naloxone (Narcan) and make sure people around you know how to use it. Test the supply for fentanyl and start with a much smaller amount than usual, especially after any break, when tolerance has dropped. Never combine with alcohol, benzodiazepines or gabapentinoids. Put anyone unresponsive in the recovery position and call emergency services. For dependence, opioid agonist treatment (methadone or buprenorphine) is the most effective medical option — ask a doctor.",
+      "supplements": [
+        "Vitamin C",
+        "Vitamin D",
+        "Zinc",
+        "Selenium",
+        "Omega-3",
+        "Curcumin",
+        "Echinacea",
+        "Vitamin E",
+        "Vitamin A"
+      ]
     },
     {
       "key": "ketamine",
@@ -118,13 +214,21 @@
       "aliases": [
         "ketamine",
         "ket",
-        "special k"
+        "special k",
+        "кетамин",
+        "кет"
       ],
       "short_term": "Dissociation, distorted perception of time and body, and at higher doses the immobilising 'k-hole'. Causes poor coordination, confusion, nausea and vomiting, and raised heart rate and blood pressure.",
       "longer_term": "Ketamine-induced bladder damage (urinary urgency, pain and bleeding, sometimes irreversible), abdominal 'k-cramps', liver and bile-duct problems, memory impairment and psychological dependence.",
       "key_risks": "Vomiting while heavily dissociated carries a real choking risk — never leave someone alone. Dangerous combined with alcohol, opioids or other depressants.",
       "notes": "Bladder symptoms are the most common serious harm in regular users and warrant medical review.",
-      "harm_reduction": "Bladder damage is dose- and frequency-driven, so lower doses and longer gaps are the single most protective step; urinary pain or urgency means stop and see a doctor. Never use alone or in an unsafe place; never combine with alcohol or opioids. Stay upright and have a sober person present because of the vomiting/choking risk. Nasal use: rinse with saline and rotate nostrils."
+      "harm_reduction": "Bladder damage is dose- and frequency-driven, so lower doses and longer gaps are the single most protective step; urinary pain or urgency means stop and see a doctor. Never use alone or in an unsafe place; never combine with alcohol or opioids. Stay upright and have a sober person present because of the vomiting/choking risk. Nasal use: rinse with saline and rotate nostrils.",
+      "supplements": [
+        "Milk Thistle",
+        "NAC",
+        "Alpha-Lipoic Acid",
+        "Butyrate"
+      ]
     },
     {
       "key": "ghb",
@@ -133,13 +237,24 @@
         "ghb",
         "gbl",
         "g",
-        "liquid ecstasy"
+        "liquid ecstasy",
+        "бутират",
+        "оксибутират"
       ],
       "short_term": "Euphoria, sociability and sedation. The gap between a recreational dose and an overdose is very small — overdose causes vomiting, deep unconsciousness, slowed breathing and seizures.",
       "longer_term": "Dependence can develop quickly with frequent dosing, and withdrawal is severe — agitation, tremor, insomnia, hallucinations and seizures, which is a medical emergency requiring hospital care.",
       "key_risks": "Extremely dangerous with alcohol, benzodiazepines or opioids. Unconsciousness with vomiting risks choking.",
       "notes": "GHB withdrawal must not be attempted alone — it can be life-threatening.",
-      "harm_reduction": "The margin between a dose and an overdose is very small — measure accurately with a syringe rather than eyeballing, and never redose because 'it isn't working yet'. Never combine with alcohol, benzodiazepines or opioids. Never use alone; put anyone unconscious in the recovery position and call emergency services. If you use daily, do not stop abruptly — withdrawal can cause seizures and requires hospital care."
+      "harm_reduction": "The margin between a dose and an overdose is very small — measure accurately with a syringe rather than eyeballing, and never redose because 'it isn't working yet'. Never combine with alcohol, benzodiazepines or opioids. Never use alone; put anyone unconscious in the recovery position and call emergency services. If you use daily, do not stop abruptly — withdrawal can cause seizures and requires hospital care.",
+      "supplements": [
+        "Vitamin C",
+        "Vitamin E",
+        "Vitamin A",
+        "Vitamin D",
+        "Zinc",
+        "Selenium",
+        "Omega-3"
+      ]
     },
     {
       "key": "psilocybin",
@@ -148,13 +263,31 @@
         "psilocybin",
         "mushrooms",
         "shrooms",
-        "magic mushrooms"
+        "magic mushrooms",
+        "псилоцибин",
+        "грибы",
+        "мухоморы"
       ],
       "short_term": "Visual and perceptual changes, altered mood and thinking, with nausea and vomiting early on, dilated pupils, raised heart rate, and poor coordination. Difficult experiences ('bad trips') bring intense anxiety, confusion and paranoia; accidents can happen through impaired judgement.",
       "longer_term": "Physical dependence is not typical. Some people experience lasting anxiety or, rarely, persistent perceptual changes (HPPD).",
       "key_risks": "Can trigger or worsen psychosis in people predisposed to it. Serious risk of misidentifying poisonous wild mushrooms. Serotonin-syndrome risk if combined with MAOIs or other serotonergic drugs.",
       "notes": "Set, setting and a sober companion substantially reduce risk of harm.",
-      "harm_reduction": "Set and setting matter most: a familiar, safe place and a sober sitter. Start low and wait — effects take 30-60 minutes. Be certain of identification; misidentified wild mushrooms can be lethal. Avoid if you or close family have a history of psychosis or bipolar disorder, and avoid combining with MAOIs, SSRIs or lithium. For a difficult experience: change setting, calm music, slow breathing, reassurance that it will pass."
+      "harm_reduction": "Set and setting matter most: a familiar, safe place and a sober sitter. Start low and wait — effects take 30-60 minutes. Be certain of identification; misidentified wild mushrooms can be lethal. Avoid if you or close family have a history of psychosis or bipolar disorder, and avoid combining with MAOIs, SSRIs or lithium. For a difficult experience: change setting, calm music, slow breathing, reassurance that it will pass.",
+      "supplements": [
+        "Omega-3",
+        "Folic Acid",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Vitamin D",
+        "Vitamin C",
+        "Vitamin E",
+        "Magnesium",
+        "Potassium",
+        "Ashwagandha",
+        "CoQ10",
+        "Aloe Vera",
+        "L-Glutamine"
+      ]
     },
     {
       "key": "nicotine",
@@ -167,13 +300,26 @@
         "smoking",
         "vape",
         "vaping",
-        "snus"
+        "snus",
+        "табак",
+        "никотин",
+        "сигареты",
+        "вейп"
       ],
       "short_term": "Brief alertness and reduced appetite, with raised heart rate and blood pressure, dizziness or nausea in new users, and irritated airways. Withdrawal brings irritability, anxiety, poor concentration and strong cravings.",
       "longer_term": "Smoking causes lung, throat and many other cancers, COPD and emphysema, heart disease and stroke, and poor circulation and wound healing. Nicotine itself is strongly addictive and can harm adolescent brain development; vaping avoids combustion products but is not risk-free and carries its own lung concerns.",
       "key_risks": "Tobacco smoking is the leading preventable cause of death. Risk falls substantially after quitting.",
       "notes": "Depletes vitamin C and other antioxidants; quitting support markedly improves success rates.",
-      "harm_reduction": "Quitting is the only change that substantially reduces risk, and combining nicotine replacement (patch plus a fast-acting form) with behavioural support roughly doubles success rates; prescription options like varenicline are more effective again — ask a doctor or pharmacist. Switching completely from smoking to vaping reduces exposure to combustion toxins, but it isn't risk-free and isn't a long-term goal. Vitamin C and other antioxidants are depleted by smoking."
+      "harm_reduction": "Quitting is the only change that substantially reduces risk, and combining nicotine replacement (patch plus a fast-acting form) with behavioural support roughly doubles success rates; prescription options like varenicline are more effective again — ask a doctor or pharmacist. Switching completely from smoking to vaping reduces exposure to combustion toxins, but it isn't risk-free and isn't a long-term goal. Vitamin C and other antioxidants are depleted by smoking.",
+      "supplements": [
+        "Vitamin C",
+        "Vitamin E",
+        "Selenium",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Omega-3",
+        "Folic Acid"
+      ]
     },
     {
       "key": "benzodiazepines",
@@ -187,7 +333,11 @@
         "diazepam",
         "alprazolam",
         "clonazepam",
-        "bars"
+        "bars",
+        "бензодиазепины",
+        "ксанакс",
+        "феназепам",
+        "диазепам"
       ],
       "short_term": "Sedation, reduced anxiety, poor coordination, slurred speech, memory gaps and blackouts. Higher doses cause heavy sedation and suppressed breathing.",
       "longer_term": "Tolerance and dependence develop quickly, along with rebound anxiety and insomnia, memory and concentration problems, and falls in older people.",
@@ -202,7 +352,9 @@
         "lsd",
         "acid",
         "tabs",
-        "lucy"
+        "lucy",
+        "лсд",
+        "марки"
       ],
       "short_term": "Visual and perceptual changes, altered thinking and emotion for 8-12 hours, with dilated pupils, raised heart rate and blood pressure, jaw tension, tremor and appetite loss. Difficult experiences bring intense anxiety, confusion and paranoia.",
       "longer_term": "Physical dependence is not typical and tolerance builds fast. A minority experience lasting anxiety or persistent visual disturbances (HPPD).",
@@ -221,7 +373,9 @@
         "ritalin",
         "methylphenidate",
         "concerta",
-        "study drug"
+        "study drug",
+        "аддерол",
+        "риталин"
       ],
       "short_term": "Alertness, focus and reduced appetite, with raised heart rate and blood pressure, insomnia, anxiety, jaw clenching and irritability. Higher doses risk chest pain, arrhythmias, agitation and, rarely, seizures or psychosis.",
       "longer_term": "Tolerance and dependence, disrupted sleep architecture, weight loss, low mood and fatigue between doses, and cardiovascular strain. Non-prescribed use also carries the risk that an underlying condition goes properly untreated.",
@@ -233,7 +387,8 @@
       "name": "Kratom",
       "aliases": [
         "kratom",
-        "mitragynine"
+        "mitragynine",
+        "кратом"
       ],
       "short_term": "Stimulant-like at low doses and opioid-like sedation at higher ones, with nausea, vomiting, itching, constipation, dizziness and sweating.",
       "longer_term": "Dependence with a genuine opioid-like withdrawal syndrome, liver injury in some users, weight loss and constipation.",
@@ -251,7 +406,10 @@
         "whippets",
         "nangs",
         "balloons",
-        "n2o"
+        "n2o",
+        "закись азота",
+        "веселящий газ",
+        "шарики"
       ],
       "short_term": "Brief euphoria, dizziness and distorted sound lasting under a minute, with loss of coordination and risk of falls. Direct inhalation from a pressurised canister can cause frostbite to the airway and lung injury.",
       "longer_term": "Regular use inactivates vitamin B12, causing nerve damage — numbness and tingling in hands and feet, weakness and unsteady walking, which can become permanent. Also linked to anaemia and mood problems.",
@@ -266,7 +424,9 @@
         "amyl nitrite",
         "alkyl nitrite",
         "isopropyl nitrite",
-        "rush"
+        "rush",
+        "попперс",
+        "попперсы"
       ],
       "short_term": "A brief head rush, warmth and muscle relaxation lasting a couple of minutes, with flushing, headache, dizziness and a drop in blood pressure.",
       "longer_term": "Chemical burns around the nose and mouth, and — particularly with isopropyl nitrite — visual disturbance and retinal damage that can persist.",
@@ -282,7 +442,9 @@
         "synthetic cannabinoid",
         "synthetic weed",
         "mamba",
-        "black mamba"
+        "black mamba",
+        "спайс",
+        "синтетика"
       ],
       "short_term": "Far stronger and less predictable than cannabis: severe anxiety, agitation, paranoia, hallucinations, vomiting, racing heart, chest pain, seizures and loss of consciousness.",
       "longer_term": "Rapid dependence with a marked withdrawal syndrome, persistent psychosis, kidney injury and heart damage.",
@@ -301,7 +463,9 @@
         "cathinone",
         "alpha-pvp",
         "monkey dust",
-        "3-mmc"
+        "3-mmc",
+        "соли",
+        "мефедрон"
       ],
       "short_term": "Stimulation, euphoria and talkativeness with strong compulsive redosing, plus raised heart rate and blood pressure, jaw clenching, insomnia, anxiety, paranoia and overheating.",
       "longer_term": "Dependence, severe sleep deprivation, weight loss, persistent paranoia and psychosis, nasal and vein damage.",
@@ -316,7 +480,8 @@
         "dextromethorphan",
         "robotripping",
         "robitussin",
-        "cough syrup"
+        "cough syrup",
+        "декстрометорфан"
       ],
       "short_term": "Dissociation and altered perception at high doses, with nausea and vomiting, itching, poor coordination, raised blood pressure and confusion.",
       "longer_term": "Psychological dependence, cognitive problems with heavy repeated use, and liver damage where the product also contains paracetamol/acetaminophen.",
@@ -329,14 +494,9 @@
       "aliases": [
         "anabolic steroid",
         "anabolic steroids",
-        "testosterone cycle",
-        "trenbolone",
-        "nandrolone",
-        "boldenone",
-        "masteron",
-        "winstrol",
-        "dianabol",
-        "sustanon"
+        "стероиды",
+        "анаболики",
+        "курс стероидов"
       ],
       "short_term": "Increased muscle mass and strength, with acne, fluid retention, raised blood pressure, mood swings, irritability and aggression, and disturbed sleep.",
       "longer_term": "Suppression of natural testosterone (testicular shrinkage, infertility, erectile problems), adverse cholesterol changes and cardiovascular disease, liver strain especially with oral 17-alkylated compounds, gynaecomastia, hair loss, acne scarring, and depression or anxiety on withdrawal. In women, deepened voice and hair changes can be permanent.",
@@ -351,7 +511,9 @@
         "energy drink",
         "energy drinks",
         "caffeine powder",
-        "pre-workout"
+        "pre-workout",
+        "кофеин",
+        "энергетик"
       ],
       "short_term": "Alertness, then jitteriness, anxiety, palpitations, raised blood pressure, tremor, stomach upset and insomnia. Very high doses cause vomiting, arrhythmias and seizures.",
       "longer_term": "Tolerance and dependence with headaches, fatigue and irritability on withdrawal; chronic sleep disruption, anxiety and reflux.",
@@ -365,7 +527,9 @@
         "dmt",
         "ayahuasca",
         "changa",
-        "5-meo-dmt"
+        "5-meo-dmt",
+        "дмт",
+        "аяуаска"
       ],
       "short_term": "Very rapid, intense perceptual and emotional effects — minutes when smoked, hours with ayahuasca — with raised heart rate and blood pressure, and intense nausea and vomiting with ayahuasca specifically.",
       "longer_term": "Physical dependence is not typical. Some experience lasting psychological difficulty after overwhelming experiences.",
@@ -377,12 +541,388 @@
       "name": "Tramadol (non-prescribed use)",
       "aliases": [
         "tramadol",
-        "ultram"
+        "ultram",
+        "трамадол"
       ],
       "short_term": "Pain relief and mild euphoria, with nausea, dizziness, drowsiness, constipation and sweating.",
       "longer_term": "Dependence with a withdrawal that combines opioid symptoms and atypical ones (anxiety, paraesthesia, confusion), which many find harder than expected.",
       "key_risks": "Lowers the seizure threshold — seizures occur even at therapeutic doses, and risk rises sharply with higher doses or with antidepressants. Serotonin syndrome risk with SSRIs, SNRIs and MAOIs. Respiratory depression with alcohol or benzodiazepines. Metabolism varies genetically, so the same dose affects people very differently.",
       "harm_reduction": "Never combine with antidepressants without medical advice (both seizure and serotonin-syndrome risk), and never with alcohol or benzodiazepines. Because metabolism varies genetically, dose unpredictability is inherent — treat it as a full opioid, not a mild one, and carry naloxone. Seizure history is a contraindication."
+    },
+    {
+      "key": "olanzapine",
+      "name": "Olanzapine",
+      "group": "Medication",
+      "aliases": [
+        "olanzapine",
+        "zyprexa",
+        "оланзапин"
+      ],
+      "short_term": "Antipsychotic. Can affect metabolism, weight and blood lipids.",
+      "key_risks": "",
+      "supplements": [
+        "Omega-3",
+        "Vitamin C",
+        "Vitamin E",
+        "Milk Thistle",
+        "Folic Acid",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Chromium"
+      ]
+    },
+    {
+      "key": "valproate",
+      "name": "Valproate",
+      "group": "Medication",
+      "aliases": [
+        "valproate",
+        "valproic",
+        "depakote",
+        "epilim",
+        "вальпроат",
+        "вальпроевая",
+        "депакин"
+      ],
+      "short_term": "Anticonvulsant / mood stabiliser. Can affect the liver and deplete certain nutrients.",
+      "key_risks": "",
+      "supplements": [
+        "Milk Thistle",
+        "NAC",
+        "Curcumin",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Vitamin D"
+      ]
+    },
+    {
+      "key": "prozac",
+      "name": "Prozac (fluoxetine)",
+      "group": "Medication",
+      "aliases": [
+        "prozac",
+        "fluoxetine",
+        "прозак",
+        "флуоксетин"
+      ],
+      "short_term": "SSRI antidepressant. Can affect sleep, digestion and nutrient status.",
+      "key_risks": "Do not add serotonin-raising supplements (5-HTP, St John’s Wort, tryptophan) — with an SSRI they can cause serotonin syndrome.",
+      "supplements": [
+        "Milk Thistle",
+        "Omega-3",
+        "CoQ10",
+        "Magnesium",
+        "Vitamin D",
+        "Vitamin C",
+        "Vitamin E",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid"
+      ]
+    },
+    {
+      "key": "atorvastatin",
+      "name": "Atorvastatin",
+      "group": "Medication",
+      "aliases": [
+        "atorvastatin",
+        "lipitor",
+        "аторвастатин"
+      ],
+      "short_term": "Statin (cholesterol). Can lower CoQ10 and sometimes cause muscle aches.",
+      "key_risks": "Don’t stop your statin. CoQ10 is sometimes used for statin-related muscle aches — ask your doctor.",
+      "supplements": [
+        "CoQ10",
+        "Vitamin C",
+        "Vitamin E",
+        "Omega-3",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Magnesium",
+        "Milk Thistle"
+      ]
+    },
+    {
+      "key": "levothyroxine",
+      "name": "Levothyroxine (L-thyroxine)",
+      "group": "Medication",
+      "aliases": [
+        "levothyroxine",
+        "l-thyroxine",
+        "thyroxine",
+        "synthroid",
+        "euthyrox",
+        "л-тироксин",
+        "левотироксин",
+        "эутирокс"
+      ],
+      "short_term": "Thyroid hormone. Its absorption is sensitive to the timing of minerals.",
+      "key_risks": "Calcium, iron, magnesium and some multivitamins block thyroid-hormone absorption — take them at least 4 hours apart, under your doctor’s guidance.",
+      "supplements": [
+        "Multivitamin",
+        "Vitamin C",
+        "Vitamin E",
+        "Selenium",
+        "Omega-3",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Zinc",
+        "Calcium",
+        "Magnesium"
+      ]
+    },
+    {
+      "key": "lisinopril",
+      "name": "Lisinopril",
+      "group": "Medication",
+      "aliases": [
+        "lisinopril",
+        "лизиноприл"
+      ],
+      "short_term": "ACE-inhibitor for blood pressure. Can affect potassium and minerals.",
+      "key_risks": "This medicine can raise potassium — be cautious with potassium supplements.",
+      "supplements": [
+        "Magnesium",
+        "Vitamin C",
+        "Vitamin E",
+        "Omega-3",
+        "CoQ10",
+        "Multivitamin"
+      ]
+    },
+    {
+      "key": "amlodipine",
+      "name": "Amlodipine",
+      "group": "Medication",
+      "aliases": [
+        "amlodipine",
+        "norvasc",
+        "амлодипин"
+      ],
+      "short_term": "Calcium-channel blocker for blood pressure. Can cause ankle swelling.",
+      "key_risks": "",
+      "supplements": [
+        "Milk Thistle",
+        "Vitamin E",
+        "Curcumin",
+        "Omega-3",
+        "CoQ10",
+        "Vitamin D",
+        "Vitamin C",
+        "Magnesium"
+      ]
+    },
+    {
+      "key": "metoprolol",
+      "name": "Metoprolol",
+      "group": "Medication",
+      "aliases": [
+        "metoprolol",
+        "lopressor",
+        "метопролол"
+      ],
+      "short_term": "Beta-blocker. Can affect energy levels and CoQ10.",
+      "key_risks": "",
+      "supplements": [
+        "Omega-3",
+        "CoQ10",
+        "Milk Thistle",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Vitamin C",
+        "Curcumin",
+        "Magnesium",
+        "Chromium",
+        "Calcium"
+      ]
+    },
+    {
+      "key": "albuterol",
+      "name": "Albuterol",
+      "group": "Medication",
+      "aliases": [
+        "albuterol",
+        "salbutamol",
+        "ventolin",
+        "альбутерол",
+        "сальбутамол"
+      ],
+      "short_term": "Asthma reliever. Can cause jitteriness and lower potassium.",
+      "key_risks": "",
+      "supplements": [
+        "Vitamin C",
+        "CoQ10",
+        "Milk Thistle",
+        "Spirulina",
+        "Omega-3",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Vitamin D"
+      ]
+    },
+    {
+      "key": "ozempic",
+      "name": "Ozempic (semaglutide)",
+      "group": "Medication",
+      "aliases": [
+        "ozempic",
+        "semaglutide",
+        "wegovy",
+        "оземпик",
+        "семаглутид"
+      ],
+      "short_term": "GLP-1 for blood sugar / weight. Can cause nausea and reduced food intake.",
+      "key_risks": "",
+      "supplements": [
+        "Multivitamin",
+        "Omega-3",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Milk Thistle",
+        "Vitamin C",
+        "Vitamin E",
+        "Magnesium",
+        "L-Tryptophan",
+        "Curcumin"
+      ]
+    },
+    {
+      "key": "testosterone",
+      "name": "Testosterone (anabolic use)",
+      "group": "Anabolic steroid",
+      "aliases": [
+        "testosterone",
+        "trt",
+        "sustanon",
+        "тестостерон"
+      ],
+      "short_term": "Anabolic steroid. Can strain the liver, blood lipids and natural hormone balance.",
+      "key_risks": "",
+      "supplements": [
+        "Vitamin E",
+        "Vitamin C",
+        "Omega-3",
+        "Vitamin B12",
+        "Vitamin B6",
+        "Folic Acid",
+        "Magnesium",
+        "Zinc",
+        "Milk Thistle",
+        "NAC",
+        "CoQ10",
+        "L-Carnitine"
+      ]
+    },
+    {
+      "key": "nandrolone",
+      "name": "Nandrolone",
+      "group": "Anabolic steroid",
+      "aliases": [
+        "nandrolone",
+        "deca",
+        "deca-durabolin",
+        "нандролон",
+        "дека"
+      ],
+      "short_term": "Anabolic steroid. Can strain the liver, lipids and hormones.",
+      "key_risks": "",
+      "supplements": [
+        "Vitamin C",
+        "Vitamin E",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Folic Acid",
+        "Zinc",
+        "Magnesium",
+        "Curcumin",
+        "Glutathione"
+      ]
+    },
+    {
+      "key": "trenbolone",
+      "name": "Trenbolone",
+      "group": "Anabolic steroid",
+      "aliases": [
+        "trenbolone",
+        "tren",
+        "тренболон",
+        "трен"
+      ],
+      "short_term": "Anabolic steroid. Can strain the liver, kidneys, lipids and sleep.",
+      "key_risks": "",
+      "supplements": [
+        "Milk Thistle",
+        "NAC",
+        "Vitamin B6",
+        "Vitamin B12",
+        "CoQ10",
+        "L-Carnitine",
+        "Omega-3",
+        "L-Glutamine",
+        "Vitamin C",
+        "Vitamin E",
+        "Zinc",
+        "Ashwagandha",
+        "Multivitamin"
+      ]
+    },
+    {
+      "key": "boldenone",
+      "name": "Boldenone",
+      "group": "Anabolic steroid",
+      "aliases": [
+        "boldenone",
+        "equipoise",
+        "болденон"
+      ],
+      "short_term": "Anabolic steroid. Can strain the liver, lipids and blood counts.",
+      "key_risks": "",
+      "supplements": [
+        "Milk Thistle",
+        "NAC",
+        "Vitamin B6",
+        "Vitamin B12",
+        "CoQ10",
+        "Omega-3",
+        "Arginine",
+        "Magnesium",
+        "Zinc",
+        "Spirulina",
+        "Vitamin D",
+        "Multivitamin"
+      ]
+    },
+    {
+      "key": "masteron",
+      "name": "Masteron",
+      "group": "Anabolic steroid",
+      "aliases": [
+        "masteron",
+        "drostanolone",
+        "мастерон"
+      ],
+      "short_term": "Anabolic steroid. Can strain the liver, lipids and hormones.",
+      "key_risks": "",
+      "supplements": [
+        "Milk Thistle",
+        "NAC",
+        "Vitamin E",
+        "Omega-3",
+        "CoQ10",
+        "Tribulus",
+        "Curcumin",
+        "Multivitamin",
+        "Vitamin B12",
+        "Vitamin B6",
+        "Vitamin D"
+      ]
     }
-  ]
+  ],
+  "supplements_note": "The 'supplements' list for each entry is the client's curated nutritional-support list. Present it as nutrients that are commonly discussed for people using that substance or medication — never as a treatment, never with invented doses, and always alongside the advice to check with a doctor or pharmacist (especially for prescription medications, where timing and interactions matter)."
 }

@@ -310,7 +310,7 @@ def _alias_present(alias: str, t: str, tokens: list[str]) -> bool:
 def find_interactions(text: str) -> list[dict]:
     """Curated dangerous-combination rules that match the text (both sides present)."""
     t = (text or "").lower()
-    tokens = [w for w in re.split(r"[^a-z0-9']+", t) if w]
+    tokens = [w for w in re.split(r"[^\w']+", t) if w]  # \w is Unicode-aware (Cyrillic)
     out = []
     for r in state.get("interactions", {}).get("rules", []):
         if any(_alias_present(a, t, tokens) for a in r.get("a", [])) and any(
@@ -332,7 +332,10 @@ _MED_INTENT = re.compile(
     r"|is .{2,25} (safe|bad|dangerous|harmful|addictive)|what does .{2,25} do"
     r"|effects? of|harms?|risks?|danger|withdrawal|overdose|long[\s-]?term"
     r"|how to (reduce|lower|avoid|minimi[sz]e|prevent|ease)|reduce .{0,20}(effect|harm|risk|damage)"
-    r"|comedown|come down|hangover|safer|harm reduction|recover from",
+    r"|comedown|come down|hangover|safer|harm reduction|recover from"
+    # Russian phrasings — users ask in Russian too.
+    r"|побочк|побочн|как снизить|как уменьшить|снизить вред|вред|риск|опасн"
+    r"|передозировк|ломк|отмен|похмель|отходняк|что будет|чем опасен|последстви",
     re.I,
 )
 _DRUG_STOP = {
@@ -439,7 +442,7 @@ def find_substance_effects(text: str, limit: int = 3) -> list[dict]:
     both, rather than silently answering only the first.
     """
     t = (text or "").lower()
-    tokens = [w for w in re.split(r"[^a-z0-9']+", t) if w]
+    tokens = [w for w in re.split(r"[^\w']+", t) if w]  # \w is Unicode-aware (Cyrillic)
     out = []
     for s in state.get("drug_effects", {}).get("substances", []):
         if any(_alias_present(a, t, tokens) for a in s.get("aliases", [])):
@@ -457,6 +460,11 @@ def format_substance_block(s: dict) -> str:
                        ("Notes", "notes")):
         if s.get(key):
             parts.append(f"**{label}:** {s[key]}")
+    if s.get("supplements"):
+        parts.append(
+            "**Nutritional support (curated list — mention these when asked how to "
+            "reduce side effects):** " + ", ".join(s["supplements"])
+        )
     return "\n\n".join(parts)
 
 
@@ -589,7 +597,8 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
                 + f"\n\nThe user asked about {len(substances)} substance(s); an entry is "
                 "provided for EACH — cover every one of them, and answer using ONLY the "
                 "data above (ignore the supplement response format for this). "
-                + sdb.get("agent_guidance", "") + " " + sdb.get("disclaimer", "")
+                + sdb.get("agent_guidance", "") + " " + sdb.get("supplements_note", "")
+                + " " + sdb.get("disclaimer", "")
             )
             # The answer came from this database, not the supplement guides —
             # don't mislabel it with unrelated guide citations.

@@ -1106,7 +1106,7 @@
     };
     const detectInteractions = (text, rules) => {
       const t = (text || '').toLowerCase();
-      const tokens = t.split(/[^a-z0-9']+/).filter(Boolean);
+      const tokens = t.split(/[^\p{L}\p{N}']+/u).filter(Boolean);  // Unicode-aware (Cyrillic)
       const side = (aliases) => (aliases||[]).some(a => _wbTest(a, t) || _fuzzyHit(a, tokens));
       const hits = (rules || []).filter(r => side(r.a) && side(r.b));
       return hits.sort((x,y) => (_INTER_ORDER[x.severity] ?? 9) - (_INTER_ORDER[y.severity] ?? 9));

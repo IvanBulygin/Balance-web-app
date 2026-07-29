@@ -14,7 +14,7 @@ import os
 import re
 from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -318,6 +318,119 @@ def format_interaction_block(hits: list[dict]) -> str:
     return "\n".join(f"- [{r['severity']}] {r['label']}: {r['reason']}" for r in hits)
 
 
+# ---- Medication lookup: RxNav (typo-correct) → openFDA (official label) ----
+_MED_INTENT = re.compile(
+    r"side[\s-]?effect|adverse|medication|prescription|\bdrug\b|dosage|\bdose[sd]?\b"
+    r"|contraindicat|interaction|\bpill\b|tablet|what (is|are)|tell me about|is .{2,25} safe",
+    re.I,
+)
+_DRUG_STOP = {
+    "what", "whats", "are", "is", "the", "side", "sideeffect", "sideeffects", "effect",
+    "effects", "adverse", "reaction", "reactions", "of", "for", "with", "and", "can",
+    "take", "taking", "my", "does", "dosage", "dose", "doses", "medication", "medications",
+    "med", "meds", "drug", "drugs", "prescription", "pill", "pills", "tablet", "safe",
+    "about", "tell", "use", "used", "using", "should", "this", "that", "between", "combine",
+    "mix", "have", "from", "your", "you", "any", "info", "information", "please",
+}
+_drug_cache: dict[str, Any] = {}
+
+
+def _drug_candidates(text: str) -> list[str]:
+    toks = re.findall(r"[a-zA-Z][a-zA-Z\-']{3,}", (text or "").lower())
+    seen, out = set(), []
+    for t in toks:
+        if t not in _DRUG_STOP and t not in seen:
+            seen.add(t)
+            out.append(t)
+    return out[:4]
+
+
+def _resolve_drug(term: str) -> Optional[str]:
+    try:
+        r = httpx.get(
+            "https://rxnav.nlm.nih.gov/REST/approximateTerm.json",
+            params={"term": term, "maxEntries": 1}, timeout=8,
+        )
+        for c in r.json().get("approximateGroup", {}).get("candidate", []):
+            if c.get("name"):
+                return c["name"]
+    except Exception as exc:  # noqa: BLE001
+        print(f"[drug] RxNav '{term}' failed: {exc}")
+    return None
+
+
+def _fetch_drug_label(name: str) -> Optional[dict]:
+    def _first(d: dict, k: str) -> str:
+        v = d.get(k)
+        return v[0] if isinstance(v, list) and v else (v if isinstance(v, str) else "")
+    def _score(res: dict) -> tuple:
+        """Prefer a label for the single drug asked about, that actually has content."""
+        gen = " ".join(res.get("openfda", {}).get("generic_name", [])).lower()
+        # Combination products list several ingredients — penalise them so
+        # "metformin" doesn't resolve to "Sitagliptin and Metformin".
+        exact = gen.strip() == name.lower()
+        combo = (" and " in gen) or ("," in gen)
+        has_ae = bool(_first(res, "adverse_reactions"))
+        return (exact, has_ae, not combo)
+
+    try:
+        candidates: list[dict] = []
+        for field in ("openfda.generic_name", "openfda.brand_name"):
+            r = httpx.get(
+                "https://api.fda.gov/drug/label.json",
+                params={"search": f'{field}:"{name}"', "limit": 10}, timeout=10,
+            )
+            if r.status_code == 200:
+                candidates.extend(r.json().get("results", []))
+            if candidates:
+                break
+        if not candidates:
+            return None
+        # Best = exact single-ingredient match with adverse-reaction text.
+        res = max(candidates, key=_score)
+        of = res.get("openfda", {})
+        return {
+            "name": (of.get("generic_name") or [name])[0].title(),
+            "brand": (of.get("brand_name") or [""])[0],
+            "indications": _first(res, "indications_and_usage")[:1000],
+            "side_effects": _first(res, "adverse_reactions")[:2000],
+            "warnings": (_first(res, "warnings_and_cautions") or _first(res, "warnings")
+                         or _first(res, "boxed_warning"))[:1500],
+            "interactions": _first(res, "drug_interactions")[:1500],
+            "dosage": _first(res, "dosage_and_administration")[:800],
+        }
+    except Exception as exc:  # noqa: BLE001
+        print(f"[drug] openFDA '{name}' failed: {exc}")
+    return None
+
+
+def lookup_drug(text: str) -> Optional[dict]:
+    """Resolve a (possibly misspelled) drug in the text to its official FDA label."""
+    key = (text or "").lower().strip()
+    if key in _drug_cache:
+        return _drug_cache[key]
+    result = None
+    for cand in _drug_candidates(text):
+        name = _resolve_drug(cand)
+        if name:
+            label = _fetch_drug_label(name)
+            if label:
+                result = label
+                break
+    _drug_cache[key] = result
+    return result
+
+
+def format_drug_block(d: dict) -> str:
+    parts = [f"### {d['name']}" + (f" (brand: {d['brand']})" if d.get("brand") else "")]
+    for label, key in (("Indications", "indications"), ("Side effects / adverse reactions", "side_effects"),
+                       ("Warnings", "warnings"), ("Drug interactions", "interactions"),
+                       ("Dosage (reference only)", "dosage")):
+        if d.get(key):
+            parts.append(f"**{label}:** {d[key]}")
+    return "\n\n".join(parts)
+
+
 def _build_query(messages: list[Message]) -> str:
     """Build a retrieval query from the latest question plus recent context.
 
@@ -420,6 +533,23 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
             "overstate or invent benefits/doses, and note this isn't medical "
             "advice. " + (state.get("mushrooms", {}).get("agent_guidance", ""))
         )
+
+    # Medication questions: pull the official FDA label (via openFDA, with RxNav
+    # typo-correction) so the agent can answer instead of refusing.
+    if _MED_INTENT.search(recent_user):
+        drug = lookup_drug(recent_user)
+        if drug:
+            system_instruction += (
+                "\n\n## FDA drug label (AUTHORITATIVE — official openFDA data)\n\n"
+                + format_drug_block(drug)
+                + "\n\nThe user is asking about this MEDICATION. You MAY answer using "
+                "ONLY the FDA label data above (ignore the supplement response format "
+                "for this). Summarise in plain, calm language, focusing on what they "
+                "asked (e.g. common side effects). Then always add that this is general "
+                "information from the official FDA label — not medical advice — and that "
+                "they should check with their doctor or pharmacist. Do not recommend "
+                "changing any medication. If the label doesn't cover their question, say so."
+            )
 
     # Dangerous-combination warnings (curated). Inject whenever the message
     # matches a known interaction so the agent warns from vetted data, not guesses.

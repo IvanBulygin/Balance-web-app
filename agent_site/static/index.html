@@ -3464,9 +3464,16 @@
     // shipping address, then POSTs the stack to /api/checkout. CartAI returns
     // a taskId; we poll /api/checkout/{taskId} every 4s until terminal.
     const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+    // Countries the checkout form supports. Outside the US there are no
+    // two-letter state codes, so the State field becomes free text.
+    const SHIP_COUNTRIES = [
+      {code:'US', name:'United States'}, {code:'NL', name:'Netherlands'}, {code:'GB', name:'United Kingdom'},
+      {code:'DE', name:'Germany'}, {code:'FR', name:'France'}, {code:'ES', name:'Spain'}, {code:'IT', name:'Italy'},
+      {code:'RS', name:'Serbia'}, {code:'GE', name:'Georgia'}, {code:'AE', name:'UAE'}, {code:'CA', name:'Canada'},
+    ];
     const blankAddress = () => ({
       firstName:'', lastName:'', email:'', phone:'',
-      addressLine1:'', addressLine2:'', city:'', province:'NY', postalCode:''
+      addressLine1:'', addressLine2:'', city:'', province:'NY', postalCode:'', country:'US'
     });
     const TERMINAL = ['SUCCEEDED','SUCCESS','COMPLETED','FAILED','CANCELED','CANCELLED','ERROR'];
 
@@ -3479,6 +3486,7 @@
       const [task, setTask] = useState(null);          // {taskId, ...}
       const [status, setStatus] = useState(null);      // last poll response
       const [pollErr, setPollErr] = useState(null);
+      const isUS = (addr.country || 'US') === 'US';
 
       useEffect(() => { LS.set('bal_addr', addr); }, [addr]);
       const set = (k, v) => setAddr(a => ({ ...a, [k]: v }));
@@ -3486,7 +3494,9 @@
       const removeItem = (i) => setItems(prev => prev.filter((_, j) => j !== i));
 
       const valid = useMemo(() => {
-        const reqd = ['firstName','lastName','email','phone','addressLine1','city','province','postalCode'];
+        // Outside the US there is no state code, so it isn't required.
+        const reqd = ['firstName','lastName','email','phone','addressLine1','city','postalCode']
+          .concat((addr.country || 'US') === 'US' ? ['province'] : []);
         return reqd.every(k => (addr[k]||'').trim().length) && /.+@.+\..+/.test(addr.email) && items.length>0 && items.every(it => it.url.trim());
       }, [addr, items]);
 
@@ -3496,12 +3506,26 @@
         try {
           const body = {
             contact: { firstName: addr.firstName, lastName: addr.lastName, email: addr.email, phone: addr.phone },
-            address: { addressLine1: addr.addressLine1, addressLine2: addr.addressLine2, city: addr.city, province: addr.province, postalCode: addr.postalCode },
+            address: { addressLine1: addr.addressLine1, addressLine2: addr.addressLine2, city: addr.city, province: addr.province, postalCode: addr.postalCode, country: addr.country || 'US' },
             items: items.map(it => ({ url: it.url, quantity: it.quantity || 1 })),
           };
           const res = await fetch('/api/checkout', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) });
           const data = await res.json().catch(() => ({}));
-          if (!res.ok) throw new Error(typeof data.detail==='string' ? data.detail : (res.status===503 ? 'Checkout not configured. Add CARTAI_API_KEY to the Render dashboard.' : `HTTP ${res.status}`));
+          if (!res.ok) {
+            // Surface what the API actually said. `detail` is often a JSON
+            // object, and showing a bare "HTTP 400" hid the real reason.
+            let why = data && data.detail;
+            if (why && typeof why !== 'string') {
+              try {
+                const flat = Array.isArray(why) ? why : [why];
+                why = flat.map(d => (d && (d.msg || d.message || d.error || d.detail)) || JSON.stringify(d)).join('; ');
+              } catch { why = JSON.stringify(data.detail); }
+            }
+            if (!why) why = res.status===503
+              ? 'Checkout not configured. Add CARTAI_API_KEY to the Render dashboard.'
+              : `HTTP ${res.status}`;
+            throw new Error(why);
+          }
           setTask(data);
           if (onOrderPlaced) onOrderPlaced({
             taskId: data.taskId, createdAt: new Date().toISOString(), status: 'Placed', testMode: true,
@@ -3633,17 +3657,34 @@
               {field('Phone','phone',{type:'tel', autoComplete:'tel', placeholder:'5555555555'})}
               {field('Address line 1','addressLine1',{autoComplete:'address-line1'})}
               {field('Address line 2 (optional)','addressLine2',{autoComplete:'address-line2'})}
+              <div>
+                <div style={{fontSize:11, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.06em', textTransform:'uppercase', marginBottom:4}}>Country</div>
+                <select value={addr.country || 'US'} onChange={e=>{ const c = e.target.value; set('country', c); if (c !== 'US') set('province', ''); else set('province', 'NY'); }}
+                  style={{width:'100%', padding:'12px 10px', border:'1px solid var(--rule)', borderRadius:12, fontSize:15, fontFamily:'inherit', background:'var(--surface)', marginBottom:10}}>
+                  {SHIP_COUNTRIES.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
+                </select>
+              </div>
               <div style={{display:'grid', gridTemplateColumns:'2fr 1fr 1fr', gap:10}}>
                 <div>{field('City','city',{autoComplete:'address-level2'})}</div>
                 <div>
-                  <div style={{fontSize:11, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.06em', textTransform:'uppercase', marginBottom:4}}>State</div>
-                  <select value={addr.province} onChange={e=>set('province', e.target.value)}
-                    style={{width:'100%', padding:'12px 10px', border:'1px solid var(--rule)', borderRadius:12, fontSize:15, fontFamily:'inherit', background:'var(--surface)'}}>
-                    {US_STATES.map(s => <option key={s} value={s}>{s}</option>)}
-                  </select>
+                  <div style={{fontSize:11, color:'var(--ink-3)', fontWeight:600, letterSpacing:'.06em', textTransform:'uppercase', marginBottom:4}}>{isUS ? 'State' : 'Region'}</div>
+                  {isUS ? (
+                    <select value={addr.province} onChange={e=>set('province', e.target.value)}
+                      style={{width:'100%', padding:'12px 10px', border:'1px solid var(--rule)', borderRadius:12, fontSize:15, fontFamily:'inherit', background:'var(--surface)'}}>
+                      {US_STATES.map(s => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  ) : (
+                    <input value={addr.province} onChange={e=>set('province', e.target.value)} placeholder="Optional"
+                      style={{width:'100%', boxSizing:'border-box', padding:'12px 10px', border:'1px solid var(--rule)', borderRadius:12, fontSize:15, fontFamily:'inherit', background:'var(--surface)', outline:'none'}}/>
+                  )}
                 </div>
-                <div>{field('ZIP','postalCode',{autoComplete:'postal-code', inputMode:'numeric'})}</div>
+                <div>{field(isUS ? 'ZIP' : 'Postcode','postalCode',{autoComplete:'postal-code', inputMode: isUS ? 'numeric' : 'text'})}</div>
               </div>
+              {!isUS && (
+                <div style={{fontSize:11.5, color:'#8a3f0a', lineHeight:1.45, marginTop:8}}>
+                  Test-mode checkout is built around US retailers — orders outside the US may be rejected by the provider. Any error it returns is shown above the button.
+                </div>
+              )}
             </div>
 
             {/* Payment (sandbox info) */}

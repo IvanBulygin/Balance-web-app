@@ -1432,6 +1432,83 @@
       );
     };
 
+    // ============ Feature 4: Explainability & Trust (4.1-4.5) ============
+    const TIER_MEANING = {
+      Primary: 'First-line in this guide — the strongest evidence for this goal.',
+      Secondary: 'Second-line — supportive evidence, usually smaller or less consistent trials.',
+      Promising: 'Emerging — early or mixed evidence; worth knowing about, not established.',
+    };
+    // 4.1-4.3 — why a supplement was recommended: tier, source guide, evidence.
+    const WhyThis = ({ entry, sourceTitle, slug }) => {
+      const [open, setOpen] = useState(false);
+      const tier = entry.tier;
+      return (
+        <div style={{marginTop:8}}>
+          <button onClick={()=>setOpen(o=>!o)} style={{display:'inline-flex', alignItems:'center', gap:5, border:'none', background:'none', padding:0, cursor:'pointer', color:'var(--brand)', fontWeight:600, fontSize:12.5, fontFamily:'inherit'}}>
+            {open ? 'Hide reasoning' : 'Why this?'}
+            <span style={{display:'inline-block', transform: open ? 'rotate(90deg)' : 'none', transition:'transform 150ms'}}><window.Icon.Chevron size={11} c="var(--brand)"/></span>
+          </button>
+          {open && (
+            <div style={{marginTop:8, padding:'12px 13px', background:'var(--surface-3)', borderRadius:12}}>
+              <div style={{fontSize:11, letterSpacing:'0.08em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:7}}>How Balance decided</div>
+              <div style={{display:'flex', gap:9, marginBottom:8}}>
+                <div className={`ev-badge ${GRADE[tier]||'c'}`} style={{flexShrink:0}}>{GRADE_LETTER[tier]||'·'}</div>
+                <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.45}}>
+                  <b>{tier || 'Listed'}</b> — {TIER_MEANING[tier] || 'Taken from the guide as listed.'}
+                </div>
+              </div>
+              {entry.evidence && (
+                <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.45, marginBottom:8}}>
+                  <b>Evidence:</b> {entry.evidence}
+                </div>
+              )}
+              {(entry.dose || entry.timing || entry.form) && (
+                <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.45, marginBottom:8}}>
+                  <b>Where the dose comes from:</b> the guide states {[entry.form, entry.dose, entry.timing].filter(Boolean).join(', ')}. Balance never invents a dose.
+                </div>
+              )}
+              <div style={{fontSize:12, color:'var(--ink-3)', lineHeight:1.45}}>
+                Source: <b>{sourceTitle || 'your supplement guides'}</b>{slug ? ` (supplement-guide-${slug})` : ''}. The tier is the guide's own label — Balance never promotes a supplement above it.
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    // 4.4-4.5 — feedback on an answer, stored locally for review.
+    const AnswerFeedback = ({ answerId, question, feedback, onFeedback }) => {
+      const cur = feedback[answerId];
+      const [reporting, setReporting] = useState(false);
+      const [note, setNote] = useState('');
+      if (cur && cur.done) return (
+        <div style={{marginLeft:34, marginTop:10, fontSize:12, color:'var(--ink-3)'}}>
+          Thanks — your feedback was recorded.{cur.rating==='down' ? ' We use these reports to review the guidance.' : ''}
+        </div>
+      );
+      return (
+        <div style={{marginLeft:34, marginTop:12}}>
+          {!reporting ? (
+            <div style={{display:'flex', alignItems:'center', gap:8, flexWrap:'wrap'}}>
+              <span style={{fontSize:12, color:'var(--ink-3)'}}>Was this helpful?</span>
+              <button onClick={()=>onFeedback(answerId, { rating:'up', question, done:true })} style={{padding:'6px 13px', borderRadius:999, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', fontSize:12.5, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>Yes</button>
+              <button onClick={()=>setReporting(true)} style={{padding:'6px 13px', borderRadius:999, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', fontSize:12.5, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>No</button>
+            </div>
+          ) : (
+            <div className="bal-card" style={{padding:'12px 14px', border:'1px solid var(--rule)'}}>
+              <div style={{fontSize:13, fontWeight:600, color:'var(--ink)', marginBottom:6}}>What was wrong?</div>
+              <textarea value={note} onChange={e=>setNote(e.target.value)} rows={3} placeholder="Optional — e.g. wrong dose, missing interaction, unclear"
+                style={{width:'100%', boxSizing:'border-box', padding:'10px 12px', borderRadius:12, border:'1px solid var(--rule)', fontSize:13.5, fontFamily:'inherit', color:'var(--ink)', outline:'none', resize:'vertical'}}/>
+              <div style={{display:'flex', gap:8, marginTop:10}}>
+                <button onClick={()=>onFeedback(answerId, { rating:'down', note:note.trim(), question, done:true })} style={{flex:1, padding:'10px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:13.5, cursor:'pointer', fontFamily:'inherit'}}>Send report</button>
+                <button onClick={()=>setReporting(false)} style={{padding:'10px 14px', borderRadius:12, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-3)', fontWeight:600, fontSize:13.5, cursor:'pointer', fontFamily:'inherit'}}>Cancel</button>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    };
+
     const Onboarding = ({ onStart, onLogin }) => {
       const { Icon } = window;
       return (
@@ -2293,7 +2370,7 @@
       );
     };
 
-    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery, mushrooms, interactions }) => {
+    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery, mushrooms, interactions, feedback, onFeedback }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
       const [input, setInput] = useState('');
@@ -2485,6 +2562,10 @@
                 </div>
 
                 {supps.length>0 && <AnswerSupps supps={supps} answer={m.content} onOrder={orderItems} inStack={inStack}/>}
+
+                {complete && onFeedback && (
+                  <AnswerFeedback answerId={'a' + i} question={prevUser ? prevUser.content : ''} feedback={feedback||{}} onFeedback={onFeedback}/>
+                )}
 
                 {m.sources && m.sources.length>0 && complete && (
                   <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:6}}>
@@ -2703,6 +2784,7 @@
                         {s.timing && <span className="bal-pill light mono" style={{fontSize:11}}>{s.timing}</span>}
                       </div>
                       {s.evidence && <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.45, marginTop:8}}>{s.evidence}</div>}
+                      <WhyThis entry={s} sourceTitle={title} slug={slug}/>
                       <div style={{display:'flex', gap:8, marginTop:10}}>
                         <button onClick={()=>onAdd(s, title)} disabled={added} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
                           {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
@@ -3312,6 +3394,8 @@
       const [snoozed, setSnoozed] = useState({});          // name -> "HH:MM" until
       const [dismissedAt, setDismissedAt] = useState(null);
       const [nowTick, setNowTick] = useState(() => new Date());
+      const [feedback, setFeedback] = useState(() => LS.get('bal_feedback', {}));   // Feature 4
+      const saveFeedback = useCallback((id, data) => setFeedback(f => ({ ...f, [id]: { ...data, at: Date.now() } })), []);
       const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
@@ -3350,6 +3434,7 @@
       useEffect(()=>{ if (profile) LS.set('bal_profile', profile); }, [profile]);
       useEffect(()=>LS.set('bal_health', health), [health]);
       useEffect(()=>LS.set('bal_reminders', reminders), [reminders]);
+      useEffect(()=>LS.set('bal_feedback', feedback), [feedback]);
       // Feature 6 — tick every 30s so due reminders appear without a reload.
       useEffect(() => {
         if (!reminders.enabled) return;
@@ -3460,7 +3545,8 @@
 
       if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
         onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
-      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}/>;
+      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}
+        feedback={feedback} onFeedback={saveFeedback}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}/>;
       if (screen === 'stack') {
         if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;

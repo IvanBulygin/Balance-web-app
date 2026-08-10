@@ -96,6 +96,10 @@
     const LS = {
       get(k, d){ try { const v = localStorage.getItem(k); return v==null?d:JSON.parse(v); } catch { return d; } },
       set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+      // Persist, but REMOVE the key when the value is empty. Without this a
+      // "delete everything" is undone immediately by the persistence effects
+      // writing the freshly-emptied state straight back.
+      keep(k, v, isEmpty){ try { if (isEmpty) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch {} },
     };
 
     // Intake goal cards → each maps to a real backend category slug.
@@ -1621,6 +1625,127 @@
             </div>
           </div>
           <Tabbar active="stack" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Feature 8: Profile & Privacy settings (8.1-8.7) ============
+    const BAL_KEYS = ['bal_user','bal_profile','bal_consents','bal_disclaimer','bal_goals','bal_stack',
+      'bal_log','bal_health','bal_reminders','bal_feedback','bal_orders','bal_subs','bal_addr'];
+    const STORED_SUMMARY = [
+      ['Account', 'Your email and how you signed in.', 'bal_user'],
+      ['Profile', 'Name, age, sex, height and weight — whatever you chose to give.', 'bal_profile'],
+      ['Health data', 'Goals, supplements, medicines, substances and location.', 'bal_health'],
+      ['Intake log', 'Which supplements you marked as taken, per day.', 'bal_log'],
+      ['Consents', 'What you agreed to, and when.', 'bal_consents'],
+      ['Reminders', 'Your reminder schedule and quiet hours.', 'bal_reminders'],
+      ['Orders', 'Orders placed and repeat deliveries.', 'bal_orders'],
+      ['Feedback', 'Any reports you sent about an answer.', 'bal_feedback'],
+    ];
+    const SettingsScreen = ({ user, profile, consents, onBack, onNav, onOpenConsents, onOpenProfile, onOpenReminders, onDeleteAll }) => {
+      const { Icon, Tabbar } = window;
+      const [confirming, setConfirming] = useState(false);
+      const [exported, setExported] = useState(false);
+      const stored = STORED_SUMMARY.filter(([,,k]) => { try { return localStorage.getItem(k); } catch { return false; } });
+
+      // 8.3 — data export (portability): everything we hold, as one JSON file.
+      const exportData = () => {
+        const bundle = { exportedAt: new Date().toISOString(), app: 'Balance', data: {} };
+        BAL_KEYS.forEach(k => { try { const v = localStorage.getItem(k); if (v) bundle.data[k] = JSON.parse(v); } catch {} });
+        try {
+          const blob = new Blob([JSON.stringify(bundle, null, 2)], { type:'application/json' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'balance-my-data.json';
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+          setExported(true);
+        } catch {}
+      };
+
+      const Row = ({ title, meta, onClick, danger }) => (
+        <button onClick={onClick} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', cursor:'pointer', color: danger ? 'var(--accent)' : 'var(--ink)'}}>
+          <span style={{flex:1, fontSize:14, fontWeight:500}}>{title}</span>
+          {meta && <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{meta}</span>}
+          {!danger && <Icon.Chevron size={13} c="var(--ink-4)"/>}
+        </button>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Settings &" em="privacy" onBack={onBack}
+              sub="Everything we hold about you, and what you can do with it."/>
+
+            {/* 8.1 account */}
+            <div style={{padding:'20px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Account</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <div style={{padding:'14px 16px', borderBottom:'0.5px solid var(--rule)'}}>
+                  <div style={{fontSize:12, color:'var(--ink-3)'}}>Signed in as</div>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', marginTop:2, wordBreak:'break-all'}}>{user ? user.email : 'Not signed in'}</div>
+                </div>
+                <Row title="Personal details" meta={profile && profile.name ? profile.name : 'Add'} onClick={onOpenProfile}/>
+              </div>
+            </div>
+
+            {/* 8.2 / 8.6 preferences */}
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Preferences</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <Row title="Privacy &amp; consents" meta={consents ? `${CONSENTS.filter(c=>consents[c.key]).length}/${CONSENTS.length} on` : 'Review'} onClick={onOpenConsents}/>
+                <div style={{height:'0.5px', background:'var(--rule)'}}/>
+                <Row title="Reminders" onClick={onOpenReminders}/>
+              </div>
+            </div>
+
+            {/* 8.7 what we store */}
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>What Balance stores</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                {stored.length === 0 ? <EmptyState text="Nothing stored yet."/> : stored.map(([t, d], i) => (
+                  <div key={t} style={{padding:'13px 16px', borderBottom:i<stored.length-1?'0.5px solid var(--rule)':'none'}}>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{t}</div>
+                    <div style={{fontSize:12.5, color:'var(--ink-3)', marginTop:2, lineHeight:1.45}}>{d}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:10}}>
+                In this prototype all of it is stored on this device only — it is not uploaded to a server, and it does not sync between devices.
+              </div>
+            </div>
+
+            {/* 8.3 / 8.4 your data rights */}
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Your data</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <Row title="Export my data" meta={exported ? 'Downloaded' : 'JSON'} onClick={exportData}/>
+                <div style={{height:'0.5px', background:'var(--rule)'}}/>
+                <Row title="Delete everything" danger onClick={()=>setConfirming(true)}/>
+              </div>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:10}}>
+                Export gives you a copy of everything above. Deleting removes all of it from this device and cannot be undone.
+              </div>
+            </div>
+          </div>
+
+          {confirming && (
+            <div style={{position:'absolute', inset:0, zIndex:60, background:'rgba(5,3,4,0.45)', display:'flex', alignItems:'flex-end'}}>
+              <div style={{width:'100%', background:'var(--bg)', borderRadius:'26px 26px 0 0', padding:'22px 20px 26px'}}>
+                <div style={{width:38, height:4, borderRadius:4, background:'var(--rule)', margin:'0 auto 16px'}}/>
+                <div className="serif" style={{fontSize:22, color:'var(--ink)', marginBottom:8}}>Delete everything?</div>
+                <div style={{fontSize:13.5, color:'var(--ink-2)', lineHeight:1.5, marginBottom:16}}>
+                  This removes your account, profile, health data, stack, intake log, reminders and orders from this device. It cannot be undone — export first if you want a copy.
+                </div>
+                <div style={{display:'flex', gap:10}}>
+                  <button onClick={()=>setConfirming(false)} style={{flex:1, padding:'14px', borderRadius:14, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:15, cursor:'pointer', fontFamily:'inherit'}}>Keep my data</button>
+                  <button onClick={()=>{ setConfirming(false); onDeleteAll(); }} style={{flex:1, padding:'14px', borderRadius:14, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--accent)', fontWeight:600, fontSize:15, cursor:'pointer', fontFamily:'inherit'}}>Delete it all</button>
+                </div>
+              </div>
+            </div>
+          )}
+          <Tabbar active="me" onNav={onNav}/>
         </div>
       );
     };
@@ -3427,7 +3552,7 @@
     };
 
     // ============ Profile (Me) ============
-    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, health, reminders, onEditConsents, onEditProfile, onLogOut, onOpenHealth, onOpenReminders }) => {
+    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, health, reminders, onEditConsents, onEditProfile, onLogOut, onOpenHealth, onOpenReminders, onOpenSettings }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const displayName = (profile && profile.name) ? profile.name : 'You';
@@ -3493,6 +3618,10 @@
                   <Icon.Chevron size={13} c="var(--ink-4)"/>
                 </button>
                 <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)'}}><Icon.Spark size={18} c="var(--brand)"/><span style={{fontSize:14, fontWeight:500}}>Open chat</span></button>
+                <button onClick={onOpenSettings} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
+                  <span style={{flex:1, fontSize:14, fontWeight:500}}>Settings &amp; privacy</span>
+                  <Icon.Chevron size={13} c="var(--ink-4)"/>
+                </button>
                 <button onClick={onReset} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', color:'var(--accent)'}}><span style={{fontSize:14, fontWeight:500}}>Reset app &amp; data</span></button>
               </div>
             </div>
@@ -3563,18 +3692,18 @@
           .catch(() => {});
       }, []);
 
-      useEffect(()=>LS.set('bal_goals', goals), [goals]);
-      useEffect(()=>LS.set('bal_stack', stack), [stack]);
-      useEffect(()=>LS.set('bal_log', log), [log]);
-      useEffect(()=>LS.set('bal_onboarded', onboarded), [onboarded]);
-      useEffect(()=>LS.set('bal_user', user), [user]);
+      useEffect(()=>LS.keep('bal_goals', goals, !goals.length), [goals]);
+      useEffect(()=>LS.keep('bal_stack', stack, !stack.length), [stack]);
+      useEffect(()=>LS.keep('bal_log', log, !Object.keys(log).length), [log]);
+      useEffect(()=>LS.keep('bal_onboarded', onboarded, !onboarded), [onboarded]);
+      useEffect(()=>LS.keep('bal_user', user, !user), [user]);
       useEffect(()=>{ if (consents) LS.set('bal_consents', consents); }, [consents]);
       useEffect(()=>{ if (profile) LS.set('bal_profile', profile); }, [profile]);
-      useEffect(()=>LS.set('bal_health', health), [health]);
-      useEffect(()=>LS.set('bal_reminders', reminders), [reminders]);
-      useEffect(()=>LS.set('bal_feedback', feedback), [feedback]);
-      useEffect(()=>LS.set('bal_orders', orders), [orders]);
-      useEffect(()=>LS.set('bal_subs', subs), [subs]);
+      useEffect(()=>LS.keep('bal_health', health, !(health.prescriptions.length || health.substances.length || health.location)), [health]);
+      useEffect(()=>LS.keep('bal_reminders', reminders, !reminders.enabled && !Object.keys(reminders.items||{}).length), [reminders]);
+      useEffect(()=>LS.keep('bal_feedback', feedback, !Object.keys(feedback).length), [feedback]);
+      useEffect(()=>LS.keep('bal_orders', orders, !orders.length), [orders]);
+      useEffect(()=>LS.keep('bal_subs', subs, !Object.keys(subs).length), [subs]);
       // Feature 7 — record an order when checkout is submitted, and keep its status current.
       const recordOrder = useCallback((o) => setOrders(prev => [{ ...o, id: o.id || uid() }, ...prev].slice(0, 50)), []);
       const updateOrderStatus = useCallback((taskId, status) => setOrders(prev => prev.map(o => o.taskId === taskId ? { ...o, status } : o)), []);
@@ -3704,6 +3833,9 @@
         onOpen={(k)=>{ if (k==='goals') setFlow('intake'); else if (k==='supps') setScreen('addSupp'); else setScreen({rx:'healthRx', subs:'healthSubs', loc:'healthLoc', review:'healthReview'}[k]); }}/>;
       if (screen === 'healthReview') return <InteractionReviewScreen stack={stack} health={health} interactions={interactions} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'reminders') return <RemindersScreen stack={stack} reminders={reminders} onSave={setReminders} onBack={()=>setScreen('profile')} onNav={navTo}/>;
+      if (screen === 'settings') return <SettingsScreen user={user} profile={profile} consents={consents}
+        onBack={()=>setScreen('profile')} onNav={navTo} onDeleteAll={resetAll}
+        onOpenConsents={()=>setScreen('editConsents')} onOpenProfile={()=>setScreen('editProfile')} onOpenReminders={()=>setScreen('reminders')}/>;
       if (screen === 'healthRx') return <PrescriptionsScreen health={health} onSave={(v)=>setHealthPart('prescriptions', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'healthSubs') return <MySubstancesScreen health={health} onSave={(v)=>setHealthPart('substances', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'healthLoc') return <LocationScreen health={health} onSave={(v)=>{ setHealthPart('location', v); setScreen('health'); }} onBack={()=>setScreen('health')} onNav={navTo}/>;
@@ -3713,7 +3845,7 @@
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}
         user={user} profile={profile} consents={consents} health={health} reminders={reminders} onLogOut={logOut}
         onEditConsents={()=>setScreen('editConsents')} onEditProfile={()=>setScreen('editProfile')}
-        onOpenHealth={()=>setScreen('health')} onOpenReminders={()=>setScreen('reminders')}/>;
+        onOpenHealth={()=>setScreen('health')} onOpenReminders={()=>setScreen('reminders')} onOpenSettings={()=>setScreen('settings')}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;

@@ -96,6 +96,10 @@
     const LS = {
       get(k, d){ try { const v = localStorage.getItem(k); return v==null?d:JSON.parse(v); } catch { return d; } },
       set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+      // Persist, but REMOVE the key when the value is empty. Without this a
+      // "delete everything" is undone immediately by the persistence effects
+      // writing the freshly-emptied state straight back.
+      keep(k, v, isEmpty){ try { if (isEmpty) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch {} },
     };
 
     // Intake goal cards → each maps to a real backend category slug.
@@ -868,6 +872,1021 @@
       );
     };
 
+    // ============ Feature 2: Health Profile Setup ============
+    // 2.1 goals · 2.2 own supplements · 2.3 prescriptions · 2.4 substances ·
+    // 2.5 location · 2.6 CRUD across all of them.
+    // Local calendar day key (YYYY-MM-DD) — used by the intake log and streaks.
+    const dayKey = (d) => {
+      const x = d ? new Date(d) : new Date();
+      return `${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,'0')}-${String(x.getDate()).padStart(2,'0')}`;
+    };
+    const daysAgoKey = (n) => { const d = new Date(); d.setDate(d.getDate() - n); return dayKey(d); };
+
+    const blankHealth = () => ({ prescriptions: [], substances: [], location: null });
+    const uid = () => 'h' + Math.random().toString(36).slice(2, 9);
+    const RX_SCHEDULES = ['Morning', 'Midday', 'Evening', 'Night', 'As needed'];
+    const SUB_FREQ = ['Daily', 'Weekly', 'Monthly', 'Occasionally', 'Former use'];
+    const COUNTRIES = [
+      { code:'US', name:'United States' }, { code:'GB', name:'United Kingdom' },
+      { code:'DE', name:'Germany' }, { code:'FR', name:'France' }, { code:'ES', name:'Spain' },
+      { code:'IT', name:'Italy' }, { code:'NL', name:'Netherlands' }, { code:'PL', name:'Poland' },
+      { code:'CA', name:'Canada' }, { code:'AU', name:'Australia' }, { code:'AE', name:'UAE' },
+      { code:'RS', name:'Serbia' }, { code:'GE', name:'Georgia' }, { code:'KZ', name:'Kazakhstan' },
+      { code:'TR', name:'Türkiye' }, { code:'OTHER', name:'Somewhere else' },
+    ];
+
+    const EmptyState = ({ text, cta, onCta }) => (
+      <div style={{textAlign:'center', padding:'34px 20px'}}>
+        <div style={{fontSize:14, color:'var(--ink-3)', lineHeight:1.5, marginBottom:cta?14:0}}>{text}</div>
+        {cta && <button onClick={onCta} className="bal-pill light" style={{border:'none', padding:'10px 16px', fontSize:13.5, fontWeight:600, cursor:'pointer'}}>{cta}</button>}
+      </div>
+    );
+    const AddRowButton = ({ label, onClick }) => (
+      <button onClick={onClick} style={{width:'100%', display:'flex', alignItems:'center', gap:10, padding:'14px 16px', background:'var(--brand-soft)', border:'none', borderRadius:14, cursor:'pointer', color:'var(--brand-deep)', fontWeight:600, fontSize:14, fontFamily:'inherit', marginTop:12}}>
+        <window.Icon.Plus size={16} c="var(--brand)"/> {label}
+      </button>
+    );
+
+    // --- Health hub: one place that owns the whole health profile (2.6) ---
+    const HealthHub = ({ goals, stack, health, interactions, onNav, onBack, onOpen }) => {
+      const { Icon, Tabbar } = window;
+      const h = health || blankHealth();
+      const warnings = reviewAllInteractions(stack, h, (interactions||{}).rules);
+      const worst = warnings[0]?.rule?.severity;
+      const rows = [
+        { k:'goals',  title:'Health goals',           sub: goals.length ? goals.map(s => (TOPIC_BY_SLUG[s]?.name)||s).join(' · ') : 'None yet', n: goals.length },
+        { k:'supps',  title:'Supplements you take',   sub: stack.length ? stack.slice(0,3).map(s=>s.name).join(' · ') + (stack.length>3?' …':'') : 'None yet', n: stack.length },
+        { k:'rx',     title:'Prescription medicines', sub: h.prescriptions.length ? h.prescriptions.slice(0,3).map(r=>r.name).join(' · ') + (h.prescriptions.length>3?' …':'') : 'None added', n: h.prescriptions.length },
+        { k:'subs',   title:'Recreational substances',sub: h.substances.length ? h.substances.slice(0,3).map(s=>s.name).join(' · ') + (h.substances.length>3?' …':'') : 'None added', n: h.substances.length },
+        { k:'loc',    title:'Location',               sub: h.location ? (COUNTRIES.find(c=>c.code===h.location.country)?.name || h.location.country) : 'Not set', n: h.location ? 1 : 0 },
+      ];
+      const filled = rows.filter(r => r.n > 0).length;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Your health" em="profile" onBack={onBack}
+              sub="The more of this you fill in, the better Balance can tailor what it suggests — and warn you about combinations that matter."/>
+            <div style={{padding:'20px 22px 0'}}>
+              <div style={{height:4, borderRadius:4, background:'#ece5fc', overflow:'hidden'}}>
+                <div style={{width: Math.round(filled/rows.length*100) + '%', height:'100%', background:GRAD, transition:'width 250ms'}}/>
+              </div>
+              <div style={{fontSize:12, color:'var(--ink-3)', marginTop:8}}>{filled} of {rows.length} sections filled in</div>
+            </div>
+            <div style={{padding:'18px 18px 0'}}>
+              <div className="bal-card" style={{padding:'2px 0'}}>
+                {rows.map((r,i) => (
+                  <button key={r.k} onClick={()=>onOpen(r.k)} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'15px 16px', borderBottom:i<rows.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                    <div style={{width:32, height:32, borderRadius:10, flexShrink:0, background: r.n ? 'var(--brand-soft)' : 'var(--surface-3)', display:'flex', alignItems:'center', justifyContent:'center', color: r.n ? 'var(--brand)' : 'var(--ink-4)', fontWeight:700, fontSize:13}}>{r.n || '–'}</div>
+                    <div style={{flex:1, minWidth:0}}>
+                      <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{r.title}</div>
+                      <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{r.sub}</div>
+                    </div>
+                    <Icon.Chevron size={13} c="var(--ink-4)"/>
+                  </button>
+                ))}
+              </div>
+              <button onClick={()=>onOpen('review')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'15px 16px', marginTop:12, display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
+                <div style={{width:32, height:32, borderRadius:10, flexShrink:0, background: warnings.length ? ((INTER_STYLE[worst]||{}).bg || 'var(--surface-3)') : 'var(--green-soft)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700, fontSize:13, color: warnings.length ? ((INTER_STYLE[worst]||{}).fg || 'var(--ink-3)') : 'var(--green-deep)'}}>
+                  {warnings.length || <Icon.Check size={16} c="var(--green-deep)"/>}
+                </div>
+                <div style={{flex:1, minWidth:0}}>
+                  <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>Interaction review</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{warnings.length ? `${warnings.length} combination${warnings.length>1?'s':''} to check` : 'No known warnings in your profile'}</div>
+                </div>
+                <Icon.Chevron size={13} c="var(--ink-4)"/>
+              </button>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Health data is stored on your device for this prototype and processed only with the consent you gave. You can edit or delete any of it at any time.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- 2.3 Prescription entry (CRUD) ---
+    const PrescriptionsScreen = ({ health, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const list = (health || blankHealth()).prescriptions;
+      const [editing, setEditing] = useState(null);   // record or {} for new
+      const [form, setForm] = useState({ name:'', dose:'', schedule:'' });
+      const openNew = () => { setForm({ name:'', dose:'', schedule:'' }); setEditing({}); };
+      const openEdit = (r) => { setForm({ name:r.name, dose:r.dose||'', schedule:r.schedule||'' }); setEditing(r); };
+      const save = () => {
+        const name = form.name.trim(); if (!name) return;
+        const rec = { id: editing.id || uid(), name, dose: form.dose.trim(), schedule: form.schedule };
+        onSave(editing.id ? list.map(r => r.id===rec.id ? rec : r) : [...list, rec]);
+        setEditing(null);
+      };
+      const remove = (id) => onSave(list.filter(r => r.id !== id));
+
+      if (editing) return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <AuthHeader title={editing.id ? 'Edit' : 'Add a'} em="medicine" onBack={()=>setEditing(null)}
+              sub="Used to check for interactions with supplements. We never suggest changing a prescription."/>
+            <div style={{padding:'24px 22px 0'}}>
+              <AuthField label="Medicine name">
+                <input value={form.name} onChange={e=>setForm(f=>({...f, name:e.target.value}))} placeholder="e.g. Lamotrigine" style={authInputStyle(false)}/>
+              </AuthField>
+              <AuthField label="Dose (optional)">
+                <input value={form.dose} onChange={e=>setForm(f=>({...f, dose:e.target.value}))} placeholder="e.g. 100 mg" style={authInputStyle(false)}/>
+              </AuthField>
+              <AuthField label="When you take it (optional)">
+                <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
+                  {RX_SCHEDULES.map(s => { const on = form.schedule===s; return (
+                    <button key={s} onClick={()=>setForm(f=>({...f, schedule: on?'':s}))} style={{padding:'9px 13px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:13, fontWeight:600, border: on?'none':'1px solid var(--rule)', background: on?'var(--brand)':'var(--surface)', color: on?'white':'var(--ink-2)'}}>{s}</button>
+                  ); })}
+                </div>
+              </AuthField>
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 22px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <AuthPrimary disabled={!form.name.trim()} onClick={save}>{editing.id ? 'Save changes' : 'Add medicine'}</AuthPrimary>
+            {editing.id && <button onClick={()=>{ remove(editing.id); setEditing(null); }} style={{width:'100%', padding:'12px 0 0', fontSize:13.5, color:'var(--accent)', fontWeight:600, background:'none', border:'none', cursor:'pointer'}}>Remove this medicine</button>}
+          </div>
+        </div>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Prescription" em="medicines" onBack={onBack}
+              sub="Adding these lets Balance flag supplement–medicine combinations that need care."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {list.length === 0 ? (
+                <div className="bal-card"><EmptyState text="No medicines added yet. Nothing here is shared — it stays on your device." cta="Add your first medicine" onCta={openNew}/></div>
+              ) : (
+                <div className="bal-card" style={{padding:'2px 0'}}>
+                  {list.map((r,i) => (
+                    <button key={r.id} onClick={()=>openEdit(r)} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:i<list.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                      <div style={{flex:1, minWidth:0}}>
+                        <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{r.name}</div>
+                        <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{[r.dose, r.schedule].filter(Boolean).join(' · ') || 'No dose set'}</div>
+                      </div>
+                      <Icon.Chevron size={13} c="var(--ink-4)"/>
+                    </button>
+                  ))}
+                </div>
+              )}
+              {list.length > 0 && <AddRowButton label="Add another medicine" onClick={openNew}/>}
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Balance gives general information only and never advises changing a prescribed medicine. Always talk to your doctor or pharmacist.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- 2.4 Recreational substances (CRUD, picked from the curated list) ---
+    const MySubstancesScreen = ({ health, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const list = (health || blankHealth()).substances;
+      const [picking, setPicking] = useState(false);
+      const byKey = Object.fromEntries(list.map(s => [s.key, s]));
+      const setFreq = (key, name, freq) => {
+        onSave(byKey[key] ? list.map(s => s.key===key ? { ...s, freq } : s) : [...list, { key, name, freq }]);
+      };
+      const remove = (key) => onSave(list.filter(s => s.key !== key));
+
+      if (picking) return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Add a" em="substance" onBack={()=>setPicking(false)}
+              sub="Only so Balance can warn you about combinations and suggest nutritional support. No judgement, and it never leaves your device."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {SUBSTANCE_GROUPS.map(g => {
+                const items = SUBSTANCE_SUPPORT.filter(s => s.group === g.key);
+                if (!items.length) return null;
+                return (
+                  <div key={g.key} style={{marginBottom:18}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>{g.label}</div>
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {items.map((s,i) => { const on = !!byKey[s.key]; return (
+                        <button key={s.key} onClick={()=>{ on ? remove(s.key) : setFreq(s.key, s.name, 'Occasionally'); }} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'12px 16px', borderBottom:i<items.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                          <div style={{width:24, height:24, borderRadius:8, flexShrink:0, background: on?'var(--brand)':'transparent', border: on?'none':'1.6px solid var(--rule)', display:'flex', alignItems:'center', justifyContent:'center'}}>{on && <Icon.Check size={14} c="white"/>}</div>
+                          <div style={{flex:1, fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                        </button>
+                      ); })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 22px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <AuthPrimary onClick={()=>setPicking(false)}>Done</AuthPrimary>
+          </div>
+        </div>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Substances you" em="use" onBack={onBack}
+              sub="Recording these lets Balance flag dangerous combinations and suggest nutritional support. Entirely optional."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {list.length === 0 ? (
+                <div className="bal-card"><EmptyState text="Nothing recorded. This is optional and private — it stays on your device." cta="Add a substance" onCta={()=>setPicking(true)}/></div>
+              ) : (
+                <div>
+                  {list.map(s => (
+                    <div key={s.key} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                      <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:10}}>
+                        <div style={{flex:1, fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                        <button onClick={()=>remove(s.key)} style={{border:'none', background:'none', color:'var(--accent)', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Remove</button>
+                      </div>
+                      <div style={{display:'flex', flexWrap:'wrap', gap:7}}>
+                        {SUB_FREQ.map(f => { const on = s.freq===f; return (
+                          <button key={f} onClick={()=>setFreq(s.key, s.name, f)} style={{padding:'7px 12px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:12.5, fontWeight:600, border: on?'none':'1px solid var(--rule)', background: on?'var(--brand)':'var(--surface)', color: on?'white':'var(--ink-3)'}}>{f}</button>
+                        ); })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {list.length > 0 && <AddRowButton label="Add or remove substances" onClick={()=>setPicking(true)}/>}
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- 2.5 Location settings ---
+    const LocationScreen = ({ health, onSave, onBack, onNav }) => {
+      const { Tabbar } = window;
+      const cur = (health || blankHealth()).location || {};
+      const [country, setCountry] = useState(cur.country || '');
+      const [city, setCity] = useState(cur.city || '');
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Where you" em="are" onBack={onBack}
+              sub="Used to show retailers that actually ship to you, and local units and currency."/>
+            <div style={{padding:'22px 22px 0'}}>
+              <AuthField label="Country">
+                <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
+                  {COUNTRIES.map(c => { const on = country===c.code; return (
+                    <button key={c.code} onClick={()=>setCountry(on?'':c.code)} style={{padding:'9px 13px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:13, fontWeight:600, border: on?'none':'1px solid var(--rule)', background: on?'var(--brand)':'var(--surface)', color: on?'white':'var(--ink-2)'}}>{c.name}</button>
+                  ); })}
+                </div>
+              </AuthField>
+              <AuthField label="City (optional)">
+                <input value={city} onChange={e=>setCity(e.target.value)} placeholder="e.g. Belgrade" style={authInputStyle(false)}/>
+              </AuthField>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5}}>
+                Shipping availability differs by country — some supplements and retailers may not be available where you are.
+              </div>
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 22px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <AuthPrimary disabled={!country} onClick={()=>onSave({ country, city: city.trim() })}>Save location</AuthPrimary>
+          </div>
+        </div>
+      );
+    };
+
+    // --- 2.2 Add a supplement you already take (free-text, into the stack) ---
+    const AddSupplementScreen = ({ inStack, onAdd, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const [q, setQ] = useState('');
+      const query = q.trim().toLowerCase();
+      const matches = query ? SUPP_DETECT.filter(s => s.n.toLowerCase().includes(query)).slice(0, 12) : [];
+      const exact = SUPP_DETECT.some(s => s.n.toLowerCase() === query);
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Add a" em="supplement" onBack={onBack}
+              sub="Add something you already take, so Balance counts it in your stack and checks it for interactions."/>
+            <div style={{padding:'20px 18px 0'}}>
+              <div style={{background:'var(--surface)', borderRadius:14, padding:'10px 14px', display:'flex', alignItems:'center', gap:10, boxShadow:'var(--sh-1)'}}>
+                <Icon.Search size={16} c="var(--ink-3)"/>
+                <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search or type a supplement name" style={{flex:1, border:'none', outline:'none', background:'transparent', fontSize:14, fontFamily:'inherit', color:'var(--ink)'}}/>
+              </div>
+              {matches.length > 0 && (
+                <div className="bal-card" style={{padding:'2px 0', marginTop:12}}>
+                  {matches.map((s,i) => { const has = inStack(s.n); return (
+                    <div key={s.id} style={{display:'flex', alignItems:'center', gap:10, padding:'12px 16px', borderBottom:i<matches.length-1?'0.5px solid var(--rule)':'none'}}>
+                      <div style={{flex:1, fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</div>
+                      <button onClick={()=>onAdd({ name:s.n, tier:'', dose:'', iherb_url: suppIherbUrl(s) })} disabled={has} style={{display:'inline-flex', alignItems:'center', gap:5, padding:'7px 12px', borderRadius:999, border:'none', fontSize:12.5, fontWeight:600, cursor:has?'default':'pointer', background:has?'var(--brand-soft)':'var(--brand)', color:has?'var(--brand)':'white'}}>
+                        {has ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add <Icon.Plus size={13} c="white"/></>}
+                      </button>
+                    </div>
+                  ); })}
+                </div>
+              )}
+              {query && !exact && (
+                <button onClick={()=>onAdd({ name: q.trim(), tier:'', dose:'', iherb_url: 'https://www.iherb.com/search?kw=' + encodeURIComponent(q.trim()) })}
+                  style={{width:'100%', display:'flex', alignItems:'center', gap:10, padding:'14px 16px', background:'var(--brand-soft)', border:'none', borderRadius:14, cursor:'pointer', color:'var(--brand-deep)', fontWeight:600, fontSize:14, fontFamily:'inherit', marginTop:12}}>
+                  <Icon.Plus size={16} c="var(--brand)"/> Add “{q.trim()}” as a custom entry
+                </button>
+              )}
+              {!query && <div className="bal-card" style={{marginTop:12}}><EmptyState text="Start typing to find a supplement, or add your own by name."/></div>}
+            </div>
+          </div>
+          <Tabbar active="stack" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- Feature 3: whole-profile interaction review ---
+    // Cross-checks every pair across stack, prescriptions and substances.
+    const reviewAllInteractions = (stack, health, rules) => {
+      const items = healthContext(stack, health);
+      const found = [];
+      for (let i = 0; i < items.length; i++) {
+        for (const hit of checkInteractions(items[i].name, items.slice(i + 1), rules)) {
+          found.push({ rule: hit.rule, a: items[i], b: hit.withItem });
+        }
+      }
+      const seen = new Set();
+      return found.filter(f => { const k = f.rule.id; if (seen.has(k)) return false; seen.add(k); return true; })
+        .sort((x, y) => (_INTER_ORDER[x.rule.severity] ?? 9) - (_INTER_ORDER[y.rule.severity] ?? 9));
+    };
+
+    const InteractionReviewScreen = ({ stack, health, interactions, onBack, onNav }) => {
+      const { Tabbar } = window;
+      const items = healthContext(stack, health);
+      const found = reviewAllInteractions(stack, health, interactions.rules);
+      const counts = { Dangerous:0, Serious:0, Caution:0 };
+      found.forEach(f => { counts[f.rule.severity] = (counts[f.rule.severity]||0) + 1; });
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Interaction" em="review" onBack={onBack}
+              sub={`Cross-checking the ${items.length} item${items.length===1?'':'s'} in your health profile against known combination warnings.`}/>
+            <div style={{padding:'20px 18px 0'}}>
+              {items.length < 2 ? (
+                <div className="bal-card"><EmptyState text="Add at least two things — supplements, medicines or substances — and Balance will cross-check them for you."/></div>
+              ) : found.length === 0 ? (
+                <div className="bal-card" style={{padding:'20px 18px', textAlign:'center'}}>
+                  <div style={{width:46, height:46, borderRadius:'50%', background:'var(--green-soft)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 12px'}}>
+                    <window.Icon.Check size={22} c="var(--green-deep)"/>
+                  </div>
+                  <div className="serif" style={{fontSize:19, color:'var(--ink)', marginBottom:6}}>No known warnings</div>
+                  <div style={{fontSize:13, color:'var(--ink-3)', lineHeight:1.5}}>
+                    None of your combinations match a rule we hold. That is <b>not</b> the same as proven safe — our list is not exhaustive. Check with a pharmacist.
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div style={{display:'flex', gap:8, marginBottom:14, flexWrap:'wrap'}}>
+                    {['Dangerous','Serious','Caution'].map(sev => counts[sev] ? (
+                      <span key={sev} style={{padding:'6px 11px', borderRadius:999, fontSize:11.5, fontWeight:700, background:(INTER_STYLE[sev]||{}).bg, color:(INTER_STYLE[sev]||{}).fg}}>{counts[sev]} {sev.toLowerCase()}</span>
+                    ) : null)}
+                  </div>
+                  {found.map((f,i) => {
+                    const st = INTER_STYLE[f.rule.severity] || INTER_STYLE.Caution;
+                    return (
+                      <div key={i} style={{padding:'13px 14px', background:st.bg, borderRadius:14, marginBottom:10}}>
+                        <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:5, flexWrap:'wrap'}}>
+                          <span style={{fontSize:10, fontWeight:700, letterSpacing:'.04em', textTransform:'uppercase', color:st.fg, background:'rgba(255,255,255,0.65)', padding:'2px 8px', borderRadius:999}}>{f.rule.severity}</span>
+                          <span style={{fontSize:13, fontWeight:600, color:st.fg}}>{f.a.name} + {f.b.name}</span>
+                        </div>
+                        <div style={{fontSize:12.5, color:st.fg, lineHeight:1.45}}>{f.rule.reason}</div>
+                      </div>
+                    );
+                  })}
+                  {found.some(f => f.rule.severity === 'Dangerous') && interactions.emergency && (
+                    <div style={{fontSize:12, fontWeight:600, color:'#8a1f33', background:'#fdecef', borderRadius:12, padding:'11px 13px', marginBottom:10}}>🚨 {interactions.emergency}</div>
+                  )}
+                </div>
+              )}
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                {interactions.not_exhaustive || ''} {interactions.disclaimer || ''}
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Feature 6: Notifications & Reminders (6.1-6.7) ============
+    const blankReminders = () => ({ enabled:false, quietFrom:'22:00', quietTo:'07:00', items:{} });
+    const DEFAULT_TIMES = ['08:00','13:00','19:00','22:00'];
+    const hhmm = (d) => `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+    const inQuietHours = (now, from, to) => {
+      if (!from || !to) return false;
+      const t = hhmm(now);
+      return from <= to ? (t >= from && t < to) : (t >= from || t < to);   // handles overnight
+    };
+    // Items due now: scheduled time has passed today, not yet taken, not snoozed.
+    const dueReminders = (stack, reminders, taken, snoozedUntil, now) => {
+      if (!reminders || !reminders.enabled) return [];
+      if (inQuietHours(now, reminders.quietFrom, reminders.quietTo)) return [];
+      const t = hhmm(now);
+      return stack.filter(s => {
+        const cfg = reminders.items[s.name];
+        if (!cfg || !cfg.enabled || !cfg.time) return false;
+        if (taken.includes(s.name)) return false;
+        if (snoozedUntil[s.name] && t < snoozedUntil[s.name]) return false;
+        return cfg.time <= t;
+      });
+    };
+
+    const RemindersScreen = ({ stack, reminders, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const r = reminders || blankReminders();
+      const [perm, setPerm] = useState(() => (typeof Notification !== 'undefined' ? Notification.permission : 'unsupported'));
+      const setItem = (name, patch) => onSave({ ...r, items: { ...r.items, [name]: { time:'08:00', enabled:true, ...(r.items[name]||{}), ...patch } } });
+      const enableAll = () => {
+        const items = { ...r.items };
+        stack.forEach(s => { items[s.name] = { time:'08:00', enabled:true, ...(items[s.name]||{}), enabled:true }; });
+        onSave({ ...r, enabled:true, items });
+      };
+      const askPermission = async () => {
+        if (typeof Notification === 'undefined') return;
+        try { const p = await Notification.requestPermission(); setPerm(p); } catch {}
+      };
+      const onCount = stack.filter(s => (r.items[s.name]||{}).enabled).length;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Intake" em="reminders" onBack={onBack}
+              sub="A nudge when it's time to take something. Reminders run while the app is open; enable notifications to get them in the background."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {/* 6.1 master switch */}
+              <div className="bal-card" style={{padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
+                <div style={{flex:1}}>
+                  <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>Reminders</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{r.enabled ? `On · ${onCount} of ${stack.length} supplement${stack.length===1?'':'s'}` : 'Off'}</div>
+                </div>
+                <button onClick={()=>onSave({ ...r, enabled: !r.enabled })} aria-pressed={r.enabled} style={{width:52, height:30, borderRadius:999, border:'none', cursor:'pointer', background: r.enabled ? 'var(--brand)' : 'var(--surface-3)', position:'relative', transition:'background 160ms'}}>
+                  <span style={{position:'absolute', top:3, left: r.enabled ? 25 : 3, width:24, height:24, borderRadius:'50%', background:'white', boxShadow:'var(--sh-1)', transition:'left 160ms'}}/>
+                </button>
+              </div>
+
+              {/* 6.2 browser notification permission */}
+              {r.enabled && perm !== 'unsupported' && (
+                <div className="bal-card" style={{padding:'14px 16px', marginTop:12, display:'flex', alignItems:'center', gap:12}}>
+                  <div style={{flex:1}}>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>Browser notifications</div>
+                    <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>
+                      {perm==='granted' ? 'Allowed — you\'ll get a system notification.' : perm==='denied' ? 'Blocked in your browser settings.' : 'Not enabled yet.'}
+                    </div>
+                  </div>
+                  {perm==='default' && <button onClick={askPermission} className="bal-pill light" style={{border:'none', padding:'8px 13px', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Allow</button>}
+                </div>
+              )}
+
+              {/* 6.6 quiet hours */}
+              {r.enabled && (
+                <div className="bal-card" style={{padding:'14px 16px', marginTop:12}}>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', marginBottom:3}}>Quiet hours</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginBottom:10}}>No reminders during this window.</div>
+                  <div style={{display:'flex', gap:10, alignItems:'center'}}>
+                    <input type="time" value={r.quietFrom} onChange={e=>onSave({ ...r, quietFrom:e.target.value })} style={{...authInputStyle(false), padding:'10px 12px'}}/>
+                    <span style={{fontSize:13, color:'var(--ink-3)'}}>to</span>
+                    <input type="time" value={r.quietTo} onChange={e=>onSave({ ...r, quietTo:e.target.value })} style={{...authInputStyle(false), padding:'10px 12px'}}/>
+                  </div>
+                </div>
+              )}
+
+              {/* 6.3 per-supplement schedule */}
+              {r.enabled && (
+                <div style={{marginTop:18}}>
+                  <div style={{display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom:10}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Per supplement</div>
+                    {stack.length>0 && <button onClick={enableAll} style={{fontSize:12, color:'var(--brand)', fontWeight:600, background:'none', border:'none', cursor:'pointer'}}>Remind me for all</button>}
+                  </div>
+                  {stack.length === 0 ? (
+                    <div className="bal-card"><EmptyState text="Your stack is empty — add supplements and you can schedule reminders for each."/></div>
+                  ) : (
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {stack.map((s,i) => {
+                        const cfg = r.items[s.name] || { time:'08:00', enabled:false };
+                        return (
+                          <div key={s.name} style={{padding:'12px 16px', borderBottom:i<stack.length-1?'0.5px solid var(--rule)':'none'}}>
+                            <div style={{display:'flex', alignItems:'center', gap:10}}>
+                              <button onClick={()=>setItem(s.name, { enabled: !cfg.enabled })} style={{width:24, height:24, borderRadius:8, flexShrink:0, background: cfg.enabled?'var(--brand)':'transparent', border: cfg.enabled?'none':'1.6px solid var(--rule)', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer'}}>
+                                {cfg.enabled && <Icon.Check size={14} c="white"/>}
+                              </button>
+                              <div style={{flex:1, minWidth:0}}>
+                                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                                {s.timing && <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:1}}>{s.timing}</div>}
+                              </div>
+                              <input type="time" value={cfg.time || '08:00'} onChange={e=>setItem(s.name, { time:e.target.value })} disabled={!cfg.enabled}
+                                style={{padding:'8px 10px', borderRadius:10, border:'1px solid var(--rule)', background: cfg.enabled?'var(--surface)':'var(--surface-3)', fontSize:13, fontFamily:'inherit', color: cfg.enabled?'var(--ink)':'var(--ink-4)'}}/>
+                            </div>
+                            {cfg.enabled && (
+                              <div style={{display:'flex', gap:6, marginTop:9, flexWrap:'wrap', paddingLeft:34}}>
+                                {DEFAULT_TIMES.map(t => (
+                                  <button key={t} onClick={()=>setItem(s.name, { time:t })} style={{padding:'5px 10px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:11.5, fontWeight:600, border: cfg.time===t?'none':'1px solid var(--rule)', background: cfg.time===t?'var(--brand-soft)':'var(--surface)', color: cfg.time===t?'var(--brand-deep)':'var(--ink-3)'}}>{t}</button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              )}
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Reminders are a convenience, not a medical schedule. Follow the timing your doctor or the product label gives you.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // 6.4/6.5 — in-app due banner with take and snooze.
+    const ReminderBanner = ({ items, onTake, onSnooze, onDismiss }) => {
+      const { Icon } = window;
+      if (!items.length) return null;
+      const first = items[0];
+      return (
+        <div style={{position:'absolute', left:12, right:12, bottom:78, zIndex:55}}>
+          <div className="bal-card" style={{padding:'13px 15px', boxShadow:'var(--sh-2)', border:'1px solid var(--rule)'}}>
+            <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:10}}>
+              <div style={{width:30, height:30, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0}}>
+                <Icon.Check size={16} c="var(--brand)"/>
+              </div>
+              <div style={{flex:1, minWidth:0}}>
+                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>Time for {first.name}</div>
+                <div style={{fontSize:12, color:'var(--ink-3)', marginTop:1}}>
+                  {[first.dose, first.timing].filter(Boolean).join(' · ') || 'Tap taken when you have it'}
+                  {items.length>1 ? ` · +${items.length-1} more due` : ''}
+                </div>
+              </div>
+              <button onClick={onDismiss} aria-label="Dismiss" style={{border:'none', background:'var(--surface-3)', width:24, height:24, borderRadius:'50%', color:'var(--ink-3)', fontSize:14, lineHeight:1, cursor:'pointer', flexShrink:0}}>×</button>
+            </div>
+            <div style={{display:'flex', gap:8}}>
+              <button onClick={()=>onTake(first.name)} style={{flex:1, padding:'11px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:14, cursor:'pointer', fontFamily:'inherit'}}>Taken</button>
+              <button onClick={()=>onSnooze(first.name)} style={{flex:1, padding:'11px', borderRadius:12, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', fontWeight:600, fontSize:14, cursor:'pointer', fontFamily:'inherit'}}>Snooze 30m</button>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // ============ Feature 4: Explainability & Trust (4.1-4.5) ============
+    const TIER_MEANING = {
+      Primary: 'First-line in this guide — the strongest evidence for this goal.',
+      Secondary: 'Second-line — supportive evidence, usually smaller or less consistent trials.',
+      Promising: 'Emerging — early or mixed evidence; worth knowing about, not established.',
+    };
+    // 4.1-4.3 — why a supplement was recommended: tier, source guide, evidence.
+    const WhyThis = ({ entry, sourceTitle, slug }) => {
+      const [open, setOpen] = useState(false);
+      const tier = entry.tier;
+      return (
+        <div style={{marginTop:8}}>
+          <button onClick={()=>setOpen(o=>!o)} style={{display:'inline-flex', alignItems:'center', gap:5, border:'none', background:'none', padding:0, cursor:'pointer', color:'var(--brand)', fontWeight:600, fontSize:12.5, fontFamily:'inherit'}}>
+            {open ? 'Hide reasoning' : 'Why this?'}
+            <span style={{display:'inline-block', transform: open ? 'rotate(90deg)' : 'none', transition:'transform 150ms'}}><window.Icon.Chevron size={11} c="var(--brand)"/></span>
+          </button>
+          {open && (
+            <div style={{marginTop:8, padding:'12px 13px', background:'var(--surface-3)', borderRadius:12}}>
+              <div style={{fontSize:11, letterSpacing:'0.08em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:7}}>How Balance decided</div>
+              <div style={{display:'flex', gap:9, marginBottom:8}}>
+                <div className={`ev-badge ${GRADE[tier]||'c'}`} style={{flexShrink:0}}>{GRADE_LETTER[tier]||'·'}</div>
+                <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.45}}>
+                  <b>{tier || 'Listed'}</b> — {TIER_MEANING[tier] || 'Taken from the guide as listed.'}
+                </div>
+              </div>
+              {entry.evidence && (
+                <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.45, marginBottom:8}}>
+                  <b>Evidence:</b> {entry.evidence}
+                </div>
+              )}
+              {(entry.dose || entry.timing || entry.form) && (
+                <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.45, marginBottom:8}}>
+                  <b>Where the dose comes from:</b> the guide states {[entry.form, entry.dose, entry.timing].filter(Boolean).join(', ')}. Balance never invents a dose.
+                </div>
+              )}
+              <div style={{fontSize:12, color:'var(--ink-3)', lineHeight:1.45}}>
+                Source: <b>{sourceTitle || 'your supplement guides'}</b>{slug ? ` (supplement-guide-${slug})` : ''}. The tier is the guide's own label — Balance never promotes a supplement above it.
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    // 4.4-4.5 — feedback on an answer, stored locally for review.
+    const AnswerFeedback = ({ answerId, question, feedback, onFeedback }) => {
+      const cur = feedback[answerId];
+      const [reporting, setReporting] = useState(false);
+      const [note, setNote] = useState('');
+      if (cur && cur.done) return (
+        <div style={{marginLeft:34, marginTop:10, fontSize:12, color:'var(--ink-3)'}}>
+          Thanks — your feedback was recorded.{cur.rating==='down' ? ' We use these reports to review the guidance.' : ''}
+        </div>
+      );
+      return (
+        <div style={{marginLeft:34, marginTop:12}}>
+          {!reporting ? (
+            <div style={{display:'flex', alignItems:'center', gap:8, flexWrap:'wrap'}}>
+              <span style={{fontSize:12, color:'var(--ink-3)'}}>Was this helpful?</span>
+              <button onClick={()=>onFeedback(answerId, { rating:'up', question, done:true })} style={{padding:'6px 13px', borderRadius:999, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', fontSize:12.5, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>Yes</button>
+              <button onClick={()=>setReporting(true)} style={{padding:'6px 13px', borderRadius:999, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', fontSize:12.5, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>No</button>
+            </div>
+          ) : (
+            <div className="bal-card" style={{padding:'12px 14px', border:'1px solid var(--rule)'}}>
+              <div style={{fontSize:13, fontWeight:600, color:'var(--ink)', marginBottom:6}}>What was wrong?</div>
+              <textarea value={note} onChange={e=>setNote(e.target.value)} rows={3} placeholder="Optional — e.g. wrong dose, missing interaction, unclear"
+                style={{width:'100%', boxSizing:'border-box', padding:'10px 12px', borderRadius:12, border:'1px solid var(--rule)', fontSize:13.5, fontFamily:'inherit', color:'var(--ink)', outline:'none', resize:'vertical'}}/>
+              <div style={{display:'flex', gap:8, marginTop:10}}>
+                <button onClick={()=>onFeedback(answerId, { rating:'down', note:note.trim(), question, done:true })} style={{flex:1, padding:'10px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:13.5, cursor:'pointer', fontFamily:'inherit'}}>Send report</button>
+                <button onClick={()=>setReporting(false)} style={{padding:'10px 14px', borderRadius:12, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-3)', fontWeight:600, fontSize:13.5, cursor:'pointer', fontFamily:'inherit'}}>Cancel</button>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    // ============ Feature 7: Ordering & Delivery (7.1-7.9) ============
+    const SUB_INTERVALS = [{d:30, l:'Monthly'}, {d:60, l:'Every 2 months'}, {d:90, l:'Every 3 months'}];
+    const addDays = (iso, n) => { const d = iso ? new Date(iso) : new Date(); d.setDate(d.getDate() + n); return dayKey(d); };
+    const prettyDate = (iso) => { try { return new Date(iso).toLocaleDateString(undefined,{month:'short', day:'numeric', year:'numeric'}); } catch { return iso; } };
+    const STATUS_TONE = { SUCCEEDED:'ok', SUCCESS:'ok', COMPLETED:'ok', DELIVERED:'ok',
+      FAILED:'bad', CANCELED:'bad', CANCELLED:'bad', ERROR:'bad' };
+    const statusStyle = (s) => {
+      const t = STATUS_TONE[String(s||'').toUpperCase()];
+      if (t === 'ok') return { bg:'var(--green-soft)', fg:'var(--green-deep)' };
+      if (t === 'bad') return { bg:'#fdecef', fg:'#8a1f33' };
+      return { bg:'var(--brand-soft)', fg:'var(--brand-deep)' };
+    };
+
+    // 7.4-7.6 — order history and status tracking.
+    const OrdersScreen = ({ orders, onBack, onNav, onReorder }) => {
+      const { Icon, Tabbar } = window;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Your" em="orders" onBack={onBack} sub="Every order you've placed, with its latest status."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {orders.length === 0 ? (
+                <div className="bal-card"><EmptyState text="No orders yet. Build a stack and check out — your orders will appear here."/></div>
+              ) : orders.map(o => {
+                const st = statusStyle(o.status);
+                return (
+                  <div key={o.id} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                    <div style={{display:'flex', alignItems:'center', gap:9, marginBottom:8, flexWrap:'wrap'}}>
+                      <span style={{padding:'3px 9px', borderRadius:999, fontSize:10.5, fontWeight:700, letterSpacing:'.03em', textTransform:'uppercase', background:st.bg, color:st.fg}}>{o.status || 'Pending'}</span>
+                      <span style={{fontSize:12, color:'var(--ink-3)'}}>{prettyDate(o.createdAt)}</span>
+                      {o.testMode && <span className="bal-pill light" style={{padding:'2px 8px', fontSize:10}}>Test mode</span>}
+                    </div>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{o.items.length} item{o.items.length===1?'':'s'}</div>
+                    <div style={{fontSize:12.5, color:'var(--ink-3)', marginTop:3, lineHeight:1.45}}>{o.items.map(i=>i.name).join(' · ')}</div>
+                    {o.shipTo && <div style={{fontSize:12, color:'var(--ink-3)', marginTop:6}}>Ship to: {o.shipTo}</div>}
+                    <button onClick={()=>onReorder(o)} className="bal-pill light" style={{border:'none', padding:'8px 13px', fontSize:12.5, fontWeight:600, cursor:'pointer', marginTop:10}}>Reorder these</button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <Tabbar active="stack" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // 7.7-7.9 — subscriptions / recurring reorder.
+    const SubscriptionsScreen = ({ stack, subs, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const set = (name, patch) => onSave({ ...subs, [name]: { interval:30, nextDate: addDays(null, 30), paused:false, ...(subs[name]||{}), ...patch } });
+      const remove = (name) => { const n = { ...subs }; delete n[name]; onSave(n); };
+      const active = Object.entries(subs).filter(([,v]) => v && !v.paused);
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Repeat" em="deliveries" onBack={onBack}
+              sub="Set a supplement to reorder itself on a schedule, so you don't run out. Pause or cancel any time."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {active.length > 0 && (
+                <div className="bal-card" style={{padding:'13px 15px', marginBottom:14, background:'var(--brand-soft)'}}>
+                  <div style={{fontSize:13, fontWeight:600, color:'var(--brand-deep)'}}>{active.length} active repeat{active.length===1?'':'s'}</div>
+                  <div style={{fontSize:12, color:'var(--brand-deep)', opacity:.8, marginTop:2}}>Next: {prettyDate(active.map(([,v])=>v.nextDate).sort()[0])}</div>
+                </div>
+              )}
+              {stack.length === 0 ? (
+                <div className="bal-card"><EmptyState text="Your stack is empty — add supplements first, then set up repeat deliveries."/></div>
+              ) : (
+                <div className="bal-card" style={{padding:'2px 0'}}>
+                  {stack.map((s,i) => {
+                    const cfg = subs[s.name];
+                    return (
+                      <div key={s.name} style={{padding:'13px 16px', borderBottom:i<stack.length-1?'0.5px solid var(--rule)':'none'}}>
+                        <div style={{display:'flex', alignItems:'center', gap:10}}>
+                          <div style={{flex:1, minWidth:0}}>
+                            <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                            <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:1}}>
+                              {cfg ? (cfg.paused ? 'Paused' : `Next ${prettyDate(cfg.nextDate)}`) : 'No repeat set'}
+                            </div>
+                          </div>
+                          {cfg ? (
+                            <button onClick={()=>remove(s.name)} style={{border:'none', background:'none', color:'var(--accent)', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Cancel</button>
+                          ) : (
+                            <button onClick={()=>set(s.name, {})} className="bal-pill light" style={{border:'none', padding:'7px 12px', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Set up</button>
+                          )}
+                        </div>
+                        {cfg && (
+                          <div style={{marginTop:10}}>
+                            <div style={{display:'flex', gap:6, flexWrap:'wrap', marginBottom:8}}>
+                              {SUB_INTERVALS.map(iv => (
+                                <button key={iv.d} onClick={()=>set(s.name, { interval:iv.d, nextDate: addDays(null, iv.d) })}
+                                  style={{padding:'6px 11px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:11.5, fontWeight:600,
+                                    border: cfg.interval===iv.d?'none':'1px solid var(--rule)', background: cfg.interval===iv.d?'var(--brand)':'var(--surface)', color: cfg.interval===iv.d?'white':'var(--ink-3)'}}>{iv.l}</button>
+                              ))}
+                            </div>
+                            <button onClick={()=>set(s.name, { paused: !cfg.paused })} style={{border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', padding:'7px 12px', borderRadius:999, fontSize:12, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>
+                              {cfg.paused ? 'Resume' : 'Pause'}
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Repeat deliveries are scheduled locally in this prototype — nothing is charged automatically. Review your stack before each order.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="stack" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Feature 8: Profile & Privacy settings (8.1-8.7) ============
+    const BAL_KEYS = ['bal_user','bal_profile','bal_consents','bal_disclaimer','bal_goals','bal_stack',
+      'bal_log','bal_health','bal_reminders','bal_feedback','bal_orders','bal_subs','bal_addr'];
+    const STORED_SUMMARY = [
+      ['Account', 'Your email and how you signed in.', 'bal_user'],
+      ['Profile', 'Name, age, sex, height and weight — whatever you chose to give.', 'bal_profile'],
+      ['Health data', 'Goals, supplements, medicines, substances and location.', 'bal_health'],
+      ['Intake log', 'Which supplements you marked as taken, per day.', 'bal_log'],
+      ['Consents', 'What you agreed to, and when.', 'bal_consents'],
+      ['Reminders', 'Your reminder schedule and quiet hours.', 'bal_reminders'],
+      ['Orders', 'Orders placed and repeat deliveries.', 'bal_orders'],
+      ['Feedback', 'Any reports you sent about an answer.', 'bal_feedback'],
+    ];
+    const SettingsScreen = ({ user, profile, consents, onBack, onNav, onOpenConsents, onOpenProfile, onOpenReminders, onDeleteAll }) => {
+      const { Icon, Tabbar } = window;
+      const [confirming, setConfirming] = useState(false);
+      const [exported, setExported] = useState(false);
+      const stored = STORED_SUMMARY.filter(([,,k]) => { try { return localStorage.getItem(k); } catch { return false; } });
+
+      // 8.3 — data export (portability): everything we hold, as one JSON file.
+      const exportData = () => {
+        const bundle = { exportedAt: new Date().toISOString(), app: 'Balance', data: {} };
+        BAL_KEYS.forEach(k => { try { const v = localStorage.getItem(k); if (v) bundle.data[k] = JSON.parse(v); } catch {} });
+        try {
+          const blob = new Blob([JSON.stringify(bundle, null, 2)], { type:'application/json' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'balance-my-data.json';
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+          setExported(true);
+        } catch {}
+      };
+
+      const Row = ({ title, meta, onClick, danger }) => (
+        <button onClick={onClick} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', cursor:'pointer', color: danger ? 'var(--accent)' : 'var(--ink)'}}>
+          <span style={{flex:1, fontSize:14, fontWeight:500}}>{title}</span>
+          {meta && <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{meta}</span>}
+          {!danger && <Icon.Chevron size={13} c="var(--ink-4)"/>}
+        </button>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Settings &" em="privacy" onBack={onBack}
+              sub="Everything we hold about you, and what you can do with it."/>
+
+            {/* 8.1 account */}
+            <div style={{padding:'20px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Account</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <div style={{padding:'14px 16px', borderBottom:'0.5px solid var(--rule)'}}>
+                  <div style={{fontSize:12, color:'var(--ink-3)'}}>Signed in as</div>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', marginTop:2, wordBreak:'break-all'}}>{user ? user.email : 'Not signed in'}</div>
+                </div>
+                <Row title="Personal details" meta={profile && profile.name ? profile.name : 'Add'} onClick={onOpenProfile}/>
+              </div>
+            </div>
+
+            {/* 8.2 / 8.6 preferences */}
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Preferences</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <Row title="Privacy &amp; consents" meta={consents ? `${CONSENTS.filter(c=>consents[c.key]).length}/${CONSENTS.length} on` : 'Review'} onClick={onOpenConsents}/>
+                <div style={{height:'0.5px', background:'var(--rule)'}}/>
+                <Row title="Reminders" onClick={onOpenReminders}/>
+              </div>
+            </div>
+
+            {/* 8.7 what we store */}
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>What Balance stores</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                {stored.length === 0 ? <EmptyState text="Nothing stored yet."/> : stored.map(([t, d], i) => (
+                  <div key={t} style={{padding:'13px 16px', borderBottom:i<stored.length-1?'0.5px solid var(--rule)':'none'}}>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{t}</div>
+                    <div style={{fontSize:12.5, color:'var(--ink-3)', marginTop:2, lineHeight:1.45}}>{d}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:10}}>
+                In this prototype all of it is stored on this device only — it is not uploaded to a server, and it does not sync between devices.
+              </div>
+            </div>
+
+            {/* 8.3 / 8.4 your data rights */}
+            <div style={{padding:'22px 18px 0'}}>
+              <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Your data</div>
+              <div className="bal-card" style={{padding:'4px 0'}}>
+                <Row title="Export my data" meta={exported ? 'Downloaded' : 'JSON'} onClick={exportData}/>
+                <div style={{height:'0.5px', background:'var(--rule)'}}/>
+                <Row title="Delete everything" danger onClick={()=>setConfirming(true)}/>
+              </div>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:10}}>
+                Export gives you a copy of everything above. Deleting removes all of it from this device and cannot be undone.
+              </div>
+            </div>
+          </div>
+
+          {confirming && (
+            <div style={{position:'absolute', inset:0, zIndex:60, background:'rgba(5,3,4,0.45)', display:'flex', alignItems:'flex-end'}}>
+              <div style={{width:'100%', background:'var(--bg)', borderRadius:'26px 26px 0 0', padding:'22px 20px 26px'}}>
+                <div style={{width:38, height:4, borderRadius:4, background:'var(--rule)', margin:'0 auto 16px'}}/>
+                <div className="serif" style={{fontSize:22, color:'var(--ink)', marginBottom:8}}>Delete everything?</div>
+                <div style={{fontSize:13.5, color:'var(--ink-2)', lineHeight:1.5, marginBottom:16}}>
+                  This removes your account, profile, health data, stack, intake log, reminders and orders from this device. It cannot be undone — export first if you want a copy.
+                </div>
+                <div style={{display:'flex', gap:10}}>
+                  <button onClick={()=>setConfirming(false)} style={{flex:1, padding:'14px', borderRadius:14, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:15, cursor:'pointer', fontFamily:'inherit'}}>Keep my data</button>
+                  <button onClick={()=>{ setConfirming(false); onDeleteAll(); }} style={{flex:1, padding:'14px', borderRadius:14, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--accent)', fontWeight:600, fontSize:15, cursor:'pointer', fontFamily:'inherit'}}>Delete it all</button>
+                </div>
+              </div>
+            </div>
+          )}
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // ============ Feature 9: Admin / Moderation portal (9.1-9.5) ============
+    // Reached at #admin. The medical datasets are READ-ONLY here by design:
+    // clinical content must not be editable from a client UI. Moderators can
+    // record review status and triage user reports.
+    const AdminScreen = ({ interactions, mushrooms, feedback, review, onReview, onExit }) => {
+      const { Icon } = window;
+      const [tab, setTab] = useState('overview');
+      const rules = (interactions || {}).rules || [];
+      const [subs, setSubs] = useState([]);
+      useEffect(() => { fetch('/api/interactions').catch(()=>{}); }, []);
+      useEffect(() => { fetch('/api/mushrooms').then(r=>r.ok?r.json():null).then(()=>{}).catch(()=>{}); }, []);
+      useEffect(() => {
+        fetch('/api/substances').then(r => r.ok ? r.json() : null).then(j => { if (j && j.substances) setSubs(j.substances); }).catch(()=>{});
+      }, []);
+
+      const reports = Object.entries(feedback || {}).map(([id, f]) => ({ id, ...f }))
+        .sort((a,b) => (b.at||0) - (a.at||0));
+      const negative = reports.filter(r => r.rating === 'down');
+      const datasets = [
+        { key:'interactions', label:'Interaction rules', n: rules.length, note:'Dangerous combination warnings' },
+        { key:'substances',   label:'Substance entries', n: subs.length, note:'Effects, risks, harm reduction, support lists' },
+        { key:'mushrooms',    label:'Mushroom evidence', n: (mushrooms||[]).length, note:'Benefits ranked by evidence' },
+      ];
+      const reviewed = datasets.filter(d => (review||{})[d.key]).length;
+
+      const Seg = ({ k, label, n }) => (
+        <button onClick={()=>setTab(k)} style={{flex:1, padding:'9px 0', borderRadius:9, border:'none', cursor:'pointer', fontFamily:'inherit',
+          background: tab===k?'white':'transparent', color: tab===k?'var(--brand)':'var(--ink-3)', fontWeight:600, fontSize:13,
+          boxShadow: tab===k?'var(--sh-1)':'none'}}>{label}{n!=null && <span style={{opacity:.55}}> {n}</span>}</button>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:40}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 22px 0'}}>
+              <button onClick={onExit} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', border:'none', display:'flex', alignItems:'center', justifyContent:'center', marginBottom:16, cursor:'pointer'}}>
+                <Icon.Back size={16} c="var(--ink-2)"/>
+              </button>
+              <div className="serif" style={{fontSize:30, lineHeight:1.12, color:'var(--ink)'}}>Admin &amp; <em style={{background:GRAD, WebkitBackgroundClip:'text', backgroundClip:'text', color:'transparent'}}>moderation</em></div>
+              <div style={{fontSize:13.5, color:'var(--ink-3)', marginTop:8, lineHeight:1.5}}>
+                Clinical datasets are read-only here — they ship with the app and must be changed in code after clinical sign-off.
+              </div>
+            </div>
+            <div style={{padding:'16px 18px 0'}}>
+              <div style={{display:'flex', background:'var(--surface-3)', borderRadius:12, padding:3}}>
+                <Seg k="overview" label="Overview"/>
+                <Seg k="data" label="Datasets" n={datasets.reduce((a,d)=>a+d.n,0)}/>
+                <Seg k="reports" label="Reports" n={negative.length}/>
+              </div>
+            </div>
+
+            {tab === 'overview' && (
+              <div style={{padding:'18px 18px 0'}}>
+                <div style={{display:'flex', gap:10, marginBottom:14}}>
+                  {[['Datasets reviewed', `${reviewed}/${datasets.length}`], ['Open reports', String(negative.length)]].map(([l,v]) => (
+                    <div key={l} className="bal-card" style={{flex:1, padding:'14px 15px'}}>
+                      <div className="serif" style={{fontSize:26, color:'var(--ink)'}}>{v}</div>
+                      <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:2}}>{l}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bal-card" style={{padding:'14px 16px'}}>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', marginBottom:6}}>Clinical sign-off status</div>
+                  <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.5}}>
+                    {reviewed === datasets.length
+                      ? 'All datasets are marked reviewed. Keep the signed record with the reviewer’s name and date.'
+                      : `${datasets.length - reviewed} dataset${datasets.length-reviewed===1?'':'s'} still awaiting pharmacist review. The app shows prototype disclaimers until that is done.`}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {tab === 'data' && (
+              <div style={{padding:'18px 18px 0'}}>
+                {datasets.map(d => {
+                  const done = !!(review||{})[d.key];
+                  return (
+                    <div key={d.key} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                      <div style={{display:'flex', alignItems:'center', gap:10}}>
+                        <div style={{flex:1, minWidth:0}}>
+                          <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{d.label}</div>
+                          <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{d.n} entries · {d.note}</div>
+                        </div>
+                        <span className="bal-pill light" style={{padding:'3px 9px', fontSize:10}}>Read-only</span>
+                      </div>
+                      <button onClick={()=>onReview(d.key, !done)} style={{marginTop:10, padding:'8px 13px', borderRadius:999, border: done?'none':'1px solid var(--rule)',
+                        background: done?'var(--green-soft)':'var(--surface)', color: done?'var(--green-deep)':'var(--ink-2)', fontSize:12.5, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>
+                        {done ? '✓ Marked reviewed' : 'Mark as clinically reviewed'}
+                      </button>
+                    </div>
+                  );
+                })}
+                {rules.length > 0 && (
+                  <div style={{marginTop:6}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, margin:'10px 0'}}>Interaction rules (sample)</div>
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {rules.slice(0, 12).map((r,i) => (
+                        <div key={r.id} style={{padding:'11px 15px', borderBottom:i<11?'0.5px solid var(--rule)':'none'}}>
+                          <div style={{display:'flex', alignItems:'center', gap:8, flexWrap:'wrap'}}>
+                            <span style={{fontSize:9.5, fontWeight:700, textTransform:'uppercase', letterSpacing:'.03em', padding:'2px 7px', borderRadius:999,
+                              background:(INTER_STYLE[r.severity]||{}).bg, color:(INTER_STYLE[r.severity]||{}).fg}}>{r.severity}</span>
+                            <span style={{fontSize:12.5, fontWeight:600, color:'var(--ink)'}}>{r.label}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{fontSize:11.5, color:'var(--ink-4)', marginTop:8}}>Showing 12 of {rules.length}. Full set lives in agent_site/data/interactions.json.</div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {tab === 'reports' && (
+              <div style={{padding:'18px 18px 0'}}>
+                {reports.length === 0 ? (
+                  <div className="bal-card"><EmptyState text="No user reports yet. Negative answer feedback shows up here for triage."/></div>
+                ) : reports.map(r => (
+                  <div key={r.id} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                    <div style={{display:'flex', alignItems:'center', gap:9, marginBottom:6}}>
+                      <span style={{fontSize:10, fontWeight:700, textTransform:'uppercase', padding:'2px 8px', borderRadius:999,
+                        background: r.rating==='down' ? '#fdecef' : 'var(--green-soft)', color: r.rating==='down' ? '#8a1f33' : 'var(--green-deep)'}}>
+                        {r.rating === 'down' ? 'Needs review' : 'Positive'}
+                      </span>
+                      {r.at && <span style={{fontSize:11.5, color:'var(--ink-3)'}}>{prettyDate(new Date(r.at).toISOString())}</span>}
+                    </div>
+                    {r.question && <div style={{fontSize:13, color:'var(--ink)', fontWeight:600}}>“{r.question}”</div>}
+                    {r.note && <div style={{fontSize:12.5, color:'var(--ink-2)', marginTop:4, lineHeight:1.45}}>{r.note}</div>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
     const Onboarding = ({ onStart, onLogin }) => {
       const { Icon } = window;
       return (
@@ -957,10 +1976,29 @@
     };
 
     // ============ Home ============
-    const Home = ({ goals, stack, taken, onToggleTaken, onOpenCategory, onAsk, onNav }) => {
+    const Home = ({ goals, stack, taken, log, health, interactions, profile, onToggleTaken, onOpenCategory, onAsk, onNav, onOpenHealth }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const doneCount = stack.filter(s => taken.includes(s.name)).length;
+      // 5.5 — adherence over the last 7 days, and the current streak.
+      const week = Array.from({length:7}, (_,i) => {
+        const k = daysAgoKey(6 - i);
+        const done = (log && log[k]) ? log[k].length : 0;
+        return { key:k, done, pct: stack.length ? Math.min(1, done/stack.length) : 0,
+                 label: new Date(k).toLocaleDateString(undefined,{weekday:'narrow'}) };
+      });
+      let streak = 0;
+      for (let i = 0; i < 60; i++) {
+        const k = daysAgoKey(i);
+        const done = (log && log[k]) ? log[k].length : 0;
+        if (stack.length && done >= stack.length) streak++;
+        else if (i === 0) continue;   // today still in progress — don't break the streak
+        else break;
+      }
+      const pct = stack.length ? Math.round(doneCount/stack.length*100) : 0;
+      const h = health || blankHealth();
+      const warnCount = reviewAllInteractions(stack, h, (interactions||{}).rules).length;
+      const firstName = (profile && profile.name) ? profile.name.trim().split(/\s+/)[0] : 'there';
       // Classic flow has no onboarding, so Home must look populated for a fresh
       // user: fall back to a featured set when no goals have been picked yet.
       const FEATURED_SLUGS = ['sleep','memory-focus','stress-anxiety','muscle-gain','cardiovascular-health','joint-health'];
@@ -976,7 +2014,7 @@
             <div style={{padding:'6px 22px 4px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
               <div>
                 <div style={{fontSize:12, color:'var(--ink-3)', fontWeight:500, letterSpacing:'0.06em', textTransform:'uppercase'}}>{new Date().toLocaleDateString(undefined,{weekday:'short', month:'short', day:'numeric'})}</div>
-                <div className="serif" style={{fontSize:32, lineHeight:1.05, marginTop:2, color:'var(--ink)'}}>{greeting()},<br/><em style={{fontStyle:'italic'}}>there</em>.</div>
+                <div className="serif" style={{fontSize:32, lineHeight:1.05, marginTop:2, color:'var(--ink)'}}>{greeting()},<br/><em style={{fontStyle:'italic'}}>{firstName}</em>.</div>
               </div>
               <button onClick={()=>onNav('me')} style={{width:40, height:40, borderRadius:'50%', background:'var(--brand)', color:'white', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:600, border:'none'}}>Y</button>
             </div>
@@ -1024,10 +2062,51 @@
               </div>
             </div>
 
+            {/* 5.3 — health profile summary, incl. any interaction warnings */}
+            <div style={{padding:'14px 18px 0'}}>
+              <button onClick={onOpenHealth} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'14px 16px', display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
+                <div style={{width:34, height:34, borderRadius:11, flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700, fontSize:13,
+                  background: warnCount ? '#fdecef' : 'var(--brand-soft)', color: warnCount ? '#8a1f33' : 'var(--brand)'}}>{warnCount || <Icon.Check size={16} c="var(--brand)"/>}</div>
+                <div style={{flex:1, minWidth:0}}>
+                  <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>Health profile</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>
+                    {[`${stack.length} supplement${stack.length===1?'':'s'}`,
+                      h.prescriptions.length ? `${h.prescriptions.length} medicine${h.prescriptions.length===1?'':'s'}` : null,
+                      h.substances.length ? `${h.substances.length} substance${h.substances.length===1?'':'s'}` : null,
+                     ].filter(Boolean).join(' · ')}
+                    {warnCount ? ` · ${warnCount} to check` : ''}
+                  </div>
+                </div>
+                <Icon.Chevron size={13} c="var(--ink-4)"/>
+              </button>
+            </div>
+
+            {/* 5.5 — adherence over the past week */}
+            {stack.length > 0 && (
+              <div style={{padding:'14px 18px 0'}}>
+                <div className="bal-card" style={{padding:'16px'}}>
+                  <div style={{display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom:12}}>
+                    <div className="serif" style={{fontSize:20, color:'var(--ink)'}}>Your week</div>
+                    <div style={{fontSize:12, color:'var(--ink-3)'}}>{streak > 0 ? `${streak}-day streak` : 'Start a streak today'}</div>
+                  </div>
+                  <div style={{display:'flex', gap:6, alignItems:'flex-end', height:64}}>
+                    {week.map((d,i) => (
+                      <div key={d.key} style={{flex:1, display:'flex', flexDirection:'column', alignItems:'center', gap:5}}>
+                        <div style={{width:'100%', height:44, borderRadius:8, background:'var(--surface-3)', display:'flex', alignItems:'flex-end', overflow:'hidden'}}>
+                          <div style={{width:'100%', height:`${Math.round(d.pct*100)}%`, background: i===6 ? GRAD : 'var(--brand-soft)', borderRadius:8, transition:'height 250ms'}}/>
+                        </div>
+                        <div style={{fontSize:10, color: i===6 ? 'var(--brand)' : 'var(--ink-4)', fontWeight: i===6 ? 700 : 500}}>{d.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div style={{padding:'14px 18px 0'}}>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
                 <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>Today's stack</div>
-                {stack.length>0 && <div style={{fontSize:12, color:'var(--accent)', fontWeight:500}}>{doneCount} of {stack.length} done</div>}
+                {stack.length>0 && <div style={{fontSize:12, color:'var(--accent)', fontWeight:500}}>{doneCount} of {stack.length} done · {pct}%</div>}
               </div>
               {stack.length===0 ? (
                 <button onClick={()=>onNav('browse')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:18, color:'var(--ink-2)', fontSize:14}}>
@@ -1372,7 +2451,9 @@
     // mitigating a substance (a substance name + a support/harm cue, or a
     // message that is essentially just the substance name). Keeps normal
     // questions like "supplements for testosterone" going to the assistant.
-    const _SUB_CUE = /\b(side\s?effect|reduce|recover|recovery|detox|protect|support|comedown|come\s?down|coming\s?off|withdraw|withdrawal|hangover|after (?:taking|using)|on (?:a )?cycle|cycle|liver|damage|deplet|harm)\b|побочк|побочн|как снизить|как уменьшить|снизить вред|восстанов|детокс|печен|ломк|похмель|отходняк|последстви|поддержк/i;
+    // Note: no trailing \b after the group — it would reject the plural
+    // "side effects" (the boundary falls between "t" and "s").
+    const _SUB_CUE = /\b(side[\s-]?effect|reduce|recover|recovery|detox|protect|support|comedown|come\s?down|coming\s?off|withdraw|withdrawal|hangover|after (?:taking|using)|on (?:a )?cycle|cycle|liver|damage|deplet|harm|risk|danger|overdose|long[\s-]?term|what does)|побочк|побочн|как снизить|как уменьшить|снизить вред|восстанов|детокс|печен|ломк|похмель|отходняк|последстви|поддержк/i;
     const detectSubstance = (text) => {
       const t = (text||'').toLowerCase();
       const hit = SUBSTANCE_SUPPORT.find(s => s.aliases.some(a => new RegExp('(?:^|[^a-z])'+a.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:[^a-z]|$)','i').test(t)));
@@ -1514,6 +2595,75 @@
       Serious:   { bg:'#fff1e6', fg:'#8a3f0a' },
       Caution:   { bg:'#fdf6d8', fg:'#6f5a12' },
     };
+    // ============ Feature 3: Interaction logic (3.4-3.5) ============
+    // Pairwise check: does adding `candidate` conflict with anything the user
+    // already has (stack, prescriptions, substances)? Returns matched rules
+    // annotated with which existing item they clash with.
+    const _sideHit = (aliases, text) => {
+      const tokens = (text||'').toLowerCase().split(/[^\p{L}\p{N}']+/u).filter(Boolean);
+      return (aliases||[]).some(a => _wbTest(a, (text||'').toLowerCase()) || _fuzzyHit(a, tokens));
+    };
+    const checkInteractions = (candidate, contextItems, rules) => {
+      const out = [];
+      for (const r of (rules || [])) {
+        const cA = _sideHit(r.a, candidate), cB = _sideHit(r.b, candidate);
+        if (!cA && !cB) continue;
+        for (const item of contextItems) {
+          const other = cA ? _sideHit(r.b, item.name) : _sideHit(r.a, item.name);
+          if (other) out.push({ rule: r, withItem: item });
+        }
+      }
+      // De-dupe by rule id + the item it clashes with.
+      const seen = new Set();
+      return out.filter(x => { const k = x.rule.id + '|' + x.withItem.name; if (seen.has(k)) return false; seen.add(k); return true; })
+        .sort((x,y) => (_INTER_ORDER[x.rule.severity] ?? 9) - (_INTER_ORDER[y.rule.severity] ?? 9));
+    };
+    // Everything the user has told us about, for checking against.
+    const healthContext = (stack, health) => {
+      const h = health || { prescriptions: [], substances: [] };
+      return [
+        ...stack.map(s => ({ name: s.name, kind: 'in your stack' })),
+        ...h.prescriptions.map(r => ({ name: r.name, kind: 'your medicine' })),
+        ...h.substances.map(s => ({ name: s.name, kind: 'you reported using' })),
+      ];
+    };
+
+    // Blocking confirmation shown before a conflicting supplement is added.
+    const ConflictModal = ({ candidate, hits, meta, onCancel, onConfirm }) => {
+      const worst = hits[0]?.rule?.severity || 'Caution';
+      const s = INTER_STYLE[worst] || INTER_STYLE.Caution;
+      return (
+        <div style={{position:'absolute', inset:0, zIndex:60, background:'rgba(5,3,4,0.45)', display:'flex', alignItems:'flex-end'}}>
+          <div style={{width:'100%', background:'var(--bg)', borderRadius:'26px 26px 0 0', padding:'22px 20px 26px', maxHeight:'86%', overflowY:'auto', boxShadow:'0 -10px 40px rgba(32,5,108,0.18)'}}>
+            <div style={{width:38, height:4, borderRadius:4, background:'var(--rule)', margin:'0 auto 16px'}}/>
+            <div className="serif" style={{fontSize:23, lineHeight:1.15, color:'var(--ink)', marginBottom:6}}>Check before adding {candidate}</div>
+            <div style={{fontSize:13.5, color:'var(--ink-3)', lineHeight:1.5, marginBottom:14}}>
+              This may not mix well with something already in your health profile.
+            </div>
+            {hits.map((h,i) => {
+              const st = INTER_STYLE[h.rule.severity] || INTER_STYLE.Caution;
+              return (
+                <div key={i} style={{padding:'12px 13px', background:st.bg, borderRadius:12, marginBottom:9}}>
+                  <div style={{display:'flex', alignItems:'center', gap:8, marginBottom:4, flexWrap:'wrap'}}>
+                    <span style={{fontSize:10, fontWeight:700, letterSpacing:'.04em', textTransform:'uppercase', color:st.fg, background:'rgba(255,255,255,0.65)', padding:'2px 8px', borderRadius:999}}>{h.rule.severity}</span>
+                    <span style={{fontSize:12.5, fontWeight:600, color:st.fg}}>with {h.withItem.name} <span style={{opacity:.75, fontWeight:500}}>({h.withItem.kind})</span></span>
+                  </div>
+                  <div style={{fontSize:12.5, color:st.fg, lineHeight:1.45}}>{h.rule.reason}</div>
+                </div>
+              );
+            })}
+            <div style={{fontSize:11.5, color:'var(--ink-3)', lineHeight:1.5, padding:'10px 12px', background:'var(--surface-3)', borderRadius:10, marginBottom:16}}>
+              {meta.not_exhaustive || ''} Talk to a doctor or pharmacist before combining these.
+            </div>
+            <div style={{display:'flex', gap:10}}>
+              <button onClick={onCancel} style={{flex:1, padding:'14px', borderRadius:14, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:15, cursor:'pointer', fontFamily:'inherit'}}>Don't add</button>
+              <button onClick={onConfirm} style={{flex:1, padding:'14px', borderRadius:14, border:'1px solid var(--rule)', background:'var(--surface)', color: worst==='Dangerous' ? 'var(--accent)' : 'var(--ink-2)', fontWeight:600, fontSize:15, cursor:'pointer', fontFamily:'inherit'}}>Add anyway</button>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
     const InteractionCard = ({ rules, meta }) => {
       const anyDanger = rules.some(r => r.severity === 'Dangerous');
       return (
@@ -1600,7 +2750,7 @@
       );
     };
 
-    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery, mushrooms, interactions }) => {
+    const Ask = ({ stack, onAdd, inStack, onNav, initialQuery, mushrooms, interactions, feedback, onFeedback }) => {
       const { Icon } = window;
       const [messages, setMessages] = useState([]);
       const [input, setInput] = useState('');
@@ -1792,6 +2942,10 @@
                 </div>
 
                 {supps.length>0 && <AnswerSupps supps={supps} answer={m.content} onOrder={orderItems} inStack={inStack}/>}
+
+                {complete && onFeedback && (
+                  <AnswerFeedback answerId={'a' + i} question={prevUser ? prevUser.content : ''} feedback={feedback||{}} onFeedback={onFeedback}/>
+                )}
 
                 {m.sources && m.sources.length>0 && complete && (
                   <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:6}}>
@@ -2010,6 +3164,7 @@
                         {s.timing && <span className="bal-pill light mono" style={{fontSize:11}}>{s.timing}</span>}
                       </div>
                       {s.evidence && <div style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.45, marginTop:8}}>{s.evidence}</div>}
+                      <WhyThis entry={s} sourceTitle={title} slug={slug}/>
                       <div style={{display:'flex', gap:8, marginTop:10}}>
                         <button onClick={()=>onAdd(s, title)} disabled={added} style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
                           {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
@@ -2254,7 +3409,7 @@
     });
     const TERMINAL = ['SUCCEEDED','SUCCESS','COMPLETED','FAILED','CANCELED','CANCELLED','ERROR'];
 
-    const Checkout = ({ stack, onClose }) => {
+    const Checkout = ({ stack, onClose, onOrderPlaced, onStatusChange }) => {
       const { Icon } = window;
       const [addr, setAddr] = useState(() => ({ ...blankAddress(), ...LS.get('bal_addr', {}) }));
       const [items, setItems] = useState(() => stack.map(s => ({ name: s.name, url: buyLinksForName(s.name, s.iherb_url)[0].url, quantity: 1 })));
@@ -2287,6 +3442,11 @@
           const data = await res.json().catch(() => ({}));
           if (!res.ok) throw new Error(typeof data.detail==='string' ? data.detail : (res.status===503 ? 'Checkout not configured. Add CARTAI_API_KEY to the Render dashboard.' : `HTTP ${res.status}`));
           setTask(data);
+          if (onOrderPlaced) onOrderPlaced({
+            taskId: data.taskId, createdAt: new Date().toISOString(), status: 'Placed', testMode: true,
+            items: items.map(it => ({ name: it.name, quantity: it.quantity || 1, url: it.url })),
+            shipTo: [addr.city, addr.province, addr.postalCode].filter(Boolean).join(', '),
+          });
         } catch (e) {
           setError(String(e.message || e));
         } finally {
@@ -2306,6 +3466,7 @@
             if (stop) return;
             setStatus(j); setPollErr(null);
             const s = String(j.status || j.state || j.currentStatus || '').toUpperCase();
+            if (onStatusChange && s) onStatusChange(task.taskId, s);
             if (!TERMINAL.includes(s)) timer = setTimeout(poll, 4000);
           } catch (e) {
             if (!stop) { setPollErr(String(e.message || e)); timer = setTimeout(poll, 6000); }
@@ -2448,14 +3609,28 @@
     };
 
     // ============ Stack ============
-    const Stack = ({ stack, onRemove, onCheckout, checkoutEnabled, onNav }) => {
+    const Stack = ({ stack, onRemove, onCheckout, checkoutEnabled, onNav, orders, subs, onOpenOrders, onOpenSubs }) => {
       const { Icon, Tabbar } = window;
       const groups = useMemo(() => { const g={}; stack.forEach(s => { const k = s.sourceTitle || 'My supplements'; (g[k]=g[k]||[]).push(s); }); return g; }, [stack]);
       const goalCount = Object.keys(groups).length;
+      const orderCount = (orders||[]).length;
+      const subCount = Object.values(subs||{}).filter(v => v && !v.paused).length;
       return (
         <div className="screen-root">
           <div className="scroll" style={{height:'100%', paddingBottom:120}}>
             <div style={{height:54}}/>
+            {(onOpenOrders || onOpenSubs) && (
+              <div style={{padding:'6px 18px 0', display:'flex', gap:10}}>
+                <button onClick={onOpenOrders} className="bal-card" style={{flex:1, border:'none', padding:'12px 14px', textAlign:'left', cursor:'pointer'}}>
+                  <div style={{fontSize:13.5, fontWeight:600, color:'var(--ink)'}}>Orders</div>
+                  <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:2}}>{orderCount ? `${orderCount} placed` : 'None yet'}</div>
+                </button>
+                <button onClick={onOpenSubs} className="bal-card" style={{flex:1, border:'none', padding:'12px 14px', textAlign:'left', cursor:'pointer'}}>
+                  <div style={{fontSize:13.5, fontWeight:600, color:'var(--ink)'}}>Repeat deliveries</div>
+                  <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:2}}>{subCount ? `${subCount} active` : 'Not set up'}</div>
+                </button>
+              </div>
+            )}
             <div style={{padding:'8px 22px'}}>
               <div className="serif" style={{fontSize:34, lineHeight:1, color:'var(--ink)'}}>My stack</div>
               <div style={{fontSize:13, color:'var(--ink-3)', marginTop:4}}>{stack.length} supplement{stack.length!==1?'s':''} · {goalCount} goal{goalCount!==1?'s':''}</div>
@@ -2516,12 +3691,16 @@
     };
 
     // ============ Profile (Me) ============
-    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, onEditConsents, onEditProfile, onLogOut }) => {
+    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, health, reminders, onEditConsents, onEditProfile, onLogOut, onOpenHealth, onOpenReminders, onOpenSettings }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const displayName = (profile && profile.name) ? profile.name : 'You';
       const initial = displayName.trim().charAt(0).toUpperCase() || 'Y';
       const optIns = consents ? CONSENTS.filter(c => consents[c.key]).length : 0;
+      const h = health || blankHealth();
+      const healthFilled = [goals.length, stack.length, h.prescriptions.length, h.substances.length, h.location ? 1 : 0].filter(Boolean).length;
+      const rem = reminders || blankReminders();
+      const remindersOn = rem.enabled ? stack.filter(s => (rem.items[s.name]||{}).enabled).length : 0;
       return (
         <div className="screen-root">
           <div className="scroll" style={{height:'100%', paddingBottom:120}}>
@@ -2547,6 +3726,11 @@
             <div style={{padding:'24px 18px 0'}}>
               <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Account &amp; privacy</div>
               <div className="bal-card" style={{padding:'4px 0'}}>
+                <button onClick={onOpenHealth} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
+                  <span style={{flex:1, fontSize:14, fontWeight:500}}>Health profile</span>
+                  <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{healthFilled}/5</span>
+                  <Icon.Chevron size={13} c="var(--ink-4)"/>
+                </button>
                 <button onClick={onEditProfile} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
                   <span style={{flex:1, fontSize:14, fontWeight:500}}>Personal details</span>
                   <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{profile && profile.name ? 'Edit' : 'Add'}</span>
@@ -2567,7 +3751,16 @@
             <div style={{padding:'24px 18px 0'}}>
               <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>App</div>
               <div className="bal-card" style={{padding:'4px 0'}}>
+                <button onClick={onOpenReminders} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
+                  <span style={{flex:1, fontSize:14, fontWeight:500}}>Reminders</span>
+                  <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{remindersOn ? `${remindersOn} on` : 'Off'}</span>
+                  <Icon.Chevron size={13} c="var(--ink-4)"/>
+                </button>
                 <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)'}}><Icon.Spark size={18} c="var(--brand)"/><span style={{fontSize:14, fontWeight:500}}>Open chat</span></button>
+                <button onClick={onOpenSettings} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
+                  <span style={{flex:1, fontSize:14, fontWeight:500}}>Settings &amp; privacy</span>
+                  <Icon.Chevron size={13} c="var(--ink-4)"/>
+                </button>
                 <button onClick={onReset} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', color:'var(--accent)'}}><span style={{fontSize:14, fontWeight:500}}>Reset app &amp; data</span></button>
               </div>
             </div>
@@ -2583,7 +3776,15 @@
       const [onboarded, setOnboarded] = useState(() => LS.get('bal_onboarded', false));
       const [goals, setGoals] = useState(() => LS.get('bal_goals', []));
       const [stack, setStack] = useState(() => LS.get('bal_stack', []));
-      const [taken, setTaken] = useState(() => LS.get('bal_taken', []));
+      // Feature 5 — per-day intake log so adherence and streaks are real.
+      // Migrates the old flat bal_taken list into today's entry.
+      const [log, setLog] = useState(() => {
+        const stored = LS.get('bal_log', null);
+        if (stored) return stored;
+        const legacy = LS.get('bal_taken', []);
+        return legacy.length ? { [dayKey()]: legacy } : {};
+      });
+      const taken = log[dayKey()] || [];
       // New users land on the welcome screen first; returning (onboarded) users
       // open straight into the app (Today/Home). Goal personalization also stays
       // reachable later via Profile → Edit goals.
@@ -2592,6 +3793,24 @@
       const [consents, setConsents] = useState(() => LS.get('bal_consents', null));
       const [profile, setProfile] = useState(() => LS.get('bal_profile', null));
       const [authMode, setAuthMode] = useState('signup');   // signup | login | reset
+      const [health, setHealth] = useState(() => LS.get('bal_health', blankHealth()));   // Feature 2
+      const [reminders, setReminders] = useState(() => LS.get('bal_reminders', blankReminders()));  // Feature 6
+      const [snoozed, setSnoozed] = useState({});          // name -> "HH:MM" until
+      const [dismissedAt, setDismissedAt] = useState(null);
+      const [nowTick, setNowTick] = useState(() => new Date());
+      const [feedback, setFeedback] = useState(() => LS.get('bal_feedback', {}));   // Feature 4
+      const [orders, setOrders] = useState(() => LS.get('bal_orders', []));         // Feature 7
+      // Feature 9 — admin portal, reached at #admin.
+      const [adminOpen, setAdminOpen] = useState(() => { try { return location.hash === '#admin'; } catch { return false; } });
+      const [review, setReview] = useState(() => LS.get('bal_review', {}));
+      useEffect(() => {
+        const onHash = () => { try { setAdminOpen(location.hash === '#admin'); } catch {} };
+        window.addEventListener('hashchange', onHash);
+        return () => window.removeEventListener('hashchange', onHash);
+      }, []);
+      useEffect(()=>LS.keep('bal_review', review, !Object.keys(review).length), [review]);
+      const [subs, setSubs] = useState(() => LS.get('bal_subs', {}));
+      const saveFeedback = useCallback((id, data) => setFeedback(f => ({ ...f, [id]: { ...data, at: Date.now() } })), []);
       const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
@@ -2621,13 +3840,28 @@
           .catch(() => {});
       }, []);
 
-      useEffect(()=>LS.set('bal_goals', goals), [goals]);
-      useEffect(()=>LS.set('bal_stack', stack), [stack]);
-      useEffect(()=>LS.set('bal_taken', taken), [taken]);
-      useEffect(()=>LS.set('bal_onboarded', onboarded), [onboarded]);
-      useEffect(()=>LS.set('bal_user', user), [user]);
+      useEffect(()=>LS.keep('bal_goals', goals, !goals.length), [goals]);
+      useEffect(()=>LS.keep('bal_stack', stack, !stack.length), [stack]);
+      useEffect(()=>LS.keep('bal_log', log, !Object.keys(log).length), [log]);
+      useEffect(()=>LS.keep('bal_onboarded', onboarded, !onboarded), [onboarded]);
+      useEffect(()=>LS.keep('bal_user', user, !user), [user]);
       useEffect(()=>{ if (consents) LS.set('bal_consents', consents); }, [consents]);
       useEffect(()=>{ if (profile) LS.set('bal_profile', profile); }, [profile]);
+      useEffect(()=>LS.keep('bal_health', health, !(health.prescriptions.length || health.substances.length || health.location)), [health]);
+      useEffect(()=>LS.keep('bal_reminders', reminders, !reminders.enabled && !Object.keys(reminders.items||{}).length), [reminders]);
+      useEffect(()=>LS.keep('bal_feedback', feedback, !Object.keys(feedback).length), [feedback]);
+      useEffect(()=>LS.keep('bal_orders', orders, !orders.length), [orders]);
+      useEffect(()=>LS.keep('bal_subs', subs, !Object.keys(subs).length), [subs]);
+      // Feature 7 — record an order when checkout is submitted, and keep its status current.
+      const recordOrder = useCallback((o) => setOrders(prev => [{ ...o, id: o.id || uid() }, ...prev].slice(0, 50)), []);
+      const updateOrderStatus = useCallback((taskId, status) => setOrders(prev => prev.map(o => o.taskId === taskId ? { ...o, status } : o)), []);
+      // Feature 6 — tick every 30s so due reminders appear without a reload.
+      useEffect(() => {
+        if (!reminders.enabled) return;
+        const id = setInterval(() => setNowTick(new Date()), 30000);
+        return () => clearInterval(id);
+      }, [reminders.enabled]);
+      const setHealthPart = useCallback((k, v) => setHealth(h => ({ ...(h || blankHealth()), [k]: v })), []);
 
       const navTo = useCallback((k) => {
         const map = { home:'home', ask:'ask', stack:'stack', browse:'learn', me:'profile' };
@@ -2640,15 +3874,26 @@
       const openCategory = useCallback((s) => { setSlug(s); setScreen('category'); }, []);
       const openSupplement = useCallback((n) => { setSuppName(n); setScreen('supplement'); }, []);
       const openSubstance = useCallback((k) => { setSubstanceKey(k); setScreen('substance'); }, []);
-      const addToStack = useCallback((s, sourceTitle) => { setStack(prev => prev.some(x => x.name===s.name) ? prev : [...prev, { ...s, sourceTitle }]); }, []);
+      const commitToStack = useCallback((s, sourceTitle) => { setStack(prev => prev.some(x => x.name===s.name) ? prev : [...prev, { ...s, sourceTitle }]); }, []);
+      // Feature 3 — every add path runs through the interaction check first.
+      const [pendingAdd, setPendingAdd] = useState(null);   // {item, sourceTitle, hits}
+      const addToStack = useCallback((s, sourceTitle) => {
+        const already = stack.some(x => x.name === s.name);
+        const hits = already ? [] : checkInteractions(s.name, healthContext(stack, health), interactions.rules);
+        if (hits.length) { setPendingAdd({ item: s, sourceTitle, hits }); return; }
+        commitToStack(s, sourceTitle);
+      }, [stack, health, interactions, commitToStack]);
       const removeFromStack = useCallback((name) => setStack(prev => prev.filter(x => x.name!==name)), []);
       const inStack = useCallback((name) => stack.some(x => x.name===name), [stack]);
-      const toggleTaken = useCallback((name) => setTaken(prev => prev.includes(name) ? prev.filter(n=>n!==name) : [...prev, name]), []);
+      const toggleTaken = useCallback((name) => setLog(prev => {
+        const k = dayKey(); const cur = prev[k] || [];
+        return { ...prev, [k]: cur.includes(name) ? cur.filter(n => n !== name) : [...cur, name] };
+      }), []);
       const resetAll = () => {
-        ['bal_onboarded','bal_goals','bal_stack','bal_taken','bal_user','bal_consents','bal_profile','bal_disclaimer']
+        ['bal_onboarded','bal_goals','bal_stack','bal_taken','bal_log','bal_user','bal_consents','bal_profile','bal_disclaimer','bal_health']
           .forEach(k => { try { localStorage.removeItem(k); } catch {} });
-        setOnboarded(false); setGoals([]); setStack([]); setTaken([]);
-        setUser(null); setConsents(null); setProfile(null);
+        setOnboarded(false); setGoals([]); setStack([]); setLog({});
+        setUser(null); setConsents(null); setProfile(null); setHealth(blankHealth());
         setFlow('onboard'); setScreen('home');
       };
       const logOut = () => {
@@ -2683,6 +3928,29 @@
 
       // Feature 1 flow: welcome → auth → disclaimer → consents → profile → goals → app.
       // A returning user who logs in skips straight to the app.
+      // Feature 6 — what's due right now (respects taken, snooze and quiet hours).
+      const due = dueReminders(stack, reminders, taken, snoozed, nowTick);
+      const showBanner = due.length > 0 && dismissedAt !== dayKey() + hhmm(nowTick).slice(0,3);
+      // Fire a system notification once per due item, when permitted.
+      const notifiedRef = useRef(new Set());
+      useEffect(() => {
+        if (!showBanner || typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+        due.forEach(item => {
+          const key = dayKey() + '|' + item.name;
+          if (notifiedRef.current.has(key)) return;
+          notifiedRef.current.add(key);
+          try { new Notification('Time for ' + item.name, { body: [item.dose, item.timing].filter(Boolean).join(' · ') || 'Balance reminder', tag: key }); } catch {}
+        });
+      }, [showBanner, due]);
+      const snoozeItem = (name) => {
+        const d = new Date(nowTick.getTime() + 30*60000);
+        setSnoozed(s => ({ ...s, [name]: hhmm(d) }));
+      };
+
+      const renderScreen = () => {
+      if (adminOpen) return <AdminScreen interactions={interactions} mushrooms={mushrooms} feedback={feedback} review={review}
+        onReview={(k,v)=>setReview(r=>({ ...r, [k]: v ? { at: Date.now() } : undefined }))}
+        onExit={()=>{ try { location.hash = ''; } catch {} setAdminOpen(false); }}/>;
       if (flow === 'onboard') return <Onboarding onStart={()=>{ setAuthMode('signup'); setFlow('auth'); }} onLogin={()=>{ setAuthMode('login'); setFlow('auth'); }}/>;
       if (flow === 'auth') return (
         <AuthScreen mode={authMode} onMode={setAuthMode} onBack={()=>setFlow('onboard')}
@@ -2698,22 +3966,58 @@
       if (flow === 'profile') return <ProfileBaseline initial={profile} onDone={(p)=>{ setProfile(p); setFlow('intake'); }}/>;
       if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
-      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo}/>;
-      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}/>;
+      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
+        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
+      if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}
+        feedback={feedback} onFeedback={saveFeedback}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}/>;
+      if (screen === 'orders') return <OrdersScreen orders={orders} onBack={()=>setScreen('stack')} onNav={navTo}
+        onReorder={(o)=>{ o.items.forEach(it => addToStack({ name: it.name, tier:'', dose:'', iherb_url: it.url })); setScreen('stack'); }}/>;
+      if (screen === 'subs') return <SubscriptionsScreen stack={stack} subs={subs} onSave={setSubs} onBack={()=>setScreen('stack')} onNav={navTo}/>;
       if (screen === 'stack') {
-        if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;
-        return <Stack stack={stack} onRemove={removeFromStack} onCheckout={() => setCheckoutOpen(true)} checkoutEnabled={checkoutEnabled} onNav={navTo}/>;
+        if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)} onOrderPlaced={recordOrder} onStatusChange={updateOrderStatus}/>;
+        return <Stack stack={stack} onRemove={removeFromStack} onCheckout={() => setCheckoutOpen(true)} checkoutEnabled={checkoutEnabled} onNav={navTo}
+          orders={orders} subs={subs} onOpenOrders={()=>setScreen('orders')} onOpenSubs={()=>setScreen('subs')}/>;
       }
+      // Feature 2 — health profile screens.
+      if (screen === 'health') return <HealthHub goals={goals} stack={stack} health={health} interactions={interactions} onNav={navTo} onBack={()=>setScreen('profile')}
+        onOpen={(k)=>{ if (k==='goals') setFlow('intake'); else if (k==='supps') setScreen('addSupp'); else setScreen({rx:'healthRx', subs:'healthSubs', loc:'healthLoc', review:'healthReview'}[k]); }}/>;
+      if (screen === 'healthReview') return <InteractionReviewScreen stack={stack} health={health} interactions={interactions} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'reminders') return <RemindersScreen stack={stack} reminders={reminders} onSave={setReminders} onBack={()=>setScreen('profile')} onNav={navTo}/>;
+      if (screen === 'settings') return <SettingsScreen user={user} profile={profile} consents={consents}
+        onBack={()=>setScreen('profile')} onNav={navTo} onDeleteAll={resetAll}
+        onOpenConsents={()=>setScreen('editConsents')} onOpenProfile={()=>setScreen('editProfile')} onOpenReminders={()=>setScreen('reminders')}/>;
+      if (screen === 'healthRx') return <PrescriptionsScreen health={health} onSave={(v)=>setHealthPart('prescriptions', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'healthSubs') return <MySubstancesScreen health={health} onSave={(v)=>setHealthPart('substances', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'healthLoc') return <LocationScreen health={health} onSave={(v)=>{ setHealthPart('location', v); setScreen('health'); }} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'addSupp') return <AddSupplementScreen inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'editConsents') return <ConsentScreen embedded initial={consents} onBack={()=>setScreen('profile')} onDone={(c)=>{ setConsents({ ...c, updatedAt: Date.now() }); setScreen('profile'); }}/>;
       if (screen === 'editProfile') return <ProfileBaseline embedded initial={profile} onBack={()=>setScreen('profile')} onDone={(p)=>{ setProfile(p); setScreen('profile'); }}/>;
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}
-        user={user} profile={profile} consents={consents} onLogOut={logOut}
-        onEditConsents={()=>setScreen('editConsents')} onEditProfile={()=>setScreen('editProfile')}/>;
+        user={user} profile={profile} consents={consents} health={health} reminders={reminders} onLogOut={logOut}
+        onEditConsents={()=>setScreen('editConsents')} onEditProfile={()=>setScreen('editProfile')}
+        onOpenHealth={()=>setScreen('health')} onOpenReminders={()=>setScreen('reminders')} onOpenSettings={()=>setScreen('settings')}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
-      return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
+      return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
+        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
+      };
+
+      return (
+        <React.Fragment>
+          {renderScreen()}
+          {showBanner && flow === 'app' && !pendingAdd && (
+            <ReminderBanner items={due} onTake={(n)=>toggleTaken(n)} onSnooze={snoozeItem}
+              onDismiss={()=>setDismissedAt(dayKey() + hhmm(nowTick).slice(0,3))}/>
+          )}
+          {pendingAdd && (
+            <ConflictModal candidate={pendingAdd.item.name} hits={pendingAdd.hits} meta={interactions}
+              onCancel={()=>setPendingAdd(null)}
+              onConfirm={()=>{ commitToStack(pendingAdd.item, pendingAdd.sourceTitle); setPendingAdd(null); }}/>
+          )}
+        </React.Fragment>
+      );
     };
 
     const REQUIRED = ['Icon','Tabbar','BalLogo','BalLogoMark'];

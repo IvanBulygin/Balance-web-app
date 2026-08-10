@@ -1301,6 +1301,17 @@
       const { Icon, Tabbar } = window;
       const r = reminders || blankReminders();
       const [perm, setPerm] = useState(() => (typeof Notification !== 'undefined' ? Notification.permission : 'unsupported'));
+      // Reminders run on this device's clock — show it, so a mismatch with the
+      // user's actual local time is obvious rather than silently wrong.
+      const [now, setNow] = useState(() => new Date());
+      useEffect(() => { const id = setInterval(() => setNow(new Date()), 15000); return () => clearInterval(id); }, []);
+      const tzName = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch { return ''; } })();
+      const tzOffset = (() => {
+        const m = -now.getTimezoneOffset();
+        const sign = m < 0 ? '-' : '+';
+        return `UTC${sign}${String(Math.floor(Math.abs(m)/60)).padStart(2,'0')}:${String(Math.abs(m)%60).padStart(2,'0')}`;
+      })();
+      const quietNow = r.enabled && inQuietHours(now, r.quietFrom, r.quietTo);
       const setItem = (name, patch) => onSave({ ...r, items: { ...r.items, [name]: { time:'08:00', enabled:true, ...(r.items[name]||{}), ...patch } } });
       const enableAll = () => {
         const items = { ...r.items };
@@ -1319,6 +1330,21 @@
             <AuthHeader title="Intake" em="reminders" onBack={onBack}
               sub="A nudge when it's time to take something. Reminders run while the app is open; enable notifications to get them in the background."/>
             <div style={{padding:'20px 18px 0'}}>
+              {/* Device clock — reminders fire on this, not on a server clock. */}
+              <div className="bal-card" style={{padding:'14px 16px', marginBottom:12, display:'flex', alignItems:'center', gap:14}}>
+                <div style={{minWidth:0}}>
+                  <div className="serif" style={{fontSize:30, lineHeight:1, color:'var(--ink)'}}>{hhmm(now)}</div>
+                  <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:4}}>
+                    {now.toLocaleDateString(undefined,{weekday:'short', day:'numeric', month:'short'})}
+                  </div>
+                </div>
+                <div style={{flex:1, minWidth:0, textAlign:'right'}}>
+                  <div style={{fontSize:12.5, fontWeight:600, color:'var(--ink-2)', overflow:'hidden', textOverflow:'ellipsis'}}>{tzName || 'Local time'}</div>
+                  <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:2}}>{tzOffset} · your device</div>
+                  {quietNow && <div style={{fontSize:11, color:'var(--brand)', fontWeight:600, marginTop:4}}>Quiet hours active</div>}
+                </div>
+              </div>
+
               {/* 6.1 master switch */}
               <div className="bal-card" style={{padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
                 <div style={{flex:1}}>

@@ -2451,7 +2451,9 @@
     // mitigating a substance (a substance name + a support/harm cue, or a
     // message that is essentially just the substance name). Keeps normal
     // questions like "supplements for testosterone" going to the assistant.
-    const _SUB_CUE = /\b(side\s?effect|reduce|recover|recovery|detox|protect|support|comedown|come\s?down|coming\s?off|withdraw|withdrawal|hangover|after (?:taking|using)|on (?:a )?cycle|cycle|liver|damage|deplet|harm)\b|побочк|побочн|как снизить|как уменьшить|снизить вред|восстанов|детокс|печен|ломк|похмель|отходняк|последстви|поддержк/i;
+    // Note: no trailing \b after the group — it would reject the plural
+    // "side effects" (the boundary falls between "t" and "s").
+    const _SUB_CUE = /\b(side[\s-]?effect|reduce|recover|recovery|detox|protect|support|comedown|come\s?down|coming\s?off|withdraw|withdrawal|hangover|after (?:taking|using)|on (?:a )?cycle|cycle|liver|damage|deplet|harm|risk|danger|overdose|long[\s-]?term|what does)|побочк|побочн|как снизить|как уменьшить|снизить вред|восстанов|детокс|печен|ломк|похмель|отходняк|последстви|поддержк/i;
     const detectSubstance = (text) => {
       const t = (text||'').toLowerCase();
       const hit = SUBSTANCE_SUPPORT.find(s => s.aliases.some(a => new RegExp('(?:^|[^a-z])'+a.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:[^a-z]|$)','i').test(t)));

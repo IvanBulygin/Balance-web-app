@@ -1553,23 +1553,33 @@
     // Each row has a "+" to add it to the order; the order button at the bottom
     // is grey/disabled until at least one is selected, then turns green.
     // Module-scope so its selection state survives Ask re-renders.
-    const AnswerSupps = ({ supps, answer, onOrder }) => {
+    const AnswerSupps = ({ supps, answer, onOrder, inStack }) => {
       const { Icon } = window;
+      const owned = (s) => !!(inStack && inStack(s.n));
+      // Don't pre-select what the user already takes — the order list should
+      // default to what would ADD to their stack.
       const [sel, setSel] = useState(() => new Set());
       const toggle = (id) => setSel(prev => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
       const count = sel.size;
+      const ownedCount = supps.filter(owned).length;
       const order = () => onOrder(supps.filter(s => sel.has(s.id)).map(s => ({ name:s.n, tier:'Secondary', dose:'', iherb_url:suppIherbUrl(s) })), answer);
+      // Already-owned items sink to the bottom so new options lead.
+      const rows = [...supps].sort((a,b) => (owned(a)?1:0) - (owned(b)?1:0));
       return (
         <div style={{marginLeft:34, marginTop:12}}>
-          <div style={{display:'flex', alignItems:'center', gap:6, marginBottom:8}}>
+          <div style={{display:'flex', alignItems:'center', gap:6, marginBottom:8, flexWrap:'wrap'}}>
             <CartIcon size={13} c="var(--brand)"/>
             <span style={{fontSize:11, letterSpacing:'.08em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Build your order</span>
+            {ownedCount>0 && <span style={{fontSize:11, color:'var(--ink-4)'}}>· {ownedCount} already in your stack</span>}
           </div>
           <div className="bal-card" style={{padding:'2px 0', border:'1px solid var(--rule)'}}>
-            {supps.map((s,i) => { const on = sel.has(s.id); return (
-              <div key={s.id} style={{display:'flex', alignItems:'center', gap:10, padding:'10px 14px', borderBottom:i<supps.length-1?'0.5px solid var(--rule)':'none'}}>
+            {rows.map((s,i) => { const on = sel.has(s.id); const has = owned(s); return (
+              <div key={s.id} style={{display:'flex', alignItems:'center', gap:10, padding:'10px 14px', borderBottom:i<rows.length-1?'0.5px solid var(--rule)':'none', opacity: has && !on ? 0.62 : 1}}>
                 <div style={{flex:1, minWidth:0}}>
-                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</div>
+                  <div style={{display:'flex', alignItems:'center', gap:7, flexWrap:'wrap'}}>
+                    <span style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</span>
+                    {has && <span className="bal-pill light" style={{padding:'2px 8px', fontSize:10}}>In your stack</span>}
+                  </div>
                   <div style={{display:'flex', flexWrap:'wrap', gap:6, marginTop:3}}>
                     {buyLinksFor(s).map(r => (
                       <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:3, fontSize:11, color:'var(--brand)', fontWeight:500, textDecoration:'none'}}>{r.name} <ExternalIcon size={9} c="var(--brand)"/></a>
@@ -1781,7 +1791,7 @@
                   {m.content ? fmt(m.content) : <div className="typing"><span></span><span></span><span></span></div>}
                 </div>
 
-                {supps.length>0 && <AnswerSupps supps={supps} answer={m.content} onOrder={orderItems}/>}
+                {supps.length>0 && <AnswerSupps supps={supps} answer={m.content} onOrder={orderItems} inStack={inStack}/>}
 
                 {m.sources && m.sources.length>0 && complete && (
                   <div style={{marginLeft:34, marginTop:12, display:'flex', flexWrap:'wrap', gap:6}}>

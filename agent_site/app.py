@@ -633,10 +633,19 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
         if names:
             system_instruction += (
                 "\n\n## User's current stack\n\n"
-                f"The user already takes: {names}. "
-                "When they ask about stacking, combining, or interactions with "
-                '"my current supps", reason about these specific supplements '
-                "using the retrieved passages."
+                f"The user already takes: {names}.\n\n"
+                "Take this into account in EVERY answer, not only when they ask "
+                "about combining:\n"
+                "- If a supplement you would recommend is already in their stack, "
+                "say so plainly (\"you already take magnesium — it also helps here\") "
+                "instead of presenting it as something new to start.\n"
+                "- Lead with what would ADD to what they already have, so the answer "
+                "complements the stack rather than repeating it.\n"
+                "- Still list the guide's full tiers, but mark the ones they already "
+                "take as already covered.\n"
+                "- If something in their stack is relevant to their question — "
+                "including timing or a caution against a new item — mention it.\n"
+                "Never tell them to stop or change a prescribed medication."
             )
 
     convo = []

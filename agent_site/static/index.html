@@ -1297,7 +1297,7 @@
       });
     };
 
-    const RemindersScreen = ({ stack, reminders, onSave, onBack, onNav }) => {
+    const RemindersScreen = ({ stack, reminders, taken, onSave, onBack, onNav }) => {
       const { Icon, Tabbar } = window;
       const r = reminders || blankReminders();
       const [perm, setPerm] = useState(() => (typeof Notification !== 'undefined' ? Notification.permission : 'unsupported'));
@@ -1312,6 +1312,14 @@
         return `UTC${sign}${String(Math.floor(Math.abs(m)/60)).padStart(2,'0')}:${String(Math.abs(m)%60).padStart(2,'0')}`;
       })();
       const quietNow = r.enabled && inQuietHours(now, r.quietFrom, r.quietTo);
+      // Visible feedback: what is due right now, and what fires next.
+      const dueNow = dueReminders(stack, r, taken || [], {}, now);
+      const scheduled = stack
+        .map(s => ({ name: s.name, time: (r.items[s.name] || {}).time, on: (r.items[s.name] || {}).enabled }))
+        .filter(x => x.on && x.time);
+      const nowStr = hhmm(now);
+      const upcoming = scheduled.filter(x => x.time > nowStr).sort((a,b) => a.time.localeCompare(b.time))[0]
+        || scheduled.sort((a,b) => a.time.localeCompare(b.time))[0];
       const setItem = (name, patch) => onSave({ ...r, items: { ...r.items, [name]: { time:'08:00', enabled:true, ...(r.items[name]||{}), ...patch } } });
       const enableAll = () => {
         const items = { ...r.items };
@@ -1345,6 +1353,29 @@
                 </div>
               </div>
 
+              {/* Feedback: what is due right now, and what fires next. */}
+              {r.enabled && (
+                <div className="bal-card" style={{padding:'13px 15px', marginBottom:12,
+                  background: dueNow.length ? 'var(--brand-soft)' : 'var(--surface)'}}>
+                  {dueNow.length > 0 ? (
+                    <div>
+                      <div style={{fontSize:13.5, fontWeight:600, color:'var(--brand-deep)'}}>
+                        Due now: {dueNow.map(s=>s.name).join(', ')}
+                      </div>
+                      <div style={{fontSize:11.5, color:'var(--brand-deep)', opacity:.8, marginTop:3}}>
+                        The reminder shows on Today — tap Taken there, or mark it off in your stack.
+                      </div>
+                    </div>
+                  ) : quietNow ? (
+                    <div style={{fontSize:13, color:'var(--ink-2)'}}>Nothing will fire until quiet hours end at {r.quietTo}.</div>
+                  ) : upcoming ? (
+                    <div style={{fontSize:13, color:'var(--ink-2)'}}>Next reminder: <b>{upcoming.name}</b> at <b>{upcoming.time}</b>{upcoming.time <= nowStr ? ' (tomorrow)' : ''}.</div>
+                  ) : (
+                    <div style={{fontSize:13, color:'var(--ink-3)'}}>No supplement is scheduled yet — tick one below and pick a time.</div>
+                  )}
+                </div>
+              )}
+
               {/* 6.1 master switch */}
               <div className="bal-card" style={{padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
                 <div style={{flex:1}}>
@@ -1361,11 +1392,15 @@
                 <div className="bal-card" style={{padding:'14px 16px', marginTop:12, display:'flex', alignItems:'center', gap:12}}>
                   <div style={{flex:1}}>
                     <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>Browser notifications</div>
-                    <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>
-                      {perm==='granted' ? 'Allowed — you\'ll get a system notification.' : perm==='denied' ? 'Blocked in your browser settings.' : 'Not enabled yet.'}
+                    <div style={{fontSize:12, color: perm==='granted' ? 'var(--ink-3)' : '#8a3f0a', marginTop:2, lineHeight:1.45}}>
+                      {perm==='granted'
+                        ? "Allowed — you'll get a system notification."
+                        : perm==='denied'
+                          ? 'Blocked in your browser settings — reminders will only appear inside the app, on the Today screen.'
+                          : 'Off — reminders will only appear inside the app, on the Today screen, while it is open.'}
                     </div>
                   </div>
-                  {perm==='default' && <button onClick={askPermission} className="bal-pill light" style={{border:'none', padding:'8px 13px', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Allow</button>}
+                  {perm==='default' && <button onClick={askPermission} className="bal-pill light" style={{border:'none', padding:'8px 13px', fontSize:12.5, fontWeight:600, cursor:'pointer', flexShrink:0}}>Allow</button>}
                 </div>
               )}
 
@@ -3881,12 +3916,16 @@
       // Feature 7 — record an order when checkout is submitted, and keep its status current.
       const recordOrder = useCallback((o) => setOrders(prev => [{ ...o, id: o.id || uid() }, ...prev].slice(0, 50)), []);
       const updateOrderStatus = useCallback((taskId, status) => setOrders(prev => prev.map(o => o.taskId === taskId ? { ...o, status } : o)), []);
-      // Feature 6 — tick every 30s so due reminders appear without a reload.
+      // Feature 6 — tick so due reminders appear without a reload. Also
+      // re-evaluates the moment the schedule changes, so setting a time that
+      // has already passed shows the reminder immediately instead of after
+      // the next tick.
       useEffect(() => {
         if (!reminders.enabled) return;
-        const id = setInterval(() => setNowTick(new Date()), 30000);
+        setNowTick(new Date());
+        const id = setInterval(() => setNowTick(new Date()), 10000);
         return () => clearInterval(id);
-      }, [reminders.enabled]);
+      }, [reminders.enabled, reminders.items, reminders.quietFrom, reminders.quietTo]);
       const setHealthPart = useCallback((k, v) => setHealth(h => ({ ...(h || blankHealth()), [k]: v })), []);
 
       const navTo = useCallback((k) => {
@@ -4009,7 +4048,7 @@
       if (screen === 'health') return <HealthHub goals={goals} stack={stack} health={health} interactions={interactions} onNav={navTo} onBack={()=>setScreen('profile')}
         onOpen={(k)=>{ if (k==='goals') setFlow('intake'); else if (k==='supps') setScreen('addSupp'); else setScreen({rx:'healthRx', subs:'healthSubs', loc:'healthLoc', review:'healthReview'}[k]); }}/>;
       if (screen === 'healthReview') return <InteractionReviewScreen stack={stack} health={health} interactions={interactions} onBack={()=>setScreen('health')} onNav={navTo}/>;
-      if (screen === 'reminders') return <RemindersScreen stack={stack} reminders={reminders} onSave={setReminders} onBack={()=>setScreen('profile')} onNav={navTo}/>;
+      if (screen === 'reminders') return <RemindersScreen stack={stack} reminders={reminders} taken={taken} onSave={setReminders} onBack={()=>setScreen('profile')} onNav={navTo}/>;
       if (screen === 'settings') return <SettingsScreen user={user} profile={profile} consents={consents}
         onBack={()=>setScreen('profile')} onNav={navTo} onDeleteAll={resetAll}
         onOpenConsents={()=>setScreen('editConsents')} onOpenProfile={()=>setScreen('editProfile')} onOpenReminders={()=>setScreen('reminders')}/>;

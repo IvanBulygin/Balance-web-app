@@ -871,6 +871,13 @@
     // ============ Feature 2: Health Profile Setup ============
     // 2.1 goals · 2.2 own supplements · 2.3 prescriptions · 2.4 substances ·
     // 2.5 location · 2.6 CRUD across all of them.
+    // Local calendar day key (YYYY-MM-DD) — used by the intake log and streaks.
+    const dayKey = (d) => {
+      const x = d ? new Date(d) : new Date();
+      return `${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,'0')}-${String(x.getDate()).padStart(2,'0')}`;
+    };
+    const daysAgoKey = (n) => { const d = new Date(); d.setDate(d.getDate() - n); return dayKey(d); };
+
     const blankHealth = () => ({ prescriptions: [], substances: [], location: null });
     const uid = () => 'h' + Math.random().toString(36).slice(2, 9);
     const RX_SCHEDULES = ['Morning', 'Midday', 'Evening', 'Night', 'As needed'];
@@ -1352,10 +1359,29 @@
     };
 
     // ============ Home ============
-    const Home = ({ goals, stack, taken, onToggleTaken, onOpenCategory, onAsk, onNav }) => {
+    const Home = ({ goals, stack, taken, log, health, interactions, profile, onToggleTaken, onOpenCategory, onAsk, onNav, onOpenHealth }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const doneCount = stack.filter(s => taken.includes(s.name)).length;
+      // 5.5 — adherence over the last 7 days, and the current streak.
+      const week = Array.from({length:7}, (_,i) => {
+        const k = daysAgoKey(6 - i);
+        const done = (log && log[k]) ? log[k].length : 0;
+        return { key:k, done, pct: stack.length ? Math.min(1, done/stack.length) : 0,
+                 label: new Date(k).toLocaleDateString(undefined,{weekday:'narrow'}) };
+      });
+      let streak = 0;
+      for (let i = 0; i < 60; i++) {
+        const k = daysAgoKey(i);
+        const done = (log && log[k]) ? log[k].length : 0;
+        if (stack.length && done >= stack.length) streak++;
+        else if (i === 0) continue;   // today still in progress — don't break the streak
+        else break;
+      }
+      const pct = stack.length ? Math.round(doneCount/stack.length*100) : 0;
+      const h = health || blankHealth();
+      const warnCount = reviewAllInteractions(stack, h, (interactions||{}).rules).length;
+      const firstName = (profile && profile.name) ? profile.name.trim().split(/\s+/)[0] : 'there';
       // Classic flow has no onboarding, so Home must look populated for a fresh
       // user: fall back to a featured set when no goals have been picked yet.
       const FEATURED_SLUGS = ['sleep','memory-focus','stress-anxiety','muscle-gain','cardiovascular-health','joint-health'];
@@ -1371,7 +1397,7 @@
             <div style={{padding:'6px 22px 4px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
               <div>
                 <div style={{fontSize:12, color:'var(--ink-3)', fontWeight:500, letterSpacing:'0.06em', textTransform:'uppercase'}}>{new Date().toLocaleDateString(undefined,{weekday:'short', month:'short', day:'numeric'})}</div>
-                <div className="serif" style={{fontSize:32, lineHeight:1.05, marginTop:2, color:'var(--ink)'}}>{greeting()},<br/><em style={{fontStyle:'italic'}}>there</em>.</div>
+                <div className="serif" style={{fontSize:32, lineHeight:1.05, marginTop:2, color:'var(--ink)'}}>{greeting()},<br/><em style={{fontStyle:'italic'}}>{firstName}</em>.</div>
               </div>
               <button onClick={()=>onNav('me')} style={{width:40, height:40, borderRadius:'50%', background:'var(--brand)', color:'white', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:600, border:'none'}}>Y</button>
             </div>
@@ -1419,10 +1445,51 @@
               </div>
             </div>
 
+            {/* 5.3 — health profile summary, incl. any interaction warnings */}
+            <div style={{padding:'14px 18px 0'}}>
+              <button onClick={onOpenHealth} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'14px 16px', display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
+                <div style={{width:34, height:34, borderRadius:11, flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700, fontSize:13,
+                  background: warnCount ? '#fdecef' : 'var(--brand-soft)', color: warnCount ? '#8a1f33' : 'var(--brand)'}}>{warnCount || <Icon.Check size={16} c="var(--brand)"/>}</div>
+                <div style={{flex:1, minWidth:0}}>
+                  <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>Health profile</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>
+                    {[`${stack.length} supplement${stack.length===1?'':'s'}`,
+                      h.prescriptions.length ? `${h.prescriptions.length} medicine${h.prescriptions.length===1?'':'s'}` : null,
+                      h.substances.length ? `${h.substances.length} substance${h.substances.length===1?'':'s'}` : null,
+                     ].filter(Boolean).join(' · ')}
+                    {warnCount ? ` · ${warnCount} to check` : ''}
+                  </div>
+                </div>
+                <Icon.Chevron size={13} c="var(--ink-4)"/>
+              </button>
+            </div>
+
+            {/* 5.5 — adherence over the past week */}
+            {stack.length > 0 && (
+              <div style={{padding:'14px 18px 0'}}>
+                <div className="bal-card" style={{padding:'16px'}}>
+                  <div style={{display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom:12}}>
+                    <div className="serif" style={{fontSize:20, color:'var(--ink)'}}>Your week</div>
+                    <div style={{fontSize:12, color:'var(--ink-3)'}}>{streak > 0 ? `${streak}-day streak` : 'Start a streak today'}</div>
+                  </div>
+                  <div style={{display:'flex', gap:6, alignItems:'flex-end', height:64}}>
+                    {week.map((d,i) => (
+                      <div key={d.key} style={{flex:1, display:'flex', flexDirection:'column', alignItems:'center', gap:5}}>
+                        <div style={{width:'100%', height:44, borderRadius:8, background:'var(--surface-3)', display:'flex', alignItems:'flex-end', overflow:'hidden'}}>
+                          <div style={{width:'100%', height:`${Math.round(d.pct*100)}%`, background: i===6 ? GRAD : 'var(--brand-soft)', borderRadius:8, transition:'height 250ms'}}/>
+                        </div>
+                        <div style={{fontSize:10, color: i===6 ? 'var(--brand)' : 'var(--ink-4)', fontWeight: i===6 ? 700 : 500}}>{d.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div style={{padding:'14px 18px 0'}}>
               <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10}}>
                 <div className="serif" style={{fontSize:22, color:'var(--ink)'}}>Today's stack</div>
-                {stack.length>0 && <div style={{fontSize:12, color:'var(--accent)', fontWeight:500}}>{doneCount} of {stack.length} done</div>}
+                {stack.length>0 && <div style={{fontSize:12, color:'var(--accent)', fontWeight:500}}>{doneCount} of {stack.length} done · {pct}%</div>}
               </div>
               {stack.length===0 ? (
                 <button onClick={()=>onNav('browse')} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:18, color:'var(--ink-2)', fontSize:14}}>
@@ -3054,7 +3121,15 @@
       const [onboarded, setOnboarded] = useState(() => LS.get('bal_onboarded', false));
       const [goals, setGoals] = useState(() => LS.get('bal_goals', []));
       const [stack, setStack] = useState(() => LS.get('bal_stack', []));
-      const [taken, setTaken] = useState(() => LS.get('bal_taken', []));
+      // Feature 5 — per-day intake log so adherence and streaks are real.
+      // Migrates the old flat bal_taken list into today's entry.
+      const [log, setLog] = useState(() => {
+        const stored = LS.get('bal_log', null);
+        if (stored) return stored;
+        const legacy = LS.get('bal_taken', []);
+        return legacy.length ? { [dayKey()]: legacy } : {};
+      });
+      const taken = log[dayKey()] || [];
       // New users land on the welcome screen first; returning (onboarded) users
       // open straight into the app (Today/Home). Goal personalization also stays
       // reachable later via Profile → Edit goals.
@@ -3095,7 +3170,7 @@
 
       useEffect(()=>LS.set('bal_goals', goals), [goals]);
       useEffect(()=>LS.set('bal_stack', stack), [stack]);
-      useEffect(()=>LS.set('bal_taken', taken), [taken]);
+      useEffect(()=>LS.set('bal_log', log), [log]);
       useEffect(()=>LS.set('bal_onboarded', onboarded), [onboarded]);
       useEffect(()=>LS.set('bal_user', user), [user]);
       useEffect(()=>{ if (consents) LS.set('bal_consents', consents); }, [consents]);
@@ -3125,11 +3200,14 @@
       }, [stack, health, interactions, commitToStack]);
       const removeFromStack = useCallback((name) => setStack(prev => prev.filter(x => x.name!==name)), []);
       const inStack = useCallback((name) => stack.some(x => x.name===name), [stack]);
-      const toggleTaken = useCallback((name) => setTaken(prev => prev.includes(name) ? prev.filter(n=>n!==name) : [...prev, name]), []);
+      const toggleTaken = useCallback((name) => setLog(prev => {
+        const k = dayKey(); const cur = prev[k] || [];
+        return { ...prev, [k]: cur.includes(name) ? cur.filter(n => n !== name) : [...cur, name] };
+      }), []);
       const resetAll = () => {
-        ['bal_onboarded','bal_goals','bal_stack','bal_taken','bal_user','bal_consents','bal_profile','bal_disclaimer','bal_health']
+        ['bal_onboarded','bal_goals','bal_stack','bal_taken','bal_log','bal_user','bal_consents','bal_profile','bal_disclaimer','bal_health']
           .forEach(k => { try { localStorage.removeItem(k); } catch {} });
-        setOnboarded(false); setGoals([]); setStack([]); setTaken([]);
+        setOnboarded(false); setGoals([]); setStack([]); setLog({});
         setUser(null); setConsents(null); setProfile(null); setHealth(blankHealth());
         setFlow('onboard'); setScreen('home');
       };
@@ -3181,7 +3259,8 @@
       if (flow === 'profile') return <ProfileBaseline initial={profile} onDone={(p)=>{ setProfile(p); setFlow('intake'); }}/>;
       if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
-      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo}/>;
+      if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
+        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
       if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}/>;
       if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}/>;
       if (screen === 'stack') {
@@ -3205,7 +3284,8 @@
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
-      return <Home goals={goals} stack={stack} taken={taken} onToggleTaken={toggleTaken} onOpenCategory={openCategory} onNav={navTo}/>;
+      return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
+        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
       };
 
       return (

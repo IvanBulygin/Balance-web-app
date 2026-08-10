@@ -1750,6 +1750,143 @@
       );
     };
 
+    // ============ Feature 9: Admin / Moderation portal (9.1-9.5) ============
+    // Reached at #admin. The medical datasets are READ-ONLY here by design:
+    // clinical content must not be editable from a client UI. Moderators can
+    // record review status and triage user reports.
+    const AdminScreen = ({ interactions, mushrooms, feedback, review, onReview, onExit }) => {
+      const { Icon } = window;
+      const [tab, setTab] = useState('overview');
+      const rules = (interactions || {}).rules || [];
+      const [subs, setSubs] = useState([]);
+      useEffect(() => { fetch('/api/interactions').catch(()=>{}); }, []);
+      useEffect(() => { fetch('/api/mushrooms').then(r=>r.ok?r.json():null).then(()=>{}).catch(()=>{}); }, []);
+      useEffect(() => {
+        fetch('/api/substances').then(r => r.ok ? r.json() : null).then(j => { if (j && j.substances) setSubs(j.substances); }).catch(()=>{});
+      }, []);
+
+      const reports = Object.entries(feedback || {}).map(([id, f]) => ({ id, ...f }))
+        .sort((a,b) => (b.at||0) - (a.at||0));
+      const negative = reports.filter(r => r.rating === 'down');
+      const datasets = [
+        { key:'interactions', label:'Interaction rules', n: rules.length, note:'Dangerous combination warnings' },
+        { key:'substances',   label:'Substance entries', n: subs.length, note:'Effects, risks, harm reduction, support lists' },
+        { key:'mushrooms',    label:'Mushroom evidence', n: (mushrooms||[]).length, note:'Benefits ranked by evidence' },
+      ];
+      const reviewed = datasets.filter(d => (review||{})[d.key]).length;
+
+      const Seg = ({ k, label, n }) => (
+        <button onClick={()=>setTab(k)} style={{flex:1, padding:'9px 0', borderRadius:9, border:'none', cursor:'pointer', fontFamily:'inherit',
+          background: tab===k?'white':'transparent', color: tab===k?'var(--brand)':'var(--ink-3)', fontWeight:600, fontSize:13,
+          boxShadow: tab===k?'var(--sh-1)':'none'}}>{label}{n!=null && <span style={{opacity:.55}}> {n}</span>}</button>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:40}}>
+            <div style={{height:54}}/>
+            <div style={{padding:'8px 22px 0'}}>
+              <button onClick={onExit} style={{width:36, height:36, borderRadius:'50%', background:'var(--surface)', boxShadow:'var(--sh-1)', border:'none', display:'flex', alignItems:'center', justifyContent:'center', marginBottom:16, cursor:'pointer'}}>
+                <Icon.Back size={16} c="var(--ink-2)"/>
+              </button>
+              <div className="serif" style={{fontSize:30, lineHeight:1.12, color:'var(--ink)'}}>Admin &amp; <em style={{background:GRAD, WebkitBackgroundClip:'text', backgroundClip:'text', color:'transparent'}}>moderation</em></div>
+              <div style={{fontSize:13.5, color:'var(--ink-3)', marginTop:8, lineHeight:1.5}}>
+                Clinical datasets are read-only here — they ship with the app and must be changed in code after clinical sign-off.
+              </div>
+            </div>
+            <div style={{padding:'16px 18px 0'}}>
+              <div style={{display:'flex', background:'var(--surface-3)', borderRadius:12, padding:3}}>
+                <Seg k="overview" label="Overview"/>
+                <Seg k="data" label="Datasets" n={datasets.reduce((a,d)=>a+d.n,0)}/>
+                <Seg k="reports" label="Reports" n={negative.length}/>
+              </div>
+            </div>
+
+            {tab === 'overview' && (
+              <div style={{padding:'18px 18px 0'}}>
+                <div style={{display:'flex', gap:10, marginBottom:14}}>
+                  {[['Datasets reviewed', `${reviewed}/${datasets.length}`], ['Open reports', String(negative.length)]].map(([l,v]) => (
+                    <div key={l} className="bal-card" style={{flex:1, padding:'14px 15px'}}>
+                      <div className="serif" style={{fontSize:26, color:'var(--ink)'}}>{v}</div>
+                      <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:2}}>{l}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bal-card" style={{padding:'14px 16px'}}>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', marginBottom:6}}>Clinical sign-off status</div>
+                  <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.5}}>
+                    {reviewed === datasets.length
+                      ? 'All datasets are marked reviewed. Keep the signed record with the reviewer’s name and date.'
+                      : `${datasets.length - reviewed} dataset${datasets.length-reviewed===1?'':'s'} still awaiting pharmacist review. The app shows prototype disclaimers until that is done.`}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {tab === 'data' && (
+              <div style={{padding:'18px 18px 0'}}>
+                {datasets.map(d => {
+                  const done = !!(review||{})[d.key];
+                  return (
+                    <div key={d.key} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                      <div style={{display:'flex', alignItems:'center', gap:10}}>
+                        <div style={{flex:1, minWidth:0}}>
+                          <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{d.label}</div>
+                          <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{d.n} entries · {d.note}</div>
+                        </div>
+                        <span className="bal-pill light" style={{padding:'3px 9px', fontSize:10}}>Read-only</span>
+                      </div>
+                      <button onClick={()=>onReview(d.key, !done)} style={{marginTop:10, padding:'8px 13px', borderRadius:999, border: done?'none':'1px solid var(--rule)',
+                        background: done?'var(--green-soft)':'var(--surface)', color: done?'var(--green-deep)':'var(--ink-2)', fontSize:12.5, fontWeight:600, cursor:'pointer', fontFamily:'inherit'}}>
+                        {done ? '✓ Marked reviewed' : 'Mark as clinically reviewed'}
+                      </button>
+                    </div>
+                  );
+                })}
+                {rules.length > 0 && (
+                  <div style={{marginTop:6}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, margin:'10px 0'}}>Interaction rules (sample)</div>
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {rules.slice(0, 12).map((r,i) => (
+                        <div key={r.id} style={{padding:'11px 15px', borderBottom:i<11?'0.5px solid var(--rule)':'none'}}>
+                          <div style={{display:'flex', alignItems:'center', gap:8, flexWrap:'wrap'}}>
+                            <span style={{fontSize:9.5, fontWeight:700, textTransform:'uppercase', letterSpacing:'.03em', padding:'2px 7px', borderRadius:999,
+                              background:(INTER_STYLE[r.severity]||{}).bg, color:(INTER_STYLE[r.severity]||{}).fg}}>{r.severity}</span>
+                            <span style={{fontSize:12.5, fontWeight:600, color:'var(--ink)'}}>{r.label}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{fontSize:11.5, color:'var(--ink-4)', marginTop:8}}>Showing 12 of {rules.length}. Full set lives in agent_site/data/interactions.json.</div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {tab === 'reports' && (
+              <div style={{padding:'18px 18px 0'}}>
+                {reports.length === 0 ? (
+                  <div className="bal-card"><EmptyState text="No user reports yet. Negative answer feedback shows up here for triage."/></div>
+                ) : reports.map(r => (
+                  <div key={r.id} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                    <div style={{display:'flex', alignItems:'center', gap:9, marginBottom:6}}>
+                      <span style={{fontSize:10, fontWeight:700, textTransform:'uppercase', padding:'2px 8px', borderRadius:999,
+                        background: r.rating==='down' ? '#fdecef' : 'var(--green-soft)', color: r.rating==='down' ? '#8a1f33' : 'var(--green-deep)'}}>
+                        {r.rating === 'down' ? 'Needs review' : 'Positive'}
+                      </span>
+                      {r.at && <span style={{fontSize:11.5, color:'var(--ink-3)'}}>{prettyDate(new Date(r.at).toISOString())}</span>}
+                    </div>
+                    {r.question && <div style={{fontSize:13, color:'var(--ink)', fontWeight:600}}>“{r.question}”</div>}
+                    {r.note && <div style={{fontSize:12.5, color:'var(--ink-2)', marginTop:4, lineHeight:1.45}}>{r.note}</div>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
     const Onboarding = ({ onStart, onLogin }) => {
       const { Icon } = window;
       return (
@@ -3661,6 +3798,15 @@
       const [nowTick, setNowTick] = useState(() => new Date());
       const [feedback, setFeedback] = useState(() => LS.get('bal_feedback', {}));   // Feature 4
       const [orders, setOrders] = useState(() => LS.get('bal_orders', []));         // Feature 7
+      // Feature 9 — admin portal, reached at #admin.
+      const [adminOpen, setAdminOpen] = useState(() => { try { return location.hash === '#admin'; } catch { return false; } });
+      const [review, setReview] = useState(() => LS.get('bal_review', {}));
+      useEffect(() => {
+        const onHash = () => { try { setAdminOpen(location.hash === '#admin'); } catch {} };
+        window.addEventListener('hashchange', onHash);
+        return () => window.removeEventListener('hashchange', onHash);
+      }, []);
+      useEffect(()=>LS.keep('bal_review', review, !Object.keys(review).length), [review]);
       const [subs, setSubs] = useState(() => LS.get('bal_subs', {}));
       const saveFeedback = useCallback((id, data) => setFeedback(f => ({ ...f, [id]: { ...data, at: Date.now() } })), []);
       const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
@@ -3800,6 +3946,9 @@
       };
 
       const renderScreen = () => {
+      if (adminOpen) return <AdminScreen interactions={interactions} mushrooms={mushrooms} feedback={feedback} review={review}
+        onReview={(k,v)=>setReview(r=>({ ...r, [k]: v ? { at: Date.now() } : undefined }))}
+        onExit={()=>{ try { location.hash = ''; } catch {} setAdminOpen(false); }}/>;
       if (flow === 'onboard') return <Onboarding onStart={()=>{ setAuthMode('signup'); setFlow('auth'); }} onLogin={()=>{ setAuthMode('login'); setFlow('auth'); }}/>;
       if (flow === 'auth') return (
         <AuthScreen mode={authMode} onMode={setAuthMode} onBack={()=>setFlow('onboard')}

@@ -167,6 +167,12 @@ def interactions():
     return state.get("interactions", {"rules": []})
 
 
+@app.get("/api/substances")
+def substances():
+    """Curated substance effects / harm-reduction DB — read-only, for the admin view."""
+    return state.get("drug_effects", {"substances": []})
+
+
 class CategorySummary(BaseModel):
     slug: str
     title: str

@@ -868,6 +868,315 @@
       );
     };
 
+    // ============ Feature 2: Health Profile Setup ============
+    // 2.1 goals · 2.2 own supplements · 2.3 prescriptions · 2.4 substances ·
+    // 2.5 location · 2.6 CRUD across all of them.
+    const blankHealth = () => ({ prescriptions: [], substances: [], location: null });
+    const uid = () => 'h' + Math.random().toString(36).slice(2, 9);
+    const RX_SCHEDULES = ['Morning', 'Midday', 'Evening', 'Night', 'As needed'];
+    const SUB_FREQ = ['Daily', 'Weekly', 'Monthly', 'Occasionally', 'Former use'];
+    const COUNTRIES = [
+      { code:'US', name:'United States' }, { code:'GB', name:'United Kingdom' },
+      { code:'DE', name:'Germany' }, { code:'FR', name:'France' }, { code:'ES', name:'Spain' },
+      { code:'IT', name:'Italy' }, { code:'NL', name:'Netherlands' }, { code:'PL', name:'Poland' },
+      { code:'CA', name:'Canada' }, { code:'AU', name:'Australia' }, { code:'AE', name:'UAE' },
+      { code:'RS', name:'Serbia' }, { code:'GE', name:'Georgia' }, { code:'KZ', name:'Kazakhstan' },
+      { code:'TR', name:'Türkiye' }, { code:'OTHER', name:'Somewhere else' },
+    ];
+
+    const EmptyState = ({ text, cta, onCta }) => (
+      <div style={{textAlign:'center', padding:'34px 20px'}}>
+        <div style={{fontSize:14, color:'var(--ink-3)', lineHeight:1.5, marginBottom:cta?14:0}}>{text}</div>
+        {cta && <button onClick={onCta} className="bal-pill light" style={{border:'none', padding:'10px 16px', fontSize:13.5, fontWeight:600, cursor:'pointer'}}>{cta}</button>}
+      </div>
+    );
+    const AddRowButton = ({ label, onClick }) => (
+      <button onClick={onClick} style={{width:'100%', display:'flex', alignItems:'center', gap:10, padding:'14px 16px', background:'var(--brand-soft)', border:'none', borderRadius:14, cursor:'pointer', color:'var(--brand-deep)', fontWeight:600, fontSize:14, fontFamily:'inherit', marginTop:12}}>
+        <window.Icon.Plus size={16} c="var(--brand)"/> {label}
+      </button>
+    );
+
+    // --- Health hub: one place that owns the whole health profile (2.6) ---
+    const HealthHub = ({ goals, stack, health, onNav, onBack, onOpen }) => {
+      const { Icon, Tabbar } = window;
+      const h = health || blankHealth();
+      const rows = [
+        { k:'goals',  title:'Health goals',           sub: goals.length ? goals.map(s => (TOPIC_BY_SLUG[s]?.name)||s).join(' · ') : 'None yet', n: goals.length },
+        { k:'supps',  title:'Supplements you take',   sub: stack.length ? stack.slice(0,3).map(s=>s.name).join(' · ') + (stack.length>3?' …':'') : 'None yet', n: stack.length },
+        { k:'rx',     title:'Prescription medicines', sub: h.prescriptions.length ? h.prescriptions.slice(0,3).map(r=>r.name).join(' · ') + (h.prescriptions.length>3?' …':'') : 'None added', n: h.prescriptions.length },
+        { k:'subs',   title:'Recreational substances',sub: h.substances.length ? h.substances.slice(0,3).map(s=>s.name).join(' · ') + (h.substances.length>3?' …':'') : 'None added', n: h.substances.length },
+        { k:'loc',    title:'Location',               sub: h.location ? (COUNTRIES.find(c=>c.code===h.location.country)?.name || h.location.country) : 'Not set', n: h.location ? 1 : 0 },
+      ];
+      const filled = rows.filter(r => r.n > 0).length;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Your health" em="profile" onBack={onBack}
+              sub="The more of this you fill in, the better Balance can tailor what it suggests — and warn you about combinations that matter."/>
+            <div style={{padding:'20px 22px 0'}}>
+              <div style={{height:4, borderRadius:4, background:'#ece5fc', overflow:'hidden'}}>
+                <div style={{width: Math.round(filled/rows.length*100) + '%', height:'100%', background:GRAD, transition:'width 250ms'}}/>
+              </div>
+              <div style={{fontSize:12, color:'var(--ink-3)', marginTop:8}}>{filled} of {rows.length} sections filled in</div>
+            </div>
+            <div style={{padding:'18px 18px 0'}}>
+              <div className="bal-card" style={{padding:'2px 0'}}>
+                {rows.map((r,i) => (
+                  <button key={r.k} onClick={()=>onOpen(r.k)} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'15px 16px', borderBottom:i<rows.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                    <div style={{width:32, height:32, borderRadius:10, flexShrink:0, background: r.n ? 'var(--brand-soft)' : 'var(--surface-3)', display:'flex', alignItems:'center', justifyContent:'center', color: r.n ? 'var(--brand)' : 'var(--ink-4)', fontWeight:700, fontSize:13}}>{r.n || '–'}</div>
+                    <div style={{flex:1, minWidth:0}}>
+                      <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{r.title}</div>
+                      <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{r.sub}</div>
+                    </div>
+                    <Icon.Chevron size={13} c="var(--ink-4)"/>
+                  </button>
+                ))}
+              </div>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Health data is stored on your device for this prototype and processed only with the consent you gave. You can edit or delete any of it at any time.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- 2.3 Prescription entry (CRUD) ---
+    const PrescriptionsScreen = ({ health, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const list = (health || blankHealth()).prescriptions;
+      const [editing, setEditing] = useState(null);   // record or {} for new
+      const [form, setForm] = useState({ name:'', dose:'', schedule:'' });
+      const openNew = () => { setForm({ name:'', dose:'', schedule:'' }); setEditing({}); };
+      const openEdit = (r) => { setForm({ name:r.name, dose:r.dose||'', schedule:r.schedule||'' }); setEditing(r); };
+      const save = () => {
+        const name = form.name.trim(); if (!name) return;
+        const rec = { id: editing.id || uid(), name, dose: form.dose.trim(), schedule: form.schedule };
+        onSave(editing.id ? list.map(r => r.id===rec.id ? rec : r) : [...list, rec]);
+        setEditing(null);
+      };
+      const remove = (id) => onSave(list.filter(r => r.id !== id));
+
+      if (editing) return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <AuthHeader title={editing.id ? 'Edit' : 'Add a'} em="medicine" onBack={()=>setEditing(null)}
+              sub="Used to check for interactions with supplements. We never suggest changing a prescription."/>
+            <div style={{padding:'24px 22px 0'}}>
+              <AuthField label="Medicine name">
+                <input value={form.name} onChange={e=>setForm(f=>({...f, name:e.target.value}))} placeholder="e.g. Lamotrigine" style={authInputStyle(false)}/>
+              </AuthField>
+              <AuthField label="Dose (optional)">
+                <input value={form.dose} onChange={e=>setForm(f=>({...f, dose:e.target.value}))} placeholder="e.g. 100 mg" style={authInputStyle(false)}/>
+              </AuthField>
+              <AuthField label="When you take it (optional)">
+                <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
+                  {RX_SCHEDULES.map(s => { const on = form.schedule===s; return (
+                    <button key={s} onClick={()=>setForm(f=>({...f, schedule: on?'':s}))} style={{padding:'9px 13px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:13, fontWeight:600, border: on?'none':'1px solid var(--rule)', background: on?'var(--brand)':'var(--surface)', color: on?'white':'var(--ink-2)'}}>{s}</button>
+                  ); })}
+                </div>
+              </AuthField>
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 22px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <AuthPrimary disabled={!form.name.trim()} onClick={save}>{editing.id ? 'Save changes' : 'Add medicine'}</AuthPrimary>
+            {editing.id && <button onClick={()=>{ remove(editing.id); setEditing(null); }} style={{width:'100%', padding:'12px 0 0', fontSize:13.5, color:'var(--accent)', fontWeight:600, background:'none', border:'none', cursor:'pointer'}}>Remove this medicine</button>}
+          </div>
+        </div>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Prescription" em="medicines" onBack={onBack}
+              sub="Adding these lets Balance flag supplement–medicine combinations that need care."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {list.length === 0 ? (
+                <div className="bal-card"><EmptyState text="No medicines added yet. Nothing here is shared — it stays on your device." cta="Add your first medicine" onCta={openNew}/></div>
+              ) : (
+                <div className="bal-card" style={{padding:'2px 0'}}>
+                  {list.map((r,i) => (
+                    <button key={r.id} onClick={()=>openEdit(r)} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:i<list.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                      <div style={{flex:1, minWidth:0}}>
+                        <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{r.name}</div>
+                        <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{[r.dose, r.schedule].filter(Boolean).join(' · ') || 'No dose set'}</div>
+                      </div>
+                      <Icon.Chevron size={13} c="var(--ink-4)"/>
+                    </button>
+                  ))}
+                </div>
+              )}
+              {list.length > 0 && <AddRowButton label="Add another medicine" onClick={openNew}/>}
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Balance gives general information only and never advises changing a prescribed medicine. Always talk to your doctor or pharmacist.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- 2.4 Recreational substances (CRUD, picked from the curated list) ---
+    const MySubstancesScreen = ({ health, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const list = (health || blankHealth()).substances;
+      const [picking, setPicking] = useState(false);
+      const byKey = Object.fromEntries(list.map(s => [s.key, s]));
+      const setFreq = (key, name, freq) => {
+        onSave(byKey[key] ? list.map(s => s.key===key ? { ...s, freq } : s) : [...list, { key, name, freq }]);
+      };
+      const remove = (key) => onSave(list.filter(s => s.key !== key));
+
+      if (picking) return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Add a" em="substance" onBack={()=>setPicking(false)}
+              sub="Only so Balance can warn you about combinations and suggest nutritional support. No judgement, and it never leaves your device."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {SUBSTANCE_GROUPS.map(g => {
+                const items = SUBSTANCE_SUPPORT.filter(s => s.group === g.key);
+                if (!items.length) return null;
+                return (
+                  <div key={g.key} style={{marginBottom:18}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>{g.label}</div>
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {items.map((s,i) => { const on = !!byKey[s.key]; return (
+                        <button key={s.key} onClick={()=>{ on ? remove(s.key) : setFreq(s.key, s.name, 'Occasionally'); }} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'12px 16px', borderBottom:i<items.length-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                          <div style={{width:24, height:24, borderRadius:8, flexShrink:0, background: on?'var(--brand)':'transparent', border: on?'none':'1.6px solid var(--rule)', display:'flex', alignItems:'center', justifyContent:'center'}}>{on && <Icon.Check size={14} c="white"/>}</div>
+                          <div style={{flex:1, fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                        </button>
+                      ); })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 22px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <AuthPrimary onClick={()=>setPicking(false)}>Done</AuthPrimary>
+          </div>
+        </div>
+      );
+
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Substances you" em="use" onBack={onBack}
+              sub="Recording these lets Balance flag dangerous combinations and suggest nutritional support. Entirely optional."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {list.length === 0 ? (
+                <div className="bal-card"><EmptyState text="Nothing recorded. This is optional and private — it stays on your device." cta="Add a substance" onCta={()=>setPicking(true)}/></div>
+              ) : (
+                <div>
+                  {list.map(s => (
+                    <div key={s.key} className="bal-card" style={{padding:'14px 16px', marginBottom:10}}>
+                      <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:10}}>
+                        <div style={{flex:1, fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                        <button onClick={()=>remove(s.key)} style={{border:'none', background:'none', color:'var(--accent)', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Remove</button>
+                      </div>
+                      <div style={{display:'flex', flexWrap:'wrap', gap:7}}>
+                        {SUB_FREQ.map(f => { const on = s.freq===f; return (
+                          <button key={f} onClick={()=>setFreq(s.key, s.name, f)} style={{padding:'7px 12px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:12.5, fontWeight:600, border: on?'none':'1px solid var(--rule)', background: on?'var(--brand)':'var(--surface)', color: on?'white':'var(--ink-3)'}}>{f}</button>
+                        ); })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {list.length > 0 && <AddRowButton label="Add or remove substances" onClick={()=>setPicking(true)}/>}
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // --- 2.5 Location settings ---
+    const LocationScreen = ({ health, onSave, onBack, onNav }) => {
+      const { Tabbar } = window;
+      const cur = (health || blankHealth()).location || {};
+      const [country, setCountry] = useState(cur.country || '');
+      const [city, setCity] = useState(cur.city || '');
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:120}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Where you" em="are" onBack={onBack}
+              sub="Used to show retailers that actually ship to you, and local units and currency."/>
+            <div style={{padding:'22px 22px 0'}}>
+              <AuthField label="Country">
+                <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
+                  {COUNTRIES.map(c => { const on = country===c.code; return (
+                    <button key={c.code} onClick={()=>setCountry(on?'':c.code)} style={{padding:'9px 13px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:13, fontWeight:600, border: on?'none':'1px solid var(--rule)', background: on?'var(--brand)':'var(--surface)', color: on?'white':'var(--ink-2)'}}>{c.name}</button>
+                  ); })}
+                </div>
+              </AuthField>
+              <AuthField label="City (optional)">
+                <input value={city} onChange={e=>setCity(e.target.value)} placeholder="e.g. Belgrade" style={authInputStyle(false)}/>
+              </AuthField>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5}}>
+                Shipping availability differs by country — some supplements and retailers may not be available where you are.
+              </div>
+            </div>
+          </div>
+          <div style={{position:'absolute', left:0, right:0, bottom:0, padding:'12px 22px 26px', background:'linear-gradient(to top, var(--bg) 70%, transparent)'}}>
+            <AuthPrimary disabled={!country} onClick={()=>onSave({ country, city: city.trim() })}>Save location</AuthPrimary>
+          </div>
+        </div>
+      );
+    };
+
+    // --- 2.2 Add a supplement you already take (free-text, into the stack) ---
+    const AddSupplementScreen = ({ inStack, onAdd, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const [q, setQ] = useState('');
+      const query = q.trim().toLowerCase();
+      const matches = query ? SUPP_DETECT.filter(s => s.n.toLowerCase().includes(query)).slice(0, 12) : [];
+      const exact = SUPP_DETECT.some(s => s.n.toLowerCase() === query);
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Add a" em="supplement" onBack={onBack}
+              sub="Add something you already take, so Balance counts it in your stack and checks it for interactions."/>
+            <div style={{padding:'20px 18px 0'}}>
+              <div style={{background:'var(--surface)', borderRadius:14, padding:'10px 14px', display:'flex', alignItems:'center', gap:10, boxShadow:'var(--sh-1)'}}>
+                <Icon.Search size={16} c="var(--ink-3)"/>
+                <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search or type a supplement name" style={{flex:1, border:'none', outline:'none', background:'transparent', fontSize:14, fontFamily:'inherit', color:'var(--ink)'}}/>
+              </div>
+              {matches.length > 0 && (
+                <div className="bal-card" style={{padding:'2px 0', marginTop:12}}>
+                  {matches.map((s,i) => { const has = inStack(s.n); return (
+                    <div key={s.id} style={{display:'flex', alignItems:'center', gap:10, padding:'12px 16px', borderBottom:i<matches.length-1?'0.5px solid var(--rule)':'none'}}>
+                      <div style={{flex:1, fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.n}</div>
+                      <button onClick={()=>onAdd({ name:s.n, tier:'', dose:'', iherb_url: suppIherbUrl(s) })} disabled={has} style={{display:'inline-flex', alignItems:'center', gap:5, padding:'7px 12px', borderRadius:999, border:'none', fontSize:12.5, fontWeight:600, cursor:has?'default':'pointer', background:has?'var(--brand-soft)':'var(--brand)', color:has?'var(--brand)':'white'}}>
+                        {has ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add <Icon.Plus size={13} c="white"/></>}
+                      </button>
+                    </div>
+                  ); })}
+                </div>
+              )}
+              {query && !exact && (
+                <button onClick={()=>{ onAdd({ name: q.trim(), tier:'', dose:'', iherb_url: 'https://www.iherb.com/search?kw=' + encodeURIComponent(q.trim()) }); setQ(''); }}
+                  style={{width:'100%', display:'flex', alignItems:'center', gap:10, padding:'14px 16px', background:'var(--brand-soft)', border:'none', borderRadius:14, cursor:'pointer', color:'var(--brand-deep)', fontWeight:600, fontSize:14, fontFamily:'inherit', marginTop:12}}>
+                  <Icon.Plus size={16} c="var(--brand)"/> Add “{q.trim()}” as a custom entry
+                </button>
+              )}
+              {!query && <div className="bal-card" style={{marginTop:12}}><EmptyState text="Start typing to find a supplement, or add your own by name."/></div>}
+            </div>
+          </div>
+          <Tabbar active="stack" onNav={onNav}/>
+        </div>
+      );
+    };
+
     const Onboarding = ({ onStart, onLogin }) => {
       const { Icon } = window;
       return (
@@ -2516,12 +2825,14 @@
     };
 
     // ============ Profile (Me) ============
-    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, onEditConsents, onEditProfile, onLogOut }) => {
+    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, health, onEditConsents, onEditProfile, onLogOut, onOpenHealth }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const displayName = (profile && profile.name) ? profile.name : 'You';
       const initial = displayName.trim().charAt(0).toUpperCase() || 'Y';
       const optIns = consents ? CONSENTS.filter(c => consents[c.key]).length : 0;
+      const h = health || blankHealth();
+      const healthFilled = [goals.length, stack.length, h.prescriptions.length, h.substances.length, h.location ? 1 : 0].filter(Boolean).length;
       return (
         <div className="screen-root">
           <div className="scroll" style={{height:'100%', paddingBottom:120}}>
@@ -2547,6 +2858,11 @@
             <div style={{padding:'24px 18px 0'}}>
               <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>Account &amp; privacy</div>
               <div className="bal-card" style={{padding:'4px 0'}}>
+                <button onClick={onOpenHealth} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
+                  <span style={{flex:1, fontSize:14, fontWeight:500}}>Health profile</span>
+                  <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{healthFilled}/5</span>
+                  <Icon.Chevron size={13} c="var(--ink-4)"/>
+                </button>
                 <button onClick={onEditProfile} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
                   <span style={{flex:1, fontSize:14, fontWeight:500}}>Personal details</span>
                   <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{profile && profile.name ? 'Edit' : 'Add'}</span>
@@ -2592,6 +2908,7 @@
       const [consents, setConsents] = useState(() => LS.get('bal_consents', null));
       const [profile, setProfile] = useState(() => LS.get('bal_profile', null));
       const [authMode, setAuthMode] = useState('signup');   // signup | login | reset
+      const [health, setHealth] = useState(() => LS.get('bal_health', blankHealth()));   // Feature 2
       const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
@@ -2628,6 +2945,8 @@
       useEffect(()=>LS.set('bal_user', user), [user]);
       useEffect(()=>{ if (consents) LS.set('bal_consents', consents); }, [consents]);
       useEffect(()=>{ if (profile) LS.set('bal_profile', profile); }, [profile]);
+      useEffect(()=>LS.set('bal_health', health), [health]);
+      const setHealthPart = useCallback((k, v) => setHealth(h => ({ ...(h || blankHealth()), [k]: v })), []);
 
       const navTo = useCallback((k) => {
         const map = { home:'home', ask:'ask', stack:'stack', browse:'learn', me:'profile' };
@@ -2645,10 +2964,10 @@
       const inStack = useCallback((name) => stack.some(x => x.name===name), [stack]);
       const toggleTaken = useCallback((name) => setTaken(prev => prev.includes(name) ? prev.filter(n=>n!==name) : [...prev, name]), []);
       const resetAll = () => {
-        ['bal_onboarded','bal_goals','bal_stack','bal_taken','bal_user','bal_consents','bal_profile','bal_disclaimer']
+        ['bal_onboarded','bal_goals','bal_stack','bal_taken','bal_user','bal_consents','bal_profile','bal_disclaimer','bal_health']
           .forEach(k => { try { localStorage.removeItem(k); } catch {} });
         setOnboarded(false); setGoals([]); setStack([]); setTaken([]);
-        setUser(null); setConsents(null); setProfile(null);
+        setUser(null); setConsents(null); setProfile(null); setHealth(blankHealth());
         setFlow('onboard'); setScreen('home');
       };
       const logOut = () => {
@@ -2705,11 +3024,19 @@
         if (checkoutOpen) return <Checkout stack={stack} onClose={() => setCheckoutOpen(false)}/>;
         return <Stack stack={stack} onRemove={removeFromStack} onCheckout={() => setCheckoutOpen(true)} checkoutEnabled={checkoutEnabled} onNav={navTo}/>;
       }
+      // Feature 2 — health profile screens.
+      if (screen === 'health') return <HealthHub goals={goals} stack={stack} health={health} onNav={navTo} onBack={()=>setScreen('profile')}
+        onOpen={(k)=>{ if (k==='goals') setFlow('intake'); else if (k==='supps') setScreen('addSupp'); else setScreen({rx:'healthRx', subs:'healthSubs', loc:'healthLoc'}[k]); }}/>;
+      if (screen === 'healthRx') return <PrescriptionsScreen health={health} onSave={(v)=>setHealthPart('prescriptions', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'healthSubs') return <MySubstancesScreen health={health} onSave={(v)=>setHealthPart('substances', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'healthLoc') return <LocationScreen health={health} onSave={(v)=>{ setHealthPart('location', v); setScreen('health'); }} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'addSupp') return <AddSupplementScreen inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'editConsents') return <ConsentScreen embedded initial={consents} onBack={()=>setScreen('profile')} onDone={(c)=>{ setConsents({ ...c, updatedAt: Date.now() }); setScreen('profile'); }}/>;
       if (screen === 'editProfile') return <ProfileBaseline embedded initial={profile} onBack={()=>setScreen('profile')} onDone={(p)=>{ setProfile(p); setScreen('profile'); }}/>;
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}
-        user={user} profile={profile} consents={consents} onLogOut={logOut}
-        onEditConsents={()=>setScreen('editConsents')} onEditProfile={()=>setScreen('editProfile')}/>;
+        user={user} profile={profile} consents={consents} health={health} onLogOut={logOut}
+        onEditConsents={()=>setScreen('editConsents')} onEditProfile={()=>setScreen('editProfile')}
+        onOpenHealth={()=>setScreen('health')}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;

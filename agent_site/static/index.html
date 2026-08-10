@@ -1270,6 +1270,168 @@
       );
     };
 
+    // ============ Feature 6: Notifications & Reminders (6.1-6.7) ============
+    const blankReminders = () => ({ enabled:false, quietFrom:'22:00', quietTo:'07:00', items:{} });
+    const DEFAULT_TIMES = ['08:00','13:00','19:00','22:00'];
+    const hhmm = (d) => `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+    const inQuietHours = (now, from, to) => {
+      if (!from || !to) return false;
+      const t = hhmm(now);
+      return from <= to ? (t >= from && t < to) : (t >= from || t < to);   // handles overnight
+    };
+    // Items due now: scheduled time has passed today, not yet taken, not snoozed.
+    const dueReminders = (stack, reminders, taken, snoozedUntil, now) => {
+      if (!reminders || !reminders.enabled) return [];
+      if (inQuietHours(now, reminders.quietFrom, reminders.quietTo)) return [];
+      const t = hhmm(now);
+      return stack.filter(s => {
+        const cfg = reminders.items[s.name];
+        if (!cfg || !cfg.enabled || !cfg.time) return false;
+        if (taken.includes(s.name)) return false;
+        if (snoozedUntil[s.name] && t < snoozedUntil[s.name]) return false;
+        return cfg.time <= t;
+      });
+    };
+
+    const RemindersScreen = ({ stack, reminders, onSave, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      const r = reminders || blankReminders();
+      const [perm, setPerm] = useState(() => (typeof Notification !== 'undefined' ? Notification.permission : 'unsupported'));
+      const setItem = (name, patch) => onSave({ ...r, items: { ...r.items, [name]: { time:'08:00', enabled:true, ...(r.items[name]||{}), ...patch } } });
+      const enableAll = () => {
+        const items = { ...r.items };
+        stack.forEach(s => { items[s.name] = { time:'08:00', enabled:true, ...(items[s.name]||{}), enabled:true }; });
+        onSave({ ...r, enabled:true, items });
+      };
+      const askPermission = async () => {
+        if (typeof Notification === 'undefined') return;
+        try { const p = await Notification.requestPermission(); setPerm(p); } catch {}
+      };
+      const onCount = stack.filter(s => (r.items[s.name]||{}).enabled).length;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title="Intake" em="reminders" onBack={onBack}
+              sub="A nudge when it's time to take something. Reminders run while the app is open; enable notifications to get them in the background."/>
+            <div style={{padding:'20px 18px 0'}}>
+              {/* 6.1 master switch */}
+              <div className="bal-card" style={{padding:'14px 16px', display:'flex', alignItems:'center', gap:12}}>
+                <div style={{flex:1}}>
+                  <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>Reminders</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>{r.enabled ? `On · ${onCount} of ${stack.length} supplement${stack.length===1?'':'s'}` : 'Off'}</div>
+                </div>
+                <button onClick={()=>onSave({ ...r, enabled: !r.enabled })} aria-pressed={r.enabled} style={{width:52, height:30, borderRadius:999, border:'none', cursor:'pointer', background: r.enabled ? 'var(--brand)' : 'var(--surface-3)', position:'relative', transition:'background 160ms'}}>
+                  <span style={{position:'absolute', top:3, left: r.enabled ? 25 : 3, width:24, height:24, borderRadius:'50%', background:'white', boxShadow:'var(--sh-1)', transition:'left 160ms'}}/>
+                </button>
+              </div>
+
+              {/* 6.2 browser notification permission */}
+              {r.enabled && perm !== 'unsupported' && (
+                <div className="bal-card" style={{padding:'14px 16px', marginTop:12, display:'flex', alignItems:'center', gap:12}}>
+                  <div style={{flex:1}}>
+                    <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>Browser notifications</div>
+                    <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2}}>
+                      {perm==='granted' ? 'Allowed — you\'ll get a system notification.' : perm==='denied' ? 'Blocked in your browser settings.' : 'Not enabled yet.'}
+                    </div>
+                  </div>
+                  {perm==='default' && <button onClick={askPermission} className="bal-pill light" style={{border:'none', padding:'8px 13px', fontSize:12.5, fontWeight:600, cursor:'pointer'}}>Allow</button>}
+                </div>
+              )}
+
+              {/* 6.6 quiet hours */}
+              {r.enabled && (
+                <div className="bal-card" style={{padding:'14px 16px', marginTop:12}}>
+                  <div style={{fontSize:14, fontWeight:600, color:'var(--ink)', marginBottom:3}}>Quiet hours</div>
+                  <div style={{fontSize:12, color:'var(--ink-3)', marginBottom:10}}>No reminders during this window.</div>
+                  <div style={{display:'flex', gap:10, alignItems:'center'}}>
+                    <input type="time" value={r.quietFrom} onChange={e=>onSave({ ...r, quietFrom:e.target.value })} style={{...authInputStyle(false), padding:'10px 12px'}}/>
+                    <span style={{fontSize:13, color:'var(--ink-3)'}}>to</span>
+                    <input type="time" value={r.quietTo} onChange={e=>onSave({ ...r, quietTo:e.target.value })} style={{...authInputStyle(false), padding:'10px 12px'}}/>
+                  </div>
+                </div>
+              )}
+
+              {/* 6.3 per-supplement schedule */}
+              {r.enabled && (
+                <div style={{marginTop:18}}>
+                  <div style={{display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom:10}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600}}>Per supplement</div>
+                    {stack.length>0 && <button onClick={enableAll} style={{fontSize:12, color:'var(--brand)', fontWeight:600, background:'none', border:'none', cursor:'pointer'}}>Remind me for all</button>}
+                  </div>
+                  {stack.length === 0 ? (
+                    <div className="bal-card"><EmptyState text="Your stack is empty — add supplements and you can schedule reminders for each."/></div>
+                  ) : (
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {stack.map((s,i) => {
+                        const cfg = r.items[s.name] || { time:'08:00', enabled:false };
+                        return (
+                          <div key={s.name} style={{padding:'12px 16px', borderBottom:i<stack.length-1?'0.5px solid var(--rule)':'none'}}>
+                            <div style={{display:'flex', alignItems:'center', gap:10}}>
+                              <button onClick={()=>setItem(s.name, { enabled: !cfg.enabled })} style={{width:24, height:24, borderRadius:8, flexShrink:0, background: cfg.enabled?'var(--brand)':'transparent', border: cfg.enabled?'none':'1.6px solid var(--rule)', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer'}}>
+                                {cfg.enabled && <Icon.Check size={14} c="white"/>}
+                              </button>
+                              <div style={{flex:1, minWidth:0}}>
+                                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{s.name}</div>
+                                {s.timing && <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:1}}>{s.timing}</div>}
+                              </div>
+                              <input type="time" value={cfg.time || '08:00'} onChange={e=>setItem(s.name, { time:e.target.value })} disabled={!cfg.enabled}
+                                style={{padding:'8px 10px', borderRadius:10, border:'1px solid var(--rule)', background: cfg.enabled?'var(--surface)':'var(--surface-3)', fontSize:13, fontFamily:'inherit', color: cfg.enabled?'var(--ink)':'var(--ink-4)'}}/>
+                            </div>
+                            {cfg.enabled && (
+                              <div style={{display:'flex', gap:6, marginTop:9, flexWrap:'wrap', paddingLeft:34}}>
+                                {DEFAULT_TIMES.map(t => (
+                                  <button key={t} onClick={()=>setItem(s.name, { time:t })} style={{padding:'5px 10px', borderRadius:999, cursor:'pointer', fontFamily:'inherit', fontSize:11.5, fontWeight:600, border: cfg.time===t?'none':'1px solid var(--rule)', background: cfg.time===t?'var(--brand-soft)':'var(--surface)', color: cfg.time===t?'var(--brand-deep)':'var(--ink-3)'}}>{t}</button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              )}
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Reminders are a convenience, not a medical schedule. Follow the timing your doctor or the product label gives you.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="me" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    // 6.4/6.5 — in-app due banner with take and snooze.
+    const ReminderBanner = ({ items, onTake, onSnooze, onDismiss }) => {
+      const { Icon } = window;
+      if (!items.length) return null;
+      const first = items[0];
+      return (
+        <div style={{position:'absolute', left:12, right:12, bottom:78, zIndex:55}}>
+          <div className="bal-card" style={{padding:'13px 15px', boxShadow:'var(--sh-2)', border:'1px solid var(--rule)'}}>
+            <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:10}}>
+              <div style={{width:30, height:30, borderRadius:10, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0}}>
+                <Icon.Check size={16} c="var(--brand)"/>
+              </div>
+              <div style={{flex:1, minWidth:0}}>
+                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>Time for {first.name}</div>
+                <div style={{fontSize:12, color:'var(--ink-3)', marginTop:1}}>
+                  {[first.dose, first.timing].filter(Boolean).join(' · ') || 'Tap taken when you have it'}
+                  {items.length>1 ? ` · +${items.length-1} more due` : ''}
+                </div>
+              </div>
+              <button onClick={onDismiss} aria-label="Dismiss" style={{border:'none', background:'var(--surface-3)', width:24, height:24, borderRadius:'50%', color:'var(--ink-3)', fontSize:14, lineHeight:1, cursor:'pointer', flexShrink:0}}>×</button>
+            </div>
+            <div style={{display:'flex', gap:8}}>
+              <button onClick={()=>onTake(first.name)} style={{flex:1, padding:'11px', borderRadius:12, border:'none', background:'var(--brand)', color:'white', fontWeight:600, fontSize:14, cursor:'pointer', fontFamily:'inherit'}}>Taken</button>
+              <button onClick={()=>onSnooze(first.name)} style={{flex:1, padding:'11px', borderRadius:12, border:'1px solid var(--rule)', background:'var(--surface)', color:'var(--ink-2)', fontWeight:600, fontSize:14, cursor:'pointer', fontFamily:'inherit'}}>Snooze 30m</button>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
     const Onboarding = ({ onStart, onLogin }) => {
       const { Icon } = window;
       return (
@@ -3047,7 +3209,7 @@
     };
 
     // ============ Profile (Me) ============
-    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, health, onEditConsents, onEditProfile, onLogOut, onOpenHealth }) => {
+    const Profile = ({ goals, stack, onReset, onNav, user, profile, consents, health, reminders, onEditConsents, onEditProfile, onLogOut, onOpenHealth, onOpenReminders }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const displayName = (profile && profile.name) ? profile.name : 'You';
@@ -3055,6 +3217,8 @@
       const optIns = consents ? CONSENTS.filter(c => consents[c.key]).length : 0;
       const h = health || blankHealth();
       const healthFilled = [goals.length, stack.length, h.prescriptions.length, h.substances.length, h.location ? 1 : 0].filter(Boolean).length;
+      const rem = reminders || blankReminders();
+      const remindersOn = rem.enabled ? stack.filter(s => (rem.items[s.name]||{}).enabled).length : 0;
       return (
         <div className="screen-root">
           <div className="scroll" style={{height:'100%', paddingBottom:120}}>
@@ -3105,6 +3269,11 @@
             <div style={{padding:'24px 18px 0'}}>
               <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:10}}>App</div>
               <div className="bal-card" style={{padding:'4px 0'}}>
+                <button onClick={onOpenReminders} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)', cursor:'pointer'}}>
+                  <span style={{flex:1, fontSize:14, fontWeight:500}}>Reminders</span>
+                  <span style={{fontSize:12.5, color:'var(--ink-3)'}}>{remindersOn ? `${remindersOn} on` : 'Off'}</span>
+                  <Icon.Chevron size={13} c="var(--ink-4)"/>
+                </button>
                 <button onClick={()=>onNav('ask')} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', borderBottom:'0.5px solid var(--rule)', background:'none', border:'none', color:'var(--ink)'}}><Icon.Spark size={18} c="var(--brand)"/><span style={{fontSize:14, fontWeight:500}}>Open chat</span></button>
                 <button onClick={onReset} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'14px 16px', background:'none', border:'none', color:'var(--accent)'}}><span style={{fontSize:14, fontWeight:500}}>Reset app &amp; data</span></button>
               </div>
@@ -3139,6 +3308,10 @@
       const [profile, setProfile] = useState(() => LS.get('bal_profile', null));
       const [authMode, setAuthMode] = useState('signup');   // signup | login | reset
       const [health, setHealth] = useState(() => LS.get('bal_health', blankHealth()));   // Feature 2
+      const [reminders, setReminders] = useState(() => LS.get('bal_reminders', blankReminders()));  // Feature 6
+      const [snoozed, setSnoozed] = useState({});          // name -> "HH:MM" until
+      const [dismissedAt, setDismissedAt] = useState(null);
+      const [nowTick, setNowTick] = useState(() => new Date());
       const [flow, setFlow] = useState(() => LS.get('bal_onboarded', false) ? 'app' : 'onboard');
       const [screen, setScreen] = useState('home');
       const [slug, setSlug] = useState('memory-focus');
@@ -3176,6 +3349,13 @@
       useEffect(()=>{ if (consents) LS.set('bal_consents', consents); }, [consents]);
       useEffect(()=>{ if (profile) LS.set('bal_profile', profile); }, [profile]);
       useEffect(()=>LS.set('bal_health', health), [health]);
+      useEffect(()=>LS.set('bal_reminders', reminders), [reminders]);
+      // Feature 6 — tick every 30s so due reminders appear without a reload.
+      useEffect(() => {
+        if (!reminders.enabled) return;
+        const id = setInterval(() => setNowTick(new Date()), 30000);
+        return () => clearInterval(id);
+      }, [reminders.enabled]);
       const setHealthPart = useCallback((k, v) => setHealth(h => ({ ...(h || blankHealth()), [k]: v })), []);
 
       const navTo = useCallback((k) => {
@@ -3243,6 +3423,25 @@
 
       // Feature 1 flow: welcome → auth → disclaimer → consents → profile → goals → app.
       // A returning user who logs in skips straight to the app.
+      // Feature 6 — what's due right now (respects taken, snooze and quiet hours).
+      const due = dueReminders(stack, reminders, taken, snoozed, nowTick);
+      const showBanner = due.length > 0 && dismissedAt !== dayKey() + hhmm(nowTick).slice(0,3);
+      // Fire a system notification once per due item, when permitted.
+      const notifiedRef = useRef(new Set());
+      useEffect(() => {
+        if (!showBanner || typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+        due.forEach(item => {
+          const key = dayKey() + '|' + item.name;
+          if (notifiedRef.current.has(key)) return;
+          notifiedRef.current.add(key);
+          try { new Notification('Time for ' + item.name, { body: [item.dose, item.timing].filter(Boolean).join(' · ') || 'Balance reminder', tag: key }); } catch {}
+        });
+      }, [showBanner, due]);
+      const snoozeItem = (name) => {
+        const d = new Date(nowTick.getTime() + 30*60000);
+        setSnoozed(s => ({ ...s, [name]: hhmm(d) }));
+      };
+
       const renderScreen = () => {
       if (flow === 'onboard') return <Onboarding onStart={()=>{ setAuthMode('signup'); setFlow('auth'); }} onLogin={()=>{ setAuthMode('login'); setFlow('auth'); }}/>;
       if (flow === 'auth') return (
@@ -3271,6 +3470,7 @@
       if (screen === 'health') return <HealthHub goals={goals} stack={stack} health={health} interactions={interactions} onNav={navTo} onBack={()=>setScreen('profile')}
         onOpen={(k)=>{ if (k==='goals') setFlow('intake'); else if (k==='supps') setScreen('addSupp'); else setScreen({rx:'healthRx', subs:'healthSubs', loc:'healthLoc', review:'healthReview'}[k]); }}/>;
       if (screen === 'healthReview') return <InteractionReviewScreen stack={stack} health={health} interactions={interactions} onBack={()=>setScreen('health')} onNav={navTo}/>;
+      if (screen === 'reminders') return <RemindersScreen stack={stack} reminders={reminders} onSave={setReminders} onBack={()=>setScreen('profile')} onNav={navTo}/>;
       if (screen === 'healthRx') return <PrescriptionsScreen health={health} onSave={(v)=>setHealthPart('prescriptions', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'healthSubs') return <MySubstancesScreen health={health} onSave={(v)=>setHealthPart('substances', v)} onBack={()=>setScreen('health')} onNav={navTo}/>;
       if (screen === 'healthLoc') return <LocationScreen health={health} onSave={(v)=>{ setHealthPart('location', v); setScreen('health'); }} onBack={()=>setScreen('health')} onNav={navTo}/>;
@@ -3278,9 +3478,9 @@
       if (screen === 'editConsents') return <ConsentScreen embedded initial={consents} onBack={()=>setScreen('profile')} onDone={(c)=>{ setConsents({ ...c, updatedAt: Date.now() }); setScreen('profile'); }}/>;
       if (screen === 'editProfile') return <ProfileBaseline embedded initial={profile} onBack={()=>setScreen('profile')} onDone={(p)=>{ setProfile(p); setScreen('profile'); }}/>;
       if (screen === 'profile') return <Profile goals={goals} stack={stack} onReset={resetAll} onNav={navTo}
-        user={user} profile={profile} consents={consents} health={health} onLogOut={logOut}
+        user={user} profile={profile} consents={consents} health={health} reminders={reminders} onLogOut={logOut}
         onEditConsents={()=>setScreen('editConsents')} onEditProfile={()=>setScreen('editProfile')}
-        onOpenHealth={()=>setScreen('health')}/>;
+        onOpenHealth={()=>setScreen('health')} onOpenReminders={()=>setScreen('reminders')}/>;
       if (screen === 'category') { const c = cache[slug] || {}; return <Category slug={slug} data={c.data} loading={c.loading} error={c.error} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>; }
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
@@ -3291,6 +3491,10 @@
       return (
         <React.Fragment>
           {renderScreen()}
+          {showBanner && flow === 'app' && !pendingAdd && (
+            <ReminderBanner items={due} onTake={(n)=>toggleTaken(n)} onSnooze={snoozeItem}
+              onDismiss={()=>setDismissedAt(dayKey() + hhmm(nowTick).slice(0,3))}/>
+          )}
           {pendingAdd && (
             <ConflictModal candidate={pendingAdd.item.name} hits={pendingAdd.hits} meta={interactions}
               onCancel={()=>setPendingAdd(null)}

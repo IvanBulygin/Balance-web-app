@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Local knowledge-base database (rebuilt with `ingest init`)
+backend/knowledge/data/*.db
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store

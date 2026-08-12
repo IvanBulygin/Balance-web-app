@@ -44,15 +44,26 @@ NUTRIENT_ALIASES = {
     "folate": "Folate, total", "folic acid": "Folate, total",
     "niacin": "Niacin", "riboflavin": "Riboflavin", "thiamin": "Thiamin",
     "omega-3": "Fatty acids, total polyunsaturated",
+    # Russian — users type these too.
+    "магни": "Magnesium, Mg", "калий": "Potassium, K", "кальци": "Calcium, Ca",
+    "желез": "Iron, Fe", "цинк": "Zinc, Zn", "селен": "Selenium, Se",
+    "клетчатк": "Fiber, total dietary", "белок": "Protein",
+    "витамин c": "Vitamin C, total ascorbic acid", "витамин д": "Vitamin D (D2 + D3)",
+    "витамин e": "Vitamin E (alpha-tocopherol)", "фолиев": "Folate, total",
 }
 
 _state: dict[str, Any] = {"foods": [], "herbs": [], "attribution": ""}
 
 
 def _norm(s: str) -> str:
+    """Fold a name to a comparable key.
+
+    Unicode-aware on purpose: an ASCII-only class would strip Cyrillic
+    entirely, so Russian names would silently never match.
+    """
     s = unicodedata.normalize("NFKD", s or "")
     s = "".join(c for c in s if not unicodedata.combining(c))
-    return " ".join(re.sub(r"[^a-z0-9]+", " ", s.lower()).split())
+    return " ".join(re.sub(r"[^\w]+", " ", s.lower(), flags=re.UNICODE).split())
 
 
 def load() -> dict:
@@ -158,6 +169,40 @@ _TRAD_CUE = re.compile(r"traditional|traditionally|folk (use|medicine)|ayurved",
 _COMPOUND_CUE = re.compile(
     r"curcumin|quercetin|gingerol|allicin|catechin|piperine|capsaicin|"
     r"sulforaphane|resveratrol|anthocyanin", re.I)
+
+
+def lookup(name: str) -> Optional[dict]:
+    """Full entry for a bare name — "ginger", "spinach", "turmeric".
+
+    A bare name is itself a request for everything we hold, so this returns the
+    herb dossier (or food composition) without needing a question phrased
+    around it.
+    """
+    h = find_herb(name)
+    if h:
+        return {"kind": "herb", "herb": h["name"],
+                "scientific_name": h.get("scientific_name"),
+                "compounds": h.get("compounds", []),
+                "traditional_uses": h.get("traditional_uses", []),
+                "human_evidence": h.get("human_evidence", []),
+                "safety": h.get("safety"), "source": h.get("source"),
+                "attribution": _state["attribution"],
+                "caveat": "Traditional use and human evidence are different things "
+                          "and are listed separately above."}
+    # A nutrient name on its own means the nutrient, not a medicine that happens
+    # to contain it — "magnesium" must never resolve to esomeprazole magnesium.
+    usda = resolve_nutrient(name)
+    if usda:
+        rows = foods_by_nutrient(usda)
+        if rows:
+            return {"kind": "nutrient_ranking", "nutrient": usda,
+                    "ranked_by": "amount per 100 g (USDA structured data)",
+                    "results": rows, "attribution": _state["attribution"]}
+
+    f = nutrients_for(name)
+    if f:
+        return {"kind": "food_nutrition", **f, "attribution": _state["attribution"]}
+    return None
 
 
 def answer(query: str) -> Optional[dict]:

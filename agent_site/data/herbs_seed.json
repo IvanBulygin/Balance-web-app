@@ -6,10 +6,28 @@
     {
       "name": "Ginger",
       "scientific_name": "Zingiber officinale",
-      "aliases": ["ginger", "ginger root", "ginger rhizome", "zingiber"],
+      "aliases": [
+        "ginger",
+        "ginger root",
+        "ginger rhizome",
+        "zingiber",
+        "имбирь",
+        "имбиря"
+      ],
       "plant_part": "rhizome",
-      "classifications": ["FOOD", "HERB", "SPICE", "CULINARY_PLANT", "MEDICINAL_PLANT"],
-      "compounds": ["Gingerol", "Shogaol", "Zingerone", "Paradol"],
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "SPICE",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Gingerol",
+        "Shogaol",
+        "Zingerone",
+        "Paradol"
+      ],
       "traditional_uses": [
         "Used traditionally for nausea and motion sickness",
         "Used traditionally for indigestion and digestive discomfort"
@@ -30,10 +48,27 @@
     {
       "name": "Turmeric",
       "scientific_name": "Curcuma longa",
-      "aliases": ["turmeric", "curcuma", "haldi"],
+      "aliases": [
+        "turmeric",
+        "curcuma",
+        "haldi",
+        "куркума",
+        "куркумы"
+      ],
       "plant_part": "rhizome",
-      "classifications": ["FOOD", "HERB", "SPICE", "CULINARY_PLANT", "MEDICINAL_PLANT"],
-      "compounds": ["Curcumin", "Demethoxycurcumin", "Bisdemethoxycurcumin", "Turmerone"],
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "SPICE",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Curcumin",
+        "Demethoxycurcumin",
+        "Bisdemethoxycurcumin",
+        "Turmerone"
+      ],
       "traditional_uses": [
         "Used traditionally for joint discomfort",
         "Used traditionally in digestive preparations"
@@ -53,10 +88,25 @@
     {
       "name": "Garlic",
       "scientific_name": "Allium sativum",
-      "aliases": ["garlic", "allium sativum"],
+      "aliases": [
+        "garlic",
+        "allium sativum",
+        "чеснок",
+        "чеснока"
+      ],
       "plant_part": "bulb",
-      "classifications": ["FOOD", "HERB", "CULINARY_PLANT", "MEDICINAL_PLANT"],
-      "compounds": ["Allicin", "Alliin", "Ajoene", "Diallyl disulfide"],
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Allicin",
+        "Alliin",
+        "Ajoene",
+        "Diallyl disulfide"
+      ],
       "traditional_uses": [
         "Used traditionally for circulatory complaints",
         "Used traditionally as a culinary preservative and remedy"
@@ -76,10 +126,27 @@
     {
       "name": "Peppermint",
       "scientific_name": "Mentha x piperita",
-      "aliases": ["peppermint", "mentha piperita", "mint"],
+      "aliases": [
+        "peppermint",
+        "mentha piperita",
+        "mint",
+        "мята",
+        "перечная мята",
+        "мяты"
+      ],
       "plant_part": "leaf",
-      "classifications": ["FOOD", "HERB", "CULINARY_PLANT", "MEDICINAL_PLANT", "BEVERAGE"],
-      "compounds": ["Menthol", "Menthone", "Rosmarinic acid"],
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT",
+        "BEVERAGE"
+      ],
+      "compounds": [
+        "Menthol",
+        "Menthone",
+        "Rosmarinic acid"
+      ],
       "traditional_uses": [
         "Used traditionally for digestive discomfort and bloating",
         "Used traditionally as a tea after meals"
@@ -99,10 +166,26 @@
     {
       "name": "Cinnamon",
       "scientific_name": "Cinnamomum verum",
-      "aliases": ["cinnamon", "cinnamomum", "cassia"],
+      "aliases": [
+        "cinnamon",
+        "cinnamomum",
+        "cassia",
+        "корица",
+        "корицы"
+      ],
       "plant_part": "bark",
-      "classifications": ["FOOD", "SPICE", "CULINARY_PLANT", "MEDICINAL_PLANT"],
-      "compounds": ["Cinnamaldehyde", "Eugenol", "Coumarin", "Cinnamic acid"],
+      "classifications": [
+        "FOOD",
+        "SPICE",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Cinnamaldehyde",
+        "Eugenol",
+        "Coumarin",
+        "Cinnamic acid"
+      ],
       "traditional_uses": [
         "Used traditionally as a warming digestive spice"
       ],
@@ -121,10 +204,26 @@
     {
       "name": "Rosemary",
       "scientific_name": "Salvia rosmarinus",
-      "aliases": ["rosemary", "rosmarinus officinalis", "salvia rosmarinus"],
+      "aliases": [
+        "rosemary",
+        "rosmarinus officinalis",
+        "salvia rosmarinus",
+        "розмарин",
+        "розмарина"
+      ],
       "plant_part": "leaf",
-      "classifications": ["FOOD", "HERB", "CULINARY_PLANT", "MEDICINAL_PLANT"],
-      "compounds": ["Rosmarinic acid", "Carnosic acid", "Cineole", "Camphor"],
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Rosmarinic acid",
+        "Carnosic acid",
+        "Cineole",
+        "Camphor"
+      ],
       "traditional_uses": [
         "Used traditionally as a culinary and preservative herb",
         "Used traditionally in preparations associated with alertness"
@@ -136,10 +235,24 @@
     {
       "name": "Chamomile",
       "scientific_name": "Matricaria chamomilla",
-      "aliases": ["chamomile", "camomile", "matricaria"],
+      "aliases": [
+        "chamomile",
+        "camomile",
+        "matricaria",
+        "ромашка",
+        "ромашки"
+      ],
       "plant_part": "flower",
-      "classifications": ["HERB", "MEDICINAL_PLANT", "BEVERAGE"],
-      "compounds": ["Apigenin", "Bisabolol", "Chamazulene"],
+      "classifications": [
+        "HERB",
+        "MEDICINAL_PLANT",
+        "BEVERAGE"
+      ],
+      "compounds": [
+        "Apigenin",
+        "Bisabolol",
+        "Chamazulene"
+      ],
       "traditional_uses": [
         "Used traditionally as a calming tea before sleep",
         "Used traditionally for digestive discomfort"
@@ -159,10 +272,26 @@
     {
       "name": "Green tea",
       "scientific_name": "Camellia sinensis",
-      "aliases": ["green tea", "camellia sinensis", "matcha"],
+      "aliases": [
+        "green tea",
+        "camellia sinensis",
+        "matcha",
+        "зелёный чай",
+        "зеленый чай",
+        "матча"
+      ],
       "plant_part": "leaf",
-      "classifications": ["BEVERAGE", "FOOD", "MEDICINAL_PLANT"],
-      "compounds": ["Epigallocatechin gallate", "Catechins", "L-Theanine", "Caffeine"],
+      "classifications": [
+        "BEVERAGE",
+        "FOOD",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Epigallocatechin gallate",
+        "Catechins",
+        "L-Theanine",
+        "Caffeine"
+      ],
       "traditional_uses": [
         "Consumed traditionally as a daily beverage across East Asia"
       ],

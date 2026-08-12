@@ -385,6 +385,24 @@ _DRUG_STOP = {
 }
 _drug_cache: dict[str, Any] = {}
 
+# A bare name is itself the question. "lamotrigine" means "tell me about
+# lamotrigine" — previously it matched no intent cue and fell through to the
+# supplement guides, which then refused.
+_QUESTIONY = re.compile(
+    r"\b(how|why|when|where|which|who|should|can|could|is|are|do|does|did|"
+    r"будет|можно|нужно|как|что|почему|зачем)\b", re.I)
+
+
+def _is_bare_entity(text: str) -> bool:
+    """True when the message is just a name, with no surrounding question."""
+    t = (text or "").strip().strip("?.!,")
+    if not t or len(t) > 40:
+        return False
+    words = [w for w in re.split(r"[\s,]+", t) if w]
+    if len(words) > 3:
+        return False
+    return not _QUESTIONY.search(t)
+
 
 def _drug_candidates(text: str) -> list[str]:
     toks = re.findall(r"[a-zA-Z][a-zA-Z\-']{3,}", (text or "").lower())
@@ -620,12 +638,23 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
 
     # Medication questions: pull the official FDA label (via openFDA, with RxNav
     # typo-correction) so the agent can answer instead of refusing.
-    if _MED_INTENT.search(recent_user):
+    last_user = next((m.content for m in reversed(trimmed) if m.role == "user"), "")
+    bare = _is_bare_entity(last_user)
+
+    # A bare name means "tell me everything about this". Resolve it in a fixed
+    # order — curated substance, then food/herb, then medicine — so "ginger"
+    # is answered as a herb and never fuzzy-matched to a pharmaceutical.
+    kb = state.get("foods_kb")
+    food_hit = None
+    if kb:
+        food_hit = kb.answer(recent_user) or (kb.lookup(last_user) if bare else None)
+
+    if _MED_INTENT.search(recent_user) or bare:
         # Recreational substances have no FDA label — use the curated
         # harm-reduction entry, and check it first so "weed"/"alcohol" aren't
         # mis-resolved to an unrelated pharmaceutical by the fuzzy drug lookup.
         substances = find_substance_effects(recent_user)
-        drug = None if substances else lookup_drug(recent_user)
+        drug = None if (substances or food_hit) else lookup_drug(recent_user)
         if substances:
             sdb = state.get("drug_effects", {})
             system_instruction += (
@@ -651,15 +680,19 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
                 "information from the official FDA label — not medical advice — and that "
                 "they should check with their doctor or pharmacist. Do not recommend "
                 "changing any medication. If the label doesn't cover their question, say so."
+                + ("\n\nThe user gave only the name, so give the full picture from "
+                   "the label: what it is and what it is prescribed for, the common "
+                   "side effects, the important warnings, and notable interactions. "
+                   "If they ask how to reduce side effects, say plainly that dose and "
+                   "timing changes are a doctor's decision, and only mention nutrient "
+                   "support if it appears in the data above." if bare else "")
             )
             sources = [f"FDA label: {drug['name']}"]
 
     # Food & herb knowledge. Nutrient values come from USDA structured data and
     # are injected verbatim; traditional use is labelled separately from human
     # evidence so the model cannot present one as the other.
-    kb = state.get("foods_kb")
     if kb:
-        food_hit = kb.answer(recent_user)
         if food_hit:
             system_instruction += (
                 "\n\n## Food & herb knowledge (AUTHORITATIVE — structured data)\n\n"

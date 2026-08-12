@@ -39,6 +39,8 @@ KEEP_NUTRIENTS = {
     "Carbohydrate, by difference", "Energy", "Sugars, total including NLEA",
     "Fatty acids, total polyunsaturated", "Fatty acids, total saturated",
 }
+# The same set, used to recognise an exact USDA nutrient name before aliasing.
+CANONICAL_NUTRIENTS = KEEP_NUTRIENTS
 _live_cache: dict[str, Any] = {}
 
 # Friendly aliases -> the USDA nutrient names in the seed.
@@ -62,7 +64,11 @@ NUTRIENT_ALIASES = {
     "vitamin b12": "Vitamin B-12", "b12": "Vitamin B-12",
     "folate": "Folate, total", "folic acid": "Folate, total",
     "niacin": "Niacin", "riboflavin": "Riboflavin", "thiamin": "Thiamin",
+    "polyunsaturated": "Fatty acids, total polyunsaturated",
     "omega-3": "Fatty acids, total polyunsaturated",
+    "omega 3": "Fatty acids, total polyunsaturated",
+    "pufa": "Fatty acids, total polyunsaturated",
+    "saturated fat": "Fatty acids, total saturated",
     # Russian — users type these too.
     "магни": "Magnesium, Mg", "калий": "Potassium, K", "кальци": "Calcium, Ca",
     "желез": "Iron, Fe", "цинк": "Zinc, Zn", "селен": "Selenium, Se",
@@ -110,7 +116,18 @@ def load() -> dict:
 
 # ------------------------------------------------------------------ lookup
 def resolve_nutrient(text: str) -> Optional[str]:
+    """Map free text, or an exact USDA name, to a canonical nutrient name.
+
+    Exact names are matched first. Aliases are substrings (deliberately, so
+    Russian stems like "магни" match any case ending), which means a short
+    alias can hide inside a longer real name: "fat" sits inside "Fatty acids,
+    total polyunsaturated", so without this check the omega-3 group would be
+    ranked by total fat.
+    """
     t = _norm(text)
+    for canonical in CANONICAL_NUTRIENTS:
+        if _norm(canonical) == t:
+            return canonical
     for alias, usda in sorted(NUTRIENT_ALIASES.items(), key=lambda kv: -len(kv[0])):
         if alias in t:
             return usda
@@ -287,7 +304,9 @@ def foods_with_compound(compound: str) -> list[dict]:
 # ------------------------------------------------------------------ router
 _NUTRIENT_CUE = re.compile(
     r"high in|rich in|most |source of|sources of|contain|increase my|boost my|"
-    r"how much|good source", re.I)
+    r"how much|good source|what foods|which foods|foods with|best food|"
+    # Russian — "какие продукты содержат цинк", "где больше всего магния".
+    r"продукт|содерж|богат|больше всего", re.I)
 _TRAD_CUE = re.compile(r"traditional|traditionally|folk (use|medicine)|ayurved", re.I)
 _COMPOUND_CUE = re.compile(
     r"curcumin|quercetin|gingerol|allicin|catechin|piperine|capsaicin|"

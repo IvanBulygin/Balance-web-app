@@ -114,6 +114,16 @@
       { slug:'joint-health',          label:'Joint comfort',    icon:'Bone',     d:'Mobility · ease' },
       { slug:'allergies-immunity',    label:'Stronger immunity',icon:'Shield',   d:'Daily defense' },
       { slug:'healthy-aging',         label:'Healthy aging',    icon:'Sun',      d:'Longevity basics' },
+      // Every guide topic is pickable — the goal screens have foods, herbs and
+      // supplements for all of them, so leaving any out just hid content.
+      { slug:'libido',                label:'Libido',           icon:'Spark',    d:'Desire · drive' },
+      { slug:'testosterone',          label:'Testosterone',     icon:'Flame',    d:'Hormonal support' },
+      { slug:'bone-health',           label:'Bone health',      icon:'Bone',     d:'Density · strength' },
+      { slug:'skin-hair-nails',       label:'Skin, hair, nails',icon:'Droplet',  d:'Collagen · keratin' },
+      { slug:'blood-sugar',           label:'Blood sugar',      icon:'Droplet',  d:'Steady energy' },
+      { slug:'liver-health',          label:'Liver health',     icon:'Leaf',     d:'Metabolic load' },
+      { slug:'recovery-wellness',     label:'Recovery',         icon:'Heart',    d:'After training' },
+      { slug:'vegetarians-vegans',    label:'Plant-based diet', icon:'Leaf',     d:'Fill the usual gaps' },
     ];
 
     const TOPICS = [
@@ -2098,6 +2108,67 @@
     };
 
     // ============ Intake (goals) ============
+    // ============ Where to start ============
+    // The app does three different jobs. A new user has no way to know that
+    // from a goal picker alone, so the three are offered explicitly and each
+    // one lands on the screen that actually does it.
+    const START_PATHS = [
+      { key:'goals', icon:'Heart', title:'Plan for my health goals',
+        d:'Pick goals like libido, memory & focus, bone health, muscle gain or testosterone. You get the foods, herbs and supplements for each one.',
+        cta:'Pick my goals' },
+      { key:'lookup', icon:'Search', title:'Look up a food or supplement',
+        d:'Any superfood, herb, vitamin or supplement — what it is studied for, how strong the evidence is, and what is measured in it.',
+        cta:'Browse foods & supplements' },
+      { key:'reduce', icon:'Shield', title:'Reduce side effects from drugs',
+        d:'Recreational or prescribed. What the substance depletes or strains, and what is commonly used to support recovery.',
+        cta:'See substances' },
+    ];
+
+    const StartPaths = ({ onPick, onBack, title = 'What would you like to do first?' }) => {
+      const { Icon } = window;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:40}}>
+            <div style={{height:54}}/>
+            {onBack && (
+              <div style={{padding:'6px 18px 0'}}>
+                <button onClick={onBack} style={{border:'none', background:'transparent', display:'flex', alignItems:'center', gap:6, color:'var(--ink-3)', fontSize:14, fontFamily:'inherit', padding:0}}>
+                  <Icon.Back size={15} c="var(--ink-3)"/> Back
+                </button>
+              </div>
+            )}
+            <div style={{padding:'26px 22px 0'}}>
+              <div className="serif" style={{fontSize:30, lineHeight:1.1, color:'var(--ink)'}}>
+                {title}
+              </div>
+              <div style={{fontSize:13, color:'var(--ink-3)', marginTop:10, lineHeight:1.5}}>
+                You can do all three later. This just decides where you land now.
+              </div>
+            </div>
+            <div style={{padding:'22px 18px 0'}}>
+              {START_PATHS.map(p => {
+                const Ic = Icon[p.icon];
+                return (
+                  <button key={p.key} onClick={()=>onPick(p.key)}
+                    style={{display:'block', width:'100%', textAlign:'left', marginBottom:12, padding:'18px 18px 16px', borderRadius:20, background:'white', border:'1px solid var(--rule)', boxShadow:'var(--sh-card)', fontFamily:'inherit', cursor:'pointer'}}>
+                    <div style={{width:38, height:38, borderRadius:12, background:'var(--brand-soft)', display:'flex', alignItems:'center', justifyContent:'center', marginBottom:12}}>
+                      {Ic && <Ic size={20} c="var(--brand)"/>}
+                    </div>
+                    <div style={{fontSize:16, fontWeight:600, color:'var(--ink)'}}>{p.title}</div>
+                    <div style={{fontSize:12.5, color:'var(--ink-3)', marginTop:5, lineHeight:1.5}}>{p.d}</div>
+                    <div style={{display:'inline-flex', gap:7, marginTop:13, alignItems:'center', background:'var(--brand-soft)', padding:'7px 13px', borderRadius:999}}>
+                      <span style={{fontSize:12.5, color:'var(--brand)', fontWeight:600}}>{p.cta}</span>
+                      <Icon.Chevron size={12} c="var(--brand)"/>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
     const Intake = ({ initial, onDone }) => {
       const { Icon } = window;
       const [sel, setSel] = useState(new Set(initial || []));
@@ -2145,7 +2216,7 @@
     };
 
     // ============ Home ============
-    const Home = ({ goals, stack, taken, log, health, interactions, profile, onToggleTaken, onOpenCategory, onAsk, onNav, onOpenHealth }) => {
+    const Home = ({ goals, stack, taken, log, health, interactions, profile, onToggleTaken, onOpenCategory, onAsk, onNav, onOpenHealth, onStartPaths }) => {
       const { Icon, Tabbar } = window;
       const goalTopics = goals.map(s => TOPIC_BY_SLUG[s]).filter(Boolean);
       const doneCount = stack.filter(s => taken.includes(s.name)).length;
@@ -2214,6 +2285,12 @@
                   <button key={t.slug} onClick={()=>onAsk('Best supplements for ' + t.name.toLowerCase() + '?')} className="bal-pill light" style={{padding:'7px 12px', fontSize:12, border:'none'}}>{t.name}</button>
                 ))}
               </div>
+              {/* The three things the app does, reachable again at any time. */}
+              <button onClick={onStartPaths} style={{marginTop:12, width:'100%', textAlign:'left', border:'1px dashed var(--rule)', background:'transparent', borderRadius:14, padding:'11px 14px', display:'flex', alignItems:'center', gap:10, fontFamily:'inherit', cursor:'pointer'}}>
+                <div style={{flex:1, fontSize:13, color:'var(--ink-2)', fontWeight:600}}>Not sure where to start?</div>
+                <span style={{fontSize:12, color:'var(--brand)', fontWeight:600}}>See the 3 ways</span>
+                <Icon.Chevron size={12} c="var(--brand)"/>
+              </button>
             </div>
 
             <div style={{padding:'14px 18px 0'}}>
@@ -3145,9 +3222,9 @@
     };
 
     // ============ Learn ============
-    const Learn = ({ onOpen, onOpenSupplement, onOpenSubstance, onNav, onOpenFood, onOpenHerb }) => {
+    const Learn = ({ initialMode, onOpen, onOpenSupplement, onOpenSubstance, onNav, onOpenFood, onOpenHerb }) => {
       const { Icon, Tabbar } = window;
-      const [mode, setMode] = useState('topics');   // 'topics' | 'supplements' | 'substances'
+      const [mode, setMode] = useState(initialMode || 'topics');   // 'topics' | 'supplements' | 'substances' | 'foods'
       const [q, setQ] = useState('');
       const query = q.trim().toLowerCase();
       // Results update live as you type (instant client-side filter).
@@ -4220,10 +4297,21 @@
         const map = { home:'home', ask:'ask', stack:'stack', browse:'learn', me:'profile' };
         if (k==='intake') { setFlow('intake'); return; }
         if (k==='ask') setAskQuery(null);  // opening Ask plainly = empty chat
+        // Tapping the Learn tab means "start at the top", not "reopen whatever
+        // tab the start screen sent me to once".
+        if (k==='browse') setLearnMode('topics');
         setScreen(map[k] || 'home');
       }, []);
       // Quick-search: jump into Ask and auto-run a question (from a Home chip).
       const askSearch = useCallback((q) => { setAskQuery(q); setScreen('ask'); }, []);
+      // Which Learn tab to open on arrival, set by the "where to start" screen.
+      const [learnMode, setLearnMode] = useState('topics');
+      const pickPath = useCallback((k) => {
+        if (k === 'goals') { setFlow('intake'); return; }
+        // Looking things up doesn't need goals — land straight on the right tab.
+        setLearnMode(k === 'reduce' ? 'substances' : 'foods');
+        setOnboarded(true); setFlow('app'); setScreen('learn');
+      }, []);
       const openCategory = useCallback((s) => { setSlug(s); setScreen('category'); }, []);
       const openSupplement = useCallback((n) => { setSuppName(n); setScreen('supplement'); }, []);
       const openSubstance = useCallback((k) => { setSubstanceKey(k); setScreen('substance'); }, []);
@@ -4316,14 +4404,17 @@
       );
       if (flow === 'disclaimer') return <DisclaimerScreen onAccept={()=>{ LS.set('bal_disclaimer', { acceptedAt: Date.now() }); setFlow('consent'); }}/>;
       if (flow === 'consent') return <ConsentScreen initial={consents} onDone={(c)=>{ setConsents({ ...c, acceptedAt: Date.now() }); setFlow('profile'); }}/>;
-      if (flow === 'profile') return <ProfileBaseline initial={profile} onDone={(p)=>{ setProfile(p); setFlow('intake'); }}/>;
+      if (flow === 'profile') return <ProfileBaseline initial={profile} onDone={(p)=>{ setProfile(p); setFlow('path'); }}/>;
+      if (flow === 'path') return <StartPaths onPick={pickPath}/>;
       if (flow === 'intake') return <Intake initial={goals} onDone={(g)=>{ setGoals(g); setOnboarded(true); setFlow('app'); setScreen('home'); }}/>;
 
       if (screen === 'home')    return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
-        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
+        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}
+        onStartPaths={()=>setScreen('start')}/>;
+      if (screen === 'start')   return <StartPaths onPick={pickPath} onBack={()=>setScreen('home')} title="Three ways to use Balance."/>;
       if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}
         feedback={feedback} onFeedback={saveFeedback}/>;
-      if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}
+      if (screen === 'learn')   return <Learn initialMode={learnMode} onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}
         onOpenFood={(f)=>{ setKbFood(f); setScreen('foodDetail'); }}
         onOpenHerb={(h)=>{ setKbHerb(h); setScreen('herbDetail'); }}/>;
       if (screen === 'foodDetail') return <FoodDetail food={kbFood} onBack={()=>setScreen('learn')} onNav={navTo}/>;
@@ -4358,7 +4449,8 @@
       if (screen === 'supplement') return <Supplement name={suppName} cache={cache} onOpenCategory={openCategory} inStack={inStack} onAdd={addToStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'substance') return <Substance sub={SUBSTANCE_BY_KEY[substanceKey]} onAdd={addToStack} inStack={inStack} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       return <Home goals={goals} stack={stack} taken={taken} log={log} health={health} interactions={interactions} profile={profile}
-        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
+        onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}
+        onStartPaths={()=>setScreen('start')}/>;
       };
 
       return (

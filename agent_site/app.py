@@ -171,6 +171,20 @@ def interactions():
     return state.get("interactions", {"rules": []})
 
 
+@app.get("/api/goal-foods/{slug}")
+def goal_foods(slug: str):
+    """Foods and herbs for a health goal — powers the goal screen alongside
+    the supplement stack."""
+    kb = state.get("foods_kb")
+    if not kb:
+        raise HTTPException(503, "Food knowledge not loaded")
+    data = kb.for_goal(slug)
+    if not data:
+        return {"goal": slug, "nutrients": [], "herbs": [],
+                "note": "No food or herb mapping for this goal yet."}
+    return data
+
+
 @app.get("/api/foods")
 def foods_index():
     """Food & herb knowledge for the Learn tab (USDA values, curated herbs)."""

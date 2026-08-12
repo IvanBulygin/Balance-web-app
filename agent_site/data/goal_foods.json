@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "note": "Maps each health goal to the nutrients and herbs commonly discussed for that area, so the goal screen can show foods and herbs alongside supplements. A nutrient being relevant to an area is nutrition context, NOT a claim that eating it treats anything. Foods are ranked from USDA measured composition; herbs carry their own evidence level from herbs_seed.json.",
+  "disclaimer": "Foods and herbs support a diet. They do not treat conditions.",
+  "goals": {
+    "memory-focus": {
+      "title": "Memory & Focus",
+      "nutrients": [
+        {"name": "Fatty acids, total polyunsaturated", "why": "Omega-3 fats, especially DHA, are a structural component of brain cell membranes."},
+        {"name": "Vitamin B-12", "why": "B12 is required for normal neurological function; deficiency is a recognised cause of cognitive symptoms."},
+        {"name": "Folate, total", "why": "Folate works with B12 in one-carbon metabolism, which supports nerve function."},
+        {"name": "Iron, Fe", "why": "Iron carries oxygen to the brain; low iron is associated with tiredness and poor concentration."},
+        {"name": "Vitamin B-6", "why": "B6 is a cofactor in neurotransmitter synthesis."}
+      ],
+      "herbs": ["Green tea", "Rosemary", "Sage"]
+    },
+    "libido": {
+      "title": "Libido",
+      "nutrients": [
+        {"name": "Zinc, Zn", "why": "Zinc is involved in normal reproductive-hormone metabolism."},
+        {"name": "Magnesium, Mg", "why": "Magnesium contributes to normal muscle function and energy metabolism."},
+        {"name": "Iron, Fe", "why": "Low iron causes fatigue, which commonly reduces desire."},
+        {"name": "Vitamin D (D2 + D3)", "why": "Vitamin D status is associated with hormonal and general wellbeing measures."}
+      ],
+      "herbs": ["Maca", "Fenugreek", "Ginseng"]
+    },
+    "sleep": {
+      "title": "Sleep",
+      "nutrients": [
+        {"name": "Magnesium, Mg", "why": "Magnesium contributes to normal nervous-system function."},
+        {"name": "Vitamin B-6", "why": "B6 is a cofactor in the pathway that produces melatonin."}
+      ],
+      "herbs": ["Chamomile", "Peppermint"]
+    },
+    "stress-anxiety": {
+      "title": "Stress & Anxiety",
+      "nutrients": [
+        {"name": "Magnesium, Mg", "why": "Magnesium contributes to normal psychological function."},
+        {"name": "Fatty acids, total polyunsaturated", "why": "Omega-3 intake is widely studied in relation to mood."}
+      ],
+      "herbs": ["Chamomile", "Green tea"]
+    },
+    "cardiovascular-health": {
+      "title": "Heart Health",
+      "nutrients": [
+        {"name": "Potassium, K", "why": "Potassium contributes to the maintenance of normal blood pressure."},
+        {"name": "Fiber, total dietary", "why": "Dietary fibre intake is associated with cardiovascular risk factors."},
+        {"name": "Fatty acids, total polyunsaturated", "why": "Replacing saturated with unsaturated fat is a mainstream dietary recommendation."},
+        {"name": "Magnesium, Mg", "why": "Magnesium is involved in normal muscle and heart function."}
+      ],
+      "herbs": ["Garlic", "Green tea"]
+    },
+    "blood-sugar": {
+      "title": "Blood Sugar",
+      "nutrients": [
+        {"name": "Fiber, total dietary", "why": "Fibre slows carbohydrate absorption after a meal."},
+        {"name": "Magnesium, Mg", "why": "Magnesium is involved in normal glucose metabolism."}
+      ],
+      "herbs": ["Cinnamon"]
+    },
+    "muscle-gain": {
+      "title": "Muscle Gain",
+      "nutrients": [
+        {"name": "Protein", "why": "Protein supplies the amino acids used to build and repair muscle."},
+        {"name": "Magnesium, Mg", "why": "Magnesium contributes to normal muscle function."},
+        {"name": "Iron, Fe", "why": "Iron supports oxygen delivery during training."}
+      ],
+      "herbs": []
+    },
+    "bone-health": {
+      "title": "Bone Health",
+      "nutrients": [
+        {"name": "Calcium, Ca", "why": "Calcium is the main mineral in bone."},
+        {"name": "Vitamin D (D2 + D3)", "why": "Vitamin D is needed to absorb calcium."},
+        {"name": "Vitamin K (phylloquinone)", "why": "Vitamin K is involved in bone protein metabolism."},
+        {"name": "Magnesium, Mg", "why": "Magnesium is a structural component of bone."}
+      ],
+      "herbs": []
+    },
+    "allergies-immunity": {
+      "title": "Immunity",
+      "nutrients": [
+        {"name": "Vitamin C, total ascorbic acid", "why": "Vitamin C contributes to normal immune-system function."},
+        {"name": "Zinc, Zn", "why": "Zinc contributes to normal immune-system function."},
+        {"name": "Vitamin D (D2 + D3)", "why": "Vitamin D status is associated with immune measures."},
+        {"name": "Selenium, Se", "why": "Selenium contributes to normal immune function."}
+      ],
+      "herbs": ["Garlic", "Ginger"]
+    },
+    "liver-health": {
+      "title": "Liver Health",
+      "nutrients": [
+        {"name": "Fiber, total dietary", "why": "Fibre intake is associated with metabolic markers relevant to the liver."},
+        {"name": "Vitamin E (alpha-tocopherol)", "why": "Vitamin E is an antioxidant studied in relation to liver measures."}
+      ],
+      "herbs": ["Turmeric", "Green tea"]
+    },
+    "joint-health": {
+      "title": "Joint Health",
+      "nutrients": [
+        {"name": "Fatty acids, total polyunsaturated", "why": "Omega-3 fats are widely studied in relation to joint comfort."},
+        {"name": "Vitamin C, total ascorbic acid", "why": "Vitamin C contributes to normal collagen formation for cartilage."}
+      ],
+      "herbs": ["Turmeric", "Ginger"]
+    },
+    "skin-hair-nails": {
+      "title": "Skin, Hair & Nails",
+      "nutrients": [
+        {"name": "Vitamin C, total ascorbic acid", "why": "Vitamin C contributes to normal collagen formation for skin."},
+        {"name": "Zinc, Zn", "why": "Zinc contributes to the maintenance of normal skin, hair and nails."},
+        {"name": "Vitamin A, RAE", "why": "Vitamin A contributes to the maintenance of normal skin."},
+        {"name": "Protein", "why": "Hair and nails are largely protein."}
+      ],
+      "herbs": []
+    },
+    "fat-loss": {
+      "title": "Fat Loss",
+      "nutrients": [
+        {"name": "Protein", "why": "Protein is the most satiating macronutrient per calorie."},
+        {"name": "Fiber, total dietary", "why": "Fibre increases fullness for fewer calories."}
+      ],
+      "herbs": ["Green tea"]
+    },
+    "healthy-aging": {
+      "title": "Healthy Aging",
+      "nutrients": [
+        {"name": "Protein", "why": "Protein needs stay high with age to maintain muscle."},
+        {"name": "Vitamin D (D2 + D3)", "why": "Vitamin D supports bone and muscle function."},
+        {"name": "Vitamin B-12", "why": "B12 absorption declines with age."},
+        {"name": "Fatty acids, total polyunsaturated", "why": "Omega-3 intake is studied across several ageing-related measures."}
+      ],
+      "herbs": ["Green tea", "Turmeric"]
+    },
+    "mood-depression": {
+      "title": "Mood",
+      "nutrients": [
+        {"name": "Fatty acids, total polyunsaturated", "why": "Omega-3 intake is widely studied in relation to mood."},
+        {"name": "Folate, total", "why": "Folate status is associated with mood measures."},
+        {"name": "Vitamin B-12", "why": "B12 deficiency can present with low mood."},
+        {"name": "Vitamin D (D2 + D3)", "why": "Vitamin D status is associated with mood measures."}
+      ],
+      "herbs": ["Chamomile"]
+    },
+    "testosterone": {
+      "title": "Testosterone",
+      "nutrients": [
+        {"name": "Zinc, Zn", "why": "Zinc is involved in normal testosterone metabolism."},
+        {"name": "Vitamin D (D2 + D3)", "why": "Vitamin D status is associated with hormonal measures."},
+        {"name": "Magnesium, Mg", "why": "Magnesium is involved in normal energy metabolism."}
+      ],
+      "herbs": ["Fenugreek", "Ginseng"]
+    },
+    "recovery-wellness": {
+      "title": "Recovery",
+      "nutrients": [
+        {"name": "Protein", "why": "Protein supports repair after exertion."},
+        {"name": "Magnesium, Mg", "why": "Magnesium contributes to normal muscle function."},
+        {"name": "Potassium, K", "why": "Potassium is lost in sweat and supports normal muscle function."}
+      ],
+      "herbs": ["Ginger", "Turmeric"]
+    },
+    "vegetarians-vegans": {
+      "title": "Vegetarian & Vegan",
+      "nutrients": [
+        {"name": "Vitamin B-12", "why": "B12 occurs naturally almost only in animal foods, so intake needs attention."},
+        {"name": "Iron, Fe", "why": "Plant iron is absorbed less efficiently than iron from meat."},
+        {"name": "Zinc, Zn", "why": "Absorption from plant sources is lower."},
+        {"name": "Calcium, Ca", "why": "Needs attention without dairy."},
+        {"name": "Fatty acids, total polyunsaturated", "why": "Long-chain omega-3s are scarce in plant diets."}
+      ],
+      "herbs": []
+    }
+  }
+}

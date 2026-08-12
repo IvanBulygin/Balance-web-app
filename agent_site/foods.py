@@ -24,6 +24,7 @@ from typing import Any, Optional
 DATA = Path(__file__).resolve().parent / "data"
 SEED_PATH = DATA / "usda_seed.json"
 HERBS_PATH = DATA / "herbs_seed.json"
+GOALS_PATH = DATA / "goal_foods.json"
 
 # Nutrients kept from a live FoodData Central record — the same set the seed
 # was built with, so live and shipped entries look identical downstream.
@@ -70,7 +71,8 @@ NUTRIENT_ALIASES = {
     "витамин e": "Vitamin E (alpha-tocopherol)", "фолиев": "Folate, total",
 }
 
-_state: dict[str, Any] = {"foods": [], "herbs": [], "attribution": ""}
+_state: dict[str, Any] = {"foods": [], "herbs": [], "goals": {},
+                          "attribution": "", "goal_disclaimer": ""}
 
 
 def _norm(s: str) -> str:
@@ -96,7 +98,14 @@ def load() -> dict:
         _state["herbs"] = json.loads(HERBS_PATH.read_text(encoding="utf-8")).get("herbs", [])
     except FileNotFoundError:
         _state["herbs"] = []
-    return {"foods": len(_state["foods"]), "herbs": len(_state["herbs"])}
+    try:
+        g = json.loads(GOALS_PATH.read_text(encoding="utf-8"))
+        _state["goals"] = g.get("goals", {})
+        _state["goal_disclaimer"] = g.get("disclaimer", "")
+    except FileNotFoundError:
+        _state["goals"] = {}
+    return {"foods": len(_state["foods"]), "herbs": len(_state["herbs"]),
+            "goals": len(_state["goals"])}
 
 
 # ------------------------------------------------------------------ lookup
@@ -108,16 +117,32 @@ def resolve_nutrient(text: str) -> Optional[str]:
     return None
 
 
-def foods_by_nutrient(nutrient: str, limit: int = 8) -> list[dict]:
+def is_seasoning(description: str) -> bool:
+    """Dried spices and herbs are eaten by the pinch, not by the 100 g.
+
+    USDA publishes their composition per 100 g like any other food, so dried
+    basil outranks every real source of magnesium. Ranking them alongside
+    foods would tell someone to eat 100 g of dried thyme, so they are marked
+    and kept out of food rankings.
+    """
+    d = (description or "").lower()
+    return d.startswith(("spices,", "seasoning")) or "dried" in d.split(",")[0]
+
+
+def foods_by_nutrient(nutrient: str, limit: int = 8,
+                      include_seasonings: bool = False) -> list[dict]:
     """Foods ranked by amount per 100 g. Values quoted from USDA."""
     usda = resolve_nutrient(nutrient) or nutrient
     out = []
     for f in _state["foods"]:
         for n in f["nutrients"]:
             if n["name"] == usda:
+                seasoning = is_seasoning(f["description"])
+                if seasoning and not include_seasonings:
+                    break
                 out.append({"food": f["description"], "fdc_id": f["fdc_id"],
                             "amount": n["amount"], "unit": n["unit"],
-                            "nutrient": n["name"]})
+                            "nutrient": n["name"], "is_seasoning": seasoning})
                 break
     out.sort(key=lambda r: -r["amount"])
     return out[:limit]
@@ -267,6 +292,54 @@ _TRAD_CUE = re.compile(r"traditional|traditionally|folk (use|medicine)|ayurved",
 _COMPOUND_CUE = re.compile(
     r"curcumin|quercetin|gingerol|allicin|catechin|piperine|capsaicin|"
     r"sulforaphane|resveratrol|anthocyanin", re.I)
+
+
+def for_goal(slug: str, foods_per_nutrient: int = 4) -> Optional[dict]:
+    """Foods and herbs for a health goal, for the goal/category screen.
+
+    Foods are ranked from USDA measured composition against the nutrients
+    mapped to that goal. Herbs carry their own evidence level. Nothing here
+    claims a food treats anything — the nutrient link is dietary context.
+    """
+    goal = _state["goals"].get(slug)
+    if not goal:
+        return None
+
+    seen: set[str] = set()
+    nutrients = []
+    for n in goal.get("nutrients", []):
+        rows = [r for r in foods_by_nutrient(n["name"], limit=foods_per_nutrient * 3)
+                if r["food"] not in seen]
+        rows = rows[:foods_per_nutrient]
+        for r in rows:
+            seen.add(r["food"])
+        if rows:
+            nutrients.append({"nutrient": n["name"], "why": n["why"], "foods": rows})
+
+    herbs = []
+    for name in goal.get("herbs", []):
+        h = next((x for x in _state["herbs"] if x["name"] == name), None)
+        if not h:
+            continue
+        herbs.append({
+            "name": h["name"], "scientific_name": h.get("scientific_name"),
+            "compounds": h.get("compounds", [])[:4],
+            "human_evidence": h.get("human_evidence", []),
+            "traditional_uses": h.get("traditional_uses", []),
+            "safety": h.get("safety"), "source": h.get("source"),
+        })
+    # Strongest human evidence first; herbs with none fall to the bottom.
+    rank = {"META_ANALYSIS": 5, "SYSTEMATIC_REVIEW": 4, "CLINICAL_TRIAL": 3,
+            "OBSERVATIONAL_HUMAN": 2}
+    herbs.sort(key=lambda h: -max([rank.get(e["evidence_level"], 0)
+                                   for e in h["human_evidence"]] or [0]))
+
+    if not nutrients and not herbs:
+        return None
+    return {"goal": slug, "title": goal.get("title", slug),
+            "nutrients": nutrients, "herbs": herbs,
+            "attribution": _state["attribution"],
+            "disclaimer": _state["goal_disclaimer"]}
 
 
 def lookup(name: str) -> Optional[dict]:

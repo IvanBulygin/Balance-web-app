@@ -3325,6 +3325,13 @@
     const TIERS = ['Primary','Secondary','Promising'];
     const Category = ({ slug, data, loading, error, inStack, onAdd, onBack, onNav }) => {
       const { Icon, Tabbar } = window;
+      // Foods & herbs for this goal — USDA composition plus curated herbs.
+      const [gf, setGf] = useState(null);
+      useEffect(() => {
+        setGf(null);
+        fetch('/api/goal-foods/' + encodeURIComponent(slug))
+          .then(r => r.ok ? r.json() : null).then(j => { if (j) setGf(j); }).catch(()=>{});
+      }, [slug]);
       const topic = TOPIC_BY_SLUG[slug] || { name:'Guide' };
       const title = data?.title || topic.name;
       const parts = title.split(' '); const head1 = parts[0]; const headRest = parts.slice(1).join(' ');
@@ -3371,8 +3378,79 @@
               </div>
             </div>
 
+            {gf && (gf.herbs?.length > 0 || gf.nutrients?.length > 0) && (
+              <div style={{padding:'24px 22px 6px'}}>
+                <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>Foods &amp; <em style={{fontStyle:'italic', color:'var(--brand)'}}>herbs</em></div>
+                <div style={{fontSize:13, color:'var(--ink-3)', marginBottom:14}}>Food first. Nutrient amounts are measured USDA values per 100&nbsp;g.</div>
+
+                {gf.herbs?.length > 0 && (
+                  <div style={{marginBottom:16}}>
+                    <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Herbs</div>
+                    {gf.herbs.map(h => {
+                      const ev = (h.human_evidence || [])[0];
+                      const added = inStack(h.name);
+                      return (
+                        <div key={h.name} className="bal-card" style={{padding:'14px 16px', marginBottom:9}}>
+                          <div style={{display:'flex', alignItems:'baseline', gap:8, flexWrap:'wrap'}}>
+                            <span style={{fontSize:15, fontWeight:600, color:'var(--ink)'}}>{h.name}</span>
+                            <span style={{fontSize:11.5, color:'var(--ink-3)', fontStyle:'italic'}}>{h.scientific_name}</span>
+                          </div>
+                          {ev ? (
+                            <div style={{marginTop:8}}>
+                              <div style={{display:'flex', alignItems:'center', gap:7, flexWrap:'wrap', marginBottom:5}}>
+                                <span className={`ev-badge ${ev.evidence_level==='META_ANALYSIS'||ev.evidence_level==='SYSTEMATIC_REVIEW'?'a':ev.evidence_level==='CLINICAL_TRIAL'?'b':'c'}`}
+                                  style={{width:'auto', height:'auto', padding:'2px 9px', borderRadius:6, fontSize:9.5}}>{ev.evidence_level.replace(/_/g,' ')}</span>
+                                <span style={{fontSize:12.5, color:'var(--ink-2)'}}>studied for {ev.outcome}</span>
+                              </div>
+                              <div style={{fontSize:11.5, color:'var(--brand-deep)', background:'var(--brand-soft)', borderRadius:9, padding:'7px 10px', lineHeight:1.45}}>
+                                Studied as: {ev.preparation}
+                              </div>
+                            </div>
+                          ) : (
+                            <div style={{fontSize:12, color:'var(--ink-3)', marginTop:6}}>Traditional culinary use; no human outcome trials here.</div>
+                          )}
+                          {h.traditional_uses?.length > 0 && (
+                            <div style={{fontSize:12, color:'var(--ink-3)', marginTop:7, lineHeight:1.45}}>
+                              <b>Traditional use:</b> {h.traditional_uses[0]} — not clinical evidence.
+                            </div>
+                          )}
+                          <div style={{display:'flex', gap:8, marginTop:10, flexWrap:'wrap'}}>
+                            <button onClick={()=>onAdd({ name:h.name, tier:'', dose:'', iherb_url: buyLinksForName(h.name)[0].url }, title)} disabled={added}
+                              style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:added?'var(--brand-soft)':'var(--brand)', color:added?'var(--brand)':'white', borderRadius:999, border:'none', fontSize:13, fontWeight:600}}>
+                              {added ? <>Added <Icon.Check size={12} c="var(--brand)"/></> : <>Add to stack <Icon.Plus size={13} c="white"/></>}
+                            </button>
+                            {buyLinksForName(h.name).map(r => (
+                              <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:6, padding:'8px 14px', background:'var(--surface-3)', color:'var(--ink-2)', borderRadius:999, textDecoration:'none', fontSize:13, fontWeight:600}}>{r.name} <ExternalIcon c="var(--ink-2)"/></a>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {gf.nutrients?.map(n => (
+                  <div key={n.nutrient} style={{marginBottom:14}}>
+                    <div style={{fontSize:13.5, fontWeight:600, color:'var(--ink)'}}>{n.nutrient}</div>
+                    <div style={{fontSize:12, color:'var(--ink-3)', marginTop:2, marginBottom:8, lineHeight:1.45}}>{n.why}</div>
+                    <div className="bal-card" style={{padding:'2px 0'}}>
+                      {n.foods.map((f,i) => (
+                        <div key={f.fdc_id} style={{display:'flex', alignItems:'center', gap:10, padding:'10px 15px', borderBottom:i<n.foods.length-1?'0.5px solid var(--rule)':'none'}}>
+                          <div style={{flex:1, minWidth:0, fontSize:13.5, color:'var(--ink)'}}>{f.food}</div>
+                          <div className="mono" style={{fontSize:12.5, fontWeight:600, color:'var(--ink-2)', flexShrink:0}}>{f.amount} {f.unit}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <div style={{fontSize:11, color:'var(--ink-4)', lineHeight:1.5, marginTop:4}}>
+                  {gf.disclaimer} {gf.attribution}
+                </div>
+              </div>
+            )}
+
             <div style={{padding:'24px 22px 6px'}}>
-              <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>Recommended <em style={{fontStyle:'italic', color:'var(--brand)'}}>stack</em></div>
+              <div className="serif" style={{fontSize:22, marginBottom:6, color:'var(--ink)'}}>Recommended <em style={{fontStyle:'italic', color:'var(--brand)'}}>supplements</em></div>
               <div style={{fontSize:13, color:'var(--ink-3)', marginBottom:14}}>Tiered by evidence in the guide. Unproven supplements are filtered out.</div>
               {(loading||!data) && <CategorySkeleton/>}
               {data && TIERS.map(t => byTier[t].length>0 && (

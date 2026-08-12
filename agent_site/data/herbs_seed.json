@@ -302,10 +302,158 @@
           "preparation": "brewed tea and green tea extracts",
           "summary": "Pooled analyses of human trials have examined green tea consumption in relation to blood lipids. Reported changes are small, and extract studies differ substantially from drinking tea.",
           "certainty": "moderate"
+        },
+        {
+          "outcome": "cognitive performance",
+          "evidence_level": "CLINICAL_TRIAL",
+          "preparation": "brewed tea and L-theanine plus caffeine combinations",
+          "summary": "Trials have examined the combination of L-theanine and caffeine found in tea in relation to attention on short tasks. Effects are small and short-term.",
+          "certainty": "low"
         }
       ],
       "safety": "Drinking tea is widely considered safe. High-dose concentrated extracts have been associated with liver injury in rare cases; NCCIH advises caution with extracts.",
       "source": "https://www.nccih.nih.gov/health/green-tea"
+    },
+    {
+      "name": "Maca",
+      "scientific_name": "Lepidium meyenii",
+      "aliases": [
+        "maca",
+        "lepidium",
+        "мака"
+      ],
+      "plant_part": "root",
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Macamides",
+        "Glucosinolates",
+        "Macaene"
+      ],
+      "traditional_uses": [
+        "Used traditionally in the Andes as a food and tonic root"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "libido",
+          "evidence_level": "CLINICAL_TRIAL",
+          "preparation": "dried maca powder at supplement doses",
+          "summary": "Small randomised trials have examined maca powder in relation to self-reported sexual desire. Trials are few and small, and results have not been consistently replicated.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Eaten as a food in Peru. Generally well tolerated; data in pregnancy and in thyroid conditions is limited, so discuss with a doctor.",
+      "source": "https://www.nccih.nih.gov/health/herbsataglance"
+    },
+    {
+      "name": "Fenugreek",
+      "scientific_name": "Trigonella foenum-graecum",
+      "aliases": [
+        "fenugreek",
+        "trigonella",
+        "пажитник"
+      ],
+      "plant_part": "seed",
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "SPICE",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Diosgenin",
+        "Trigonelline",
+        "4-Hydroxyisoleucine",
+        "Saponins"
+      ],
+      "traditional_uses": [
+        "Used traditionally as a culinary spice and in tonic preparations"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "libido",
+          "evidence_level": "CLINICAL_TRIAL",
+          "preparation": "standardised fenugreek seed extract, not culinary amounts",
+          "summary": "Small trials of standardised fenugreek extracts have reported changes in self-reported sexual function and some hormonal measures. Trials are small, often industry-funded, and this does not apply to fenugreek used as a spice.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Common as a spice. Extracts may lower blood sugar and can interact with diabetes medicines and anticoagulants; discuss with a doctor. Avoid medicinal doses in pregnancy.",
+      "source": "https://www.nccih.nih.gov/health/fenugreek"
+    },
+    {
+      "name": "Ginseng",
+      "scientific_name": "Panax ginseng",
+      "aliases": [
+        "ginseng",
+        "panax",
+        "женьшень"
+      ],
+      "plant_part": "root",
+      "classifications": [
+        "HERB",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Ginsenosides",
+        "Panaxans",
+        "Polyacetylenes"
+      ],
+      "traditional_uses": [
+        "Used traditionally in East Asia as a tonic root for fatigue and vitality"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "libido",
+          "evidence_level": "SYSTEMATIC_REVIEW",
+          "preparation": "standardised Panax ginseng extract",
+          "summary": "Systematic reviews of small randomised trials have examined Panax ginseng extracts in relation to erectile function and fatigue. The authors note that trials are small and of limited methodological quality.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "May cause insomnia and headache. Can interact with anticoagulants, diabetes medicines and some antidepressants; discuss with a doctor or pharmacist before use.",
+      "source": "https://www.nccih.nih.gov/health/asian-ginseng"
+    },
+    {
+      "name": "Sage",
+      "scientific_name": "Salvia officinalis",
+      "aliases": [
+        "sage",
+        "salvia officinalis",
+        "шалфей"
+      ],
+      "plant_part": "leaf",
+      "classifications": [
+        "FOOD",
+        "HERB",
+        "SPICE",
+        "CULINARY_PLANT",
+        "MEDICINAL_PLANT"
+      ],
+      "compounds": [
+        "Rosmarinic acid",
+        "Carnosic acid",
+        "Thujone",
+        "Cineole"
+      ],
+      "traditional_uses": [
+        "Used traditionally as a culinary herb and in preparations associated with memory"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "cognitive performance",
+          "evidence_level": "CLINICAL_TRIAL",
+          "preparation": "sage extract capsules, not culinary amounts",
+          "summary": "Small short-term trials have examined sage extracts in relation to attention and memory task performance in healthy adults. Studies are small and effects are modest and short-lived.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Culinary amounts are widely consumed. Sage oil contains thujone, which is not safe in large or prolonged doses; avoid medicinal doses in pregnancy and in seizure disorders.",
+      "source": "https://www.nccih.nih.gov/health/herbsataglance"
     }
   ]
 }

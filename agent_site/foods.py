@@ -13,14 +13,32 @@ The rules from the knowledge-base design are kept here too:
 from __future__ import annotations
 
 import json
+import os
 import re
 import unicodedata
+import urllib.parse
+import urllib.request
 from pathlib import Path
 from typing import Any, Optional
 
 DATA = Path(__file__).resolve().parent / "data"
 SEED_PATH = DATA / "usda_seed.json"
 HERBS_PATH = DATA / "herbs_seed.json"
+
+# Nutrients kept from a live FoodData Central record — the same set the seed
+# was built with, so live and shipped entries look identical downstream.
+KEEP_NUTRIENTS = {
+    "Magnesium, Mg", "Potassium, K", "Calcium, Ca", "Iron, Fe", "Zinc, Zn",
+    "Sodium, Na", "Phosphorus, P", "Selenium, Se", "Copper, Cu",
+    "Vitamin C, total ascorbic acid", "Vitamin D (D2 + D3)",
+    "Vitamin E (alpha-tocopherol)", "Vitamin K (phylloquinone)",
+    "Vitamin B-6", "Vitamin B-12", "Folate, total", "Niacin", "Riboflavin",
+    "Thiamin", "Vitamin A, RAE",
+    "Fiber, total dietary", "Protein", "Total lipid (fat)",
+    "Carbohydrate, by difference", "Energy", "Sugars, total including NLEA",
+    "Fatty acids, total polyunsaturated", "Fatty acids, total saturated",
+}
+_live_cache: dict[str, Any] = {}
 
 # Friendly aliases -> the USDA nutrient names in the seed.
 NUTRIENT_ALIASES = {
@@ -105,6 +123,84 @@ def foods_by_nutrient(nutrient: str, limit: int = 8) -> list[dict]:
     return out[:limit]
 
 
+def live_lookup(name: str) -> Optional[dict]:
+    """Query FoodData Central for a food that isn't in the shipped seed.
+
+    The seed covers common whole foods; this extends coverage to the rest of
+    USDA's database at runtime. Results are cached in memory for the life of
+    the process. Values are stored exactly as USDA returns them.
+
+    Returns None when no key is configured or the API is unreachable — the
+    caller then behaves as it did before, rather than inventing anything.
+    """
+    key = os.environ.get("FDC_API_KEY")
+    if not key or not name.strip():
+        return None
+    ck = _norm(name)
+    if ck in _live_cache:
+        return _live_cache[ck]
+
+    url = (f"https://api.nal.usda.gov/fdc/v1/foods/search"
+           f"?query={urllib.parse.quote(name.strip())}"
+           f"&dataType={urllib.parse.quote('Foundation,SR Legacy')}"
+           f"&pageSize=1&api_key={key}")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "BalanceAI/1.0"})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            payload = json.loads(r.read())
+    except Exception as exc:  # noqa: BLE001 - degrade quietly, never fabricate
+        print(f"[usda] live lookup failed for {name!r}: {exc}")
+        _live_cache[ck] = None
+        return None
+
+    foods = payload.get("foods") or []
+    if not foods:
+        _live_cache[ck] = None
+        return None
+    food = foods[0]
+
+    # The search endpoint returns an abridged nutrient list, so a food can come
+    # back without magnesium even though USDA holds a value. Fetch the full
+    # record for complete composition.
+    try:
+        durl = (f"https://api.nal.usda.gov/fdc/v1/food/{food['fdcId']}"
+                f"?api_key={key}")
+        dreq = urllib.request.Request(durl, headers={"User-Agent": "BalanceAI/1.0"})
+        with urllib.request.urlopen(dreq, timeout=12) as r:
+            detail = json.loads(r.read())
+        if detail.get("foodNutrients"):
+            food = {
+                "fdcId": detail.get("fdcId", food["fdcId"]),
+                "description": detail.get("description", food["description"]),
+                "dataType": detail.get("dataType", food.get("dataType")),
+                "foodNutrients": [
+                    {"nutrientName": (n.get("nutrient") or {}).get("name"),
+                     "value": n.get("amount"),
+                     "unitName": (n.get("nutrient") or {}).get("unitName"),
+                     "nutrientId": (n.get("nutrient") or {}).get("id")}
+                    for n in detail["foodNutrients"]
+                ],
+            }
+    except Exception as exc:  # noqa: BLE001 - the abridged record still works
+        print(f"[usda] detail fetch failed for {name!r}: {exc}")
+
+    nutrients = [
+        {"name": n["nutrientName"], "amount": n["value"],
+         "unit": (n.get("unitName") or "").lower(),
+         "usda_nutrient_id": n.get("nutrientId")}
+        for n in food.get("foodNutrients", [])
+        if n.get("nutrientName") in KEEP_NUTRIENTS and n.get("value") is not None
+    ]
+    if not nutrients:
+        _live_cache[ck] = None
+        return None
+    entry = {"fdc_id": food["fdcId"], "description": food["description"],
+             "data_type": food.get("dataType"), "query": name,
+             "nutrients": nutrients, "live": True}
+    _live_cache[ck] = entry
+    return entry
+
+
 def find_food(name: str) -> Optional[dict]:
     n = _norm(name)
     if not n:
@@ -121,11 +217,13 @@ def find_food(name: str) -> Optional[dict]:
 
 
 def nutrients_for(name: str, top: int = 12) -> Optional[dict]:
-    f = find_food(name)
+    """Composition for a food. Falls back to a live USDA query when the food
+    isn't in the shipped seed, so coverage isn't limited to the seeded list."""
+    f = find_food(name) or live_lookup(name)
     if not f:
         return None
     return {"food": f["description"], "fdc_id": f["fdc_id"],
-            "nutrients": f["nutrients"][:top]}
+            "nutrients": f["nutrients"][:top], "live": f.get("live", False)}
 
 
 def find_herb(name: str) -> Optional[dict]:

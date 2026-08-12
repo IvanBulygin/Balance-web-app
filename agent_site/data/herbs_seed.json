@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "note": "Curated herb entries. Traditional use, compound composition and human evidence are kept in SEPARATE fields on purpose and must never be merged when presented. Human evidence cites PMIDs retrieved from PubMed; traditional use cites the ethnobotanical record and is explicitly not clinical evidence.",
+  "attribution": "Compound and ethnobotanical relationships follow USDA Dr. Duke's Phytochemical and Ethnobotanical Databases (public domain). Human evidence cites PubMed-indexed literature. Safety framing follows NCCIH.",
+  "herbs": [
+    {
+      "name": "Ginger",
+      "scientific_name": "Zingiber officinale",
+      "aliases": ["ginger", "ginger root", "ginger rhizome", "zingiber"],
+      "plant_part": "rhizome",
+      "classifications": ["FOOD", "HERB", "SPICE", "CULINARY_PLANT", "MEDICINAL_PLANT"],
+      "compounds": ["Gingerol", "Shogaol", "Zingerone", "Paradol"],
+      "traditional_uses": [
+        "Used traditionally for nausea and motion sickness",
+        "Used traditionally for indigestion and digestive discomfort"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "nausea",
+          "evidence_level": "SYSTEMATIC_REVIEW",
+          "preparation": "powdered ginger / standardised extract, not culinary amounts",
+          "summary": "Systematic reviews of randomised trials have examined ginger for nausea and vomiting, including pregnancy and post-operative nausea. Findings are generally favourable but trials are small and heterogeneous, and doses studied are higher than typical culinary use.",
+          "pmid": "PMID 42075106",
+          "certainty": "moderate"
+        }
+      ],
+      "safety": "Generally well tolerated as a food. May cause mild heartburn. NCCIH notes caution alongside anticoagulant medicines — discuss with a doctor or pharmacist.",
+      "source": "https://www.nccih.nih.gov/health/ginger"
+    },
+    {
+      "name": "Turmeric",
+      "scientific_name": "Curcuma longa",
+      "aliases": ["turmeric", "curcuma", "haldi"],
+      "plant_part": "rhizome",
+      "classifications": ["FOOD", "HERB", "SPICE", "CULINARY_PLANT", "MEDICINAL_PLANT"],
+      "compounds": ["Curcumin", "Demethoxycurcumin", "Bisdemethoxycurcumin", "Turmerone"],
+      "traditional_uses": [
+        "Used traditionally for joint discomfort",
+        "Used traditionally in digestive preparations"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "joint symptoms",
+          "evidence_level": "CLINICAL_TRIAL",
+          "preparation": "standardised curcumin extract, typically with an absorption enhancer",
+          "summary": "Trials have studied concentrated curcumin extracts in relation to joint symptoms and inflammatory markers. Results vary and trials are small. Curcumin is poorly absorbed, so this evidence does not transfer to turmeric used as a culinary spice.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Culinary amounts are widely consumed. Concentrated extracts have been associated with digestive upset and, rarely, liver injury. Discuss extracts with a doctor, particularly alongside anticoagulants.",
+      "source": "https://www.nccih.nih.gov/health/turmeric"
+    },
+    {
+      "name": "Garlic",
+      "scientific_name": "Allium sativum",
+      "aliases": ["garlic", "allium sativum"],
+      "plant_part": "bulb",
+      "classifications": ["FOOD", "HERB", "CULINARY_PLANT", "MEDICINAL_PLANT"],
+      "compounds": ["Allicin", "Alliin", "Ajoene", "Diallyl disulfide"],
+      "traditional_uses": [
+        "Used traditionally for circulatory complaints",
+        "Used traditionally as a culinary preservative and remedy"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "blood pressure",
+          "evidence_level": "SYSTEMATIC_REVIEW",
+          "preparation": "aged garlic extract and garlic powder preparations",
+          "summary": "Reviews of human trials have examined garlic preparations in relation to blood pressure and blood lipids. Effects reported are modest, trials differ in preparation and dose, and results are not consistent.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Common as a food. May increase bleeding risk with anticoagulants, and can cause digestive upset and odour. Discuss supplements with a doctor before surgery.",
+      "source": "https://www.nccih.nih.gov/health/garlic"
+    },
+    {
+      "name": "Peppermint",
+      "scientific_name": "Mentha x piperita",
+      "aliases": ["peppermint", "mentha piperita", "mint"],
+      "plant_part": "leaf",
+      "classifications": ["FOOD", "HERB", "CULINARY_PLANT", "MEDICINAL_PLANT", "BEVERAGE"],
+      "compounds": ["Menthol", "Menthone", "Rosmarinic acid"],
+      "traditional_uses": [
+        "Used traditionally for digestive discomfort and bloating",
+        "Used traditionally as a tea after meals"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "bloating",
+          "evidence_level": "SYSTEMATIC_REVIEW",
+          "preparation": "enteric-coated peppermint oil capsules, not tea",
+          "summary": "Human trials have studied enteric-coated peppermint oil in irritable bowel syndrome symptoms. This evidence concerns a specific capsule preparation and does not apply to peppermint tea or culinary use.",
+          "certainty": "moderate"
+        }
+      ],
+      "safety": "Peppermint tea is widely consumed. Oil capsules can cause heartburn and are not suitable for everyone; discuss with a doctor if you have reflux or gallbladder problems.",
+      "source": "https://www.nccih.nih.gov/health/peppermint-oil"
+    },
+    {
+      "name": "Cinnamon",
+      "scientific_name": "Cinnamomum verum",
+      "aliases": ["cinnamon", "cinnamomum", "cassia"],
+      "plant_part": "bark",
+      "classifications": ["FOOD", "SPICE", "CULINARY_PLANT", "MEDICINAL_PLANT"],
+      "compounds": ["Cinnamaldehyde", "Eugenol", "Coumarin", "Cinnamic acid"],
+      "traditional_uses": [
+        "Used traditionally as a warming digestive spice"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "glycemic control",
+          "evidence_level": "SYSTEMATIC_REVIEW",
+          "preparation": "cinnamon powder and extracts at supplement doses",
+          "summary": "Reviews of human trials examining cinnamon and blood glucose report inconsistent findings, with substantial differences between trials in species, dose and duration.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Culinary amounts are widely consumed. Cassia cinnamon contains coumarin, which in large regular supplement doses has been linked to liver concerns; Ceylon cinnamon contains far less.",
+      "source": "https://www.nccih.nih.gov/health/cinnamon"
+    },
+    {
+      "name": "Rosemary",
+      "scientific_name": "Salvia rosmarinus",
+      "aliases": ["rosemary", "rosmarinus officinalis", "salvia rosmarinus"],
+      "plant_part": "leaf",
+      "classifications": ["FOOD", "HERB", "CULINARY_PLANT", "MEDICINAL_PLANT"],
+      "compounds": ["Rosmarinic acid", "Carnosic acid", "Cineole", "Camphor"],
+      "traditional_uses": [
+        "Used traditionally as a culinary and preservative herb",
+        "Used traditionally in preparations associated with alertness"
+      ],
+      "human_evidence": [],
+      "safety": "Culinary amounts are widely consumed. Concentrated oils should not be taken internally without professional advice.",
+      "source": "https://www.nccih.nih.gov/health/herbsataglance"
+    },
+    {
+      "name": "Chamomile",
+      "scientific_name": "Matricaria chamomilla",
+      "aliases": ["chamomile", "camomile", "matricaria"],
+      "plant_part": "flower",
+      "classifications": ["HERB", "MEDICINAL_PLANT", "BEVERAGE"],
+      "compounds": ["Apigenin", "Bisabolol", "Chamazulene"],
+      "traditional_uses": [
+        "Used traditionally as a calming tea before sleep",
+        "Used traditionally for digestive discomfort"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "sleep quality",
+          "evidence_level": "CLINICAL_TRIAL",
+          "preparation": "chamomile extract capsules and tea",
+          "summary": "Small human trials have examined chamomile preparations in relation to sleep quality and anxiety symptoms. Trials are small and results are preliminary.",
+          "certainty": "low"
+        }
+      ],
+      "safety": "Generally well tolerated. People allergic to plants in the daisy family may react. Discuss with a doctor alongside anticoagulants or sedatives.",
+      "source": "https://www.nccih.nih.gov/health/chamomile"
+    },
+    {
+      "name": "Green tea",
+      "scientific_name": "Camellia sinensis",
+      "aliases": ["green tea", "camellia sinensis", "matcha"],
+      "plant_part": "leaf",
+      "classifications": ["BEVERAGE", "FOOD", "MEDICINAL_PLANT"],
+      "compounds": ["Epigallocatechin gallate", "Catechins", "L-Theanine", "Caffeine"],
+      "traditional_uses": [
+        "Consumed traditionally as a daily beverage across East Asia"
+      ],
+      "human_evidence": [
+        {
+          "outcome": "LDL cholesterol",
+          "evidence_level": "META_ANALYSIS",
+          "preparation": "brewed tea and green tea extracts",
+          "summary": "Pooled analyses of human trials have examined green tea consumption in relation to blood lipids. Reported changes are small, and extract studies differ substantially from drinking tea.",
+          "certainty": "moderate"
+        }
+      ],
+      "safety": "Drinking tea is widely considered safe. High-dose concentrated extracts have been associated with liver injury in rare cases; NCCIH advises caution with extracts.",
+      "source": "https://www.nccih.nih.gov/health/green-tea"
+    }
+  ]
+}

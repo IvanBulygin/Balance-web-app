@@ -81,6 +81,10 @@ async def lifespan(app: FastAPI):
     except FileNotFoundError:
         state["interactions"] = {"rules": []}
         print("No interaction DB found.")
+    import foods as foods_kb
+    state["foods_kb"] = foods_kb
+    counts = foods_kb.load()
+    print(f"Loaded food knowledge: {counts['foods']} USDA foods, {counts['herbs']} herbs.")
     try:
         state["drug_effects"] = json.loads(DRUG_EFFECTS_PATH.read_text(encoding="utf-8"))
         print(f"Loaded substance-effects DB: {len(state['drug_effects'].get('substances', []))} entries.")
@@ -165,6 +169,33 @@ def mushrooms():
 def interactions():
     """Curated dangerous-combination rules — powers the in-chat warning card."""
     return state.get("interactions", {"rules": []})
+
+
+@app.get("/api/foods")
+def foods_index():
+    """Food & herb knowledge for the Learn tab (USDA values, curated herbs)."""
+    kb = state.get("foods_kb")
+    if not kb:
+        return {"foods": [], "herbs": [], "nutrients": []}
+    return {
+        "attribution": kb._state.get("attribution", ""),
+        "nutrients": sorted({n for n in kb.NUTRIENT_ALIASES.values()}),
+        "foods": [{"fdc_id": f["fdc_id"], "name": f["description"],
+                   "nutrients": f["nutrients"]} for f in kb._state["foods"]],
+        "herbs": kb._state["herbs"],
+    }
+
+
+@app.get("/api/foods/by-nutrient/{nutrient}")
+def foods_by_nutrient(nutrient: str, limit: int = 10):
+    kb = state.get("foods_kb")
+    if not kb:
+        raise HTTPException(503, "Food knowledge not loaded")
+    resolved = kb.resolve_nutrient(nutrient) or nutrient
+    return {"nutrient": resolved,
+            "ranked_by": "amount per 100 g (USDA structured data)",
+            "results": kb.foods_by_nutrient(resolved, limit=limit),
+            "attribution": kb._state.get("attribution", "")}
 
 
 @app.get("/api/substances")
@@ -622,6 +653,24 @@ def _prepare_chat(messages: list[Message], stack: list[str] | None = None):
                 "changing any medication. If the label doesn't cover their question, say so."
             )
             sources = [f"FDA label: {drug['name']}"]
+
+    # Food & herb knowledge. Nutrient values come from USDA structured data and
+    # are injected verbatim; traditional use is labelled separately from human
+    # evidence so the model cannot present one as the other.
+    kb = state.get("foods_kb")
+    if kb:
+        food_hit = kb.answer(recent_user)
+        if food_hit:
+            system_instruction += (
+                "\n\n## Food & herb knowledge (AUTHORITATIVE — structured data)\n\n"
+                + kb.format_for_agent(food_hit)
+                + "\n\nAnswer the food/herb part of the question from this data only. "
+                "Quote the numbers exactly, name the foods given, and add nothing that "
+                "is not listed. Keep traditional use and human evidence clearly "
+                "separate, and never imply a food treats a condition."
+            )
+            sources = ["USDA FoodData Central"] if food_hit.get("kind") in (
+                "nutrient_ranking", "food_nutrition") else ["food & herb knowledge base"]
 
     # Dangerous-combination warnings (curated). Inject whenever the message
     # matches a known interaction so the agent warns from vetted data, not guesses.

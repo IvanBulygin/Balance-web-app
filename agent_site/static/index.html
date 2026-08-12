@@ -1948,6 +1948,114 @@
       );
     };
 
+    // ============ Food & herb detail screens ============
+    // Nutrient values are USDA measured data, shown verbatim. Herb screens keep
+    // traditional use visually and structurally apart from human evidence.
+    const FoodDetail = ({ food, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      if (!food) return null;
+      const sorted = [...food.nutrients].sort((a,b) => a.name.localeCompare(b.name));
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title={food.name.split(',')[0]} em="" onBack={onBack}
+              sub={`${food.name} — measured values per 100 g from USDA FoodData Central.`}/>
+            <div style={{padding:'20px 18px 0'}}>
+              <div className="bal-card" style={{padding:'2px 0'}}>
+                {sorted.map((n,i) => (
+                  <div key={n.name} style={{display:'flex', alignItems:'center', gap:10, padding:'11px 16px', borderBottom:i<sorted.length-1?'0.5px solid var(--rule)':'none'}}>
+                    <div style={{flex:1, fontSize:13.5, color:'var(--ink)'}}>{n.name}</div>
+                    <div className="mono" style={{fontSize:13, fontWeight:600, color:'var(--ink-2)'}}>{n.amount} {n.unit}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{fontSize:11.5, color:'var(--ink-4)', lineHeight:1.5, marginTop:12}}>
+                Source: USDA FoodData Central, record {food.fdc_id}. Values are per 100&nbsp;g as published, not per serving.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="browse" onNav={onNav}/>
+        </div>
+      );
+    };
+
+    const HerbDetail = ({ herb, onBack, onNav }) => {
+      const { Icon, Tabbar } = window;
+      if (!herb) return null;
+      return (
+        <div className="screen-root">
+          <div className="scroll" style={{height:'100%', paddingBottom:130}}>
+            <div style={{height:54}}/>
+            <AuthHeader title={herb.name} em="" onBack={onBack} sub={herb.scientific_name}/>
+            <div style={{padding:'20px 18px 0'}}>
+              {(herb.compounds||[]).length > 0 && (
+                <div style={{marginBottom:18}}>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Compounds</div>
+                  <div style={{display:'flex', flexWrap:'wrap', gap:7}}>
+                    {herb.compounds.map(c => <span key={c} className="bal-pill light" style={{padding:'7px 12px', fontSize:12.5}}>{c}</span>)}
+                  </div>
+                  <div style={{fontSize:11.5, color:'var(--ink-4)', marginTop:8, lineHeight:1.45}}>Composition only. A compound being present is not evidence of a health effect.</div>
+                </div>
+              )}
+
+              {(herb.human_evidence||[]).length > 0 && (
+                <div style={{marginBottom:18}}>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Human evidence</div>
+                  {herb.human_evidence.map((e,i) => (
+                    <div key={i} className="bal-card" style={{padding:'14px 16px', marginBottom:9}}>
+                      <div style={{display:'flex', alignItems:'center', gap:8, flexWrap:'wrap', marginBottom:6}}>
+                        <span className={`ev-badge ${e.evidence_level==='META_ANALYSIS'||e.evidence_level==='SYSTEMATIC_REVIEW'?'a':e.evidence_level==='CLINICAL_TRIAL'?'b':'c'}`}
+                          style={{width:'auto', height:'auto', padding:'2px 9px', borderRadius:6, fontSize:10}}>{e.evidence_level.replace(/_/g,' ')}</span>
+                        <span style={{fontSize:13.5, fontWeight:600, color:'var(--ink)'}}>{e.outcome}</span>
+                        {e.certainty && <span style={{fontSize:11, color:'var(--ink-3)'}}>· {e.certainty} certainty</span>}
+                      </div>
+                      <div style={{fontSize:12.5, color:'var(--ink-2)', lineHeight:1.5}}>{e.summary}</div>
+                      <div style={{fontSize:11.5, color:'var(--brand-deep)', background:'var(--brand-soft)', borderRadius:9, padding:'8px 10px', marginTop:8, lineHeight:1.45}}>
+                        Preparation studied: {e.preparation}{e.pmid ? ` · ${e.pmid}` : ''}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {(herb.traditional_uses||[]).length > 0 && (
+                <div style={{marginBottom:18}}>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Traditional use</div>
+                  <div className="bal-card" style={{padding:'14px 16px', background:'var(--surface-3)'}}>
+                    {herb.traditional_uses.map((u,i) => (
+                      <div key={i} style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5, marginBottom:i<herb.traditional_uses.length-1?6:0}}>• {u}</div>
+                    ))}
+                    <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:10, lineHeight:1.45, fontWeight:600}}>
+                      Traditional or historical use. This is <u>not</u> clinical evidence that it works.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {herb.safety && (
+                <div style={{marginBottom:14}}>
+                  <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Safety</div>
+                  <div style={{padding:'12px 14px', background:'#fff1e6', color:'#8a3f0a', borderRadius:12, fontSize:12.5, lineHeight:1.5}}>{herb.safety}</div>
+                </div>
+              )}
+
+              {herb.source && (
+                <a href={herb.source} target="_blank" rel="noopener noreferrer" className="bal-pill light"
+                  style={{display:'inline-flex', alignItems:'center', gap:5, padding:'7px 12px', fontSize:12, textDecoration:'none'}}>
+                  Source ↗
+                </a>
+              )}
+              <div style={{fontSize:11, color:'var(--ink-4)', lineHeight:1.5, marginTop:14}}>
+                Educational information, not medical advice. Foods and herbs support a diet; they do not treat conditions.
+              </div>
+            </div>
+          </div>
+          <Tabbar active="browse" onNav={onNav}/>
+        </div>
+      );
+    };
+
     const Onboarding = ({ onStart, onLogin }) => {
       const { Icon } = window;
       return (
@@ -3037,7 +3145,7 @@
     };
 
     // ============ Learn ============
-    const Learn = ({ onOpen, onOpenSupplement, onOpenSubstance, onNav }) => {
+    const Learn = ({ onOpen, onOpenSupplement, onOpenSubstance, onNav, onOpenFood, onOpenHerb }) => {
       const { Icon, Tabbar } = window;
       const [mode, setMode] = useState('topics');   // 'topics' | 'supplements' | 'substances'
       const [q, setQ] = useState('');
@@ -3046,6 +3154,17 @@
       const topics = TOPICS.filter(t => !query || t.name.toLowerCase().includes(query) || t.slug.replace(/-/g,' ').includes(query));
       const supps = SUPPLEMENTS.filter(s => !query || s.n.toLowerCase().includes(query) || s.t.some(slug => (TOPIC_BY_SLUG[slug]?.name||'').toLowerCase().includes(query)));
       const subs = SUBSTANCE_SUPPORT.filter(s => !query || s.name.toLowerCase().includes(query) || GROUP_LABEL[s.group].toLowerCase().includes(query) || s.aliases.some(a => a.includes(query)));
+      // Food & herb knowledge — USDA composition + curated herb entries.
+      const [kb, setKb] = useState(null);
+      useEffect(() => {
+        fetch('/api/foods').then(r => r.ok ? r.json() : null)
+          .then(j => { if (j) setKb(j); }).catch(() => {});
+      }, []);
+      const kbFoods = (kb?.foods || []).filter(f => !query || f.name.toLowerCase().includes(query));
+      const kbHerbs = (kb?.herbs || []).filter(h => !query || h.name.toLowerCase().includes(query)
+        || (h.scientific_name || '').toLowerCase().includes(query)
+        || (h.compounds || []).some(c => c.toLowerCase().includes(query)));
+      const kbCount = kbFoods.length + kbHerbs.length;
       const seg = (k, label, count) => (
         <button onClick={()=>setMode(k)} style={{flex:1, padding:'9px 0', borderRadius:9, border:'none', cursor:'pointer', background: mode===k?'white':'transparent', color: mode===k?'var(--brand)':'var(--ink-3)', fontWeight:600, fontSize:13, boxShadow: mode===k?'var(--sh-1)':'none', transition:'background 150ms'}}>{label} <span style={{opacity:.55}}>{count}</span></button>
       );
@@ -3077,6 +3196,7 @@
                 {seg('topics','Categories', topics.length)}
                 {seg('supplements','Supplements', supps.length)}
                 {seg('substances','Substances', subs.length)}
+                {seg('foods','Foods', kbCount)}
               </div>
             </div>
             {/* Featured guide — only on Categories with no active search */}
@@ -3120,6 +3240,53 @@
                     ))}
                   </div>
                 ) : empty
+              ) : mode==='foods' ? (
+                !kb ? (
+                  <div className="bal-card" style={{padding:'22px', textAlign:'center', fontSize:13.5, color:'var(--ink-3)'}}>Loading food data…</div>
+                ) : kbCount === 0 ? empty : (
+                  <div>
+                    <div style={{fontSize:11.5, color:'var(--ink-3)', lineHeight:1.5, padding:'11px 13px', background:'var(--surface-3)', borderRadius:12, marginBottom:14}}>
+                      Nutrient values are measured data from <b>USDA FoodData Central</b>, per 100&nbsp;g. Herb entries keep traditional use and human evidence separate — they are not the same thing.
+                    </div>
+
+                    {kbHerbs.length > 0 && (
+                      <div style={{marginBottom:18}}>
+                        <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Herbs &amp; spices</div>
+                        {kbHerbs.map(h => (
+                          <button key={h.name} onClick={()=>onOpenHerb(h)} className="bal-card" style={{width:'100%', textAlign:'left', border:'none', padding:'13px 15px', marginBottom:8, display:'flex', alignItems:'center', gap:12, cursor:'pointer'}}>
+                            <div style={{flex:1, minWidth:0}}>
+                              <div style={{fontSize:14.5, fontWeight:600, color:'var(--ink)'}}>{h.name}</div>
+                              <div style={{fontSize:11.5, color:'var(--ink-3)', marginTop:2, fontStyle:'italic'}}>{h.scientific_name}</div>
+                              <div style={{display:'flex', gap:6, marginTop:6, flexWrap:'wrap'}}>
+                                {(h.human_evidence||[]).length > 0 && <span className="bal-pill light" style={{padding:'2px 8px', fontSize:10}}>Human evidence</span>}
+                                {(h.traditional_uses||[]).length > 0 && <span style={{padding:'2px 8px', fontSize:10, borderRadius:999, background:'var(--surface-3)', color:'var(--ink-3)', fontWeight:600}}>Traditional use</span>}
+                              </div>
+                            </div>
+                            <Icon.Chevron size={13} c="var(--ink-4)"/>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {kbFoods.length > 0 && (
+                      <div>
+                        <div style={{fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--ink-3)', fontWeight:600, marginBottom:8}}>Foods · {kbFoods.length}</div>
+                        <div className="bal-card" style={{padding:'2px 0'}}>
+                          {kbFoods.slice(0, 60).map((f,i,arr) => (
+                            <button key={f.fdc_id} onClick={()=>onOpenFood(f)} style={{width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:12, padding:'12px 16px', borderBottom:i<Math.min(arr.length,60)-1?'0.5px solid var(--rule)':'none', background:'none', border:'none', cursor:'pointer'}}>
+                              <div style={{flex:1, minWidth:0}}>
+                                <div style={{fontSize:14, fontWeight:600, color:'var(--ink)'}}>{f.name}</div>
+                                <div style={{fontSize:11, color:'var(--ink-3)', marginTop:1}}>{f.nutrients.length} nutrients · USDA {f.fdc_id}</div>
+                              </div>
+                              <Icon.Chevron size={13} c="var(--ink-4)"/>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {kb.attribution && <div style={{fontSize:11, color:'var(--ink-4)', marginTop:12, lineHeight:1.5}}>{kb.attribution}</div>}
+                  </div>
+                )
               ) : (
                 subs.length ? (
                   <div>
@@ -3918,6 +4085,8 @@
       const [slug, setSlug] = useState('memory-focus');
       const [suppName, setSuppName] = useState(null);   // open supplement (detail screen)
       const [substanceKey, setSubstanceKey] = useState(null);  // open substance-support page
+      const [kbFood, setKbFood] = useState(null);   // Food & herb knowledge detail
+      const [kbHerb, setKbHerb] = useState(null);
       const [askQuery, setAskQuery] = useState(null);  // seeds a quick search into Ask
       const [cache, setCache] = useState({});
       const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -4076,7 +4245,11 @@
         onToggleTaken={toggleTaken} onOpenCategory={openCategory} onAsk={askSearch} onNav={navTo} onOpenHealth={()=>setScreen('health')}/>;
       if (screen === 'ask')     return <Ask stack={stack} onAdd={addToStack} inStack={inStack} onNav={navTo} initialQuery={askQuery} mushrooms={mushrooms} interactions={interactions}
         feedback={feedback} onFeedback={saveFeedback}/>;
-      if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}/>;
+      if (screen === 'learn')   return <Learn onOpen={openCategory} onOpenSupplement={openSupplement} onOpenSubstance={openSubstance} onNav={navTo}
+        onOpenFood={(f)=>{ setKbFood(f); setScreen('foodDetail'); }}
+        onOpenHerb={(h)=>{ setKbHerb(h); setScreen('herbDetail'); }}/>;
+      if (screen === 'foodDetail') return <FoodDetail food={kbFood} onBack={()=>setScreen('learn')} onNav={navTo}/>;
+      if (screen === 'herbDetail') return <HerbDetail herb={kbHerb} onBack={()=>setScreen('learn')} onNav={navTo}/>;
       if (screen === 'orders') return <OrdersScreen orders={orders} onBack={()=>setScreen('stack')} onNav={navTo}
         onReorder={(o)=>{ o.items.forEach(it => addToStack({ name: it.name, tier:'', dose:'', iherb_url: it.url })); setScreen('stack'); }}/>;
       if (screen === 'subs') return <SubscriptionsScreen stack={stack} subs={subs} onSave={setSubs} onBack={()=>setScreen('stack')} onNav={navTo}/>;

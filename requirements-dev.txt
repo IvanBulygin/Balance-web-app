@@ -1,0 +1,3 @@
+# Evaluation / test-only dependencies (not shipped to the running app).
+# Installed by .github/workflows/rag-tests.yml alongside agent_site/requirements.txt.
+deepeval>=2.0

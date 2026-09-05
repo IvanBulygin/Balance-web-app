@@ -1,0 +1,67 @@
+name: RAG Tests
+
+# Runs the RAG evaluation harness (test_rag.py) on every push to main and on
+# demand from the Actions tab. Uses the same GOOGLE_API_KEY the app uses,
+# supplied via GitHub Secrets — the harness picks it up from the env.
+
+on:
+  push:
+    # Fires on main (as specified) and on this repo's actual default branch.
+    branches:
+      - main
+      - "claude/balance-ai-product-agent-zbC53"
+    paths:
+      - "agent_site/**"
+      - "test_rag.py"
+      - "requirements-dev.txt"
+      - ".github/workflows/rag-tests.yml"
+  workflow_dispatch:
+
+concurrency:
+  # Only one eval run at a time per branch — evals consume free-tier RPM/RPD.
+  group: rag-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  evaluate:
+    name: Answer Relevancy + Faithfulness
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            agent_site/requirements.txt
+            requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r agent_site/requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Verify API key is present
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          if [ -z "$GOOGLE_API_KEY" ]; then
+            echo "::error::GOOGLE_API_KEY secret is not configured on this repo."
+            echo "Add it under Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+          echo "GOOGLE_API_KEY is set (length ${#GOOGLE_API_KEY})."
+
+      - name: Run RAG evaluation
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          # Deepeval otherwise nags for telemetry / OpenAI keys we don't use.
+          DEEPEVAL_TELEMETRY_OPT_OUT: "1"
+          DEEPEVAL_UPDATE_WARNING_OPT_IN: "0"
+        run: python test_rag.py

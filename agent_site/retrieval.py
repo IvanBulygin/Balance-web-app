@@ -73,8 +73,26 @@ _STOPWORDS = frozenset(
 )
 
 
+# Common health-query misspellings folded into their canonical form so
+# they still hit the right guide (e.g. "loose weight" -> "lose weight" -> fat-loss).
+_ALIASES = {
+    "loose": "lose",
+    "wieght": "weight",
+    "weigth": "weight",
+    "insomia": "insomnia",
+    "sleap": "sleep",
+    "musle": "muscle",
+    "musels": "muscles",
+    "testostrone": "testosterone",
+    "cholesterrol": "cholesterol",
+    "immuntiy": "immunity",
+    "supplments": "supplements",
+    "vitmin": "vitamin",
+}
+
+
 def _tokenize(text: str) -> list[str]:
-    return [t for t in _TOKEN_RE.findall(text.lower()) if t not in _STOPWORDS]
+    return [_ALIASES.get(t, t) for t in _TOKEN_RE.findall(text.lower()) if t not in _STOPWORDS]
 
 
 @dataclass

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Test / eval artifacts
+.pytest_cache/
+.deepeval/
+.deepeval_telemetry.txt
+.temp_test_run_data.json
+.hypothesis/
+.coverage
+htmlcov/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,35 +1,35 @@
-name: RAG Evaluation
+name: RAG Tests
 
-# Runs the LLM-as-a-judge RAG evaluation harness on every push to the
-# production/deploy branch. gemini-2.5-flash answers the dataset questions AND
-# judges the answers, so the only secret required is GOOGLE_API_KEY (add it
-# under Settings -> Secrets and variables -> Actions).
+# Runs the RAG evaluation harness (test_rag.py) on every push to main and on
+# demand from the Actions tab. Uses the same GOOGLE_API_KEY the app uses,
+# supplied via GitHub Secrets — the harness picks it up from the env.
+
 on:
   push:
-    branches: [claude/balance-ai-product-agent-zbC53]
-  workflow_dispatch: {}
+    # Fires on main (as specified) and on this repo's actual default branch.
+    branches:
+      - main
+      - "claude/balance-ai-product-agent-zbC53"
+    paths:
+      - "agent_site/**"
+      - "test_rag.py"
+      - "requirements-dev.txt"
+      - ".github/workflows/rag-tests.yml"
+  workflow_dispatch:
 
-# Don't stack overlapping runs — each one consumes free-tier quota.
 concurrency:
+  # Only one eval run at a time per branch — evals consume free-tier RPM/RPD.
   group: rag-tests-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   evaluate:
+    name: Answer Relevancy + Faithfulness
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    defaults:
-      run:
-        working-directory: agent_site
-    env:
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      # gemini-2.5-flash free tier is ~10 requests/min; space calls accordingly.
-      GEMINI_MIN_REQUEST_INTERVAL: "7.0"
-      # Keep the run hermetic — no anonymous usage tracking from the eval lib.
-      DEEPEVAL_TELEMETRY_OPT_OUT: "YES"
+    timeout-minutes: 20
 
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -39,19 +39,29 @@ jobs:
           cache: pip
           cache-dependency-path: |
             agent_site/requirements.txt
-            agent_site/requirements-dev.txt
+            requirements-dev.txt
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt -r requirements-dev.txt
+          pip install -r agent_site/requirements.txt
+          pip install -r requirements-dev.txt
 
-      - name: Fail early if the API key is missing
+      - name: Verify API key is present
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           if [ -z "$GOOGLE_API_KEY" ]; then
-            echo "::error::GOOGLE_API_KEY secret is not set. Add it under Settings -> Secrets and variables -> Actions."
+            echo "::error::GOOGLE_API_KEY secret is not configured on this repo."
+            echo "Add it under Settings -> Secrets and variables -> Actions."
             exit 1
           fi
+          echo "GOOGLE_API_KEY is set (length ${#GOOGLE_API_KEY})."
 
       - name: Run RAG evaluation
-        run: python -m pytest test_rag.py -v --no-header
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          # Deepeval otherwise nags for telemetry / OpenAI keys we don't use.
+          DEEPEVAL_TELEMETRY_OPT_OUT: "1"
+          DEEPEVAL_UPDATE_WARNING_OPT_IN: "0"
+        run: python test_rag.py
